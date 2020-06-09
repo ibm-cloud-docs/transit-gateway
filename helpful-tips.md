@@ -47,7 +47,7 @@ You can open a [support ticket](/docs/get-support?topic=get-support-getting-cust
 All subnets of the VPC and classic network will connect to the transit gateway, so it's important that the subnets do not overlap. When creating VPCs that are intended to connect to a transit gateway, make sure to create the VPCs with non-overlapping prefixes and unique subnets.
 {: important}
 
-* {{site.data.keyword.tg_full_notm}} supports provisioning transit gateways in the following regions: `us-south`, `us-east`, `eu-de`, `au-syd`, and `jp-tok`.
+* {{site.data.keyword.tg_full_notm}} supports provisioning transit gateways in the following regions: `us-south`, `us-east`, `eu-de`, `eu-gb`, `au-syd`, and `jp-tok`.
 * Create your transit gateway in a location that makes sense for your workload. For example, if you are connecting two VPCs in the `us-south` (Dallas) region and one VPC in the `eu-de` (Frankfurt) region, creating your gateway in `us-south` region would be the most efficient for your workload.
 * Be descriptive when naming your transit gateway connections. If you do not specify a name when adding a connection, the VPC name is used by default.
 * You cannot connect a [classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) directly to a transit gateway. To connect the classic resources, use the {{site.data.keyword.cloud_notm}} classic infrastructure connection, and then all the resources in your classic access VPC are automatically connected.  
