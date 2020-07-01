@@ -39,3 +39,8 @@ subcollection: transit-gateway
 {: caption="Table 1. IAM platform-access user roles and actions" caption-side="top"}
 
 &#10045; To add or remove connections to VPCs, the user must have Editor or Administrator platform-access role permissions on the VPC. See [VPC: Getting started with IAM](/docs/vpc?topic=vpc-iam-getting-started) for more information.
+
+## Service name
+{: #service-name}
+
+The service name you designate will vary depending on how you access IBM Cloud Transit Gateway. If you are using the IBM Cloud CLI, APIs, or Terraform, then you should use `transit` for your service name. If you are using the UI, `Transit Gateway` should be the service name.
