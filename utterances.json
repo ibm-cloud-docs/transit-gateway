@@ -134,12 +134,24 @@
       "encryption between VPCs in transit gateway",
       "Transit Gateway perform any encryption",
       "encryption supported by transit gateway"
-      ]
-}
-
-    
-    
-    
+      ],
+    "billing-usage": [
+      "tools for monitoring the consumption of resources for transit gateway",
+      "view the usage of transit gateway",
+      "see the costs for transit gateway",
+      "view the estimated charges for tansit gateway",
+      "transit gateway's usage costs",
+       "charges accumulated for transit gateway"        
+     ],
+    "service-unavailability-notifications": [     
+      "email notifications for transit gateway availability",
+      "notifications for transit gateway",
+      "set up notification for transit gateway",
+      "transit gateway notification if service down",
+      "email availability for transity gateway",
+      "email announcements for transit gateway"
+      ]      
+}  
     
     
     
