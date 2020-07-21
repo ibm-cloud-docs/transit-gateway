@@ -49,8 +49,11 @@ Your disaster recovery plan should include knowing, preserving, and being prepar
 
 You must be prepared to recreate your transit gateways and connections. This section helps you ensure you have all the data needed for this purpose.
 
-The following steps use the IBM Cloud CLI, but you can also use the IBM Cloud console or API.
+{{site.data.keyword.tg_full_notm}} backups are stored in the us-south and eu-du regions.
 {: note}
+
+The following steps use the IBM Cloud CLI, but you can also use the IBM Cloud console or API.
+{: tip}
 
 Preserve a list of all of your transit gateways and their connections. To do so, perform the following procedure:
 
