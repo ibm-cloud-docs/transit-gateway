@@ -45,4 +45,4 @@ To delete an {{site.data.keyword.tg_full}}, follow these steps.
 
   * From an individual transit gateway page, select **Actions > Delete**.
 
-      |[Delete gateways with the Actions menu](images/delete-tg-2.png "Delete gateways with the Actions menu")
+      ![Delete gateways with the Actions menu](images/delete-tg-2.png "Delete gateways with the Actions menu")
