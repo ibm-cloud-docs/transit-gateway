@@ -49,10 +49,10 @@ All subnets of the VPC and classic network will connect to the transit gateway, 
 
 * {{site.data.keyword.tg_full_notm}} supports provisioning transit gateways in the following regions: `us-south`, `us-east`, `eu-de`, `eu-gb`, `au-syd`, and `jp-tok`.
 * Create your transit gateway in a location that makes sense for your workload. For example, if you are connecting two VPCs in the `us-south` (Dallas) region and one VPC in the `eu-de` (Frankfurt) region, creating your gateway in `us-south` region would be the most efficient for your workload.
-* Be descriptive when naming your transit gateway connections. If you do not specify a name when adding a connection, the VPC name is used by default.
 * You cannot connect a [classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) directly to a transit gateway. To connect the classic resources, use the {{site.data.keyword.cloud_notm}} classic infrastructure connection, and then all the resources in your classic access VPC are automatically connected.  
 * Even though you can have multiple transit gateways per account, a VPC or classic infrastructure can only be added to one transit gateway.
 * Transit gateways and their connections can take several minutes after provisioning before they are available.
+* Be descriptive when naming your transit gateway connections. When connecting to resources across accounts, you must specify a connection name. When connecting to resources in the same account as the transit gateway, the VPC name or the word 'classic' is the default selection and can be modified. 
 
 ## Classic infrastructure connection considerations
 
@@ -68,6 +68,8 @@ All subnets of the VPC and classic network will connect to the transit gateway, 
   {: important}
 
 * When classic infrastructure is connected to a transit gateway, it also includes any "Classic Access VPCs" attached to the account as well, because the subnets for these VPCs are associated with the classic infrastructure VRF. This is the only way to connect a transit gateway to a Classic Access VPC: by connecting the entire classic infrastructure to the transit gateway (instead of the specific Classic Access VPCs).
+
+* The classic connection can only be connected to one transit gateway in your account.
 
 ## Routing considerations
 
@@ -87,6 +89,6 @@ All subnets of the VPC and classic network will connect to the transit gateway, 
    Regardless of the routing type specified, {{site.data.keyword.tg_full_notm}} can connect to classic infrastructure networks located in any MZR. To achieve this, simply add the classic connection to your transit gateway.
    {: important}
 
-* You can edit a gateway's routing type after it is provisioned. However, to change the routing type from global to local, you must first remove any global connections (that is, connections that are not in the same location as the gateway). Note that connections to the IBM Cloud classic infrastructure are always considered local.
+* You can edit a gateway's routing type after it is provisioned. However, to change the routing type from global to local, you must first remove any global connections (that is, connections to resources that are not in the same location as the gateway). Note that connections to the IBM Cloud classic infrastructure are always considered local.
 
 * When changing from Local to Global routing, you will be charged for all associated global connections.

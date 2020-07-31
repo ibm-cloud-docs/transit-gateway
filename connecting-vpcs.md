@@ -60,13 +60,13 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
 7. You can add connections to your transit gateway now or after it has been provisioned.
 
-  To add them now, select the network connection to be attached to the transit gateway, and then type a name for the connection. To add multiple network connections to the transit gateway, click **Add connection**.
+  To add them now, select the network connection to be attached to the transit gateway, and then type a name for the connection. To add multiple network connections to the transit gateway, click **Add connection**. 
 
-  To add them later, refer to [Adding a connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-connections).
+  To add them later, refer to [Adding a connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-connections). Cross account (VPC only) connections can only be added later, after you provision the gateway.
 
   You can add the following connection types to your gateway:
 
-   * **VPC** networks can contain either first or second generation compute resources, allowing you to connect to your account’s VPC resources.
+   * **VPC** networks can contain either first or second generation compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
    * **Classic Infrastructure** networks allow you to connect to IBM Cloud classic resources. Only one classic infrastructure connection is allowed per account.
 
   All subnets of the VPC or classic network will be connected to the transit gateway. To ensure successful connectivity between VPCs, when creating VPCs that are intended to be interconnected using a transit gateway, make sure to create the VPCs with non-overlapping prefixes and unique subnets. To ensure successful connectivity with the classic infrastructure, do not use IP addresses for your VPCs in the `10.0.0.0/14`, `10.200.0.0/14`, `10.198.0.0/15`, and `10.254.0.0/16` blocks.

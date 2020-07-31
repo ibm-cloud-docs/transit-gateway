@@ -48,6 +48,8 @@ region (for example, `us-south`). Data transfer is unlimited and free.
    If you ever want to change routing options, you can edit your configuration after you provision your gateway.
    {: tip}
 
+When connecting to resources across accounts, the owner of the transit gateway is responsible for all connection and data transfer fees.
+
 ## Pricing examples
 {: #pricing-examples}
 

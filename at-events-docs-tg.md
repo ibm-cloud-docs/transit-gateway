@@ -32,17 +32,30 @@ As a security officer, auditor, or manager, you can use the Activity Tracker ser
 ## List of events: Gateway resources
 {: #at_events_list}
 
-The following actions generate events for IBM Cloud Transit Gateway:
-
+### List of management events
+{: #at_management_events}
 | Action             | Description      |
 |:-------------------|:-----------------|
-| transit.gateway.create | Create a transit gateway     |
-| transit.gateway.delete | Delete a transit gateway     |
-| transit.gateway.update | Update a transit gateway     |
-| transit.connection.create | Create a transit gateway connection   |
-| transit.connection.delete | Delete a transit gateway connection   |
-| transit.connection.update | Update a transit gateway connection   |
-{: caption="Table 1. Actions that generate events for transit gateways" caption-side="top"}
+| `transit.gateway.create` | Create a transit gateway     |
+| `transit.gateway.delete` | Delete a transit gateway     |
+| `transit.gateway.update` | Update a transit gateway     |
+| `transit.connection.create` | Create a transit gateway connection   |
+| `transit.connection.delete` | Delete a transit gateway connection   |
+| `transit.connection.update` | Update a transit gateway connection   |
+| `transit.connection-request.create` | Create a request for a cross account transit gateway connection   |
+| `transit.connection-request.approve` | Approve request for a cross account transit gateway connection   |
+| `transit.connection-request.reject` | Reject request for a cross account transit gateway connection   |
+{: caption="Table 1. Actions that generate management events for gateway resources" caption-side="top"}
+
+### List of data events
+{: #at_data_events}
+| Action             | Description      |
+|:-------------------|:-----------------|
+| `transit.gateway.read` | Retrieve a transit gateway     |
+| `transit.gateway.list` | List transit gateways     |
+| `transit.connection.read` | Retrieve a transit gateway connection   |
+| `transit.connection.list` | List transit gateway connections   |
+{: caption="Table 2. Actions that generate data events for gateway resources" caption-side="top"}
 
 ## Viewing events
 {: #at_ui}

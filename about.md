@@ -24,7 +24,7 @@ subcollection: transit-gateway
 # About IBM Cloud Transit Gateway
 {: #about}
 
-As the number of your Virtual Private Clouds (VPCs) grow, you need an easy way to manage the interconnection between these resources, both locally and globally. {{site.data.keyword.tg_full}} is designed specifically for this purpose.
+As the number of your Virtual Private Clouds (VPCs) grow, you need an easy way to manage the interconnection between these resources across multiple regions. {{site.data.keyword.tg_full}} is designed specifically for this purpose.
 {: shortdesc}
 
 With {{site.data.keyword.tg_full_notm}}, you can create a single or multiple transit gateways to connect VPCs together. You can also connect your {{site.data.keyword.cloud_notm}} classic infrastructure to a transit gateway to provide seamless communication with classic infrastructure resources. Any new network you connect to a transit gateway is then automatically made available to every other network connected to it. This makes it easy to scale your network as it grows.
@@ -37,7 +37,7 @@ With {{site.data.keyword.tg_full_notm}}, you can create a single or multiple tra
 ### Routing
 {: #routing}
 
-{{site.data.keyword.tg_full_notm}} supports local and global routing between VPCs and the {{site.data.keyword.cloud_notm}} Classic infrastructure. All routing options remain within the private {{site.data.keyword.cloud_notm}} infrastructure without operating on the public internet, and are optimized for performance. {{site.data.keyword.tg_full_notm}} allows customers greater flexibility, redundancy, and speed in scaling their workloads, as well as in connecting isolated networks running on {{site.data.keyword.cloud_notm}}.
+{{site.data.keyword.tg_full_notm}} supports local and global routing between VPCs and the {{site.data.keyword.cloud_notm}} classic infrastructure. All routing options remain within the private {{site.data.keyword.cloud_notm}} infrastructure without operating on the public internet, and are optimized for performance. {{site.data.keyword.tg_full_notm}} allows customers greater flexibility, redundancy, and speed in scaling their workloads, as well as in connecting isolated networks running on {{site.data.keyword.cloud_notm}}.
 
 ### Privacy
 
@@ -46,6 +46,9 @@ With {{site.data.keyword.tg_full_notm}}, you can create a single or multiple tra
 * {{site.data.keyword.tg_full_notm}} is a fully redundant, fault-tolerant service with no single point of failure within these [{{site.data.keyword.cloud_notm}} Multi-Zone Regions (MZR)](/docs/transit-gateway?topic=transit-gateway-tg-locations).
 
 * {{site.data.keyword.tg_full_notm}} integrates with Identity and Access Management (IAM), letting you manage access to your transit gateway. Using IAM, you can create and manage [{{site.data.keyword.cloud_notm}} users and groups](/docs/transit-gateway?topic=transit-gateway-iam), as well as use permissions to allow or deny their access.
+
+### Easily connect across boundaries
+{{site.data.keyword.tg_full_notm}} easily interconnects your {{site.data.keyword.cloud_notm}} VPCs with Gen 1 and Gen 2 compute as well as classic resources across the globe. You can also interconnect VPCs across {{site.data.keyword.cloud_notm}} accounts.
 
 ## Interconnectivity patterns
 
@@ -71,3 +74,7 @@ Here are a few ways you can implement the {{site.data.keyword.tg_full_notm}} ser
 ### Use case 4: Interconnect VPCs and an IBM classic network to access all your resources across all MZRs
 
 ![Connect to the IBM classic network and VPCs to access all your resources across all MZRs](images/twg_use_4.png "Connect an IBM classic network and VPCs to access all your resources across all MZRs")
+
+### Use case 5: Interconnect VPCs across accounts
+
+![Connect two or more VPCs across accounts](images/TGW_UC5_Cross_Account-VPC.png "Connect two or more VPCs across IBM Cloud accounts")

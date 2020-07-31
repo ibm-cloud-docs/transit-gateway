@@ -56,6 +56,19 @@ You can create more than one transit gateway in your account. Each transit gatew
 
 You can connect multiple VPCs in the same region to a single transit gateway with the local routing option, and connect them across regions by using global routing. Keep in mind that all of a transit gateway's network connections are interconnected, so carefully consider all resources you want to connect. Make sure each connection receives a unique name in the gateway, and that you choose the appropriate routing type (local or global) based on the location of the connections.
 
+## Can I connect to a VPC in another IBM Cloud account?
+{: #connections}
+{: faq}
+{: support}
+
+You can connect to a VPC in another IBM Cloud account by providing the CRN of the VPC when adding a connection to your transit gateway. The account containing the VPC is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity for that VPC. For more information see [Adding a cross-account (VPC only) connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-cross-account-connections)
+
+## How many connection requests can I make from one account to VPCs in other IBM Cloud accounts?
+{: #connections}
+{: faq}
+{: support}
+Each gateway is only permitted to have 10 outstanding requests for a cross account connection.
+
 ## Can I connect a VPC with generation 1 compute and a VPC with generation 2 compute using a transit gateway?
 {: #gateways}
 {: faq}
@@ -89,7 +102,7 @@ By enabling global routing you can connect VPCs located in different [MZRs](/doc
 {: faq}
 {: support}
 
-The following table details the service limits for your transit gateway.
+The following table details the service limits for your transit gateways and connections.
 
 | Service limit |  Default |
 |---------------------------|------|
@@ -139,7 +152,7 @@ Capacity management handles the overall available capacity on the transit gatewa
 {:faq}
 {: #scalability}
 
-the IBM Cloud infrastructure manages all transit gateways. There are no scalability options available.
+The IBM Cloud infrastructure manages all transit gateways. There are no scalability options available.
 
 ## How do you prevent Distributed Denial of Service (DDoS) attacks? What restrictions do you have in place? 
 {:faq}

@@ -21,10 +21,14 @@ subcollection: transit-gateway
 {:download: .download}
 {:term: .term}
 
-# IBM Cloud Transit Gateway Multi-Zone Region Locations
+# IBM Cloud Transit Gateway Multi-Zone Region locations
 {: #tg-locations}
 
-{{site.data.keyword.tg_full_notm}} is a fully redundant, fault-tolerant service with no single point of failure within the following {{site.data.keyword.cloud_notm}} Multi-Zone Regions (MZR):
+A [Multi-Zone Region (MZR)](#x9774820){: term} is comprised of 3 or more zones that are independent from each other to ensure that single failure events affect only a single zone. MZRs provide low latency (< 2 milliseconds latency) and high bandwidth (> 1000 Gbps) connectivity across zones. Any [GA](#x2117947){: term} service in an MZR will be available in all MZRs within 90 days. 
+
+The advantage of an MZR is that it provides consistent cloud services across different zones, better resiliency, availability, higher interconnect speed between data centers for your resources. These features can be critical to your applications. Deploying the application in an MZR rather than a SZR can increase the availability from 99.9% to 99.99% when deployed over 3 zones. 
+
+{{site.data.keyword.tg_full_notm}} is currently deployed within the following {{site.data.keyword.cloud_notm}} Multi-Zone Regions (MZR):
 
 | Location | Region |
 |-----------|----------|
