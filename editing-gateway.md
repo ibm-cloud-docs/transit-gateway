@@ -76,8 +76,8 @@ Follow these steps to connect networks owned by different accounts:
    Connection requests can be resubmitted if they expire or are rejected. 
    {: note}
 
-5. The network (VPC) owner's account shows the gateway and the details of all other connections attached to it in **View only** mode. From the network (VPC) owner's account, go to the Transit Gateway page and click the gateway name in the table.
-6. In the Connections section, see **Action required** to view the incoming network connection request. Click **Approve** to approve the request.
+5. A user with the [necessary IAM permissions](/docs/transit-gateway?topic=transit-gateway-iam#iam) in the network (VPC) owner's account can see the gateway and the details of all other connections attached to it in **View only** mode. From the network (VPC) owner's account, go to the Transit Gateway page and click the gateway name in the table.
+6. In the Connections section, see **Action required** to view the incoming network connection request. A user with the [necessary additional IAM permissions](/docs/transit-gateway?topic=transit-gateway-iam#iam) can then click **Approve** to approve the request. 
 
   After the network (VPC) owner's account ensures that the connection request is from a legitimate source and approves it, the system establishes routes to and from all other networks connected to the same transit gateway. Use of [Network ACLs and/or Security Groups](/docs/vpc?topic=vpc-security-in-your-vpc#security-in-your-vpc) within VPCs that are accessible across accounts are highly recommended to control the network traffic flows. You can unilaterally detach cross-account connections by either account through users who have the appropriate permissions.
   {: important}
