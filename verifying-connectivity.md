@@ -31,7 +31,7 @@ There are several issues that can cause problems when attempting to communicate 
 
 If you are encountering resource issues on the provisioning page, make sure you have the correct [IAM permissions](/docs/transit-gateway?topic=transit-gateway-iam#iam) in order to use {{site.data.keyword.tg_full_notm}} and {{site.data.keyword.cloud_notm}} VPC for the connections you are attempting to make.
 
-If you cannot successfully provision a transit gateway, your account administrator may have disabled certain users' visibility to the [IBM Cloud Catalog](https://cloud.ibm.com/docs/account?topic=account-manage-catalog).
+If you cannot successfully provision a transit gateway, your account administrator may have disabled certain users' visibility to the [IBM Cloud Catalog](/docs/account?topic=account-accounts#accounts).
 {: tip}
 
 ## Dealing with overlapping prefixes

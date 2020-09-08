@@ -39,7 +39,7 @@ Keep in mind the following service limits while using IBM Cloud Transit Gateway.
 | Number of prefixes per connection | 15 prefixes for VPC connections, 120 prefixes for a classic connection |
 {: caption="Table 1. IBM Cloud Transit Gateway service limits" caption-side="top"}
 
-You can open a [support ticket](/docs/get-support?topic=get-support-getting-customer-support) if you need your service limits expanded.
+You can open a [support ticket](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need your service limits expanded.
 {: note}
 
 ## General considerations
@@ -52,7 +52,7 @@ All subnets of the VPC and classic network will connect to the transit gateway, 
 * You cannot connect a [classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) directly to a transit gateway. To connect the classic resources, use the {{site.data.keyword.cloud_notm}} classic infrastructure connection, and then all the resources in your classic access VPC are automatically connected.  
 * Even though you can have multiple transit gateways per account, a VPC or classic infrastructure can only be added to one transit gateway.
 * Transit gateways and their connections can take several minutes after provisioning before they are available.
-* Be descriptive when naming your transit gateway connections. When connecting to resources across accounts, you must specify a connection name. When connecting to resources in the same account as the transit gateway, the VPC name or the word 'classic' is the default selection and can be modified. 
+* Be descriptive when naming your transit gateway connections. When connecting to resources across accounts, you must specify a connection name. When connecting to resources in the same account as the transit gateway, the VPC name or the word 'classic' is the default selection and can be modified.
 
 ## Classic infrastructure connection considerations
 
