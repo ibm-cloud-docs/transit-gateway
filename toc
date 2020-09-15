@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="transit-gateway" category="network_interconnectivity" audience="network" href="/docs/transit-gateway?topic=transit-gateway-getting-started" console-page="/interconnectivity" product-page="https://www.ibm.com/cloud/transit-gateway" path="transit-gateway"}
-IBM Cloud Transit Gateway
+Transit Gateway
 
     {: .navgroup id="learn"}
     getting-started.md

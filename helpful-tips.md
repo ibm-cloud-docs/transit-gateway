@@ -91,4 +91,4 @@ All subnets of the VPC and classic network will connect to the transit gateway, 
 
 * You can edit a gateway's routing type after it is provisioned. However, to change the routing type from global to local, you must first remove any global connections (that is, connections to resources that are not in the same location as the gateway). Note that connections to the IBM Cloud classic infrastructure are always considered local.
 
-* When changing from Local to Global routing, you will be charged for all associated global connections.
+* When changing from Local to Global routing, you will be charged for all associated global connections. There is no impact to the network traffic when the routing type is changed.
