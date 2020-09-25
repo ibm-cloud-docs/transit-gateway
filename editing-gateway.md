@@ -73,9 +73,9 @@ Follow these steps to connect networks owned by different accounts:
 
    The network connection now shows the **Pending** approval status in the gateway account.
    
-   The network (VPC) owner's account then receives a notification of the request. If the network (VPC) owner rejects the cross-account connection, no connectivity forms and the connection shows a status of 'Rejected'. You can delete this connection at that point, if you wish. 
+   The network (VPC) owner's account then receives a notification of the request. If the network (VPC) owner rejects the cross-account connection, no connectivity is established and the connection shows a status of **Rejected**. You can delete this connection at that point, if you wish. If the cross-account connection is not explicitly approved, it expires after 72 hours. 
 
-   Connection requests can be resubmitted if they expire or are rejected. If the network rejects the cross-account connection, it expires after 72 hours. 
+   Connection requests can be resubmitted if they expire or are rejected.
    {: note}
 
 5. A user with the [necessary IAM permissions](/docs/transit-gateway?topic=transit-gateway-iam#iam) in the network (VPC) owner's account can see the gateway and the details of all other connections attached to it in **View only** mode. From the network (VPC) owner's account, go to the Transit Gateway page and click the gateway name in the table.
