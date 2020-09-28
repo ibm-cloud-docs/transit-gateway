@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-26"
+lastupdated: "2020-09-28"
 
 keywords: transit, gateway, about, features, overview
 
@@ -21,14 +21,20 @@ subcollection: transit-gateway
 {:download: .download}
 {:term: .term}
 
-# IBM Cloud Transit Gateway Multi-Zone Region locations
+# IBM Cloud Transit Gateway locations
 {: #tg-locations}
 
-A [Multi-Zone Region (MZR)](#x9774820){: term} is comprised of 3 or more zones that are independent from each other to ensure that single failure events affect only a single zone. MZRs provide low latency (< 2 milliseconds latency) and high bandwidth (> 1000 Gbps) connectivity across zones. Any [GA](#x2117947){: term} service in an MZR will be available in all MZRs within 90 days. 
+You can interconnect {{site.data.keyword.cloud}} classic and Virtual Private Cloud (VPC) infrastructures worldwide using [Multi-Zone Regions (MZR)](#x9774820){: term} and [Single-Zone Regions (SZR)](#x9774825){: term}.
+{: shortdesc}
 
-The advantage of an MZR is that it provides consistent cloud services across different zones, better resiliency, availability, higher interconnect speed between data centers for your resources. These features can be critical to your applications. Deploying the application in an MZR rather than a SZR can increase the availability from 99.9% to 99.99% when deployed over 3 zones. 
+## Multi-Zone Regions
+{: #mzr-table}
 
-{{site.data.keyword.tg_full_notm}} is currently deployed within the following {{site.data.keyword.cloud_notm}} Multi-Zone Regions (MZR):
+An MZR consists of three or more zones that are independent from each other to ensure that single failure events affect only a single zone. MZRs provide low latency (< 2-milliseconds latency) and high bandwidth (> 1000 Gbps) connectivity across zones. Any [GA](#x2117947){: term} service in an MZR will be available in all MZRs within 90 days.
+
+An MZR provides consistent cloud services across different zones, better resiliency, availability, and higher interconnect speed between data centers for your resources. These features can be critical to your applications. Deploying the application in an MZR rather than an SZR can increase the availability from 99.9% to 99.99% when deployed over three zones.
+
+{{site.data.keyword.tg_full_notm}} is currently deployed within the following {{site.data.keyword.cloud_notm}} MZRs:
 
 | Location | Region |
 |-----------|----------|
@@ -39,26 +45,42 @@ The advantage of an MZR is that it provides consistent cloud services across dif
 {: tab-title="Americas"}
 {: tab-group="mzr"}
 {: class="simple-tab-table"}
-{: summary="Use the buttons before the table to change the context of the table. The column headers identify the data centers located in the specific geographical area."}
+{: summary="Use the table tabs to change the context of the table. The column headers identify the data centers located in the specific geographical area."}
 
-| Location      | Region   |
+| Location | Region |
 |-----------|----------|
-| Frankfurt     | eu-de    |
-| London        | eu-gb    |
+| Frankfurt | eu-de |
+| London | eu-gb |
 {: caption="Table 1. MZRs in Europe" caption-side="top"}
 {: #tg-europe-mzr}
 {: tab-title="Europe"}
 {: tab-group="mzr"}
 {: class="simple-tab-table"}
-{: summary="Use the buttons before the table to change the context of the table. The column headers identify the data centers located in the specific geographical area."}
+{: summary="Use the table tabs to change the context of the table. The column headers identify the data centers located in the specific geographical area."}
 
-| Location      | Region   |
+| Location | Region |
 |-----------|----------|
-| Sydney        | au-syd   |
-| Tokyo         | jp-tok   |
+| Sydney | au-syd |
+| Tokyo  | jp-tok |
 {: caption="Table 1. MZRs in Asia Pacific" caption-side="top"}
 {: #tg-asiapacific-mzr}
 {: tab-title="Asia Pacific"}
 {: tab-group="mzr"}
 {: class="simple-tab-table"}
-{: summary="Use the buttons before the table to change the context of the table. The column headers identify the data centers located in the specific geographical area."}
+{: summary="Use the table tabs to change the context of the table. The column headers identify the data centers located in the specific geographical area."}
+
+For a detailed overview and list of data centers that are part of the MZR, see [Multizone regions](/docs/overview?topic=overview-locations#mzr-table).
+{: note}
+
+## Single-zone regions
+{: #szr-table}
+
+You can establish connectivity from a VPC to resources in an SZR by connecting both the VPC and classic infrastructure to a transit gateway. The following table lists the SZRs in {{site.data.keyword.cloud_notm}} for interconnecting classic infrastructure to VPCs using a transit gateway. 
+
+| Location | Data Center |
+|-----------|----------|
+| Seoul | SEO01 |
+| Oslo | OSL01 |
+| San Jose | SJC04 |
+| London | LON02 |
+{: caption="Table 2. SZRs for classic Softlayer IaaS" caption-side="top"}
