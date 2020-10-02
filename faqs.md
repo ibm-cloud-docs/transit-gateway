@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-04-16"
 
-keywords: faq, faqs, questions, transit, gateway, vpc, direct link
+keywords: faq, faqs, questions, vpc
 
 subcollection: transit-gateway
 

@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-09-28"
 
-keywords: transit, gateway, about, features, overview
+keywords: about, features, overview
 
 subcollection: transit-gateway
 
@@ -75,7 +75,7 @@ For a detailed overview and list of data centers that are part of the MZR, see [
 ## Single-zone regions
 {: #szr-table}
 
-You can establish connectivity from a VPC to resources in an SZR by connecting both the VPC and classic infrastructure to a transit gateway. The following table lists the SZRs in {{site.data.keyword.cloud_notm}} for interconnecting classic infrastructure to VPCs using a transit gateway. 
+You can establish connectivity from a VPC to resources in an SZR by connecting both the VPC and classic infrastructure to a transit gateway. The following table lists the SZRs in {{site.data.keyword.cloud_notm}} for interconnecting classic infrastructure to VPCs using a transit gateway.
 
 | Location | Data Center |
 |-----------|----------|

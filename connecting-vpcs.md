@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-04-16"
 
-keywords: transit, gateway, connecting, vpc, region, order
+keywords: connecting, vpc, region, order
 
 subcollection: transit-gateway
 
@@ -60,7 +60,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
 7. You can add connections to your transit gateway now or after it has been provisioned.
 
-  To add them now, select the network connection to be attached to the transit gateway, and then type a name for the connection. To add multiple network connections to the transit gateway, click **Add connection**. 
+  To add them now, select the network connection to be attached to the transit gateway, and then type a name for the connection. To add multiple network connections to the transit gateway, click **Add connection**.
 
   To add them later, refer to [Adding a connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-connections). Cross account (VPC only) connections can only be added later, after you provision the gateway.
 

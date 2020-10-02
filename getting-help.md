@@ -4,7 +4,7 @@ copyright:
   years: 20120
 lastupdated: "2020-04-16"
 
-keywords: help, support, contact, troubleshooting, transit, gateway
+keywords: help, support, contact, troubleshooting
 
 subcollection: transit-gateway
 

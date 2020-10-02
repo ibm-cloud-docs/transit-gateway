@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-04-16"
 
-keywords: transit gateway, activity tracker, LogDNA, event, security
+keywords: activity tracker, LogDNA, event, security
 
 subcollection: transit-gateway
 

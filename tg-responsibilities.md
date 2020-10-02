@@ -4,6 +4,10 @@ copyright:
   years: 2019
 lastupdated: "2020-04-16"
 
+keywords: responsibilities, deploy, provision, requirement, capacity, compliance, regulation
+
+subcollection: transit-gateway
+
 ---
 
 {:new_window: target="_blank_"}

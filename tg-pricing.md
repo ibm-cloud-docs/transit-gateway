@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-04-16"
 
-keywords: transit, gateway, about, features, overview
+keywords: about, features, overview
 
 subcollection: transit-gateway
 

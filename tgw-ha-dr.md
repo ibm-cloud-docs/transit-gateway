@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-04-16"
 
-keywords: transit, gateway, connecting, vpc, region, order
+keywords: connecting, region, order, ha, recovery, disaster
 
 subcollection: transit-gateway
 

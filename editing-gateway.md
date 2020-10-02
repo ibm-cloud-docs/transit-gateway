@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-07-20"
 
-keywords: transit, gateway, editing
+keywords: editing, managing, manage, edit, add, connection
 
 subcollection: transit-gateway
 
@@ -50,9 +50,9 @@ To add a connection to a transit gateway, perform the following procedure:
 {: #adding-cross-account-connections}
 You can request connections to networks in other {{site.data.keyword.cloud_notm}} accounts.
 
-  Only 10 pending requests are allowed per gateway. To create more requests, you can cancel the pending connection request, or wait for it to be approved. Connection requests expire if not approved within 72 hours. 
+  Only 10 pending requests are allowed per gateway. To create more requests, you can cancel the pending connection request, or wait for it to be approved. Connection requests expire if not approved within 72 hours.
   {: tip}
-  
+
   Be aware that after you connect a transit gateway to a network in another account, all resources connected to that transit gateway are accessible from the other network. Make sure that this is a trusted account. Use of [security controls](/docs/vpc?topic=vpc-security-in-your-vpc) such as ACLs, security groups, or other network services to control traffic flow are highly recommended.
   {: important}
 
@@ -63,7 +63,7 @@ Follow these steps to connect networks owned by different accounts:
 3. Click the name of the transit gateway where you want to add a connection and click **Add connection**.
 4. In the Add connection window, select **Request connection to a network in another account**.
 5. Type the VPC CRN of the cross-account network.
-  
+
   To get the CRN of a VPC, from the {{site.data.keyword.cloud_notm}} console select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, and then click **Resource list**. Expand **VPC Infrastructure** to list your VPCs. Select a VPC and click **Status** to view its details. Copy the CRN and paste it into the Add connection window.
   {: tip}
 
@@ -72,14 +72,14 @@ Follow these steps to connect networks owned by different accounts:
    ![Add cross account connection](images/addCrossAcctConnection.png "Adding cross account connection")
 
    The network connection now shows the **Pending** approval status in the gateway account.
-   
-   The network (VPC) owner's account then receives a notification of the request. If the network (VPC) owner rejects the cross-account connection, no connectivity is established and the connection shows a status of **Rejected**. You can delete this connection at that point, if you wish. If the cross-account connection is not explicitly approved, it expires after 72 hours. 
+
+   The network (VPC) owner's account then receives a notification of the request. If the network (VPC) owner rejects the cross-account connection, no connectivity is established and the connection shows a status of **Rejected**. You can delete this connection at that point, if you wish. If the cross-account connection is not explicitly approved, it expires after 72 hours.
 
    Connection requests can be resubmitted if they expire or are rejected.
    {: note}
 
 5. A user with the [necessary IAM permissions](/docs/transit-gateway?topic=transit-gateway-iam#iam) in the network (VPC) owner's account can see the gateway and the details of all other connections attached to it in **View only** mode. From the network (VPC) owner's account, go to the Transit Gateway page and click the gateway name in the table.
-6. In the Connections section, see **Action required** to view the incoming network connection request. A user with the [necessary additional IAM permissions](/docs/transit-gateway?topic=transit-gateway-iam#iam) can then click **Approve** to approve the request. 
+6. In the Connections section, see **Action required** to view the incoming network connection request. A user with the [necessary additional IAM permissions](/docs/transit-gateway?topic=transit-gateway-iam#iam) can then click **Approve** to approve the request.
 
   After the network (VPC) owner's account ensures that the connection request is from a legitimate source and approves it, the system establishes routes to and from all other networks connected to the same transit gateway. Use of [Network ACLs and/or Security Groups](/docs/vpc?topic=vpc-security-in-your-vpc#security-in-your-vpc) within VPCs that are accessible across accounts are highly recommended to control the network traffic flows. You can unilaterally detach cross-account connections by either account through users who have the appropriate permissions.
   {: important}
@@ -96,7 +96,7 @@ Follow these steps to connect networks owned by different accounts:
 
   ![Attached cross account connection](images/attachedCrossAcctConnection.png "Attached cross account connection")
 
-  The gateway account owner (or the network account owner) can delete the connection. If the network owner deletes the connection, the gateway owner sees the connection status as **Detached**. 
+  The gateway account owner (or the network account owner) can delete the connection. If the network owner deletes the connection, the gateway owner sees the connection status as **Detached**.
   {: note}
 
 ## Editing a connection
