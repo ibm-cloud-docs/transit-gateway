@@ -49,7 +49,7 @@ Your disaster recovery plan should include knowing, preserving, and being prepar
 
 You must be prepared to recreate your transit gateways and connections. This section helps you ensure you have all the data needed for this purpose.
 
-{{site.data.keyword.tg_full_notm}} backups are stored in the us-south and eu-du regions.
+{{site.data.keyword.tg_full_notm}} backups are cross-regionally durable. They are stored across multiple regions, and are restorable to other regions, except for eu-de, which cannot cross regional boundaries.
 {: note}
 
 The following steps use the IBM Cloud CLI, but you can also use the IBM Cloud console or API.
