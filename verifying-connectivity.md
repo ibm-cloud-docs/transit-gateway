@@ -24,7 +24,7 @@ subcollection: transit-gateway
 {:download: .download}
 {:term: .term}
 
-# How do I verify and deal with connectivity issues on my transit gatways?
+# How do I verify and deal with connectivity issues on my transit gateways?
 {: #troubleshooting}
 
 There are several issues that can cause problems when attempting to communicate between resources connected to your {{site.data.keyword.tg_full}}.
@@ -33,7 +33,7 @@ There are several issues that can cause problems when attempting to communicate 
 You may receive error messages that state you need to check whether the resource you are requesting to access exists, and to review your network topology.
 {: tsSymptoms}
 
-Known issues include incorrect permissions, overlapping prefixes, networking interface card routing, access control lists, firewalls and gateway appliances, and routing in classic VSIs.
+Known issues include incorrect permissions, overlapping VPC prefixes and classic infrastructure subnets, networking interface card routing, access control lists, firewalls and gateway appliances, and routing in classic VSIs.
 {: tsCauses}
 
 To fix the connectivity issues you're encountering, check that the following items have been set up correctly.
@@ -47,14 +47,19 @@ If you are encountering resource issues on the provisioning page, make sure you 
 If you cannot successfully provision a transit gateway, your account administrator may have disabled certain users' visibility to the [IBM Cloud Catalog](/docs/account?topic=account-accounts#accounts).
 {: tip}
 
-### Dealing with overlapping prefixes
-{: #overlapping-prefixes}
+### Using supported locations
+{: #confirm-locations}
 
-A common problem when trying to connect networks is that they may have the same prefixes (or overlapping prefixes). This can lead to the same IP address being assigned to multiple resources and cause networking issues. During VPC creation, you set up prefixes and subnets for your private network. You may have chosen the default value, **Default address prefixes**. This is fine when the VPCs exist in isolation. However, when a transit gateway is used to connect these formerly isolated networks, overlaps can occur. If traffic does not appear to be routing to the correct network, this could be the issue.
+If you are not able to establish connectivity between networks interconnected by a transit gateway, ensure that your networks are located in one of the [Transit gateway supported locations](/docs/transit-gateway?topic=transit-gateway-tg-locations). You will not be able to establish connectivity to a resource in an unsupported location.
+
+### Dealing with overlapping VPC prefixes and classic infrastructure subnets
+{: #overlapping-vpc-prefixes-and-classic-subnets}
+
+A common problem when trying to connect networks is that they may have overlapping VPC prefixes and classic infrastructure subnets. During VPC creation, you set up prefixes and subnets for your private network. You may have chosen the default value, **Default address prefixes**. This is fine when the VPCs exist in isolation. However, when a transit gateway is used to connect these formerly isolated networks and the networks have VPC prefixes and classic infrastructure subnets that overlap, this can cause networking issues. If traffic does not appear to be routing to the correct network, this could be the issue.
 
 VPCs created this way do not communicate through a transit gateway because all the traffic stays within the local VPC network. Virtual Machines provisioned on different VPCs with the same IP may appear to ping through the transit gateway, but in reality are just pinging themselves.
 
-When creating VPCs that are intended to be interconnected using a transit gateway, make sure to create the VPCs with non-overlapping prefixes. When creating VPCs that are also intended to be interconnected with your {{site.data.keyword.cloud_notm}} classic infrastructure, do not use IP addresses in your VPCs in the `10.0.0.0/14`, `10.200.0.0/14`, `10.198.0.0/15`, and `10.254.0.0/16` blocks.
+When creating VPCs that are intended to be interconnected using a transit gateway, make sure to create the VPCs with non-overlapping VPC prefixes. When creating VPCs that are also intended to be interconnected with your {{site.data.keyword.cloud_notm}} classic infrastructure, do not use prefixes in your VPCs that overlap with the `10.0.0.0/14`, `10.200.0.0/14`, `10.198.0.0/15`, and `10.254.0.0/16` blocks. Also, don't use addresses from your classic infrastructure subnets. To view a list of your classic infrastructure subnets, see [View all subnets](/docs/subnets?topic=subnets-view-all-subnets).
 
 ### Working with security groups
 {: #working-with-security-groups}

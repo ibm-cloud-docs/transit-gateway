@@ -71,7 +71,7 @@ Follow these steps to connect networks owned by different accounts:
 
    ![Add cross account connection](images/addCrossAcctConnection.png "Adding cross account connection")
 
-   The network connection now shows the **Pending** approval status in the gateway account.
+   The network connection now shows the **Pending** approval status in the gateway owner's account.
 
    The network (VPC) owner's account then receives a notification of the request. If the network (VPC) owner rejects the cross-account connection, no connectivity is established and the connection shows a status of **Rejected**. You can delete this connection at that point, if you wish. If the cross-account connection is not explicitly approved, it expires after 72 hours.
 
@@ -96,7 +96,7 @@ Follow these steps to connect networks owned by different accounts:
 
   ![Attached cross account connection](images/attachedCrossAcctConnection.png "Attached cross account connection")
 
-  The gateway account owner (or the network account owner) can delete the connection. If the network owner deletes the connection, the gateway owner sees the connection status as **Detached**.
+  The gateway owner's account (or the network owner's account) can delete the connection. If the network owner deletes the connection, the gateway owner sees the connection status as **Detached**.
   {: note}
 
 ## Editing a connection

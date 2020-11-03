@@ -9,6 +9,7 @@ Transit Gateway
     about.md
     helpful-tips.md
     tg-pricing.md
+    [Team based privacy using IAM, VPC, Transit Gateway and DNS](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-tg-dns-iam)
 
     {: .topicgroup}
     Related links
@@ -28,6 +29,7 @@ Transit Gateway
         iam.md
         at-events-docs-tg.md
         data-security.md
+        manage-scc.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -39,7 +41,8 @@ Transit Gateway
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    verifying-connectivity.md
     faqs.md
+    iam.md
+    verifying-connectivity.md
     getting-help.md
     {: .navgroup-end}
