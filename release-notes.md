@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2020-07-27"
+  years: 2020, 2021
+lastupdated: "2021-01-29"
 
 keywords: updates, additions, improvements
 
@@ -24,6 +24,14 @@ subcollection: transit-gateway
 {: #release-notes-for-ibm-cloud-load-balancer}
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
+
+## January 2021
+{: #january-2021}
+
+### Connect networks to multiple local gateways
+You can now connect networks, VPCs, and classic connections to multiple local transit gateways. Previously, you could connect a network only to a single transit gateway. Now traffic between local networks can use a local gateway. In addition, if you need to connect to a remote network, you can attach to a global gateway. Routing of traffic between networks takes an optimized path (if multiple connections exist), meaning local traffic stays local to the region and is not charged.
+
+The limit for the number of gateways per account has been updated to ten, and the limit of gateways per region to five. You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need to expand your service limits further.
 
 ## July 2020
 {: #july-2020}

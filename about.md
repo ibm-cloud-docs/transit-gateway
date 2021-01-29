@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-04-16"
+  years: 2020, 2021
+lastupdated: "2021-01-29"
 
-keywords: about, features, overview
+keywords: features, overview
 
 subcollection: transit-gateway
 
@@ -29,6 +29,8 @@ As the number of your Virtual Private Clouds (VPCs) grow, you need an easy way t
 
 With {{site.data.keyword.tg_full_notm}}, you can create a single or multiple transit gateways to connect VPCs together. You can also connect your {{site.data.keyword.cloud_notm}} classic infrastructure to a transit gateway to provide seamless communication with classic infrastructure resources. Any new network you connect to a transit gateway is then automatically made available to every other network connected to it. This makes it easy to scale your network as it grows.
 
+Transit gateways provide flexibility by allowing you to add networks to local gateways. Networks can be attached to multiple local gateways and a single global gateway, enabling you to keep local traffic on a local gateway. There is no charge for local traffic. 
+
 ## Overview of features
 {: #feature-overview}
 
@@ -45,7 +47,7 @@ With {{site.data.keyword.tg_full_notm}}, you can create a single or multiple tra
 
 * {{site.data.keyword.tg_full_notm}} is a fully redundant, fault-tolerant service with no single point of failure within these [{{site.data.keyword.cloud_notm}} Multi-Zone Regions (MZR)](/docs/transit-gateway?topic=transit-gateway-tg-locations).
 
-* {{site.data.keyword.tg_full_notm}} integrates with Identity and Access Management (IAM), letting you manage access to your transit gateway. Using IAM, you can create and manage [{{site.data.keyword.cloud_notm}} users and groups](/docs/transit-gateway?topic=transit-gateway-iam), as well as use permissions to allow or deny their access.
+* {{site.data.keyword.tg_full_notm}} integrates with Identity and Access Management (IAM), letting you manage access to your transit gateway. Using IAM, you can create and manage [{{site.data.keyword.cloud_notm}} users and groups](/docs/transit-gateway?topic=transit-gateway-iam), as well as user permissions to allow or deny their access.
 
 ### Easily connect across boundaries
 {{site.data.keyword.tg_full_notm}} easily interconnects your {{site.data.keyword.cloud_notm}} VPCs with Gen 1 and Gen 2 compute as well as classic resources across the globe. You can also interconnect VPCs across {{site.data.keyword.cloud_notm}} accounts.
@@ -57,7 +59,7 @@ With {{site.data.keyword.tg_full_notm}}, you can create a single or multiple tra
 {{site.data.keyword.tg_full_notm}} can connect to classic networks located in any MZR, regardless of the location of the transit gateway or the routing type specified.
 {: note}
 
-Here are a few ways you can implement the {{site.data.keyword.tg_full_notm}} service.
+Here are a few ways you can implement the {{site.data.keyword.tg_full_notm}} service. 
 
 ### Use case 1: Interconnect two or more VPCs in the same MZR
 
@@ -78,3 +80,13 @@ Here are a few ways you can implement the {{site.data.keyword.tg_full_notm}} ser
 ### Use case 5: Interconnect VPCs across accounts
 
 ![Connect two or more VPCs across accounts](images/TGW_UC5_Cross_Account-VPC.png "Connect two or more VPCs across IBM Cloud accounts")
+
+### Use case 6: Connect networks (VPC and classic) to multiple local gateways
+There are a few things to note about this use case:
+
+- It keeps your local traffic on a local transit gateway, which reduces latency.
+- Traffic over a local gateway is not billed.
+- Highly Available (HA) capabilities are provided, as data in VPCs C and D could be replicated in VPCs in E and F.
+- Classic infrastructure transit gateway connections are required to be in the same account as the transit gateway owner.  
+
+![Connect networks (VPC and classic) to multiple gateways](images/TGW_1.2.png "Connect networks (VPC and classic) to multiple gateways")

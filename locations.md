@@ -62,6 +62,7 @@ An MZR provides consistent cloud services across different zones, better resilie
 |-----------|----------|
 | Sydney | au-syd |
 | Tokyo  | jp-tok |
+| Osaka  | jp-osa |
 {: caption="Table 1. MZRs in Asia Pacific" caption-side="top"}
 {: #tg-asiapacific-mzr}
 {: tab-title="Asia Pacific"}
