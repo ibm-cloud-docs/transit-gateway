@@ -22,6 +22,7 @@ Transit Gateway
     viewing-gateway.md
     editing-gateway.md
     deleting-gateway.md
+    tg-vpe.md
     tgw-ha-dr.md
 
     {: .topicgroup}
@@ -29,6 +30,7 @@ Transit Gateway
         iam.md
         at-events-docs-tg.md
         data-security.md
+        manage-scc.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
@@ -37,6 +39,7 @@ Transit Gateway
     /tg-cli-plugin/tg-cli-plugin-transit-gateway-cli
     [Transit Gateway API reference](https://{DomainName}/apidocs/transit-gateway)
     tg-responsibilities.md
+    [Terraform](https://cloud.ibm.com/docs/terraform?topic=terraform-getting-started)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
