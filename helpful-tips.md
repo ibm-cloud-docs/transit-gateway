@@ -39,7 +39,7 @@ Keep in mind the following service limits while using IBM Cloud Transit Gateway.
 | Number of prefixes per connection | 15 prefixes for VPC connections, 120 prefixes for a classic connection |
 {: caption="Table 1. IBM Cloud Transit Gateway service limits" caption-side="top"}
 
-You can open an [IBM Support ticket](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need your service limits expanded.
+You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need your service limits expanded.
 {: note}
 
 ## General considerations
@@ -82,7 +82,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 
    ![Local routing](images/1-aboutLocalRoutingExample.png "Local routing"){: caption="Figure 1. Simple local routing example" caption-side="bottom"}
 
-* If you plan to use your transit gateways to connect VPCs locally and between different [MZRs](/docs/overview?topic=overview-locations#mzr-table), use local gateways for VPCs in the same MZR, and a global gateway for VPCs across MZRs. You can use the example that follows a Highly Available (HA) scenario as well. All data on VPCs A and B can be replicated to VPCs C and D. If there is an issue in the US South region, connections reroute to US East. 
+* If you plan to use your transit gateways to connect VPCs locally and between different [MZRs](/docs/overview?topic=overview-locations#mzr-table), use local gateways for VPCs in the same MZR, and a global gateway for VPCs across MZRs. You can use the example that follows a Highly Available (HA) scenario as well. All data in VPCs A and B can be replicated to VPCs C and D. If there is an issue in the US South region, connections reroute to US East. 
 
    ![Global routing](images/2-aboutLocalAndGlobalRoutingExample.png "Local and Global routing"){: caption="Figure 2. Combining local and global routng example" caption-side="bottom"}
 
