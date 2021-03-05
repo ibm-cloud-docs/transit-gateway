@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2021
+<<<<<<< Updated upstream
 lastupdated: "2021-03-04"
+=======
+lastupdated: "2021-02-21"
+>>>>>>> Stashed changes
 
 keywords: vpe
 
@@ -53,7 +57,11 @@ After creating an endpoint gateway for {{site.data.keyword.tg_short}}, follow th
 
 ### Using the VPE for VPC API
 {: #vpe-setup-api}
+<<<<<<< Updated upstream
 
+=======
+ 
+>>>>>>> Stashed changes
 After creating an endpoint gateway for the {{site.data.keyword.tg_short}} service, use the service endpoint's FQDN  `private.transit.cloud.ibm.com` in the URL to access the service. For example:
 
 ```sh
@@ -68,7 +76,11 @@ After creating an endpoint gateway for the {{site.data.keyword.tg_short}} servic
 
 ```
 private.transit.cloud.ibm.com
+<<<<<<< Updated upstream
 ```
+=======
+``` 
+>>>>>>> Stashed changes
 
 For examples of setting the service's FQDN for the specific SDK language, see [SDK API examples](/apidocs/transit-gateway?code=go#api-endpoint).  
 
@@ -84,4 +96,9 @@ export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 ```
 {: pre}
 
+<<<<<<< Updated upstream
+=======
+For more information, see [Transit Gateway resources]() and [Transit Gateway data sources]().
+
+>>>>>>> Stashed changes
 For more information, see [Transit Gateway resources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-tg-resource) and [Transit Gateway data sources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-transit-gateway-ds).
