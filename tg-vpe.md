@@ -75,8 +75,6 @@ For examples of setting the service's FQDN for the specific SDK language, see [S
 ### Using Terraform
 {: #tgw-terrform}
 
-export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
-
 If you plan to access the {{site.data.keyword.tg_short}} service using Terraform, make sure to set the `IBMCLOUD_TG_API_ENDPOINT` environment variable to `private.transit.cloud.ibm.com`. For example:
 
 ```sh
