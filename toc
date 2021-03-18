@@ -44,7 +44,6 @@ Transit Gateway
 
     {: .navgroup id="help"}
     faqs.md
-    iam.md
     verifying-connectivity.md
     getting-help.md
     {: .navgroup-end}
