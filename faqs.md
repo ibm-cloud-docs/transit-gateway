@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-03-25"
 
 keywords: faq, faqs, questions, vpc
 
@@ -59,12 +59,12 @@ You can create more than one transit gateway in your account. Each transit gatew
 
 You can connect multiple VPCs in the same region to a single transit gateway with the local routing option, and connect them across regions by using global routing. Keep in mind that all of a transit gateway's network connections are interconnected, so carefully consider all resources that you want to connect. Make sure each connection receives a unique name in the gateway, and that you choose the appropriate routing type (local or global) based on the location of the connections.
 
-## Can I connect to a VPC in another {{site.data.keyword.cloud_notm}} account?
+## Can I connect to a VPC or classic infrastructure in another {{site.data.keyword.cloud_notm}} account?
 {: #connect-vpc-in-another-account}
 {: faq}
 {: support}
 
-You can connect to a VPC in another {{site.data.keyword.cloud_notm}} account by providing the CRN of the VPC when adding a connection to your transit gateway. The account containing the VPC is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity for that VPC. For more information, see [Adding a cross-account (VPC only) connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-cross-account-connections).
+You can connect to both a VPC or classic infrastructure in another {{site.data.keyword.cloud_notm}} account by providing the appropriate connection information when adding a connection to your transit gateway. The account containing the VPC or classic infrastructure is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity for that VPC. For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-cross-account-connections).
 
 ## How many connection requests can I make from one account to VPCs in other {{site.data.keyword.cloud_notm}} accounts?
 {: #connection-requests-account-vpcs}
@@ -72,13 +72,6 @@ You can connect to a VPC in another {{site.data.keyword.cloud_notm}} account by 
 {: support}
 
 Each gateway is only permitted to have ten outstanding requests for a cross-account connection.
-
-## Can I connect a VPC with generation 1 compute and a VPC with generation 2 compute using a transit gateway?
-{: #gateways}
-{: faq}
-{: support}
-
-You can connect any two or more VPCs (Gen 1 or Gen 2) using a transit gateway.
 
 ## I connected a VPC to one transit gateway. Can I connect that VPC to a second transit gateway?
 {: #connections-two-vpcs}
@@ -94,7 +87,7 @@ You can connect a VPC to multiple local transit gateways and a single global gat
 
 You can connect a classic connection to multiple local transit gateways and a single global transit gateway. 
 
-## I can only provision a transit gateway in a certain set of locations on the provisioning page. Does that mean the VPC I want to connect must be located in one of those locations?
+## I can only provision a transit gateway in a certain set of locations on the provisioning page. Does that mean that the VPC I want to connect must be located in one of those locations?
 {: #connections-locations}
 {: faq}
 {: support}
@@ -113,9 +106,9 @@ For more information, see [Service limits](/docs/transit-gateway?topic=transit-g
 {: faq}
 {: support}
 
-Although [classic access VPCs](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) cannot be attached to a transit gateway, access to classic resources and classic-access VPC resources can be achieved by adding the classic infrastructure connection to a transit gateway. For more information, see [Classic infrastructure connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#classic-infrastructure-connection-considerations).
+Although [classic-access VPCs](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) cannot be attached to a transit gateway, access to classic resources and classic-access VPC resources can be achieved by adding the classic infrastructure connection to a transit gateway. For more information, see [Classic infrastructure connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#classic-infrastructure-connection-considerations).
 
-## How can "VPC Peering" be achieved on {{site.data.keyword.cloud_notm}}?
+## How can "VPC peering" be achieved on {{site.data.keyword.cloud_notm}}?
 {: #vpc-peering}
 {: faq}
 {: support}
@@ -127,7 +120,7 @@ Although [classic access VPCs](/docs/vpc?topic=vpc-setting-up-access-to-classic-
 {: faq}
 {: support}
 
-A VPN or direct link cannot be connected to a transit gateway today.
+Currently, a VPN or direct link cannot be connected to a transit gateway.
 
 ## Can I create a global transit network using the {{site.data.keyword.tg_full_notm}}?
 {: #global-transit}
@@ -158,15 +151,15 @@ Neither third-parties nor the internet can see your transit gateway traffic. As 
 {:faq}
 {: #vpc-encryption}
 
-IBM Cloud Transit Gateway does not perform encryption, it only provides connectivity. Encryption between VPCs is your own responsibility.
+{{site.data.keyword.tg_full_notm}} does not perform encryption; it only provides connectivity. Encryption between VPCs is your own responsibility.
 
-It is an RFC-2547 based platform the core network and network address are 100% concealed. 
+It is an RFC-2547-based platform where the core network and network address are 100% concealed. 
 
 ## What are the tools for monitoring the consumption of resources associated with the service, as well as the costs and the quality of the service?
 {:faq}
 {: #billing-usage}
 
-{{site.data.keyword.tg_full_notm}} is integrated into the [IBM Cloud usage dashboard](https://cloud.ibm.com/docs/billing-usage?topic=billing-usage-viewingusage), which provides a summary of estimated charges for all services and resources that are used per month in your organizations. This includes the number of connections and the amount of traffic flowing across your transit gateways. {{site.data.keyword.tg_full_notm}} usage is billed and reported as part of the [IBM Cloud invoice process](https://cloud.ibm.com/docs/billing-usage?topic=billing-usage-managing-invoices).
+{{site.data.keyword.tg_full_notm}} is integrated into the [IBM Cloud usage dashboard](/docs/billing-usage?topic=billing-usage-viewingusage), which provides a summary of estimated charges for all services and resources that are used per month in your organizations. This includes the number of connections and the amount of traffic flowing across your transit gateways. {{site.data.keyword.tg_full_notm}} usage is billed and reported as part of the [IBM Cloud invoice process](/docs/billing-usage?topic=billing-usage-managing-invoices).
 
 ## Are there notifications through email for events of unavailability of the service?
 {:faq}
