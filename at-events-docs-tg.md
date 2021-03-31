@@ -4,7 +4,7 @@ copyright:
   years: 2020
 lastupdated: "2020-04-16"
 
-keywords: activity tracker, LogDNA, event, security
+keywords: activity tracker, event, security
 
 subcollection: transit-gateway
 
@@ -77,7 +77,7 @@ Refer to the following information when analyzing events:
 
 * Filter for the `transit` action to see all transit gateway events in your account. Filter for `transit.connection` to see events related to your transit gateway connections.
 
-* Each event's target field identifies which transit gateway is associated with the event. 
+* Each event's target field identifies which transit gateway is associated with the event.
 
   When the gateway exists in a different account or there is no associated gateway, the target is set as `crn:v1:bluemix:public:transit:global:a/<your account ID>:::`. Events that don't correspond to a gateway will not have resource group information.
 
@@ -85,4 +85,4 @@ Refer to the following information when analyzing events:
 
 * Events that report update actions do not include information about the delta of the change.
 
-* The event's initiator field contains information about who initiated each request. In authorized cross account scenarios, `IBM` will be identified as the initiator. 
+* The event's initiator field contains information about who initiated each request. In authorized cross account scenarios, `IBM` will be identified as the initiator.
