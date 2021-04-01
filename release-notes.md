@@ -25,6 +25,14 @@ subcollection: transit-gateway
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
 
+## March 2021
+{: #march-2021}
+
+You can now connect to IBM Cloud Classic Infrastructure in another IBM Cloud account by providing the cloud account ID when adding a connection to your transit gateway. The account containing the classic infrastructure is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity.
+
+For more information see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-cross-account-connections)
+
+
 ## January 2021
 {: #january-2021}
 
@@ -39,7 +47,7 @@ The limit for the number of gateways per account has been updated to ten, and th
 ### VPC connections across IBM Cloud accounts
 You can now connect to a VPC in another IBM Cloud account by providing the CRN of the VPC when adding a connection to your transit gateway. The account containing the VPC is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity for that VPC.
 
-For more information see [Adding a cross-account (VPC only) connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-cross-account-connections)
+For more information see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-cross-account-connections)
 
 ### Open source SDKs
 Open source Software Development Kits have now been published for use with Python, Node, Go, and Java platforms.
