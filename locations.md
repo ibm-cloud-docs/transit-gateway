@@ -40,6 +40,7 @@ An MZR provides consistent cloud services across different zones, better resilie
 |-----------|----------|
 | Dallas | us-south |
 | Washington DC | us-east |
+| Toronto | ca-tor |
 {: caption="Table 1. MZRs in North and South America" caption-side="top"}
 {: #tg-americas-mzr}
 {: tab-title="Americas"}
