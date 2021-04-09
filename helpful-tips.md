@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-04-09"
 
 keywords: help, tips, connections, provision
 
@@ -67,9 +67,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 
 * Classic infrastructure resources located in these [SZRs](/docs/transit-gateway?topic=transit-gateway-tg-locations#szr-table) connect through a transit gateway to VPC resources.
 
-* When classic infrastructure is connected to a transit gateway, it also includes any "Classic Access VPCs" attached to the account, because the subnets for these VPCs are associated with the classic infrastructure VRF. This is the only way to connect a transit gateway to a Classic Access VPC: by connecting the entire classic infrastructure to the transit gateway (instead of the specific Classic Access VPCs).
-
-* The classic connection can be connected to only one transit gateway in your account.
+* When classic infrastructure is connected to a transit gateway, it also includes any "Classic Access VPCs" attached to the account, because the subnets for these VPCs are associated with the classic infrastructure VRF. This is the only way to connect a transit gateway to a Classic Access VPC: by connecting the entire classic infrastructure to the transit gateway (instead of the specific Classic Access VPCs). 
 
 ## VPC connection consideration
 
