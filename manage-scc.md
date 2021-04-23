@@ -41,4 +41,3 @@ To start monitoring your resources, check out [Getting started with {{site.data.
 
 * *Ensure at the account-level that no cross-account approvals can be done via {{site.data.keyword.tg_full}}*
 * *Ensure at the account-level that no cross-account requests can be made via {{site.data.keyword.tg_full}}*
-* *Ensure at the gateway-level that no cross-account requests can be made via {{site.data.keyword.tg_full}}*
