@@ -30,8 +30,9 @@ With the {{site.data.keyword.compliance_short}}, you can monitor for controls an
 
 As a security or compliance focal, you can use the {{site.data.keyword.tg_full_notm}} [goals](x2117978){: term} to help ensure that your organization is adhering to the external and internal standards for your industry. By using the {{site.data.keyword.compliance_short}} to validate the resource configurations in your account against a [profile](x2034950){: term}, you can identity potential issues as they arise.
 
-All of the goals for {{site.data.keyword.tg_full_notm}} are added to the {{site.data.keyword.cloud_notm}} Best Practices Controls 1.0 profile but can also be mapped to other profiles.
-{: note}
+* All of the goals for {{site.data.keyword.tg_full_notm}} are added to the {{site.data.keyword.cloud_notm}} Best Practices Controls 1.0 profile, but can also be mapped to other profiles. 
+
+* Ensure at the account-level that no cross-account requests are made via {site.data.keyword.tg_full_notm}}.
 
 To start monitoring your resources, check out [Getting started with {{site.data.keyword.compliance_short}}](https://cloud.ibm.com/docs/security-compliance?topic-security-compliance-getting-started).
 
@@ -53,5 +54,3 @@ As a security or compliance focal, you can use the {{site.data.keyword.complianc
 {: caption="Table 1. Rule properties for {{site.data.keyword.tg_full}}" caption-side="top"}
 
 To learn more about config rules, see [What is a config rule?](/docs/security-compliance?topic=security-compliance-what-is-rule).
-
-* Ensure at the account-level that no cross-account approvals can be done via {{site.data.keyword.tg_full}}.
