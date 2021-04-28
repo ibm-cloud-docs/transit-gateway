@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-04-28"
 
 keywords: features, overview
 
@@ -21,7 +21,7 @@ subcollection: transit-gateway
 {:download: .download}
 {:term: .term}
 
-# About IBM Cloud Transit Gateway
+# About {{site.data.keyword.tg_full_notm}}
 {: #about}
 
 As the number of your Virtual Private Clouds (VPCs) grow, you need an easy way to manage the interconnection between these resources across multiple regions. {{site.data.keyword.tg_full}} is designed specifically for this purpose.
@@ -29,7 +29,7 @@ As the number of your Virtual Private Clouds (VPCs) grow, you need an easy way t
 
 With {{site.data.keyword.tg_full_notm}}, you can create single or multiple transit gateways to connect VPCs together. You can also connect your {{site.data.keyword.cloud_notm}} classic infrastructure to a transit gateway to provide seamless communication with classic infrastructure resources. Any new network that you connect to a transit gateway is then automatically made available to every other network connected to it. This makes it easy to scale your network as it grows.
 
-Transit gateways provide flexibility by allowing you to add networks to local gateways. Networks can be attached to multiple local gateways and a single global gateway, enabling you to keep local traffic on a local gateway. There is no charge for local traffic. 
+Transit gateways provide flexibility by allowing you to add networks to local gateways. Networks can be attached to multiple local gateways and a single global gateway, enabling you to keep local traffic on a local gateway. There is no charge for local traffic.
 
 ## Overview of features
 {: #feature-overview}
@@ -59,7 +59,7 @@ Transit gateways provide flexibility by allowing you to add networks to local ga
 {{site.data.keyword.tg_full_notm}} can connect to classic networks located in any MZR, regardless of the location of the transit gateway or the routing type specified.
 {: note}
 
-Here are some ways that you can implement the {{site.data.keyword.tg_full_notm}} service. 
+Here are some ways that you can implement the {{site.data.keyword.tg_full_notm}} service.
 
 ### Use case 1: Interconnect two or more VPCs in the same MZR
 
@@ -92,5 +92,7 @@ There are a few things to note about this use case:
 ![Connect networks (VPC and classic) to multiple gateways](images/TGW_1.2.png "Connect networks (VPC and classic) to multiple gateways")
 
 ### Use case 7: Interconnect networks (VPC and classic) across accounts
+
+Connect cross-account {{site.data.keyword.cloud_notm}} classic accounts to one or more transit gateways. To do so, the {{site.data.keyword.cloud_notm}} account that owns the transit gateway requests permission from the {{site.data.keyword.cloud_notm}} classic account to connect it to the transit gateway. The {{site.data.keyword.cloud_notm}} classic account must approve the request before the connection is made. You can repeat this process for multiple {{site.data.keyword.cloud_notm}} classic account connections as shown.
 
 ![Connect both VPC and classic across accounts](images/TGW_xac.png "Connect both VPCs and classic across IBM Cloud accounts")
