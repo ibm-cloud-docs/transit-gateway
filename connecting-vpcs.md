@@ -66,10 +66,10 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
   You can add the following connection types to your gateway:
 
-   * **VPC** networks can contain either first or second generation compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
+   * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
    * **Classic Infrastructure** networks allow you to connect to IBM Cloud classic resources. Only one classic infrastructure connection is allowed per account.
 
-  All subnets of the VPC or classic network will be connected to the transit gateway. To ensure successful connectivity between VPCs, when creating VPCs that are intended to be interconnected using a transit gateway, make sure to create the VPCs with non-overlapping prefixes and unique subnets. To ensure successful connectivity with the classic infrastructure, do not use IP addresses for your VPCs in the `10.0.0.0/14`, `10.200.0.0/14`, `10.198.0.0/15`, and `10.254.0.0/16` blocks.
+  Once added, all prefixes of a VPC and all subnets of a classic network will be connected to the transit gateway. To ensure successful connectivity between VPCs, when creating VPCs that are intended to be interconnected using a transit gateway, make sure to create the VPCs with non-overlapping VPC prefixes. To ensure successful connectivity with the classic infrastructure, do not use prefixes in your VPCs that overlap with the `10.0.0.0/14`, `10.200.0.0/14`, `10.198.0.0/15`, and `10.254.0.0/16` blocks. Also, don't use addresses from your classic infrastructure subnets. To view a list of your classic infrastructure subnets, see [View all subnets](/docs/subnets?topic=subnets-view-all-subnets).
   {: important}
 
 8. **View Terms** on the right of the page.

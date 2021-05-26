@@ -33,8 +33,8 @@
        "connect any two or more VPCs using a transit gateway",
        "connecting 2 VPCs with transit gateway",
        "connect multiple VPCs with transit gateway",
-       "connecting multiple Gen 1 VPCs to a transit gateway",
-       "connect a VPC with generation 1 compute and a VPC with generation 2 compute using a transit gateway" 
+       "connecting multiple VPCs to a transit gateway",
+       "connect a classic VPC with compute and a VPC compute using a transit gateway"
      ],
     "connections-two-vpcs": [
       "connect a VPC to a second transit gateway",
@@ -78,7 +78,7 @@
       "peering multiple VPCs together",
       "standalone VPC peering"
      ],
-    "vpn": [     
+    "vpn": [
       "connect a VPN to transit gateway",
       "connect direct link to transit gateway",
       "transit gateway and VPN connection",
@@ -86,49 +86,49 @@
       "add a VPN to tansit gateway",
       "add direct link connection to tansit gateway"
      ],
-    "global-transit": [   
+    "global-transit": [
       "create a global transit network using the IBM Cloud Transit Gateway",
       "create a global transit network with Transit Gateway",
       "Transit Gateway enable standard IP routing between networks",
       "make a global transit network with transit gateway",
       "make global transit network using transit gateways"
      ],
-    "client-impact": [       
+    "client-impact": [
       "one of my clients is not going to impact the others on transit gateway",
       "monitor capacity on the transit gateway",
       "how is capactity managed in transit gateway",
       "what happens when transit gateway reaches 50% load",
       "over 50% load in transit gateway"
     ],
-    "max-vpc": [            
+    "max-vpc": [
       "maximum number of VPC connections allowed for a transit gateway",
       "max number of VPC connections in a transit gateway",
       "maximum for VPC connections in a transit gateway",
       "connections does a transit gateway support for VPC",
       "max connections a transit gateway supports for VPC"
     ],
-    "scalability": [     
+    "scalability": [
       "scalability options do I have for my transit gateway",
       "can I scale transit gateway",
       "does transit gateway scale",
       "scaling options for transit gateway",
       "transit gateway scalability"
      ],
-    "ddos": [     
+    "ddos": [
       "prevent Distributed Denial of Service attacks in transit gateway",
       "DDOS attacks occur in a transit gateway",
       "safe from ddos attacks in transit gateway",
       "restrict DDOS attacks in a transit gateway",
       "transit gateway and DDOS"
     ],
-    "ha-fo": [  
+    "ha-fo": [
       "high availability and failover mechanisms in place for transit gateway",
       "high availability for transit gateway",
       "transit gateway handle high availability",
       "HA for transit gateway handled",
       "disaster recovery for transit gateway"
     ],
-    "vpc-encryption": [     
+    "vpc-encryption": [
       "transit gateway handle encryption for connectivity between VPCs",
       "is encryption included for transit gateway",
       "encryption between VPCs in transit gateway",
@@ -141,33 +141,14 @@
       "see the costs for transit gateway",
       "view the estimated charges for tansit gateway",
       "transit gateway's usage costs",
-       "charges accumulated for transit gateway"        
+       "charges accumulated for transit gateway"
      ],
-    "service-unavailability-notifications": [     
+    "service-unavailability-notifications": [
       "email notifications for transit gateway availability",
       "notifications for transit gateway",
       "set up notification for transit gateway",
       "transit gateway notification if service down",
       "email availability for transity gateway",
       "email announcements for transit gateway"
-      ]      
-}  
-    
-    
-    
-
-
-
-    
-    
-    
-
-
-
-
-    
-    
-
-       
-
-    
+      ]
+}
