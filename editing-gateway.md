@@ -63,18 +63,16 @@ To connect networks owned by different accounts, follow these steps:
 1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
 1. Click **Transit Gateway** from the left navigation pane.
 1. Click the name of the transit gateway where you want to add a connection and click **Add connection**.
-1. In the Add connection pane, select **Request connection to a network in another account**.
-1. Type the VPC CRN of the cross-account network, or in the case of classic infrastucture, enter the IBM Cloud account ID that you want to connect to.
+1. Choose your network connection type, either VPC or Classic infrastructure, then select **Request connection to a network in another account**.
+1. Type the VPC CRN of the cross-account network, or in the case of classic infrastructure, enter the IBM Cloud account ID that you want to connect to.
 
   To get the CRN of a VPC, from the {{site.data.keyword.cloud_notm}} console, select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, and then click **Resource list**. Expand **VPC Infrastructure** to list your VPCs. Select a VPC and click **Status** to view its details. Copy the CRN and paste it into the Add connection pane.
 
-  To get the IBM Cloud account ID, from the {{site.data.keyword.cloud_notm}} console, select **Manage > Account** and choose **Account Settings**. Your account ID shows in the **Account** section of the **Account settings** page.  
+  To get the IBM Cloud account ID for a classic infrastructure connection, from the {{site.data.keyword.cloud_notm}} console, select **Manage > Account** and choose **Account Settings**. Your account ID shows in the **Account** section of the **Account settings** page.  
 
 1. Type the name of the network connection, then click **Add**. The first screen capture shows adding a VPC connection, the second screen shows adding a classic infrastructure connection.
 
    ![Add VPC cross account connection](images/addCrossAcctConnection.png "Adding cross-account connection - VPC")
-
-   ![Add classic infrastructure cross-account connection](images/addCrossAcctClassic.png "Adding cross-account connection - Classic infrastructure")
 
    The network connection now shows the **Pending** approval status in the gateway owner's account.
 
@@ -84,6 +82,7 @@ To connect networks owned by different accounts, follow these steps:
    {: note}
 
 1. A user with the [necessary IAM permissions](/docs/transit-gateway?topic=transit-gateway-iam) in the network owner's account can see the gateway and the details of all other connections attached to it in **View only** mode. From the network owner's account, go to the Transit Gateway page and click the gateway name in the table.
+
 1. In the Connections section, see **Action required** to view the incoming network connection request. A user with the [necessary additional IAM permissions](/docs/transit-gateway?topic=transit-gateway-iam) can then click **Approve** to approve the request.
 
   After the network owner's account ensures that the connection request is from a legitimate source and approves it, the system establishes routes to and from all other networks connected to the same transit gateway. Use of [network ACLs and/or security groups](/docs/vpc?topic=vpc-security-in-your-vpc#security-in-your-vpc) within networks that are accessible across accounts are highly recommended to control the network traffic flows. You can unilaterally detach cross-account connections by either account through users who have the appropriate permissions.
@@ -98,8 +97,6 @@ To connect networks owned by different accounts, follow these steps:
   The status of the network connection indicates **Attaching**.
 
 1. When you change back to the original account, the status of the connection changes to **Attached**, indicating that the network request was approved.
-
-  ![Attached cross-account connection](images/attachedCrossAcctConnection.png "Attached cross-account connection")
 
   The gateway owner's account (or the network owner's account) can delete the connection. If the network owner deletes the connection, the gateway owner sees the connection status as **Detached**.
   {: note}
@@ -138,8 +135,6 @@ To delete a connection from a transit gateway, follow these steps:
 
 1. From the Connections page, click the Options menu icon ![Options icon](../../icons/actions-icon-vertical.svg) next to the connection that you want to delete and select **Delete**.
 
-   ![Delete connections with the Options menu](images/deleteConnection.png "Delete connections with the Options menu")
-
 ## Changing your configuration
 {: #change-configuration}
 
@@ -153,11 +148,11 @@ To change your transit gateway configuration, follow these steps:
   If you are in the expanded view, click **View details**.
   {: tip}
 
-1. Click **Edit**.
+1. From the Connections page, click the Options menu icon ![Options icon](../../icons/actions-icon-vertical.svg) next to the connection that you want to edit and select **Edit**.
 
    From here, you can change the gateway's name and its routing type (Local or Global).
 
-   To change a transit gateway's routing type from Global to Local, you must delete any connections that are not local to the transit gateway's location.
+   To change a transit gateway's routing type from global to local, you must delete any connections that are not local to the transit gateway's location.
 {: tip}
 
    When changing from Local to Global routing for a given transit gateway, you are charged for all associated connection traffic.
