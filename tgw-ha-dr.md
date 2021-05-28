@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-04-16"
+  years: 2020, 2021
+lastupdated: "2021-05-20"
 
 keywords: connecting, region, order, ha, recovery, disaster
 
@@ -36,6 +36,8 @@ You are responsible for understanding your configuration, customization, and usa
 {{site.data.keyword.cloud_notm}} supports high availability with no single point of failure. The service achieves high availability automatically and transparently by means of the multi-zone region ([MZR](/docs/overview?topic=overview-locations#mzr-table)) feature provided by {{site.data.keyword.cloud_notm}}.
 
 When you create a transit gateway instance in a particular region, the system automatically enables multiple zones which do not share a single point of failure.
+
+Transit gateway GRE connections require the gateway owner to configure HA to meet their specific needs. When configuring a GRE connection on a transit gateway, you must specify the availability zone. For a more robust solution, configure multiple connections using different availability zones. 
 
 ## Disaster recovery
 {: #disaster-recovery}
