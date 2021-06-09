@@ -33,12 +33,19 @@ subcollection: transit-gateway
 
 | Role | Description of Actions |  Actions |
 |---|---|---|
-| Administrator | Can perform all actions, including managing gateways and connections, and assign {{site.data.keyword.tg_full_notm}} IAM access policies to other users. | <ul><li>Create gateways</li><li>Delete gateways</li><li>Edit gateways</li><li>Add or remove gateway connections &#10045; </li><li>Accept or reject a cross account connection request &#10045; </li><li>Edit gateway connections</li><li>Update user access policies for the service |                     |
-| Editor | Can perform all actions, including managing gateways and connections, but cannot assign {{site.data.keyword.tg_full_notm}} IAM access policies to other users. |<ul><li>Create gateways</li><li>Delete gateways</li><li>Edit gateways</li><li>Add or remove gateway connections &#10045; </li><li>Accept or reject a cross account connection request &#10045; </li><li>Edit gateway connections |
+<<<<<<< Updated upstream
+| Administrator | Can perform all actions, including managing gateways and connections, and assign {{site.data.keyword.tg_full_notm}} IAM access policies to other users. | <ul><li>Create gateways</li><li>Delete gateways</li><li>Edit gateways</li><li>Add or remove gateway connections &#10045; </li><li>Accept or reject a cross account connection request &#10045; </li><li>Edit gateway connections</li><li>Update user access policies for the service</li></ul> |                     |
+| Editor | Can perform all actions, including managing gateways and connections, but cannot assign {{site.data.keyword.tg_full_notm}} IAM access policies to other users. |<ul><li>Create gateways</li><li>Delete gateways</li><li>Edit gateways</li><li>Add or remove gateway connections &#10045; </li><li>Accept or reject a cross account connection request &#10045; </li><li>Edit gateway connections</li></ul> |
 | Operator and Viewer | Can only perform actions that don't change the state of resources. |<ul><li>List gateways</li><li>Get gateways</li><li>List a gateway's connections</li><li>View a gateway's connections</li><li>View incoming connection requests &#10045; </li></ul>|
+=======
+| Administrator | Can perform all actions, including managing gateways and connections, and assign {{site.data.keyword.tg_full_notm}} IAM access policies to other users. | <ul><li>Create gateways</li><li>Delete gateways</li><li>Edit gateways</li><li>Add or remove gateway connections </li><li>Accept or reject a cross account connection request </li><li>Edit gateway connections</li><li>Update user access policies for the service |                     |
+| Editor | Can perform all actions, including managing gateways and connections, but cannot assign {{site.data.keyword.tg_full_notm}} IAM access policies to other users. |<ul><li>Create gateways</li><li>Delete gateways</li><li>Edit gateways</li><li>Add or remove gateway connections </li><li>Accept or reject a cross account connection request </li><li>Edit gateway connections |
+| Operator and Viewer | Can only perform actions that don't change the state of resources. |<ul><li>List gateways</li><li>Get gateways</li><li>List a gateway's connections</li><li>View a gateway's connections</li><li>View incoming connection requests </li></ul>|
+>>>>>>> Stashed changes
 {: caption="Table 1. IAM platform-access user roles and actions" caption-side="top"}
 
-&#10045; To add or remove connections to VPCs, or to accept or reject a cross account connection request, the user must also have Administrator or Editor platform-access role permissions to the VPC being connected to. See [VPC: Getting started with IAM](/docs/vpc?topic=vpc-iam-getting-started) for more information.
+To add or remove connections to VPCs, or to accept or reject a cross account connection request, the user must also have Administrator or Editor platform-access role permissions to the VPC being connected to. See [VPC: Getting started with IAM](/docs/vpc?topic=vpc-iam-getting-started) for more information.
+{: note}
 
 ## Service name
 {: #transit-service-name}
