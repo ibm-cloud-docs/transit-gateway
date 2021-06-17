@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-09"
+lastupdated: "2021-06-17"
 
 keywords: help, tips, connections, provision
 
@@ -67,7 +67,17 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 
 * Classic infrastructure resources located in these [SZRs](/docs/transit-gateway?topic=transit-gateway-tg-locations#szr-table) connect through a transit gateway to VPC resources.
 
-* When classic infrastructure is connected to a transit gateway, it also includes any "Classic Access VPCs" attached to the account, because the subnets for these VPCs are associated with the classic infrastructure VRF. This is the only way to connect a transit gateway to a Classic Access VPC: by connecting the entire classic infrastructure to the transit gateway (instead of the specific Classic Access VPCs). 
+* When classic infrastructure is connected to a transit gateway, it also includes any "Classic Access VPCs" attached to the account, because the subnets for these VPCs are associated with the classic infrastructure VRF. This is the only way to connect a transit gateway to a Classic Access VPC: by connecting the entire classic infrastructure to the transit gateway (instead of the specific Classic Access VPCs).
+
+## Generic Routing Encapsulation (GRE) connection considerations
+{: #gre-considerations}
+
+The use of GRE tunnels is restricted to IBM-approved use cases only. [Create a support case](/docs/get-support?topic=get-support-open-case) to discuss and get approval for your specific use case.
+{: important}
+
+When configuring a GRE tunnel, you must specify an availability zone in which to create the tunnel. Because of this, if for some reason that zone becomes unavailable, any network connected through a GRE tunnel on that zone is unreachable. To configure a highly available GRE tunnel, you must create a GRE tunnel in multiple zones, connecting the same endpoints.
+
+For more information and a use case example, refer to [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).
 
 ## VPC connection consideration
 

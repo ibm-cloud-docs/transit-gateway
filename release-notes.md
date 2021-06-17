@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-06-17"
 
 keywords: updates, additions, improvements
 
@@ -24,6 +24,15 @@ subcollection: transit-gateway
 {: #release-notes-for-ibm-cloud-load-balancer}
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
+
+## June 2021
+{: #june-2021}
+
+### Allow Generic Routing Encapsulation (GRE) connections on Transit Gateway
+Transit gateway now supports connections using GRE tunnels to connect endpoints. A GRE tunnel connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. 
+
+The use of GRE tunnels is restricted to approved use cases only. Before implementing a GRE tunnel connection, [create a support case](/docs/get-support?topic=get-support-open-case) to discuss and get approval for your specific situation.
+{: important}
 
 ## March 2021
 {: #march-2021}

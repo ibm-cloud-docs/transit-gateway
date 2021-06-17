@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-17"
 keywords: features, overview
 
 subcollection: transit-gateway
@@ -52,9 +52,9 @@ Transit gateways provide flexibility by allowing you to add networks to local ga
 ### Easily connect across boundaries
 {: #boundaries}
 
-{{site.data.keyword.tg_full_notm}} interconnects your {{site.data.keyword.cloud_notm}} VPCs with compute as well as classic resources across the globe. You can also interconnect VPCs and classic resources across {{site.data.keyword.cloud_notm}} accounts. 
+{{site.data.keyword.tg_full_notm}} interconnects your {{site.data.keyword.cloud_notm}} VPCs with compute as well as classic resources across the globe. You can also interconnect VPCs and classic resources across {{site.data.keyword.cloud_notm}} accounts.
 
-{{site.data.keyword.tg_full_notm}} also supports using Generic Routing Encapsulation (GRE) tunnels to connect endpoints. The GRE tunnel connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources in unique use cases. 
+{{site.data.keyword.tg_full_notm}} also supports using Generic Routing Encapsulation (GRE) tunnels to connect endpoints. The GRE tunnel connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources in unique use cases.
 
    Use of GRE tunnels is restricted to approved use cases. Before implementing a GRE tunnel connection, [create a support case](/docs/get-support?topic=get-support-open-case) to discuss your use case and get IBM approval.
    {: important}
@@ -72,28 +72,28 @@ Here are some ways that you can implement the {{site.data.keyword.tg_full_notm}}
 ### Use case 1: Interconnect two or more VPCs in the same MZR
 {: #use-case-1}
 
-Connect two VPCs in the same region with a local transit gateway. 
+Connect two VPCs in the same region with a local transit gateway.
 
 ![Connect two or more VPCs in the same MZR](images/TGW_SameRegion.png "Connect two or more VPCs in the same MZR")
 
 ### Use case 2: Interconnect two or more VPCs across multiple MZRs
 {: #use-case-2}
 
-Connect VPCs in multiple regions using a global transit gateway. 
+Connect VPCs in multiple regions using a global transit gateway.
 
 ![Connect two or more VPCs across multiple MZRs](images/TGW_Multi-Multi.png "Connect two or more VPCs across multiple MZRs")
 
 ### Use case 3: Interconnect one or more VPCs in the same MZR and an IBM classic network
 {: #use-case-3}
 
-Connect VPCs in the same region with {{site.data.keyword.cloud_notm}} classic through a local transit gateway. 
+Connect VPCs in the same region with {{site.data.keyword.cloud_notm}} classic through a local transit gateway.
 
 ![Connect to the IBM classic network and one or more VPCs in the same MZR](images/TGW_Classic.png "Connect an IBM classic network and one or more VPCs in the same MZR")
 
 ### Use case 4: Interconnect VPCs and an IBM classic network to access all your resources across all MZRs
 {: #use-case-4}
 
-Connect VPCs from multiple regions with {{site.data.keyword.cloud_notm}} classic through a global transit gateway. 
+Connect VPCs from multiple regions with {{site.data.keyword.cloud_notm}} classic through a global transit gateway.
 
 ![Connect to the IBM classic network and VPCs to access all your resources across all MZRs](images/twg_use_4.png "Connect an IBM classic network and VPCs to access all your resources across all MZRs")
 
@@ -126,10 +126,10 @@ Connect cross-account {{site.data.keyword.cloud_notm}} classic accounts to one o
 ### Use case 8: Connect networks using a High Availability GRE tunnel
 {: #use-case-8}
 
-Connect {{site.data.keyword.cloud_notm}} classic infrastructure using a GRE Tunnel to a local transit gateway.
+Connect {{site.data.keyword.cloud_notm}} classic infrastructure using a GRE tunnel to a local transit gateway.
 
 The use of GRE tunnels is restricted to IBM-approved use cases only. [Create a support case](/docs/get-support?topic=get-support-open-case) to discuss and get approval for your specific use case.
-{: important} 
+{: important}
 
 This diagram shows a highly available GRE tunnel configuration. When setting up a GRE tunnel configuration, an availability zone must be specified. To make this highly available, you must set up two GRE tunnels with the same endpoints, but using different availability zones.
 
