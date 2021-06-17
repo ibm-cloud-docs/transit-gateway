@@ -36,4 +36,11 @@ To add a connection to a transit gateway, follow these steps:
 
 1. Click **Add connection**.
 1. Choose and configure the specific network connections that you want to add to your transit gateway.
+
+  Choices include:
+
+  * **Classic infrastructure** - Allows you to connect to IBM Cloud classic resources.
+  * **VPC** - Allows you to connect to your account's VPC resources, or VPC resources from other accounts as well.
+  * **GRE tunnel** - Allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources in approved use cases. For prerequisites and detailed instructions, see [Creating a Generic Routing Encapsulation (GRE) tunnel connection](/docs/transit-gateway?topic=transit-gateway-GRE-connection).
+
 1. Click **Add**.
