@@ -25,9 +25,6 @@ subcollection: transit-gateway
 
 {{site.data.keyword.cloud}} Virtual Private Endpoint (VPE) for VPC enables you to connect to supported {{site.data.keyword.cloud_notm}} services from your VPC network by using IP addresses of your choosing, allocated from a subnet within your VPC.
 
-Currently, VPE support for {{site.data.keyword.tg_full_notm}} is available only in the Dallas (DAL) and Washington DC (WDC) regions.
-{: important}
-
 ## Setting up a VPE gateway for the {{site.data.keyword.tg_short}} service
 {: #vpe-setup}
 
