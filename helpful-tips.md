@@ -48,7 +48,7 @@ You can open an [IBM Support case](/docs/get-support?topic=get-support-using-ava
 All prefixes of a VPC and all subnets of a classic network will connect to the transit gateway, so it's important that they do not overlap. When creating VPCs that are intended to connect to a transit gateway, make sure to create the VPCs with non-overlapping VPC prefixes.
 {: important}
 
-* {{site.data.keyword.tg_full_notm}} supports provisioning transit gateways in the following regions: `us-south`, `us-east`, `eu-de`, `eu-gb`, `au-syd`, `jp-tok` and `jp-osa`.
+* {{site.data.keyword.tg_full_notm}} supports provisioning transit gateways in the following regions: `us-south`, `us-east`, `ca-tor`, `eu-de`, `eu-gb`, `au-syd`, `jp-tok` and `jp-osa`.
 * Create your transit gateway in a location that makes sense for your workload. For example, if you are connecting two VPCs in the `us-south` (Dallas) region and one VPC in the `eu-de` (Frankfurt) region, creating your gateway in `us-south` region would be the most efficient for your workload.
 * You cannot connect a [classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) directly to a transit gateway. To connect the classic resources, use the {{site.data.keyword.cloud_notm}} classic infrastructure connection, and then all the resources in your classic access VPC are automatically connected.  
 * You can connect a VPC or classic infrastructure to multiple local gateways and a single global gateway.
