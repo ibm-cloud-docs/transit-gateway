@@ -1,0 +1,51 @@
+{
+    "title": "Transit Gateway docs",
+    "lastupdated": "2021-07-08",
+    "introduction": " With IBM Cloud Transit Gateway, organizations can define and control communication between resources on the IBM Cloud network, providing dynamic scalability, high availability, and private, in-transit data between IBM Cloud data centers.",
+      "api": "/apidocs/transit-gateway", 
+      "cli": "/docs/transit-gateway?topic=tg-cli-plugin-transit-gateway-cli", 
+      "terraform": "https://cloud.ibm.com/docs/terraform?topic=terraform-getting-started",
+    "section_recommended": [
+      {
+        "title": "Getting started with IBM Cloud Transit Gateway",
+        "description": "Use IBM Cloud Transit Gateway to interconnect IBM Cloud classic and Virtual Private Cloud (VPC) infrastructures worldwide, keeping traffic within the IBM Cloud network.",
+        "href": "/docs/transit-gateway?topic=transit-gateway-getting-started"
+      },
+      {
+        "title": "Planning for IBM Cloud Transit Gateway",
+        "description": "Review these considerations before ordering your IBM Cloud® Transit Gateway.",
+        "href": "/docs/transit-gateway?topic=transit-gateway-helpful-tips"
+      },
+      {
+        "title": "Ordering IBM Cloud Transit Gateway",
+        "description": "Order a transit gateway using these instructions.",
+        "href": "/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway"
+      }
+    ],
+    "section_learn": {
+      "developer": "https://developer.ibm.com/depmodels/cloud/",
+      "architecture": "https://www.ibm.com/cloud/architecture",
+      "training": "https://www.ibm.com/training/cloud",
+      "community": "https://community.ibm.com/community/user/publiccloud/home"
+    },
+    "section_updates": {
+      "view_more": "/docs/transit-gateway?topic=transit-gateway-release-notes-for-ibm-cloud-load-balancer",
+      "tiles": [
+        {
+          "date": "March 2021",
+          "title": "Classic infrastructure connections across IBM Cloud accounts",
+          "description": "You can now connect to IBM Cloud® classic infrastructure in another IBM Cloud account by providing the cloud account ID when adding a connection to your transit gateway. The account containing the classic infrastructure is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity."
+        },
+        {
+          "date": "January 2021",
+          "title": "Connect networks to multiple local gateways",
+          "description": "You can now connect networks, VPCs, and classic connections to multiple local transit gateways. Previously, you could connect a network only to a single transit gateway. Now traffic between local networks can use a local gateway. In addition, if you need to connect to a remote network, you can attach to a global gateway. Routing of traffic between networks takes an optimized path (if multiple connections exist), meaning local traffic stays local to the region and is not charged."
+        },
+        {
+          "date": "July 2020",
+          "title": "VPC connections across IBM Cloud accounts",
+          "description": "You can now connect to a VPC in another IBM Cloud account by providing the CRN of the VPC when adding a connection to your transit gateway. The account containing the VPC is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity for that VPC."
+        }
+      ]
+    }
+  }

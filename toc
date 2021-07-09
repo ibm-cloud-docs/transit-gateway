@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="transit-gateway" category="network_interconnectivity" audience="service" href="/docs/transit-gateway?topic=transit-gateway-getting-started" console-page="/interconnectivity" product-page="https://www.ibm.com/cloud/transit-gateway" path="transit-gateway"}
+{: .toc subcollection="transit-gateway" category="network_interconnectivity" audience="service" href="/docs/transit-gateway" console-page="/interconnectivity" product-page="https://www.ibm.com/cloud/transit-gateway" path="transit-gateway"}
 Transit Gateway
 
     {: .navgroup id="learn"}
