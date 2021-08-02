@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-29"
+lastupdated: "2021-06-17"
 
-keywords: editing, managing, manage, edit, add, connection
+keywords: features, overview
 
 subcollection: transit-gateway
 
@@ -17,11 +17,10 @@ subcollection: transit-gateway
 {:screen: .screen}
 {:tip: .tip}
 {:note: .note}
-{:beta: .beta}
 {:important: .important}
 {:download: .download}
-{:external: target="_blank" .external}
 {:term: .term}
+{:beta: .beta}
 
 # Adding a connection
 {: #adding-connections}
