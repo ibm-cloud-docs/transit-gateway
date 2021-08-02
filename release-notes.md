@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-17"
+lastupdated: "2021-07-20"
 
 keywords: updates, additions, improvements
 
@@ -13,6 +13,7 @@ subcollection: transit-gateway
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank_"}
 {:codeblock: .codeblock}
+{:beta: .beta}
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
@@ -21,15 +22,24 @@ subcollection: transit-gateway
 {:important: .important}
 
 # Release notes for IBM Cloud Transit Gateway
-{: #release-notes-for-ibm-cloud-load-balancer}
+{: #release-notes}
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
+
+## 2 August 2021
+{: #july-2021}
+
+### Allow Direct Link (2.0) connections for transit gateways (Beta)  
+Transit gateways now support Direct Link (2.0) connections. A Direct Link connection allows an on-premises network to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway.
+
+   This is a Beta feature that requires special approval. The use of this functionality should not be for production workloads. If you are interested in participating in this Beta, you can either open a Sev 4 support case and request access or contact your IBM Sales representative.
+   {: beta}
 
 ## June 2021
 {: #june-2021}
 
-### Allow Generic Routing Encapsulation (GRE) connections on Transit Gateway
-Transit gateway now supports connections using GRE tunnels to connect endpoints. A GRE tunnel connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. 
+### Allow Generic Routing Encapsulation (GRE) connections for transit gateways
+Transit gateways now support connections using GRE tunnels to connect endpoints. A GRE tunnel connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources.
 
 The use of GRE tunnels is restricted to approved use cases only. Before implementing a GRE tunnel connection, [create a support case](/docs/get-support?topic=get-support-open-case) to discuss and get approval for your specific situation.
 {: important}

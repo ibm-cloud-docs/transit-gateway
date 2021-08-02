@@ -19,6 +19,7 @@ subcollection: transit-gateway
 {:important: .important}
 {:download: .download}
 {:term: .term}
+{:beta: .beta}
 
 # About {{site.data.keyword.tg_full_notm}}
 {: #about}
@@ -58,6 +59,14 @@ Transit gateways provide flexibility by allowing you to add networks to local ga
 
    Use of GRE tunnels is restricted to approved use cases. Before implementing a GRE tunnel connection, [create a support case](/docs/get-support?topic=get-support-open-case) to discuss your use case and get IBM approval.
    {: important}
+
+### Direct Link 2.0 connectivity
+{: #directlink }
+
+This is a Beta feature that requires special approval. The use of this functionality should not be for production workloads. If you are interested in participating in this Beta, you can either open a Sev 4 support case and request access or contact your IBM Sales representative.
+{: beta}
+
+{{site.data.keyword.tg_full_notm}} supports Direct Link connections. Connecting Direct Link to your {{site.data.keyword.tg_full_notm}} on-premises network grants access to all networks connected on the transit gateway. Similarily all other connections on the transit gateway will have access to your on-premises network. As with other network connections to the {{site.data.keyword.tg_full_notm}}, special consideration must be taken to avoid IP overlap issues. Refer to [thiis section](https://test.cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-troubleshooting#overlapping-vpc-prefixes-and-classic-subnets) for more information.
 
 ## Interconnectivity patterns
 {: #patterns}
@@ -134,3 +143,16 @@ The use of GRE tunnels is restricted to IBM-approved use cases only. [Create a s
 This diagram shows a highly available GRE tunnel configuration. When setting up a GRE tunnel configuration, an availability zone must be specified. To make this highly available, you must set up two GRE tunnels with the same endpoints, but using different availability zones.
 
 ![Connect using a GRE tunnel](images/HA-GRE.png "Connect using a High Availability GRE tunnel")
+
+### Use case 9: Connect on-premises network using Direct Link 2.0
+{: #use-case-9}
+
+This is a Beta feature that requires special approval. The use of this functionality should not be for production workloads. If you are interested in participating in this Beta, you can either open a Sev 4 support case and request access or contact your IBM Sales representative.
+{: beta}
+
+Connect {{site.data.keyword.cloud_notm}} Direct Link 2.0 to allow on-premises connectivity to {{site.data.keyword.cloud_notm}} networks through a transit gateway. This allows the on-premises network to access all networks connected the transit gateway. In the following example, the Direct Link gateway connects to a global transit gateway, along with 4 VPCs and {{site.data.keyword.cloud_notm}} Classic Infrastructure. The inverse is also true, in that all other networks connected to the transit gateway are now connected to the on-premises network.
+
+DirectLink 2.0 can be connected to either local or remote transit gateways.
+{: note}
+
+![Connect On Premise Network to Transit Gateway](images/dlaas.png "Connect Direct Link on-premises network")

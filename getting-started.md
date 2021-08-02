@@ -24,6 +24,7 @@ subcollection: transit-gateway
 {:term: .term}
 {:help: data-hd-content-type='help'}
 {:support: data-reuse='support'}
+{:beta: .beta}
 
 # Getting started with IBM Cloud Transit Gateway
 {: #getting-started}
@@ -33,11 +34,16 @@ subcollection: transit-gateway
 Use {{site.data.keyword.tg_full}} to interconnect {{site.data.keyword.cloud_notm}} classic and Virtual Private Cloud (VPC) infrastructures worldwide, keeping traffic within the {{site.data.keyword.cloud_notm}} network. With {{site.data.keyword.tg_full_notm}}, organizations can define and control communication between resources on the {{site.data.keyword.cloud_notm}} network, providing dynamic scalability, high availability, and private, in-transit data between {{site.data.keyword.cloud_notm}} data centers. Transit gateways are commonly implemented to support hybrid workloads, frequent data transfers, private workloads, or to ease administration of the {{site.data.keyword.cloud_notm}} environment.
 {: shortdesc}
 
-You can configure several types of connections with {{site.data.keyword.tg_full_notm}}:
+With {{site.data.keyword.tg_full_notm}}, you can connect:
 
-* Connect VPCs in the same region (local routing)
-* Connect VPCs in different regions (global routing)
-* Connect VPCs to your IBM Cloud classic infrastructure
+* VPCs in the same region (local routing)
+* VPCs in different regions (global routing)
+* VPCs to your {{site.data.keyword.cloud_notm}} classic infrastructure
+* Networks using a Generic Routing Encapsulation (GRE) tunnel for IBM-approved solutions
+* On-premise networks using Direct Link (2.0) to your {{site.data.keyword.cloud_notm}} networks (Beta)
+
+  This is a Beta feature that requires special approval. The use of this functionality should not be for production workloads. If you are interested in participating in this Beta, you can either open a Sev 4 support case and request access or contact your IBM Sales representative.
+  {: beta}
 
 To get started using {{site.data.keyword.tg_full_notm}}:
 

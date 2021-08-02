@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-07-19"
 
 keywords: faq, faqs, questions, vpc
 
@@ -22,6 +22,7 @@ subcollection: transit-gateway
 {:important: .important}
 {:term: .term}
 {:support: data-reuse='support'}
+{:beta: .beta}
 
 # FAQs for IBM Cloud Transit Gateway
 {: #faqs-for-transit-gateway}
@@ -34,7 +35,7 @@ These frequently asked questions can help you when working with the {{site.data.
 {: faq}
 {: support}
 
-[IBM Cloud™ Direct Link](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) offerings provide connectivity from an external source into a customer's {{site.data.keyword.cloud_notm}} private network. {{site.data.keyword.tg_full_notm}} provides connectivity between resources within a customer's {{site.data.keyword.cloud_notm}} private network.
+[IBM Cloud Direct Link](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) provides connectivity from an external source into a customer's {{site.data.keyword.cloud_notm}} private network. {{site.data.keyword.tg_full_notm}} provides connectivity between resources within a customer's {{site.data.keyword.cloud_notm}} private network.
 
 ## If I connect a classic connection to a transit gateway provisioned with local routing, does that mean I can only communicate with classic infrastructure resources that are in the same location as the transit gateway?
 {: #communicate-same-resources}
@@ -64,7 +65,7 @@ You can connect multiple VPCs in the same region to a single transit gateway wit
 {: faq}
 {: support}
 
-You can connect to both a VPC or classic infrastructure in another {{site.data.keyword.cloud_notm}} account by providing the appropriate connection information when adding a connection to your transit gateway. The account containing the VPC or classic infrastructure is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity for that VPC. For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-cross-account-connections).
+You can connect to both a VPC or classic infrastructure in another {{site.data.keyword.cloud_notm}} account by providing the appropriate connection information when adding a connection to your transit gateway. The account containing the VPC or classic infrastructure is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity for that VPC. For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections).
 
 ## How many connection requests can I make from one account to VPCs in other {{site.data.keyword.cloud_notm}} accounts?
 {: #connection-requests-account-vpcs}
@@ -86,6 +87,16 @@ You can connect a VPC to multiple local transit gateways and a single global gat
 {: support}
 
 You can connect a classic connection to multiple local transit gateways and a single global transit gateway. 
+
+## Can I connect a direct link to both a VPC and a transit gateway simultaneously?
+{: #connections-two-tg}
+{: faq}
+{: support}
+
+No, you must choose to connect to a direct resource (VPC or classic infrastructure), or bind your direct link to one or more local transit gateways, or one global gateway. Your on-premises network can then access IBM Cloud resources connected through the transit gateways.
+
+This is a Beta feature that requires special approval. The use of this functionality should not be for production workloads. If you are interested in participating in this Beta, you can either open a Sev 4 support case and request access or contact your IBM Sales representative.
+{: beta}
 
 ## I can only provision a transit gateway in a certain set of locations on the provisioning page. Does that mean that the VPC I want to connect must be located in one of those locations?
 {: #connections-locations}
@@ -120,7 +131,9 @@ Although [classic-access VPCs](/docs/vpc?topic=vpc-setting-up-access-to-classic-
 {: faq}
 {: support}
 
-Currently, a VPN or direct link cannot be connected to a transit gateway.
+{{site.data.keyword.cloud_notm}} Direct Link (2.0) can be connected to either a local or global transit gateway. 
+
+Currently, you cannot connect a VPN to a transit gateway. 
 
 ## Can I create a global transit network using the {{site.data.keyword.tg_full_notm}}?
 {: #global-transit}
