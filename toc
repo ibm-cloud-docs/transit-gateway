@@ -43,16 +43,16 @@ Transit Gateway
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    locations.md
-    /tg-cli-plugin/tg-cli-plugin-transit-gateway-cli
     [Transit Gateway API reference](https://{DomainName}/apidocs/transit-gateway)
+    /tg-cli-plugin/tg-cli-plugin-transit-gateway-cli
+    [Terraform reference](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection)
+    locations.md
     tg-responsibilities.md
-    [Terraform](https://cloud.ibm.com/docs/terraform?topic=terraform-getting-started)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
     faqs.md
-    verifying-connectivity.md    
+    verifying-connectivity.md
     release-notes.md
     getting-help.md
     {: .navgroup-end}
