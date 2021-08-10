@@ -39,8 +39,9 @@ An MZR provides consistent cloud services across different zones, better resilie
 | Location | Region |
 |-----------|----------|
 | Dallas | us-south |
-| Washington DC | us-east |
+| San Paulo | br-sao |
 | Toronto | ca-tor |
+| Washington DC | us-east |
 {: caption="Table 1. MZRs in North and South America" caption-side="top"}
 {: #tg-americas-mzr}
 {: tab-title="Americas"}
@@ -61,9 +62,9 @@ An MZR provides consistent cloud services across different zones, better resilie
 
 | Location | Region |
 |-----------|----------|
+| Osaka  | jp-osa |
 | Sydney | au-syd |
 | Tokyo  | jp-tok |
-| Osaka  | jp-osa |
 {: caption="Table 1. MZRs in Asia Pacific" caption-side="top"}
 {: #tg-asiapacific-mzr}
 {: tab-title="Asia Pacific"}
@@ -81,8 +82,9 @@ You can establish connectivity from a VPC to resources in an SZR by connecting b
 
 | Location | Data Center |
 |-----------|----------|
-| Seoul | SEO01 |
+| London | LON02 |
+| Montreal | MON01 |
 | Oslo | OSL01 |
 | San Jose | SJC04 |
-| London | LON02 |
+| Seoul | SEO01 |
 {: caption="Table 2. SZRs for classic Softlayer IaaS" caption-side="top"}
