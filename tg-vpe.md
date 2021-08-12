@@ -38,7 +38,7 @@ subcollection: transit-gateway
 ## Setting up a VPE gateway for the {{site.data.keyword.tg_short}} service
 {: #vpe-setup}
 
-Follow instructions in [Getting started](/docs/vpc?topic=vpc-about-vpe#vpe-getting-started) for VPE for VPC to create and confirgue a VPE gateway for the {{site.data.keyword.tg_short}} service offering.
+Follow instructions in [Getting started](/docs/vpc?topic=vpc-about-vpe#vpe-getting-started) for VPE for VPC to create and configure a VPE gateway for the {{site.data.keyword.tg_short}} service offering.
 
 ### Using the CLI
 {: #tgw-cli}
