@@ -52,6 +52,7 @@ After creating an endpoint gateway for {{site.data.keyword.tg_short}}, follow th
    ibmcloud update
    ```
    {: pre}
+   
 1. Update the {{site.data.keyword.tg_short}} CLI plug-in:
 
    ```sh

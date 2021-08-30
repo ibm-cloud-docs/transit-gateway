@@ -40,10 +40,7 @@ With {{site.data.keyword.tg_full_notm}}, you can connect:
 * VPCs in different regions (global routing)
 * VPCs to your {{site.data.keyword.cloud_notm}} classic infrastructure
 * Networks using a Generic Routing Encapsulation (GRE) tunnel for IBM-approved solutions
-* On-premise networks using Direct Link (2.0) to your {{site.data.keyword.cloud_notm}} networks (Beta)
-
-  This is a Beta feature that requires special approval. The use of this functionality should not be for production workloads. If you are interested in participating in this Beta, you can either open a Sev 4 support case and request access or contact your IBM Sales representative.
-  {: beta}
+* On-premise networks using Direct Link (2.0) to your {{site.data.keyword.cloud_notm}} networks
 
 To get started using {{site.data.keyword.tg_full_notm}}:
 

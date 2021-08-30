@@ -30,6 +30,7 @@ Transit Gateway
         changing-config.md
         delete-connection.md
 
+    terraform.md
     deleting-gateway.md
     tg-vpe.md
     tgw-ha-dr.md

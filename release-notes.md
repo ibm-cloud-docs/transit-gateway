@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-20"
+lastupdated: "2021-08-30"
 
 keywords: updates, additions, improvements
 
@@ -25,6 +25,12 @@ subcollection: transit-gateway
 {: #release-notes}
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
+
+# 30 August 2021
+{: #august-2021}
+
+### GA - Direct Link (2.0) connections for transit gateways  
+The beta release has ended. If you participanted in this beta, you can continue to use the gateways that you created during the beta period.
 
 ## 2 August 2021
 {: #july-2021}

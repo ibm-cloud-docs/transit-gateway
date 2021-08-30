@@ -79,14 +79,14 @@ Each gateway is only permitted to have ten outstanding requests for a cross-acco
 {: faq}
 {: support}
 
-You can connect a VPC to multiple local transit gateways and a single global gateway. 
+You can connect a VPC to multiple local transit gateways and a single global gateway.
 
 ## I connected a classic connection to one transit gateway. Can I connect the classic connection to a second transit gateway?
 {: #connections-two-tg}
 {: faq}
 {: support}
 
-You can connect a classic connection to multiple local transit gateways and a single global transit gateway. 
+You can connect a classic connection to multiple local transit gateways and a single global transit gateway.
 
 ## Can I connect a direct link to both a VPC and a transit gateway simultaneously?
 {: #connections-two-tg}
@@ -94,9 +94,6 @@ You can connect a classic connection to multiple local transit gateways and a si
 {: support}
 
 No, you must choose to connect to a direct resource (VPC or classic infrastructure), or bind your direct link to one or more local transit gateways, or one global gateway. Your on-premises network can then access IBM Cloud resources connected through the transit gateways.
-
-This is a Beta feature that requires special approval. The use of this functionality should not be for production workloads. If you are interested in participating in this Beta, you can either open a Sev 4 support case and request access or contact your IBM Sales representative.
-{: beta}
 
 ## I can only provision a transit gateway in a certain set of locations on the provisioning page. Does that mean that the VPC I want to connect must be located in one of those locations?
 {: #connections-locations}
@@ -131,9 +128,9 @@ Although [classic-access VPCs](/docs/vpc?topic=vpc-setting-up-access-to-classic-
 {: faq}
 {: support}
 
-{{site.data.keyword.cloud_notm}} Direct Link (2.0) can be connected to either a local or global transit gateway. 
+{{site.data.keyword.cloud_notm}} Direct Link (2.0) can be connected to either a local or global transit gateway.
 
-Currently, you cannot connect a VPN to a transit gateway. 
+Currently, you cannot connect a VPN to a transit gateway.
 
 ## Can I create a global transit network using the {{site.data.keyword.tg_full_notm}}?
 {: #global-transit}
