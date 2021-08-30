@@ -26,11 +26,11 @@ subcollection: transit-gateway
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
 
-# 30 August 2021
+## 30 August 2021
 {: #august-2021}
 
 ### GA - Direct Link (2.0) connections for transit gateways  
-The beta release has ended. If you participanted in this beta, you can continue to use the gateways that you created during the beta period.
+The beta release has ended. If you participated in this beta, you can continue to use the gateways that you created during the beta period.
 
 ## 2 August 2021
 {: #july-2021}
