@@ -26,20 +26,14 @@ subcollection: transit-gateway
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
 
-## 30 August 2021
+## August 2021
 {: #august-2021}
 
-### GA - Direct Link (2.0) connections for transit gateways  
-The beta release has ended. If you participated in this beta, you can continue to use the gateways that you created during the beta period.
-
-## 2 August 2021
-{: #july-2021}
-
-### Allow Direct Link (2.0) connections for transit gateways (Beta)  
+### Direct Link (2.0) connections for transit gateways  
 Transit gateways now support Direct Link (2.0) connections. A Direct Link connection allows an on-premises network to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway.
 
-   This is a Beta feature that requires special approval. The use of this functionality should not be for production workloads. If you are interested in participating in this Beta, you can either open a Sev 4 support case and request access or contact your IBM Sales representative.
-   {: beta}
+The beta release has ended. If you participated in this beta, you can continue to use the gateways that you created during the beta period.
+{: note}
 
 ## June 2021
 {: #june-2021}
