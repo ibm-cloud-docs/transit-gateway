@@ -140,25 +140,25 @@ Currently, you cannot connect a VPN to a transit gateway.
 {{site.data.keyword.tg_full_notm}} enables standard IP routing between networks (for example, global VPCs) that are connected to it. You can add additional functionality by configuring {{site.data.keyword.IBM_notm}} or third-party virtual network functions, such as VPN, NAT, and firewalls, within one or more of the interconnected networks (for instance, using the "Transit VPC" concept).
 
 ## How can I guarantee one of my clients is not going to impact the others? 
-{:faq}
+{: faq}
 {: #client-impact}
 
 Capacity management handles the overall available capacity on the transit gateway and is subject to our weekly capacity management review. When the device reaches roughly a 50% load, we augment the connectivity to the device. 
  
 ## What scalability options do I have for my transit gateway? Does it manage itself? How do I know if it's reaching maximum capacity?
-{:faq}
+{: faq}
 {: #scalability}
 
 The {{site.data.keyword.cloud_notm}} infrastructure manages all transit gateways. There are no scalability options available.
 
 ## How do you prevent Distributed Denial of Service (DDoS) attacks? What restrictions do you have in place? 
-{:faq}
+{: faq}
 {: #ddos}
 
 Neither third-parties nor the internet can see your transit gateway traffic. As no critical information, such as IP router addresses, is open to anyone but you, DDoS attacks cannot bring down the network. In addition, a typical Multi-protocol Label Switching service (MPLS) uses packet filtering and applies access control lists (ACLs) to limit access. Only the ports with routing protocols from a specific area of the network can access the information.
 
 ## How does my transit gateway handle encryption for connectivity between VPCs?
-{:faq}
+{: faq}
 {: #vpc-encryption}
 
 {{site.data.keyword.tg_full_notm}} does not perform encryption; it only provides connectivity. Encryption between VPCs is your own responsibility.
@@ -166,13 +166,13 @@ Neither third-parties nor the internet can see your transit gateway traffic. As 
 It is an RFC-2547-based platform where the core network and network address are 100% concealed. 
 
 ## What are the tools for monitoring the consumption of resources associated with the service, as well as the costs and the quality of the service?
-{:faq}
+{: faq}
 {: #billing-usage}
 
 {{site.data.keyword.tg_full_notm}} is integrated into the [IBM Cloud usage dashboard](/docs/billing-usage?topic=billing-usage-viewingusage), which provides a summary of estimated charges for all services and resources that are used per month in your organizations. This includes the number of connections and the amount of traffic flowing across your transit gateways. {{site.data.keyword.tg_full_notm}} usage is billed and reported as part of the [IBM Cloud invoice process](/docs/billing-usage?topic=billing-usage-managing-invoices).
 
 ## Are there notifications through email for events of unavailability of the service?
-{:faq}
+{: faq}
 {: #service-unavailability-notifications}
 
 The standard [IBM Cloud notification process](/docs/get-support?topic=get-support-viewing-notifications) is used for any maintenance events.

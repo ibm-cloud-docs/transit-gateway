@@ -78,7 +78,7 @@ Refer to the following information when analyzing events:
 
 * Each event's target field identifies which transit gateway is associated with the event.
 
-  When the gateway exists in a different account or there is no associated gateway, the target is set as `crn:v1:bluemix:public:transit:global:a/<your account ID>:::`. Events that don't correspond to a gateway will not have resource group information.
+   When the gateway exists in a different account or there is no associated gateway, the target is set as `crn:v1:bluemix:public:transit:global:a/<your account ID>:::`. Events that don't correspond to a gateway will not have resource group information.
 
 * Events that are associated with a specific connection will include the connection's id in `target.connectionId`.
 

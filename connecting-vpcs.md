@@ -37,12 +37,12 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 2. From your browser, open the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog){: external} and log in to your account.
 3. Select **Networking** in the navigation pane, then click the Transit Gateway tile.
 
-  You can also access the ordering page from the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com){:external} by selecting the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page. Then select **Interconnectivity** > **Transit Gateway** and click the **Create Transit Gateway** button.
-  {: tip}
+   You can also access the ordering page from the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com){: external} by selecting the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page. Then select **Interconnectivity** > **Transit Gateway** and click the **Create Transit Gateway** button.
+   {: tip}
 
-  The ordering page displays.
+   The ordering page displays.
 
-  ![Transit gateway ordering page](images/tg-ordering.png "Transit gateway ordering page")
+   ![Transit gateway ordering page](images/tg-ordering.png "Transit gateway ordering page")
 
 4. From the ordering page, enter a name for the transit gateway and select a resource group. You can select a resource group from the list, or keep the default selection.
 
@@ -61,11 +61,11 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
 7. You can add connections to your transit gateway now or after it has been provisioned.
 
-  To add them now, select the network connection to be attached to the transit gateway, and then type a name for the connection. To add multiple network connections to the transit gateway, click **Add connection**.
+   To add them now, select the network connection to be attached to the transit gateway, and then type a name for the connection. To add multiple network connections to the transit gateway, click **Add connection**.
 
-  To add them later, refer to [Adding a connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-connections). Cross account (VPC only) connections can only be added later, after you provision the gateway.
+   To add them later, refer to [Adding a connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-connections). Cross account (VPC only) connections can only be added later, after you provision the gateway.
 
-  You can add the following connection types to your gateway:
+   You can add the following connection types to your gateway:
 
    * **Classic infrastructure** networks allow you to connect to IBM Cloud classic resources. Only one classic infrastructure connection is allowed per account.
    * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
@@ -74,7 +74,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
       If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (using the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link. You can specify the connection type when you create a direct link, or after your direct link is provisioned. For instructions, see [Updating the network connection type](/docs/dl?topic=dl-virtual-connection-types){: external}.
       {: important}
 
-  Once added, all prefixes of a VPC and all subnets of a classic network will be connected to the transit gateway. To ensure successful connectivity between VPCs, when creating VPCs that are intended to be interconnected using a transit gateway, make sure to create the VPCs with non-overlapping VPC prefixes. To ensure successful connectivity with the classic infrastructure, do not use prefixes in your VPCs that overlap with the `10.0.0.0/14`, `10.200.0.0/14`, `10.198.0.0/15`, and `10.254.0.0/16` blocks. Also, don't use addresses from your classic infrastructure subnets. To view a list of your classic infrastructure subnets, see [View all subnets](/docs/subnets?topic=subnets-view-all-subnets).
+   Once added, all prefixes of a VPC and all subnets of a classic network will be connected to the transit gateway. To ensure successful connectivity between VPCs, when creating VPCs that are intended to be interconnected using a transit gateway, make sure to create the VPCs with non-overlapping VPC prefixes. To ensure successful connectivity with the classic infrastructure, do not use prefixes in your VPCs that overlap with the `10.0.0.0/14`, `10.200.0.0/14`, `10.198.0.0/15`, and `10.254.0.0/16` blocks. Also, don't use addresses from your classic infrastructure subnets. To view a list of your classic infrastructure subnets, see [View all subnets](/docs/subnets?topic=subnets-view-all-subnets).
 
 8. **View Terms** on the right of the page.
 9. Click **Create** to complete your order.
