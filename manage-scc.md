@@ -50,7 +50,8 @@ As a security or compliance focal, you can use the {{site.data.keyword.complianc
 
 | Resource kind | Property | Operator | Value | Description |
 |----|----------|-------|-------|---------------------------|
-| service | cross_account_connection_approved | is_false  \n is_true | - | Indicates whether an incoming cross-account request can be approved.  \n Indicates whether the final cross account connection can be deleted.|
+| _service_ | _cross_account_connection_approved_ | _is_false_ | -- | Indicates whether an incoming cross-account request can be approved. |
+| _service_ | _cross_account_connection_approved_ | _is_true_ | -- | Indicates whether the final cross account connection can be deleted. |
 {: caption="Table 1. Rule properties for {{site.data.keyword.tg_full}}" caption-side="top"}
 
 To learn more about config rules, see [What is a config rule?](/docs/security-compliance?topic=security-compliance-what-is-rule).
