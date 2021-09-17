@@ -1,7 +1,3 @@
-#  Name your file `toc.yaml`
-#  Make sure you include all nav file coding requirements, as defined in https://test.cloud.ibm.com/docs/writing?topic=writing-code-nav
-#  Anything with a fully qualified URL with `http` or `https` will get an external link icon added to the nav entry
-
 toc:
   properties:
     subcollection: transit-gateway
@@ -17,71 +13,71 @@ toc:
 #  List your getting started tutorial (getting-started.md) as the first item in the Get started nav group. See https://test.cloud.ibm.com/docs/writing?topic=writing-navigation for more details on the toc design.
   entries:
     - navgroup:
-      id: learn
-      topics:
-      - getting-started.md
-      - about.md
-      - helpful-tips.md
-      - tg-pricing.md
-      - topicgroup:
-        label: Related links
-        topics:
-        - /dl/dl-get-started-with-ibm-cloud-dl
-        - /vpc/vpc-getting-started
+       id: learn
+       topics:
+       - getting-started.md
+       - about.md
+       - helpful-tips.md
+       - tg-pricing.md
+       - topicgroup:
+          label: Related links
+          topics:
+          - /dl/dl-get-started-with-ibm-cloud-dl
+          - /vpc/vpc-getting-started
 
     - navgroup:
-      id: tutorial
-      topics:
-      - topicgroup:
-        label: Team based privacy using IAM, VPC, Transit Gateway and DNS
-        topics:
-        - /solution-tutorials/solution-tutorials-vpc-tg-dns-iam
+       id: tutorial
+       topics:
+       - topicgroup:
+          label: Team based privacy using IAM, VPC, Transit Gateway and DNS
+          topics:
+          - /solution-tutorials/solution-tutorials-vpc-tg-dns-iam
 
     - navgroup:
-      id: howto
-      topics:
-      - connecting-vpcs.md
-      - viewing-gateway.md
-      - topicgroup:
-        label: Managing transit gateways
-        topics:
-        - adding-gateway.md
-        - adding-ca.md
-        - create-gre.md
-        - editing-connection.md
-        - changing-config.md
-        - delete-connection.md
-      - terraform.md
-      - deleting-gateway.md
-      - tg-vpe.md
-      - tgw-ha-dr.md
-      - topicgroup:
-        label: Enhancing security for IBM Cloud Transit Gateway
-        topics:
-        - iam.md
-        - at-events-docs-tg.md
-        - data-security.md
-        - manage-scc.md
+       id: howto
+       topics:
+        - connecting-vpcs.md
+        - viewing-gateway.md
+        - topicgroup:
+            label: Managing transit gateways
+            topics:
+            - adding-gateway.md
+            - adding-ca.md
+            - create-gre.md
+            - editing-connection.md
+            - changing-config.md
+            - delete-connection.md
+        - terraform.md
+        - deleting-gateway.md
+        - tg-vpe.md
+        - tgw-ha-dr.md
+        - topicgroup:
+            label: Enhancing security for IBM Cloud Transit Gateway
+            topics:
+            - iam.md
+            - at-events-docs-tg.md
+            - data-security.md
+            - manage-scc.md
 
 #  Links to your REST API docs should be included in the Reference navigation group. For details on publishing API docs, see https://test.cloud.ibm.com/docs/api-docs.
 #  Links to your command line reference docs should be included in the Reference navigation group.
     - navgroup:
-      id: reference
-      topics:
-      - link:
+       id: reference
+       topics:
+       - link:
           label: Transit Gateway API
           href: https://{DomainName}/apidocs/transit-gateway
-      - /tg-cli-plugin/tg-cli-plugin-transit-gateway-cli
-      - link:
+       - /tg-cli-plugin/tg-cli-plugin-transit-gateway-cli
+       - link:
           label: Terraform reference
           href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection
-      - locations.md
-      - tg-responsibilities.md
+       - locations.md
+       - tg-responsibilities.md
 
     - navgroup:
-      id: help
-      topics:
-      - faqs.md
-      - verifying-connectivity.md
-      - release-notes.md
-      - getting-help.md
+       id: help
+       topics:
+       - faqs.md
+       - verifying-connectivity.md
+       - release-notes.md
+       - getting-help.md
