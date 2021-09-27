@@ -67,7 +67,9 @@ toc:
        - link:
           label: Transit Gateway API
           href: https://{DomainName}/apidocs/transit-gateway
-       - /tg-cli-plugin/tg-cli-plugin-transit-gateway-cli
+       - link:
+          label: Transit Gateway CLI
+          href: /tg-cli-plugin/tg-cli-plugin-transit-gateway-cli
        - link:
           label: Terraform reference
           href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection
