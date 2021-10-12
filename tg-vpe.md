@@ -77,7 +77,7 @@ curl https://private.transit.cloud.ibm.com/v1/transit_gateways?version='2020-03-
 
 After creating an endpoint gateway for the {{site.data.keyword.tg_short}} service, you must use the private endpoint's FQDN when setting the service's FQDN during construction of the {{site.data.keyword.tg_short}} service object.
 
-```
+```sh
 private.transit.cloud.ibm.com
 ```
 

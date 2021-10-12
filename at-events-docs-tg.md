@@ -37,6 +37,7 @@ On 23 August 2021, some Activity Tracker events for IBM Cloud Transit Gateway ch
 
 ### List of management events
 {: #at_management_events}
+
 | Action             | Description      |
 |:-------------------|:-----------------|
 | `transit.gateway.create` | Create a transit gateway     |
@@ -53,6 +54,7 @@ On 23 August 2021, some Activity Tracker events for IBM Cloud Transit Gateway ch
 
 ### List of data events
 {: #at_data_events}
+
 | Action             | Description      |
 |:-------------------|:-----------------|
 | `transit.gateway.read` | Retrieve a transit gateway     |

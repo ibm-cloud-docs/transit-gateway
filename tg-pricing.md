@@ -60,16 +60,16 @@ The following examples describe various pricing scenarios for {{site.data.keywor
 
 You create a locally routed transit gateway in `us-south` (Dallas) and attach 8 VPCs to it (all in `us-south`). Then, you transfer 2 TB of data between the VPCs this month. Because you have less than 10 monthly connections, there are no connection fees. Also, because you selected local routing, there is no charge for any data transfer between the VPCs.
 
-   * {{site.data.keyword.tg_full_notm}} connection charge = *FREE*     
-   * {{site.data.keyword.tg_full_notm}} data transfer charge = *FREE*   
+* {{site.data.keyword.tg_full_notm}} connection charge = *FREE*     
+* {{site.data.keyword.tg_full_notm}} data transfer charge = *FREE*   
 
 ### Example 2: Locally routed transit gateway with VPCs and a classic connection
 {: #example2}
 
 You create a locally routed transit gateway in `us-south` (Dallas) and attach 8 VPCs (all in `us-south`) and 1 classic infrastructure connection, which gives you access to classic resources across MZRs. Then, you transfer a total of 2 TB of data between the VPCs and classic infrastructure networks this month. Because you have less than the free allocation of 10 monthly connections, there are no connection fees. Also, because you selected local routing, there is no charge for any data transfer between the VPCs and classic infrastructure.
 
-   * {{site.data.keyword.tg_full_notm}} connection charge = *FREE*     
-   * {{site.data.keyword.tg_full_notm}} data transfer charge = *FREE*    
+* {{site.data.keyword.tg_full_notm}} connection charge = *FREE*     
+* {{site.data.keyword.tg_full_notm}} data transfer charge = *FREE*    
 
 ### Example 3: Globally routed transit gateway with VPCs
 {: #example3}
@@ -78,8 +78,8 @@ You create a globally routed transit gateway in `us-south` (Dallas) and attach 2
 
 Also, because you selected global routing, and a total of 2 TB was sent between the VPCs this month, data transfer is charged at $0.02 per GB after the 1 TB free allotment.
 
-   * {{site.data.keyword.tg_full_notm}} connection charge = *$230 per month*   
-   * {{site.data.keyword.tg_full_notm}} data transfer charge = *$20.48 per month* (`1,024 GB x $0.02 = $20.48`)
+* {{site.data.keyword.tg_full_notm}} connection charge = *$230 per month*   
+* {{site.data.keyword.tg_full_notm}} data transfer charge = *$20.48 per month* (`1,024 GB x $0.02 = $20.48`)
 
 ### Example 4: Globally routed transit gateway with VPCs and a classic connection
 {: #example4}
@@ -88,5 +88,5 @@ You create a globally routed transit gateway in `us-south` (Dallas) and attach 2
 
 Also, because you selected global routing, and a total of 2 TB was sent between the VPC and classic infrastructure networks this month, all data transfer (across all VPCs and classic infrastructure networks alike) is charged at $0.02 per GB after the 1 TB free allotment each month.
 
-   * {{site.data.keyword.tg_full_notm}} connection charge = *$245 per month*   
-   * {{site.data.keyword.tg_full_notm}} data transfer charge = *$20.48 per month* (`1,024 GB x $0.02 = $20.48`)
+* {{site.data.keyword.tg_full_notm}} connection charge = *$245 per month*   
+* {{site.data.keyword.tg_full_notm}} data transfer charge = *$20.48 per month* (`1,024 GB x $0.02 = $20.48`)

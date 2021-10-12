@@ -59,11 +59,13 @@ To create your GRE tunnel connection, follow these steps:
 
       This IP address must not conflict with any networks connected to your transit gateway.
       {: note}
+
    * Enter a `/30` local tunnel IP[^ip3] for both ends of the tunnel, for example `192.168.103.1`.
    * Optionally, enter the remote BGP ASN, which is a valid 2 or 4 byte value of your choosing.
 
       You can leave this blank and a unique ASN is assigned.
       {: tip}
+      
    * Enter a connection name for your GRE tunnel.
 
 1. Click the **Add** button to create the GRE tunnel.
