@@ -22,9 +22,13 @@ toc:
        - topicgroup:
           label: Related links
           topics:
-          - /dl/dl-get-started-with-ibm-cloud-dl
-          - /vpc/vpc-getting-started
-
+          - link:
+              label: Getting started with IBM Cloud Direct Link (2.0)
+              href: /dl/dl-get-started-with-ibm-cloud-dl
+          - link:
+              label: Getting started with Virtual Private Cloud (VPC)
+              href: /vpc/vpc-getting-started
+                
     - navgroup:
        id: tutorial
        topics:
