@@ -63,21 +63,21 @@ Before you begin, make sure that you have the [required access](/docs/transit-ga
    ```sh
    terraform init
    ```
-   {: pre}
+   {: codeblock]
 
 1. Create a Terraform execution plan. The Terraform execution plan summarizes all the actions that need to be run to create the {{site.data.keyword.tg_short}} instance in your account.
 
    ```sh
    terraform plan
    ```
-   {: pre}
+   {: codeblock]
 
 1. Create the {{site.data.keyword.tg_short}} instance and IAM access policy in {{site.data.keyword.cloud_notm}}.
 
    ```sh
    terraform apply
    ```
-   {: pre}
+   {: codeblock]
 
 1. From the [{{site.data.keyword.cloud_notm}} resource list](/resources){: external}, select the {{site.data.keyword.tg_short}} instance that you created and note the instance ID.
 

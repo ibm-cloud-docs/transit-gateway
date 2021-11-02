@@ -51,14 +51,14 @@ After creating an endpoint gateway for {{site.data.keyword.tg_short}}, follow th
    ```sh
    ibmcloud update
    ```
-   {: pre}
+   {: codeblock]
    
 1. Update the {{site.data.keyword.tg_short}} CLI plug-in:
 
    ```sh
    ibmcloud plugin update tg-cli
    ```
-   {: pre}
+   {: codeblock]
 
 ### Using the VPE for VPC API
 {: #vpe-setup-api}
@@ -69,7 +69,7 @@ After creating an endpoint gateway for the {{site.data.keyword.tg_short}} servic
 ```sh
 curl https://private.transit.cloud.ibm.com/v1/transit_gateways?version='2020-03-31' -H "Authorization: Bearer $iam_token"
 ```
-{: pre}
+{: codeblock]
 
 ### Using the SDK
 {: #tgw-sdk}
@@ -92,6 +92,6 @@ If you plan to access the {{site.data.keyword.tg_short}} service using Terraform
 ```sh
 export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 ```
-{: pre}
+{: codeblock]
 
 For more information, see [Transit Gateway resources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-tg-resource) and [Transit Gateway data sources](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-transit-gateway-ds).
