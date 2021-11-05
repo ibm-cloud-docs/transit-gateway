@@ -175,4 +175,10 @@ It is an RFC-2547-based platform where the core network and network address are 
 {: faq}
 {: #service-unavailability-notifications}
 
-The standard [IBM Cloud notification process](/docs/get-support?topic=get-support-viewing-notifications) is used for any maintenance events.
+You should use the standard [IBM Cloud notification process](/docs/get-support?topic=get-support-viewing-notifications) for any maintenance events.
+
+## Can I generate a route report for a transit gateway?
+{: faq}
+{: #routereports}
+
+Yes, you can. For detailed instructions, see [IBM Cloud Transit Gateway route reports](/docs/transit-gateway?topic=transit-gateway-routereports).

@@ -49,7 +49,7 @@ To connect networks owned by different accounts, follow these steps:
 
 1. Type the name of the network connection, then click **Add**. The first screen capture shows adding a VPC connection, the second screen shows adding a classic infrastructure connection.
 
-   ![Add VPC cross account connection](images/addCrossAcctConnection.png "Adding cross-account connection - VPC")
+   ![Add VPC cross account connection](images/addCrossAcctConnection.png "Adding cross-account connection - VPC"){: caption="Figure 1. Add VPC cross account connection" caption-side="bottom"}
 
    The network connection now shows the **Pending** approval status in the gateway owner's account.
 
@@ -65,11 +65,11 @@ To connect networks owned by different accounts, follow these steps:
    After the network owner's account ensures that the connection request is from a legitimate source and approves it, the system establishes routes to and from all other networks connected to the same transit gateway. Use of [network ACLs and/or security groups](/docs/vpc?topic=vpc-security-in-your-vpc#security-in-your-vpc) within networks that are accessible across accounts are highly recommended to control the network traffic flows. You can unilaterally detach cross-account connections by either account through users who have the appropriate permissions.
    {: important}
 
-   ![Approve cross-account connection](images/approveCrossAcctConnection.png "Approve cross-account connection")
+   ![Approve cross-account connection](images/approveCrossAcctConnection.png "Approve cross-account connection"){: caption="Approve cross-account connection" caption-side="bottom"}
 
    Click **Approve** to confirm.
 
-   ![Confirm cross account connection](images/confirmCrossAcctConnection.png "Confirm cross-account connection")
+   ![Confirm cross-account connection](images/confirmCrossAcctConnection.png "Confirm cross-account connection"){: caption="Confirm cross-account connection" caption-side="bottom"}
 
    The status of the network connection indicates **Attaching**.
 
