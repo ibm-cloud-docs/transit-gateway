@@ -77,7 +77,7 @@ Before you begin, make sure that you have the [required access](/docs/transit-ga
    ```sh
    terraform apply
    ```
-   {: codeblock}h
+   {: codeblock}
 
 1. From the [{{site.data.keyword.cloud_notm}} resource list](/resources){: external}, select the {{site.data.keyword.tg_short}} instance that you created and note the instance ID.
 
