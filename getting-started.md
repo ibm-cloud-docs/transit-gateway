@@ -10,21 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:preview: .preview}
-{:important: .important}
-{:download: .download}
-{:external: target="_blank" .external}
-{:term: .term}
-{:help: data-hd-content-type='help'}
-{:support: data-reuse='support'}
-{:beta: .beta}
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting started with IBM Cloud Transit Gateway
 {: #getting-started}

@@ -10,17 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
-{:external: target="_blank" .external}
-{:term: .term}
+{{{site.data.keyword.attribute-definition-list}}
 
 # Viewing transit gateways
 {: #view-gateway}
@@ -33,7 +23,8 @@ Perform the following procedure to access the Transit Gateways screen in the IBM
 2. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
 3. Click **Transit Gateway** from the left navigation pane to show the Transit Gateways page.
 
-   ![View transit gateways](images/view-gateways.png "View your transit gateways")
+   ![View transit gateways](images/view-gateways.png "View your transit gateways"){: caption="View your transit gateways" caption-side="bottom"}
+
 
    Here you see all of your transit gateways, and can take additional actions to [manage](/docs/transit-gateway?topic=transit-gateway-edit-gateway) or [delete](/docs/transit-gateway?topic=transit-gateway-delete-gateway) them.
 

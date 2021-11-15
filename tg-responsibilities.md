@@ -10,17 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:new_window: target="_blank_"}
-{:shortdesc: .shortdesc}
-{:screen: .screen}
-{:pre: .pre}
-{:codeblock: .codeblock}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:deprecated: .deprecated}
-{:download: .download}
-{:preview: .preview}
+{{site.data.keyword.attribute-definition-list}}
 
 # Understanding your responsibilities when using {{site.data.keyword.tg_full_notm}}
 {: #tg-responsibilities}
@@ -44,7 +34,7 @@ You and IBM have unique responsibilities for infrastructure provisioning and man
 | Use the provided API or UI to configure the Transit Gateway for your connections | Customer |
 | Monitor service notifications for communications regarding maintenance operations | Customer |
 | Manage service quotas and monitor quota notifications  | Customer |
-{: caption="Table 1. IBM Cloud Infrastructure responsibilities" caption-side="top"}
+{: caption="Table 1. IBM Cloud Infrastructure responsibilities" caption-side="bottom"}
 
 ## Security and regulation compliance
 {: #security-rich-environment}
@@ -55,7 +45,7 @@ You and IBM have unique responsibilities for security and compliance.
 |---------------------------|------|
 | Automatically apply security updates to keep the Transit Gateway service up to date | IBM |
 | Follow the instructions in the IBM Cloud Transit Gateway user documentation to make any necessary configurations based on the features used | Customer |
-{: caption="Table 2. Security and regulation responsibilities" caption-side="top"}
+{: caption="Table 2. Security and regulation responsibilities" caption-side="bottom"}
 
 ## Disaster recovery
 {: #responsibilities-disaster-recovery}
@@ -65,4 +55,4 @@ You and IBM have unique responsibilities for disaster recovery.
 | Responsibilities |  Ownership |
 |----------|-----------------------|
 | Monitor and automatically recover the service to prevent outage | IBM |
-{: caption="Table 3. Disaster recovery responsibilities" caption-side="top"}
+{: caption="Table 3. Disaster recovery responsibilities" caption-side="bottom"}

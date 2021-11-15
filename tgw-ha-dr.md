@@ -10,17 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
-{:external: target="_blank" .external}
-{:term: .term}
+{{site.data.keyword.attribute-definition-list}}
 
 # High availability and disaster recovery
 {: #ha-dr}

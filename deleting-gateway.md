@@ -10,19 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
-{:external: target="_blank" .external}
-{:term: .term}
-{:help: data-hd-content-type='help'}
-{:support: data-reuse='support'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Deleting a transit gateway
 {: #delete-gateway}
@@ -41,8 +29,8 @@ To delete an {{site.data.keyword.tg_full}}, follow these steps.
 6. After the connections are removed, you can delete the transit gateway in two ways:
    * From the transit gateway's details page, click the Options menu icon ![Options icon](../../icons/actions-icon-vertical.svg) next to the gateway you want to delete and select **Delete**.
 
-      ![Delete gateways with the Options menu](images/delete-tg-1.png "Delete gateways with the Options menu")
+      ![Delete gateways with the Options menu](images/delete-tg-1.png "Delete gateways with the Options menu"){: caption="Delete gateways with the Options menu" caption-side="bottom"}
 
    * From an individual transit gateway page, select **Actions > Delete**.
 
-      ![Delete gateways with the Actions menu](images/delete-tg-2.png "Delete gateways with the Actions menu")
+      ![Delete gateways with the Actions menu](images/delete-tg-2.png "Delete gateways with the Actions menu"){: caption="Delete gateways with the Actions menu" caption-side="bottom"}

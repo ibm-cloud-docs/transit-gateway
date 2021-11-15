@@ -10,17 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
-{:term: .term}
-{:beta: .beta}
+{{site.data.keyword.attribute-definition-list}}
 
 # Adding a connection
 {: #adding-connections}
@@ -38,7 +28,7 @@ To add a connection to a transit gateway, follow these steps:
 
 1. Choose and configure the specific network connections that you want to add to your transit gateway.
 
-   ![Add connections](images/addConnection.png "Adding connections")
+   ![Add connections](images/addConnection.png "Adding connections"){: caption="Add connections" caption-side="bottom"}
 
    Choices include:
 

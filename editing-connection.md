@@ -10,17 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
-{:external: target="_blank" .external}
-{:term: .term}
+{{site.data.keyword.attribute-definition-list}}
 
 # Editing a connection
 {: #editing-connections}
@@ -39,4 +29,4 @@ To edit a connection to a transit gateway, follow these steps:
 
    From here, you can change the name of the selected network connection.
 
-   ![Edit connections](images/7-editingGlobaltoLocalTG.png "Editing connections")
+   ![Edit connections](images/7-editingGlobaltoLocalTG.png "Edit connections"){: caption="Edit connections" caption-side="bottom"}

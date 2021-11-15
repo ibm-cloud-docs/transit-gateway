@@ -29,8 +29,13 @@
       "community": "https://community.ibm.com/community/user/publiccloud/home"
     },
     "section_updates": {
-      "view_more": "/docs/transit-gateway?topic=transit-gateway-release-notes-for-ibm-cloud-load-balancer",
+      "view_more": "/docs/transit-gateway?topic=transit-gateway-release-notes",
       "tiles": [
+        {
+          "date": "November 2021",
+          "title": "Transit gateway route reports",
+          "description": "You can now request a route report, which shows all routes known to a transit gateway and each of its connections. The report shows Border Gateway Protocol (BGP) information associated with these routes, which connections supply which routes, and overlapping routes."
+        },
         {
           "date": "August 2021",
           "title": "Direct Link (2.0) connections for transit gateways",

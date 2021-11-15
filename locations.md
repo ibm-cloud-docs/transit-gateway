@@ -10,16 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank_"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
-{:term: .term}
+{{site.data.keyword.attribute-definition-list}}
 
 # IBM Cloud Transit Gateway locations
 {: #tg-locations}
@@ -75,7 +66,7 @@ An MZR provides consistent cloud services across different zones, better resilie
 For a detailed overview and list of data centers that are part of the MZR, see [Multizone regions](/docs/overview?topic=overview-locations#mzr-table).
 {: note}
 
-## Single-zone regions
+## Single-Zone Regions
 {: #szr-table}
 
 You can establish connectivity from a VPC to resources in an SZR by connecting both the VPC and classic infrastructure to a transit gateway. The following table lists the SZRs in {{site.data.keyword.cloud_notm}} for interconnecting classic infrastructure to VPCs using a transit gateway.

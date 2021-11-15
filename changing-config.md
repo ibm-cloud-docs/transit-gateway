@@ -10,17 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
-{:external: target="_blank" .external}
-{:term: .term}
+{{site.data.keyword.attribute-definition-list}}
 
 # Changing your configuration
 {: #change-configuration}
@@ -45,4 +35,5 @@ To change your transit gateway configuration, perform the following procedure:
    When changing from Local to Global routing for a given transit gateway, you are charged for all associated connection traffic.
 {: important}
 
-   ![Editing your configuration](images/editConnection.png "Editing your configuration")
+   ![Editing your configuration](images/editConnection.png "Editing your configuration"){: caption="Editing your configuration" caption-side="bottom"}
+

@@ -10,17 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:beta: .beta}
-{:note: .note}
-{:important: .important}
-{:download: .download}
-{:term: .term}
+{{site.data.keyword.attribute-definition-list}}
 
 # Planning for IBM Cloud Transit Gateway
 {: #helpful-tips}
@@ -38,7 +28,7 @@ Keep in mind the following service limits while using IBM Cloud Transit Gateway.
 | Number of transit gateways | 10 gateways per account, 5 gateways per region |
 | Number of connections per transit gateway |  10 IBM Cloud VPCs per gateway |
 | Number of prefixes per connection | 15 prefixes for VPC connections, 120 prefixes for a classic connection |
-{: caption="Table 1. IBM Cloud Transit Gateway service limits" caption-side="top"}
+{: caption="Table 1. IBM Cloud Transit Gateway service limits" caption-side="bottom"}
 
 You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need your service limits expanded.
 {: note}
@@ -90,10 +80,12 @@ The same network subnet considerations for transit gateway connections also appl
 {: important}
 
 ## VPC connection consideration
+{: #vpc-connection-consideration}
 
 {{site.data.keyword.cloud_notm}} VPC permits the use of RFC-1918 and IANA-registered IPv4 address space, privately within your VPC, with some exceptions in the IANA special-purpose ranges, and select ranges assigned to {{site.data.keyword.cloud_notm}} services. When using IANA-registered ranges within your enterprise, and within VPCs in conjunction with {{site.data.keyword.cloud_notm}} Transit Gateway, custom routes must be installed in each zone. For more information, see [Routing considerations for IANA-registered IP assignments](/docs/vpc?topic=vpc-interconnectivity#routing-considerations-iana).
 
 ## Routing considerations
+{: #routing-considerations}
 
 * All connections to a transit gateway are connected to each other, so carefully consider all resources that you want to interconnect before deciding whether local or global routing is right for each gateway.
 

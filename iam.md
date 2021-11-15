@@ -10,16 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
-{:term: .term}
+{{site.data.keyword.attribute-definition-list}}
 
 # Using IAM permissions with IBM Cloud Transit Gateway
 {: #iam}
@@ -36,7 +27,7 @@ subcollection: transit-gateway
 | Administrator | Can perform all actions, including managing gateways and connections, and assign {{site.data.keyword.tg_full_notm}} IAM access policies to other users. | Create gateways  \n Delete gateways  \n Edit gateways  \n Add or remove gateway connections  \n Accept or reject a cross account connection request  \n Edit gateway connections  \n Update user access policies for the service |                     |
 | Editor | Can perform all actions, including managing gateways and connections, but cannot assign {{site.data.keyword.tg_full_notm}} IAM access policies to other users. |Create gateways  \n Delete gateways  \n Edit gateways  \n Add or remove gateway connections  \n Accept or reject a cross account connection request  \n Edit gateway connections |
 | Operator and Viewer | Can only perform actions that don't change the state of resources. | List gateways  \n Get gateways  \n List a gateway's connections  \n View a gateway's connections  \n View incoming connection requests |
-{: caption="Table 1. IAM platform-access user roles and actions" caption-side="top"}
+{: caption="Table 1. IAM platform-access user roles and actions" caption-side="bottom"}
 
 To add or remove connections to VPCs, or to accept or reject a cross account connection request, the user must also have Administrator or Editor platform-access role permissions to the VPC being connected to. See [VPC: Getting started with IAM](/docs/vpc?topic=vpc-iam-getting-started) for more information.
 {: note}

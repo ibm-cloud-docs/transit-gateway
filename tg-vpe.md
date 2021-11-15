@@ -10,25 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:term: .term}
-{:note: .note}
-{:tip: .tip}
-{:important: .important}
-{:external: target="_blank_" .external}
-{:generic: data-hd-programlang="generic"}
-{:download: .download}
-{:DomainName: data-hd-keyref="DomainName"}
-{:help: data-hd-content-type='help'}
-{:support: data-reuse='support'}
-{:ui: .ph data-hd-interface='ui'}
-{:cli: .ph data-hd-interface='cli'}
-{:api: .ph data-hd-interface='api'}
-{:terraform: .ph data-hd-interface='terraform'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Integrating with Virtual Private Endpoint for VPC
 {: #vpe-for-ibm-cloud-transit-gateway}
@@ -40,7 +22,7 @@ subcollection: transit-gateway
 
 Follow instructions in [Getting started](/docs/vpc?topic=vpc-about-vpe#vpe-getting-started) for VPE for VPC to create and configure a VPE gateway for the {{site.data.keyword.tg_short}} service offering.
 
-### Using the CLI
+### Using the VPE for VPC CLI
 {: #tgw-cli}
 {: cli}
 

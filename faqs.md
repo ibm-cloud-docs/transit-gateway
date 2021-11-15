@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-11-15"
 
 keywords: faq, faqs, questions, vpc
 
@@ -10,19 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:download: .download}
-{:faq: data-hd-content-type='faq'}
-{:note: .note}
-{:important: .important}
-{:term: .term}
-{:support: data-reuse='support'}
-{:beta: .beta}
+{{site.data.keyword.attribute-definition-list}}
 
 # FAQs for IBM Cloud Transit Gateway
 {: #faqs-for-transit-gateway}
@@ -89,7 +77,7 @@ You can connect a VPC to multiple local transit gateways and a single global gat
 You can connect a classic connection to multiple local transit gateways and a single global transit gateway.
 
 ## Can I connect a direct link to both a VPC and a transit gateway simultaneously?
-{: #connections-two-tg}
+{: #connections-local-tgws}
 {: faq}
 {: support}
 
@@ -179,6 +167,6 @@ You should use the standard [IBM Cloud notification process](/docs/get-support?t
 
 ## Can I generate a route report for a transit gateway?
 {: faq}
-{: #routereports}
+{: #faq-route-reports}
 
-Yes, you can. For detailed instructions, see [IBM Cloud Transit Gateway route reports](/docs/transit-gateway?topic=transit-gateway-routereports).
+Yes, you can. For detailed instructions, see [IBM Cloud Transit Gateway route reports](/docs/transit-gateway?topic=transit-gateway-route-reports).

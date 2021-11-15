@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020, 202
+  years: 2020, 2021
 lastupdated: "2021-08-23"
 
 keywords: activity tracker, event, security
@@ -10,16 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank_"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
-{:term: .term}
+{{site.data.keyword.attribute-definition-list}}
 
 # Activity Tracker events for {{site.data.keyword.tg_full_notm}}
 {: #at_events}
@@ -50,7 +41,7 @@ On 23 August 2021, some Activity Tracker events for IBM Cloud Transit Gateway ch
 | `transit.connection-request.create` | Create a request for a cross account transit gateway connection   |
 | `transit.connection-request.approve` | Approve request for a cross account transit gateway connection   |
 | `transit.connection-request.reject` | Reject request for a cross account transit gateway connection   |
-{: caption="Table 1. Actions that generate management events for gateway resources" caption-side="top"}
+{: caption="Table 1. Actions that generate management events for gateway resources" caption-side="bottom"}
 
 ### List of data events
 {: #at_data_events}
@@ -62,7 +53,7 @@ On 23 August 2021, some Activity Tracker events for IBM Cloud Transit Gateway ch
 | `transit.connection.list` | List transit gateway connections   |
 | `transit.location.read` | Retrieve a transit gateway location   |
 | `transit.location.list` | List transit gateway locations   |
-{: caption="Table 2. Actions that generate data events for gateway resources" caption-side="top"}
+{: caption="Table 2. Actions that generate data events for gateway resources" caption-side="bottom"}
 
 ## Viewing events
 {: #at_ui}

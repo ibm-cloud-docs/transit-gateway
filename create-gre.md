@@ -10,17 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
-{:external: target="_blank" .external}
-{:term: .term}
+{{site.data.keyword.attribute-definition-list}}
 
 # Creating a Generic Routing Encapsulation (GRE) tunnel connection
 {: #GRE-connection}
@@ -70,7 +60,7 @@ To create your GRE tunnel connection, follow these steps:
 
 1. Click the **Add** button to create the GRE tunnel.
 
-   ![Create GRE tunnel connections](images/GreTunnelConnection.png "Creating GRE connection")
+   ![Create GRE tunnel connections](images/GreTunnelConnection.png "Creating GRE connection"){: caption="Creating GRE tunnel connections" caption-side="bottom"}
 
 ## Next step
 {: #tgw-next-step-gre}

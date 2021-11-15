@@ -51,8 +51,10 @@ toc:
             - editing-connection.md
             - changing-config.md
             - delete-connection.md
+            - deleting-gateway.md
         - terraform.md
-        - deleting-gateway.md
+        - set-up-environment.md
+        - displayroutereport.md
         - tg-vpe.md
         - tgw-ha-dr.md
         - topicgroup:

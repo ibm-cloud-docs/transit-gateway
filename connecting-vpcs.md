@@ -10,20 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:beta: .beta}
-{:download: .download}
-{:external: target="_blank_" .external}
-{:term: .term}
-{:help: data-hd-content-type='help'}
-{:support: data-reuse='support'}
+{{site.data.keyword.attribute-definition-list}}
 
 # Ordering IBM Cloud Transit Gateway
 {: #ordering-transit-gateway}
@@ -42,7 +29,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
    The ordering page displays.
 
-   ![Transit gateway ordering page](images/tg-ordering.png "Transit gateway ordering page")
+   ![Transit gateway ordering page](images/tg-ordering.png "Transit gateway ordering page"){: caption="Transit gateway ordering page" caption-side="bottom"}
 
 4. From the ordering page, enter a name for the transit gateway and select a resource group. You can select a resource group from the list, or keep the default selection.
 

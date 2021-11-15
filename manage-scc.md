@@ -9,19 +9,13 @@ subcollection: transit-gateway
 
 ---
 
-{:external: target="_blank" .external}
-{:note: .note}
-{:term: .term}
-{:shortdesc: .shortdesc}
-{:table: .aria-labeledby="caption"}
+{{site.data.keyword.attribute-definition-list}}
 
 # Managing security and compliance with IBM Cloud Transit Gateway
 {: #manage-security-compliance}
 
 {{site.data.keyword.tg_full}} is integrated with the {{site.data.keyword.compliance_short}} to help you manage security and compliance for your organization.
 {: shortdesc}
-
-<!--Add the following sections as your service onboards to the Security and Compliance Center. You might have only monitoring or you might also have configuration enforcement. Also, if you only have one of the options, be sure to remove the bulleted list and write the following section as a sentence.-->
 
 With the {{site.data.keyword.compliance_short}}, you can monitor for controls and goals that pertain to {{site.data.keyword.tg_full}}.
 
@@ -33,7 +27,7 @@ As a security or compliance focal, you can use the {{site.data.keyword.tg_full_n
 All of the goals for {{site.data.keyword.tg_full_notm}} are added to the {{site.data.keyword.cloud_notm}} Best Practices Controls 1.0 profile but can also be mapped to other profiles.
 {: note}
 
-To start monitoring your resources, check out [Getting started with {{site.data.keyword.compliance_short}}](https://cloud.ibm.com/docs/security-compliance?topic-security-compliance-getting-started).
+To start monitoring your resources, check out [Getting started with {{site.data.keyword.compliance_short}}](/docs/security-compliance?topic-security-compliance-getting-started).
 
 ### Available goals for IBM Cloud Transit Gateway
 {: #available-goals}
@@ -52,6 +46,6 @@ As a security or compliance focal, you can use the {{site.data.keyword.complianc
 |----|----------|-------|-------|---------------------------|
 | _service_ | _cross_account_connection_approved_ | _is_false_ | -- | Indicates whether an incoming cross-account request can be approved. |
 | _service_ | _cross_account_connection_approved_ | _is_true_ | -- | Indicates whether the final cross account connection can be deleted. |
-{: caption="Table 1. Rule properties for {{site.data.keyword.tg_full}}" caption-side="top"}
+{: caption="Table 1. Rule properties for {{site.data.keyword.tg_full}}" caption-side="bottom"}
 
 To learn more about config rules, see [What is a config rule?](/docs/security-compliance?topic=security-compliance-what-is-rule).

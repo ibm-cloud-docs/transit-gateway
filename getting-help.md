@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 20120
+  years: 2020
 lastupdated: "2020-04-16"
 
 keywords: help, support, contact, troubleshooting
@@ -10,16 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
-{:term: .term}
+{{site.data.keyword.attribute-definition-list}}
 
 # Getting help and support
 {: #getting-help-and-support}

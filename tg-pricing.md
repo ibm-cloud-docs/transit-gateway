@@ -10,16 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:tip: .tip}
-{:note: .note}
-{:important: .important}
-{:download: .download}
-{:term: .term}
+{{site.data.keyword.attribute-definition-list}}
 
 # Pricing for IBM Cloud Transit Gateway
 {: #tg-pricing}
@@ -37,8 +28,7 @@ Get started quickly with a free tier of service for {{site.data.keyword.tg_full}
 
 2. **Data transfer pricing** is determined based on which transit gateway routing option you choose.
 
-   - Local routing: Select this if you need access to IBM Cloud VPC and classic resources within the transit gateway's
-region (for example, `us-south`). Data transfer is unlimited and free.
+   - Local routing: Select this if you need access to IBM Cloud VPC and classic resources within the transit gateway's region (for example, `us-south`). Data transfer is unlimited and free.
 
    - Global routing: Choose this if you need to connect IBM Cloud VPCs between [multizone regions](/docs/overview?topic=overview-locations#mzr-table) (for example, between `us-south` and `eu-de`). Data transfer fees are charged at $0.02 per GB for data transfer after the free 1 TB monthly allotment.
 
