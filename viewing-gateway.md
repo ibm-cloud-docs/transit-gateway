@@ -10,7 +10,7 @@ subcollection: transit-gateway
 
 ---
 
-{{{site.data.keyword.attribute-definition-list}}
+{{site.data.keyword.attribute-definition-list}}
 
 # Viewing transit gateways
 {: #view-gateway}

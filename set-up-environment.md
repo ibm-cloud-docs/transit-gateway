@@ -14,7 +14,6 @@ subcollection: transit-gateway
 
 # Setting up your API environment
 {: #set-up-environment}
-{: api}
 
 Before you can use the transit gateway API, you need to setup your environment.
 {: shortdesc}
