@@ -28,7 +28,8 @@ toc:
           - link:
               label: Getting started with Virtual Private Cloud (VPC)
               href: /vpc/vpc-getting-started
-                
+       - release-notes.md                          
+
     - navgroup:
        id: tutorial
        topics:
@@ -87,5 +88,4 @@ toc:
        topics:
        - faqs.md
        - verifying-connectivity.md
-       - release-notes.md
        - getting-help.md
