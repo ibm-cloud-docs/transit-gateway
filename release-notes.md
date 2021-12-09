@@ -50,9 +50,6 @@ The beta release has ended. If you participated in this beta, you can continue t
 
 Transit gateways now support connections using GRE tunnels to connect endpoints. A GRE tunnel connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources.
 
-The use of GRE tunnels is restricted to approved use cases only. Before implementing a GRE tunnel connection, [create a support case](/docs/get-support?topic=get-support-open-case) to discuss and get approval for your specific situation.
-{: important}
-
 ## March 2021
 {: #march-2021}
 
