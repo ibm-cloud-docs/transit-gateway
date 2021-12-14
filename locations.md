@@ -73,6 +73,7 @@ You can establish connectivity from a VPC to resources in an SZR by connecting b
 
 | Location | Data Center |
 |-----------|----------|
+| Dallas | DAL09 |
 | London | LON02 |
 | Montreal | MON01 |
 | San Jose | SJC04 |
