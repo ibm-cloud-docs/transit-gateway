@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2022
+  years: 2020, 2022
 lastupdated: "2022-01-20"
 
 keywords: about, features, overview
