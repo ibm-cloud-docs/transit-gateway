@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-26"
 
 keywords: about, features, overview
 
@@ -79,4 +79,5 @@ You can establish connectivity from a VPC to resources in an SZR by connecting b
 | San Jose | SJC04 |
 | Seoul | SEO01 |
 | Singapore | SNG01 |
+| Chennai | CHE01 |
 {: caption="Table 2. SZRs for classic Softlayer IaaS" caption-side="bottom"}
