@@ -50,9 +50,6 @@ To display the routes report for a transit gateway, see [IBM Cloud Transit Gatew
 
 {{site.data.keyword.tg_full_notm}} also supports using Generic Routing Encapsulation (GRE) tunnels to connect endpoints. The GRE tunnel connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources in unique use cases.
 
-   Use of GRE tunnels is restricted to approved use cases. Before implementing a GRE tunnel connection, [create a support case](/docs/get-support?topic=get-support-open-case) to discuss your use case and get IBM approval.
-   {: important}
-
 ### Direct Link 2.0 connectivity
 {: #directlink }
 
