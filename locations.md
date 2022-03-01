@@ -66,10 +66,10 @@ An MZR provides consistent cloud services across different zones, better resilie
 For a detailed overview and list of data centers that are part of the MZR, see [Multizone regions](/docs/overview?topic=overview-locations#mzr-table).
 {: note}
 
-## Single-Zone Regions
+## Data centers
 {: #szr-table}
 
-You can establish connectivity from a VPC to resources in an SZR by connecting both the VPC and classic infrastructure to a transit gateway. The following table lists the SZRs in {{site.data.keyword.cloud_notm}} for interconnecting classic infrastructure to VPCs using a transit gateway.
+You can establish connectivity from a VPC to resources in a data center by connecting both the VPC and classic infrastructure to a transit gateway. The following table lists the data centers in {{site.data.keyword.cloud_notm}} for interconnecting classic infrastructure to VPCs using a transit gateway.
 
 | Location | Data Center |
 |-----------|----------|
