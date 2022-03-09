@@ -28,6 +28,8 @@ Keep in mind the following service limits while using IBM Cloud Transit Gateway.
 | Number of transit gateways | 10 gateways per account, 5 gateways per region |
 | Number of connections per transit gateway |  10 IBM Cloud VPC connections, 5 IBM Cloud classic connections, 5 IBM Cloud Direct Link connections |
 | Number of prefixes per connection | 15 prefixes for VPC connections, 120 prefixes for a classic connection |
+| Number of connections with prefix filters | 2 connections with prefix filters per gateway|
+| Number of prefix filters per connection | 10 prefix filters per connection|
 {: caption="Table 1. IBM Cloud Transit Gateway service limits" caption-side="bottom"}
 
 You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need your service limits expanded.
@@ -39,7 +41,7 @@ You can open an [IBM Support case](/docs/get-support?topic=get-support-using-ava
 All prefixes of a VPC and all subnets of a classic network will connect to the transit gateway, so it's important that they do not overlap. When creating VPCs that are intended to connect to a transit gateway, make sure to create the VPCs with non-overlapping VPC prefixes.
 {: important}
 
-* {{site.data.keyword.tg_full_notm}} supports provisioning transit gateways in the following regions: `us-south`, `us-east`, `ca-tor`, `eu-de`, `eu-gb`, `au-syd`, `jp-tok` and `jp-osa`.
+* {{site.data.keyword.tg_full_notm}} supports provisioning transit gateways in the regions listed in [IBM Cloud Transit Gateway locations](/docs/transit-gateway?topic=transit-gateway-tg-locations).
 * Create your transit gateway in a location that makes sense for your workload. For example, if you are connecting two VPCs in the `us-south` (Dallas) region and one VPC in the `eu-de` (Frankfurt) region, creating your gateway in `us-south` region would be the most efficient for your workload.
 * You cannot connect a [classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) directly to a transit gateway. To connect the classic resources, use the {{site.data.keyword.cloud_notm}} classic infrastructure connection, and then all the resources in your classic access VPC are automatically connected.  
 * You can connect a VPC, Direct Link or classic infrastructure to multiple local gateways and a single global gateway.
@@ -57,7 +59,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 
 * All of your IBM Cloud classic infrastructure networks across [MZRs](/docs/overview?topic=overview-locations#mzr-table) are accessible through this connection, regardless of the location of the transit gateway or the routing type specified.
 
-* Classic infrastructure resources located in these [SZRs](/docs/transit-gateway?topic=transit-gateway-tg-locations#szr-table) connect through a transit gateway to VPC resources.
+* Classic infrastructure resources located in these [data centers](/docs/transit-gateway?topic=transit-gateway-tg-locations#szr-table) connect through a transit gateway to VPC resources.
 
 * When classic infrastructure is connected to a transit gateway, it also includes any "Classic Access VPCs" attached to the account, because the subnets for these VPCs are associated with the classic infrastructure VRF. This is the only way to connect a transit gateway to a Classic Access VPC: by connecting the entire classic infrastructure to the transit gateway (instead of the specific Classic Access VPCs).
 

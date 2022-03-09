@@ -53,7 +53,7 @@ To display the routes report for a transit gateway, see [IBM Cloud Transit Gatew
 ### Direct Link 2.0 connectivity
 {: #directlink }
 
-{{site.data.keyword.tg_full_notm}} supports Direct Link connections. Connecting Direct Link to your {{site.data.keyword.tg_full_notm}} on-premises network grants access to all networks connected on the transit gateway. Similarily all other connections on the transit gateway will have access to your on-premises network. As with other network connections to the {{site.data.keyword.tg_full_notm}}, special consideration must be taken to avoid IP overlap issues. Refer to [thiis section](https://test.cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-troubleshooting#overlapping-vpc-prefixes-and-classic-subnets) for more information.
+{{site.data.keyword.tg_full_notm}} supports Direct Link connections. Connecting Direct Link to your {{site.data.keyword.tg_full_notm}} on-premises network grants access to all networks connected on the transit gateway. Similarily all other connections on the transit gateway will have access to your on-premises network. As with other network connections to the {{site.data.keyword.tg_full_notm}}, special consideration must be taken to avoid IP overlap issues. Refer to [this section](https://test.cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-troubleshooting#overlapping-vpc-prefixes-and-classic-subnets) for more information.
 
 ## Interconnectivity patterns
 {: #patterns}
