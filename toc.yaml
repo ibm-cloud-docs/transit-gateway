@@ -1,6 +1,7 @@
 toc:
   properties:
     subcollection: transit-gateway
+    service-name: transit
     version: 2
     category: network_interconnectivity
     audience: service
