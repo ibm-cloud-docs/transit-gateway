@@ -17,8 +17,8 @@ subcollection: transit-gateway
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
 
-## 01 November 2021
-{: #transit-gateway-nov0121}
+## 15 November 2021
+{: #transit-gateway-nov1521}
 {: release-note}
 
 Transit Gateway route reports 
@@ -29,8 +29,8 @@ Transit Gateway route reports
 
 :    For more information, see [Generating a transit gateway route report](/docs/transit-gateway?topic=transit-gateway-route-reports).
 
-## 01 August 2021
-{: #transit-gateway-aug0121}
+## 30 August 2021
+{: #transit-gateway-aug3021}
 {: release-note}
 
 Direct Link (2.0) connections for transit gateways** 
@@ -38,8 +38,8 @@ Direct Link (2.0) connections for transit gateways**
 
 :    The beta release has ended. If you participated in this beta, you can continue to use the gateways that you created during the beta period.
 
-## 01 June 2021
-{: #transit-gateway-jun0121}
+## 17 June 2021
+{: #transit-gateway-jun1721}
 {: release-note}
 
 Allow Generic Routing Encapsulation (GRE) connections for transit gateways
