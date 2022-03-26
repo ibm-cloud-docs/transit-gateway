@@ -1,12 +1,14 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-15"
+  years: 2020, 2022
+lastupdated: "2022-03-24"
 
 keywords: updates, additions, improvements
 
 subcollection: transit-gateway
+
+content-type: release-note
 
 ---
 
@@ -16,6 +18,13 @@ subcollection: transit-gateway
 {: #transit-gateway-release-notes}
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
+
+## 26 March 2022
+{: #transit-gateway-mar2622}
+{: release-note}
+
+Network prefix filters
+:    Simplify the management of the IP addresses that you reference in your resources to route network traffic. You can create prefix filters to permit or deny specific routes on specific connections. These prefix filters are added to an ordered list that is processed sequentially. A default filter (permit or deny all prefixes) is then applied after the prefix filter list is processed. For more information, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters). 
 
 ## 15 November 2021
 {: #transit-gateway-nov1521}

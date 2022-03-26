@@ -52,6 +52,7 @@ toc:
             - create-gre.md
             - editing-connection.md
             - changing-config.md
+            - add-prefix-filters.md
             - delete-connection.md
             - deleting-gateway.md
         - terraform.md

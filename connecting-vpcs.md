@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-24"
+lastupdated: "2022-02-25"
 
 keywords: connecting, vpc, region, order
 
@@ -72,6 +72,24 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
       * **Request connection to a network in another account** - Enter the IBM Cloud ID of the account that manages the network that you want to connect to, and a connection name. All resources connected to that transit gateway will be accessible from the other network.   
 
    * Complete all other required information for your connection.
+  
+1. Optionally, you can create prefix filters to permit or deny specific routes on specific connections. 
+   
+   For prefix filtering considerations and step-by-step instructions, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters).
+   {: important}
+ 
+   To begin, expand the drop-down arrow in the upper right of the Prefix filtering section, and complete the following information: 
+
+   * Select the default filter that you want to use. You can either permit (default) or deny all prefixes. 
+   
+      The default filter is applied only if you don't create prefix filters that bypass this default setting.
+      {: note}
+
+   * Click **Create prefix filter** to open the side panel and start creating prefix filters. In turn, your prefix filters are added to an ordered list that is processed sequentially.
+      
+      ![Create prefix filters](images/prefix-filtering.png "Create prefix filters"){: caption="Create prefix filters" caption-side="bottom"}
+
+   * Click **Save** to save your changes.
 
 1. **View Terms** on the right of the page.
 1. Click **Create** to complete your order.
