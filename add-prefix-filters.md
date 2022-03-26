@@ -139,11 +139,11 @@ To delete a prefix filter for an existing connection using the UI, follow these 
 
     ![Prefix filtering action](images/prefix-filtering-action.png "Prefix filtering action"){: caption="Prefix filtering action" caption-side="bottom"}
 
-1. Click the Actions menu ![Actions menu icon](/images/overflow.png) next to the prefix filter that you want to delete.
+1. Click the Actions menu ![Actions menu icon](/images/overflow.png) next to the prefix filter that you want to delete. Then, click **Delete**.
 
     ![Delete prefix filter](images/prefix-filtering-side-panel-delete.png "Delete prefix filter"){: caption="Delete prefix filter" caption-side="bottom"}
 	
-1. Confirm the deletion of the prefix filter.
+1. Click **Delete prefix filter** to confirm deletion.
 
     ![Confirm deletion](images/prefix-filtering-delete-confirm.png "Delete prefix filter"){: caption="Confirm deletion" caption-side="bottom"}
 
