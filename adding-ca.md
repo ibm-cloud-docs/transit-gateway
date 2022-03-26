@@ -266,7 +266,7 @@ curl -X POST --location --header "Authorization: Bearer {iam_token}" \
     }
   ],
   "prefix_filters_default": "permit",
-  ```
+```
   
 #### Response
 {: #tg-api-adding-cross-account-connection-transit-gateway-response}

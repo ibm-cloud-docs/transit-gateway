@@ -189,7 +189,7 @@ curl -X POST --location --header "Authorization: Bearer {iam_token}" \
   "remote_bgp_asn": 65010,
   "remote_gateway_ip": "10.242.63.12",
   "remote_tunnel_ip": "192.168.129.1"
-  ```
+```
 {: screen}
 
 ### Response

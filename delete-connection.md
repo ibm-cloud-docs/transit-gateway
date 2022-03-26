@@ -113,6 +113,7 @@ The following status codes will be returned:
 {: caption="Table 1. Status codes for deleting a connection" caption-side="bottom"}
 
 #### Example Response
+{: #example-returned-response}
 
 This example illustrates the returned response when the connection could not be found:
 

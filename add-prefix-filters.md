@@ -180,7 +180,7 @@ Where:
 
 - **--output**: Optional: Specify if you want the output to display in JSON format.
 
-#### Example
+#### Example: Creating a prefix filter
 {: #adding-prefix-filters-cli-example}
 
 This is an example of creating a prefix filter using the CLI.
@@ -218,7 +218,7 @@ Where:
 
 - **--force, -f**: Force the deletion operation without confirmation.
 
-#### Example
+#### Example: Deleting a prefix filter
 {: #deleting-prefix-filters-cli-example}
 
 This is an example of deleting a prefix filter using the CLI.
