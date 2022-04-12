@@ -24,7 +24,7 @@ You can request a report of all routes known to a transit gateway and each of it
 Overlapping routes are a common issue when configuring a transit gateway. If the routes from two or more connections overlap, traffic might not be routed properly. 
 {: note}
  
-## Generating and viewing a route report by using the UI
+## Generating and viewing a route report using the UI
 {: #generate-route-report-ui}
 {: ui}
 
@@ -45,26 +45,8 @@ To generate a route report by using the UI, follow these steps:
    ![Generating a route report](images/routereportpending.png "Generating a route report"){: caption="Generating a route report" caption-side="bottom"}
 
 After the report generates, information is displayed in the **Routes** and **BGP** views.
-
-### BGP
-{: #route-bgp}
-
-You can use the BGP table to see the **Local preference** and **AS Path** for a route. 
-
-   ![View BGP information](images/routereportbgp.png "View BGP route information"){: caption="View BGP route information" caption-side="bottom"}
-
-### Route conflicts
-{: #route-conflicts}
-
-Conflicting routes show in the **Conflict** column of the **Routes** view. Conflicts can cause routing error that the gateway/connection owner must resolve. For example, in the following image, `vpc-A` and `vpc-B` have conflicts with the overlapping route `192.168.100.0`. 
-
-   ![Display route report](images/routereportconflicts.png "Display route report"){: caption="Display route report" caption-side="bottom"}
-
-If there are multiple conflicts, click the link to open a side panel with more information.
-
-   ![Multiple route conflicts](images/routereportmultipleconflicts.png "Multiple Route Conflicts"){: caption="Multiple route conflicts" caption-side="bottom"}
   
-## Generating and viewing a route report by using the CLI
+## Generating and viewing a route report using the CLI
 {: #generate-route-report-cli}
 {: cli}
 
@@ -87,7 +69,7 @@ ibmcloud tg rrc $gateway
 ```
 {: codeblock}
 
-## Generating and viewing a route report by using the API
+## Generating and viewing a route report using the API
 {: #generate-route-report-api}
 {: api}
 
@@ -119,6 +101,27 @@ To generate and view a route report using the API, follow these steps:
    ```sh
    curl -X GET "$transit_api_endpoint/v1/transit_gateways/$transit_gateway/route_reports/$route_report?version=$api_version" -H "Authorization: $iam_token"
    ```
+
+## BGP
+{: #route-bgp}
+
+You can use the BGP table to see the **Local preference** and **AS Path** for a route. 
+
+   ![View BGP information](images/routereportbgp.png "View BGP route information"){: caption="View BGP route information" caption-side="bottom"}
+
+## Route conflicts
+{: #route-conflicts}
+
+Conflicting routes can cause errors, and you can see existing conflicts in the **Conflict** column of the **Routes** view. For example, in the following image, `vpc-A` and `vpc-B` have conflicts with the overlapping route `192.168.100.0`. 
+
+   ![Display route report](images/routereportconflicts.png "Display route report"){: caption="Display route report" caption-side="bottom"}
+
+If there are multiple conflicts, click the link to open a side panel with more information.
+
+   ![Multiple route conflicts](images/routereportmultipleconflicts.png "Multiple Route Conflicts"){: caption="Multiple route conflicts" caption-side="bottom"}
+   
+Conflicting routes are not dropped from routing tables. Any conflicts you see in the **Conflict** column are presented merely for information, so that you can easily spot problems in your routing, and decide how to address them, if at all. The use of overlapping routes may be intentional, for instance.
+{: note}
 
 ## Route report considerations
 {: #route-report-considerations}
