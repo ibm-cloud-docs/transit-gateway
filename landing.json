@@ -29,7 +29,7 @@
       "community": "https://community.ibm.com/community/user/publiccloud/home"
     },
     "section_updates": {
-      "view_more": "/docs/transit-gateway?topic=transit-gateway-release-notes",
+      "view_more": "/docs/transit-gateway?topic=transit-gateway-transit-gateway-release-notes",
       "tiles": [          
         {
           "date": "March 2022",
