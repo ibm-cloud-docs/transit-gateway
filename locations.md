@@ -15,7 +15,7 @@ subcollection: transit-gateway
 # IBM Cloud Transit Gateway locations
 {: #tg-locations}
 
-You can interconnect {{site.data.keyword.cloud}} classic and Virtual Private Cloud (VPC) infrastructures worldwide using [Multi-Zone Regions (MZR)](#x9774820){: term} and Single-Campus Multi-Zone Regions (Single Campus MZR).
+You can interconnect {{site.data.keyword.cloud}} classic and Virtual Private Cloud (VPC) infrastructures worldwide using [Multi-Zone Regions (MZR)](#x9774820){: term} and data centers.
 {: shortdesc}
 
 ## Multi-Zone Regions
