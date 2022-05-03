@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-01-26"
 
 keywords: about, features, overview
 
@@ -15,7 +15,7 @@ subcollection: transit-gateway
 # IBM Cloud Transit Gateway locations
 {: #tg-locations}
 
-You can interconnect {{site.data.keyword.cloud}} classic and Virtual Private Cloud (VPC) infrastructures worldwide using [Multi-Zone Regions (MZR)](#x9774820){: term} and [Single-Zone Regions (SZR)](#x9774825){: term}.
+You can interconnect {{site.data.keyword.cloud}} classic and Virtual Private Cloud (VPC) infrastructures worldwide using [Multi-Zone Regions (MZR)](#x9774820){: term} and Single-Campus Multi-Zone Regions (Single Campus MZR).
 {: shortdesc}
 
 ## Multi-Zone Regions
@@ -81,4 +81,4 @@ You can establish connectivity from a VPC to resources in a data center by conne
 | Seoul | SEO01 |
 | Singapore | SNG01 |
 | Chennai | CHE01 |
-{: caption="Table 2. SZRs for classic Softlayer IaaS" caption-side="bottom"}
+{: caption="Table 2. Data centers for classic Softlayer IaaS" caption-side="bottom"}
