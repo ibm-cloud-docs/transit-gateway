@@ -60,6 +60,9 @@ toc:
         - displayroutereport.md
         - tg-vpe.md
         - tgw-ha-dr.md
+        - link:
+              label: Interconnecting your VPC using transit gateways
+              href: /vpc/vpc-interconnectivity
         - topicgroup:
             label: Enhancing security for IBM Cloud Transit Gateway
             topics:
@@ -76,9 +79,13 @@ toc:
        - link:
           label: Transit Gateway API
           href: https://{DomainName}/apidocs/transit-gateway
-       - link:
-          label: Transit Gateway CLI
-          href: /tg-cli-plugin/tg-cli-plugin-transit-gateway-cli
+       - topicgroup:
+          label: Transit Gateway CLI reference
+          topics:
+          - link:
+              label: Transit Gateway CLI
+              href: /tg-cli-plugin/tg-cli-plugin-transit-gateway-cli
+          - cli-changelog-log.md
        - link:
           label: Terraform reference
           href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection
