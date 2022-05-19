@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-24"
+lastupdated: "2022-05-19"
 
 keywords: 
 
@@ -395,3 +395,38 @@ This example illustrates the response that a prefix filter with the specified ID
 
 For more information (including Java, Node, Python and Go examples), see "Remove prefix filter from Transit Gateway Connection" in the [Transit Gateway API reference](/apidocs/transit-gateway#delete-transit-gateway-connection-prefix-filter).
 {: note}
+
+## Working with prefix filters using Terraform
+{: #working-prefix-filters-terraform}
+{: terraform}
+
+Review the following argument references that you can specify for your resource when adding or deleting a prefix filter:
+
+|Argument|Details|
+|--|--|
+|**gateway**  \n Required \n String | The unique identifier of the gateway. |
+|**connection_id**  \n Required  \n String | The unique identifier of the gateway connection.|
+|**action**  \n Required  \n String | Whether to permit or deny any matching prefix. |
+|**prefix**  \n Required  \n String | The IP prefix. |
+|**before**  \n Optional  \n String | The identifier of the prefix filter to place this filter in front of. When a filter references another filter in it's `before` field, then the filter making the reference is applied before the referenced filter.  \n For example, if filter A references filter B in its `before` field, A is applied before B. |
+|**ge**  \n Optional  \n Integer | The IP prefix GE. The GE (greater than or equal to) value sets the minimum prefix length on which the filter action is applied. |
+|**le**  \n Optional  \n Integer | The IP prefix LE. The LE (less than or equal to) value sets the maximum prefix length on which the filter action is appled. |
+
+### Example
+{: #working-prefix-filters-terraform-example}
+
+This example shows how to add a prefix filter:
+
+``` sh
+resource "ibm_tg_connection_prefix_filter" "test_tg_prefix_filter" {
+    gateway = ibm_tg_gateway.new_tg_gw.id
+    connection_id = ibm_tg_connection.test_ibm_tg_connection.connection_id
+    action = "permit"
+    prefix = "192.168.100.0/24"
+    le = 32
+    ge = 24
+}
+```
+
+To remove a prefix filter, use the `terraform destroy -target=ibm_tg_connection_prefix_filter.[prefix filter name]` command.
+{: tip}
