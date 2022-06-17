@@ -32,8 +32,8 @@ To start monitoring your resources, check out [Getting started with {{site.data.
 ### Available goals for IBM Cloud Transit Gateway
 {: #available-goals}
 
-* Ensure at the account-level that no cross-account connection approvals can be done via {{site.data.keyword.tg_full_notm}}.
-* Ensure at the account-level that no cross-account requests are made via {{site.data.keyword.tg_full_notm}}.
+* Check whether {{site.data.keyword.tg_short}} allows no cross account connection requests at the account level
+* Check whether {{site.data.keyword.tg_short}} allows no cross account connection approvals at the account level
 
 ## Governing IBM Cloud Transit Gateway resource configuration
 {: #govern-transit}
@@ -44,8 +44,7 @@ As a security or compliance focal, you can use the {{site.data.keyword.complianc
 
 | Resource kind | Property | Operator | Value | Description |
 |----|----------|-------|-------|---------------------------|
-| _service_ | _cross_account_connection_approved_ | _is_false_ | -- | Indicates whether an incoming cross-account request can be approved. |
-| _service_ | _cross_account_connection_approved_ | _is_true_ | -- | Indicates whether the final cross account connection can be deleted. |
+| _service_ | _cross_account_connection_approved_ | _is_false_ \n _is_true_ | -- | Indicates whether an incoming cross account connection request can be approved. |
 {: caption="Table 1. Rule properties for {{site.data.keyword.tg_full}}" caption-side="bottom"}
 
-To learn more about config rules, see [What is a config rule?](/docs/security-compliance?topic=security-compliance-what-is-rule).
+To learn more about config rules, see [What is a config rule?](/docs/security-compliance?topic=security-compliance-what-is-governance)
