@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-15"
+  years: 2020, 2022
+lastupdated: "2022-06-23"
 
 keywords: features, overview
 
@@ -50,7 +50,7 @@ To display the routes report for a transit gateway, see [IBM Cloud Transit Gatew
 
 {{site.data.keyword.tg_full_notm}} also supports using Generic Routing Encapsulation (GRE) tunnels to connect endpoints. The GRE tunnel connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources in unique use cases.
 
-### Direct Link 2.0 connectivity
+### Direct Link (2.0) connectivity
 {: #directlink }
 
 {{site.data.keyword.tg_full_notm}} supports Direct Link connections. Connecting Direct Link to your {{site.data.keyword.tg_full_notm}} on-premises network grants access to all networks connected on the transit gateway. Similarily all other connections on the transit gateway will have access to your on-premises network. As with other network connections to the {{site.data.keyword.tg_full_notm}}, special consideration must be taken to avoid IP overlap issues. Refer to [this section](https://test.cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-troubleshooting#overlapping-vpc-prefixes-and-classic-subnets) for more information.
@@ -128,12 +128,18 @@ This diagram shows a highly available GRE tunnel configuration. When setting up 
 
 ![Connect using a GRE tunnel](images/HA-GRE.png "Connect using a High Availability GRE tunnel"){: caption="Figure 8. Connect networks using a High Availability GRE tunnel" caption-side="bottom"}
 
-### Use case 9: Connect on-premises network using Direct Link 2.0
+### Use case 9: Connect on-premises network using Direct Link (2.0)
 {: #use-case-9}
 
-Connect {{site.data.keyword.cloud_notm}} Direct Link 2.0 to allow on-premises connectivity to {{site.data.keyword.cloud_notm}} networks through a transit gateway. This allows the on-premises network to access all networks connected the transit gateway. In the following example, the Direct Link gateway connects to a global transit gateway, along with 4 VPCs and {{site.data.keyword.cloud_notm}} Classic Infrastructure. The inverse is also true, in that all other networks connected to the transit gateway are now connected to the on-premises network.
+Connect {{site.data.keyword.cloud_notm}} Direct Link (2.0) to allow on-premises connectivity to {{site.data.keyword.cloud_notm}} networks through a transit gateway. This allows the on-premises network to access all networks connected the transit gateway. In the following example, the Direct Link gateway connects to a global transit gateway, along with 4 VPCs and {{site.data.keyword.cloud_notm}} Classic Infrastructure. The inverse is also true, in that all other networks connected to the transit gateway are now connected to the on-premises network.
 
-DirectLink 2.0 can be connected to either local or remote transit gateways.
+Direct Link (2.0) can be connected to either local or remote transit gateways.
 {: note}
 
-![Connect On Premise Network to Transit Gateway](images/dlaas.png "Connect Direct Link on-premises network"){: caption="Figure 9. Connect on-premises network using Direct Link 2.0" caption-side="bottom"}
+![Connect On Premise Network to Transit Gateway](images/dlaas.png "Connect Direct Link on-premises network"){: caption="Figure 9. Connect on-premises network using Direct Link (2.0)" caption-side="bottom"}
+
+### Use case 10: Location connectivity using Power Systems Virtual Servers and Direct Link (2.0) Connect
+{: #use-case-10}
+
+You can use IBM Cloud Transit Gateway with Power Systems Virtual Servers and Direct Link (2.0) Connect for high-bandwidth customer demand. For more information, see [Connecting two Power Systems Virtual Server environments by using IBM Cloud Transit Gateway](/docs/power-iaas?topic=power-iaas-network-architecture-diagrams#network-reference-architecture-tgw).
+
