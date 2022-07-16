@@ -60,7 +60,7 @@ On 23 August 2021, some Activity Tracker events for IBM Cloud Transit Gateway ch
 
 Events are available in the **Frankfurt** location (`eu-de` region) only. {{site.data.keyword.at_full_notm}} can have only one instance per location.
 
-You can view events by accessing the web UI of the {{site.data.keyword.at_full_notm}} service in the `eu-de` region. For more information, see [Launching the web UI through the IBM Cloud UI](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-launch#launch_cloud_ui).
+You can view events by accessing the web UI of the {{site.data.keyword.at_full_notm}} service in the `eu-de` region. For more information, see [Launching the UI through the IBM Cloud UI](/docs/activity-tracker?topic=activity-tracker-launch#launch_cloud_ui).
 
 ## Analyzing events
 {: #at_analyze_events}
