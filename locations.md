@@ -76,6 +76,7 @@ You can establish connectivity from a VPC to resources in a data center by conne
 | Amsterdam | AMS03 |
 | Dallas | DAL05, DAL09 |
 | London | LON02 |
+| Milan | MIL01 |
 | Montreal | MON01 |
 | Paris | PAR01 |
 | San Jose | SJC01, SJC03, SJC04 |
