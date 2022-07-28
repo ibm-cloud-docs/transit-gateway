@@ -29,7 +29,10 @@ subcollection: transit-gateway
 | Operator and Viewer | Can only perform actions that don't change the state of resources. | List gateways  \n Get gateways  \n List a gateway's connections  \n View a gateway's connections  \n View incoming connection requests |
 {: caption="Table 1. IAM platform-access user roles and actions" caption-side="bottom"}
 
-To add or remove connections to VPCs, or to accept or reject a cross account connection request, the user must also have Administrator or Editor platform-access role permissions to the VPC being connected to. See [VPC: Getting started with IAM](/docs/vpc?topic=vpc-iam-getting-started) for more information.
+To add or remove connections to VPCs, or to accept or reject a cross account connection request, you must also have Administrator or Editor platform-access role permission to the VPC being connected to. See [VPC: Getting started with IAM](/docs/vpc?topic=vpc-iam-getting-started) for more information.
+{: note}
+
+To add or remove connections to Direct Links, you must also have Administrator or Editor platform-access role permission to the Direct Link being connected to. See [Managing access for IBM Cloud Direct Link](/docs/dl?topic=dl-iam) for more information.
 {: note}
 
 ## Service name
