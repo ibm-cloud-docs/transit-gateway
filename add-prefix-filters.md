@@ -281,7 +281,7 @@ POST /transit_gateways/{transit_gateway_id}/connections/{id}/prefix_filters
 ```
 
 ```sh
-curl -X POST "https://transit.test.cloud.ibm.com/v1/transit_gateways/9f559c43-63f4-4da5-b306-b525a8ddb275/connections/6c1bdc19-4adb-4550-8cdc-ef3b74b739f8/prefix_filters?version=2020-03-31" -H "Authorization: Bearer $iam_token" -H "Content-Type: application/json" -d '{"action": "deny", "prefix": "10-10.0.10/30"}'
+curl -X POST "https://transit.cloud.ibm.com/v1/transit_gateways/9f559c43-63f4-4da5-b306-b525a8ddb275/connections/6c1bdc19-4adb-4550-8cdc-ef3b74b739f8/prefix_filters?version=2020-03-31" -H "Authorization: Bearer $iam_token" -H "Content-Type: application/json" -d '{"action": "deny", "prefix": "10-10.0.10/30"}'
 ```
 
 #### Response
@@ -361,7 +361,7 @@ curl -X DELETE --location --header "Authorization: Bearer {iam_token}"   "{base_
 ```
 
 ```sh
-curl -X DELETE "https://transit.test.cloud.ibm.com/v1/transit_gateways/9f559c43-63f4-4da5-b306-b525a8ddb275/connections/6c1bdc19-4adb-4550-8cdc-ef3b74b739f8/prefix_filters/a4aad53e-5828-4ac1-8dad-a08d940772d4?version=2020-03-31" -H "Authorization: Bearer $iam_token" -H "Content-Type: application/json"
+curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/9f559c43-63f4-4da5-b306-b525a8ddb275/connections/6c1bdc19-4adb-4550-8cdc-ef3b74b739f8/prefix_filters/a4aad53e-5828-4ac1-8dad-a08d940772d4?version=2020-03-31" -H "Authorization: Bearer $iam_token" -H "Content-Type: application/json"
 ```
 
 #### Response
