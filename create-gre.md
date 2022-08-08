@@ -19,7 +19,7 @@ subcollection: transit-gateway
 {: #tg-ui-adding-gre-connection-transit-gateway}
 {: ui}
 
-You can use a GRE tunnel transit gateway connection to connect endpoints. This connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources in approved use cases.
+You can use a GRE tunnel transit gateway connection to connect endpoints. This connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources.
 {: shortdesc}
 
 ### Before you begin
