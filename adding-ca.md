@@ -25,7 +25,7 @@ You can request connections to networks in other {{site.data.keyword.cloud_notm}
 Only 10 pending requests are allowed per gateway. To create more requests, you can cancel the pending connection request, or wait for it to be approved. Connection requests expire if not approved within 72 hours.
 {: tip}
 
-Be aware that after you connect a transit gateway to a network in another account, all resources connected to that transit gateway are accessible from the other network. Make sure that this is a trusted account. Use of [security controls](/docs/vpc?topic=vpc-security-in-your-vpc), such as ACLs, security groups, or other network services to control traffic flow are highly recommended.  \n Only `VPC` and `Classic` connections are permitted as cross-account connections.
+Be aware that after you connect a transit gateway to a network in another account, all resources connected to that transit gateway are accessible from the other network. Make sure that this is a trusted account. Use of [security controls](/docs/vpc?topic=vpc-security-in-your-vpc), such as ACLs, security groups, or other network services to control traffic flow are highly recommended.  Only `VPC` and `Classic` connections are permitted as cross-account connections.
 {: important}
 
 To connect networks owned by different accounts, follow these steps:
