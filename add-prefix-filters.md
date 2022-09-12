@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-19"
+lastupdated: "2022-09-12"
 
 keywords: 
 
@@ -23,7 +23,7 @@ Prefix filtering allows you to set an ordered list of prefix route filters for a
 
 Make sure that you review the following considerations before creating a prefix filter:
 
-* Only a network account owner can filter prefixes.
+* Only users in the account that contains the network can filter prefixes of that network.
 * You cannot filter incoming prefixes from another account.
 * Prefix filters in the list are processed sequentially. You can modify the order at any time. 
 * Review the [prefix service limits](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits) for transit gateways.
