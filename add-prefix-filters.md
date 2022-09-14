@@ -373,7 +373,7 @@ The following response details show after you initiate the request:
 |--|--|
 |**204**|Prefix filter deleted successfully.|
 |**404**|Prefix filter with the specified identifier could not be found.|
-{: caption="Table 7. Response details for deleting prefix filters" caption-side="bottom"}
+{: caption="Table 8. Response details for deleting prefix filters" caption-side="bottom"}
 
 #### Example response
 {: #deleting-prefix-filters-api-response-example}
@@ -410,7 +410,8 @@ Review the following argument references that you can specify for your resource 
 |**prefix**  \n Required  \n String | The IP prefix. |
 |**before**  \n Optional  \n String | The identifier of the prefix filter to place this filter in front of. When a filter references another filter in it's `before` field, then the filter making the reference is applied before the referenced filter.  \n For example, if filter A references filter B in its `before` field, A is applied before B. |
 |**ge**  \n Optional  \n Integer | The IP prefix GE. The GE (greater than or equal to) value sets the minimum prefix length on which the filter action is applied. |
-|**le**  \n Optional  \n Integer | The IP prefix LE. The LE (less than or equal to) value sets the maximum prefix length on which the filter action is appled. |
+|**le**  \n Optional  \n Integer | The IP prefix LE. The LE (less than or equal to) value sets the maximum prefix length on which the filter action is applied. |
+{: caption="Table 9. Arguments when adding or deleting a prefix filter using Terraform" caption-side="bottom"}
 
 ### Example
 {: #working-prefix-filters-terraform-example}
