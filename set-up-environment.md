@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-15"
+  years: 2022
+lastupdated: "2022-09-15"
 keywords: api
 
 subcollection: transit-gateway
@@ -46,7 +46,7 @@ apikey="<YOUR_API_KEY>"
 Run the following command to get and parse an IAM token by using the JSON processing utility [jq](https://stedolan.github.io/jq/){: external}. You can modify the command to use another parsing tool, or you can remove the last part of the command if you prefer to manually parse the token.
 
 ```sh
-iam_token=`curl -k -X POST \
+IAM_TOKEN=`curl -k -X POST \
   --header "Content-Type: application/x-www-form-urlencoded" \
   --header "Accept: application/json" \
   --data-urlencode "grant_type=urn:ibm:params:oauth:grant-type:apikey" \
@@ -61,7 +61,7 @@ Bearer <your token>
 ```
 {: screen}
 
-The Authorization header expects the token to begin with `Bearer`. If the result doesn't include `Bearer`, update the `iam_token` variable to include it. These examples assume that `Bearer` is included in the `iam_token`.
+The Authorization header expects the token to begin with `Bearer`. If the result doesn't include `Bearer`, update the `iam_token` variable to include it. These examples assume that `Bearer` is included in the `IAM_TOKEN`.
 
 Because the IAM token expires, you must repeat the preceding step to refresh your token every hour.
 {: important}
@@ -99,19 +99,17 @@ To verify that this variable was saved, run ``echo $api_version`` and make sure 
 ### Step 5: Verify that you have API access
 {: #verify-api-access}
 
-If you run into unexpected results, add the `--verbose` (debug) flag after the `curl` command to obtain detailed logging information. For more information about commonly encountered errors, see [Troubleshooting](/docs/vpc?topic=vpc-troubleshooting-vpc).
+If you run into unexpected results, add the `--verbose` (debug) flag after the `curl` command to obtain detailed logging information.
 {: tip}
 
-* Call the [GET Locations API](/apidocs/transit-gateway#get-gateway-location) to see the locations available for your transit gateway, in JSON format. At least one object should return.
+* Call the [List Available Locations API](/apidocs/transit-gateway#list-offering-type-locations) to see the locations available for your transit gateway, in JSON format. At least one object should return. 
 
     ```sh
-    curl -X GET "$transit_api_endpoint/v1/locations?version=$api_version" \
-      -H "Authorization: $iam_token"
+    curl -X GET "$transit_api_endpoint/v1/offering_types/dedicated/locations?version=$api_version"   -H "Authorization: $IAM_TOKEN"
     ```
 
-* Call the [GET Transit Gateways API](/apidocs/transit-gateway#list-transit-gateways) to see any transit gateways that you already created under your account, in JSON format.
+* Call the [List gateways](/apidocs/transit-gateway#list-gateways) API to see any gateways that you already created under your account, in JSON format.
 
     ```sh
-    curl -X GET "$transit_api_endpoint/v1/transit_gateways?version=$api_version" \
-      -H "Authorization: $iam_token"
+    curl -X GET "$transit_api_endpoint/v1/gateways?version=$api_version"   -H "Authorization: $IAM_TOKEN"
     ```
