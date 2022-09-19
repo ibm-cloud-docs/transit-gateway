@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-20"
+lastupdated: "2022-09-19"
 
 keywords: help, tips, connections, provision
 
@@ -71,6 +71,8 @@ When configuring a GRE tunnel, you must specify an availability zone in which to
 
 GRE connections require the use of a BGP service between GRE tunnel IP addresses. The transit gateway configures a BGP service on the tunnel connection, before connecting to the other tunnel endpoint. Then, once the BGP protocol exchanges routes between the connected endpoint and the transit gateway, the GRE tunnel becomes the data path for the routed traffic.
 
+Classic routes are not advertised through a GRE tunnel. Also, when connecting two or more GRE tunnels to a transit gateway, you cannot communicate through one GRE to the other GRE connections.
+
 For more information and a use case example, refer to [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).
 
 ## Direct Link (2.0) connection consideration
@@ -105,7 +107,7 @@ You can create a single transit gateway or multiple transit gateways to intercon
 
 * If you plan to use your transit gateways to connect VPCs locally and between different [MZRs](/docs/overview?topic=overview-locations#mzr-table), use local gateways for VPCs in the same MZR, and a global gateway for VPCs across MZRs. You can use the example that follows a Highly Available (HA) scenario as well. All data in VPCs A and B can be replicated to VPCs C and D. If there is an issue in the US South region, connections reroute to US East.
 
-   ![Global routing](images/2-aboutLocalAndGlobalRoutingExample.png "Local and Global routing"){: caption="Figure 2. Combining local and global routng example" caption-side="bottom"}
+   ![Global routing](images/2-aboutLocalAndGlobalRoutingExample.png "Local and Global routing"){: caption="Figure 2. Combining local and global routing example" caption-side="bottom"}
 
    Regardless of the routing type specified, {{site.data.keyword.tg_full_notm}} can connect to classic infrastructure networks located in any MZR. To achieve this, simply add the classic connection to your transit gateway.
    {: important}
