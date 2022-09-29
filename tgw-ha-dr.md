@@ -29,6 +29,9 @@ When you create a transit gateway instance in a particular region, the system au
 
 Transit gateway GRE connections require the gateway owner to configure HA to meet their specific needs. When configuring a GRE connection on a transit gateway, you must specify the availability zone. For a more robust solution, configure multiple connections using different availability zones.
 
+Transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point to point connection, has no built in redundancy, and is a single point of failure. When configuring a GRE connection on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections using different availability zones.
+{: note}
+
 ## Disaster recovery
 {: #disaster-recovery}
 

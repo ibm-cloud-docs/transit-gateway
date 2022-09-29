@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-08-31"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -21,6 +21,9 @@ subcollection: transit-gateway
 
 You can use a GRE tunnel transit gateway connection to connect endpoints. This connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources.
 {: shortdesc}
+
+Transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point to point connection, has no built in redundancy, and is a single point of failure. When configuring a GRE connection on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections using different availability zones.
+{: note}
 
 ### Before you begin
 {: #GRE-begin}
@@ -48,7 +51,7 @@ To create your GRE tunnel connection, follow these steps:
 1. Configure the remaining parameters for the connection:
    * Enter the remote gateway IP[^ip1] for the endpoint of the GRE tunnel.
    * Enter a `/30` remote tunnel IP[^ip2] for both ends of the tunnel, for example `192.168.103.2`.
-   * Enter the local gateway IP address that the transit gateway uses to host the underlay network for the GRE tunnel.
+   * Enter the local gateway IP address that the transit gateway uses to host the underlay network for the GRE tunnel. This user-selected IP address is configured on the Transit Gateway GRE tunnel after the tunnel is created.
 
       This IP address must not conflict with any networks connected to your transit gateway.
       {: note}

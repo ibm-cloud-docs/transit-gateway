@@ -51,9 +51,14 @@ To display the routes report for a transit gateway, see [IBM Cloud Transit Gatew
 {{site.data.keyword.tg_full_notm}} also supports using Generic Routing Encapsulation (GRE) tunnels to connect endpoints. The GRE tunnel connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources in unique use cases.
 
 ### Direct Link (2.0) connectivity
-{: #directlink }
+{: #directlink}
 
-{{site.data.keyword.tg_full_notm}} supports Direct Link connections. Connecting Direct Link to your {{site.data.keyword.tg_full_notm}} on-premises network grants access to all networks connected on the transit gateway. Similarily all other connections on the transit gateway will have access to your on-premises network. As with other network connections to the {{site.data.keyword.tg_full_notm}}, special consideration must be taken to avoid IP overlap issues. Refer to [this section](/docs/transit-gateway?topic=transit-gateway-troubleshooting#overlapping-vpc-prefixes-and-classic-subnets) for more information.
+{{site.data.keyword.tg_full_notm}} supports Direct Link connections. Connecting Direct Link to your {{site.data.keyword.tg_full_notm}} on-premises network grants access to all networks connected on the transit gateway. Similarly, all other connections on the transit gateway will have access to your network. As with other network connections to the {{site.data.keyword.tg_full_notm}}, special consideration must be taken to avoid IP overlap issues. For more information, see [Dealing with overlapping VPC prefixes and classic infrastructure subnets](/docs/transit-gateway?topic=transit-gateway-troubleshooting#overlapping-vpc-prefixes-and-classic-subnets).
+
+### {{site.data.keyword.powerSys_notm}} connectivity (IBM Internal Use Only)
+{: #powervs}
+
+{{site.data.keyword.tg_full_notm}} supports {{site.data.keyword.powerSys_notm}} connections. Connecting a {{site.data.keyword.powerSys_notm}} instance to your {{site.data.keyword.tg_full_notm}} network grants access to all networks connected on the transit gateway. Similarly, all other connections on the transit gateway will have access to your network. As with other network connections to the {{site.data.keyword.tg_full_notm}}, special consideration must be taken to avoid IP overlap issues. For more information, see [Dealing with overlapping VPC prefixes and classic infrastructure subnets](/docs/transit-gateway?topic=transit-gateway-troubleshooting#overlapping-vpc-prefixes-and-classic-subnets).
 
 ## Interconnectivity patterns
 {: #patterns}
@@ -128,6 +133,9 @@ This diagram shows a highly available GRE tunnel configuration. When setting up 
 
 ![Connect using a GRE tunnel](images/HA-GRE.png "Connect using a High Availability GRE tunnel"){: caption="Figure 8. Connect networks using a High Availability GRE tunnel" caption-side="bottom"}
 
+Transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point to point connection, has no built in redundancy, and is a single point of failure. When configuring a GRE connection on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections using different availability zones.
+{: note}
+
 ### Use case 9: Connect on-premises network using Direct Link (2.0)
 {: #use-case-9}
 
@@ -138,8 +146,8 @@ Direct Link (2.0) can be connected to either local or remote transit gateways.
 
 ![Connect On Premise Network to Transit Gateway](images/dlaas.png "Connect Direct Link on-premises network"){: caption="Figure 9. Connect on-premises network using Direct Link (2.0)" caption-side="bottom"}
 
-### Use case 10: Location connectivity using Power Systems Virtual Servers and Direct Link (2.0) Connect
+### Use case 10: Location connectivity using {{site.data.keyword.powerSys_notm}} and Direct Link (2.0) Connect
 {: #use-case-10}
 
-You can use IBM Cloud Transit Gateway with Power Systems Virtual Servers and Direct Link (2.0) Connect for high-bandwidth customer demand. For more information, see [Connecting two Power Systems Virtual Server environments by using IBM Cloud Transit Gateway](/docs/power-iaas?topic=power-iaas-network-architecture-diagrams#network-reference-architecture-tgw).
+You can use IBM Cloud Transit Gateway with {{site.data.keyword.powerSys_notm}} and Direct Link (2.0) Connect for high-bandwidth customer demand. For more information, see [Connecting two {{site.data.keyword.powerSys_notm}} environments by using IBM Cloud Transit Gateway](/docs/power-iaas?topic=power-iaas-network-architecture-diagrams#network-reference-architecture-tgw).
 
