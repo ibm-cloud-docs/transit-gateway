@@ -62,6 +62,6 @@ You create two globally routed transit gateways in `us-south` (Dallas) and attac
 Also, because you selected *global* routing, and a total of 4 TB was sent between the VPCs this month, data transfer is charged at $0.02 per GB.
 
 * {{site.data.keyword.tg_full_notm}} connection charge (connections 1 & 2) = *$0 per month*
-* {{site.data.keyword.tg_full_notm}} connection charge (connections 3 through 20) = *$360 per month* 
-* {{site.data.keyword.tg_full_notm}} connection charge (connections 21 through 42) = *$330 per month* 
-* {{site.data.keyword.tg_full_notm}} data transfer charge = *$40.96 per month* (`2,048 GB x $0.02 = $81.92`)
+* {{site.data.keyword.tg_full_notm}} connection charge (connections 3 through 20) = *$360 per month*
+* {{site.data.keyword.tg_full_notm}} connection charge (connections 21 through 42) = *$330 per month*
+* {{site.data.keyword.tg_full_notm}} data transfer charge = *$81.92 per month* (`4,096 GB x $0.02 = $81.92`)
