@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-09-26"
 
 keywords: features, overview
 
@@ -38,12 +38,19 @@ To add a connection to a transit gateway, follow these steps:
 
    * **Classic infrastructure** - Allows you to connect to IBM Cloud classic resources.
    * **VPC** - Allows you to connect to your account's VPC resources, or VPC resources from other accounts as well.
-   * **GRE tunnel** - Allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For prerequisites and detailed instructions, see [Creating a Generic Routing Encapsulation (GRE) tunnel connection](/docs/transit-gateway?topic=transit-gateway-GRE-connection).
+   * **Unbound GRE tunnel** - Allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For prerequisites and detailed instructions, see [Creating an Unbound Generic Routing Encapsulation tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
    * **Direct Link** - Creates a network connection to and from Direct Link 2.0 gateways so that there is a secure connection to on-premises networks and other resources connected to the transit gateway.   
 
-      If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (using the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link. You can specify the connection type when you create a direct link, or after your direct link is provisioned. For instructions, see [Updating the network connection type](/docs/dl?topic=dl-virtual-connection-types){: external}.
+      If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (using the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link.
       {: important}
 
+   * **{{site.data.keyword.powerSys_notm}}** (IBM Internal Use Only) - Creates a network connection to and from a {{site.data.keyword.powerSys_notm}} instance so that there is a secure connection to networks and other resources connected to the transit gateway.  
+   
+      Location: Select a region for the {{site.data.keyword.powerSys_notm}} workspace. Currently, `ca-mon` is not supported by Transit Gateway.
+      
+      If you select **{{site.data.keyword.powerSys_notm}}**, you must have a {{site.data.keyword.powerSys_notm}} workspace already set up to leverage the upgraded technology on Transit Gateway. To find out if your {{site.data.keyword.powerSys_notm}} workspace is set up correctly, go to the workspace and check the navigation for a Cloud connections page. If there isn't a **Cloud connections** page, the workspace leverages Transit Gateway. Otherwise, you must configure virtual connections with Cloud connections on the {{site.data.keyword.powerSys_notm}}.
+      {: important}
+      
 1. Click **Add** to create a connection.
 
 ## Adding a connection using the CLI
@@ -87,7 +94,7 @@ Where:
 - **GATEWAY_ID**: ID of the gateway that the new connection will be on.
 - **--name**: Name for the new connection.
 - **--network-type**: Network type of the connection. Values are `vpc`, `directlink`, or `classic`.
-- **--network-id**: ID of the network connection. For classic, do not set a value. For VPC and directlink, use the CRN. To find the CRN of a VPC:
+- **--network-id**: ID of the network connection. For classic, do not set a value. For `vpc` and `directlink`, use the CRN. To find the CRN of a VPC:
 
    ```sh
    ibmcloud is vpc VPC_ID --json
@@ -140,17 +147,18 @@ To add a connection to the transit gateway, adjust the following parameters:
 |--|--|
 |**version**  \n Required  \n string | Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date may be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
 |**Request Body**  \n Required  \n TransitGatewayConnectionTemplate | The connection template|
-|**network_type**  \n Required  \n string | Defines what type of network is connected via this connection. For access to gre_tunnel connections contact IBM support.  \n **Allowable values:** [`classic`,`directlink`,`gre_tunnel`,`vpc`]  \n **Example:** `vpc`|
-|**base_connection_id**  \n string|network_type 'gre_tunnel' connections must be created over an existing network_type 'classic' connection. This field is required for 'gre_tunnel' connections and must specify the ID of an active transit gateway network_type 'classic' connection in the same transit gateway. Omit 'base_connection_id' for any connection type other than 'gre_tunnel'.  \n **Example:** `975f58c1-afe7-469a-9727-7f3d720f2d32`|
-|**local_gateway_ip**  \n string | Local gateway IP address. This field is required for and only applicable to type gre_tunnel connections.  \n **Example:** `192.168.100.1`|
-|**local_tunnel_ip**  \n string|Local tunnel IP address. This field is required for and only applicable to type 'gre_tunnel' connections. The 'local_tunnel_ip' and 'remote_tunnel_ip' addresses must be in the same /30 network. Neither can be the network nor broadcast addresses.  \n **Example:** `192.168.129.2`|
-|**name**  \n Name|The user-defined name for this transit gateway connection. Network type 'vpc' connections are defaulted to the name of the VPC. Network type 'classic' connections are named 'Classic'.  \n Name specification is required for network type 'gre_tunnel' connections.  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression  `^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
-|**network_account_id**  \n AccountID|The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required to be unspecified for network type 'gre_tunnel'.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
-|**network_id**  \n string | The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' and 'directlink'. For network types 'vpc' and 'directlink' this is the CRN of the VPC / Direct Link gateway respectively. This field is required to be unspecified for network type 'classic' and 'gre_tunnel' connections.  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
-|**remote_bgp_asn**  \n string|Remote network BGP ASN. This field is only applicable to 'gre_tunnel' type connections. The following ASN values are reserved and unavailable 64512-64513, 65100, 65201-65234, 65402-65433, 65500 and 4201065000-4201065999. If 'remote_bgp_asn' is omitted on gre_tunnel connection create requests IBM will assign an ASN.  \n **Example:** `65010`|
-|**remote_gateway_ip**  \n string|Remote gateway IP address. This field is required for and only applicable to type gre_tunnel connections.  \n **Example:** `10.242.63.12`|
-|**remote_tunnel_ip**  \n string|Remote tunnel IP address. This field is required for and only applicable to type gre_tunnel connections. The local_tunnel_ip and remote_tunnel_ip addresses must be in the same /30 network. Neither can be the network nor broadcast addresses.  \n **Example:** `192.168.129.1`|
-|**zone**  \n ZoneIdentityByName|For network_type 'gre_tunnel' connections specify the connection's location. The specified availability zone must reside in the gateway's region. Use the IBM Cloud global catalog to list zones within the desired region. This field is required for and only applicable to network type 'gre_tunnel' connections.|
+|**network_type**  \n Required  \n string | Defines the type of network being connected to. For access to `gre_tunnel` connections, contact IBM support.  \n **Allowable values:** [`classic`,`directlink`,`gre_tunnel`,`unbound_gre_tunnel`,`vpc`]  \n **Example:** `vpc`|
+|**base_connection_id**  \n string | The ID of an active transit gateway. `network_type` `gre_tunnel` connections must be created over an existing `network_type` `classic` connection. This field is required for `gre_tunnel` connections and must specify the ID of an active transit gateway network_type `classic` connection in the same transit gateway. Omit `base_connection_id` for any connection type other than `gre_tunnel`. \n **Example:** `975f58c1-afe7-469a-9727-7f3d720f2d32`|
+|**base_network_type**  \n string | Defines the type of network the GRE tunnel is targeting. This field is required for, and only applicable to, `unbound_gre_tunnel` type connections.  \n **Allowable value:** [`classic`]  \n **Example:** `classic`|
+|**local_gateway_ip**  \n string | The local gateway IP address. This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Example:** `192.168.100.1`|
+|**local_tunnel_ip**  \n string | The local tunnel IP address. This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections. The `local_tunnel_ip` and `remote_tunnel_ip` addresses must be in the same `/30` network. Neither can be the network nor the broadcast addresses.  \n **Example:** `192.168.129.2`|
+|**name**  \n Name|The user-defined name for this transit gateway connection. Network type `vpc` connections are defaulted to the name of the VPC. Network type `classic` connections are named 'Classic'.  \n Name specification is required for network `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression `^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
+|**network_account_id**  \n AccountID | The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required to be unspecified for network type `gre_tunnel`.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
+|**network_id**  \n string | The ID of the network being connected to via this connection. This field is required for some types, such as `vpc` and `directlink`. For network types `vpc` and `directlink` this is the CRN of the VPC / Direct Link gateway respectively. This field is required to be unspecified for `classic`, `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
+|**remote_bgp_asn**  \n string | The remote network BGP ASN. This field is only applicable to `gre_tunnel` and `unbound_gre_tunnel` type connections. The following ASN values are reserved and unavailable: 64512-64513, 65100, 65201-65234, 65402-65433, 65500 and 4201065000-4201065999. If `remote_bgp_asn` is omitted on `gre_tunnel` connection create requests, IBM will assign an ASN.  \n **Example:** `65010`|
+|**remote_gateway_ip**  \n string | The remote gateway IP address. This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Example:** `10.242.63.12`|
+|**remote_tunnel_ip**  \n string | The remote tunnel IP address. This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections. The `local_tunnel_ip` and `remote_tunnel_ip` addresses must be in the same `/30` network. Neither can be the network nor the broadcast addresses. \n **Example:** `192.168.129.1` | 
+|**zone**  \n ZoneIdentityByName | For `gre_tunnel` and `unbound_gre_tunnel` type connections, specify the connection's location. The specified availability zone must reside in the gateway's region. Use the IBM Cloud global catalog to list zones within the desired region. This field is required for, and only applicable to, network type `gre_tunnel` and `unbound_gre_tunnel` connections. |
 |- **name**  \n string|Availability zone name.  \n **Example:** `us-south-1`|
 {: caption="Table 2. Query parameters for adding a connection" caption-side="bottom"}
 
@@ -200,23 +208,24 @@ The following response shows once you initiate the request:
 | Response Body| Details |
 |--|--|
 |**name**  \n Always included*  \n Name|The user-defined name for this transit gateway connection.  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression  `^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
-|**network_type**  \n Always included*  \n string|Defines what type of network is connected via this connection. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`classic`,`directlink`,`gre_tunnel`,`vpc`]  \n **Example:** `vpc`|
+|**network_type**  \n Always included*  \n string|Defines what type of network is connected via this connection. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`classic`,`directlink`,`gre_tunnel`,`unbound_gre_tunnel`,`vpc`]  \n **Example:** `vpc`|
 |**id**  \n Always included*  \n string | The unique identifier for this Transit Gateway Connection  \n **Example:** `1a15dca5-7e33-45e1-b7c5-bc690e569531`|
 |**created_at** \n Always included*  \n date-time|The date and time that this connection was created|
-|**network_id**  \n string|The ID of the network being connected via this connection. This field is required for some types, such as 'vpc' and 'directlink'. For network types 'vpc' and 'directlink' it should be the CRN of the target vpc / gateway respectively.  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
-|**base_connection_id**  \n string|network_type 'gre_tunnel' connections use 'base_connection_id' to specify the ID of a network_type 'classic' connection the tunnel is configured over. The specified connection must reside in the same transit gateway and be in an active state. The 'classic' connection cannot be deleted until any 'gre_tunnel' connections using it are deleted. This field only applies to and is required for network type 'gre_tunnel' connections.  \n **Example:** `975f58c1-afe7-469a-9727-7f3d720f2d32`|
-|**local_bgp_asn**  \n integer|Local network BGP ASN. This field only applies to network type 'gre_tunnel' connections.  \n **Example:** `64490`|
-|**local_gateway_ip**  \n string| Local gateway IP address. This field only applies to network type 'gre_tunnel' connections.  \n **Example:** `192.168.100.1`|
-|**local_tunnel_ip** \n string|Local tunnel IP address. This field only applies to network type 'gre_tunnel' connections.  \n **Example:** `192.168.129.2`|
-|**mtu**  \n integer|GRE tunnel MTU. This field only applies to network type 'gre_tunnel' connections.  \n **Example:** `9000`|
-|**network_account_id**  \n AccountID|The ID of the account which owns the connected network. Generally only used if the network is in a different IBM Cloud account than the gateway.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
-|**remote_bgp_asn**  \n integer | Remote network BGP ASN. This field only applies to network type 'gre_tunnel' connections.  \n **Example:** `65010`|
-|**remote_gateway_ip**  \n string|Remote gateway IP address. This field only applies to network type 'gre_tunnel' connections.  \n **Example:** `10.242.63.12`|
-|**remote_tunnel_ip**  \n string|Remote tunnel IP address. This field only applies to network type 'gre_tunnel' connections.  \n **Example:** `192.168.129.1`|
-|**request_status**  \n string|Only visible for cross account connections, this field represents the status of a connection request between IBM Cloud accounts. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`pending`,`approved`,`rejected`,`expired`,`detached`]|
+|**network_id**  \n string|The ID of the network being connected via this connection. This field is required for some types, such as `vpc` and `directlink` For network types `vpc` and `directlink` it should be the CRN of the target vpc / gateway respectively.  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
+|**base_connection_id**  \n string|network_type `gre_tunnel` connections use `base_connection_id` to specify the ID of a network_type `classic` connection the tunnel is configured over. The specified connection must reside in the same transit gateway and be in an active state. The `classic` connection cannot be deleted until any `gre_tunnel` connections using it are deleted. This field only applies to and is required for network type `gre_tunnel` connections.  \n **Example:** `975f58c1-afe7-469a-9727-7f3d720f2d32`|
+|**base_network_type**  \n string | Defines what type of network the GRE tunnel is targeting. This field is required for, and only applicable to, `unbound_gre_tunnel` type  connections.  \n **Allowable value:** [`classic`]  \n **Example:** `classic`|
+|**local_bgp_asn** \n integer | The local network BGP ASN. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `64490` |
+|**local_gateway_ip** \n string | The local gateway IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `192.168.100.1` |
+|**local_tunnel_ip** \n string | The local tunnel IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `192.168.129.2` |
+|**mtu** \n integer | GRE tunnel MTU. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `9000`|
+|**network_account_id** \n AccountID|The ID of the account which owns the connected network. Generally only used if the network is in a different IBM Cloud account than the gateway.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
+|**remote_bgp_asn** \n integer | The remote network BGP ASN. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `65010` | 
+|**remote_gateway_ip** \n string | The remote gateway IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `10.242.63.12`|
+|**remote_tunnel_ip** \n string | The remote tunnel IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `192.168.129.1`|
+|**request_status** \n string | Represents the status of a connection request between IBM Cloud accounts, and is only visible for cross account connections. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values. \n **Possible values:** [`pending`,`approved`,`rejected`,`expired`,`detached`]|
 |**status**  \n string|Connection's current configuration state. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`attached`,`failed`,`pending`,`deleting`,`detaching`,`detached`]|
 |**updated_at**  \n date-time|The date and time that this connection was last updated|
-|**zone**  \n ZoneReference|Location of GRE tunnel. This field only applies to network type 'gre_tunnel' connections.|
+|**zone**  \n ZoneReference | The location of the GRE tunnel. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |- **name**  \n Always included*  \n string|Availability zone name  \n **Example:** `us-south-1`|
 {: caption="Table 3. Initiation request" caption-side="bottom"}
 
@@ -283,18 +292,19 @@ Review the following argument references that you can specify for your resource 
 
 |Argument|Details|
 |--|--|
-|**base_connection_id**  \n Optional  \n Forces new resource  \n string|The ID of a network_type 'classic' connection a tunnel is configured over.  \n This field only applies to network type `gre_tunnel` connections.|
-|**gateway**  \n Required  \n Forces new resource  \n string|Enter the transit gateway identifier.|
-|**local_gateway_ip**  \n Optional  \n Forces new resource  \n string|The local gateway IP address.  \n This field is required for and only applicable to `gre_tunnel` connection types.|
-|**local_tunnel_ip**  \n Optional  \n Forces new resource  \n string|The local tunnel IP address.  \n This field is required for and only applicable to type `gre_tunnel` connections.|
-|**name**  \n Optional  \n string|Enter a name. If the name is not given, the default name is provided based on the network type, such as `vpc` for network type VPC and `classic` for network type classic.|
+|**base_connection_id**  \n Optional  \n Forces new resource \n string | The ID of a network_type 'classic' connection a tunnel is configured over.  \n This field only applies to network type `gre_tunnel` connections.|
+|**base_network_type**  \n Optional  \n Forces new resource  \n string | The base network type. Allowed values are `classic`.  \n This field only applies to `unbound_gre_tunnel` type connections.
+|**gateway**  \n Required  \n Forces new resource  \n string | Enter the transit gateway identifier.|
+|**local_gateway_ip**  \n Optional  \n Forces new resource  \n string | The local gateway IP address. \n This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections. |
+|**local_tunnel_ip**  \n Optional  \n Forces new resource  \n string | The local tunnel IP address. \n This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections.|
+|**name**  \n Optional  \n string | The connection name. If the name is not given, a default name is provided based on the network type, such as `vpc` for network type VPC and `classic` for network type classic.|
 |**network_account_id**  \n Optional  \n Forces new resource  \n string|The ID of the network connected account. This is used if the network is in a different account than the gateway.|
-|**network_type**  \n Required  \n Forces new resource  \n string|Enter the network type. Allowed values are `classic`, `directlink`, `gre_tunnel`, and `vpc`.|
-|**network_id**  \n Optional  \n Forces new resource  \n string|Enter the ID of the network being connected through this connection.  \n This parameter is required for network type `vpc` and `directlink`, the CRN of the VPC or direct link gateway to be connected.  \n This field is required to be unspecified for network type `classic`.  \n **Example**:`crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
-|**remote_bgp_asn**  \n Optional  \n Forces new resource  \n integer|The remote network BGP ASN (will be generated for the connection if not specified).  \n This field only applies to network type `gre_tunnel` connections.|
-|**remote_gateway_ip**  \n Optional  \n Forces new resource  \n string|The remote gateway IP address. This field only applies to network type `gre_tunnel` connections.|
-|**remote_tunnel_ip**  \n Optional  \n Forces new resource  \n string|The remote tunnel IP address. This field only applies to network type `gre_tunnel` connections.|
-|**zone**  \n Optional  \n Forces new resource  \n string|The location of the GRE tunnel. This field only applies to network type `gre_tunnel` connections.|
+|**network_type**  \n Required  \n Forces new resource  \n string | The network type. Allowed values are `classic`, `directlink`, `gre_tunnel`, `unbound_gre_tunnel`, and `vpc`. |
+|**network_id**  \n Optional  \n Forces new resource  \n string | The ID of the network being connected to through this connection. \n This parameter is required for network type `vpc` and `directlink`, the CRN of the VPC or direct link gateway to be connected.  \n This field is required to be unspecified for network type `classic`.  \n **Example**:`crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
+|**remote_bgp_asn**  \n Optional  \n Forces new resource  \n integer | The remote network BGP ASN (will be generated for the connection if not specified).  \n This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
+|**remote_gateway_ip**  \n Optional  \n Forces new resource  \n string | The remote gateway IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
+|**remote_tunnel_ip**  \n Optional  \n Forces new resource  \n string | The remote tunnel IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
+|**zone**  \n Optional  \n Forces new resource  \n string | The location of the GRE tunnel. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. |
 {: caption="Table 5. Terraform argument references for creating a connection" caption-side="bottom"}
 
 ### Example

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-25"
+lastupdated: "2022-09-26"
 
-keywords: connecting, vpc, region, order
+keywords: connecting, region, order
 
 subcollection: transit-gateway
 
@@ -52,26 +52,45 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
    If you are using local routing, the specified location limits you to connect VPCs located in that region only. If you are using global routing, the specified location affects the price for data transfer, so choose the region closest to the resources that you need connected.
 
-1. Add connections to your transit gateway now, or after it has been provisioned.
+1. Add connections to your transit gateway now, or after it has been provisioned. {: #add-connection}
 
-   * To add connections now, select the network connection to be attached to the transit gateway. To add connections later, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-connections). Cross account (VPC only) connections can only be added later, after you provision the gateway.
-
+   1. Select the network connection to be attached to the transit gateway. To add connections later, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-connections). 
+  
       Select from the following connection types:
 
       * **Classic infrastructure** networks allow you to connect to IBM Cloud classic resources. Only one classic infrastructure connection is allowed per account.
       * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
-      * **GRE Tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For more information, see [Creating a Generic Routing Encapsulation (GRE) tunnel connection](/docs/transit-gateway?topic=transit-gateway-GRE-connection).
+      
+         Cross-account connections (VPC only) can only be added later, after you provision the gateway.
+         {:note}
+      * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For more information, see [Creating an Unbound Generic Routing Encapsulation tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
       * **Direct Link** creates a network connection to and from Direct Link 2.0 gateways so that there is a secure connection to on-premises networks and other resources connected to the transit gateway.
 
-         If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (using the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link. You can specify the connection type when you create a direct link, or after your direct link is provisioned. For instructions, see [Updating the network connection type](/docs/dl?topic=dl-virtual-connection-types){: external}.
+         If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (using the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link. 
          {: important}
 
-   * After you select a network connection, choose a connection reach option:
+      * **{{site.data.keyword.powerSys_notm}}** (IBM Internal Use Only) - Creates a network connection to and from a {{site.data.keyword.powerSys_notm}} workspace so that there is a secure connection to networks and other resources connected to the transit gateway.  
    
-      * **Add new connection in this account** - Enter an optional connection name.
-      * **Request connection to a network in another account** - Enter the IBM Cloud ID of the account that manages the network that you want to connect to, and a connection name. All resources connected to that transit gateway will be accessible from the other network.   
+         If you select **{{site.data.keyword.powerSys_notm}}**, a {{site.data.keyword.powerSys_notm}} workspace must already be enabled for Transit Gateway. For instructions, see 
+         {: important}
+      
+      You can specify the connection type when you create a {{site.data.keyword.powerSys_notm}} instance, or after your server is provisioned. For more information, see [work-in-progress Mukesh Biswas](/docs/power-iaas).
+      {: note}
 
-   * Complete all other required information for your connection.
+   1. After you select a network connection, choose a connection reach option:
+   
+      * **Add new connection in this account** - Enter an optional connection name and any other required information for your connection.
+      
+         For **{{site.data.keyword.powerSys_notm}}**, select a location for the {{site.data.keyword.powerSys_notm}} workspace. Then, select from the list of  {{site.data.keyword.powerSys_notm}} workspaces that are enabled for Transit Gateway. Keep in mind that not all {{site.data.keyword.powerSys_notm}} workspaces show in this menu.
+         {: note}
+         
+      * **Request connection to a network in another account** - Enter the IBM Cloud ID of the account that manages the network that you want to connect to, and a connection name. All resources connected to that transit gateway will be accessible from the other network.   
+      
+          For a {{site.data.keyword.powerSys_notm}} connection, enter the {{site.data.keyword.powerSys_notm}} Cloud Resource Name (CRN) provided by the account owner of the network that you want to connect to.
+         {: note}
+
+         To find out if your Power Systems Virtual Server workspace is set up correctly, go to the workspace and check the navigation for a Cloud connections page. If there isn't a Cloud connections page, the workspace leverages Transit Gateway. Otherwise, you must configure virtual connections with Cloud connections on the Power Systems Virtual Server.
+        {: important}
   
 1. Optionally, you can create prefix filters to permit or deny specific routes on specific connections. 
    
@@ -80,16 +99,16 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
  
    To begin, expand the drop-down arrow in the upper right of the Prefix filtering section, and complete the following information: 
 
-   * Select the default filter that you want to use. You can either permit (default) or deny all prefixes. 
-   
+   1. Select the default filter that you want to use. You can either permit (default) or deny all prefixes. 
+   *    
       The default filter is applied only if you don't create prefix filters that bypass this default setting.
       {: note}
 
-   * Click **Create prefix filter** to open the side panel and start creating prefix filters. In turn, your prefix filters are added to an ordered list that is processed sequentially.
+   1. Click **Create prefix filter** to open the side panel and start creating prefix filters. In turn, your prefix filters are added to an ordered list that is processed sequentially.
       
       ![Create prefix filters](images/prefix-filtering.png "Create prefix filters"){: caption="Create prefix filters" caption-side="bottom"}
 
-   * Click **Save** to save your changes.
+   1. Click **Save** to save your changes.
 
 1. **View Terms** on the right of the page.
 1. Click **Create** to complete your order.
@@ -137,7 +156,7 @@ Where:
 
 - **--name** - Name for the new gateway.
 - **--location** - Location of the gateway (see possible values by using : `ibmcloud tg locations`)
-- **--routing** - Gateway routing of resources (global | local). Use 'global' to connect resources across regions. The default value is 'local'.
+- **--routing** - Gateway routing of resources (`global` | `local`). Use `global` to connect resources across regions. The default value is `local`.
 - **--resource-group-id** - Optional: Gateway resource group ID. Uses the default resource group, if not specified.
 - **--output json** - Optional: Specify to display the output in JSON format.  
 - **--help | -h** - Optional: Get help on this command.
