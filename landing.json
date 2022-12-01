@@ -32,6 +32,11 @@
       "view_more": "/docs/transit-gateway?topic=transit-gateway-transit-gateway-release-notes",
       "tiles": [          
         {
+          "date": "November 2022",
+          "title": "Transit gateway unbound GRE tunnels",
+          "description": "You can now use an unbound Generic Routing Encapsulation (GRE) tunnel transit gateway connection to connect endpoints, which allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources."
+        },
+        {
           "date": "March 2022",
           "title": "Transit gateway prefix filtering",
           "description": "Network prefix filters simplify the management of the IP addresses that you reference in your resources to route network traffic. You can create prefix filters to permit or deny specific routes on specific connections. These prefix filters are added to an ordered list that is processed sequentially. A default filter (permit or deny all prefixes) is applied after the prefix filter list is processed."
