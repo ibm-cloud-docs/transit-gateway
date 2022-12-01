@@ -19,6 +19,18 @@ content-type: release-note
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
 
+## 30 November 2022
+{: #transit-gateway-nov2022}
+{: release-note}
+
+Unbound GRE tunnels
+:    You can now use an unbound Generic Routing Encapsulation (GRE) tunnel transit gateway connection to connect endpoints. on allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources, and has the following advantages over legeacy GRE tunnels:
+   * The ability to receive classic network subnets from a classic connection.
+   * The ability to communicate through other unbound GRE tunnels on the same transit gateway.
+   * Do not require a classic connection on the transit gateway. The classic network's subnets will not be advertised to all the connections on the transit gateway and vice versa.
+
+:    See [Creating an Unbound Generic Routing Encapsulation tunnel connection](https://test.cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection) for more information.
+
 ## 26 March 2022
 {: #transit-gateway-mar2622}
 {: release-note}
