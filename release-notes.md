@@ -24,7 +24,7 @@ Find out about new and updated features in {{site.data.keyword.tg_full}}.
 {: release-note}
 
 Unbound GRE tunnels
-:    You can now use an unbound Generic Routing Encapsulation (GRE) tunnel transit gateway connection to connect endpoints. on allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources, and has the following advantages over legeacy GRE tunnels:
+:    You can now use an unbound Generic Routing Encapsulation (GRE) tunnel transit gateway connection to connect endpoints, which allows a transit gateway to connect to overlay networks hosted on classic infrastructure resource. Unbound GRE tunnels have the following advantages over legacy GRE tunnels:
    * The ability to receive classic network subnets from a classic connection.
    * The ability to communicate through other unbound GRE tunnels on the same transit gateway.
    * Do not require a classic connection on the transit gateway. The classic network's subnets will not be advertised to all the connections on the transit gateway and vice versa.
