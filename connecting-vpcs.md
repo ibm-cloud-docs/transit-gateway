@@ -127,8 +127,9 @@ export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 For more information, see [Integrating with Virtual Private Endpoint for VPC](/docs/transit-gateway?topic=transit-gateway-vpe-for-ibm-cloud-transit-gateway).
 {: note}
 
-### Creating a transit gateway using the CLI
+### Procedure
 {: #gateway-create}
+{: cli}
 
 To create a transit gateway using the CLI, enter the following command:
 
