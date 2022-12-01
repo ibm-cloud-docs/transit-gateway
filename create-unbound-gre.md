@@ -96,7 +96,7 @@ To create your unbound GRE tunnel connection while creating a new transit gatewa
 
    ![Create Unbound GRE tunnel connections during transit gateway provision](images/unboundGreTunnelConnectionProvision.png "Creating Unbound GRE connection during gateway provision"){: caption="Figure 2. Creating Unbound GRE tunnel connections during gateway provision" caption-side="bottom"}
 
-1. After all connections have been added, press the **Create** button to create the transit gateway with the network connections.
+1. After all connections have been added, click **Create** to create the transit gateway with the network connections.
 
 ### Next steps
 {: #tgw-next-step-unbound-gre}
