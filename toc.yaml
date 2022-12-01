@@ -87,7 +87,7 @@ toc:
           - link:
               label: Transit Gateway CLI
               href: /tg-cli-plugin/tg-cli-plugin-transit-gateway-cli
-          - cli-changelog.md
+          - cli-change-log.md
        - link:
           label: Terraform reference
           href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection
