@@ -11,7 +11,6 @@ toc:
     path: transit-gateway
     label: Transit Gateway
 
-#
   entries:
     - navgroup:
        id: learn
@@ -88,7 +87,7 @@ toc:
           - link:
               label: Transit Gateway CLI
               href: /tg-cli-plugin/tg-cli-plugin-transit-gateway-cli
-          - cli-changelog-log.md
+          - cli-changelog.md
        - link:
           label: Terraform reference
           href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection
