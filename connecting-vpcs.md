@@ -62,9 +62,10 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
       * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
       
          Cross-account connections (VPC only) can only be added later, after you provision the gateway.
-         {:note}
+         {: note}
 
       * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For more information, see [Creating an Unbound Generic Routing Encapsulation tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
+
       * **Direct Link** creates a network connection to and from Direct Link 2.0 gateways so that there is a secure connection to on-premises networks and other resources connected to the transit gateway.
 
          If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (using the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link. 
@@ -84,7 +85,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
    To begin, expand the drop-down arrow in the upper right of the Prefix filtering section, and complete the following information: 
 
    1. Select the default filter that you want to use. You can either permit (default) or deny all prefixes. 
-   *    
+    
       The default filter is applied only if you don't create prefix filters that bypass this default setting.
       {: note}
 
@@ -101,7 +102,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 {: #tg-cli-creating-transit-gateway}
 {: cli}
 
-### Before you begin
+## Before you begin
 {: #cli-ref-prereqs}
 
 Complete these prerequisites to use the Transit Gateway CLI, which is implemented as an {{site.data.keyword.cloud_notm}} CLI plug-in.

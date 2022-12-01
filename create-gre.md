@@ -34,15 +34,15 @@ To migrate from a GRE tunnel to an unbound GRE tunnel:
 1. If desired, delete any classic connections.  
 
    Classic connections cannot be deleted if they are being used by other GRE tunnels.
-   {:note}
+   {: note}
    
-4. [Create the new unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection&interface=ui). 
+1. [Create the new unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection&interface=ui). 
 
 Transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point to point connection, has no built in redundancy, and is a single point of failure. When configuring a GRE connection on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections using different availability zones.
 {: note}
 
-### Before you begin
-{: #GRE-begin}
+## Before you begin
+{: #gre-begin}
 
 The following prerequisites must be met before you can create a GRE tunnel connection:
 
