@@ -21,14 +21,14 @@ In this change log, you can learn about the latest changes, improvements, and up
 {: #cli-november3022}
 
 Unbound GRE tunnels
-:    You can now use an unbound Generic Routing Encapsulation (GRE) tunnel transit gateway connection to connect endpoints, which allows a transit gateway to connect to overlay networks hosted on classic infrastructure resource.
+:    You can now use an unbound Generic Routing Encapsulation (GRE) tunnel connection to connect endpoints, which allows a transit gateway to connect to overlay networks hosted on classic infrastructure resource.
 :    New commands:
 
-    * `base-network-type` - (Required) Network type of the base connection (`classic`). For use only with the `unbound_gre_tunnel` network type.
-    * `network-account-id` - (Optional) ID of account to connect to a classic connection. For use only with the `classic` type when the account of the connection is different than gateway's account.
+    * `base-network-type` - Network type of the base connection (classic). For use only with the `unbound_gre_tunnel` network type.
+    * `network-account-id` - ID of account to connect to a classic connection. For use only with the `classic` type when the account of the connection is different than the gateway's account.
     * `network-type` - Network type of the GRE connection. Values are `gre_tunnel` or `unbound_gre_tunnel`. The default value is `gre_tunnel`.
 
-For more information, see [`ibmcloud tg connection-create-gre`](/docs/tg-cli-plugin?topic=tg-cli-plugin-transit-gateway-cli#connection-create-gre).
+For more information, see [ibmcloud tg connection-create-gre](/docs/tg-cli-plugin?topic=tg-cli-plugin-transit-gateway-cli#connection-create-gre).
 
 ## 26 March 2022
 {: #cli-mar2622}
