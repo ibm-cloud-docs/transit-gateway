@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-23"
+lastupdated: "2022-11-30"
 
 keywords: features, overview
 
@@ -54,11 +54,6 @@ To display the routes report for a transit gateway, see [IBM Cloud Transit Gatew
 {: #directlink}
 
 {{site.data.keyword.tg_full_notm}} supports Direct Link connections. Connecting Direct Link to your {{site.data.keyword.tg_full_notm}} on-premises network grants access to all networks connected on the transit gateway. Similarly, all other connections on the transit gateway will have access to your network. As with other network connections to the {{site.data.keyword.tg_full_notm}}, special consideration must be taken to avoid IP overlap issues. For more information, see [Dealing with overlapping VPC prefixes and classic infrastructure subnets](/docs/transit-gateway?topic=transit-gateway-troubleshooting#overlapping-vpc-prefixes-and-classic-subnets).
-
-### {{site.data.keyword.powerSys_notm}} connectivity (IBM Internal Use Only)
-{: #powervs}
-
-{{site.data.keyword.tg_full_notm}} supports {{site.data.keyword.powerSys_notm}} connections. Connecting a {{site.data.keyword.powerSys_notm}} instance to your {{site.data.keyword.tg_full_notm}} network grants access to all networks connected on the transit gateway. Similarly, all other connections on the transit gateway will have access to your network. As with other network connections to the {{site.data.keyword.tg_full_notm}}, special consideration must be taken to avoid IP overlap issues. For more information, see [Dealing with overlapping VPC prefixes and classic infrastructure subnets](/docs/transit-gateway?topic=transit-gateway-troubleshooting#overlapping-vpc-prefixes-and-classic-subnets).
 
 ## Interconnectivity patterns
 {: #patterns}
@@ -144,10 +139,4 @@ Connect {{site.data.keyword.cloud_notm}} Direct Link (2.0) to allow on-premises 
 Direct Link (2.0) can be connected to either local or remote transit gateways.
 {: note}
 
-![Connect On Premise Network to Transit Gateway](images/dlaas.png "Connect Direct Link on-premises network"){: caption="Figure 9. Connect on-premises network using Direct Link (2.0)" caption-side="bottom"}
-
-### Use case 10: Location connectivity using {{site.data.keyword.powerSys_notm}} and Direct Link (2.0) Connect
-{: #use-case-10}
-
-You can use IBM Cloud Transit Gateway with {{site.data.keyword.powerSys_notm}} and Direct Link (2.0) Connect for high-bandwidth customer demand. For more information, see [Connecting two {{site.data.keyword.powerSys_notm}} environments by using IBM Cloud Transit Gateway](/docs/power-iaas?topic=power-iaas-network-architecture-diagrams#network-reference-architecture-tgw).
-
+![Connect On Premise Network to Transit Gateway](images/dlaas.png "Connect Direct Link on-premises network"){: caption="Figure 9. Connect on-premises network using Direct Link (2.0)" caption-side="bottom"} 
