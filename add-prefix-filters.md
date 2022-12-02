@@ -67,11 +67,6 @@ To add a prefix filter to a new connection using the UI, follow these steps:
 
          If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (using the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link. You can specify the connection type when you create a direct link, or after your direct link is provisioned. For instructions, see [Updating the network connection type](/docs/dl?topic=dl-virtual-connection-types){: external}.
          {: important}
-
-      * **{{site.data.keyword.powerSys_notm}}** (IBM Internal Use Only) creates a network connection to and from a {{site.data.keyword.powerSys_notm}} instance so that there is a secure connection to networks and other resources connected to the transit gateway.
-
-         If you select **{{site.data.keyword.powerSys_notm}}**, you must also log in to the [??? console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (using the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your server. You can specify the connection type when you create a {{site.data.keyword.powerSys_notm}} instance, or after your server is provisioned. For instructions, see [Updating the network connection type](/docs/dl?topic=dl-virtual-connection-types){: external}.
-         {: important}
       
    * For Connection reach, select one of the following options:
       * **Add new connection in this account** - Enter an optional connection name.

@@ -43,13 +43,6 @@ To add a connection to a transit gateway, follow these steps:
 
       If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (using the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link.
       {: important}
-
-   * **{{site.data.keyword.powerSys_notm}}** (IBM Internal Use Only) - Creates a network connection to and from a {{site.data.keyword.powerSys_notm}} instance so that there is a secure connection to networks and other resources connected to the transit gateway.  
-   
-      Location: Select a region for the {{site.data.keyword.powerSys_notm}} workspace. Currently, `ca-mon` is not supported by Transit Gateway.
-      
-      If you select **{{site.data.keyword.powerSys_notm}}**, you must have a {{site.data.keyword.powerSys_notm}} workspace already set up to leverage the upgraded technology on Transit Gateway. To find out if your {{site.data.keyword.powerSys_notm}} workspace is set up correctly, go to the workspace and check the navigation for a Cloud connections page. If there isn't a **Cloud connections** page, the workspace leverages Transit Gateway. Otherwise, you must configure virtual connections with Cloud connections on the {{site.data.keyword.powerSys_notm}}.
-      {: important}
       
 1. Click **Add** to create a connection.
 
