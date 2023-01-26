@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-15"
+  years: 2021, 2023
+lastupdated: "2023-01-25"
 
 keywords: route, report
 
@@ -15,16 +15,13 @@ subcollection: transit-gateway
 # Generating a transit gateway route report
 {: #route-reports}
 
-You can request a report of all routes known to a transit gateway and each of its connections. The report shows:
+You can request a report of all routes known to a transit gateway and each of its connections. The report shows  Border Gateway Protocol (BGP) information associated with these routes, which connections supply which routes, and overlapping routes.  
 
-* Border Gateway Protocol (BGP) information associated with these routes
-* Which connections supply which routes
-* Overlapping routes
+You can retrieve a route report by using the UI, CLI, or API.
 
-Overlapping routes are a common issue when configuring a transit gateway. If the routes from two or more connections overlap, traffic might not be routed properly. 
-{: note}
- 
-## Generating and viewing a route report using the UI
+{{site.data.content.reuse-route-report-considerations}}
+  
+## Generating and viewing a route report in the UI
 {: #generate-route-report-ui}
 {: ui}
 
@@ -33,24 +30,36 @@ A route report generates data for both the **Routes** and **BGP** tables in the 
 
 To generate a route report by using the UI, follow these steps:
 
-1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com){: external} and log in to your account.
-1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
-1. Click **Transit Gateway** from the left navigation pane to show the Transit Gateway page.
+1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
+1. Select the Navigation Menu ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity > Transit Gateway**.   
+1. From the Transit Gateway table, select the gateway for which you want to generate the report.
+1. On the Details page, click either the **Routes** or **BGP** tab, then click **Generate report**. 
 
-   ![View transit gateways](images/view-gateways.png "View your transit gateways"){: caption="View your transit gateways" caption-side="bottom"}
-   
-1. From the transit gateway page, select the gateway that you want to generate the report for. 
-1. From the **Routes** or **BGP** tab, click the **Generate new report** button. The route report begins building, and might take a few minutes to generate depending on the complexity of the gateway.
+   The route report begins building, and might take a few minutes to generate depending on the complexity of the gateway. Keep in mind that you cannot generate another report until the report is finished processing, or unless you click **Cancel**.
 
    ![Generating a route report](images/routereportpending.png "Generating a route report"){: caption="Generating a route report" caption-side="bottom"}
 
-After the report generates, information is displayed in the **Routes** and **BGP** views.
+After the report generates, the following columns are displayed in the route report table.
+
+In the Routes view:
+
+* Route - Specifies the route address (for example, `169.254.0.40/29`).
+* Connection - Specifies the name (or ID) of the specific connection that the route originated from.
+* Conflict - Specifies whether or not there is a route conflict.
+
+In the BGP view:
+
+* Route - Specifies the route address (for example, `169.254.0.40/29`).
+* Connection - Specifies the name (or ID) of the specific connection that the route originated from.
+* Type - Specifies the route type: VPC, Classic infrastructure, or Direct Link.
+* Local preference - Used to choose the best outbound path. Applied on inbound external routes. 
+* AS Path - Lists autonomous systems through which the routing information has passed. For example, `(65201 4201065540) 4203065540`.
   
-## Generating and viewing a route report using the CLI
+## Generating and viewing a route report from the CLI
 {: #generate-route-report-cli}
 {: cli}
 
-To generate and view a route report by using the CLI, run the following command:
+To generate and view a route report from the CLI, run the following command:
 
 ```sh
 ibmcloud tg route-report-create|rrc GATEWAY_ID [--output json] [-h, --help]
@@ -69,11 +78,11 @@ ibmcloud tg rrc $gateway
 ```
 {: codeblock}
 
-## Generating and viewing a route report using the API
+## Generating and viewing a route report with the API
 {: #generate-route-report-api}
 {: api}
 
-To generate and view a route report using the API, follow these steps:
+To generate and view a route report with the API, follow these steps:
 
 1. Set up your [API environment](/docs/transit-gateway?topic=transit-gateway-set-up-environment) with the right variables.
 1. Store any additional variables to be used in the API commands, for example:
@@ -102,33 +111,24 @@ To generate and view a route report using the API, follow these steps:
    curl -X GET "$transit_api_endpoint/v1/transit_gateways/$transit_gateway/route_reports/$route_report?version=$api_version" -H "Authorization: $iam_token"
    ```
 
-## BGP
-{: #route-bgp}
-
-You can use the BGP table to see the **Local preference** and **AS Path** for a route. 
-
-   ![View BGP information](images/routereportbgp.png "View BGP route information"){: caption="View BGP route information" caption-side="bottom"}
-
-## Route conflicts
+## Addressing route conflicts
 {: #route-conflicts}
 
-Conflicting routes can cause errors, and you can see existing conflicts in the **Conflict** column of the **Routes** view. For example, in the following image, `vpc-A` and `vpc-B` have conflicts with the overlapping route `192.168.100.0`. 
+Conflicting routes can cause errors, which you can see in the **Conflict** column of the **Routes** view. 
+
+Conflicting routes are not dropped from routing tables. Any conflicts that you see in the **Conflict** column are presented merely for information, so that you can easily spot problems in your routing, and decide how to address them, if at all. Overlapping routes may also be intentional, such as for for HA purposes. 
+{: important}
+
+For example, in the following image, `vpc-A` and `vpc-B` have conflicts with the overlapping route `192.168.100.0`. 
 
    ![Display route report](images/routereportconflicts.png "Display route report"){: caption="Display route report" caption-side="bottom"}
 
-If there are multiple conflicts, click the link to open a side panel with more information.
+If there are multiple conflicts, click the link to open a side panel with more information. After you resolve the conflicts, generate a new report. 
 
    ![Multiple route conflicts](images/routereportmultipleconflicts.png "Multiple Route Conflicts"){: caption="Multiple route conflicts" caption-side="bottom"}
-   
-Conflicting routes are not dropped from routing tables. Any conflicts you see in the **Conflict** column are presented merely for information, so that you can easily spot problems in your routing, and decide how to address them, if at all. The use of overlapping routes may be intentional, for instance.
-{: note}
 
-## Route report considerations
-{: #route-report-considerations}
+When diagnosing conflicting routes, keep in the mind the following traffic flow considerations:
 
-Consider the following issues when working with route reports:
-
-* If a connection exposes a route of `0.0.0.0/0`, that route is ignored when computing overlapping prefixes.
-* Some connection types have routes that are not advertised to the transit gateway, such as Direct Link local routes. These routes are not contained in the route report.
-* Only one report per gateway is available at any time. If you generate a new report, the old report is deleted. 
-* Older route reports might be inaccurate after you add or remove a connection. As a result, if you update routes within those connections, you should generate a new route report. 
+* If the advertised prefixes match exactly, or have the same prefix length and AS Path length, the route preferred by the BGP protocol on the IBM Cloud router is non-deterministic and might change over time. Therefore, you might expect to see routes working as expected, and then suddenly not. In a redundant GRE or Direct Link situation, this can be fine, but if you have stateful firewalls, this can be an issue in that the return path to a customer site (or virtual router) can shift if the preferred route changes.
+* If the prefix lengths of two routes are different (for example, `192.168.0.0/16` and `192.168.0.0/24`), the more precise prefix is preferred. In this example, the connection advertising the `/24` prefix would be used for all matching IPs.
+* If routes have the same prefix length, but different AS Paths, then the shorter AS Path is the preferred route. The prefix length takes precedence over the AS Path.
