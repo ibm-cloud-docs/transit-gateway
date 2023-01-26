@@ -116,7 +116,7 @@ To generate and view a route report with the API, follow these steps:
 
 Conflicting routes can cause errors, which you can see in the **Conflict** column of the **Routes** view. 
 
-Conflicting routes are not dropped from routing tables. Any conflicts that you see in the **Conflict** column are presented merely for information, so that you can easily spot problems in your routing, and decide how to address them, if at all. Overlapping routes may also be intentional, such as for for HA purposes. 
+Conflicting routes are not dropped from routing tables. Any conflicts that you see in the **Conflict** column are presented merely for information, so that you can easily spot potential problems in your routing, and decide how to address them, if at all. Overlapping routes may also be intentional, such as for for HA purposes. 
 {: important}
 
 For example, in the following image, `vpc-A` and `vpc-B` have conflicts with the overlapping route `192.168.100.0`. 
