@@ -2,7 +2,7 @@
 
 copyright:
   years:  2023
-lastupdated: "2023-01-13"
+lastupdated: "2023-01-27"
 
 keywords: CBR, context-based restrictions
 
@@ -17,9 +17,7 @@ subcollection: transit-gateway
 
 Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to Transit Gateway resources can be controlled with context-based restrictions and identity and access management policies.
 {: shortdesc}
-
-The preview of this functionality is available only to authorized accounts. {: preview}
-
+ 
 These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
 
 A user must have the Administrator role on the Transit Gateway service to create, update, or delete rules. And a user must have either the Editor or Administrator role on the Context-based restrictions service to create, update, or delete network zones.
