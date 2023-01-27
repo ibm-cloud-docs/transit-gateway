@@ -12,7 +12,7 @@ subcollection: transit-gateway
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Protecting resources with context-based restrictions (limited availability)
+# Protecting resources with context-based restrictions
 {: #cbr}
 
 Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to Transit Gateway resources can be controlled with context-based restrictions and identity and access management policies.
