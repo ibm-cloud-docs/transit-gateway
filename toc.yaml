@@ -11,7 +11,6 @@ toc:
     path: transit-gateway
     label: Transit Gateway
 
-#  
   entries:
     - navgroup:
        id: learn
@@ -19,19 +18,21 @@ toc:
        - getting-started.md
        - about.md
        - helpful-tips.md
-       - tg-pricing.md
+       - link:
+          label: Pricing
+          href: https://www.ibm.com/cloud/transit-gateway/pricing
        - topicgroup:
            label: Related links
            topics:
             - link:
-                label: Direct Link Docs
-                href: https://{DomainName}/docs/dl?topic=dl-get-started-with-ibm-cloud-dl
+                label: Getting started with Direct Link
+                href: /dl/dl-get-started-with-ibm-cloud-dl
             - link:
-                label: Virtual Private Cloud (VPC) Docs
-                href: https://{DomainName}/docs/vpc/vpc-getting-started
+                label: Getting started with Virtual Private Cloud (VPC)
+                href: /vpc/vpc-getting-started
             - include: ../vpc/private-connectivity-vpe.md
             - include: ../vpc/interconnectivity.md
-       - release-notes.md                          
+       - release-notes.md
 
     - navgroup:
        id: tutorial
@@ -58,9 +59,10 @@ toc:
             - add-prefix-filters.md
             - delete-connection.md
             - deleting-gateway.md
+            - displayroutereport.md
         - terraform.md
         - set-up-environment.md
-        - displayroutereport.md
+
         - tg-vpe.md
         - tgw-ha-dr.md
         - topicgroup:
@@ -88,7 +90,7 @@ toc:
        - topicgroup:
             label: Transit Gateway CLI reference
             topics:
-            - include: ../tg-cli-plugin/transit-gateway-cli.md 
+            - include: ../tg-cli-plugin/transit-gateway-cli.md
             - cli-change-log.md
        - link:
            label: Terraform reference
@@ -101,4 +103,5 @@ toc:
        topics:
        - faqs.md
        - verifying-connectivity.md
-       - getting-help.md
+       - topic: getting-help.md
+         navtitle: Getting help and support

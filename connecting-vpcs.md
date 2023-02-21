@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-30"
+  years: 2020, 2023
+lastupdated: "2023-02-04"
 
 keywords: connecting, region, order
 
@@ -39,10 +39,10 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
 1. Choose a routing option:
 
-   * Select **Local routing** if you want your transit gateway to connect to all VPC and classic resources within the transit gateway's provisioned region.  Data transfer is free.
-   * Select **Global routing** if you want your transit gateway to connect to VPC resources in all IBM [Multi-Zone Regions (MZRs)](/docs/overview?topic=overview-locations#mzr-table). Data transfer fees are changed at $0.02 per GB for data transfer above the 1 TB free monthly allotment.
+   * Select **Local routing** to allow your transit gateway to connect to all VPC and classic resources within the transit gateway's provisioned region.  
+   * Select **Global routing** to allow your transit gateway to connect to VPC resources in all IBM [Multi-Zone Regions (MZRs)](/docs/overview?topic=overview-locations#mzr-table).  
 
-   You can upgrade routing options at a later point if your needs change. Pricing is changed accordingly.
+   For data transfer pricing and examples, see [Transit Gateway Pricing](https://www.ibm.com/cloud/transit-gateway/pricing){: external}. You can upgrade routing options at a later point if your needs change. Pricing is changed accordingly.
    {: note}
 
    Remember that all of your classic resources across MZRs can be accessed regardless of routing choice.
@@ -70,12 +70,29 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
          If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (using the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link. 
          {: important}
+
+      * **{{site.data.keyword.powerSys_notm}}** (IBM Internal Use Only) - Creates a network connection to and from a {{site.data.keyword.powerSys_notm}} workspace so that there is a secure connection to networks and other resources connected to the transit gateway.  
+   
+         If you select **{{site.data.keyword.powerSys_notm}}**, a {{site.data.keyword.powerSys_notm}} workspace must already be enabled for Transit Gateway. For instructions, see 
+         {: important}
       
+      You can specify the connection type when you create a {{site.data.keyword.powerSys_notm}} instance, or after your server is provisioned. For more information, see [work-in-progress Mukesh Biswas](/docs/power-iaas).
+      {: note}
+
    1. After you select a network connection, choose a connection reach option:
    
-      * **Add new connection in this account** - Enter an optional connection name and any other required information for your connection. 
+      * **Add new connection in this account** - Enter an optional connection name and any other required information for your connection.
+      
+         For **{{site.data.keyword.powerSys_notm}}**, select a location for the {{site.data.keyword.powerSys_notm}} workspace. Then, select from the list of  {{site.data.keyword.powerSys_notm}} workspaces that are enabled for Transit Gateway. Keep in mind that not all {{site.data.keyword.powerSys_notm}} workspaces show in this menu.
+         {: note}
          
-      * **Request connection to a network in another account** - Enter the IBM Cloud ID of the account that manages the network that you want to connect to, and a connection name. All resources connected to that transit gateway will be accessible from the other network.        
+      * **Request connection to a network in another account** - Enter the IBM Cloud ID of the account that manages the network that you want to connect to, and a connection name. All resources connected to that transit gateway will be accessible from the other network.   
+      
+          For a {{site.data.keyword.powerSys_notm}} connection, enter the {{site.data.keyword.powerSys_notm}} Cloud Resource Name (CRN) provided by the account owner of the network that you want to connect to.
+         {: note}
+
+         To find out if your Power Systems Virtual Server workspace is set up correctly, go to the workspace and check the navigation for a Cloud connections page. If there isn't a Cloud connections page, the workspace leverages Transit Gateway. Otherwise, you must configure virtual connections with Cloud connections on the Power Systems Virtual Server.
+        {: important}
   
 1. Optionally, you can create prefix filters to permit or deny specific routes on specific connections. 
    
@@ -85,7 +102,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
    To begin, expand the drop-down arrow in the upper right of the Prefix filtering section, and complete the following information: 
 
    1. Select the default filter that you want to use. You can either permit (default) or deny all prefixes. 
-    
+     
       The default filter is applied only if you don't create prefix filters that bypass this default setting.
       {: note}
 
@@ -102,7 +119,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 {: #tg-cli-creating-transit-gateway}
 {: cli}
 
-## Before you begin
+### Before you begin
 {: #cli-ref-prereqs}
 
 Complete these prerequisites to use the Transit Gateway CLI, which is implemented as an {{site.data.keyword.cloud_notm}} CLI plug-in.
@@ -127,9 +144,8 @@ export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 For more information, see [Integrating with Virtual Private Endpoint for VPC](/docs/transit-gateway?topic=transit-gateway-vpe-for-ibm-cloud-transit-gateway).
 {: note}
 
-### Procedure
+### Creating a transit gateway using the CLI
 {: #gateway-create}
-{: cli}
 
 To create a transit gateway using the CLI, enter the following command:
 
