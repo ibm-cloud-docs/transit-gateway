@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-09-15"
+  years: 2023
+lastupdated: "2023-02-24"
 keywords: api
 
 subcollection: transit-gateway
@@ -111,5 +111,5 @@ If you run into unexpected results, add the `--verbose` (debug) flag after the `
 * Call the [List gateways](/apidocs/transit-gateway#list-gateways) API to see any gateways that you already created under your account, in JSON format.
 
     ```sh
-    curl -X GET "$transit_api_endpoint/v1/gateways?version=$api_version"   -H "Authorization: $IAM_TOKEN"
+    curl -X GET "$transit_api_endpoint/v1/transit_gateways?version=$api_version"   -H "Authorization: $IAM_TOKEN"
     ```
