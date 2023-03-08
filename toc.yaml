@@ -102,6 +102,15 @@ toc:
        id: help
        topics:
        - faqs.md
-       - verifying-connectivity.md
+       - topicgroup:
+            label: Troubleshooting connectivity issues
+            topics:
+            - verifying-connectivity.md
+            - conn-basics.md
+            - conn-firewalls.md
+            - conn-prefixes.md
+            - conn-nic.md
+            - conn-routing-vsi.md
+            - conn-gre.md
        - topic: getting-help.md
          navtitle: Getting help and support
