@@ -28,7 +28,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog){: external} and log in to your account.
 1. Select **Networking** in the navigation pane, then click the Transit Gateway tile.
 
-   You can also access the ordering page from the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com){: external} by selecting the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page. Then, select **Interconnectivity** > **Transit Gateway** and click the **Create transit gateway** button.
+   You can also access the ordering page from the [{{site.data.keyword.cloud_notm}} console](/login){: external} by selecting the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page. Then, select **Interconnectivity** > **Transit Gateway** and click the **Create transit gateway** button.
    {: tip}
 
    The Transit Gateway ordering page displays.
@@ -54,7 +54,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
 1. Add connections to your transit gateway now, or after it has been provisioned. {: #add-connection}
 
-   1. Select the network connection to be attached to the transit gateway. To add connections later, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-connections). 
+   1. Select the network connection to be attached to the transit gateway. To add connections later, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections). 
   
       Select from the following connection types:
 

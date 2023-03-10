@@ -40,7 +40,7 @@ IBM Cloud Transit Gateway does not provide security groups or ACLS, but the netw
 
 To connect networks owned by different accounts using the UI, follow these steps:
 
-1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com){: external} and log in to your account.
+1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
 1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
 1. Click **Transit Gateway** from the left navigation pane.
 1. Click the name of the transit gateway where you want to add a connection and click **Add connection**.

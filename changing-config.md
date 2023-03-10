@@ -21,7 +21,7 @@ subcollection: transit-gateway
 
 To change your transit gateway configuration using the UI, perform the following procedure:
 
-1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com){: external} and log in to your account.
+1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
 1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
 1. Click **Transit Gateway** from the left navigation pane.
 1. Click the name of the transit gateway that you want to edit.

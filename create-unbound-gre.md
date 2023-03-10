@@ -39,7 +39,7 @@ You can create an unbound GRE tunnel connection on an existing transit gateway, 
 
 To create your unbound GRE tunnel on an existing transit gateway, follow these steps:
 
-1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com){: external} and log in to your account.
+1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
 1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
 1. Click **Transit Gateway** from the left navigation panel. Click the name of the transit gateway where you want to add a connection.
 
@@ -72,7 +72,7 @@ To create your unbound GRE tunnel on an existing transit gateway, follow these s
    
 To create your unbound GRE tunnel connection while creating a new transit gateway, follow these steps:
 
-1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com){: external} and log in to your account.
+1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
 1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
 1. Click **Transit Gateway** from the left navigation panel. Click **Create transit gateway**.
 1. Enter the transit gateway name, resource group, and location.

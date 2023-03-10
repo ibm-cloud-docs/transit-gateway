@@ -73,7 +73,7 @@ Allow Generic Routing Encapsulation (GRE) connections for transit gateways
 Classic infrastructure connections across IBM Cloud accounts
 :    You can now connect to {{site.data.keyword.cloud}} classic infrastructure in another {{site.data.keyword.cloud_notm}} account by providing the cloud account ID when adding a connection to your transit gateway. The account containing the classic infrastructure is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity.
 
-:    For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-cross-account-connections).
+:    For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections).
 
 ## 01 January 2021
 {: #transit-gateway-jan0121}
@@ -90,7 +90,7 @@ Connect networks to multiple local gateways
 VPC connections across IBM Cloud accounts
 :    You can now connect to a VPC in another IBM Cloud account by providing the CRN of the VPC when adding a connection to your transit gateway. The account containing the VPC is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity for that VPC.
 
-:    For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-edit-gateway#adding-cross-account-connections).
+:    For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections).
 
 Open source SDKs
 :    Open source Software Development Kits have now been published for use with Python, Node, Go, and Java platforms.

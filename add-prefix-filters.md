@@ -43,7 +43,7 @@ You can add prefix filters when you add a new connection. You can also add a fil
 
 To add a prefix filter to a new connection using the UI, follow these steps:
 
-1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com){: external} and log in to your account.
+1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
 1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
 1. Click **Transit Gateway** from the left navigation pane to show the Transit Gateway page.
 
