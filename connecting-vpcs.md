@@ -262,7 +262,7 @@ This example response illustrates that the transit gateway was created sueccessf
 ```
 {: screen}
 
-For more information (including Java, Node, Python and Go examples), see "Creates a Transit Gateway" in the [Transit Gateway API reference](apidocs/transit-gateway?code=java#create-transit-gateway).
+For more information (including Java, Node, Python and Go examples), see "Creates a Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway?code=java#create-transit-gateway).
 {: note}
 
 ## Creating a transit gateway using Terraform

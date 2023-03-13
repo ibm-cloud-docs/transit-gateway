@@ -163,7 +163,7 @@ This response indicates that the transit gateway was updated successfully:
 ```
 {: screen}
 
-For more information (including Java, Node, Python and Go examples), see "Updates specified Transit Gateway" in the [Transit Gateway API reference](apidocs/transit-gateway#update-transit-gateway).
+For more information (including Java, Node, Python and Go examples), see "Updates specified Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#update-transit-gateway).
 {: note}
 
 ## Changing your configuration using the Terraform

@@ -188,7 +188,7 @@ The following response indicates that the connection was updated successfully:
 ```
 {: screen}
 
-For more information (including Java, Node, Python and Go examples), see "Update Specified Transit Gateway Connection" in the [Transit Gateway API reference](apidocs/transit-gateway#update-transit-gateway-connection).
+For more information (including Java, Node, Python and Go examples), see "Update Specified Transit Gateway Connection" in the [Transit Gateway API reference](/apidocs/transit-gateway#update-transit-gateway-connection).
 {: note}
 
 ## Editing a connection using terraform

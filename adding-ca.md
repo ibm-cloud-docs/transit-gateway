@@ -390,5 +390,5 @@ This example illustrates a Status 403 response in which the caller is not author
 }
 ```
 
-For more information (including Java, Node, Python and Go examples), see "Add Connection to a Transit Gateway" and "Perform actions on a connection for a Transit Gateway" in the [Transit Gateway API reference](apidocs/transit-gateway?code=java#create-transit-gateway-connection).
+For more information (including Java, Node, Python and Go examples), see "Add Connection to a Transit Gateway" and "Perform actions on a connection for a Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway?code=java#create-transit-gateway-connection).
 {: note}

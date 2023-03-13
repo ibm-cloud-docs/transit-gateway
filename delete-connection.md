@@ -131,7 +131,7 @@ This example illustrates the returned response when the connection could not be 
 ```
 {: pre}
 
-For more information (including Java, Node, Python and Go examples), see "Remove connection from Transit Gateway" in the [Transit Gateway API reference](apidocs/transit-gateway#delete-transit-gateway-connection).
+For more information (including Java, Node, Python and Go examples), see "Remove connection from Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#delete-transit-gateway-connection).
 {: note}
 
 ## Deleting a connection using Terraform

@@ -204,7 +204,7 @@ This example illustrates the response from creating a GRE tunnel:
 ```
 {: screen}
 
-For more information (including Java, Node, Python and Go examples), see "Add Connection to a Transit Gateway" in the [Transit Gateway API reference](apidocs/transit-gateway?code=java#create-transit-gateway-connection).
+For more information (including Java, Node, Python and Go examples), see "Add Connection to a Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway?code=java#create-transit-gateway-connection).
 {: note}
 
 ## Creating a Generic Routing Encapsulation (GRE) tunnel connection using Terraform

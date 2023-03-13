@@ -137,7 +137,7 @@ This example illustrates that the transit gateway could not be found, leading to
 ```
 {: pre}
 
-For more information (including Java, Node, Python and Go examples), see "Deletes Specified Transit Gateway" in the [Transit Gateway API reference](apidocs/transit-gateway#delete-transit-gateway).
+For more information (including Java, Node, Python and Go examples), see "Deletes Specified Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#delete-transit-gateway).
 {: note}
 
 ## Deleting a transit gateway using Terraform
