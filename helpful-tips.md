@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-30"
+  years: 2020, 2023
+lastupdated: "2023-03-16"
 
 keywords: help, tips, connections, provision
 
@@ -18,25 +18,6 @@ subcollection: transit-gateway
 Make sure that you review the following considerations before ordering your {{site.data.keyword.tg_full}}.
 {: shortdesc}
 
-## Service limits
-{: #service-limits}
-
-Keep in mind the following service limits while using IBM Cloud Transit Gateway.
-
-| Service limit |  Default |
-|---------------------------|------|
-| Number of transit gateways | 10 gateways per account, 5 gateways per region |
-| Number of connections per transit gateway |  * 10 IBM Cloud VPC connections  \n * 5 IBM Cloud classic connections  \n * 5 IBM Cloud Direct Link connections  \n * 5 {{site.data.keyword.powerSys_notm}} connections (IBM Internal Use Only) |
-| Number of prefixes per connection | * 15 prefixes for VPC connections  \n * 120 prefixes for classic connections  \n * 120 prefixes for GRE connections  \n * 120 prefixes for Direct Link connections  \n * 120 prefixes for {{site.data.keyword.powerSys_notm}} connections (IBM Internal Use Only) |
-| Number of connections with prefix filters | 2 connections with prefix filters per gateway|
-| Number of prefix filters per connection | 10 prefix filters per connection|
-| Number of GRE tunnels per transit gateway | 12 GRE tunnels per gateway|
-| Number of unique base networks targeted by unbound GRE tunnels per transit gateway | 5 unique base networks targeted by unbound GRE tunnels per gateway|
-{: caption="Table 1. IBM Cloud Transit Gateway service limits" caption-side="bottom"}
-
-You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need your service limits expanded.
-{: note}
-
 ## General considerations
 {: #general-considerations}
 
@@ -45,8 +26,9 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 
 * {{site.data.keyword.tg_full_notm}} supports provisioning transit gateways in the regions listed in [IBM Cloud Transit Gateway locations](/docs/transit-gateway?topic=transit-gateway-tg-locations).
 * Create your transit gateway in a location that makes sense for your workload. For example, if you are connecting two VPCs in the `us-south` (Dallas) region and one VPC in the `eu-de` (Frankfurt) region, creating your gateway in `us-south` region would be the most efficient for your workload.
-* You cannot connect a [classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) directly to a transit gateway. To connect the classic resources, use the {{site.data.keyword.cloud_notm}} classic infrastructure connection, and then all the resources in your classic access VPC are automatically connected.  
-* You can connect a VPC, Direct Link or classic infrastructure to multiple local gateways and a single global gateway.
+* You cannot connect a [classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) directly to a transit gateway. To connect the classic resources, use the {{site.data.keyword.cloud_notm}} classic infrastructure connection, and then all the resources in your classic access VPC are automatically connected. 
+*  A transit gateway requires at least two connections before network traffic can flow over the transit gateway. Transit gateways that have less than two connections for 45 days or more are subject to be reclaimed (suspended, then deleted after 30 days).
+* You can connect a VPC, Direct Link, or classic infrastructure to multiple local gateways and a single global gateway.
 * Transit gateways and their connections can take several minutes after provisioning before they are available.
 * Be descriptive when naming your transit gateway connections. When connecting to resources across accounts, you must specify a connection name. When connecting to resources in the same account as the transit gateway, the VPC name or the word 'classic' is the default selection and can be modified.
 * {{site.data.keyword.tg_full_notm}} is a multi-tenant application, where a single instance of the software, and its supporting infrastructure, serves multiple customers. As a result, monitoring your bandwidth use is important. If you use too much bandwidth, your transit gateway instance may be suspended. If you suspect this is the case, check the transit gateway instance connection status to see if it is in a `Suspended` state. If so, [contact support](/docs/transit-gateway?topic=transit-gateway-getting-help-and-support) to reinstate it.
@@ -95,7 +77,7 @@ Unbound GRE tunnel Considerations:
 
 For more information and a use case example, refer to [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).
 
-## Direct Link (2.0) connection consideration
+## Direct Link connection consideration
 {: #dl_considerations}
 
 You can create Direct Link connections to a transit gateway to allow on-premises networks to connect to other networks in {{site.data.keyword.cloud_notm}}. After the direct link connects to the transit gateway, the on-premises network receives access to all other transit gateway connections. Likewise, all other networks connected to the transit gateway have access to the on-premises network. Direct Link connections follow the same process for physical or virtual cross connections as the standard Direct Link offering. After the connection is deleted from a transit gateway, the transit gateway operates as if it was never connected to a direct link.
@@ -147,3 +129,23 @@ You can create a single transit gateway or multiple transit gateways to intercon
 * When changing from Local to Global routing, you will be charged for all associated global connections. There is no impact to the network traffic when the routing type is changed.
 
 {{site.data.content.reuse-route-report-considerations}}
+
+## Service limits
+{: #service-limits}
+
+Keep in mind the following service limits while using IBM Cloud Transit Gateway.
+
+| Service limit |  Default |
+|---------------------------|------|
+| Number of transit gateways | 10 gateways per account, 5 gateways per region |
+| Number of connections per transit gateway |  * 10 IBM Cloud VPC connections  \n * 5 IBM Cloud classic connections  \n * 5 IBM Cloud Direct Link connections  \n * 5 {{site.data.keyword.powerSys_notm}} connections (IBM Internal Use Only) |
+| Number of prefixes per connection | * 15 prefixes for VPC connections  \n * 120 prefixes for classic connections  \n * 120 prefixes for GRE connections  \n * 120 prefixes for Direct Link connections  \n * 120 prefixes for {{site.data.keyword.powerSys_notm}} connections (IBM Internal Use Only) |
+| Number of connections with prefix filters | 2 connections with prefix filters per gateway|
+| Number of prefix filters per connection | 10 prefix filters per connection|
+| Number of GRE tunnels per transit gateway | 12 GRE tunnels per gateway|
+| Number of unique base networks targeted by unbound GRE tunnels per transit gateway | 5 unique base networks targeted by unbound GRE tunnels per gateway|
+{: caption="Table 1. IBM Cloud Transit Gateway service limits" caption-side="bottom"}
+
+You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need your service limits expanded.
+{: note}
+
