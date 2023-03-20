@@ -42,7 +42,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
    * Select **Local routing** to allow your transit gateway to connect to all VPC and classic resources within the transit gateway's provisioned region.  
    * Select **Global routing** to allow your transit gateway to connect to VPC resources in all IBM [Multi-Zone Regions (MZRs)](/docs/overview?topic=overview-locations#mzr-table).  
 
-   For data transfer pricing and examples, see [Transit Gateway Pricing](https://www.ibm.com/cloud/transit-gateway/pricing){: external}. You can upgrade routing options at a later point if your needs change. Pricing is changed accordingly.
+You can upgrade routing options at a later point if your needs change. Pricing is changed accordingly.
    {: note}
 
    Remember that all of your classic resources across MZRs can be accessed regardless of routing choice.

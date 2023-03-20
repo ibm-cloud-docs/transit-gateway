@@ -18,9 +18,6 @@ toc:
        - getting-started.md
        - about.md
        - helpful-tips.md
-       - link:
-          label: Pricing
-          href: https://www.ibm.com/cloud/transit-gateway/pricing
        - topicgroup:
            label: Related links
            topics:
