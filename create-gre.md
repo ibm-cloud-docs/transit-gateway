@@ -24,7 +24,7 @@ This form of GRE tunnel is now deprecated, and we suggest using an unbound GRE t
    * Does not require a classic connection on the transit gateway. As a result, the classic network's subnets will not be advertised to the connections on the transit gateway (and vice versa).
    {: important}
 
-See [Creating an Unbound Generic Routing Encapsulation tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-GRE-connection) for more information.
+See [Creating an Unbound Generic Routing Encapsulation tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection) for more information.
 
 Migrating your GRE tunnels to unbound GRE tunnels requires deleting any existing GRE tunnels before creating new unbound ones. Migration will also cause a network disruption for anything that uses the old GRE tunnel until you create the new one.
 
@@ -53,7 +53,7 @@ The following prerequisites must be met before you can create a GRE tunnel conne
 {: #tg-ui-adding-gre-connection-transit-gateway}
 {: ui}
 
-Only unbound GRE tunnels can be created in the UI. See [Creating an Unbound Generic Routing Encapsulation (GRE) tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-GRE-connection)
+Only unbound GRE tunnels can be created in the UI. See [Creating an Unbound Generic Routing Encapsulation (GRE) tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection)
 
 ## Creating a Generic Routing Encapsulation (GRE) tunnel connection using the CLI
 {: #tg-cli-adding-gre-connection-transit-gateway}
