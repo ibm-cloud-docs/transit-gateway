@@ -38,7 +38,8 @@ toc:
           label: Interconnectivity
           topics:
           - include: ../solution-tutorials/vpc-tg-dns-iam.md
-
+          - include: ../solution-tutorials/vpc-transit1.md
+          - include: ../solution-tutorials/vpc-transit2.md 
     - navgroup:
        id: howto
        topics:
