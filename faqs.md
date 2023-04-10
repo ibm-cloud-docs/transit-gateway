@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-11-15"
+  years: 2020, 2023
+lastupdated: "2023-04-10"
 
-keywords: faq, faqs, questions, vpc
+keywords: faq, faqs, questions
 
 subcollection: transit-gateway
 
@@ -24,6 +24,13 @@ These frequently asked questions can help you when working with the {{site.data.
 {: support}
 
 [IBM Cloud Direct Link](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) provides connectivity from an external source into a customer's {{site.data.keyword.cloud_notm}} private network. {{site.data.keyword.tg_full_notm}} provides connectivity between resources within a customer's {{site.data.keyword.cloud_notm}} private network.
+
+## Where can I find Transit Gateway pricing?
+{: #transit-gateway-pricing}
+{: faq}
+{: support}
+
+You can estimate the cost of a transit gateway using the cost estimator on the provisioning page for {{site.data.keyword.tg_full_notm}} Transit Gateway. For example, from the [{{site.data.keyword.cloud_notm}} console](/login){: external}, click the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left and select **Interconnectivity > Transit Gateway**. Then, click **Create transit gateway** to open the provisioning page.
 
 ## If I connect a classic connection to a transit gateway provisioned with local routing, does that mean I can only communicate with classic infrastructure resources that are in the same location as the transit gateway?
 {: #communicate-same-resources}
@@ -116,7 +123,7 @@ Although [classic-access VPCs](/docs/vpc?topic=vpc-setting-up-access-to-classic-
 {: faq}
 {: support}
 
-{{site.data.keyword.cloud_notm}} Direct Link (2.0) can be connected to either a local or global transit gateway.
+{{site.data.keyword.cloud_notm}} Direct Link can be connected to either a local or global transit gateway.
 
 Currently, you cannot connect a VPN to a transit gateway.
 
@@ -170,3 +177,10 @@ You should use the standard [IBM Cloud notification process](/docs/get-support?t
 {: #faq-route-reports}
 
 Yes, you can. For detailed instructions, see [IBM Cloud Transit Gateway route reports](/docs/transit-gateway?topic=transit-gateway-route-reports).
+
+## Can I interconnect VPCs using a transit gateway?
+{: faq}
+{: #faq-interconnecting-vpcs}
+
+You can create a single transit gateway or multiple transit gateways to interconnect more than one IBM Cloud VPCs. You can also connect your IBM Cloud classic infrastructure to a transit gateway to provide seamless communication with classic infrastructure resources. For more information, refer to [Interconnecting VPCs](/docs/vpc?topic=vpc-interconnectivity&interface=cli#interconnecting-vpcs).
+
