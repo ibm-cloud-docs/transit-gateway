@@ -65,8 +65,6 @@ To create your unbound GRE tunnel on an existing transit gateway, follow these s
 
 1. Click the **Add** button to create the GRE tunnel.
 
-   ![Create Unbound GRE tunnel connections](images/unboundGreTunnelConnection.png "Creating Unbound GRE connection"){: caption="Figure 1. Creating unbound GRE tunnel connections" caption-side="bottom"}
-   
 ### Creating an unbound GRE tunnel connection while creating a new transit gateway
 {: #creating-unbound-gre-new-tg}
    
@@ -93,9 +91,6 @@ To create your unbound GRE tunnel connection while creating a new transit gatewa
    * Enter a connection name for your GRE tunnel.
 
 1. Click the **Add connection** button to add the unbound GRE tunnel to the transit gateway.
-
-   ![Create Unbound GRE tunnel connections during transit gateway provision](images/unboundGreTunnelConnectionProvision.png "Creating Unbound GRE connection during gateway provision"){: caption="Figure 2. Creating Unbound GRE tunnel connections during gateway provision" caption-side="bottom"}
-
 1. After all connections have been added, click **Create** to create the transit gateway with the network connections.
 
 ### Next steps

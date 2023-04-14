@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-30"
+  years: 2020, 2023
+lastupdated: "2023-04-10"
 
 keywords: updates, additions, improvements
 
@@ -20,7 +20,7 @@ content-type: release-note
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
 
 ## 30 November 2022
-{: #transit-gateway-nov2022}
+{: #transit-gateway-jan2023}
 {: release-note}
 
 Unbound GRE tunnels
@@ -54,8 +54,8 @@ Transit Gateway route reports
 {: #transit-gateway-aug3021}
 {: release-note}
 
-Direct Link (2.0) connections for transit gateways
-:    Transit gateways now support Direct Link (2.0) connections. A Direct Link connection allows an on-premises network to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway.
+Direct Link connections for transit gateways
+:    Transit gateways now support Direct Link connections. A Direct Link connection allows an on-premises network to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway.
 
 :    The beta release has ended. If you participated in this beta, you can continue to use the gateways that you created during the beta period.
 
@@ -90,7 +90,7 @@ Connect networks to multiple local gateways
 VPC connections across IBM Cloud accounts
 :    You can now connect to a VPC in another IBM Cloud account by providing the CRN of the VPC when adding a connection to your transit gateway. The account containing the VPC is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity for that VPC.
 
-:    For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections).
+:    For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
 
 Open source SDKs
 :    Open source Software Development Kits have now been published for use with Python, Node, Go, and Java platforms.

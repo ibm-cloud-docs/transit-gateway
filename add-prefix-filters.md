@@ -46,14 +46,8 @@ To add a prefix filter to a new connection using the UI, follow these steps:
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
 1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
 1. Click **Transit Gateway** from the left navigation pane to show the Transit Gateway page.
-
-    ![View transit gateways](images/view-gateways.png "View your transit gateways"){: caption="View your transit gateways" caption-side="bottom"}
-
 1. From the Transit Gateway page, click the name of the the gateway where you want to add prefix filters. 
 1. From the gateway's details page, click **Add connection**.
-
-    ![Adding a new connection](images/adding-new-connection.png "Add connection"){: caption="Add a new connection" caption-side="bottom"}
-
 1. Enter the following information:
 
    Review requirements and configuration considerations in [Planning for Transit Gateway](/docs/transit-gateway?topic=transit-gateway-helpful-tips).
@@ -105,8 +99,6 @@ To add prefix filtering to an existing connection using the UI, follow these ste
 1. From the Transit Gateway page, click the name of the gateway where you want to add prefix filters.
 1. The prefix filtering icon ![Prefix filter icon](images/prefix-filter-icon.png) shows if a connection already has prefix filters. Click **View** next to **Prefix filters** to show the prefix filter list.
 
-    ![View prefix filtering enabled connections](images/prefix-filtering-enabled-icon.png "Prefix filtering enabled icon"){: caption="View connections with prefix filtering enabled" caption-side="bottom"}
-
     To modify an existing prefix filter, click the Actions menu ![Actions menu](/images/overflow.png) and select **Prefix filtering**.
     {: tip}
 
@@ -122,8 +114,6 @@ To add prefix filtering to an existing connection using the UI, follow these ste
     * Enter the network prefix along with the subnet mask.
     * Optionally, enter values if the network should be greater than or equal to a desired subnet mask.
     * Adjust the order of the filter in the routing table as needed, then click **Save**.
-    
-    ![View prefix filtering options](images/prefix-filtering-options.png "Prefix filtering options"){: caption="View prefix filtering options" caption-side="bottom"}
 
 ### Deleting prefix filters
 {: #deleting-prefix-filters-ui}
@@ -135,16 +125,8 @@ To delete a prefix filter for an existing connection using the UI, follow these 
 
    The prefix filtering icon ![Prefix filter icon](images/prefix-filter-icon.png) shows if a connection already has prefix filters. 
 1. Click the connection's Actions menu ![Actions menu icon](/images/overflow.png) and select **Prefix filtering**.
-
-    ![Prefix filtering action](images/prefix-filtering-action.png "Prefix filtering action"){: caption="Prefix filtering action" caption-side="bottom"}
-
-1. Click the Actions menu ![Actions menu icon](/images/overflow.png) next to the prefix filter that you want to delete. Then, click **Delete**.
-
-    ![Delete prefix filter](images/prefix-filtering-side-panel-delete.png "Delete prefix filter"){: caption="Delete prefix filter" caption-side="bottom"}
-	
+1. Click the Actions menu ![Actions menu icon](/images/overflow.png) next to the prefix filter that you want to delete. Then, click **Delete**.	
 1. Click **Delete prefix filter** to confirm deletion.
-
-    ![Confirm deletion](images/prefix-filtering-delete-confirm.png "Delete prefix filter"){: caption="Confirm deletion" caption-side="bottom"}
 
 ## Working with prefix filters using the CLI
 {: #working-prefix-filters-cli}

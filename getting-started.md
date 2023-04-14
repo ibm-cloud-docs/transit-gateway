@@ -26,7 +26,7 @@ With {{site.data.keyword.tg_full_notm}}, you can connect:
 * VPCs in different regions (global routing)
 * VPCs to your {{site.data.keyword.cloud_notm}} classic infrastructure
 * Networks using a Generic Routing Encapsulation (GRE) tunnel
-* On-premise networks using Direct Link (2.0) to your {{site.data.keyword.cloud_notm}} networks
+* On-premise networks using Direct Link to your {{site.data.keyword.cloud_notm}} networks
 
 To get started using {{site.data.keyword.tg_full_notm}}:
 

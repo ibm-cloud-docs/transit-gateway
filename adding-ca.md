@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-30"
+  years: 2020, 2023
+lastupdated: "2023-04-14"
 
 keywords: 
 
@@ -53,9 +53,7 @@ To connect networks owned by different accounts using the UI, follow these steps
 
 1. Type the name of the network connection, then click **Add**. The first screen capture shows adding a VPC connection, the second screen shows adding a classic infrastructure connection.
 
-   ![Add VPC cross account connection](images/addCrossAcctConnection.png "Adding cross-account connection - VPC"){: caption="Figure 1. Add VPC cross account connection" caption-side="bottom"}
-   
-   In the preceeding image for the classic infrastructure connection, the ID number that is shown is for your IBM Cloud account, not for a SoftLayer account.
+  The ID number is for your IBM Cloud account, not for a SoftLayer account.
    {: note}
 
    The network connection now shows the **Pending** approval status in the gateway owner's account.
@@ -70,15 +68,9 @@ To connect networks owned by different accounts using the UI, follow these steps
 1. In the Connections section, see **Action required** to view the incoming network connection request. A user with the [necessary additional IAM permissions](/docs/transit-gateway?topic=transit-gateway-iam) can then click **Approve** to approve the request.
 
    After the network owner's account ensures that the connection request is from a legitimate source and approves it, the system establishes routes to and from all other networks connected to the same transit gateway. Use of [network ACLs and/or security groups](/docs/vpc?topic=vpc-security-in-your-vpc#security-in-your-vpc) within networks that are accessible across accounts are highly recommended to control the network traffic flows. You can unilaterally detach cross-account connections by either account through users who have the appropriate permissions.
-   {: important}
+   {: important} 
 
-   ![Approve cross-account connection](images/approveCrossAcctConnection.png "Approve cross-account connection"){: caption="Approve cross-account connection" caption-side="bottom"}
-
-   Click **Approve** to confirm.
-
-   ![Confirm cross-account connection](images/confirmCrossAcctConnection.png "Confirm cross-account connection"){: caption="Confirm cross-account connection" caption-side="bottom"}
-
-   The status of the network connection indicates **Attaching**.
+   Click **Approve** to confirm. The status of the network connection indicates **Attaching**.
 
 1. When you change back to the original account, the status of the connection changes to **Attached**, indicating that the network request was approved.
 

@@ -19,7 +19,7 @@ subcollection: transit-gateway
 {: #change-configuration-ui}
 {: ui}
 
-To change your transit gateway configuration using the UI, perform the following procedure:
+To change your transit gateway configuration using the UI, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
 1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
@@ -38,8 +38,6 @@ To change your transit gateway configuration using the UI, perform the following
 
    When changing from Local to Global routing for a given transit gateway, you are charged for all associated connection traffic.
    {: important}
-
-   ![Editing your configuration](images/editConnection.png "Editing your configuration"){: caption="Editing your configuration" caption-side="bottom"}
 
 ## Changing your configuration using the CLI
 {: #change-configuration-cli}

@@ -32,9 +32,7 @@ To edit a connection to a transit gateway, follow these steps:
 1. From the Connections page, click the Actions menu ![Actions menu](/images/overflow.png) next to the connection that you want to edit and select **Edit**.
 
    From here, you can change the name of the selected network connection.
-
-   ![Edit connections](images/7-editingGlobaltoLocalTG.png "Edit connections"){: caption="Edit connections" caption-side="bottom"}
-
+   
 ## Editing a connection using the CLI
 {: #editing-connections-cli}
 {: cli}

@@ -50,10 +50,10 @@ You must be prepared to recreate your transit gateways and connections. This sec
 The following steps use the IBM Cloud CLI, but you can also use the IBM Cloud console or API.
 {: tip}
 
-Preserve a list of all of your transit gateways and their connections. To do so, perform the following procedure:
+Preserve a list of all of your transit gateways and their connections. To do so, follow these steps:
 
 1. Use the `ibmcloud tg gateways` command to list details about all your transit gateways. Save this output.
-2. For each gateway, use the `ibmcloud tg connections GATEWAY_ID` command to list information about its connections. Save this output.
+1. For each gateway, use the `ibmcloud tg connections GATEWAY_ID` command to list information about its connections. Save this output.
 
 For more information, see the [Transit Gateway CLI reference](/docs/transit-gateway?topic=tg-cli-plugin-transit-gateway-cli).
 {: tip}

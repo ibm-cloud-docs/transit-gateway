@@ -12,7 +12,7 @@ subcollection: transit-gateway
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Generating a transit gateway route report
+# Generating a route report
 {: #route-reports}
 
 You can request a report of all routes known to a transit gateway and each of its connections. The report shows  Border Gateway Protocol (BGP) information associated with these routes, which connections supply which routes, and overlapping routes.  
@@ -36,8 +36,6 @@ To generate a route report by using the UI, follow these steps:
 1. On the Details page, click either the **Routes** or **BGP** tab, then click **Generate report**. 
 
    The route report begins building, and might take a few minutes to generate depending on the complexity of the gateway. Keep in mind that you cannot generate another report until the report is finished processing, or unless you click **Cancel**.
-
-   ![Generating a route report](images/routereportpending.png "Generating a route report"){: caption="Generating a route report" caption-side="bottom"}
 
 After the report generates, the following columns are displayed in the route report table.
 
@@ -119,13 +117,7 @@ Conflicting routes can cause errors, which you can see in the **Conflict** colum
 Conflicting routes are not dropped from routing tables. Any conflicts that you see in the **Conflict** column are presented merely for information, so that you can easily spot potential problems in your routing, and decide how to address them, if at all. Overlapping routes may also be intentional, such as for HA purposes. 
 {: important}
 
-For example, in the following image, `vpc-A` and `vpc-B` have conflicts with the overlapping route `192.168.100.0`. 
-
-   ![Display route report](images/routereportconflicts.png "Display route report"){: caption="Display route report" caption-side="bottom"}
-
 If there are multiple conflicts, click the link to open a side panel with more information. After you resolve the conflicts, generate a new report. 
-
-   ![Multiple route conflicts](images/routereportmultipleconflicts.png "Multiple Route Conflicts"){: caption="Multiple route conflicts" caption-side="bottom"}
 
 When diagnosing conflicting routes, keep in the mind the following traffic flow considerations:
 

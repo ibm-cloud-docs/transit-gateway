@@ -32,12 +32,7 @@ To delete an {{site.data.keyword.tg_full}}, follow these steps:
 1. After the connections are removed, you can delete the transit gateway in two ways:
 
    * From the transit gateway's details page, click the Actions menu ![Actions menu](/images/overflow.png) next to the gateway you want to delete and select **Delete**.
-
-      ![Delete gateways with the Options menu](images/delete-tg-1.png "Delete gateways with the Options menu"){: caption="Delete gateways with the Options menu" caption-side="bottom"}
-
    * From an individual transit gateway page, select **Actions > Delete**.
-
-      ![Delete gateways with the Actions menu](images/delete-tg-2.png "Delete gateways with the Actions menu"){: caption="Delete gateways with the Actions menu" caption-side="bottom"}
 	  
 ## Deleting a transit gateway using the CLI
 {: #delete-gateway-cli}
@@ -92,7 +87,7 @@ To delete a transit gateway, set the following parameters:
 |**version**  \n Required  \n string|Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date can be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
 {: caption="Table 2. Query parameters for deleting a transit gateway" caption-side="bottom"}
 
-#### Example Request
+#### Example request
 {: #delete-gateway-api-request-example}
 
 This example iiilustrates a transit gateway deletion request:
@@ -118,7 +113,7 @@ The following status codes will be returned:
 |**409**|The transit gateway could not be deleted as there are pre-existing connections attached.|
 {: caption="Table 3. Status codes when deleting a transit gateway" caption-side="bottom"}
 
-#### Example Response
+#### Example response
 {: #delete-gateway-api-response-example}
 
 This example illustrates that the transit gateway could not be found, leading to a Status 404 response:
