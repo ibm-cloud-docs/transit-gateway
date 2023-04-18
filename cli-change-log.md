@@ -12,7 +12,7 @@ subcollection: transit-gateway
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Transit gateway CLI change log
+# Transit Gateway CLI change log
 {: #cli-change-log}
 
 In this change log, you can learn about the latest changes, improvements, and updates for {{site.data.keyword.tg_full}}.
