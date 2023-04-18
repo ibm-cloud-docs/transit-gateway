@@ -19,7 +19,7 @@ You can use an unbound Generic Routing Encapsulation (GRE) tunnel transit gatewa
 {: shortdesc}
 
 ## Before you begin
-{: #unbound-GRE-begin}
+{: #unbound-gre-begin}
 
 Before creating an unbound GRE tunnel connection, review
 [Generic Routing Encapsulation connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-considerations)
