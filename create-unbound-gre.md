@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-30"
+  years: 2020, 2023
+lastupdated: "2023-04-20"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -28,7 +28,14 @@ for additional prerequisites.
 Unbound transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point-to-point connection, has no built in redundancy, and is a single point of failure. When configuring an unbound GRE connection on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections using different availability zones.
 {: important}
 
-## Creating an unbound GRE tunnel connection using the UI
+Keep in mind that you are required to enter four IP addresses when you create an unbound GRE tunnel connection. These are:
+
+* **Remote gateway IP** - the IP address of your GRE tunnel endpoint. This IP address must be a private IP and be the private IP from the classic environment. For example, this IP can be a hardware appliance or even a VM.   
+* **Local gateway IP** - the IP address that your tunnel endpoint connects to. This IP is the transit gateway's IP for the purpose of establishing the tunnel so that when you enter the "remote IP" on your tunnel endpoint, you use this IP address.
+* **Remote tunnel IP** - the GRE tunnel address on the tunnel endpoint.
+* **Local tunnel IP** - the GRE tunnel address on the transit gateway side.
+
+## Creating an unbound GRE tunnel connection in the UI
 {: #tg-ui-adding-unbound-gre-connection-transit-gateway}
 {: ui}
 
@@ -114,7 +121,7 @@ To configure the other end of the BGP tunnel, expand the newly created unbound G
 
 [^ip8]: This address must comply with rfc1918 IP addresses and cannot be in conflict with any existing networks connected to the transit gateway.
 
-## Creating an unbound Generic Routing Encapsulation tunnel connection using the CLI
+## Creating an unbound Generic Routing Encapsulation tunnel connection from the CLI
 {: #tg-cli-adding-unbound-gre-connection-transit-gateway}
 {: cli}
 
@@ -179,11 +186,11 @@ ibmcloud tg connection-create-gre $gateway  --network-type unbound_gre_tunnel --
 ```
 {: pre}
 
-## Creating an unbound Generic Routing Encapsulation (GRE) tunnel connection using the API
+## Creating an unbound Generic Routing Encapsulation (GRE) tunnel connection with the API
 {: #tg-api-adding-unbound-gre-connection-transit-gateway}
 {: api}
 
-To create an unbound Generic Routing Encapsulation (GRE) tunnel connection using the API, perform the following actions:
+To create an unbound Generic Routing Encapsulation (GRE) tunnel connection with the API, perform the following actions:
 
 ### Request
 {: #add-unbound-gre-connection-curl-api-request}
