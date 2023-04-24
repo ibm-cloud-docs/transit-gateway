@@ -39,7 +39,7 @@ toc:
           topics:
           - include: ../solution-tutorials/vpc-tg-dns-iam.md
           - include: ../solution-tutorials/vpc-transit1.md
-          - include: ../solution-tutorials/vpc-transit2.md 
+          - include: ../solution-tutorials/vpc-transit2.md
     - navgroup:
        id: howto
        topics:
@@ -110,5 +110,6 @@ toc:
             - conn-nic.md
             - conn-routing-vsi.md
             - conn-gre.md
+            - ts-route-report-overlaps.md
        - topic: getting-help.md
          navtitle: Getting help and support
