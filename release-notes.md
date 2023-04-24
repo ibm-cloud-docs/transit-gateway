@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-10"
+lastupdated: "2023-04-24"
 
 keywords: updates, additions, improvements
 
@@ -18,6 +18,13 @@ content-type: release-note
 {: #transit-gateway-release-notes}
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
+
+## 24 April 2023
+{: #transit-gateway-apr2423}
+{: release-note}
+
+Multi-account support for IBM Cloud Direct Link
+ :    Transit Gateway now includes cross-account support for Direct Link connections. For more information, see [Ordering a transit gateway](/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway) and [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections).
 
 ## 30 November 2022
 {: #transit-gateway-jan2023}
@@ -36,13 +43,13 @@ Unbound GRE tunnels
 {: release-note}
 
 Network prefix filters
-:    Simplify the management of the IP addresses that you reference in your resources to route network traffic. You can create prefix filters to permit or deny specific routes on specific connections. These prefix filters are added to an ordered list that is processed sequentially. A default filter (permit or deny all prefixes) is then applied after the prefix filter list is processed. For more information, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters). 
+:    Simplify the management of the IP addresses that you reference in your resources to route network traffic. You can create prefix filters to permit or deny specific routes on specific connections. These prefix filters are added to an ordered list that is processed sequentially. A default filter (permit or deny all prefixes) is then applied after the prefix filter list is processed. For more information, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters).
 
 ## 15 November 2021
 {: #transit-gateway-nov1521}
 {: release-note}
 
-Transit Gateway route reports 
+Transit Gateway route reports
 :    You can now request a route report, which shows all routes known to a transit gateway and each of its connections. The report shows:
     * Border Gateway Protocol (BGP) information associated with these routes
     * Which connections supply which routes

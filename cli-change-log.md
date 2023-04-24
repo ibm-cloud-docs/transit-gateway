@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2020, 2022
-lastupdated: "2022-11-30"
+  years:  2020, 2023
+lastupdated: "2023-04-24"
 
 keywords: change log for transit gateway, updates to transit gateway
 
@@ -17,6 +17,12 @@ subcollection: transit-gateway
 
 In this change log, you can learn about the latest changes, improvements, and updates for {{site.data.keyword.tg_full}}.
 
+## 24 April 2023
+{: cli-apr-2423}
+
+Direct Link multi-account support
+:    Changed command: You can now create a connection of type `directlink` to pass into the [connection-create](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#connection-create) command and create a direct link from a different account owner. Previously only connections of type `vpc` and `classic` were allowed.
+
 ## 30 November 2022
 {: #cli-november3022}
 
@@ -28,13 +34,11 @@ Unbound GRE tunnels
     * `network-account-id` - ID of account to connect to a classic connection. For use only with the `classic` type when the account of the connection is different than the gateway's account.
     * `network-type` - Network type of the GRE connection. Values are `gre_tunnel` or `unbound_gre_tunnel`. The default value is `gre_tunnel`.
 
-For more information, see [ibmcloud tg connection-create-gre](/docs/tg-cli-plugin?topic=tg-cli-plugin-transit-gateway-cli#connection-create-gre).
-
 ## 26 March 2022
 {: #cli-mar2622}
 
 Network prefix filters
-:    Simplify the management of the IP addresses that you reference in your resources to route network traffic. You can create prefix filters to permit or deny specific routes on specific connections. These prefix filters are added to an ordered list that is processed sequentially. A default filter (permit or deny all prefixes) is then applied after the prefix filter list is processed. For more information, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters&interface=cli). 
+:    Simplify the management of the IP addresses that you reference in your resources to route network traffic. You can create prefix filters to permit or deny specific routes on specific connections. These prefix filters are added to an ordered list that is processed sequentially. A default filter (permit or deny all prefixes) is then applied after the prefix filter list is processed. For more information, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters&interface=cli).
 
 ## 15 November 2021
 {: #cli-nov1521}
@@ -51,8 +55,8 @@ Transit gateway route reports
 ## 30 August 2021
 {: #cli-aug3021}
 
-Direct Link (2.0) connections for transit gateways
-:    Transit gateways now support Direct Link (2.0) connections. A Direct Link connection allows an on-premises network to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway.
+Direct Link connections for transit gateways
+:    Transit gateways now support Direct Link connections. A Direct Link connection allows an on-premises network to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway.
 
 ## 17 June 2021
 {: #cli-jun1721}
@@ -66,7 +70,7 @@ Allow Generic Routing Encapsulation (GRE) connections for transit gateways
 Classic infrastructure connections across IBM Cloud accounts
 :    You can now connect to {{site.data.keyword.cloud}} classic infrastructure in another {{site.data.keyword.cloud_notm}} account by providing the cloud account ID when adding a connection to your transit gateway. The account containing the classic infrastructure is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity.
 
-:    For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections).
+:    For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
 
 ## 01 January 2021
 {: #cli-jan0121}
@@ -82,4 +86,4 @@ Connect networks to multiple local gateways
 VPC connections across IBM Cloud accounts
 :    You can now connect to a VPC in another IBM Cloud account by providing the CRN of the VPC when adding a connection to your transit gateway. The account containing the VPC is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity for that VPC.
 
-:    For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections).
+:    For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).

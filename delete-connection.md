@@ -15,7 +15,7 @@ subcollection: transit-gateway
 # Deleting a connection
 {: #deleting-connections}
 
-## Deleting a connection using the UI
+## Deleting a connection in the UI
 {: #deleting-connections-ui}
 {: ui}
 
@@ -31,7 +31,7 @@ To delete a connection from a transit gateway, follow these steps:
 
 1. From the Connections page, click the Actions menu ![Actions menu](/images/overflow.png) next to the connection that you want to delete and select **Delete**.
 
-## Deleting a connection using the CLI
+## Deleting a connection from the CLI
 {: #deleting-connections-cli}
 {: cli}
 
@@ -62,19 +62,19 @@ ibmcloud tg cd $gateway $connection -f
 ```
 {: pre}
 
-## Deleting a connection using the API
+## Deleting a connection with the API
 {: #deleting-connections-api}
 {: api}
 
 After the specified connection is detached, entities still within the transit gateway will no longer be able to communicate directly to it through the IBM Cloud private backbone.
 {: note}
 
-You can delete a connection using the API.
+You can delete a connection with the API.
 
 ### Request 
 {: #deleting-connections-api-request}
 
-To delete a connection using the API, set the following parameters:
+To delete a connection with the API, set the following parameters:
 
 |Path Parameters|Details|
 |--|--|

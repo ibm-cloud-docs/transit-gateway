@@ -15,7 +15,7 @@ subcollection: transit-gateway
 # Editing a connection
 {: #editing-connections}
 
-## Editing a connection using the UI
+## Editing a connection in the UI
 {: #editing-connections-ui}
 {: ui}
 
@@ -33,11 +33,11 @@ To edit a connection to a transit gateway, follow these steps:
 
    From here, you can change the name of the selected network connection.
    
-## Editing a connection using the CLI
+## Editing a connection from the CLI
 {: #editing-connections-cli}
 {: cli}
 
-To edit a connection using the CLI, execute this command:
+To edit a connection from the CLI, execute this command:
 
 ```sh
 ibmcloud tg connection-update|cu GATEWAY_ID CONNECTION_ID --name NAME [--output json] [-h, --help]
@@ -66,11 +66,11 @@ ibmcloud tg cu $gateway $connection --name MyConn2
 ```
 {: pre}
 
-## Editing a connection using the API
+## Editing a connection with the API
 {: #editing-connections-api}
 {: api}
 
-You can update the name of a connection for a transit gateway using the API.
+You can update the name of a connection for a transit gateway with the API.
 
 ### Request 
 {: #editing-connections-api-request}

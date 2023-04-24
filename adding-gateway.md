@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-09-26"
 
 keywords: features, overview
 
@@ -15,7 +15,10 @@ subcollection: transit-gateway
 # Adding a connection
 {: #adding-connections}
 
-## Adding a connection using the UI
+You can add a connection to a transit gateway using the UI, CLI, and API.
+{: shortdesc}
+
+## Adding a connection in the UI
 {: #tg-ui-adding-connection-transit-gateway}
 {: ui}
 
@@ -35,14 +38,14 @@ To add a connection to a transit gateway, follow these steps:
    * **Classic infrastructure** - Allows you to connect to IBM Cloud classic resources.
    * **VPC** - Allows you to connect to your account's VPC resources, or VPC resources from other accounts as well.
    * **Unbound GRE tunnel** - Allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For prerequisites and detailed instructions, see [Creating an Unbound Generic Routing Encapsulation tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
-   * **Direct Link** - Creates a network connection to and from Direct Link 2.0 gateways so that there is a secure connection to on-premises networks and other resources connected to the transit gateway.   
+   * **Direct Link** - Creates a network connection to and from Direct Link 2.0 gateways so that there is a secure connection to on-premises networks and other resources connected to the transit gateway.
 
-      If you select **Direct Link**, you must also log in to the [Direct Link console](/interconnectivity/direct-link){: external} (using the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link.
+      If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (using the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link.
       {: important}
-      
+
 1. Click **Add** to create a connection.
 
-## Adding a connection using the CLI
+## Adding a connection from the CLI
 {: #tg-cli-adding-connection-transit-gateway}
 {: cli}
 
@@ -71,7 +74,7 @@ export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 For more information, see [Integrating with Virtual Private Endpoint for VPC](/docs/transit-gateway?topic=transit-gateway-vpe-for-ibm-cloud-transit-gateway).
 {: note}
 
-To add a connection on the transit gateway using the CLI, enter the following command:
+To add a connection on the transit gateway from the CLI, enter the following command:
 
 ```sh
 ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-type [vpc | directlink | classic] --network-id NETWORK_ID --network-account-id NETWORK-ACCOUNT-ID [--output json] [-h, --help]
@@ -89,7 +92,7 @@ Where:
    ibmcloud is vpc VPC_ID --json
    ```
    {: pre}
-   
+
 - **--network-account-id**: ID of the IBM Cloud account to use for creating a classic connection. Only used with 'classic' type, when the account of connection is different than the gateway's account.
 
 - **--output json**: Optional: Specify if you want the output to display in JSON format.
@@ -113,11 +116,11 @@ ibmcloud tg cc $gateway --name classic-conn --network-type classic
 ```
 {: pre}
 
-## Adding a connection using the API
+## Adding a connection with the API
 {: #tg-api-adding-connection-transit-gateway}
 {: api}
 
-To add a connection using the API, follow these steps:
+To add a connection with the API, follow these steps:
 
 1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment#api-prerequisites-setup).
 1. Store any additional variables to be used in the API commands.
@@ -146,7 +149,7 @@ To add a connection to the transit gateway, adjust the following parameters:
 |**network_id**  \n string | The ID of the network being connected to via this connection. This field is required for some types, such as `vpc` and `directlink`. For network types `vpc` and `directlink` this is the CRN of the VPC / Direct Link gateway respectively. This field is required to be unspecified for `classic`, `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
 |**remote_bgp_asn**  \n string | The remote network BGP ASN. This field is only applicable to `gre_tunnel` and `unbound_gre_tunnel` type connections. The following ASN values are reserved and unavailable: 64512-64513, 65100, 65201-65234, 65402-65433, 65500 and 4201065000-4201065999. If `remote_bgp_asn` is omitted on `gre_tunnel` connection create requests, IBM will assign an ASN.  \n **Example:** `65010`|
 |**remote_gateway_ip**  \n string | The remote gateway IP address. This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Example:** `10.242.63.12`|
-|**remote_tunnel_ip**  \n string | The remote tunnel IP address. This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections. The `local_tunnel_ip` and `remote_tunnel_ip` addresses must be in the same `/30` network. Neither can be the network nor the broadcast addresses. \n **Example:** `192.168.129.1` | 
+|**remote_tunnel_ip**  \n string | The remote tunnel IP address. This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections. The `local_tunnel_ip` and `remote_tunnel_ip` addresses must be in the same `/30` network. Neither can be the network nor the broadcast addresses. \n **Example:** `192.168.129.1` |
 |**zone**  \n ZoneIdentityByName | For `gre_tunnel` and `unbound_gre_tunnel` type connections, specify the connection's location. The specified availability zone must reside in the gateway's region. Use the IBM Cloud global catalog to list zones within the desired region. This field is required for, and only applicable to, network type `gre_tunnel` and `unbound_gre_tunnel` connections. |
 |- **name**  \n string|Availability zone name.  \n **Example:** `us-south-1`|
 {: caption="Table 2. Query parameters for adding a connection" caption-side="bottom"}
@@ -154,13 +157,13 @@ To add a connection to the transit gateway, adjust the following parameters:
 #### Example Request
 {: ##tg-api-adding-connection-transit-gateway-request-example}
 
-This example illustrates adding a connection to the transit gateway using the API:
+This example illustrates adding a connection to the transit gateway with the API:
 
 ```sh
 curl -X POST --location --header "Authorization: Bearer {iam_token}" \
   --header "Accept: application/json" \
   --header "Content-Type: application/json" \
-  --data '{ "network_type": "vpc" }'   
+  --data '{ "network_type": "vpc" }'
   "
 {base_url}/transit_gateways/{transit_gateway_id}/connections?version={version}"
 ```
@@ -208,7 +211,7 @@ The following response shows once you initiate the request:
 |**local_tunnel_ip** \n string | The local tunnel IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `192.168.129.2` |
 |**mtu** \n integer | GRE tunnel MTU. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `9000`|
 |**network_account_id** \n AccountID|The ID of the account which owns the connected network. Generally only used if the network is in a different IBM Cloud account than the gateway.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
-|**remote_bgp_asn** \n integer | The remote network BGP ASN. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `65010` | 
+|**remote_bgp_asn** \n integer | The remote network BGP ASN. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `65010` |
 |**remote_gateway_ip** \n string | The remote gateway IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `10.242.63.12`|
 |**remote_tunnel_ip** \n string | The remote tunnel IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `192.168.129.1`|
 |**request_status** \n string | Represents the status of a connection request between IBM Cloud accounts, and is only visible for cross account connections. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values. \n **Possible values:** [`pending`,`approved`,`rejected`,`expired`,`detached`]|

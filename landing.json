@@ -1,9 +1,9 @@
 {
     "title": "Transit Gateway docs",
-    "lastupdated": "2022-11-30",
+    "lastupdated": "2023-04-24",
     "introduction": " With IBM Cloud Transit Gateway, organizations can define and control communication between resources on the IBM Cloud network, providing dynamic scalability, high availability, and private, in-transit data between IBM Cloud data centers.",
-      "api": "/apidocs/transit-gateway", 
-      "cli": "/docs/transit-gateway?topic=tg-cli-plugin-transit-gateway-cli", 
+      "api": "/apidocs/transit-gateway",
+      "cli": "/docs/transit-gateway?topic=tg-cli-plugin-transit-gateway-cli",
       "terraform": "https://cloud.ibm.com/docs/terraform?topic=terraform-getting-started",
     "section_recommended": [
       {
@@ -30,7 +30,12 @@
     },
     "section_updates": {
       "view_more": "/docs/transit-gateway?topic=transit-gateway-transit-gateway-release-notes",
-      "tiles": [          
+      "tiles": [
+        {
+          "date": "April 2023",
+          "title": "Multi-account support for IBM Cloud Direct Link",
+          "description": "Transit Gateway now includes cross-account support for Direct Link connections."
+        },
         {
           "date": "November 2022",
           "title": "Transit gateway unbound GRE tunnels",
@@ -40,31 +45,6 @@
           "date": "March 2022",
           "title": "Transit gateway prefix filtering",
           "description": "Network prefix filters simplify the management of the IP addresses that you reference in your resources to route network traffic. You can create prefix filters to permit or deny specific routes on specific connections. These prefix filters are added to an ordered list that is processed sequentially. A default filter (permit or deny all prefixes) is applied after the prefix filter list is processed."
-        },
-        {
-          "date": "November 2021",
-          "title": "Transit gateway route reports",
-          "description": "You can now request a route report, which shows all routes known to a transit gateway and each of its connections. The report shows Border Gateway Protocol (BGP) information associated with these routes, which connections supply which routes, and overlapping routes."
-        },
-        {
-          "date": "August 2021",
-          "title": "Direct Link (2.0) connections for transit gateways",
-          "description": "Transit gateways now support Direct Link (2.0) connections. A Direct Link connection allows an on-premises network to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway."
-        },        
-        {
-          "date": "March 2021",
-          "title": "Classic infrastructure connections across IBM Cloud accounts",
-          "description": "You can now connect to IBM Cloud® classic infrastructure in another IBM Cloud account by providing the cloud account ID when adding a connection to your transit gateway. The account containing the classic infrastructure is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity."
-        },
-        {
-          "date": "January 2021",
-          "title": "Connect networks to multiple local gateways",
-          "description": "You can now connect networks, VPCs, and classic connections to multiple local transit gateways. Previously, you could connect a network only to a single transit gateway. Now traffic between local networks can use a local gateway. In addition, if you need to connect to a remote network, you can attach to a global gateway. Routing of traffic between networks takes an optimized path (if multiple connections exist), meaning local traffic stays local to the region and is not charged."
-        },
-        {
-          "date": "July 2020",
-          "title": "VPC connections across IBM Cloud accounts",
-          "description": "You can now connect to a VPC in another IBM Cloud account by providing the CRN of the VPC when adding a connection to your transit gateway. The account containing the VPC is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity for that VPC."
         }
       ]
     }

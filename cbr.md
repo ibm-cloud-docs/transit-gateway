@@ -48,7 +48,7 @@ Context-based restrictions for the transit service can be scoped to a Transit Se
 
 Additionally, rules can be scoped to a specific instance of the service or a resource group by using resource attributes. 
 
-### Creating rules by using the CLI
+### Creating rules from the CLI
 {: #cbr-rules-cli}
 {: cli}
 

@@ -28,7 +28,7 @@ You can retrieve a route report by using the UI, CLI, or API.
 A route report generates data for both the **Routes** and **BGP** tables in the respective views. Both of these tables allow you to generate, delete, and download the same report.
 {: note}
 
-To generate a route report by using the UI, follow these steps:
+To generate a route report in the UI, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
 1. Select the Navigation Menu ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity > Transit Gateway**.   

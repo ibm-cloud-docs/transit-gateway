@@ -19,7 +19,7 @@ subcollection: transit-gateway
 
 To order IBM Cloud Transit Gateway, you must determine the location connecting to IBM Cloud, complete the required configuration information, and then submit your order.
 
-## Creating a transit gateway using the UI
+## Creating a transit gateway in the UI
 {: #tg-ui-creating-transit-gateway}
 {: ui}
 
@@ -31,7 +31,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 1. Select **Networking** in the navigation pane, then click the Transit Gateway tile. The Transit Gateway ordering page displays.
 
    You can also access the ordering page from the [{{site.data.keyword.cloud_notm}} console](/login){: external} by selecting the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page. Then, select **Interconnectivity** > **Transit Gateway** and click the **Create transit gateway** button.
-   {: tip} 
+   {: tip}
 
 1. Enter a name for the transit gateway and choose a resource group. You can select a resource group from the list, or keep the default selection.
 1. Choose a routing option:
@@ -39,52 +39,49 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
    All of your classic resources and Direct Link connections across MZRs can be accessed regardless of whether local or global routing is enabled.
    {: remember}
 
-   * Select **Local routing** to allow your transit gateway to connect to all VPC and classic resources within the transit gateway's provisioned region.  
-   * Select **Global routing** to allow your transit gateway to connect to VPC resources in all IBM [Multi-Zone Regions (MZRs)](/docs/overview?topic=overview-locations#mzr-table).  
+   * Select **Local routing** to allow your transit gateway to connect to all VPC and classic resources within the transit gateway's provisioned region.
+   * Select **Global routing** to allow your transit gateway to connect to VPC resources in all IBM [Multi-Zone Regions (MZRs)](/docs/overview?topic=overview-locations#mzr-table).
 
    You can upgrade routing options at a later point if your needs change. Pricing is changed accordingly.
    {: note}
 
-1. Choose the location where you want to provision your transit gateway. 
+1. Choose the location where you want to provision your transit gateway.
 
    If you are using local routing, the specified location limits you to connect VPCs located in that region only. If you are using global routing, the specified location affects network latency, so choose the region closest to the resources that you need connected.
 
 1. Add connections to your transit gateway now, or after it has been provisioned. {: #add-connection}
 
-   1. Select the network connection to be attached to the transit gateway. To add connections later, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-adding-connections). 
+   1. Select the network connection to be attached to the transit gateway. To add connections later, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-adding-connections).
 
       You can add a new connection on the same account as the connection type, or request to connect to a network in another account.
       {: note}
-  
+
       Select from the following connection types:
 
       * **Classic infrastructure** networks allow you to connect to IBM Cloud classic resources. Only one classic infrastructure connection is allowed per account.
       * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
       * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For more information, see [Creating an Unbound Generic Routing Encapsulation tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
-      * **Direct Link** creates a network connection to and from Direct Link gateways so that there is a secure connection to on-premises networks and other resources connected to the transit gateway. 
+      * **Direct Link** creates a network connection to and from Direct Link gateways so that there is a secure connection to on-premises networks and other resources connected to the transit gateway.
 
-         If you select **Direct Link**, you must also log in to the [Direct Link console](/interconnectivity/direct-link){: external} and specify **Transit Gateway** as the type of network connection for your direct link.   
+         If you select **Direct Link**, you must also log in to the [Direct Link console](/interconnectivity/direct-link){: external} and specify **Transit Gateway** as the type of network connection for your direct link.
          {: important}
-      
+
    1. After you select a network connection, choose a connection reach option:
-   
+
       * **Add new connection in this account** - Enter an optional connection name and any other required information for your connection.
-      
-         For **{{site.data.keyword.powerSys_notm}}**, select a location for the {{site.data.keyword.powerSys_notm}} workspace. Then, select from the list of  {{site.data.keyword.powerSys_notm}} workspaces that are enabled for Transit Gateway. Keep in mind that not all {{site.data.keyword.powerSys_notm}} workspaces show in this menu.
-         {: note}
-         
+
       * **Request connection to a network in another account** - Enter either the IBM Cloud ID or Cloud Resource Name (CRN) of the account that manages the network where you want to connect. Then, complete any remaining information. All resources connected to that transit gateway will be accessible from the other network. For more information, including how to obtain the Cloud ID or CRN, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
 
          * _IBM Cloud ID_ - Required by Classic infrastructure and Unbound GRE connections.
-         * _CRN_ - Required by VPC.
-  
-1. Optionally, you can create prefix filters to permit or deny specific routes on specific connections. For prefix filtering considerations and step-by-step instructions, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters).
- 
-   To begin, expand the drop-down arrow in the upper right of the Prefix filtering section, and complete the following information: 
+         * _CRN_ - Required by VPC and Direct Link connections.
 
-   1. Select the default filter that you want to use. You can either permit (default) or deny all prefixes. 
-     
-      The default filter is applied only if you don't create prefix filters that bypass this default setting. 
+1. Optionally, you can create prefix filters to permit or deny specific routes on specific connections. For prefix filtering considerations and step-by-step instructions, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters).
+
+   To begin, expand the drop-down arrow in the upper right of the Prefix filtering section, and complete the following information:
+
+   1. Select the default filter that you want to use. You can either permit (default) or deny all prefixes.
+
+      The default filter is applied only if you don't create prefix filters that bypass this default setting.
       {: note}
 
    1. Click **Create prefix filter** to open the side panel and start creating prefix filters. In turn, your prefix filters are added to an ordered list that is processed sequentially.
@@ -93,7 +90,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 1. **View Terms** on the right of the page.
 1. Click **Create** to complete your order.
 
-## Creating a transit gateway using the CLI
+## Creating a transit gateway from the CLI
 {: #tg-cli-creating-transit-gateway}
 {: cli}
 
@@ -118,14 +115,14 @@ If you are going to use the CLI with a Virtual Private Endpoint (VPE), you must 
 export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 ```
    {: pre}
-   
+
 For more information, see [Integrating with Virtual Private Endpoint for VPC](/docs/transit-gateway?topic=transit-gateway-vpe-for-ibm-cloud-transit-gateway).
 {: note}
 
-### Creating a transit gateway using the CLI
+### Creating a transit gateway from the CLI
 {: #gateway-create}
 
-To create a transit gateway using the CLI, enter the following command:
+To create a transit gateway from the CLI, enter the following command:
 
 ```sh
 ibmcloud tg gateway-create|gwc --name NAME --location LOCATION [--routing ROUTING] [--resource-group-id RES_GROUP_ID] [--output json] [-h, --help]
@@ -138,7 +135,7 @@ Where:
 - **--location** - Location of the gateway (see possible values by using : `ibmcloud tg locations`)
 - **--routing** - Gateway routing of resources (`global` | `local`). Use `global` to connect resources across regions. The default value is `local`.
 - **--resource-group-id** - Optional: Gateway resource group ID. Uses the default resource group, if not specified.
-- **--output json** - Optional: Specify to display the output in JSON format.  
+- **--output json** - Optional: Specify to display the output in JSON format.
 - **--help | -h** - Optional: Get help on this command.
 
 ### Example
@@ -155,7 +152,7 @@ ibmcloud tg gwc --name myGateway --location us-south
 {: #tg-api-creating-transit-gateway}
 {: api}
 
-Follow these instructions to create a transit gateway when using the API:
+Follow these instructions to create a transit gateway with the API:
 
 1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment#api-prerequisites-setup).
 1. Store any additional variables to be used in the API commands.
@@ -179,10 +176,10 @@ To create a transit gateway, adjust the following parameters:
 #### Example Request
 {: #tg-api-creating-transit-gateway-request-example}
 
-This example illustrates creating a transit gateway using the API:
+This example illustrates creating a transit gateway with the API:
 
 ```sh
-curl -X POST --location --header "Authorization: Bearer 
+curl -X POST --location --header "Authorization: Bearer
 {iam_token}" \
 --header "Accept: application/json" \
 --header "Content-Type: application/json" \
@@ -268,6 +265,6 @@ name="transit-gateway-1"
 location="us-south"
 global=true
 resource_group="30951d2dff914dafb26455a88c0c0092"
-} 
+}
 ```
 {: screen}

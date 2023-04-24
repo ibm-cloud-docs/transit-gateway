@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-14"
+lastupdated: "2023-04-24"
 
-keywords: 
+keywords:
 
 subcollection: transit-gateway
 
@@ -18,23 +18,27 @@ subcollection: transit-gateway
 You can request connections to networks in other {{site.data.keyword.cloud_notm}} accounts, using the UI, CLI, and API.
 {: shortdesc}
 
-Only 10 pending requests are allowed per gateway. To create more requests, you can cancel the pending connection request, or wait for it to be approved. Connection requests expire if not approved within 72 hours.
-{: tip}
-
 ## Planning considerations
 {: #tg-ca-planning}
 
-Be aware that after you connect a transit gateway to a network in another account, all resources connected to that transit gateway are accessible from the other network. Make sure that this is a trusted account. Use of [security controls](/docs/vpc?topic=vpc-security-in-your-vpc), such as ACLs, security groups, or other network services to control traffic flow are highly recommended. Only `VPC` and `Classic` connections are permitted as cross-account connections.
+Before adding a cross-account connection, take the following into consideration:
 
-IBM Cloud Transit Gateway does not provide security groups or ACLS, but the networks they attach to may. Security groups and network ACLs can affect transit gateway communications. For more information on ACLs and security groups, refer to the following topics:
+* Be aware that after you connect a transit gateway to a network in another account, all resources connected to that transit gateway are accessible from the other network. Make sure that this is a trusted account. The following network connections are permitted as cross-account connections:
 
-* [About network ACLs](/docs/vpc?topic=vpc-using-acls)
-* [Security groups versus network ACLs](/docs/vpc?topic=vpc-using-security-groups&interface=ui#security-groups-vs-network-acls)
-* [Configuring ACLs and security groups for use with VPN](/docs/vpc?topic=vpc-acls-security-groups-vpn)
-* [Configuring ACLs and security groups for use with endpoint gateways](/docs/vpc?topic=vpc-configure-acls-sgs-endpoint-gateways)
+   * Classic infrastructure
+   * VPC
+   * Unbound GRE Tunnel
+   * Direct Link
 
+* Only 10 pending requests are allowed per gateway. To create more requests, you can cancel the pending connection request, or wait for it to be approved. Connection requests expire if not approved within 72 hours.
+* Use of [security controls](/docs/vpc?topic=vpc-security-in-your-vpc), such as ACLs, security groups, or other network services to control traffic flow are highly recommended. IBM Cloud Transit Gateway does not provide security groups or ACLs, but the networks they attach to might and can affect transit gateway communications. For more information on ACLs and security groups, refer to the following topics:
 
-## Adding a cross-account connection using the UI
+   * [About network ACLs](/docs/vpc?topic=vpc-using-acls)
+   * [Security groups versus network ACLs](/docs/vpc?topic=vpc-using-security-groups&interface=ui#security-groups-vs-network-acls)
+   * [Configuring ACLs and security groups for use with VPN](/docs/vpc?topic=vpc-acls-security-groups-vpn)
+   * [Configuring ACLs and security groups for use with endpoint gateways](/docs/vpc?topic=vpc-configure-acls-sgs-endpoint-gateways)
+
+## Adding a cross-account connection in the UI
 {: #tg-ui-adding-cross-account-connection-transit-gateway}
 {: ui}
 
@@ -44,19 +48,16 @@ To connect networks owned by different accounts using the UI, follow these steps
 1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
 1. Click **Transit Gateway** from the left navigation pane.
 1. Click the name of the transit gateway where you want to add a connection and click **Add connection**.
-1. Choose your network connection type, either VPC or Classic infrastructure, then select **Request connection to a network in another account**.
-1. Type the VPC CRN of the cross-account network, or in the case of classic infrastructure, enter the IBM Cloud account ID that you want to connect to.
+1. Choose your network connection type, then select **Request connection to a network in another account**.
+1. Type the CRN of the cross-account network, or in the case of Classic infrastructure or Unbound GRE, enter the IBM Cloud account ID that you want to connect to.
 
-   To get the CRN of a VPC, from the {{site.data.keyword.cloud_notm}} console, select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, and then click **Resource list**. Expand **VPC Infrastructure** to list your VPCs. Select a VPC and click **Status** to view its details. Copy the CRN and paste it into the Add connection pane.
+   * To get the IBM Cloud account ID for a Classic infrastructure or Unbound GRE tunnel connection, select **Manage > Account** from the {{site.data.keyword.cloud_notm}} console and choose **Account Settings**. Your account ID shows in the **Account** section of the **Account settings** page.
+   * To get the CRN of a VPC or Direct Link, select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Resource list**. Expand **Networking** to list your networking resources, then locate the service that you are looking for. Next, click anywhere in the service's table row (except for the Name link). From the side panel that appears, copy the CRN and paste it into the Add connection pane.
 
-   To get the IBM Cloud account ID for a classic infrastructure connection, from the {{site.data.keyword.cloud_notm}} console, select **Manage > Account** and choose **Account Settings**. Your account ID shows in the **Account** section of the **Account settings** page.  
+1. Complete any remaining fields, then click **Add**. The network connection now shows the **Pending** approval status in the gateway owner's account.
 
-1. Type the name of the network connection, then click **Add**. The first screen capture shows adding a VPC connection, the second screen shows adding a classic infrastructure connection.
-
-  The ID number is for your IBM Cloud account, not for a SoftLayer account.
+   For the Classic infrastructure connection, the ID number is for your IBM Cloud account, not for a SoftLayer account.
    {: note}
-
-   The network connection now shows the **Pending** approval status in the gateway owner's account.
 
    The network owner's account then receives a notification of the request. If the network owner rejects the cross-account connection, no connectivity is established and the connection shows a status of **Rejected**. You can delete this connection at this point. If the cross-account connection is not explicitly approved, it expires after 72 hours.
 
@@ -68,7 +69,7 @@ To connect networks owned by different accounts using the UI, follow these steps
 1. In the Connections section, see **Action required** to view the incoming network connection request. A user with the [necessary additional IAM permissions](/docs/transit-gateway?topic=transit-gateway-iam) can then click **Approve** to approve the request.
 
    After the network owner's account ensures that the connection request is from a legitimate source and approves it, the system establishes routes to and from all other networks connected to the same transit gateway. Use of [network ACLs and/or security groups](/docs/vpc?topic=vpc-security-in-your-vpc#security-in-your-vpc) within networks that are accessible across accounts are highly recommended to control the network traffic flows. You can unilaterally detach cross-account connections by either account through users who have the appropriate permissions.
-   {: important} 
+   {: important}
 
    Click **Approve** to confirm. The status of the network connection indicates **Attaching**.
 
@@ -77,70 +78,44 @@ To connect networks owned by different accounts using the UI, follow these steps
    The gateway owner's account (or the network owner's account) can delete the connection. If the network owner deletes the connection, the gateway owner sees the connection status as **Detached**.
    {: note}
 
-## Adding a cross-account connection using the CLI
+## Adding a cross-account connection from the CLI
 {: #tg-cli-adding-cross-account-connection-transit-gateway}
 {: cli}
 
 Creating a cross-account connection consists of the following steps:
-1. Request connection to communicate between other account
-1. Approve/Reject connection on other account
+1. Request connection to communicate with other account.
+1. Approve/Reject connection on other account.
 
-### Connection request
-{: #tg-cli-adding-cross-account-connection-transit-gateway-connection-request}
-
-The original account will need to request a connection to communicate with the other account.
-
-#### VPC
-{: #tg-cli-adding-cross-account-connection-transit-gateway-connection-request-vpc}
-
-To request a VPC connection to communicate with another account, execute the following command:
+For example, to request a connection to communicate with another account, run the following command:
 
 ```sh
-ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-type vpc --network-id NETWORK_ID [-h, --help]
+ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-type NETWORK-TYPE --network-id NETWORK_ID [-h, --help]
 ```
 
 Where:
 
-- **GATEWAY_ID**: ID of the gateway that the new connection will be on.
-- **--name**: Name for the new connection.
-- **--network-type**: Network type of the connection.  
-- **--network-id**: ID of the network connection. For classic, do not set a value. For VPC, use the CRN. 
+`GATEWAY_ID`
+:   ID of the gateway that the new connection will be on.
 
-To find the CRN of a VPC:
+`--name`
+:   Name of the new connection.
 
-```sh
-ibmcloud is vpc VPC_ID --json
-```
+`--network-type`
+:   Network type of the connection. Values are `classic`, `vpc`, or `directlink`.
 
-- **--output json**: Optional: Specify if you want the output to display in JSON format.
+    To create an unbound GRE tunnel connection, see the [`ibmcloud tg connection-create-gre`](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=cli#connection-create-gre) command.
+    {: note}
 
-- **--help | -h**: Optional: Get help on this command.
+`--network-id`
+:   ID of the network connection. For `classic` connections, do not set a value. Use the CRN for all other network types.
 
-For VPC cross-account connections, be sure that the `network-id` is set to the account you are requesting to communicate with.
-{: important}
+`--output json`
+:   Optional. Specify if you want the output to display in JSON format.
 
-#### Classic
-{: #tg-cli-adding-cross-account-connection-transit-gateway-connection-request-cli}
+`--help | -h`
+:   Optional. Get help on this command.
 
-To request a CLI connection to communicate with another account, execute the following command:
-
-```sh
-ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-type classic --network-account-id NETWORK-ACCOUNT-ID [--output json] [-h, --help]
-```
-
-Where:
-
-- **GATEWAY_ID**: ID of the gateway that the new connection will be on.
-- **--name**: Name for the new connection.
-- **--network-type**: Network type of the connection. Values are `vpc`, `directlink`, or `classic`.
-- **--network-account-id**: ID of the IBM Cloud account to use for creating a classic connection. Only used with 'classic' type, when the account of connection is different than the gateway's account.
-- **--output json**: Optional: Specify if you want the output to display in JSON format.
-- **--help | -h**: Optional: Get help on this command.
-
-For classic connections, be sure that the `network-account-id` is set to the account you are requesting to communicate with.
-{: important}
-
-#### Examples
+### Examples
 {: #tg-cli-adding-cross-account-connection-transit-gateway-connection-request-examples}
 
 This example illustrates creating a VPC connection named `vpc-connection` using `vpcCRN="crn:v1:bluemix:public:is:us-south:a/3aa0a9999a1a46258064d84f7f447920::vpc:r134-f87014d5-87d2-46d1-9999-24683082f6bc"`:
@@ -150,64 +125,30 @@ ibmcloud tg cc $gateway --name vpc-connection --network-id $vpcCRN --network-typ
 ```
 {: pre}
 
-Create a classic connection named `classic-conn`.
+To create a classic connection named `classic-conn`.
 
 ```sh
 ibmcloud tg cc $gateway --name classic-conn --network-account-id 67123579566843320188712647902101 --network-type classic
 ```
 {: pre}
 
-### Approve a connection
-{: #tg-cli-adding-cross-account-connection-transit-gateway-connection-approve}
-
-To approve a connection from another account as the network owner, execute the following command:
+To approve a connection from another account as the network owner, run the following command:
 
 ```sh
 ibmcloud tg connection-approve|ca GATEWAY_ID CONNECTION_ID [-h, --help]
 ```
-
-Where:
-
-- **GATEWAY_ID**: ID of the gateway the connection is on.
-- **CONNECTION_ID**: ID of the connection you are approving.
-- **--help | -h**: Optional: Get help on this command.
-
-#### Example
-{: #tg-cli-adding-cross-account-connection-transit-gateway-connection-approve-example}
-
-This example illustrates approving a connection from the other account:
-
-```sh
-ibmcloud tg ca $gateway $connection
-```
 {: pre}
 
-### Reject a connection
-{: #tg-cli-adding-cross-account-connection-transit-gateway-connection-reject}
-
-To reject a connection from another account as the network owner, execute the following command:
+To reject a connection from another account as the network owner, run the following command:
 
 ```sh
 ibmcloud tg connection-reject|cr GATEWAY_ID CONNECTION_ID [-h, --help]
 ```
-
-Where:
-
-- **GATEWAY_ID**: ID of the gateway the connection is on.
-- **CONNECTION_ID**: ID of the connection you are rejecting.
-- **--help | -h**: Optional: Get help on this command.
-
-#### Example
-{: #tg-cli-adding-cross-account-connection-transit-gateway-connection-reject-example}
-
-An example of rejecting a connection from the other account
-
-```sh
-ibmcloud tg cr $gateway $connection
-```
 {: pre}
 
-## Adding a cross-account connection using the API
+For more information about available commands and options, see [Connections](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#connections) in the Transit Gateway commmand reference.
+
+## Adding a cross-account connection with the API
 {: #tg-api-adding-cross-account-connection-transit-gateway}
 {: api}
 
@@ -216,13 +157,13 @@ To add a cross-account connection, perform the following steps:
 1. Request a connection to communicate between other accounts.
 1. Perform actions on a requested connection. This must be completed.
 
-For classic cross-account connections, be sure that the `network-account-id` is set to the account you are requesting to communicate with. For VPC cross-account connections, be sure that the `network-id` is set to the account that you are requesting to communicate with. 
+For classic cross-account connections, be sure that the `network-account-id` is set to the account you are requesting to communicate with. For VPC cross-account connections, be sure that the `network-id` is set to the account that you are requesting to communicate with.
 {: important}
 
 ### Request cross-account connection
 {: #request-cross-account-connection}
 
-The original account will need to request a connection to communicate with the other account.
+The original account must request a connection to communicate with the other account.
 
 #### Request
 {: #tg-api-adding-cross-account-connection-transit-gateway-request}
@@ -238,10 +179,10 @@ To request a cross-account connection, set the following parameters:
 |--|--|
 |**version**  \n Required  \n string | Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date may be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
 |**Request Body**  \n Required  \n TransitGatewayConnectionTemplate | The connection template|
-|**network_type**  \n Required  \n string | Defines what type of network is connected via this connection.  \n **Allowable values:** [`classic` or `vpc`]  \n **Example:** `vpc`|
-|**name**  \n Name|The user-defined name for this transit gateway connection. Network type `vpc` connections are defaulted to the name of the VPC. Network type `classic` connections are named 'Classic'.  \n **Possible values:** `1 ≤ length ≤ 63`, Value must match regular expression  `^([a-zA-Z]-[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
+|**network_type**  \n Required  \n string | Defines what type of network is connected via this connection.  \n **Allowable values:** `classic`, `vpc`, `unbound_gre_tunnel`, or `directlink`  \n **Example:** `vpc`|
+|**name**  \n Name|The user-defined name for this transit gateway connection. Network type `vpc` connections are defaulted to the name of the VPC. Network type `classic` connections are named `Classic`.  \n **Possible values:** `1 ≤ length ≤ 63`, Value must match regular expression  `^([a-zA-Z]-[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
 |**network_account_id**  \n AccountID|The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway.  \n This field is used when gateway connection is in network type `classic`.  \n This field is required to be unspecified for network type `gre_tunnel`.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
-|**network_id**  \n string | The ID of the network being connected via this connection. This field is required for `vpc`. This is the target CRN for network type `vpc`  \n This field is required to be unspecified for network type `classic`, `gre_tunnel`, and `unbound_gre_tunnel` connections.  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
+|**network_id**  \n string | The ID of the network being connected via this connection. This field is required for `vpc` and `directlink`. This is the target CRN for network type `vpc` or `directlink`.  \n This field is required to be unspecified for network type `classic`, `gre_tunnel`, and `unbound_gre_tunnel` connections.  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
 {: caption="Table 2. Query parameters for adding a cross-account connection" caption-side="bottom"}
 
 ##### Example request
@@ -253,7 +194,7 @@ This example illustrates the original account requesting a cross-account connect
 curl -X POST --location --header "Authorization: Bearer {iam_token}" \
   --header "Accept: application/json" \
   --header "Content-Type: application/json" \
-  --data '{ "network_type": "vpc" }'   
+  --data '{ "network_type": "vpc" }'
   "
 {base_url}/transit_gateways/{transit_gateway_id}/connections?version={version}"
 ```
@@ -272,7 +213,7 @@ curl -X POST --location --header "Authorization: Bearer {iam_token}" \
   ],
   "prefix_filters_default": "permit",
 ```
-  
+
 #### Response
 {: #tg-api-adding-cross-account-connection-transit-gateway-response}
 
@@ -281,10 +222,10 @@ The following response details show once you initiate the request:
 | Response Body | Details |
 |--|--|
 |**name**  \n Always included*  \n Name|The user-defined name for this transit gateway connection.  \n **Possible values:** `1 ≤ length ≤ 63`, Value must match regular expression  `^([a-zA-Z]-[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`.  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
-|**network_type**  \n Always included*  \n string|Defines what type of network is connected via this connection. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`classic` or `vpc`]  \n **Example:** `vpc`|
+|**network_type**  \n Always included*  \n string|Defines what type of network is connected via this connection. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`classic`, `directlink`, `vpc`]  \n **Example:** `vpc`|
 |**id**  \n Always included*  \n string | The unique identifier for this Transit Gateway Connection  \n **Example:** `1a15dca5-7e33-45e1-b7c5-bc690e569531`|
 |**created_at** \n Always included*  \n date-time|The date and time that this connection was created|
-|**network_id**  \n string|The ID of the network being connected via this connection. This field is required for some types, such as `vpc`.  \n This is the target CRN for network type `vpc`  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
+|**network_id**  \n string|The ID of the network being connected via this connection. This field is required for some types, such as `vpc` and `directlink`.  \n This is the target CRN for network type `vpc`  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
 |**network_account_id**  \n AccountID|The ID of the account which owns the connected network. Generally only used if the network is in a different IBM Cloud account than the gateway.  \n This value is used for network type `classic`.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
 |**request_status**  \n string|Only visible for cross account connections, this field represents the status of a connection request between IBM Cloud accounts. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`pending`,`approved`,`rejected`,`expired`,`detached`]|
 |**status**  \n string|Connection's current configuration state. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`attached`,`failed`,`pending`,`deleting`,`detaching`,`detached`]|
@@ -296,7 +237,7 @@ The following response details show once you initiate the request:
 |**201**|The transit gateway connection was created successfully.|
 |**400**|An invalid connection template was provided.|
 |**404**|The specified Transit Gateway could not be found, the specified resource group could not be found, or the default resource group could not be found (if the resource group was not specified in the template).|
-|**409**|The network being connected must either be in a location that is considered "local" to the specified Transit Gateway, or the specified Transit Gateway needs to be global. The network being connected cannot already be connected to another Transit Gateway.|
+|**409**|The network being connected must either be in a location that is considered "local" to the specified Transit Gateway, or the specified Transit Gateway must be global. The network being connected cannot already be connected to another Transit Gateway.|
 {: caption="Table 4. Status codes" caption-side="bottom"}
 
 ##### Example response
@@ -321,7 +262,7 @@ This example illustrates the response from a request for a cross-account connect
 
 After the original account has requested a cross-account connection, the other account must perform actions on a requested connection.
 
-#### Request 
+#### Request
 {: #tg-api-adding-cross-account-connection-transit-gateway-actions-request}
 
 To perform actions on a requested cross-account connection, set the following parameters:

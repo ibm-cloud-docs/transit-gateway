@@ -17,7 +17,7 @@ subcollection: transit-gateway
 {: help}
 {: support}
 
-## Deleting a transit gateway using the UI
+## Deleting a transit gateway in the UI
 {: #delete-gateway-ui}
 {: ui}
 
@@ -34,11 +34,11 @@ To delete an {{site.data.keyword.tg_full}}, follow these steps:
    * From the transit gateway's details page, click the Actions menu ![Actions menu](/images/overflow.png) next to the gateway you want to delete and select **Delete**.
    * From an individual transit gateway page, select **Actions > Delete**.
 	  
-## Deleting a transit gateway using the CLI
+## Deleting a transit gateway from the CLI
 {: #delete-gateway-cli}
 {: cli}
 
-To delete an existing gateway using the CLI, enter the following command:
+To delete an existing gateway from the CLI, enter the following command:
 
 ```sh
 ibmcloud tg gateway-delete|gwd GATEWAY_ID [-f, --force] [-h, --help]
@@ -63,14 +63,14 @@ ibmcloud tg gwd $gateway -f
 ```
 {: pre}
 
-## Deleting a transit gateway using the API
+## Deleting a transit gateway with the API
 {: #delete-gateway-api}
 {: api}
 
-To delete a transit gateway using the API, follow these steps:
+To delete a transit gateway with the API, follow these steps:
 
 1. Remove all connections from the transit gateway.
-1. Request the deletion of the gateway using the API.
+1. Request the deletion of the gateway with the API.
 
 ### Request
 {: #delete-gateway-api-request}

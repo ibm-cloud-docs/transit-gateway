@@ -15,11 +15,11 @@ subcollection: transit-gateway
 # Changing your configuration
 {: #change-configuration}
 
-## Changing your configuration using the UI
+## Changing your configuration in the UI
 {: #change-configuration-ui}
 {: ui}
 
-To change your transit gateway configuration using the UI, follow these steps:
+To change your transit gateway configuration in the UI, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
 1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
@@ -39,11 +39,11 @@ To change your transit gateway configuration using the UI, follow these steps:
    When changing from Local to Global routing for a given transit gateway, you are charged for all associated connection traffic.
    {: important}
 
-## Changing your configuration using the CLI
+## Changing your configuration from the CLI
 {: #change-configuration-cli}
 {: cli}
 
-To update properties on an existing gateway using the CLI, execute the following command:
+To update properties on an existing gateway from the CLI, execute the following command:
 
 ```sh
 ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--output json] [-h, --help]
@@ -72,11 +72,11 @@ ibmcloud tg gwu $gateway --routing global
 ```
 {: pre}
 
-## Changing your configuration using the API
+## Changing your configuration with the API
 {: #change-configuration-api}
 {: api}
 
-You can update your transit gateway's name, global parameters, or both using the API.
+You can update your transit gateway's name, global parameters, or both with the API.
 
 ### Request
 {: #change-configuration-api-request}
@@ -99,7 +99,7 @@ To change the configuration on your transit gateway, set the following parameter
 #### Example Request
 {: #change-configuration-api-request-example}
 
-This example illustrates changing your configuration using the API:
+This example illustrates changing your configuration with the API:
 
 ```sh
 PATCH /transit_gateways/{id}

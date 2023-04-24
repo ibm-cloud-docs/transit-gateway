@@ -49,13 +49,13 @@ The following prerequisites must be met before you can create a GRE tunnel conne
 * Ensure that you have an existing classic infrastructure connection, or create one. For more information, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-adding-connections). The GRE tunnel connection connects with an endpoint only on classic infrastructure.
 * Review the [Generic Routing Encapsulation (GRE) connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-considerations) for additional prerequisites.
 
-## Creating a Generic Routing Encapsulation (GRE) tunnel connection using the UI
+## Creating a Generic Routing Encapsulation (GRE) tunnel connection in the UI
 {: #tg-ui-adding-gre-connection-transit-gateway}
 {: ui}
 
 Only unbound GRE tunnels can be created in the UI. See [Creating an Unbound Generic Routing Encapsulation (GRE) tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection)
 
-## Creating a Generic Routing Encapsulation (GRE) tunnel connection using the CLI
+## Creating a Generic Routing Encapsulation (GRE) tunnel connection from the CLI
 {: #tg-cli-adding-gre-connection-transit-gateway}
 {: cli}
 
@@ -100,11 +100,11 @@ ibmcloud tg connection-create-gre $gateway  --name gre-connection --base-connect
 ```
 {: pre}
 
-## Creating a Generic Routing Encapsulation (GRE) tunnel connection using the API
+## Creating a Generic Routing Encapsulation (GRE) tunnel connection with the API
 {: #tg-api-adding-gre-connection-transit-gateway}
 {: api}
 
-To create a Generic Routing Encapsulation (GRE) tunnel connection using the API, perform the following actions:
+To create a Generic Routing Encapsulation (GRE) tunnel connection with the API, perform the following actions:
 
 ### Request
 {: #add-gre-connection-curl-api-request}
