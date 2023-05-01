@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-02-24"
+lastupdated: "2023-05-01"
 keywords: api
 
 subcollection: transit-gateway
@@ -54,14 +54,14 @@ IAM_TOKEN=`curl -k -X POST \
   "https://iam.cloud.ibm.com/identity/token"  |jq -r '(.token_type + " " + .access_token)'`
 ```
 
-To view the IAM token, run ``echo $iam_token``. The result should look like this:
+To view the IAM token, run `echo $IAM_TOKEN`. The result should look like this:
 
 ```text
 Bearer <your token>
 ```
 {: screen}
 
-The Authorization header expects the token to begin with `Bearer`. If the result doesn't include `Bearer`, update the `iam_token` variable to include it. These examples assume that `Bearer` is included in the `IAM_TOKEN`.
+The Authorization header expects the token to begin with `Bearer`. If the result doesn't include `Bearer`, update the `IAM_TOKEN` variable to include it. These examples assume that `Bearer` is included in the `IAM_TOKEN`.
 
 Because the IAM token expires, you must repeat the preceding step to refresh your token every hour.
 {: important}
@@ -69,7 +69,7 @@ Because the IAM token expires, you must repeat the preceding step to refresh you
 ### Step 3: Store the API endpoint as a variable
 {: #store-api-endpoint-variable}
 
-Run the following command to store the API endpoint in a variable so that it can be reused later in your session.  
+Run the following command to store the API endpoint in a variable so that it can be reused later in your session.
 
 Public endpoint:
 
@@ -102,7 +102,7 @@ To verify that this variable was saved, run ``echo $api_version`` and make sure 
 If you run into unexpected results, add the `--verbose` (debug) flag after the `curl` command to obtain detailed logging information.
 {: tip}
 
-* Call the [List Available Locations API](/apidocs/transit-gateway#list-offering-type-locations) to see the locations available for your transit gateway, in JSON format. At least one object should return. 
+* Call the [List Available Locations API](/apidocs/transit-gateway#list-offering-type-locations) to see the locations available for your transit gateway, in JSON format. At least one object should return.
 
     ```sh
     curl -X GET "$transit_api_endpoint/v1/offering_types/dedicated/locations?version=$api_version"   -H "Authorization: $IAM_TOKEN"
