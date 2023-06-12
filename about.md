@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-30"
+  years: 2020, 2023
+lastupdated: "2023-06-12"
 
 keywords: features, overview
 
@@ -20,7 +20,7 @@ As the number of your Virtual Private Clouds (VPCs) grow, you need an easy way t
 
 With {{site.data.keyword.tg_full_notm}}, you can create single or multiple transit gateways to connect VPCs together. You can also connect your {{site.data.keyword.cloud_notm}} classic infrastructure to a transit gateway to provide seamless communication with classic infrastructure resources. Any new network that you connect to a transit gateway is then automatically made available to every other network connected to it. This makes it easy to scale your network as it grows.
 
-Transit gateways provide flexibility by allowing you to add networks to local gateways. Networks can be attached to multiple local gateways and a single global gateway, enabling you to keep local traffic on a local gateway. There is no charge for local traffic.
+Transit gateways provide flexibility by allowing you to add networks to local gateways. Networks can be attached to multiple local gateways and a single global gateway, enabling you to keep local traffic on a local gateway.
 
 ## Overview of features
 {: #feature-overview}
@@ -32,7 +32,7 @@ Transit gateways provide flexibility by allowing you to add networks to local ga
 
 {{site.data.keyword.tg_full_notm}} supports local and global routing between VPCs and the {{site.data.keyword.cloud_notm}} classic infrastructure. All routing options remain within the private {{site.data.keyword.cloud_notm}} infrastructure without operating on the public internet, and are optimized for performance. {{site.data.keyword.tg_full_notm}} allows customers greater flexibility, redundancy, and speed in scaling their workloads, as well as in connecting isolated networks running on {{site.data.keyword.cloud_notm}}.
 
-To display the routes report for a transit gateway, see [IBM Cloud Transit Gateway route reports](/docs/transit-gateway?topic=transit-gateway-route-reports) for more information.  
+To display the routes report for a transit gateway, see [IBM Cloud Transit Gateway route reports](/docs/transit-gateway?topic=transit-gateway-route-reports) for more information.
 
 ### Privacy
 {: #privacy}
@@ -108,7 +108,7 @@ There are a few things to note about this use case:
 - It keeps your local traffic on a local transit gateway, which reduces latency.
 - Traffic over a local gateway is not billed.
 - Highly Available (HA) capabilities are provided, as data in VPCs C and D could be replicated in VPCs in E and F.
-- Classic infrastructure transit gateway connections are required to be in the same account as the transit gateway owner.  
+- Classic infrastructure transit gateway connections are required to be in the same account as the transit gateway owner.
 
 ![Connect networks (VPC and classic) to multiple gateways](images/TGW_1.2.png "Connect networks (VPC and classic) to multiple gateways"){: caption="Figure 6. Connect networks (VPC and classic) to multiple local gateways" caption-side="bottom"}
 
