@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-06-08"
+  years: 2020, 2023
+lastupdated: "2023-06-22"
 
 keywords: about, features, overview
 
@@ -44,6 +44,7 @@ An MZR provides consistent cloud services across different zones, better resilie
 |-----------|----------|
 | Frankfurt | eu-de |
 | London | eu-gb |
+| Madrid | eu-es |
 {: caption="Table 1. MZRs in Europe" caption-side="bottom"}
 {: #tg-europe-mzr}
 {: tab-title="Europe"}
@@ -74,13 +75,14 @@ You can establish connectivity from a VPC to resources in a data center by conne
 | Location | Data Center |
 |-----------|----------|
 | Amsterdam | AMS03 |
+| Chennai | CHE01 |
 | Dallas | DAL05, DAL09 |
 | London | LON02 |
+| Madrid | MAD02, MAD04, MAD05 |
 | Milan | MIL01 |
 | Montreal | MON01 |
 | Paris | PAR01 |
 | San Jose | SJC01, SJC03, SJC04 |
 | Singapore | SNG01 |
-| Chennai | CHE01 |
 | Washington DC | WDC01 |
 {: caption="Table 2. Data centers for classic Softlayer IaaS" caption-side="bottom"}
