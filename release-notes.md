@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-06-22"
 
 keywords: updates, additions, improvements
 
@@ -18,6 +18,12 @@ content-type: release-note
 {: #transit-gateway-release-notes}
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
+
+## 22 June 2023
+{: #transit-gateway-jun2223}
+{: release-note}
+
+Madrid multi-zone region (MZR) support
 
 ## 24 April 2023
 {: #transit-gateway-apr2423}
