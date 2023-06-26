@@ -13,7 +13,7 @@ subcollection: transit-gateway
 {{site.data.keyword.attribute-definition-list}}
 
 # Connectivity issue basics
-{: # connectivity-basics}
+{: #connectivity-basics}
 
 There are several simple issues that might be causing your connectivity issues. Verify the following tasks to eliminate them as problems.
 
