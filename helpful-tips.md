@@ -26,7 +26,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 
 * {{site.data.keyword.tg_full_notm}} supports provisioning transit gateways in the regions listed in [IBM Cloud Transit Gateway locations](/docs/transit-gateway?topic=transit-gateway-tg-locations).
 * Create your transit gateway in a location that makes sense for your workload. For example, if you are connecting two VPCs in the `us-south` (Dallas) region and one VPC in the `eu-de` (Frankfurt) region, creating your gateway in `us-south` region would be the most efficient for your workload.
-* You cannot connect a [classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) directly to a transit gateway. To connect the classic resources, use the {{site.data.keyword.cloud_notm}} classic infrastructure connection, and then all the resources in your classic access VPC are automatically connected. 
+* You cannot connect a [classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) directly to a transit gateway. To connect the classic resources, use the {{site.data.keyword.cloud_notm}} classic infrastructure connection, and then all the resources in your classic access VPC are automatically connected.
 *  A transit gateway requires at least two connections before network traffic can flow over the transit gateway. Transit gateways that have less than two connections for 45 days or more are subject to be reclaimed (suspended, then deleted after 30 days).
 * You can connect a VPC, Direct Link, or classic infrastructure to multiple local gateways and a single global gateway.
 * Transit gateways and their connections can take several minutes after provisioning before they are available.
@@ -67,7 +67,7 @@ Legacy GRE tunnel considerations:
 Unbound GRE tunnel Considerations:
    * Classic routes are advertised through an unbound GRE tunnel.
    * Unbound GRE tunnels can communicate through other unbound GRE tunnels connected to the same transit gateway in the same availability zone.
-   * Unbound GRE tunnels cannot communicate with other unbound GRE tunnels on the same transit gateway if they are in a different availability zone. Unbound GRE tunnels in this scenario cannot be relied on for network isolation. 
+   * Unbound GRE tunnels cannot communicate with other unbound GRE tunnels on the same transit gateway if they are in a different availability zone. Unbound GRE tunnels in this scenario cannot be relied on for network isolation.
 
    If you require network isolation, consider using separate transit gateways.
    {: tip}
@@ -83,16 +83,6 @@ For more information and a use case example, refer to [Connect networks using a 
 You can create Direct Link connections to a transit gateway to allow on-premises networks to connect to other networks in {{site.data.keyword.cloud_notm}}. After the direct link connects to the transit gateway, the on-premises network receives access to all other transit gateway connections. Likewise, all other networks connected to the transit gateway have access to the on-premises network. Direct Link connections follow the same process for physical or virtual cross connections as the standard Direct Link offering. After the connection is deleted from a transit gateway, the transit gateway operates as if it was never connected to a direct link.
 
 The same network subnet considerations for transit gateway connections also apply to Direct Link connections. To ensure successful connectivity, do not use prefixes in your Direct Link connected network that overlap with other connections.
-{: important}
-
-## {{site.data.keyword.powerSys_notm}} connection consideration (IBM Internal Use Only)
-{: #power_considerations}
-
-You can connect a {{site.data.keyword.powerSys_notm}} instance to a transit gateway. This allows you to directly attach the {{site.data.keyword.powerSys_notm}} to a downstream transit gateway. After the {{site.data.keyword.powerSys_notm}} is connected to the transit gateway, your {{site.data.keyword.powerSys_notm}} service instance then has have access to all downstream transit gateway resources and services. Likewise, all downstream networks connected to the transit gateway will have access to the {{site.data.keyword.powerSys_notm}} instance. 
-
-{{site.data.keyword.powerSys_notm}} connections can use Local or Global routing. However, only {{site.data.keyword.powerSys_notm}} instances in the same region as the transit gateway can use local routing. Also, a {{site.data.keyword.powerSys_notm}} instance can be connected to multiple transit gateways with local routing, but only one transit gateway with global routing. Downstream services will honor route preference based on the transit gateway type.
-
-The same network subnet considerations for transit gateway connections also apply to {{site.data.keyword.powerSys_notm}} connections. To ensure successful connectivity, do not use prefixes in your {{site.data.keyword.powerSys_notm}} instance that overlap with other connections. Note that Transit Gateway provides prefix filtering to limit the prefixes being exposed, as well as a routing table report to see any overlaps after the connection is created.
 {: important}
 
 ## VPC connection consideration
@@ -148,4 +138,3 @@ Keep in mind the following service limits while using IBM Cloud Transit Gateway.
 
 You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need your service limits expanded.
 {: note}
-
