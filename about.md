@@ -106,7 +106,6 @@ Connect VPCs in the same region owned by different {{site.data.keyword.cloud_not
 There are a few things to note about this use case:
 
 - It keeps your local traffic on a local transit gateway, which reduces latency.
-- Traffic over a local gateway is not billed.
 - Highly Available (HA) capabilities are provided, as data in VPCs C and D could be replicated in VPCs in E and F.
 - Classic infrastructure transit gateway connections are required to be in the same account as the transit gateway owner.
 
