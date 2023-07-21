@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2023-02-23"
+  years: 2020, 2023
+lastupdated: "2023-07-21"
 
 keywords: verifying, connection, connectivity
 
