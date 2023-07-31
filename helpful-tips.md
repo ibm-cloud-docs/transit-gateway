@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-16"
+lastupdated: "2023-07-31"
 
 keywords: help, tips, connections, provision
 
@@ -47,6 +47,8 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 * Classic infrastructure resources located in these [data centers](/docs/transit-gateway?topic=transit-gateway-tg-locations#szr-table) connect through a transit gateway to VPC resources.
 
 * When classic infrastructure is connected to a transit gateway, it also includes any "Classic Access VPCs" attached to the account, because the subnets for these VPCs are associated with the classic infrastructure VRF. This is the only way to connect a transit gateway to a Classic Access VPC: by connecting the entire classic infrastructure to the transit gateway (instead of the specific Classic Access VPCs).
+
+* Classic connections residing in the same data center are unable to communicate with each other if they are in a different region than the transit gateway.
 
 ## Generic Routing Encapsulation (GRE) connection considerations
 {: #gre-considerations}
@@ -128,8 +130,8 @@ Keep in mind the following service limits while using IBM Cloud Transit Gateway.
 | Service limit |  Default |
 |---------------------------|------|
 | Number of transit gateways | 10 gateways per account, 5 gateways per region |
-| Number of connections per transit gateway |  * 10 IBM Cloud VPC connections  \n * 5 IBM Cloud classic connections  \n * 5 IBM Cloud Direct Link connections  \n  |
-| Number of prefixes per connection | * 15 prefixes for VPC connections  \n * 120 prefixes for classic connections  \n * 120 prefixes for GRE connections  \n * 120 prefixes for Direct Link connections  \n |
+| Number of connections per transit gateway |  * 10 IBM Cloud VPC connections  \n * 5 IBM Cloud classic connections  \n * 5 IBM Cloud Direct Link connections |
+| Number of prefixes per connection | * 15 prefixes for VPC connections  \n * 120 prefixes for classic connections  \n * 120 prefixes for GRE connections  \n * 120 prefixes for Direct Link connections |
 | Number of connections with prefix filters | 2 connections with prefix filters per gateway|
 | Number of prefix filters per connection | 10 prefix filters per connection|
 | Number of GRE tunnels per transit gateway | 12 GRE tunnels per gateway|
