@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020
+  years: 2023
 lastupdated: "2023-02-23"
 
-keywords: verifying, connection, connectivity
+keywords:
 
 subcollection: transit-gateway
 
@@ -22,7 +22,7 @@ There are several simple issues that might be causing your connectivity issues. 
 
 If you are encountering resource issues on the provisioning page, make sure you have the correct [IAM permissions](/docs/transit-gateway?topic=transit-gateway-iam) in order to use {{site.data.keyword.tg_full_notm}} and {{site.data.keyword.cloud_notm}} VPC for the connections you are attempting to make.
 
-If you cannot successfully provision a transit gateway, your account administrator may have disabled certain users' visibility to the [IBM Cloud Catalog](/docs/account?topic=account-accounts#accounts).
+If you cannot successfully provision a transit gateway, your account administrator may have disabled certain users' visibility to the [IBM Cloud catalog](/docs/account?topic=account-accounts#accounts).
 {: tip}
 
 ## Using supported locations
@@ -33,7 +33,7 @@ If you are not able to establish connectivity between networks interconnected by
 ## Working with security groups
 {: #working-with-security-groups}
 
-[Security Groups](/docs/vpc?topic=vpc-using-security-groups#using-security-groups) exist at the VSI level. Ensure that you allow the protocol you are using to egress from the originator and ingress at the target.
+[Security groups](/docs/vpc?topic=vpc-using-security-groups#using-security-groups) exist at the VSI level. Ensure that you allow the protocol you are using to egress from the originator and ingress at the target.
 
 ## Working with Access Control Lists
 {: #acls}

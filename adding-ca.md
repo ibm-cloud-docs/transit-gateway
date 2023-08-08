@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-06-24"
 
 keywords:
 
@@ -29,6 +29,7 @@ Before adding a cross-account connection, take the following into consideration:
    * VPC
    * Unbound GRE Tunnel
    * Direct Link
+   * Power System Virtual Server
 
 * Only 10 pending requests are allowed per gateway. To create more requests, you can cancel the pending connection request, or wait for it to be approved. Connection requests expire if not approved within 72 hours.
 * Use of [security controls](/docs/vpc?topic=vpc-security-in-your-vpc), such as ACLs, security groups, or other network services to control traffic flow are highly recommended. IBM Cloud Transit Gateway does not provide security groups or ACLs, but the networks they attach to might and can affect transit gateway communications. For more information on ACLs and security groups, refer to the following topics:
@@ -52,7 +53,7 @@ To connect networks owned by different accounts using the UI, follow these steps
 1. Type the CRN of the cross-account network, or in the case of Classic infrastructure or Unbound GRE, enter the IBM Cloud account ID that you want to connect to.
 
    * To get the IBM Cloud account ID for a Classic infrastructure or Unbound GRE tunnel connection, select **Manage > Account** from the {{site.data.keyword.cloud_notm}} console and choose **Account Settings**. Your account ID shows in the **Account** section of the **Account settings** page.
-   * To get the CRN of a VPC or Direct Link, select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Resource list**. Expand **Networking** to list your networking resources, then locate the service that you are looking for. Next, click anywhere in the service's table row (except for the Name link). From the side panel that appears, copy the CRN and paste it into the Add connection pane.
+   * To get the CRN of a VPC, Direct Link, or Power Systems Virtual Server, select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Resource list**. Expand **Networking** (for VPC and Direct Link) or **Computing** (for Power Systems Virtual Server) to list your networking resources, then locate the service that you are looking for. Next, click anywhere in the service's table row (except for the Name link). From the side panel that appears, copy the CRN and paste it into the Add connection pane.
 
 1. Complete any remaining fields, then click **Add**. The network connection now shows the **Pending** approval status in the gateway owner's account.
 
@@ -101,7 +102,7 @@ Where:
 :   Name of the new connection.
 
 `--network-type`
-:   Network type of the connection. Values are `classic`, `vpc`, or `directlink`.
+:   Network type of the connection. Values are `classic`, `vpc`, `directlink`, or `power_virtual_server`.
 
     To create an unbound GRE tunnel connection, see the [`ibmcloud tg connection-create-gre`](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=cli#connection-create-gre) command.
     {: note}
@@ -179,7 +180,7 @@ To request a cross-account connection, set the following parameters:
 |--|--|
 |**version**  \n Required  \n string | Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date may be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
 |**Request Body**  \n Required  \n TransitGatewayConnectionTemplate | The connection template|
-|**network_type**  \n Required  \n string | Defines what type of network is connected via this connection.  \n **Allowable values:** `classic`, `vpc`, `unbound_gre_tunnel`, or `directlink`  \n **Example:** `vpc`|
+|**network_type**  \n Required  \n string | Defines what type of network is connected via this connection.  \n **Allowable values:** `classic`, `vpc`, `unbound_gre_tunnel`, `directlink`, or `power_virtual_server`  \n **Example:** `vpc`|
 |**name**  \n Name|The user-defined name for this transit gateway connection. Network type `vpc` connections are defaulted to the name of the VPC. Network type `classic` connections are named `Classic`.  \n **Possible values:** `1 ≤ length ≤ 63`, Value must match regular expression  `^([a-zA-Z]-[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
 |**network_account_id**  \n AccountID|The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway.  \n This field is used when gateway connection is in network type `classic`.  \n This field is required to be unspecified for network type `gre_tunnel`.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
 |**network_id**  \n string | The ID of the network being connected via this connection. This field is required for `vpc` and `directlink`. This is the target CRN for network type `vpc` or `directlink`.  \n This field is required to be unspecified for network type `classic`, `gre_tunnel`, and `unbound_gre_tunnel` connections.  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
@@ -225,7 +226,7 @@ The following response details show once you initiate the request:
 |**network_type**  \n Always included*  \n string|Defines what type of network is connected via this connection. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`classic`, `directlink`, `vpc`]  \n **Example:** `vpc`|
 |**id**  \n Always included*  \n string | The unique identifier for this Transit Gateway Connection  \n **Example:** `1a15dca5-7e33-45e1-b7c5-bc690e569531`|
 |**created_at** \n Always included*  \n date-time|The date and time that this connection was created|
-|**network_id**  \n string|The ID of the network being connected via this connection. This field is required for some types, such as `vpc` and `directlink`.  \n This is the target CRN for network type `vpc`  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
+|**network_id**  \n string|The ID of the network being connected via this connection. This field is required for some types, such as `vpc`, `power_virtual_server`, and `directlink`.  \n This is the target CRN for network type `vpc`  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
 |**network_account_id**  \n AccountID|The ID of the account which owns the connected network. Generally only used if the network is in a different IBM Cloud account than the gateway.  \n This value is used for network type `classic`.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
 |**request_status**  \n string|Only visible for cross account connections, this field represents the status of a connection request between IBM Cloud accounts. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`pending`,`approved`,`rejected`,`expired`,`detached`]|
 |**status**  \n string|Connection's current configuration state. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`attached`,`failed`,`pending`,`deleting`,`detaching`,`detached`]|

@@ -13,7 +13,7 @@ subcollection: transit-gateway
 {{site.data.keyword.attribute-definition-list}}
 
 # How do I verify and deal with connectivity issues on my transit gateways?
-{: #troubleshooting}
+{: #troubleshooting-connectivity}
 
 There are several issues that can cause problems when attempting to communicate between resources connected to your {{site.data.keyword.tg_full}}.
 {: shortdesc}

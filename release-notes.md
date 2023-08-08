@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-22"
+lastupdated: "2023-06-24"
 
 keywords: updates, additions, improvements
 
@@ -18,6 +18,15 @@ content-type: release-note
 {: #transit-gateway-release-notes}
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
+
+## 24 June 2023
+{: #transit-gateway-jun2423}
+
+{{site.data.keyword.powerSys_notm}} connections for transit gateways
+:    Transit gateways now support {{site.data.keyword.powerSys_notm}} connections. A {{site.data.keyword.powerSys_notm}} connection allows a network to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway. This adds a new Power Systems Virtual Server option when creating a new connection. For details, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-adding-connections&interface=ui).
+
+   Currently, the Power Edge Router (PER) solution is available only in `DAL10`.
+   {: note}
 
 ## 22 June 2023
 {: #transit-gateway-jun2223}
@@ -43,6 +52,7 @@ Unbound GRE tunnels
    * Do not require a classic connection on the transit gateway. The classic network's subnets will not be advertised to all the connections on the transit gateway and vice versa.
 
 :    See [Creating an Unbound Generic Routing Encapsulation tunnel connection](https://test.cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection) for more information.
+
 
 ## 26 March 2022
 {: #transit-gateway-mar2622}

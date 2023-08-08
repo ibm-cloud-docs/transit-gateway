@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-09-26"
+  years: 2020, 2023
+lastupdated: "2023-06-24"
 
 keywords: features, overview
 
@@ -38,9 +38,16 @@ To add a connection to a transit gateway, follow these steps:
    * **Classic infrastructure** - Allows you to connect to IBM Cloud classic resources.
    * **VPC** - Allows you to connect to your account's VPC resources, or VPC resources from other accounts as well.
    * **Unbound GRE tunnel** - Allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For prerequisites and detailed instructions, see [Creating an Unbound Generic Routing Encapsulation tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
-   * **Direct Link** - Creates a network connection to and from Direct Link 2.0 gateways so that there is a secure connection to on-premises networks and other resources connected to the transit gateway.
+   * **Direct Link** - Creates a network connection to and from Direct Link gateways so that there is a secure connection to on-premises networks and other resources connected to the transit gateway.
 
       If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (using the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link.
+      {: important}
+
+   * **{{site.data.keyword.powerSys_notm}}** - Creates a network connection to and from a {{site.data.keyword.powerSys_notm}} instance so that there is a secure connection to networks and other resources connected to the transit gateway.
+
+      Location: Select a region for the {{site.data.keyword.powerSys_notm}} workspace.
+
+      If you select **{{site.data.keyword.powerSys_notm}}**, you must have a {{site.data.keyword.powerSys_notm}} workspace created in a data center after the Power Edge Router has been deployed. To find out if your {{site.data.keyword.powerSys_notm}} workspace is set up correctly, go to the workspace and check the navigation for a Cloud connections page. If there isn't a **Cloud connections** page, the workspace leverages the Power Edge Router and can be added as a connection to Transit Gateway. Otherwise, you must configure virtual connections with Cloud connections on the {{site.data.keyword.powerSys_notm}}.
       {: important}
 
 1. Click **Add** to create a connection.

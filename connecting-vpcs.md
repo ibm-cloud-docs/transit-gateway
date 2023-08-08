@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-06-24"
 
 keywords: connecting, region, order
 
@@ -66,14 +66,27 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
          If you select **Direct Link**, you must also log in to the [Direct Link console](/interconnectivity/direct-link){: external} and specify **Transit Gateway** as the type of network connection for your direct link.
          {: important}
 
+      * **{{site.data.keyword.powerSys_notm}}** - Creates a network connection to a {{site.data.keyword.powerSys_notm}} workspace to access the resources in a {{site.data.keyword.powerSys_notm}} colo.
+
+         Currently, the Power Edge Router (PER) solution is available only in `DAL10`.
+
+         If you select **{{site.data.keyword.powerSys_notm}}**, a {{site.data.keyword.powerSys_notm}} workspace must be created in a data center after the Power Edge Router has been deployed. For more information, see [Getting started with the Power Edge Router](/docs/power-iaas?topic=power-iaas-per).
+         {: note}
+
    1. After you select a network connection, choose a connection reach option:
 
       * **Add new connection in this account** - Enter an optional connection name and any other required information for your connection.
 
+         For **{{site.data.keyword.powerSys_notm}}**, select a location for the {{site.data.keyword.powerSys_notm}} workspace (currently available only in DAL10). Then, select from the list of  {{site.data.keyword.powerSys_notm}} workspaces that are enabled for Transit Gateway. Keep in mind that not all {{site.data.keyword.powerSys_notm}} workspaces show in this menu.
+         {: note}
+
       * **Request connection to a network in another account** - Enter either the IBM Cloud ID or Cloud Resource Name (CRN) of the account that manages the network where you want to connect. Then, complete any remaining information. All resources connected to that transit gateway will be accessible from the other network. For more information, including how to obtain the Cloud ID or CRN, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
 
          * IBM Cloud ID - Required by Classic infrastructure and Unbound GRE connections.
-         * CRN - Required by VPC and Direct Link connections.
+         * CRN - Required by VPC, Direct Link, and Power Systems Virtual Server connections.
+
+         To find out if your Power Systems Virtual Server workspace is set up correctly, go to the Power Systems Virtual Server UI and check the navigation for a Cloud connections page. If there isn't a Cloud connections page, the workspace leverages Transit Gateway. Otherwise, you must configure virtual connections with Cloud connections on the Power Systems Virtual Server.
+         {: important}
 
 1. Optionally, you can create prefix filters to permit or deny specific routes on specific connections. For prefix filtering considerations and step-by-step instructions, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters).
 

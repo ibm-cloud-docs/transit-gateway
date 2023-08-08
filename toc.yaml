@@ -60,8 +60,6 @@ toc:
             - displayroutereport.md
         - terraform.md
         - set-up-environment.md
-
-        - tg-vpe.md
         - tgw-ha-dr.md
         - topicgroup:
             label: Enhancing security for IBM Cloud Transit Gateway
@@ -100,7 +98,7 @@ toc:
        topics:
        - faqs.md
        - topicgroup:
-            label: Troubleshooting connectivity issues
+            label: Troubleshooting
             topics:
             - verifying-connectivity.md
             - conn-basics.md

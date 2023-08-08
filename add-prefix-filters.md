@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-09-12"
+  years: 2022, 2023
+lastupdated: "2023-06-24"
 
 keywords:
 
@@ -60,6 +60,11 @@ To add a prefix filter to a new connection in the UI, follow these steps:
       * **Direct Link** creates a network connection to and from Direct Link 2.0 gateways so that there is a secure connection to on-premises networks and other resources connected to the transit gateway.
 
          If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (using the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link. You can specify the connection type when you create a direct link, or after your direct link is provisioned. For instructions, see [Updating the network connection type](/docs/dl?topic=dl-virtual-connection-types){: external}.
+         {: important}
+
+      * **{{site.data.keyword.powerSys_notm}}** creates a network connection to and from a {{site.data.keyword.powerSys_notm}} instance so that the {{site.data.keyword.powerSys_notm}} network and resources can connect to networks and other resources connected to the transit gateway.
+
+         If you select **{{site.data.keyword.powerSys_notm}}**, a Power Systems Virtual Server workspace must be created in a data center after the Power Edge Router has been deployed. For more information, see [Getting started with the Power Edge Router](/docs/power-iaas?topic=power-iaas-per).
          {: important}
 
    * For Connection reach, select one of the following options:
