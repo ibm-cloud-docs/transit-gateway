@@ -184,3 +184,9 @@ Yes, you can. For detailed instructions, see [IBM Cloud Transit Gateway route re
 
 You can create a single transit gateway or multiple transit gateways to interconnect more than one IBM Cloud VPCs. You can also connect your IBM Cloud classic infrastructure to a transit gateway to provide seamless communication with classic infrastructure resources. For more information, refer to [Interconnecting VPCs](/docs/vpc?topic=vpc-interconnectivity&interface=cli#interconnecting-vpcs).
 
+## In a Highly Available (HA) configuration, how long after the failover of the primary GRE tunnel does the routing device wait before declaring it inactive?
+{: faq}
+{: #faq-stale-routes-time}
+
+This time, by default, is set as 5 minutes (300 seconds), and defined by the configuration statement `stale-routes-time`. The `stale-routes-time` statement allows you to set the length of time the routing device waits to receive messages from restarting neighbors before declaring them inactive. This means, in the case of a GRE HA failover to a second GRE tunnel, the traffic takes 5 minutes to be reflected by the second tunnel. 
+
