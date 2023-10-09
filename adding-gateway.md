@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-24"
+lastupdated: "2023-10-09"
 
 keywords: features, overview
 
@@ -154,7 +154,7 @@ To add a connection to the transit gateway, adjust the following parameters:
 |**name**  \n Name|The user-defined name for this transit gateway connection. Network type `vpc` connections are defaulted to the name of the VPC. Network type `classic` connections are named 'Classic'.  \n Name specification is required for network `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression `^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
 |**network_account_id**  \n AccountID | The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway. This field is required to be unspecified for network type `gre_tunnel`.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
 |**network_id**  \n string | The ID of the network being connected to via this connection. This field is required for some types, such as `vpc` and `directlink`. For network types `vpc` and `directlink` this is the CRN of the VPC / Direct Link gateway respectively. This field is required to be unspecified for `classic`, `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
-|**remote_bgp_asn**  \n string | The remote network BGP ASN. This field is only applicable to `gre_tunnel` and `unbound_gre_tunnel` type connections. The following ASN values are reserved and unavailable: 64512-64513, 65100, 65201-65234, 65402-65433, 65500 and 4201065000-4201065999. If `remote_bgp_asn` is omitted on `gre_tunnel` connection create requests, IBM will assign an ASN.  \n **Example:** `65010`|
+|**remote_bgp_asn**  \n string | The remote network BGP ASN. This field is only applicable to `gre_tunnel` and `unbound_gre_tunnel` type connections. The following ASN values are reserved and unavailable: `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200–‍65234`, `65402‍–‍65433`, `65500`, and `4201065000‍–‍4201065999`. If `remote_bgp_asn` is omitted on `gre_tunnel` connection create requests, IBM will assign an ASN.  \n **Example:** `65010`|
 |**remote_gateway_ip**  \n string | The remote gateway IP address. This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Example:** `10.242.63.12`|
 |**remote_tunnel_ip**  \n string | The remote tunnel IP address. This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections. The `local_tunnel_ip` and `remote_tunnel_ip` addresses must be in the same `/30` network. Neither can be the network nor the broadcast addresses. \n **Example:** `192.168.129.1` |
 |**zone**  \n ZoneIdentityByName | For `gre_tunnel` and `unbound_gre_tunnel` type connections, specify the connection's location. The specified availability zone must reside in the gateway's region. Use the IBM Cloud global catalog to list zones within the desired region. This field is required for, and only applicable to, network type `gre_tunnel` and `unbound_gre_tunnel` connections. |

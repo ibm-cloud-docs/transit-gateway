@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-08-31"
+  years: 2020, 2023
+lastupdated: "2023-10-09"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -15,7 +15,7 @@ subcollection: transit-gateway
 # Creating a Generic Routing Encapsulation tunnel connection
 {: #gre-connection}
 
-You can connect endpoints using a Generic Routing Encapsulation (GRE) tunnel transit gateway connection. This connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. 
+You can connect endpoints using a Generic Routing Encapsulation (GRE) tunnel transit gateway connection. This connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources.
 {: shortdesc}
 
 This form of GRE tunnel is now deprecated, and we suggest using an unbound GRE tunnel instead. Unbound GRE tunnels provide the following benefits:
@@ -31,12 +31,12 @@ Migrating your GRE tunnels to unbound GRE tunnels requires deleting any existing
 To migrate from a GRE tunnel to an unbound GRE tunnel:
 1. Gather the existing GRE tunnel's configuration information for use on the new unbound GRE tunnel.
 1. [Delete your old GRE tunnel](/docs/transit-gateway?topic=transit-gateway-deleting-connections&interface=ui).
-1. If desired, delete any classic connections.  
+1. If desired, delete any classic connections.
 
    Classic connections cannot be deleted if they are being used by other GRE tunnels.
    {: note}
-   
-1. [Create the new unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection&interface=ui). 
+
+1. [Create the new unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection&interface=ui).
 
 Transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point to point connection, has no built in redundancy, and is a single point of failure. When configuring a GRE connection on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections using different availability zones.
 {: note}
@@ -125,7 +125,7 @@ To request a creation of a Generic Routing Encapsulation (GRE) tunnel connection
 |**local_gateway_ip**  \n string | Local gateway IP address. This field is required for and only applicable to type `gre_tunnel` and `unbound_gre_tunnel` connections.  \n **Example:** `192.168.100.1`|
 |**local_tunnel_ip**  \n string|Local tunnel IP address. This field is required for and only applicable to type `gre_tunnel` and `unbound_gre_tunnel` connections. The `local_tunnel_ip` and `remote_tunnel_ip` addresses must be in the same /30 network. Neither can be the network nor broadcast addresses.  \n **Example:** `192.168.129.2`|
 |**name**  \n Name|The user-defined name for this transit gateway connection.  \n Name specification is required for network type `gre_tunnel` and `unbound_gre_tunnel` connections.  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression ^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
-|**remote_bgp_asn**  \n string|Remote network BGP ASN. This field is only applicable to `gre_tunnel` and `unbound_gre_tunnel` type connections. The following ASN values are reserved and unavailable 64512-64513, 65100, 65201-65234, 65402-65433, 65500 and 4201065000-4201065999. If `remote_bgp_asn` is omitted on gre_tunnel connection create requests IBM will assign an ASN.  \n **Example:** `65010`|
+|**remote_bgp_asn**  \n string|Remote network BGP ASN. This field is only applicable to `gre_tunnel` and `unbound_gre_tunnel` type connections. The following ASN values are reserved and unavailable: `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200–‍65234`, `65402‍–‍65433`, `65500`, and `4201065000‍–‍4201065999`. If `remote_bgp_asn` is omitted on gre_tunnel connection create requests IBM will assign an ASN.  \n **Example:** `65010`|
 |**remote_gateway_ip**  \n string|Remote gateway IP address. This field is required for and only applicable to type `gre_tunnel` and `unbound_gre_tunnel` connections.  \n **Example:** `10.242.63.12`|
 |**remote_tunnel_ip**  \n string|Remote tunnel IP address. This field is required for and only applicable to type `gre_tunnel` and `unbound_gre_tunnel` connections. The local_tunnel_ip and remote_tunnel_ip addresses must be in the same /30 network. Neither can be the network nor broadcast addresses.  \n **Example:** `192.168.129.1`|
 |**zone**  \n ZoneIdentityByName|For network_type `gre_tunnel` and `unbound_gre_tunnel` connections specify the connection's location. The specified availability zone must reside in the gateway's region. Use the IBM Cloud global catalog to list zones within the desired region. This field is required for and only applicable to network type `gre_tunnel` and `unbound_gre_tunnel` connections.|
