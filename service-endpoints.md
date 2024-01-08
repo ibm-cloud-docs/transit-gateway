@@ -44,7 +44,7 @@ You must first enable virtual routing and forwarding in your account, and then y
 
 _Review the following example: https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-service-connection Depending on how your service supports and requires users to set up this capability, document the steps to ensure a user can successfully connect over the private service endpoint. You can use separate headers to break this into sections if the process includes a lot of steps or use numbered steps for a less lengthy process._
 
-_High level steps typically covered are: Add a private network endpoint, view your endpoint URL, and modifying your apps to use the new endpoint_
+High level steps typically covered are: Add a private network endpoint, view your endpoint URL, and modifying your apps to use the new endpoint.
 
 ## Disabling public service endpoints for for _servicename_
 {: #endpoint-disable}
