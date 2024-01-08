@@ -13,7 +13,9 @@ content-type: conref
 
 ---
 
-# Route report considerations
+# heading 1
+
+## Route report considerations
 {: #reuse-route-report-considerations}
 
 * Overlapping routes are a common issue when configuring a transit gateway. If the routes from two or more connections overlap, traffic might not be routed as intended. For more information, see [Addressing route conflicts](/docs/transit-gateway?topic=transit-gateway-route-reports&interface=ui#route-conflicts).
