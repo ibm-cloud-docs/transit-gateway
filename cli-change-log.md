@@ -27,7 +27,7 @@ In this change log, you can learn about the latest changes, improvements, and up
    {: note}
 
 ## 24 April 2023
-{: cli-apr-2423}
+{: #cli-apr-2423}
 
 Direct Link multi-account support
 :    Changed command: You can now create a connection of type `directlink` to pass into the [connection-create](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#connection-create) command and create a direct link from a different account owner. Previously only connections of type `vpc` and `classic` were allowed.

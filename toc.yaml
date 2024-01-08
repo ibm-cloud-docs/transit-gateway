@@ -44,8 +44,8 @@ toc:
        id: howto
        topics:
         - connecting-vpcs.md
-        - viewing-gateway.md
         - iam.md
+        - viewing-gateway.md
         - topicgroup:
             label: Managing transit gateways
             topics:
@@ -65,16 +65,19 @@ toc:
         - topicgroup:
             label: Enhancing security
             topics:
+            - architecture-workload-isolation.md
             - topicgroup:
                  label: Privately connecting to Transit Gateway
                  topics:
                  - vpe.md
+                 - service-endpoints.md
             - data-security.md
             - cbr.md
         - topicgroup:
             label: Logging and monitoring
             topics:
             - at-events-docs-tg.md
+            - monitoring.md
 
 #  Links to your REST API docs should be included in the Reference navigation group. For details on publishing API docs, see https://test.cloud.ibm.com/docs/api-docs.
 #  Links to your command line reference docs should be included in the Reference navigation group.

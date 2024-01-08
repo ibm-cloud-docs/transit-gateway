@@ -91,6 +91,7 @@ The same network subnet considerations for transit gateway connections also appl
 {: important}
 
 ## {{site.data.keyword.powerSys_notm}} connection considerations
+{: #power-considerations}
 
 You can connect a {{site.data.keyword.powerSys_notm}} instance to a transit gateway. This allows you to directly attach the {{site.data.keyword.powerSys_notm}} to a downstream transit gateway. After the {{site.data.keyword.powerSys_notm}} is connected to the transit gateway, your {{site.data.keyword.powerSys_notm}} service instance then has have access to all downstream transit gateway resources and services. Likewise, all downstream networks connected to the transit gateway will have access to the {{site.data.keyword.powerSys_notm}} instance.
 
