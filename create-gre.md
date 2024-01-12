@@ -91,7 +91,7 @@ Where:
 - **--help | -h**: Optional: Get help on this command.
 
 ### Example
-{: #connection-create-gre-examples}
+{: #connection-create-gre-example}
 
 Create a GRE tunnel connection named `gre-connection` using classic connection `9037f710-8dfb-4948-a2bd-847c8dde96d3` as the base connection:
 

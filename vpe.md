@@ -21,7 +21,7 @@ subcollection: transit-gateway
 VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis (depending on the service operation model). The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all availability zones of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.cloud}} service on the private backbone. VPE for VPC gives you the experience of controlling all the private addressing within your cloud. For more information, see [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe).
 
 ## Before you begin
-{: #prereq-service-endpoint}
+{: #vpe-before-you-begin}
 
 Before you target a virtual private endpoint for {{site.data.keyword.cloud}}, you must complete the following tasks.
 
@@ -35,7 +35,7 @@ Before you target a virtual private endpoint for {{site.data.keyword.cloud}}, yo
 {: #endpoint-setup}
 
 When you create a VPE gateway by using the CLI or API, you must specify the [Cloud Resource Name (CRN)](/docs/account?topic=account-crn) of the region in which you want connect to {{site.data.keyword.tg_full_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
- 
+
 
 {{site.data.keyword.tg_full_notm}} supports VPEs in all the VPC regions as shown.
 
@@ -58,9 +58,9 @@ When you create a VPE gateway by using the CLI or API, you must specify the [Clo
 To configure a virtual private endpoint gateway, follow these steps:
 
 1. List the available services, including {{site.data.keyword.cloud_notm}} infrastructure services available (by default) for all VPC users.
-1. [Create an endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway) for {{site.data.keyword.tg_full_notm}} that you want to be privately available to the VPC.  
-1. [Bind a reserved IP address](/docs/vpc?topic=vpc-bind-unbind-reserved-ip) to the endpoint gateway. 
-1. View the created VPE gateways associated with the {{site.data.keyword.tg_full_notm}}. For more information, see [Viewing details of an endpoint gateway](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway). 
+1. [Create an endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway) for {{site.data.keyword.tg_full_notm}} that you want to be privately available to the VPC.
+1. [Bind a reserved IP address](/docs/vpc?topic=vpc-bind-unbind-reserved-ip) to the endpoint gateway.
+1. View the created VPE gateways associated with the {{site.data.keyword.tg_full_notm}}. For more information, see [Viewing details of an endpoint gateway](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway).
 
 Now your virtual server instances in the VPC can access your {{site.data.keyword.tg_full_notm}} instance privately through it.
 

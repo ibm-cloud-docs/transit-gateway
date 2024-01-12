@@ -32,7 +32,7 @@ To edit a connection to a transit gateway, follow these steps:
 1. From the Connections page, click the Actions menu ![Actions menu](/images/overflow.png) next to the connection that you want to edit and select **Edit**.
 
    From here, you can change the name of the selected network connection.
-   
+
 ## Editing a connection from the CLI
 {: #editing-connections-cli}
 {: cli}
@@ -72,7 +72,7 @@ ibmcloud tg cu $gateway $connection --name MyConn2
 
 You can update the name of a connection for a transit gateway with the API.
 
-### Request 
+### Request
 {: #editing-connections-api-request}
 
 To edit a connection, set the following parameters:
@@ -95,13 +95,13 @@ To edit a connection, set the following parameters:
 
 This example illustrates editing the name of a transit gateway connection:
 
- 
+
 ```sh
-PATCH 
+PATCH
 /transit_gateways/{transit_gateway_id}/connections/{id}
-{  
-  "name":  "Transit_Service_BWTN_SJ_DL",  
-  "prefix_filters_default":  "permit"  
+{
+  "name":  "Transit_Service_BWTN_SJ_DL",
+  "prefix_filters_default":  "permit"
 }
 ```
 {: pre}
@@ -203,7 +203,7 @@ You can specify the following argument references for your resource when editing
 {: caption="Table 5. Terraform argument references for editing a connection" caption-side="bottom"}
 
 ### Example
-{: #change-configuration-terraform-example}
+{: #edit-configuration-terraform-example}
 
 This example illustrates editing a transit gateway connection in Terraform:
 

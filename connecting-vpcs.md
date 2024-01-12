@@ -108,7 +108,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 {: cli}
 
 ### Before you begin
-{: #cli-ref-prereqs}
+{: #cli-connect-prereqs}
 
 Complete these prerequisites to use the Transit Gateway CLI, which is implemented as an {{site.data.keyword.cloud_notm}} CLI plug-in.
 
