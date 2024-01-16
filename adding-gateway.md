@@ -57,7 +57,7 @@ To add a connection to a transit gateway, follow these steps:
 {: cli}
 
 ### Before you begin
-{: #cli-ref-prereqs}
+{: #cli-prereqs-before-you-begin}
 
 Complete these prerequisites to use the Transit Gateway CLI, which is implemented as an {{site.data.keyword.cloud_notm}} CLI plug-in.
 

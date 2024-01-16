@@ -49,7 +49,7 @@ The routing option that you choose for a transit gateway only determines what VP
 You can create more than one transit gateway in your account. Each transit gateway (and its connections) are logically isolated from your other transit gateways.
 
 ## Can I create more than two connections for a given transit gateway?
-{: #connections}
+{: connections-faq}
 {: faq}
 {: support}
 
@@ -188,5 +188,4 @@ You can create a single transit gateway or multiple transit gateways to intercon
 {: faq}
 {: #faq-stale-routes-time}
 
-This time, by default, is set as 5 minutes (300 seconds), and defined by the configuration statement `stale-routes-time`. The `stale-routes-time` statement allows you to set the length of time the routing device waits to receive messages from restarting neighbors before declaring them inactive. This means, in the case of a GRE HA failover to a second GRE tunnel, the traffic takes 5 minutes to be reflected by the second tunnel. 
-
+This time, by default, is set as 5 minutes (300 seconds), and defined by the configuration statement `stale-routes-time`. The `stale-routes-time` statement allows you to set the length of time the routing device waits to receive messages from restarting neighbors before declaring them inactive. This means, in the case of a GRE HA failover to a second GRE tunnel, the traffic takes 5 minutes to be reflected by the second tunnel.

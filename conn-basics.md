@@ -41,6 +41,6 @@ If you are not able to establish connectivity between networks interconnected by
 Network Access Control Lists [ACLs](/docs/vpc?topic=vpc-using-acls#using-acls) are applied at the VPC level. By default, they allow all inbound and outbound traffic. Check if you have changed this default.
 
 ## Interconnecting VPCs
-{: #interconnecting-vpcs}
+{: #interconnect-vpcs}
 
 You can create a single transit gateway or multiple transit gateways to interconnect more than one IBM Cloud VPCs. You can also connect your IBM Cloud classic infrastructure to a transit gateway to provide seamless communication with classic infrastructure resources. For more information, refer to [Interconnecting VPCs](/docs/vpc?topic=vpc-interconnectivity&interface=cli#interconnecting-vpcs).

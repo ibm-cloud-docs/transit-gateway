@@ -21,7 +21,7 @@ subcollection: transit-gateway
 {: #delete-gateway-ui}
 {: ui}
 
-To delete an {{site.data.keyword.tg_full}}, follow these steps: 
+To delete an {{site.data.keyword.tg_full}}, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
 1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page, then click **Interconnectivity**.
@@ -33,7 +33,7 @@ To delete an {{site.data.keyword.tg_full}}, follow these steps:
 
    * From the transit gateway's details page, click the Actions menu ![Actions menu](/images/overflow.png) next to the gateway you want to delete and select **Delete**.
    * From an individual transit gateway page, select **Actions > Delete**.
-	  
+
 ## Deleting a transit gateway from the CLI
 {: #delete-gateway-cli}
 {: cli}
@@ -54,7 +54,7 @@ Where:
 - **--help | -h**: Optional: Get help on this command.
 
 ### Example
-{: #gateway-delete-examples}
+{: #tgw-delete-examples}
 
 This example illustrates deleting a gateway with no confirmation:
 

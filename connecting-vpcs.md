@@ -133,7 +133,7 @@ For more information, see [Integrating with Virtual Private Endpoint for VPC](/d
 {: note}
 
 ### Creating a transit gateway from the CLI
-{: #gateway-create}
+{: #tgw-create}
 
 To create a transit gateway from the CLI, enter the following command:
 
@@ -152,7 +152,7 @@ Where:
 - **--help | -h** - Optional: Get help on this command.
 
 ### Example
-{: #gateway-create-examples}
+{: #tgw-create-examples}
 
 The following example illustrates creating a gateway named `myGateway` in us-south with local routing and using the default resource group:
 

@@ -32,7 +32,7 @@ Before you target a virtual private endpoint for {{site.data.keyword.cloud}}, yo
 * Understand how to [view details](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) about a virtual private endpoint.
 
 ## Setting up a VPE for {{site.data.keyword.tg_full_notm}}
-{: #endpoint-setup}
+{: #vpe-endpoint-setup}
 
 When you create a VPE gateway by using the CLI or API, you must specify the [Cloud Resource Name (CRN)](/docs/account?topic=account-crn) of the region in which you want connect to {{site.data.keyword.tg_full_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
 
