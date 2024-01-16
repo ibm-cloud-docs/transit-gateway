@@ -17,7 +17,7 @@ subcollection: transit-gateway
 
 Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to Transit Gateway resources can be controlled with context-based restrictions and identity and access management policies.
 {: shortdesc}
- 
+
 These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
 
 A user must have the Administrator role on the Transit Gateway service to create, update, or delete rules. And a user must have either the Editor or Administrator role on the Context-based restrictions service to create, update, or delete network zones.
@@ -46,19 +46,19 @@ Context-based restrictions protect only the actions associated with the [Transit
 
 Context-based restrictions for the transit service can be scoped to a Transit Service resource type. Since the Transit Service has only one applicable resource type, it is set to `gateway`.
 
-Additionally, rules can be scoped to a specific instance of the service or a resource group by using resource attributes. 
+Additionally, rules can be scoped to a specific instance of the service or a resource group by using resource attributes.
 
 ### Creating rules from the CLI
 {: #cbr-rules-cli}
 {: cli}
 
-1. To create rules from the CLI, [install the CBR CLI plug-in](/docs/account?topic=cli-cbr-plugin#install-cbr-plugin).
-1. Use the [`ibmcloud cbr rule-create` command](/docs/account?topic=cli-cbr-plugin#cbr-cli-rule-create-command) to create CBR rules. For more information, see the CBR [CLI reference](/docs/account?topic=cli-cbr-plugin#cbr-zones-cli).
+1. To create rules from the CLI, [install the CBR CLI plug-in](/docs/account?topic=account-cbr-plugin).
+1. Use the [`ibmcloud cbr rule-create` command](/docs/account?topic=account-cbr-plugin#cbr-cli-rule-create-command) to create CBR rules. For more information, see the CBR [CLI reference](/docs/account?topic=account-cbr-plugin).
 
-The examples in this section are enforcement rules. You can make them report-only by adding `--enforcement-mode report`. 
+The examples in this section are enforcement rules. You can make them report-only by adding `--enforcement-mode report`.
 
 The following example CLI commands create a context-based restriction rule for Transit Service instances in the current account:
-	
+
 * Create a disabled rule against all gateway instances in your transit service:
 
    ```sh
@@ -79,7 +79,7 @@ The following example CLI commands create a context-based restriction rule for T
    ibmcloud cbr rule-create --description transit-rule3 --service-name transit --resource-type gateway --resource-attributes "resource=<id_y>,resourceGroupId=<rg_x_id>" --zone-id=<zone_id> --enforcement-mode disabled
    ```
    {: pre}
-   
+
 ## How Transit Gateway integrates with context-based restrictions
 {: #cbr-overview}
 
