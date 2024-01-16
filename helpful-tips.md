@@ -45,7 +45,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 
 * Classic virtual server instances can have both a private (`eth0`) and a public (`eth1`) network interface. Currently, the routing tables for these interfaces point the default gateway to the public interface (`eth1`). You might have to add routing entries to route the subnets from other VPCs through the private interface.
 
-* All of your IBM Cloud classic infrastructure networks across [MZRs](/docs/overview?topic=overview-locations#mzr-table) are accessible through this connection, regardless of the location of the transit gateway or the routing type specified.
+* All of your IBM Cloud classic infrastructure networks across [MZRs](/docs/overview?topic=overview-locations#table-mzr) are accessible through this connection, regardless of the location of the transit gateway or the routing type specified.
 
 * Classic infrastructure resources located in these [data centers](/docs/transit-gateway?topic=transit-gateway-tg-locations#szr-table) connect through a transit gateway to VPC resources.
 
@@ -118,11 +118,11 @@ You can create a single transit gateway or multiple transit gateways to intercon
    Traffic from either routing option does not leave the private IBM Cloud network and is optimized for performance.
    {: note}
 
-* If you plan to use your gateway to connect VPCs in the same multi-zone region ([MZR](/docs/overview?topic=overview-locations#mzr-table)), use local routing to provide connectivity to all accessible resources within the same MZR; for example, `us-south` (Dallas).
+* If you plan to use your gateway to connect VPCs in the same multi-zone region ([MZR](/docs/overview?topic=overview-locations#table-mzr)), use local routing to provide connectivity to all accessible resources within the same MZR; for example, `us-south` (Dallas).
 
    ![Local routing](images/1-aboutLocalRoutingExample.png "Local routing"){: caption="Figure 1. Simple local routing example" caption-side="bottom"}
 
-* If you plan to use your transit gateways to connect VPCs locally and between different [MZRs](/docs/overview?topic=overview-locations#mzr-table), use local gateways for VPCs in the same MZR, and a global gateway for VPCs across MZRs. You can use the example that follows a Highly Available (HA) scenario as well. All data in VPCs A and B can be replicated to VPCs C and D. If there is an issue in the US South region, connections reroute to US East.
+* If you plan to use your transit gateways to connect VPCs locally and between different [MZRs](/docs/overview?topic=overview-locations#table-mzr), use local gateways for VPCs in the same MZR, and a global gateway for VPCs across MZRs. You can use the example that follows a Highly Available (HA) scenario as well. All data in VPCs A and B can be replicated to VPCs C and D. If there is an issue in the US South region, connections reroute to US East.
 
    ![Global routing](images/2-aboutLocalAndGlobalRoutingExample.png "Local and Global routing"){: caption="Figure 2. Combining local and global routing example" caption-side="bottom"}
 

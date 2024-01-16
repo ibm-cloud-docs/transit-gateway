@@ -95,7 +95,7 @@ No, you must choose to connect to a direct resource (VPC or classic infrastructu
 {: faq}
 {: support}
 
-By enabling global routing, you can connect VPCs located in different [MZRs](/docs/overview?topic=overview-locations#mzr-table), regardless of the set of locations that you can provision your transit gateway in.
+By enabling global routing, you can connect VPCs located in different [MZRs](/docs/overview?topic=overview-locations#table-mzr), regardless of the set of locations that you can provision your transit gateway in.
 
 ## What are the service limits that I must keep in mind while using {{site.data.keyword.tg_full_notm}}?
 {: #service-limits-faq}

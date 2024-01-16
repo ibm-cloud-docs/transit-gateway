@@ -40,7 +40,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
    {: remember}
 
    * Select **Local routing** to allow your transit gateway to connect to all VPC and classic resources within the transit gateway's provisioned region.
-   * Select **Global routing** to allow your transit gateway to connect to VPC resources in all IBM [Multi-Zone Regions (MZRs)](/docs/overview?topic=overview-locations#mzr-table).
+   * Select **Global routing** to allow your transit gateway to connect to VPC resources in all IBM [Multi-Zone Regions (MZRs)](/docs/overview?topic=overview-locations#table-mzr).
 
    You can upgrade routing options at a later point if your needs change. Pricing is changed accordingly.
    {: note}

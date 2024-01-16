@@ -19,7 +19,7 @@ You can interconnect {{site.data.keyword.cloud}} classic and Virtual Private Clo
 {: shortdesc}
 
 ## Multi-Zone Regions
-{: #mzr-table}
+{: #table-mzr}
 
 An MZR consists of three or more zones that are independent from each other to ensure that single failure events affect only a single zone. MZRs provide low latency (< 2-milliseconds latency) and high bandwidth (> 1000 Gbps) connectivity across zones. Any [GA](#x2117947){: term} service in an MZR will be available in all MZRs within 90 days.
 
@@ -64,7 +64,7 @@ An MZR provides consistent cloud services across different zones, better resilie
 {: class="simple-tab-table"}
 {: summary="Use the table tabs to change the context of the table. The column headers identify the data centers located in the specific geographical area."}
 
-For a detailed overview and list of data centers that are part of the MZR, see [Multizone regions](/docs/overview?topic=overview-locations#mzr-table).
+For a detailed overview and list of data centers that are part of the MZR, see [Multizone regions](/docs/overview?topic=overview-locations#table-mzr).
 {: note}
 
 ## Data centers
