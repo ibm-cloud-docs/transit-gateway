@@ -6,7 +6,7 @@ lastupdated: "2024-01-08"
 
 keywords:
 
-subcollection: dl
+subcollection: transit-gateway
 
 ---
 
