@@ -15,10 +15,10 @@ subcollection: transit-gateway
 # About {{site.data.keyword.tg_full_notm}}
 {: #about}
 
-As the number of your Virtual Private Clouds (VPCs) grow, you need an easy way to manage the interconnection between these resources across multiple regions. {{site.data.keyword.tg_full}} is designed specifically for this purpose.
+As the number of your Virtual Private Clouds (VPCs) grows, you need a way to manage the interconnection between these resources across multiple regions. {{site.data.keyword.tg_full}} is designed specifically for this purpose.
 {: shortdesc}
 
-With {{site.data.keyword.tg_full_notm}}, you can create single or multiple transit gateways to connect VPCs together. You can also connect your {{site.data.keyword.cloud_notm}} classic infrastructure to a transit gateway to provide seamless communication with classic infrastructure resources. Any new network that you connect to a transit gateway is then automatically made available to every other network connected to it. This makes it easy to scale your network as it grows.
+With {{site.data.keyword.tg_full_notm}}, you can create single or multiple transit gateways to connect VPCs together. You can also connect your {{site.data.keyword.cloud_notm}} classic infrastructure to a transit gateway to provide seamless communication with classic infrastructure resources. Any new network that you connect to a transit gateway is then automatically made available to every other network connected to it so that you can scale your network as it grows.
 
 Transit gateways provide flexibility by allowing you to add networks to local gateways. Networks can be attached to multiple local gateways and a single global gateway, enabling you to keep local traffic on a local gateway.
 
@@ -30,14 +30,14 @@ Transit gateways provide flexibility by allowing you to add networks to local ga
 ### Routing
 {: #routing}
 
-{{site.data.keyword.tg_full_notm}} supports local and global routing between VPCs and the {{site.data.keyword.cloud_notm}} classic infrastructure. All routing options remain within the private {{site.data.keyword.cloud_notm}} infrastructure without operating on the public internet, and are optimized for performance. {{site.data.keyword.tg_full_notm}} allows customers greater flexibility, redundancy, and speed in scaling their workloads, as well as in connecting isolated networks running on {{site.data.keyword.cloud_notm}}.
+{{site.data.keyword.tg_full_notm}} supports local and global routing between VPCs and the {{site.data.keyword.cloud_notm}} classic infrastructure. All routing options remain within the private {{site.data.keyword.cloud_notm}} infrastructure without operating on the public internet, and are optimized for performance. {{site.data.keyword.tg_full_notm}} allows customers greater flexibility, redundancy, and speed in scaling their workloads, as well as in connecting isolated networks that run on {{site.data.keyword.cloud_notm}}.
 
-To display the routes report for a transit gateway, see [IBM Cloud Transit Gateway route reports](/docs/transit-gateway?topic=transit-gateway-route-reports) for more information.
+For more information, see [IBM Cloud Transit Gateway route reports](/docs/transit-gateway?topic=transit-gateway-route-reports).
 
 ### Privacy
 {: #privacy}
 
-* Connections to and from an {{site.data.keyword.tg_full_notm}} on the IBM private network are not exposed to the public internet. This reduces public egress and VPN costs as well as reduces security threats.
+* Connections to and from an {{site.data.keyword.tg_full_notm}} on the IBM private network are not exposed to the public internet, thus reducing public egress and VPN costs and reducing security threats.
 
 * {{site.data.keyword.tg_full_notm}} is a fully redundant, fault-tolerant service with no single point of failure within these [{{site.data.keyword.cloud_notm}} Multi-Zone Regions (MZR)](/docs/transit-gateway?topic=transit-gateway-tg-locations).
 
@@ -80,7 +80,7 @@ Connect two VPCs in the same region with a local transit gateway.
 ### Use case 2: Interconnect two or more VPCs across multiple MZRs
 {: #use-case-2}
 
-Connect VPCs in multiple regions using a global transit gateway.
+Connect VPCs in multiple regions by using a global transit gateway.
 
 ![Connect two or more VPCs across multiple MZRs](images/TGW_Multi-Multi.png "Connect two or more VPCs across multiple MZRs"){: caption="Figure 2. Connect two or more VPCs across multiple MZRs" caption-side="bottom"}
 
@@ -108,10 +108,10 @@ Connect VPCs in the same region owned by different {{site.data.keyword.cloud_not
 ### Use case 6: Connect networks (VPC and classic) to multiple local gateways
 {: #use-case-6}
 
-There are a few things to note about this use case:
+Keep in mind:
 
-- It keeps your local traffic on a local transit gateway, which reduces latency.
-- Highly Available (HA) capabilities are provided, as data in VPCs C and D could be replicated in VPCs in E and F.
+- Your local traffic is kept on a local transit gateway, which reduces latency.
+- Highly Available (HA) capabilities are provided, as data in VPCs C and D might be replicated in VPCs in E and F.
 - Classic infrastructure transit gateway connections are required to be in the same account as the transit gateway owner.
 
 ![Connect networks (VPC and classic) to multiple gateways](images/TGW_1.2.png "Connect networks (VPC and classic) to multiple gateways"){: caption="Figure 6. Connect networks (VPC and classic) to multiple local gateways" caption-side="bottom"}
@@ -123,29 +123,29 @@ Connect cross-account {{site.data.keyword.cloud_notm}} classic accounts to one o
 
 ![Connect both VPC and classic across accounts](images/TGW_xac.png "Connect both VPCs and classic across IBM Cloud accounts"){: caption="Figure 7. Connect both VPC and classic across accounts" caption-side="bottom"}
 
-### Use case 8: Connect networks using a High Availability GRE tunnel
+### Use case 8: Connect networks by using a High Availability GRE tunnel
 {: #use-case-8}
 
-Connect {{site.data.keyword.cloud_notm}} classic infrastructure using a GRE tunnel to a local transit gateway.
+Connect {{site.data.keyword.cloud_notm}} classic infrastructure by using a GRE tunnel to a local transit gateway.
 
-This diagram shows a highly available GRE tunnel configuration. When setting up a GRE tunnel configuration, an availability zone must be specified. To make this highly available, you must set up two GRE tunnels with the same endpoints, but using different availability zones.
+This diagram shows a highly available GRE tunnel configuration. When you set up a GRE tunnel configuration, an availability zone must be specified. To make this highly available, you must set up two GRE tunnels with the same endpoints, but by using different availability zones.
 
-![Connect using a GRE tunnel](images/HA-GRE.png "Connect using a High Availability GRE tunnel"){: caption="Figure 8. Connect networks using a High Availability GRE tunnel" caption-side="bottom"}
+![Connect by using a GRE tunnel](images/HA-GRE.png "Connect by using a High Availability GRE tunnel"){: caption="Figure 8. Connect networks using a High Availability GRE tunnel" caption-side="bottom"}
 
-Transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point to point connection, has no built in redundancy, and is a single point of failure. When configuring a GRE connection on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections using different availability zones.
+Transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point-to-point connection, has no built-in redundancy, and is a single point of failure. When you configure a GRE connection on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections by using different availability zones.
 {: note}
 
-### Use case 9: Connect on-premises network using Direct Link
+### Use case 9: Connect an on-premises network by using Direct Link
 {: #use-case-9}
 
-Connect {{site.data.keyword.cloud_notm}} Direct Link to allow on-premises connectivity to {{site.data.keyword.cloud_notm}} networks through a transit gateway. This allows the on-premises network to access all networks connected the transit gateway. In the following example, the Direct Link gateway connects to a global transit gateway, along with 4 VPCs and {{site.data.keyword.cloud_notm}} Classic Infrastructure. The inverse is also true, in that all other networks connected to the transit gateway are now connected to the on-premises network.
+Connect {{site.data.keyword.cloud_notm}} Direct Link to allow on-premises connectivity to {{site.data.keyword.cloud_notm}} networks through a transit gateway. This allows the on-premises network to access all networks that are connected to the transit gateway. In the following example, the Direct Link gateway connects to a global transit gateway, along with 4 VPCs and {{site.data.keyword.cloud_notm}} Classic Infrastructure. The inverse is also true, in that all other networks that are connected to the transit gateway are now connected to the on-premises network.
 
 Direct Link can be connected to either local or remote transit gateways.
 {: note}
 
-![Connect On Premise Network to Transit Gateway](images/dlaas.png "Connect Direct Link on-premises network"){: caption="Figure 9. Connect on-premises network using Direct Link" caption-side="bottom"}
+![Connect On-Premise Network to Transit Gateway](images/dlaas.png "Connect Direct Link on-premises network"){: caption="Figure 9. Connect on-premises network using Direct Link" caption-side="bottom"}
 
-### Use case 10: Location connectivity using {{site.data.keyword.powerSys_notm}} and Direct Link Connect
+### Use case 10: Location connectivity by using {{site.data.keyword.powerSys_notm}} and Direct Link Connect
 {: #use-case-10}
 
 You can use IBM Cloud Transit Gateway with {{site.data.keyword.powerSys_notm}} and Direct Link Connect for high-bandwidth customer demand. For more information, see [Connecting two {{site.data.keyword.powerSys_notm}} environments by using IBM Cloud Transit Gateway](/docs/power-iaas?topic=power-iaas-network-architecture-diagrams#network-reference-architecture-tgw).
