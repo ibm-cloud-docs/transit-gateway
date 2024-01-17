@@ -21,7 +21,7 @@ You can request connections to networks in other {{site.data.keyword.cloud_notm}
 ## Planning considerations
 {: #tg-ca-planning}
 
-Before you add a cross-account connection, take the following into consideration:
+Before you add a cross-account connection, review these considerations:
 
 * After you connect a transit gateway to a network in another account, all resources that are connected to that transit gateway are accessible from the other network. Make sure that you use a trusted account. The following network connections are permitted as cross-account connections:
 
@@ -43,7 +43,7 @@ Before you add a cross-account connection, take the following into consideration
 {: #tg-ui-adding-cross-account-connection-transit-gateway}
 {: ui}
 
-To connect networks that are owned by different accounts by using the UI, follow these steps:
+To connect networks that different accounts own by using the UI, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
 1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
@@ -178,12 +178,12 @@ To request a cross-account connection, set the following parameters:
 
 |Query parameters| Details |
 |--|--|
-|**version**  \n Required  \n string | Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date may be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
+|**version**  \n Required  \n string | Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date can be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
 |**Request Body**  \n Required  \n TransitGatewayConnectionTemplate | The connection template|
-|**network_type**  \n Required  \n string | Defines what type of network is connected via this connection.  \n **Allowable values:** `classic`, `vpc`, `unbound_gre_tunnel`, `directlink`, or `power_virtual_server`  \n **Example:** `vpc`|
+|**network_type**  \n Required  \n string | Defines what type of network is connected using this connection.  \n **Allowable values:** `classic`, `vpc`, `unbound_gre_tunnel`, `directlink`, or `power_virtual_server`  \n **Example:** `vpc`|
 |**name**  \n Name|The user-defined name for this transit gateway connection. Network type `vpc` connections are defaulted to the name of the VPC. Network type `classic` connections are named `Classic`.  \n **Possible values:** `1 ≤ length ≤ 63`, Value must match regular expression  `^([a-zA-Z]-[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
-|**network_account_id**  \n AccountID|The ID of the account which owns the network that is being connected. Generally only used if the network is in a different account than the gateway.  \n This field is used when gateway connection is in network type `classic`.  \n This field is required to be unspecified for network type `gre_tunnel`.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
-|**network_id**  \n string | The ID of the network being connected via this connection. This field is required for `vpc` and `directlink`. This is the target CRN for network type `vpc` or `directlink`.  \n This field is required to be unspecified for network type `classic`, `gre_tunnel`, and `unbound_gre_tunnel` connections.  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
+|**network_account_id**  \n AccountID|The ID of the account, which owns the network that is being connected. Generally only used if the network is in a different account than the gateway.  \n This field is used when gateway connection is in network type `classic`.  \n This field is required to be unspecified for network type `gre_tunnel`.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
+|**network_id**  \n string | The ID of the network that is being connected using this connection. This field is required for `vpc` and `directlink`. This is the target CRN for network type `vpc` or `directlink`.  \n This field is required to be unspecified for network type `classic`, `gre_tunnel`, and `unbound_gre_tunnel` connections.  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
 {: caption="Table 2. Query parameters for adding a cross-account connection" caption-side="bottom"}
 
 ##### Example request
@@ -223,13 +223,13 @@ The following response details show once you initiate the request:
 | Response Body | Details |
 |--|--|
 |**name**  \n Always included*  \n Name|The user-defined name for this transit gateway connection.  \n **Possible values:** `1 ≤ length ≤ 63`, Value must match regular expression  `^([a-zA-Z]-[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`.  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
-|**network_type**  \n Always included*  \n string|Defines what type of network is connected via this connection. The list of enumerated values for this property might expand in the future. Code and processes that use this field must tolerate unexpected values.  \n **Possible values:** [`classic`, `directlink`, `vpc`]  \n **Example:** `vpc`|
+|**network_type**  \n Always included*  \n string|Defines what type of network is connected using this connection. The list of enumerated values for this property might expand in the future. Code and processes that use this field must tolerate unexpected values.  \n **Possible values:** [`classic`, `directlink`, `vpc`]  \n **Example:** `vpc`|
 |**id**  \n Always included*  \n string | The unique identifier for this Transit Gateway Connection  \n **Example:** `1a15dca5-7e33-45e1-b7c5-bc690e569531`|
 |**created_at** \n Always included*  \n date-time|The date and time that this connection was created|
-|**network_id**  \n string|The ID of the network being connected via this connection. This field is required for some types, such as `vpc`, `power_virtual_server`, and `directlink`.  \n This is the target CRN for network type `vpc`  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
-|**network_account_id**  \n AccountID|The ID of the account which owns the connected network. Generally only used if the network is in a different IBM Cloud account than the gateway.  \n This value is used for network type `classic`.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
+|**network_id**  \n string|The ID of the network that is being connected using this connection. This field is required for some types, such as `vpc`, `power_virtual_server`, and `directlink`.  \n This is the target CRN for network type `vpc`  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
+|**network_account_id**  \n AccountID|The ID of the account, which owns the connected network. Generally only used if the network is in a different IBM Cloud account than the gateway.  \n This value is used for network type `classic`.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
 |**request_status**  \n string|Only visible for cross-account connections, this field represents the status of a connection request between IBM Cloud accounts. The list of enumerated values for this property might expand in the future. Code and processes that use this field must tolerate unexpected values.  \n **Possible values:** [`pending`,`approved`,`rejected`,`expired`,`detached`]|
-|**status**  \n string|Connection's current configuration state. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`attached`,`failed`,`pending`,`deleting`,`detaching`,`detached`]|
+|**status**  \n string|Connection's current configuration state. The list of enumerated values for this property might expand in the future. Code and processes that use this field must tolerate unexpected values.  \n **Possible values:** [`attached`,`failed`,`pending`,`deleting`,`detaching`,`detached`]|
 |**updated_at**  \n date-time|The date and time that this connection was last updated|
 {: caption="Table 3. Initiate request response" caption-side="bottom"}
 
@@ -237,8 +237,8 @@ The following response details show once you initiate the request:
 |--|--|
 |**201**|The transit gateway connection was created successfully.|
 |**400**|An invalid connection template was provided.|
-|**404**|The specified Transit Gateway could not be found, the specified resource group could not be found, or the default resource group could not be found (if the resource group was not specified in the template).|
-|**409**|The network being connected must either be in a location that is considered "local" to the specified Transit Gateway, or the specified Transit Gateway must be global. The network being connected cannot already be connected to another Transit Gateway.|
+|**404**|The specified Transit Gateway cannot be found, the specified resource group cannot be found, or the default resource group cannot be found (if the resource group was not specified in the template).|
+|**409**|The network that is being connected must either be in a location that is considered "local" to the specified Transit Gateway, or the specified Transit Gateway must be global. The network being connected cannot already be connected to another Transit Gateway.|
 {: caption="Table 4. Status codes" caption-side="bottom"}
 
 ##### Example response
