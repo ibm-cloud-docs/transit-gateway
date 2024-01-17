@@ -25,7 +25,7 @@ Looking for a managed Terraform on {{site.data.keyword.cloud}} solution? Try out
 Before you begin, make sure that you have the [required access](/docs/transit-gateway?topic=transit-gateway-iam) to create and work with {{site.data.keyword.tg_short}} resources.
 
 1. Follow the [Terraform on {{site.data.keyword.cloud}} getting started tutorial](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started) to install the Terraform CLI and configure the {{site.data.keyword.cloud}} Provider plug-in for Terraform. The plug-in abstracts the {{site.data.keyword.cloud}} APIs that are used to provision, update, or delete {{site.data.keyword.tg_short}} service instances and resources.
-1. Create a Terraform configuration file that is named `main.tf`. In this file, you add the configuration to create a {{site.data.keyword.tg_short}} service instance and to assign a user an access policy in Identity and Access Management (IAM) for that instance by using HashiCorp Configuration Language (HCL). For more information, see the [Terraform documentation](https://www.terraform.io/docs/language/index.html){: external}.
+1. Create a Terraform configuration file that is named `main.tf`. In this file, you add the configuration to create a {{site.data.keyword.tg_short}} service instance and to assign a user an access policy in Identity and Access Management (IAM) for that instance by using HashiCorp Configuration Language (HCL). For more information, see the [Terraform documentation](https://developer.hashicorp.com/terraform/language){: external}.
 
    The {{site.data.keyword.tg_short}} resource in the following example is named `transit-gateway-1`, located in `us-south`, uses global routing, and is assigned to  `30951d2dff914dafb26455a88c0c0092`, the resource group where the transit gateway is being created.
 
@@ -38,8 +38,8 @@ Before you begin, make sure that you have the [required access](/docs/transit-ga
        location="us-south"
        global=true
        resource_group="30951d2dff914dafb26455a88c0c0092"
-   }  
-      
+   }
+
    resource "ibm_iam_user_policy" "policy" {
        ibm_id = "user@ibm.com"
        roles  = ["Administrator"]
@@ -73,4 +73,4 @@ Before you begin, make sure that you have the [required access](/docs/transit-ga
 
 1. From the [{{site.data.keyword.cloud_notm}} resource list](/resources){: external}, select the {{site.data.keyword.tg_short}} instance that you created and note the instance ID.
 
-1. Verify that the access policy is successfully assigned. For more information, see [Reviewing assigned access in the console](/docs/account?topic=account-assign-access-resources#review-your-access-console).
+1. Verify that the access policy is successfully assigned. For more information, see [Reviewing assigned access in the console](/docs/account?topic=account-assign-access-resources&interface=ui#review-your-access-console).

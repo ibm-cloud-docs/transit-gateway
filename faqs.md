@@ -109,7 +109,7 @@ For more information, see [Service limits](/docs/transit-gateway?topic=transit-g
 {: faq}
 {: support}
 
-Although [classic-access VPCs](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) cannot be attached to a transit gateway, access to classic resources and classic-access VPC resources can be achieved by adding the classic infrastructure connection to a transit gateway. For more information, see [Classic infrastructure connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#classic-infrastructure-connection-considerations).
+Although [classic-access VPCs](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) cannot be attached to a transit gateway, access to classic resources and classic-access VPC resources can be achieved by adding the classic infrastructure connection to a transit gateway. For more information, see [Classic infrastructure connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#classic-infra-connection-considerations).
 
 ## How can "VPC peering" be achieved on {{site.data.keyword.cloud_notm}}?
 {: #vpc-peering}

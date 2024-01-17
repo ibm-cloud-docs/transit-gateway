@@ -51,7 +51,7 @@ Unbound GRE tunnels
    * The ability to communicate through other unbound GRE tunnels on the same transit gateway.
    * Do not require a classic connection on the transit gateway. The classic network's subnets will not be advertised to all the connections on the transit gateway and vice versa.
 
-:    See [Creating an Unbound Generic Routing Encapsulation tunnel connection](https://test.cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection) for more information.
+:    See [Creating an Unbound Generic Routing Encapsulation tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection) for more information.
 
 
 ## 26 March 2022

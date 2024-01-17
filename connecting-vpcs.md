@@ -129,9 +129,6 @@ export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 ```
    {: pre}
 
-For more information, see [Integrating with Virtual Private Endpoint for VPC](/docs/transit-gateway?topic=transit-gateway-vpe-for-ibm-cloud-transit-gateway).
-{: note}
-
 ### Creating a transit gateway from the CLI
 {: #tgw-create}
 
@@ -167,7 +164,7 @@ ibmcloud tg gwc --name myGateway --location us-south
 
 Follow these instructions to create a transit gateway with the API:
 
-1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment#api-prerequisites-setup).
+1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment&interface=cli#api-prerequisites-setup).
 1. Store any additional variables to be used in the API commands.
 
 ### Request
@@ -182,7 +179,7 @@ To create a transit gateway, adjust the following parameters:
 |**location**  \n Required  \n string|Location of Transit Gateway Services  \n **Example:** `us-south`|
 |**name**  \n Required  \n Name | Name Transit Gateway Services  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression  `^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
 |**global**  \n boolean | Allow global routing for a transit gateway. If unspecified, the default value is `false`.  \n **Default:** `false`  \n **Example:** `true`|
-|**resource_group**  \n ResourceGroupIdentity | The resource group to use. If unspecified, the account’s [default resource group](https://console.bluemix.net/apidocs/resource-manager#introduction) is used.|
+|**resource_group**  \n ResourceGroupIdentity | The resource group to use. If unspecified, the account’s [default resource group](/apidocs/resource-manager#introduction) is used.|
 |**id**  \n Required  \n string | The unique identifier for this resource group  \n **Possible values:** Value must match regular expression  `^[0-9a-f]{32}$`  \n **Example:** `56969d6043e9465c883cb9f7363e78e8`|
 {: caption="Table 1. Parameters for creating a transit gateway" caption-side="bottom"}
 
@@ -214,7 +211,7 @@ The following response shows once you initiate the request:
 |**location**  \n Always included  \n string|Location of the transit gateway \n **Example:** `us-south`|
 |**created_at**  \n Always included  \n boolean|Allow global routing for a transit gateway  \n **Example:** `true`|
 |**status**  \n Always included  \n string|The status of the transit gateway. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`available`,`failed`,`pending`,`deleting`]|
-|**resource_group**  \n ResourceGroupReference  \n |The resource group to use. If unspecified, the account's [default resource group](https://console.bluemix.net/apidocs/resource-manager#introduction) is used.
+|**resource_group**  \n ResourceGroupReference  \n |The resource group to use. If unspecified, the account's [default resource group](/apidocs/resource-manager#introduction) is used.
 |- **id**  \n Always included  \n string|The unique identifier for this resource group  \n **Possible values:** Value must match regular expression  `^[0-9a-f]{32}$`  \n **Example:** `56969d6043e9465c883cb9f7363e78e8`|
 |- **href**  \n Always included*  \n URL|The URL for this resource group  \n **Possible values:** Value must match regular expression  `^http(s)?:\/\/([^\/?#]*)([^?#]*)(\?([^#]*))?(#(.*))?$`  \n **Example:** `https://resource-manager.bluemix.net/v1/resource_groups/56969d6043e9465c883cb9f7363e78e8`|
 |**updated_at**  \n date-time | The date and time that this gateway was last updated.|

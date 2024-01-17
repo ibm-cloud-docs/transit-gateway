@@ -58,7 +58,7 @@ Where:
 
 - **--routing**: Optional: Gateway routing of resources (global | local). Select global to connect resources across regions. Changing routing from global to local requires all existing connections to be local.
 
-- **--output json**: Optional: Specify if you want the output displayed in JSON format.  
+- **--output json**: Optional: Specify if you want the output displayed in JSON format.
 
 - **--help | -h**: Optional: Get help on this command.
 
@@ -125,7 +125,7 @@ The following response shows once you initiate the request:
 |**created_at**  \n Always included  \n date-time |The date and time that this gateway was created|
 |**global**  \n Always included  \n boolean| Allow global routing for a transit gateway  \n **Example**: `true`|
 |**status**  \n Always included  \n string|The status of the transit gateway. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`available`,`failed`,`pending`,`deleting`]|
-|**resource_group**  \n ResourceGroupReference  \n |The resource group to use. If unspecified, the account's [default resource group](https://console.bluemix.net/apidocs/resource-manager#introduction) is used.
+|**resource_group**  \n ResourceGroupReference  \n |The resource group to use. If unspecified, the account's [default resource group](/apidocs/resource-manager#introduction) is used.
 |- **id**  \n Always included  \n string|The unique identifier for this resource group  \n **Possible values:** Value must match regular expression  `^[0-9a-f]{32}$`  \n **Example:** `56969d6043e9465c883cb9f7363e78e8`|
 |- **href**  \n Always included=  \n URL|The URL for this resource group  \n **Possible values:** Value must match regular expression  `^http(s)?:\/\/([^\/?#]*)([^?#]*)(\?([^#]*))?(#(.*))?$`  \n **Example:** `https://resource-manager.bluemix.net/v1/resource_groups/56969d6043e9465c883cb9f7363e78e8`|
 |**updated_at**  \n date-time | The date and time that this gateway was last updated.|
@@ -187,6 +187,6 @@ name="transit-gateway-1"
 location="us-south"
 global=true
 resource_group="30951d2dff914dafb26455a88c0c0092"
-}  
+}
 ```
 {: pre}

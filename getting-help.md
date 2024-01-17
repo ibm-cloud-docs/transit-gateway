@@ -19,7 +19,7 @@ If you experience an issue or have questions when using {{site.data.keyword.tg_f
 {: shortdesc}
 
 * Review [FAQs](/docs/transit-gateway?topic=transit-gateway-faqs-for-transit-gateway) in the product documentation.
-* Review [Troubleshooting](/docs/transit-gateway?topic=transit-gateway-troubleshooting) to diagnose and resolve common issues.
+* Review [Troubleshooting](/docs/transit-gateway?topic=transit-gateway-troubleshooting-connectivity) to diagnose and resolve common issues.
 * Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
 * Review [Stack Overflow](https://stackoverflow.com/search?q=transit-gateway+ibm-cloud){: external} to see whether other users ran into the same problem. If you're using the forum to ask a question, tag your question with `ibm-cloud` and `transit-gateway` so that it is seen by the {{site.data.keyword.Bluemix_notm}} development teams.
 

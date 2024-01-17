@@ -27,7 +27,7 @@ Known issues include incorrect permissions, overlapping VPC prefixes and classic
 To fix the connectivity issues you're encountering, review the following information topics:
 {: tsResolve}
 
-* [Connectivity issue basics](/docs/transit-gateway?topic=transit-gateway-connectivity-issue-basics)
+* [Connectivity issue basics](/docs/transit-gateway?topic=transit-gateway-connectivity-basics)
 * [Working with firewalls and gateway appliances](/docs/transit-gateway?topic=transit-gateway-firewalls-gateways)
 * [Dealing with overlapping VPC prefixes and classic infrastructure subnets](/docs/transit-gateway?topic=transit-gateway-overlapping-vpc-prefixes-and-classic-subnets)
 * [Working with Network Interface Card Routing](/docs/transit-gateway?topic=transit-gateway-tg-nic)

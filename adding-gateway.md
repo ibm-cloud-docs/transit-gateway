@@ -78,9 +78,6 @@ export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 ```
 {: pre}
 
-For more information, see [Integrating with Virtual Private Endpoint for VPC](/docs/transit-gateway?topic=transit-gateway-vpe-for-ibm-cloud-transit-gateway).
-{: note}
-
 To add a connection on the transit gateway from the CLI, enter the following command:
 
 ```sh
@@ -129,7 +126,7 @@ ibmcloud tg cc $gateway --name classic-conn --network-type classic
 
 To add a connection with the API, follow these steps:
 
-1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment#api-prerequisites-setup).
+1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment&interface=cli#api-prerequisites-setup).
 1. Store any additional variables to be used in the API commands.
 
 ### Request
