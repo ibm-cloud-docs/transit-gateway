@@ -15,22 +15,22 @@ subcollection: transit-gateway
 # Adding and deleting prefix filters
 {: #adding-prefix-filters}
 
-Prefix filtering allows you to set an ordered list of prefix route filters for a transit gateway connection.
+With prefix filtering, you can set an ordered list of prefix route filters for a transit gateway connection.
 {: shortdesc}
 
 ## Before you begin
 {: #adding-prefix-filters-begin}
 
-Make sure that you review the following considerations before creating a prefix filter:
+Make sure that you review the following considerations before you create a prefix filter:
 
 * Only users in the account that contains the network can filter prefixes of that network.
 * You cannot filter incoming prefixes from another account.
 * Prefix filters in the list are processed sequentially. You can modify the order at any time.
 * Review the [prefix service limits](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits) for transit gateways.
-* For cross-account connections, only the account owner of the respective connection can modify prefix filters. Other accounts can view the connection, but cannot modify filters.
-* GRE Tunnel configurations are not implemented as connections. Instead, their routes are learned directly on BGP sessions established over the tunnel. For this reason, prefix filtering is not enabled for these connections.
-* If you select **Request connection to a network in another account** as the connect reach option, you cannot set prefix filters because you are not the network owner of the connection. You must set the prefix filter on the account that owns the connection.
-* Prefix filter subnet masks are specific. For example, a rule defined as `10.10.20.0/24` does not match with subnet `10.10.20.0/28` or any other subnet prefix.
+* For cross-account connections, only the account owner of the respective connection can modify prefix filters. Other accounts can view the connection, but cannot modify the filters.
+* GRE Tunnel configurations are not implemented as connections. Instead, their routes are learned directly on BGP sessions that are established over the tunnel. For this reason, prefix filtering is not enabled for these connections.
+* If you select **Request connection to a network in another account** as the connect reach option, you cannot set prefix filters because you are not the network owner of the connection. Set the prefix filter on the account that owns the connection.
+* Prefix filter subnet masks are specific. For example, a rule that is defined as `10.10.20.0/24` does not match with subnet `10.10.20.0/28` or any other subnet prefix.
 
 ## Working with prefix filters in the UI
 {: #adding-prefix-filters-ui}
@@ -45,8 +45,8 @@ To add a prefix filter to a new connection in the UI, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
 1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
-1. Click **Transit Gateway** from the left navigation pane to show the Transit Gateway page.
-1. From the Transit Gateway page, click the name of the the gateway where you want to add prefix filters.
+1. Click **Transit Gateway** from the left navigation window to show the Transit Gateway page.
+1. From the Transit Gateway page, click the name of the gateway where you want to add prefix filters.
 1. From the gateway's details page, click **Add connection**.
 1. Enter the following information:
 
@@ -57,24 +57,24 @@ To add a prefix filter to a new connection in the UI, follow these steps:
 
       * **Classic infrastructure** networks allow you to connect to IBM Cloud classic resources. Only one classic infrastructure connection is allowed per account.
       * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
-      * **Direct Link** creates a network connection to and from Direct Link 2.0 gateways so that there is a secure connection to on-premises networks and other resources connected to the transit gateway.
+      * **Direct Link** creates a network connection to and from Direct Link 2.0 gateways so that there is a secure connection to on-premises networks and other resources that are connected to the transit gateway.
 
-         If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (using the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link. You can specify the connection type when you create a direct link, or after your direct link is provisioned. For instructions, see [Updating the network connection type](/docs/dl?topic=dl-virtual-connection-types){: external}.
+         If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (that uses the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link. You can specify the connection type when you create a direct link, or after your direct link is provisioned. For instructions, see [Updating the network connection type](/docs/dl?topic=dl-virtual-connection-types){: external}.
          {: important}
 
-      * **{{site.data.keyword.powerSys_notm}}** creates a network connection to and from a {{site.data.keyword.powerSys_notm}} instance so that the {{site.data.keyword.powerSys_notm}} network and resources can connect to networks and other resources connected to the transit gateway.
+      * **{{site.data.keyword.powerSys_notm}}** creates a network connection to and from a {{site.data.keyword.powerSys_notm}} instance so that the {{site.data.keyword.powerSys_notm}} network and resources can connect to networks and other resources that are connected to the transit gateway.
 
          If you select **{{site.data.keyword.powerSys_notm}}**, a Power Systems Virtual Server workspace must be created in a data center after the Power Edge Router has been deployed. For more information, see [Getting started with the Power Edge Router](/docs/power-iaas?topic=power-iaas-per).
          {: important}
 
    * For Connection reach, select one of the following options:
       * **Add new connection in this account** - Enter an optional connection name.
-      * **Request connection to a network in another account** - Enter the IBM Cloud ID of the account that manages the network that you want to connect to, and a connection name. All resources connected to that transit gateway will be accessible from the other network.
+      * **Request connection to a network in another account** - Enter the IBM Cloud ID of the account that manages the network that you want to connect to, and a connection name. All resources connected to that transit gateway are accessible from the other network.
    * Complete all other required information for your connection.
 
 1. Optionally, you can create prefix filters to permit or deny specific routes on specific connections.
 
-   To begin, expand the drop-down arrow in the upper right of the Prefix filtering section. Then, complete the following information:
+   To begin, expand the arrow in the upper right of the Prefix filtering section. Then, complete the following information:
 
    * Adjust the **Default filter** as needed. Your choices are as follows:
 
@@ -88,7 +88,7 @@ To add a prefix filter to a new connection in the UI, follow these steps:
 
       * Select an action type: **Permit** or **Deny**.
       * Enter the network prefix along with its subnet mask (for example, `10.0.0.0/16`).
-      * Optionally, enter values for whether the network should be greater than or equal to the subnet mask you chose.
+      * Optionally, enter values for whether the network should be greater than or equal to the subnet mask that you chose.
       * Click **Save** to add the prefix filter.
 
     Connections are denied or permitted based on the order of the filters in the list. Edit the prefix filter list to adjust the order in which prefixes are processed.
@@ -117,8 +117,8 @@ To add prefix filtering to an existing connection in the UI, follow these steps:
 
     * Select an action.
     * Enter the network prefix along with the subnet mask.
-    * Optionally, enter values if the network should be greater than or equal to a desired subnet mask.
-    * Adjust the order of the filter in the routing table as needed, then click **Save**.
+    * Optionally, enter values if the network should be greater than or equal to a wanted subnet mask.
+    * Adjust the order of the filters in the routing table as needed, then click **Save**.
 
 ### Deleting prefix filters
 {: #deleting-prefix-filters-ui}
@@ -137,7 +137,7 @@ To delete a prefix filter for an existing connection in the UI, follow these ste
 {: #working-prefix-filters-cli}
 {: cli}
 
-You can add prefix filters when you add a new connection using the CLI. You can also delete them.
+You can add prefix filters when you add a new connection by using the CLI. You can also delete them.
 
 ### Adding prefix filters from the CLI
 {: #adding-prefix-filters-cli}
@@ -164,12 +164,12 @@ Where:
 
 - **--before**: Optional: Identifier of the prefix filter that this filter should be applied before. If empty, this filter is applied last.
 
-- **--output**: Optional: Specify if you want the output to display in JSON format.
+- **--output**: Optional: Specify whether you want the output to display in JSON format.
 
 #### Example: Creating a prefix filter
 {: #adding-prefix-filters-cli-example}
 
-This is an example of creating a prefix filter from the CLI.
+An example of creating a prefix filter from the CLI is as follows:
 
 ```sh
 ibmcloud tg pfc 9f559c43-63f4-4da5-b312-b525a8dce185 6c1bdc19-4adb-4760-8cdc-ef3b74b626f7 --prefix 10.0.250.0/24 --action permit --le 32 --ge 28
@@ -222,7 +222,7 @@ Filter b4dbe0a6-c52d-4128-cc32-6f53d86bc82b is deleted.
 {: #working-prefix-filters-api}
 {: api}
 
-You can add prefix filters when you add a new connection with the API. You can also delete them.
+You can add prefix filters when you add a connection with the API. You can also delete them.
 
 ### Adding prefix filters with the API
 {: #adding-prefix-filters-api}
@@ -250,7 +250,7 @@ To add prefix filters with the API, adjust the following parameters:
 |--|--|
 |**action**  \n Required  \n string | Whether to permit or deny prefix filter.  \n **Possible values**: `[permit,deny]`  \n **Example**: `permit`|
 |**prefix**  \n Required  \n string | IP prefix and subnet mask  \n **Example**: `192.168.100.0/24`|
-|**before**  \n string | Identifier of prefix filter to handle the ordering and follow semantics:  \n - When a filter reference another filter in it's before field, then the filter making the reference is applied before the referenced filter. For example: if filter A references filter B in its before field, A is applied before B.  \n - When a new filter is added that has the same before as an existing filter, then the older filter has its before field updated to point to the new filter. Starting with the above example: if filter C is added and it references B in its before field, then A's before field should be modified to point to C, so the order of application would be A, C and finally B.  \n - A filter that has an empty before reference is applied last (though the date order mentioned still applies). So continuing the preceding examples, if filter B has an empty before field, then it is applied last, but if filter D is created with an empty before field, then B's before field is modified to point to D, so B is applied before D.  \n **Example**: `1a15dcab-7e40-45e1-b7c5-bc690eaa9782`|
+|**before**  \n string | Identifier of prefix filter to handle the ordering and follow semantics:  \n - When a filter reference another filter in it's before field, then the filter making the reference is applied before the referenced filter. For example: if filter A references filter B in its before field, A is applied before B.  \n - When a new filter is added that has the same before as an existing filter, then the older filter has its before field updated to point to the new filter. Starting with this example: if filter C is added and it references B in its before field, then A's before field should be modified to point to C, so the order of application would be A, C and finally B.  \n - A filter that has an empty before reference is applied last (though the date order mentioned still applies). So, continuing the preceding examples, if filter B has an empty before field, then it is applied last, but if filter D is created with an empty before field, then B's before field is modified to point to D, so B is applied before D.  \n **Example**: `1a15dcab-7e40-45e1-b7c5-bc690eaa9782`|
 |**ge**  \n integer | IP prefix greater than or equal to this number is processed.|
 |**le**  \n integer | IP prefix less than or equal to this number is processed.|
 {: caption="Table 3. Request body attributes for adding prefix filters" caption-side="bottom"}
@@ -358,13 +358,13 @@ The following response details show after you initiate the request:
 |Status code| Details |
 |--|--|
 |**204**|Prefix filter deleted successfully.|
-|**404**|Prefix filter with the specified identifier could not be found.|
+|**404**|Prefix filter with the specified identifier cannot be found.|
 {: caption="Table 8. Response details for deleting prefix filters" caption-side="bottom"}
 
 #### Example response
 {: #deleting-prefix-filters-api-response-example}
 
-This example illustrates the response that a prefix filter with the specified ID could not be found:
+This example illustrates the response that a prefix filter with the specified ID cannot be found:
 
 ```sh
 {
@@ -379,14 +379,14 @@ This example illustrates the response that a prefix filter with the specified ID
 }
 ```
 
-For more information (including Java, Node, Python and Go examples), see "Remove prefix filter from Transit Gateway Connection" in the [Transit Gateway API reference](/apidocs/transit-gateway#delete-transit-gateway-connection-prefix-filter).
+For more information (including Java, Node, Python, and Go examples), see "Remove prefix filter from Transit Gateway Connection" in the [Transit Gateway API reference](/apidocs/transit-gateway#delete-transit-gateway-connection-prefix-filter).
 {: note}
 
-## Working with prefix filters using Terraform
+## Working with prefix filters by using Terraform
 {: #working-prefix-filters-terraform}
 {: terraform}
 
-Review the following argument references that you can specify for your resource when adding or deleting a prefix filter:
+Review the following argument references that you can specify for your resource when you add or delete a prefix filter:
 
 |Argument|Details|
 |--|--|

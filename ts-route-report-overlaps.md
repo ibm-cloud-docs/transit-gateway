@@ -25,8 +25,8 @@ When you generate a route report, the results might display overlapping or confl
 Your generated report identifies any conflicting routes in the table's Conflict column. 
 {: tsSymptoms}
  
-There are many causes of overlapping routes, one being that overlapping routes might be intentional, such as for High Availability purposes. 
+Overlapping routes have many causes, one being that overlapping routes might be intentional, such as for High Availability purposes. 
 {: tsCauses}
 
-For information on diagnosing potential problems with conflicting or overlapping routes, review the considerations listed in [Addressing route conflicts](/docs/transit-gateway?topic=transit-gateway-route-reports&interface=ui#route-conflicts).
+For information on diagnosing potential problems with conflicting or overlapping routes, review the considerations that are listed in [Addressing route conflicts](/docs/transit-gateway?topic=transit-gateway-route-reports&interface=ui#route-conflicts).
 {: tsResolve}

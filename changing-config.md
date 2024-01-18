@@ -23,27 +23,27 @@ To change your transit gateway configuration in the UI, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
 1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
-1. Click **Transit Gateway** from the left navigation pane.
+1. Click **Transit Gateway** from the left navigation window.
 1. Click the name of the transit gateway that you want to edit.
 
    If you are in the expanded view, click **View details**.
    {: tip}
 
-1. From the Connections page, click the **Actions** button at the top right, then select **Edit**.
+1. From the Connections page, click the **Actions** button at the upper right, then select **Edit**.
 
    From here, you can change the gateway's name and its routing type (Local or Global).
 
    To change a transit gateway's routing type from global to local, you must delete any connections that are not local to the transit gateway's location.
    {: tip}
 
-   When changing from Local to Global routing for a given transit gateway, you are charged for all associated connection traffic.
+   When you change from Local to Global routing for a specific transit gateway, you are charged for all associated connection traffic.
    {: important}
 
 ## Changing your configuration from the CLI
 {: #change-configuration-cli}
 {: cli}
 
-To update properties on an existing gateway from the CLI, execute the following command:
+To update properties on an existing gateway from the CLI, run the following command:
 
 ```sh
 ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--output json] [-h, --help]
@@ -58,7 +58,7 @@ Where:
 
 - **--routing**: Optional: Gateway routing of resources (global | local). Select global to connect resources across regions. Changing routing from global to local requires all existing connections to be local.
 
-- **--output json**: Optional: Specify if you want the output displayed in JSON format.
+- **--output JSON**: Optional: Specify whether you want the output that is displayed in JSON format.
 
 - **--help | -h**: Optional: Get help on this command.
 
@@ -90,7 +90,7 @@ To change the configuration on your transit gateway, set the following parameter
 
 |Query parameters| Details |
 |--|--|
-|**version**  \n Required  \n string | Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date may be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
+|**version**  \n Required  \n string | Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date can be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
 |**Request Body**  \n Required  \n TGPatchTemplate |Update a transit gateway|
 |**global**  \n global|Allow global routing for a transit gateway  \n **Example**: `true`|
 |**name**  \n Name|The user-defined name for this transit gateway connection.  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression ^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
@@ -123,8 +123,8 @@ The following response shows once you initiate the request:
 |**name**  \n Always included  \n string|A human readable name for the transit gateway  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression  `^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `my-transit-gateway-in-TransitGateway`|
 |**location**  \n Always included  \n string|Location of the transit gateway \n **Example:** `us-south`|
 |**created_at**  \n Always included  \n date-time |The date and time that this gateway was created|
-|**global**  \n Always included  \n boolean| Allow global routing for a transit gateway  \n **Example**: `true`|
-|**status**  \n Always included  \n string|The status of the transit gateway. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`available`,`failed`,`pending`,`deleting`]|
+|**global**  \n Always included  \n Boolean| Allow global routing for a transit gateway  \n **Example**: `true`|
+|**status**  \n Always included  \n string|The status of the transit gateway. The list of enumerated values for this property might expand in the future. Code and processes that use this field must tolerate unexpected values.  \n **Possible values:** [`available`,`failed`,`pending`,`deleting`]|
 |**resource_group**  \n ResourceGroupReference  \n |The resource group to use. If unspecified, the account's [default resource group](/apidocs/resource-manager#introduction) is used.
 |- **id**  \n Always included  \n string|The unique identifier for this resource group  \n **Possible values:** Value must match regular expression  `^[0-9a-f]{32}$`  \n **Example:** `56969d6043e9465c883cb9f7363e78e8`|
 |- **href**  \n Always included=  \n URL|The URL for this resource group  \n **Possible values:** Value must match regular expression  `^http(s)?:\/\/([^\/?#]*)([^?#]*)(\?([^#]*))?(#(.*))?$`  \n **Example:** `https://resource-manager.bluemix.net/v1/resource_groups/56969d6043e9465c883cb9f7363e78e8`|
@@ -135,8 +135,8 @@ The following response shows once you initiate the request:
 |--|--|
 |**200**| The Transit Gateway was updated successfully.|
 |**400**| The supplied Transit Gateway patch was invalid.|
-|**404**| A Transit Gateway with the specified identifier could not be found.|
-|**409**| The Transit Gateway could not be updated as there are pre-existing cross-region connections attached.|
+|**404**| A Transit Gateway with the specified identifier cannot be found.|
+|**409**| The Transit Gateway could not be updated because there are pre-existing cross-region connections attached.|
 {: caption="Table 4. Status codes" caption-side="bottom"}
 
 #### Example Response
@@ -161,14 +161,14 @@ This response indicates that the transit gateway was updated successfully:
 ```
 {: screen}
 
-For more information (including Java, Node, Python and Go examples), see "Updates specified Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#update-transit-gateway).
+For more information (including Java, Node, Python, and Go examples), see "Updates specified Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#update-transit-gateway).
 {: note}
 
-## Changing your configuration using the Terraform
+## Changing your configuration by using the Terraform
 {: #change-configuration-terraform}
 {: terraform}
 
-You can specify the following argument references for your resource when changing the configuration of your transit gateway using Terraform:
+You can specify the following argument references for your resource when you change the configuration of your transit gateway by using Terraform:
 
 |Argument|Details|
 |--|--|
