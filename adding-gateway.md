@@ -125,7 +125,7 @@ ibmcloud tg cc $gateway --name classic-conn --network-type classic
 
 To add a connection with the API, follow these steps:
 
-1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment&interface=cli#api-prerequisites-setup).
+1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment&interface=api#api-prerequisites-setup).
 1. Store any additional variables to be used in the API commands.
 
 ### Request
