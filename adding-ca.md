@@ -53,14 +53,14 @@ To connect networks that different accounts own by using the UI, follow these st
 1. Type the CRN of the cross-account network, or if Classic infrastructure or Unbound GRE, enter the IBM Cloud account ID that you want to connect to.
 
    * To get the IBM Cloud account ID for a Classic infrastructure or Unbound GRE tunnel connection, select **Manage > Account** from the {{site.data.keyword.cloud_notm}} console and choose **Account Settings**. Your account ID shows in the **Account** section of the **Account settings** page.
-   * To get the CRN of a VPC, Direct Link, or Power Systems Virtual Server, select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Resource list**. Expand **Networking** (for VPC and Direct Link) or **Computing** (for Power Systems Virtual Server) to list your networking resources, then locate the service that you are looking for. Next, click anywhere in the service's table row (except for the Name link). From the side panel that appears, copy the CRN and paste it into the Add connection pane.
+   * To get the CRN of a VPC, Direct Link, or Power Systems Virtual Server, select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Resource list**. Expand **Networking** (for VPC and Direct Link) or **Computing** (for Power Systems Virtual Server) to list your networking resources, then locate the service that you are looking for. Next, click anywhere in the service's table row (except for the Name link). From the side window that appears, copy the CRN and paste it into the Add connection pane.
 
 1. Complete any remaining fields, then click **Add**. The network connection now shows the **Pending** approval status in the gateway owner's account.
 
    For the Classic infrastructure connection, the ID number is for your IBM Cloud account, not for a SoftLayer account.
    {: note}
 
-   The network owner's account then receives a notification of the request. If the network owner rejects the cross-account connection, no connectivity is established and the connection shows a status of **Rejected**. You can delete this connection at this point. If the cross-account connection is not explicitly approved, it expires after 72 hours.
+   The network owner's account then receives a notification of the request. If the network owner rejects the cross-account connection, no connectivity is established and the connection shows a status of **Rejected**. You can now delete this connection. If the cross-account connection is not explicitly approved, it expires after 72 hours.
 
    Connection requests can be resubmitted if they expire or are rejected.
    {: note}
@@ -69,7 +69,7 @@ To connect networks that different accounts own by using the UI, follow these st
 
 1. In the Connections section, see **Action required** to view the incoming network connection request. A user with the [necessary additional IAM permissions](/docs/transit-gateway?topic=transit-gateway-iam) can then click **Approve** to approve the request.
 
-   After the network owner's account ensures that the connection request is from a legitimate source and approves it, the system establishes routes to and from all other networks connected to the same transit gateway. Use of [network ACLs and/or security groups](/docs/vpc?topic=vpc-security-in-your-vpc#security-in-your-vpc) within networks that are accessible across accounts are highly recommended to control the network traffic flows. You can unilaterally detach cross-account connections by either account through users who have the appropriate permissions.
+   After the network owner's account ensures that the connection request is from a legitimate source and approves it, the system establishes routes to and from all other networks that are connected to the same transit gateway. Use of [network ACLs and/or security groups](/docs/vpc?topic=vpc-security-in-your-vpc#security-in-your-vpc) within networks that are accessible across accounts are highly recommended to control the network traffic flows. You can unilaterally detach cross-account connections by either account through users who have the appropriate permissions.
    {: important}
 
    Click **Approve** to confirm. The status of the network connection indicates **Attaching**.
@@ -96,7 +96,7 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-type NETWORK-T
 Where:
 
 `GATEWAY_ID`
-:   ID of the gateway that the new connection will be on.
+:   ID of the gateway that the new connection is on.
 
 `--name`
 :   Name of the new connection.
@@ -119,7 +119,7 @@ Where:
 ### Examples
 {: #tg-cli-adding-cross-account-connection-transit-gateway-connection-request-examples}
 
-This example illustrates creating a VPC connection named `vpc-connection` using `vpcCRN="crn:v1:bluemix:public:is:us-south:a/3aa0a9999a1a46258064d84f7f447920::vpc:r134-f87014d5-87d2-46d1-9999-24683082f6bc"`:
+This example illustrates creating a VPC connection named `vpc-connection` that uses `vpcCRN="crn:v1:bluemix:public:is:us-south:a/3aa0a9999a1a46258064d84f7f447920::vpc:r134-f87014d5-87d2-46d1-9999-24683082f6bc"`:
 
 ```sh
 ibmcloud tg cc $gateway --name vpc-connection --network-id $vpcCRN --network-type vpc
@@ -238,7 +238,7 @@ The following response details show once you initiate the request:
 |**201**|The transit gateway connection was created successfully.|
 |**400**|An invalid connection template was provided.|
 |**404**|The specified Transit Gateway cannot be found, the specified resource group cannot be found, or the default resource group cannot be found (if the resource group was not specified in the template).|
-|**409**|The network that is being connected must either be in a location that is considered "local" to the specified Transit Gateway, or the specified Transit Gateway must be global. The network being connected cannot already be connected to another Transit Gateway.|
+|**409**|The network that is being connected must either be in a location that is considered "local" to the specified Transit Gateway, or the specified Transit Gateway must be global. The network that is being connected cannot already be connected to another Transit Gateway.|
 {: caption="Table 4. Status codes" caption-side="bottom"}
 
 ##### Example response
