@@ -78,7 +78,6 @@ You can establish connectivity from a VPC to resources in a data center by conne
 | Chennai | CHE01 |
 | Dallas | DAL05, DAL09 |
 | London | LON02 |
-| Madrid | MAD02, MAD04, MAD05 |
 | Milan | MIL01 |
 | Montreal | MON01 |
 | Paris | PAR01 |
