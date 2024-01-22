@@ -23,9 +23,6 @@ In this change log, you can learn about the latest changes, improvements, and up
 {{site.data.keyword.powerSys_notm}} connections for transit gateways
 :    Transit gateways now support {{site.data.keyword.powerSys_notm}} connections. A {{site.data.keyword.powerSys_notm}} connection allows {{site.data.keyword.powerSys_notm}} networks to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway. For details, see [`ibmcloud tg connection-create`](/docs/tg-cli-plugin?topic=tg-cli-plugin-transit-gateway-cli#connection-create).
 
-   Currently, the Power Edge Router (PER) solution is available only in `DAL10`.
-   {: note}
-
 ## 24 April 2023
 {: #cli-apr-2423}
 

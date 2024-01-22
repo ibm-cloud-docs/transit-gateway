@@ -25,9 +25,6 @@ Find out about new and updated features in {{site.data.keyword.tg_full}}.
 {{site.data.keyword.powerSys_notm}} connections for transit gateways
 :    Transit gateways now support {{site.data.keyword.powerSys_notm}} connections. A {{site.data.keyword.powerSys_notm}} connection allows a network to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway. This adds a new Power Systems Virtual Server option when creating a new connection. For details, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-adding-connections&interface=ui).
 
-   Currently, the Power Edge Router (PER) solution is available only in `DAL10`.
-   {: note}
-
 ## 22 June 2023
 {: #transit-gateway-jun2223}
 {: release-note}
