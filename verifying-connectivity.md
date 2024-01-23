@@ -18,7 +18,7 @@ subcollection: transit-gateway
 Several issues exist that can cause problems when attempting to communicate between resources that are connected to your {{site.data.keyword.tg_full}}.
 {: shortdesc}
 
-You may receive error messages that state you need to check whether the resource that you are requesting to access exists, and to review your network topology.
+You might receive error messages that state that you need to check whether the resource that you are requesting to access exists, and to review your network topology.
 {: tsSymptoms}
 
 Known issues include incorrect permissions, overlapping VPC prefixes and classic infrastructure subnets, networking interface card routing, access control lists, firewalls and gateway appliances, and routing in classic virtual server instances.

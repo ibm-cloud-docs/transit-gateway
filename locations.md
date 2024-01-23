@@ -70,7 +70,7 @@ For a detailed overview and list of data centers that are part of the MZR, see [
 ## Data centers
 {: #szr-table}
 
-You can establish connectivity from a VPC to resources in a data center by connecting both the VPC and classic infrastructure to a transit gateway. The following table lists the data centers in {{site.data.keyword.cloud_notm}} for interconnecting classic infrastructure to VPCs using a transit gateway.
+You can establish connectivity from a VPC to resources in a data center by connecting both the VPC and classic infrastructure to a transit gateway. The following table lists the data centers in {{site.data.keyword.cloud_notm}} for interconnecting classic infrastructure to VPCs by using a transit gateway.
 
 | Location | Data Center |
 |-----------|----------|

@@ -54,8 +54,7 @@ IAM_TOKEN=`curl -k -X POST \
   "https://iam.cloud.ibm.com/identity/token"  |jq -r '(.token_type + " " + .access_token)'`
 ```
 
-To view the IAM token, run `echo $IAM_TOKEN`. The result should look like this:
-
+To view the IAM token, run `echo $IAM_TOKEN`. The result look similar to the following:
 ```text
 Bearer <your token>
 ```
@@ -88,7 +87,7 @@ To verify that the variable was saved, run `echo $transit_api_endpoint` and ensu
 ### Step 4: Store the API version as a variable
 {: #store-api-version-variable}
 
-Every API request must include the `version` parameter, in the format `YYYY-MM-DD`. Run the following command to store the version date in a variable so that it can be reused in your session. For more information about setting the `version` parameter, see **Versioning** in the [Transit Gateway API](/apidocs/transit-gateway#api-versioning).
+Every API request must include the `version` parameter in the format `YYYY-MM-DD`. Run the following command to store the version date in a variable so that it can be reused in your session. For more information about setting the `version` parameter, see **Versioning** in the [Transit Gateway API](/apidocs/transit-gateway#api-versioning).
 
 ```sh
 api_version="2020-03-31"
@@ -102,7 +101,7 @@ To verify that this variable was saved, run ``echo $api_version`` and make sure 
 If you run into unexpected results, add the `--verbose` (debug) flag after the `curl` command to obtain detailed logging information.
 {: tip}
 
-* Call the [List Available Locations API](/apidocs/transit-gateway#list-gateway-locations) to see the locations available for your transit gateway, in JSON format. At least one object should return.
+* Call the [List Available Locations API](/apidocs/transit-gateway#list-gateway-locations) to see the locations available for your transit gateway, in JSON format. At least one object returns.
 
     ```sh
     curl -X GET "$transit_api_endpoint/v1/offering_types/dedicated/locations?version=$api_version"   -H "Authorization: $IAM_TOKEN"

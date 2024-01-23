@@ -15,7 +15,7 @@ subcollection: transit-gateway
 # Using virtual private endpoints for VPC to privately connect to {{site.data.keyword.tg_full_notm}}
 {: #vpe-connection}
 
-{{site.data.keyword.cloud}} Virtual Private Endpoints (VPE) for VPC enables you to connect to {{site.data.keyword.tg_full_notm}} from your VPC network by using the IP addresses of your choosing, allocated from a subnet within your VPC.
+{{site.data.keyword.cloud}} Virtual Private Endpoints (VPE) for VPC enables you to connect to {{site.data.keyword.tg_full_notm}} from your VPC network by using the IP addresses of your choosing, which is allocated from a subnet within your VPC.
 {: shortdesc}
 
 VPEs are virtual IP interfaces that are bound to an endpoint gateway created on a per service, or service instance, basis (depending on the service operation model). The endpoint gateway is a virtualized function that scales horizontally, is redundant and highly available, and spans all availability zones of your VPC. Endpoint gateways enable communications from virtual server instances within your VPC and {{site.data.keyword.cloud}} service on the private backbone. VPE for VPC gives you the experience of controlling all the private addressing within your cloud. For more information, see [About virtual private endpoint gateways](/docs/vpc?topic=vpc-about-vpe).
@@ -34,7 +34,7 @@ Before you target a virtual private endpoint for {{site.data.keyword.cloud}}, yo
 ## Setting up a VPE for {{site.data.keyword.tg_full_notm}}
 {: #vpe-endpoint-setup}
 
-When you create a VPE gateway by using the CLI or API, you must specify the [Cloud Resource Name (CRN)](/docs/account?topic=account-crn) of the region in which you want connect to {{site.data.keyword.tg_full_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
+When you create a VPE gateway by using the CLI or API, you must specify the [Cloud Resource Name (CRN)](/docs/account?topic=account-crn) of the region in which you want to connect to {{site.data.keyword.tg_full_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
 
 
 {{site.data.keyword.tg_full_notm}} supports VPEs in all the VPC regions as shown.
@@ -62,7 +62,7 @@ To configure a virtual private endpoint gateway, follow these steps:
 1. [Bind a reserved IP address](/docs/vpc?topic=vpc-bind-unbind-reserved-ip) to the endpoint gateway.
 1. View the created VPE gateways associated with the {{site.data.keyword.tg_full_notm}}. For more information, see [Viewing details of an endpoint gateway](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway).
 
-Now your virtual server instances in the VPC can access your {{site.data.keyword.tg_full_notm}} instance privately through it.
+Now, your virtual server instances in the VPC can access your {{site.data.keyword.tg_full_notm}} instance privately through it.
 
 ## Using your VPE for {{site.data.keyword.tg_full_notm}}
 {: #using-transit-gateway-vpe}
@@ -93,7 +93,7 @@ Use the following steps to update to the latest version of the CLI and the {{sit
 {: #vpe-api}
 {: api}
 
-After creating an endpoint gateway for the {{site.data.keyword.tg_full_notm}} service, use the service endpoints FQDN `private.transit.cloud.ibm.com` in the URL to access the service. For example:
+After you create an endpoint gateway for the {{site.data.keyword.tg_full_notm}} service, use the service endpoint's FQDN `private.transit.cloud.ibm.com` in the URL to access the service. For example:
 
 ```sh
 curl https://private.transit.cloud.ibm.com/v1/transit_gateways?version='2020-03-31' -H "Authorization: Bearer $iam_token"
@@ -104,7 +104,7 @@ curl https://private.transit.cloud.ibm.com/v1/transit_gateways?version='2020-03-
 {: #vpe-sdk}
 {: api}
 
-After creating an endpoint gateway for {{site.data.keyword.tg_full_notm}}, you must use the private endpoint's FQDN when setting the service's FQDN during construction of the transit gateway service object.
+After you create an endpoint gateway for {{site.data.keyword.tg_full_notm}}, you must use the private endpoint's FQDN when you set the service's FQDN during construction of the transit gateway service object.
 
 ```sh
 private.transit.cloud.ibm.com
@@ -117,7 +117,7 @@ For examples of setting the service's FQDN for the specific SDK language, see [S
 {: #vpe-terraform}
 {: terraform}
 
-If you plan to access the transit gateway service using Terraform, make sure to set the `IBMCLOUD_TG_API_ENDPOINT` environment variable to `private.transit.cloud.ibm.com`. For example:
+If you plan to access the transit gateway service by using Terraform, make sure to set the `IBMCLOUD_TG_API_ENDPOINT` environment variable to `private.transit.cloud.ibm.com`. For example:
 
 ```sh
 export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
