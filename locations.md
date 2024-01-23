@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-06-22"
+  years: 2020, 2024
+lastupdated: "2024-01-23"
 
 keywords: about, features, overview
 
@@ -67,10 +67,10 @@ An MZR provides consistent cloud services across different zones, better resilie
 For a detailed overview and list of data centers that are part of the MZR, see [Multizone regions](/docs/overview?topic=overview-locations#table-mzr).
 {: note}
 
-## Data centers
+## Transit-Gateway-compatible classic data centers
 {: #szr-table}
 
-You can establish connectivity from a VPC to resources in a data center by connecting both the VPC and classic infrastructure to a transit gateway. The following table lists the data centers in {{site.data.keyword.cloud_notm}} for interconnecting classic infrastructure to VPCs by using a transit gateway.
+You can establish connectivity from a VPC to resources in a data center by connecting both the VPC and classic infrastructure to a transit gateway. The following table lists the IBM Cloud classic data centers that can achieve connectivity to VPC using Transit Gateway.
 
 | Location | Data Center |
 |-----------|----------|
