@@ -38,5 +38,7 @@ Provide the following details:
    * In the output of the previous command, get the connection IDs for the connections to the relevant VPCs, and if relevant, the classic infrastructure connection. Also, collect the output of the following command against each connection ID: `ibmcloud tg connection GATEWAY_ID CONNECTION_ID`.
    * Ping and trace results for connectivity issues.
 
-2. Provide a network diagram with your specific setup. For example, see [Interconnectivity patterns](/docs/transit-gateway?topic=transit-gateway-about#patterns).
-3. List your source and destination IP addresses.
+1. Provide a network diagram with your specific setup. For example, see [Interconnectivity patterns](/docs/transit-gateway?topic=transit-gateway-about#patterns).
+1. List your source and destination IP addresses.
+
+Edit icon ![Edit icon](/images/edit.png)
