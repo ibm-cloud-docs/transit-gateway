@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-23"
+lastupdated: "2024-04-16"
 
 keywords: about, features, overview
 
@@ -32,7 +32,6 @@ An MZR provides consistent cloud services across different zones, better resilie
 | Dallas | us-south |
 | San Paulo | br-sao |
 | Toronto | ca-tor |
-| Washington DC | us-east |
 {: caption="Table 1. MZRs in North and South America" caption-side="bottom"}
 {: #tg-americas-mzr}
 {: tab-title="Americas"}
@@ -76,12 +75,11 @@ You can establish connectivity from a VPC to resources in a data center by conne
 |-----------|----------|
 | Amsterdam | AMS03 |
 | Chennai | CHE01 |
-| Dallas | DAL05, DAL09 |
+| Dallas | DAL09 |
 | London | LON02 |
 | Milan | MIL01 |
 | Montreal | MON01 |
 | Paris | PAR01 |
-| San Jose | SJC01, SJC03, SJC04 |
+| San Jose | SJC03, SJC04 |
 | Singapore | SNG01 |
-| Washington DC | WDC01 |
 {: caption="Table 2. Data centers for classic Softlayer IaaS" caption-side="bottom"}
