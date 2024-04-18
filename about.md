@@ -145,7 +145,7 @@ Direct Link can be connected to either local or remote transit gateways.
 
 ![Connect On-Premise Network to Transit Gateway](images/dlaas.png "Connect Direct Link on-premises network"){: caption="Figure 9. Connect on-premises network using Direct Link" caption-side="bottom"}
 
-### Use case 10: Location connectivity by using {{site.data.keyword.powerSys_notm}} and Direct Link Connect
+### Power Virtual Server uses cases using Transit Gateway
 {: #use-case-10}
 
-You can use IBM Cloud Transit Gateway with {{site.data.keyword.powerSys_notm}} and Direct Link Connect for high-bandwidth customer demand. For more information, see [Connecting two {{site.data.keyword.powerSys_notm}} environments by using IBM Cloud Transit Gateway](/docs/power-iaas?topic=power-iaas-network-architecture-diagrams#network-reference-architecture-tgw).
+For use cases involving {{site.data.keyword.powerSys_notm}} workplaces, see [Power Edge Router use cases](/docs/power-iaas?topic=power-iaas-network-architecture-diagrams#per-use-cases).
