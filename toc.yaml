@@ -75,7 +75,11 @@ toc:
             label: Logging and monitoring
             topics:
             - at-events-docs-tg.md
-
+        - topicgroup:
+            label: Transit Gateway hazardous change remediation
+            topics:
+            - hcr-pagination-support.md
+            - hcr-removing-restrictions.md
     - navgroup:
        id: reference
        topics:
