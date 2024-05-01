@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2023-02-23"
+  years: 2020, 2024
+lastupdated: "2024-05-01"
 
 keywords: verifying, connection, connectivity
 
@@ -19,4 +19,4 @@ A common problem when trying to connect networks is that they may have overlappi
 
 VPCs created this way do not communicate through a transit gateway because all the traffic stays within the local VPC network. Virtual Machines provisioned on different VPCs with the same IP may appear to ping through the transit gateway, but in reality are just pinging themselves.
 
-When creating VPCs that are intended to be interconnected using a transit gateway, make sure to create the VPCs with non-overlapping VPC prefixes. When creating VPCs that are also intended to be interconnected with your {{site.data.keyword.cloud_notm}} classic infrastructure, do not use prefixes in your VPCs that overlap with the `10.0.0.0/14`, `10.200.0.0/14`, `10.198.0.0/15`, and `10.254.0.0/16` blocks. Also, don't use addresses from your classic infrastructure subnets. To view a list of your classic infrastructure subnets, see [View all subnets](/docs/subnets?topic=subnets-view-all-subnets).
+When creating VPCs that are intended to be interconnected using a transit gateway, make sure to create the VPCs with non-overlapping VPC prefixes. When creating VPCs that are also intended to be interconnected with your {{site.data.keyword.cloud_notm}} classic infrastructure, do not use prefixes in your VPCs that overlap with the `10.0.0.0/14`, `10.200.0.0/14`, and `10.198.0.0/15` blocks. Also, don't use addresses from your classic infrastructure subnets. To view a list of your classic infrastructure subnets, see [View all subnets](/docs/subnets?topic=subnets-view-all-subnets).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-24"
+lastupdated: "2024-05-01"
 
 keywords: updates, additions, improvements
 
@@ -18,6 +18,12 @@ content-type: release-note
 {: #transit-gateway-release-notes}
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
+
+## 1 May 2024
+{: #transit-gateway-may0124}
+
+Behavior change: Disable advertisement of service network routes from transit gateway connections
+:   If any connection on a transit gateway advertises a service route, the service route is not advertised to any classic connections on that transit gateway. Before this change, Transit Gateway advertised all routes (from any connection) to all of its other connections. For more information, see [Preparing for Transit Gateway changes to advertised service network routes](/docs/transit-gateway?topic=transit-gateway-notification-dl-tgw).
 
 ## 24 June 2023
 {: #transit-gateway-jun2423}
