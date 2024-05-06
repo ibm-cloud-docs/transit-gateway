@@ -32,19 +32,19 @@
       "view_more": "/docs/transit-gateway?topic=transit-gateway-transit-gateway-release-notes",
       "tiles": [
         {
-          "date": "April 2023",
-          "title": "Multi-account support for IBM Cloud Direct Link",
-          "description": "Transit Gateway now includes cross-account support for Direct Link connections."
+          "date": "01 May 2024",
+          "title": "Behavior change: Disable advertisement of service network routes from transit gateway connections",
+          "description": "If any connection on a transit gateway advertises a service route, the service route is not advertised to any classic connections on that transit gateway. Before this change, Transit Gateway advertised all routes (from any connection) to all of its other connections."
         },
         {
-          "date": "November 2022",
-          "title": "Transit gateway unbound GRE tunnels",
-          "description": "You can now use an unbound Generic Routing Encapsulation (GRE) tunnel transit gateway connection to connect endpoints, which allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources."
+          "date": "24 June 2023",
+          "title": "Power Virtual Server connections for transit gateways",
+          "description": "Transit gateways now support Power Virtual Server connections. A Power Virtual Server connection allows a network to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway."
         },
         {
-          "date": "March 2022",
-          "title": "Transit gateway prefix filtering",
-          "description": "Network prefix filters simplify the management of the IP addresses that you reference in your resources to route network traffic. You can create prefix filters to permit or deny specific routes on specific connections. These prefix filters are added to an ordered list that is processed sequentially. A default filter (permit or deny all prefixes) is applied after the prefix filter list is processed."
+          "date": "22 June 2023",
+          "title": "Madrid multi-zone region (MZR) support",
+          "description": " "
         }
       ]
     }
