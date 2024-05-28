@@ -46,7 +46,7 @@ While the default `limit` value allows your existing clients to retrieve the ent
 ## How do you set this optional `limit` value?
 {: #set-limit-parameter}
 
-The list of connections uses the default value unless you set a 'limit' value.
+The list of connections uses the default value unless you set a `limit` value.
 
 * For CLI, use the [`ibmcloud tg connections`](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-connections) command.
 * For API, [retrieve all connections for a transit gateway](/apidocs/transit-gateway#list-connections).
