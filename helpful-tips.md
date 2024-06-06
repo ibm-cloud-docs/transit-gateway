@@ -41,6 +41,52 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 
 The [IBM Cloud cost estimator](/cloud/cloud-calculator?mhsrc=ibmsearch_a&mhq=cost%20estimator), located on the Transit Gateway provisioning page, cannot interpret network connection types. To get a reliable cost estimate, you must input the estimated number of transit gateways and connections. Keep in mind that if you create a redundant GRE, each tunnel is an individual connection that counts against your [connection limit](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits).
 
+## Classic infrastructure connection considerations
+{: #classic-infra-connection-considerations}
+
+* To use a transit gateway to connect your VPCs to your IBM Cloud classic infrastructure, you must enable your classic account for virtual routing and forwarding (VRF) and link it to your IBM Cloud account. For information on enabling your account for VRF, see [Enabling VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint).
+
+* When you connect a VPC and the classic infrastructure to a transit gateway, all prefixes in the VPC become visible to the classic infrastructure VRF, which uses IP addresses in the `10.0.0.0/8` space. To ensure successful connectivity with the classic infrastructure, do not use prefixes in your VPCs that overlap with the `10.0.0.0/14`, `10.200.0.0/14`, `10.198.0.0/15`, and `10.254.0.0/16` blocks. Also, don't use addresses from your classic infrastructure subnets. To view a list of your classic infrastructure subnets, see [View all subnets](/docs/subnets?topic=subnets-view-all-subnets).
+
+* Classic virtual server instances can have both a private (`eth0`) and a public (`eth1`) network interface. Currently, the routing tables for these interfaces point the default gateway to the public interface (`eth1`). You might have to add routing entries to route the subnets from other VPCs through the private interface.
+
+* All of your IBM Cloud classic infrastructure networks across [MZRs](/docs/overview?topic=overview-locations#table-mzr) are accessible through this connection, regardless of the location of the transit gateway or the routing type specified.
+
+* Classic infrastructure resources located in these [data centers](/docs/transit-gateway?topic=transit-gateway-tg-locations#szr-table) connect through a transit gateway to VPC resources.
+
+* When classic infrastructure is connected to a transit gateway, it also includes any "Classic Access VPCs" attached to the account, because the subnets for these VPCs are associated with the classic infrastructure VRF. This is the only way to connect a transit gateway to a Classic Access VPC: by connecting the entire classic infrastructure to the transit gateway (instead of the specific Classic Access VPCs).
+
+* Classic connections residing in the same data center are unable to communicate with each other if they are in a different region than the transit gateway.
+
+## Generic Routing Encapsulation (GRE) connection considerations
+{: #gre-considerations}
+
+When configuring a GRE tunnel, you must specify an availability zone in which to create the tunnel. Because of this, if for some reason that zone becomes unavailable, any network connected through a GRE tunnel on that zone is unreachable. To configure a highly available GRE tunnel, you must create a GRE tunnel in multiple zones, connecting the same endpoints.
+
+GRE connections require the use of a BGP service between GRE tunnel IP addresses. The transit gateway configures a BGP service on the tunnel connection, before connecting to the other tunnel endpoint. Then, once the BGP protocol exchanges routes between the connected endpoint and the transit gateway, the GRE tunnel becomes the data path for the routed traffic.
+
+GRE Tunnel routes are learned directly on BGP sessions established over the tunnel. For this reason, prefix filtering is not enabled for these connections.
+
+The number of GRE tunnels connected to a transit gateway is quota limited. The default quota is 12.
+
+Legacy GRE tunnel considerations:
+   * Classic routes are not advertised through a traditional GRE tunnel.
+   * Legacy GRE tunnels cannot communicate through other GRE tunnels on the same transit gateway.
+   * Legacy GRE tunnels require a classic connection on the transit gateway before creation. As a result, all classic subnets will be advertised to all connections attached to the transit gateway, as well as any other of the connection's subnets on the classic network.
+
+Unbound GRE tunnel considerations:
+   * Classic routes are advertised through an unbound GRE tunnel.
+   * Unbound GRE tunnels can communicate through other unbound GRE tunnels connected to the same transit gateway in the same availability zone.
+   * Unbound GRE tunnels cannot communicate with other unbound GRE tunnels on the same transit gateway if they are in a different availability zone. Unbound GRE tunnels in this scenario cannot be relied on for network isolation.
+
+   If you require network isolation, consider using separate transit gateways.
+   {: tip}
+
+   * Unbound GRE tunnels do not require a classic connection on the transit gateway. Classic network subnets will not be advertised to the connections on the transit gateway (or vice versa).
+   * The default number of unique base networks that can be targeted by unbound GRE tunnel connections is limited to 5. You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need these service limits expanded.
+
+For more information and a use case example, refer to [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).
+
 
 
 ## Direct Link connection consideration
