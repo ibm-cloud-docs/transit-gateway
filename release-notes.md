@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020, 2023
+  years: 2020, 2024
 lastupdated: "2024-05-01"
 
 keywords: updates, additions, improvements
@@ -19,14 +19,18 @@ content-type: release-note
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
 
+
+
 ## 1 May 2024
 {: #transit-gateway-may0124}
+{: release-note}
 
 Behavior change: Disable advertisement of service network routes from transit gateway connections
 :   If any connection on a transit gateway advertises a service route, the service route is not advertised to any classic connections on that transit gateway. Before this change, Transit Gateway advertised all routes (from any connection) to all of its other connections. For more information, see [Preparing for Transit Gateway changes to advertised service network routes](/docs/transit-gateway?topic=transit-gateway-notification-dl-tgw).
 
 ## 24 June 2023
 {: #transit-gateway-jun2423}
+{: release-note}
 
 {{site.data.keyword.powerSys_notm}} connections for transit gateways
 :    Transit gateways now support {{site.data.keyword.powerSys_notm}} connections. A {{site.data.keyword.powerSys_notm}} connection allows a network to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway. This adds a new Power Systems Virtual Server option when creating a new connection. For details, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-adding-connections&interface=ui).
@@ -54,7 +58,7 @@ Unbound GRE tunnels
    * The ability to communicate through other unbound GRE tunnels on the same transit gateway.
    * Do not require a classic connection on the transit gateway. The classic network's subnets will not be advertised to all the connections on the transit gateway and vice versa.
 
-:    See [Creating an Unbound Generic Routing Encapsulation tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection) for more information.
+:    See [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection) for more information.
 
 
 ## 26 March 2022

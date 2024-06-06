@@ -17,24 +17,27 @@ subcollection: transit-gateway
 
 In this change log, you can learn about the latest changes, improvements, and updates for {{site.data.keyword.tg_full}}.
 
+
+
 ## 24 June 2023
 {: #cli-june2424}
 
 {{site.data.keyword.powerSys_notm}} connections for transit gateways
-:    Transit gateways now support {{site.data.keyword.powerSys_notm}} connections. A {{site.data.keyword.powerSys_notm}} connection allows {{site.data.keyword.powerSys_notm}} networks to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway. For details, see [`ibmcloud tg connection-create`](/docs/tg-cli-plugin?topic=tg-cli-plugin-transit-gateway-cli#connection-create).
+:    Transit gateways now support {{site.data.keyword.powerSys_notm}} connections. A {{site.data.keyword.powerSys_notm}} connection allows {{site.data.keyword.powerSys_notm}} networks to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway. For details, see [**`ibmcloud tg connection-create`**](/docs/tg-cli-plugin?topic=tg-cli-plugin-transit-gateway-cli#connection-create).
 
 ## 24 April 2023
 {: #cli-apr-2423}
 
 Direct Link multi-account support
-:    Changed command: You can now create a connection of type `directlink` to pass into the [connection-create](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#connection-create) command and create a direct link from a different account owner. Previously only connections of type `vpc` and `classic` were allowed.
+:    Changed command: You can now create a connection of type `directlink` to pass into the [**`connection-create`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#connection-create) command and create a direct link from a different account owner. Previously only connections of type `vpc` and `classic` were allowed.
 
 ## 30 November 2022
 {: #cli-november3022}
 
 Unbound GRE tunnels
-:    You can now use an unbound Generic Routing Encapsulation (GRE) tunnel connection to connect endpoints, which allows a transit gateway to connect to overlay networks hosted on classic infrastructure resource.
-:    New commands:
+:    You can use an unbound Generic Routing Encapsulation (GRE) tunnel connection to connect endpoints, which allows a transit gateway to connect to overlay networks hosted on classic infrastructure resource.
+
+   New [**`tg connection-create-gre`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=cli#connection-create-gre) command options:
 
     * `base-network-type` - Network type of the base connection (classic). For use only with the `unbound_gre_tunnel` network type.
     * `network-account-id` - ID of account to connect to a classic connection. For use only with the `classic` type when the account of the connection is different than the gateway's account.
@@ -56,7 +59,7 @@ Transit gateway route reports
     * Which connections supply which routes
     * Overlapping routes
 
-:    For more information, see [Generating a transit gateway route report](/docs/transit-gateway?topic=transit-gateway-route-reports&interface=cli).
+    For more information, see [Generating a transit gateway route report](/docs/transit-gateway?topic=transit-gateway-route-reports&interface=cli).
 
 ## 30 August 2021
 {: #cli-aug3021}
@@ -74,9 +77,10 @@ Allow Generic Routing Encapsulation (GRE) connections for transit gateways
 {: #cli-mar0121}
 
 Classic infrastructure connections across IBM Cloud accounts
+
 :    You can now connect to {{site.data.keyword.cloud}} classic infrastructure in another {{site.data.keyword.cloud_notm}} account by providing the cloud account ID when adding a connection to your transit gateway. The account containing the classic infrastructure is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity.
 
-:    For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
+   For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
 
 ## 01 January 2021
 {: #cli-jan0121}
@@ -84,7 +88,7 @@ Classic infrastructure connections across IBM Cloud accounts
 Connect networks to multiple local gateways
 :    You can now connect networks, VPCs, and classic connections to multiple local transit gateways. Previously, you could connect a network only to a single transit gateway. Now traffic between local networks can use a local gateway. In addition, if you need to connect to a remote network, you can attach to a global gateway. Routing of traffic between networks takes an optimized path (if multiple connections exist), meaning local traffic stays local to the region and is not charged.
 
-:    The limit for the number of gateways per account has been updated to ten, and the limit of gateways per region to five. You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need to expand your service limits further.
+   The limit for the number of gateways per account has been updated to ten, and the limit of gateways per region to five. You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need to expand your service limits further.
 
 ## 01 July 2020
 {: #cli-jul-0120}
@@ -92,4 +96,4 @@ Connect networks to multiple local gateways
 VPC connections across IBM Cloud accounts
 :    You can now connect to a VPC in another IBM Cloud account by providing the CRN of the VPC when adding a connection to your transit gateway. The account containing the VPC is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity for that VPC.
 
-:    For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
+   For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).

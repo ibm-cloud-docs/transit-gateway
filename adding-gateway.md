@@ -15,7 +15,7 @@ subcollection: transit-gateway
 # Adding a connection
 {: #adding-connections}
 
-You can add a connection to a transit gateway by using the UI, CLI, and API.
+You can add a connection to a transit gateway by using the UI, CLI, API, and Terraform.
 {: shortdesc}
 
 ## Adding a connection in the UI
@@ -24,19 +24,18 @@ You can add a connection to a transit gateway by using the UI, CLI, and API.
 
 To add a connection to a transit gateway, follow these steps:
 1. Open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
-1. Click **Transit Gateway** from the left navigation window.
+1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity** > **Transit Gateway**.
 1. Click the name of the transit gateway where you want to add a connection.
 
-   If you are in the expanded view, click **View details**.
+   If you are in the expanded view, click **View full details**.
    {: tip}
 
-1. Click **Add connection**.
+1. In the Connections view, click **Add connection**.
 1. Choose and configure the specific network connections that you want to add to your transit gateway. Choices include:
 
-   * **Classic infrastructure** - Allows you to connect to IBM Cloud classic resources.
    * **VPC** - Allows you to connect to your account's VPC resources, or VPC resources from other accounts as well.
-   * **Unbound GRE tunnel** - Allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For prerequisites and detailed instructions, see [Creating an Unbound Generic Routing Encapsulation tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
+   * **Classic infrastructure** - Allows you to connect to IBM Cloud classic resources.
+   
    * **Direct Link** - Creates a network connection to and from Direct Link gateways so that there is a secure connection to on-premises networks and other resources that are connected to the transit gateway.
 
       If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (that uses the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link.
@@ -50,6 +49,8 @@ To add a connection to a transit gateway, follow these steps:
 
       To find out if your {{site.data.keyword.powerSys_notm}} workspace is set up correctly, go to the workspace and check the navigation for a Cloud connections page. If there isn't a **Cloud connections** page, the workspace leverages the Power Edge Router and can be added as a connection to Transit Gateway. Otherwise, you must configure virtual connections with Cloud connections on the {{site.data.keyword.powerSys_notm}}.
       {: important}
+
+   * **Unbound GRE tunnel** - Allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For prerequisites and detailed instructions, see [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
 
 1. Click **Add** to create a connection.
 

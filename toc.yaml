@@ -10,7 +10,6 @@ toc:
     product-page: https://www.ibm.com/products/transit-gateway
     path: transit-gateway
     label: Transit Gateway
-
   entries:
     - navgroup:
        id: learn
@@ -30,7 +29,6 @@ toc:
             - include: ../vpc/private-connectivity-vpe.md
             - include: ../vpc/interconnectivity.md
        - release-notes.md
-
     - navgroup:
        id: tutorial
        topics:
@@ -45,19 +43,18 @@ toc:
        topics:
         - connecting-vpcs.md
         - iam.md
-        - viewing-gateway.md
         - topicgroup:
             label: Managing transit gateways
             topics:
             - adding-gateway.md
             - adding-ca.md
-            - create-gre.md
-            - create-unbound-gre.md
-            - editing-connection.md
-            - changing-config.md
             - add-prefix-filters.md
+            - changing-config.md
+            - create-unbound-gre.md
+            - create-gre.md
             - delete-connection.md
             - deleting-gateway.md
+            - editing-connection.md
             - displayroutereport.md
         - terraform.md
         - set-up-environment.md
@@ -100,7 +97,6 @@ toc:
            href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection
        - locations.md
        - tg-responsibilities.md
-
     - navgroup:
        id: help
        topics:

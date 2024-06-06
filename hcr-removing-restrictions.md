@@ -27,7 +27,7 @@ A direct link must be in transit mode so that it can only connect to transit gat
 ## What are the effects of this change?
 {: #affected-by-this-change}
 
-All transit gateways with either a classic or Direct Link connection can be affected by this change to 10.0.0.0/14, 10.198.0.0/15, and 10.200.0.0/14 routes.
+All transit gateways with either a classic or Direct Link connection can be affected by this change to `10.0.0.0/14`, `10.198.0.0/15`, and `10.200.0.0/14` routes.
 
  * Classic connections will no longer see these routes, even if they previously did from other non-Direct Link connections.
 * Other non-classic connections will see these routes from Direct Link connections.
