@@ -20,6 +20,8 @@ content-type: release-note
 Check back regularly to see what's new with {{site.data.keyword.cloud}} Transit Gateway API.
 {: shortdesc}
 
+
+
 ## 24 June 2023
 {: #transit-gateway-ju2423}
 

@@ -32,9 +32,14 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 * Transit gateways and their connections can take several minutes after provisioning before they are available.
 * Be descriptive when naming your transit gateway connections. When connecting to resources across accounts, you must specify a connection name. When connecting to resources in the same account as the transit gateway, the VPC name or the word 'classic' is the default selection and can be modified.
 * {{site.data.keyword.tg_full_notm}} is a multi-tenant application, where a single instance of the software, and its supporting infrastructure, serves multiple customers. As a result, monitoring your bandwidth use is important. If you use too much bandwidth, your transit gateway instance may be suspended. If you suspect this is the case, check the transit gateway instance connection status to see if it is in a `Suspended` state. If so, [contact support](/docs/transit-gateway?topic=transit-gateway-getting-help-and-support) to reinstate it.
-* The following ASNs are blocked on Transit Gateway GRE tunnels and Direct Link connections. Avoid using these ASNs on appliances so that they are not included on the advertised routes in the AS path. Having these ASNs included prevent networks from working properly.
+* The following ASNs are blocked on Transit Gateway Generic Routing Encapsulation (GRE) and Direct Link connections. Avoid using these ASNs on appliances so that they are not included on the advertised routes in the AS path. Having these ASNs included prevent networks from working properly.
 
    `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200`–‍`65234`, `65402‍`–‍`65433`, `65500`, and `4201065000‍`–‍`4201065999`
+
+## Pricing considerations
+{: #pricing-considerations}
+
+The [IBM Cloud cost estimator](/cloud/cloud-calculator?mhsrc=ibmsearch_a&mhq=cost%20estimator), located on the Transit Gateway provisioning page, cannot interpret network connection types. To get a reliable cost estimate, you must input the estimated number of transit gateways and connections. Keep in mind that if you create a redundant GRE, each tunnel is an individual connection that counts against your [connection limit](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits).
 
 ## Classic infrastructure connection considerations
 {: #classic-infra-connection-considerations}
@@ -56,31 +61,39 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 ## Generic Routing Encapsulation (GRE) connection considerations
 {: #gre-considerations}
 
-When configuring a GRE tunnel, you must specify an availability zone in which to create the tunnel. Because of this, if for some reason that zone becomes unavailable, any network connected through a GRE tunnel on that zone is unreachable. To configure a highly available GRE tunnel, you must create a GRE tunnel in multiple zones, connecting the same endpoints.
+Review the following considerations for your particular GRE connection.
 
-GRE connections require the use of a BGP service between GRE tunnel IP addresses. The transit gateway configures a BGP service on the tunnel connection, before connecting to the other tunnel endpoint. Then, once the BGP protocol exchanges routes between the connected endpoint and the transit gateway, the GRE tunnel becomes the data path for the routed traffic.
+### General GRE connection considerations
+{: #gre-general-considerations}
 
-GRE Tunnel routes are learned directly on BGP sessions established over the tunnel. For this reason, prefix filtering is not enabled for these connections.
+* When configuring a GRE tunnel, you must specify an availability zone in which to create the tunnel. Because of this, if for some reason that zone becomes unavailable, any network connected through a GRE tunnel on that zone is unreachable. To configure a highly available GRE tunnel, you must create a GRE tunnel in multiple zones, connecting the same endpoints.
+* GRE connections require the use of a BGP service between GRE tunnel IP addresses. The transit gateway configures a BGP service on the tunnel connection, before connecting to the other tunnel endpoint. Then, once the BGP protocol exchanges routes between the connected endpoint and the transit gateway, the GRE tunnel becomes the data path for the routed traffic.
+* GRE tunnel routes are learned directly on BGP sessions established over the tunnel. For this reason, prefix filtering is not enabled for these connections.
+* The number of GRE tunnels connected to a transit gateway is quota limited. The default quota is 12.
 
-The number of GRE tunnels connected to a transit gateway is quota limited. The default quota is 12.
 
-Legacy GRE tunnel considerations:
-   * Classic routes are not advertised through a traditional GRE tunnel.
-   * Legacy GRE tunnels cannot communicate through other GRE tunnels on the same transit gateway.
-   * Legacy GRE tunnels require a classic connection on the transit gateway before creation. As a result, all classic subnets will be advertised to all connections attached to the transit gateway, as well as any other of the connection's subnets on the classic network.
 
-Unbound GRE tunnel considerations:
-   * Classic routes are advertised through an unbound GRE tunnel.
-   * Unbound GRE tunnels can communicate through other unbound GRE tunnels connected to the same transit gateway in the same availability zone.
-   * Unbound GRE tunnels cannot communicate with other unbound GRE tunnels on the same transit gateway if they are in a different availability zone. Unbound GRE tunnels in this scenario cannot be relied on for network isolation.
+### Unbound GRE tunnel considerations
+{: #unbound-gre-connection-considerations}
 
-   If you require network isolation, consider using separate transit gateways.
-   {: tip}
+* Classic routes are advertised through an unbound GRE tunnel.
+* Unbound GRE tunnels can communicate through other unbound GRE tunnels connected to the same transit gateway in the same availability zone.
+* Unbound GRE tunnels cannot communicate with other unbound GRE tunnels on the same transit gateway if they are in a different availability zone. Unbound GRE tunnels in this scenario cannot be relied on for network isolation.
 
-   * Unbound GRE tunnels do not require a classic connection on the transit gateway. Classic network subnets will not be advertised to the connections on the transit gateway (or vice versa).
-   * The default number of unique base networks that can be targeted by unbound GRE tunnel connections is limited to 5. You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need these service limits expanded.
+If you require network isolation, consider using separate transit gateways.
+{: tip}
 
-For more information and a use case example, refer to [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).
+* Unbound GRE tunnels do not require a classic connection on the transit gateway. Classic network subnets will not be advertised to the connections on the transit gateway (or vice versa).
+* The default number of unique base networks that can be targeted by unbound GRE tunnels is limited to five. You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need these service limits expanded.
+
+For more information and a use case example, see [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).
+
+### Legacy GRE considerations
+{: #legacy-gre-connection-considerations}
+
+* Classic routes are not advertised through a traditional GRE tunnel.
+* Legacy GRE tunnels cannot communicate through other GRE tunnels on the same transit gateway.
+* Legacy GRE tunnels require a classic connection on the transit gateway before creation. As a result, all classic subnets will be advertised to all connections attached to the transit gateway, as well as any other of the connection's subnets on the classic network.
 
 ## Direct Link connection consideration
 {: #dl_considerations}
@@ -100,15 +113,14 @@ You can connect a {{site.data.keyword.powerSys_notm}} instance to a transit gate
 The same network subnet considerations for transit gateway connections also apply to {{site.data.keyword.powerSys_notm}} connections. To ensure successful connectivity, do not use prefixes in your {{site.data.keyword.powerSys_notm}} instance that overlap with other connections. Note that Transit Gateway provides prefix filtering to limit the prefixes being exposed, as well as a routing table report to see any overlaps after the connection is created.
 {: important}
 
-## VPC connection consideration
+## VPC considerations
 {: #vpc-connection-consideration}
 
-{{site.data.keyword.cloud_notm}} VPC permits the use of RFC-1918 and IANA-registered IPv4 address space, privately within your VPC, with some exceptions in the IANA special-purpose ranges, and select ranges assigned to {{site.data.keyword.cloud_notm}} services. When using IANA-registered ranges within your enterprise, and within VPCs in conjunction with {{site.data.keyword.cloud_notm}} Transit Gateway, custom routes must be installed in each zone. For more information, see [Routing considerations for IANA-registered IP assignments](/docs/vpc?topic=vpc-interconnectivity#routing-considerations-iana).
+* {{site.data.keyword.cloud_notm}} VPC permits the use of [RFC-1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} and IANA-registered IPv4 address space, privately within your VPC, with some exceptions in the IANA special-purpose ranges, and select ranges assigned to {{site.data.keyword.cloud_notm}} services. When using IANA-registered ranges within your enterprise, and within VPCs in conjunction with {{site.data.keyword.cloud_notm}} Transit Gateway, custom routes must be installed in each zone. For more information, see [Routing considerations for IANA-registered IP assignments](/docs/vpc?topic=vpc-interconnectivity#routing-considerations-iana).
 
-## VPC interconnection consideration
-{: #vpc-interconnection-consideration}
+* You can create a single transit gateway or multiple transit gateways to interconnect more than one IBM Cloud VPCs. You can also connect your IBM Cloud classic infrastructure to a transit gateway to provide seamless communication with classic infrastructure resources. For more information, refer to [Interconnecting VPCs](/docs/vpc?topic=vpc-interconnectivity&interface=cli#interconnecting-vpcs).
 
-You can create a single transit gateway or multiple transit gateways to interconnect more than one IBM Cloud VPCs. You can also connect your IBM Cloud classic infrastructure to a transit gateway to provide seamless communication with classic infrastructure resources. For more information, refer to [Interconnecting VPCs](/docs/vpc?topic=vpc-interconnectivity&interface=cli#interconnecting-vpcs).
+
 
 ## Routing considerations
 {: #routing-considerations}

@@ -1,6 +1,6 @@
 {
     "title": "Transit Gateway docs",
-    "lastupdated": "2024-05-01",
+    
     "introduction": " With IBM Cloud Transit Gateway, organizations can define and control communication between resources on the IBM Cloud network, providing dynamic scalability, high availability, and private, in-transit data between IBM Cloud data centers.",
       "api": "/apidocs/transit-gateway",
       "cli": "/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli",
@@ -31,6 +31,7 @@
     "section_updates": {
       "view_more": "/docs/transit-gateway?topic=transit-gateway-transit-gateway-release-notes",
       "tiles": [
+        
         {
           "date": "01 May 2024",
           "title": "Behavior change: Disable advertisement of service network routes from transit gateway connections",
@@ -40,11 +41,6 @@
           "date": "24 June 2023",
           "title": "Power Virtual Server connections for transit gateways",
           "description": "Transit gateways now support Power Virtual Server connections. A Power Virtual Server connection allows a network to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway."
-        },
-        {
-          "date": "22 June 2023",
-          "title": "Madrid multi-zone region (MZR) support",
-          "description": " "
         }
       ]
     }

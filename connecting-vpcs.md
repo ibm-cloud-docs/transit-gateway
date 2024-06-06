@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-22"
+
 
 keywords: connecting, region, order
 
@@ -30,7 +30,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog){: external} and log in to your account.
 1. Select **Networking** in the navigation pane, then click the Transit Gateway tile. The Transit Gateway ordering page displays.
 
-   You can also access the ordering page from the [{{site.data.keyword.cloud_notm}} console](/login){: external} by selecting the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page. Then, select **Interconnectivity** > **Transit Gateway** and click the **Create transit gateway** button.
+   You can also access the ordering page from the [{{site.data.keyword.cloud_notm}} console](/login){: external} by selecting the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page. Then, select **Interconnectivity** > **Transit Gateway** and click **Create transit gateway**.
    {: tip}
 
 1. Enter a name for the transit gateway and choose a resource group. You can select a resource group from the list, or keep the default selection.
@@ -58,9 +58,9 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
       Select from the following connection types:
 
-      * **Classic infrastructure** networks allow you to connect to IBM Cloud classic resources. Only one classic infrastructure connection is allowed per account.
       * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
-      * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For more information, see [Creating an Unbound Generic Routing Encapsulation tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
+      * **Classic infrastructure** networks allow you to connect to IBM Cloud classic resources. Only one classic infrastructure connection is allowed per account.
+      
       * **Direct Link** creates a network connection to and from Direct Link gateways so that there is a secure connection to on-premises networks and other resources connected to the transit gateway.
 
          If you select **Direct Link**, you must also log in to the [Direct Link console](/interconnectivity/direct-link){: external} and specify **Transit Gateway** as the type of network connection for your direct link.
@@ -71,6 +71,8 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
          If you select **{{site.data.keyword.powerSys_notm}}**, a {{site.data.keyword.powerSys_notm}} workspace must be created in a PER-enabled data center. For a list of PER-enabled data centers, see [Getting started with the Power Edge Router](/docs/power-iaas?topic=power-iaas-per).
          {: note}
 
+      * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For more information, see [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
+
    1. After you select a network connection, choose a connection reach option:
 
       * **Add new connection in this account** - Enter an optional connection name and any other required information for your connection.
@@ -80,7 +82,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
       * **Request connection to a network in another account** - Enter either the IBM Cloud ID or Cloud Resource Name (CRN) of the account that manages the network where you want to connect. Then, complete any remaining information. All resources connected to that transit gateway will be accessible from the other network. For more information, including how to obtain the Cloud ID or CRN, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
 
-         * IBM Cloud ID - Required by Classic infrastructure and Unbound GRE connections.
+         * IBM Cloud ID - Required by Classic infrastructure and unbound GRE tunnels.
          * CRN - Required by VPC, Direct Link, and Power Systems Virtual Server connections.
 
          To find out if your Power Systems Virtual Server workspace is set up correctly, go to the Power Systems Virtual Server UI and check the navigation for a Cloud connections page. If there isn't a Cloud connections page, the workspace leverages Transit Gateway. Otherwise, you must configure virtual connections with Cloud connections on the Power Systems Virtual Server.
@@ -105,10 +107,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 {: #tg-cli-creating-transit-gateway}
 {: cli}
 
-### Before you begin
-{: #cli-connect-prereqs}
-
-Complete these prerequisites to use the Transit Gateway CLI, which is implemented as an {{site.data.keyword.cloud_notm}} CLI plug-in.
+Before you begin, complete these prerequisites to use the Transit Gateway CLI, which is implemented as an {{site.data.keyword.cloud_notm}} CLI plug-in.
 
 1. Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli#install-ibmcloud-cli){: external}.
 1. Install the `tg-cli/tg` CLI plug-in to the {{site.data.keyword.cloud_notm}} CLI.
@@ -126,9 +125,6 @@ If you are going to use the CLI with a Virtual Private Endpoint (VPE), you must 
 export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 ```
    {: pre}
-
-### Creating a transit gateway from the CLI
-{: #tgw-create}
 
 To create a transit gateway from the CLI, enter the following command:
 

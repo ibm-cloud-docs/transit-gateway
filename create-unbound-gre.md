@@ -35,9 +35,6 @@ Keep in mind that you are required to enter four IP addresses when you create an
 * **Remote tunnel IP** - the GRE tunnel address on the tunnel endpoint.
 * **Local tunnel IP** - the GRE tunnel address on the transit gateway side.
 
-These IP addresses must comply with [RFC 1918 IP addresses](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpc-connection-consideration) and cannot be in conflict with any existing networks that are connected to the transit gateway.
-{: important}
-
 ## Creating an unbound GRE tunnel in the UI
 {: #tg-ui-adding-unbound-gre-connection-transit-gateway}
 {: ui}

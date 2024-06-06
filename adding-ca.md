@@ -15,7 +15,7 @@ subcollection: transit-gateway
 # Adding a cross-account connection
 {: #adding-cross-account-connections}
 
-You can request connections to networks in other {{site.data.keyword.cloud_notm}} accounts, by using the UI, CLI, and API.
+You can request connections to networks in other {{site.data.keyword.cloud_notm}} accounts, by using the UI, CLI, API, and Terraform.
 {: shortdesc}
 
 ## Planning considerations
@@ -25,11 +25,12 @@ Before you add a cross-account connection, review these considerations:
 
 * After you connect a transit gateway to a network in another account, all resources that are connected to that transit gateway are accessible from the other network. Make sure that you use a trusted account. The following network connections are permitted as cross-account connections:
 
-   * Classic infrastructure
    * VPC
-   * Unbound GRE Tunnel
+   * Classic infrastructure
+   
    * Direct Link
    * Power System Virtual Server
+   * Unbound GRE tunnel
 
 * Only 10 pending requests are allowed per gateway. To create more requests, you can cancel the pending connection request, or wait for it to be approved. Connection requests expire if not approved within 72 hours.
 * Use of [security controls](/docs/vpc?topic=vpc-security-in-your-vpc), such as ACLs, security groups, or other network services to control traffic flow are highly recommended. IBM Cloud Transit Gateway does not provide security groups or ACLs, but the networks they attach to might and can affect transit gateway communications. For more information on ACLs and security groups, refer to the following topics:
@@ -46,14 +47,13 @@ Before you add a cross-account connection, review these considerations:
 To connect networks that different accounts own by using the UI, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
-1. Click **Transit Gateway** from the left navigation window.
+1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity** > **Transit Gateway**.
 1. Click the name of the transit gateway where you want to add a connection. Then, click **Add connection**.
 1. Choose your network connection type. Then, select **Request connection to a network in another account**.
-1. Type the CRN of the cross-account network, or if Classic infrastructure or Unbound GRE, enter the IBM Cloud account ID that you want to connect to.
+1. Type the CRN of the cross-account network, or if Classic infrastructure or an Unbound GRE, enter the IBM Cloud account ID that you want to connect to.
 
-   * To get the IBM Cloud account ID for a Classic infrastructure or Unbound GRE tunnel connection, select **Manage > Account** from the {{site.data.keyword.cloud_notm}} console and choose **Account Settings**. Your account ID shows in the **Account** section of the **Account settings** page.
-   * To get the CRN of a VPC, Direct Link, or Power Systems Virtual Server, select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Resource list**. Expand **Networking** (for VPC and Direct Link) or **Computing** (for Power Systems Virtual Server) to list your networking resources, then locate the service that you are looking for. Next, click anywhere in the service's table row (except for the Name link). From the side window that appears, copy the CRN and paste it into the Add connection pane.
+   * To get the IBM Cloud account ID for a Classic infrastructure or an Unbound GRE tunnel connection, select **Manage > Account** from the {{site.data.keyword.cloud_notm}} console and choose **Account Settings**. Your account ID shows in the **Account** section of the **Account settings** page.
+   * To get the CRN of a VPC, Direct Link, or Power Systems Virtual Server, select the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Resource list**. Expand **Networking** (for VPC and Direct Link) or **Computing** (for Power Systems Virtual Server) to list your networking resources, then locate the service that you are looking for. Next, click anywhere in the service's table row (except for the Name link). From the side window that appears, copy the CRN and paste it into the Add connection pane.
 
 1. Complete any remaining fields, then click **Add**. The network connection now shows the **Pending** approval status in the gateway owner's account.
 
@@ -104,7 +104,7 @@ Where:
 `--network-type`
 :   Network type of the connection. Values are `classic`, `vpc`, `directlink`, or `power_virtual_server`.
 
-    To create an unbound GRE tunnel connection, see the [`ibmcloud tg connection-create-gre`](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=cli#connection-create-gre) command.
+    To create an unbound GRE tunnel, see the [`ibmcloud tg connection-create-gre`](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=cli#connection-create-gre) command.
     {: note}
 
 `--network-id`
@@ -326,3 +326,42 @@ This example illustrates a Status 403 response in which the caller is not author
 
 For more information (including Java, Node, Python, and Go examples), see "Add Connection to a Transit Gateway" and "Perform actions on a connection for a Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway?code=java#create-transit-gateway-connection).
 {: note}
+
+
+## Adding a connection by using Terraform
+{: #tg-terraform-adding-cross-connection-transit-gateway}
+{: terraform}
+
+Review the following argument references that you can specify for your resource when you create a cross-connection for a transit gateway using Terraform:
+
+|Argument|Details|
+|--|--|
+|**base_connection_id**  \n Optional  \n Forces new resource \n string | The ID of a network_type 'classic' connection a tunnel is configured over.  \n This field only applies to network type `gre_tunnel` connections.|
+|**base_network_type**  \n Optional  \n Forces new resource  \n string | The base network type. Allowed values are `classic`.  \n This field only applies to `unbound_gre_tunnel` type connections.
+|**gateway**  \n Required  \n Forces new resource  \n string | Enter the transit gateway identifier.|
+|**local_gateway_ip**  \n Optional  \n Forces new resource  \n string | The local gateway IP address. \n This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections. |
+|**local_tunnel_ip**  \n Optional  \n Forces new resource  \n string | The local tunnel IP address. \n This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections.|
+|**name**  \n Optional  \n string | The connection name. If the name is not given, a default name is provided based on the network type, such as `vpc` for network type VPC and `classic` for network type classic.|
+|**network_account_id**  \n Optional  \n Forces new resource  \n string|The ID of the network connected account. This is used if the network is in a different account than the gateway.|
+|**network_type**  \n Required  \n Forces new resource  \n string | The network type. Allowed values are `classic`, `directlink`, `gre_tunnel`, `unbound_gre_tunnel`, and `vpc`. |
+|**network_id**  \n Optional  \n Forces new resource  \n string | The ID of the network that is being connected to through this connection. \n This parameter is required for network type `vpc` and `directlink`, the CRN of the VPC or direct link gateway to be connected.  \n This field is required to be unspecified for network type `classic`.  \n **Example**:`crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
+|**remote_bgp_asn**  \n Optional  \n Forces new resource  \n integer | The remote network BGP ASN (will be generated for the connection if not specified).  \n This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
+|**remote_gateway_ip**  \n Optional  \n Forces new resource  \n string | The remote gateway IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
+|**remote_tunnel_ip**  \n Optional  \n Forces new resource  \n string | The remote tunnel IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
+|**zone**  \n Optional  \n Forces new resource  \n string | The location of the GRE tunnel. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. |
+{: caption="Table 5. Terraform argument references for creating a connection" caption-side="bottom"}
+
+### Example
+{: #tg-terraform-adding-cross-connection-transit-gateway-example}
+
+This example illustrates creating a transit gateway cross-connection using Terraform:
+
+```sh
+resource "ibm_tg_connection" "test_ibm_tg_connection" {
+  gateway      = ibm_tg_gateway.test_tg_gateway.id
+  network_type = "vpc"
+  name         = "myconnection"
+  network_id   = ibm_is_vpc.test_tg_vpc.resource_crn
+}
+```
+{: pre}
