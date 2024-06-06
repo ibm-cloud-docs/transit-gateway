@@ -75,7 +75,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
    1. After you select a network connection, choose a connection reach option:
 
-      * **Add new connection in this account** - Enter an optional connection name and any other required information for your connection.
+      * **Add new connection in this account** - Enter a connection name and any other required information for your connection.
 
          For **{{site.data.keyword.powerSys_notm}}**, select a location for the {{site.data.keyword.powerSys_notm}} workspace. Then, select from the list of  {{site.data.keyword.powerSys_notm}} workspaces that are enabled for Transit Gateway. Keep in mind that not all {{site.data.keyword.powerSys_notm}} workspaces show in this menu.
          {: note}
