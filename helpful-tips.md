@@ -61,33 +61,39 @@ The [IBM Cloud cost estimator](/cloud/cloud-calculator?mhsrc=ibmsearch_a&mhq=cos
 ## Generic Routing Encapsulation (GRE) connection considerations
 {: #gre-considerations}
 
-When configuring a GRE tunnel, you must specify an availability zone in which to create the tunnel. Because of this, if for some reason that zone becomes unavailable, any network connected through a GRE tunnel on that zone is unreachable. To configure a highly available GRE tunnel, you must create a GRE tunnel in multiple zones, connecting the same endpoints.
+Review the following considerations for your particular GRE connection.
 
-GRE connections require the use of a BGP service between GRE tunnel IP addresses. The transit gateway configures a BGP service on the tunnel connection, before connecting to the other tunnel endpoint. Then, once the BGP protocol exchanges routes between the connected endpoint and the transit gateway, the GRE tunnel becomes the data path for the routed traffic.
+### General GRE connection considerations
+{: #gre-general-considerations}
 
-GRE Tunnel routes are learned directly on BGP sessions established over the tunnel. For this reason, prefix filtering is not enabled for these connections.
-
-The number of GRE tunnels connected to a transit gateway is quota limited. The default quota is 12.
-
-Legacy GRE tunnel considerations:
-   * Classic routes are not advertised through a traditional GRE tunnel.
-   * Legacy GRE tunnels cannot communicate through other GRE tunnels on the same transit gateway.
-   * Legacy GRE tunnels require a classic connection on the transit gateway before creation. As a result, all classic subnets will be advertised to all connections attached to the transit gateway, as well as any other of the connection's subnets on the classic network.
-
-Unbound GRE tunnel considerations:
-   * Classic routes are advertised through an unbound GRE tunnel.
-   * Unbound GRE tunnels can communicate through other unbound GRE tunnels connected to the same transit gateway in the same availability zone.
-   * Unbound GRE tunnels cannot communicate with other unbound GRE tunnels on the same transit gateway if they are in a different availability zone. Unbound GRE tunnels in this scenario cannot be relied on for network isolation.
-
-   If you require network isolation, consider using separate transit gateways.
-   {: tip}
-
-   * Unbound GRE tunnels do not require a classic connection on the transit gateway. Classic network subnets will not be advertised to the connections on the transit gateway (or vice versa).
-   * The default number of unique base networks that can be targeted by unbound GRE tunnel connections is limited to 5. You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need these service limits expanded.
-
-For more information and a use case example, refer to [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).
+* When configuring a GRE tunnel, you must specify an availability zone in which to create the tunnel. Because of this, if for some reason that zone becomes unavailable, any network connected through a GRE tunnel on that zone is unreachable. To configure a highly available GRE tunnel, you must create a GRE tunnel in multiple zones, connecting the same endpoints.
+* GRE connections require the use of a BGP service between GRE tunnel IP addresses. The transit gateway configures a BGP service on the tunnel connection, before connecting to the other tunnel endpoint. Then, once the BGP protocol exchanges routes between the connected endpoint and the transit gateway, the GRE tunnel becomes the data path for the routed traffic.
+* GRE tunnel routes are learned directly on BGP sessions established over the tunnel. For this reason, prefix filtering is not enabled for these connections.
+* The number of GRE tunnels connected to a transit gateway is quota limited. The default quota is 12.
 
 
+
+### Unbound GRE tunnel considerations
+{: #unbound-gre-connection-considerations}
+
+* Classic routes are advertised through an unbound GRE tunnel.
+* Unbound GRE tunnels can communicate through other unbound GRE tunnels connected to the same transit gateway in the same availability zone.
+* Unbound GRE tunnels cannot communicate with other unbound GRE tunnels on the same transit gateway if they are in a different availability zone. Unbound GRE tunnels in this scenario cannot be relied on for network isolation.
+
+If you require network isolation, consider using separate transit gateways.
+{: tip}
+
+* Unbound GRE tunnels do not require a classic connection on the transit gateway. Classic network subnets will not be advertised to the connections on the transit gateway (or vice versa).
+* The default number of unique base networks that can be targeted by unbound GRE tunnels is limited to five. You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need these service limits expanded.
+
+For more information and a use case example, see [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).
+
+### Legacy GRE considerations
+{: #legacy-gre-connection-considerations}
+
+* Classic routes are not advertised through a traditional GRE tunnel.
+* Legacy GRE tunnels cannot communicate through other GRE tunnels on the same transit gateway.
+* Legacy GRE tunnels require a classic connection on the transit gateway before creation. As a result, all classic subnets will be advertised to all connections attached to the transit gateway, as well as any other of the connection's subnets on the classic network.
 
 ## Direct Link connection consideration
 {: #dl_considerations}
