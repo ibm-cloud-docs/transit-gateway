@@ -15,7 +15,7 @@ subcollection: transit-gateway
 {: #notification-dl-tgw}
 
 ## What changed?
-{: #what-changed}
+{: #hcr-what-changed}
 
 Starting 1 May 2024, IBM Cloud Transit Gateway enabled a new feature. `10.0.0.0/14`, `10.198.0.0/15`, and `10.200.0.0/14` routes are now announced from a direct link over IBM Cloud Transit Gateway. Additionally, Transit Gateway prevents these routes from making it into classic connections. Only non-classic connections on a transit gateway can use these routes from an on-prem network.
 
@@ -38,7 +38,7 @@ Keep in mind that:
 * If a virtual server instance in a PER-enabled Power Virtual Server workspace wants to access one of these routes from on-prem, it will now be able to.
 
 ## What actions can you take to avoid a failure?
-{: #actions-to-take}
+{: #actions}
 
 If you are relying on a virtual server instance, bare metal server, and/or firewall from classic to access one of these routes from another connection on a transit gateway, you must address any potential issues before this feature is enabled.
 

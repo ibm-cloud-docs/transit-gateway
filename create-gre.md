@@ -12,7 +12,7 @@ subcollection: transit-gateway
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Creating a Generic Routing Encapsulation tunnel connection
+# Creating a GRE tunnel connection
 {: #gre-connection}
 
 You can connect endpoints using a Generic Routing Encapsulation (GRE) tunnel transit gateway connection. This connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources.
@@ -24,7 +24,7 @@ This form of GRE tunnel is now deprecated, and we suggest using an unbound GRE t
    * Does not require a classic connection on the transit gateway. As a result, the classic network's subnets will not be advertised to the connections on the transit gateway (and vice versa).
    {: important}
 
-See [Creating an Unbound Generic Routing Encapsulation tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection) for more information.
+See [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection) for more information.
 
 Migrating your GRE tunnels to unbound GRE tunnels requires deleting any existing GRE tunnels before creating new unbound ones. Migration will also cause a network disruption for anything that uses the old GRE tunnel until you create the new one.
 
@@ -47,15 +47,15 @@ Transit gateway GRE connections require the gateway owner to specifically config
 The following prerequisites must be met before you can create a GRE tunnel connection:
 
 * Ensure that you have an existing classic infrastructure connection, or create one. For more information, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-adding-connections). The GRE tunnel connection connects with an endpoint only on classic infrastructure.
-* Review the [Generic Routing Encapsulation (GRE) connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-considerations) for additional prerequisites.
+* Review the [GRE connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-considerations) for additional prerequisites.
 
-## Creating a Generic Routing Encapsulation (GRE) tunnel connection in the UI
+## Creating a GRE tunnel connection in the UI
 {: #tg-ui-adding-gre-connection-transit-gateway}
 {: ui}
 
-Only unbound GRE tunnels can be created in the UI. See [Creating an Unbound Generic Routing Encapsulation (GRE) tunnel connection](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection)
+Only unbound GRE tunnels can be created in the UI. See [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection)
 
-## Creating a Generic Routing Encapsulation (GRE) tunnel connection from the CLI
+## Creating a GRE tunnel connection from the CLI
 {: #tg-cli-adding-gre-connection-transit-gateway}
 {: cli}
 
@@ -100,7 +100,7 @@ ibmcloud tg connection-create-gre $gateway  --name gre-connection --base-connect
 ```
 {: pre}
 
-## Creating a Generic Routing Encapsulation (GRE) tunnel connection with the API
+## Creating a GRE tunnel connection with the API
 {: #tg-api-adding-gre-connection-transit-gateway}
 {: api}
 
@@ -109,7 +109,7 @@ To create a Generic Routing Encapsulation (GRE) tunnel connection with the API, 
 ### Request
 {: #add-gre-connection-curl-api-request}
 
-To request a creation of a Generic Routing Encapsulation (GRE) tunnel connection, set the following parameters:
+To request a creation of a GRE tunnel connection, set the following parameters:
 
 | Path parameters | Details |
 |--|--|
@@ -207,7 +207,7 @@ This example illustrates the response from creating a GRE tunnel:
 For more information (including Java, Node, Python and Go examples), see "Add Connection to a Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway?code=java#create-transit-gateway-connection).
 {: note}
 
-## Creating a Generic Routing Encapsulation (GRE) tunnel connection using Terraform
+## Creating a GRE tunnel connection using Terraform
 {: #tg-terraform-adding-gre-connection-transit-gateway}
 {: terraform}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-04-18"
+lastupdated: "2024-05-20"
 keywords:
 
 subcollection: transit-gateway

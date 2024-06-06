@@ -22,14 +22,13 @@ subcollection: transit-gateway
 To change your transit gateway configuration in the UI, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
-1. Click **Transit Gateway** from the left navigation window.
+1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity** > **Transit Gateway**.
 1. Click the name of the transit gateway that you want to edit.
 
    If you are in the expanded view, click **View details**.
    {: tip}
 
-1. From the Connections page, click the **Actions** button at the upper right, then select **Edit**.
+1. From the Connections page, click **Actions** in the upper right, then select **Edit**.
 
    From here, you can change the gateway's name and its routing type (Local or Global).
 

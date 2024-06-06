@@ -24,8 +24,7 @@ subcollection: transit-gateway
 To delete an {{site.data.keyword.tg_full}}, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page, then click **Interconnectivity**.
-1. Click **Transit Gateway**.
+1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity** > **Transit Gateway**.
 1. Click the name of the transit gateway you want to delete.
 1. Ensure the transit gateway has no attached connections - if it does, delete all connections.
    For each connection you want to delete, click the Actions menu next to it, then select **Delete**.

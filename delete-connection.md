@@ -22,8 +22,7 @@ subcollection: transit-gateway
 To delete a connection from a transit gateway, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
-1. Click **Transit Gateway** from the left navigation pane.
+1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity** > **Transit Gateway**.
 1. Click the name of the transit gateway where you want to delete a connection.
 
    If you are in the expanded view, click **View details**.
@@ -71,7 +70,7 @@ After the specified connection is detached, entities still within the transit ga
 
 You can delete a connection with the API.
 
-### Request 
+### Request
 {: #deleting-connections-api-request}
 
 To delete a connection with the API, set the following parameters:

@@ -28,7 +28,7 @@ Make sure that you review the following considerations before you create a prefi
 * Prefix filters in the list are processed sequentially. You can modify the order at any time.
 * Review the [prefix service limits](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits) for transit gateways.
 * For cross-account connections, only the account owner of the respective connection can modify prefix filters. Other accounts can view the connection, but cannot modify the filters.
-* GRE Tunnel configurations are not implemented as connections. Instead, their routes are learned directly on BGP sessions that are established over the tunnel. For this reason, prefix filtering is not enabled for these connections.
+* GRE tunnel configurations are not implemented as connections. Instead, their routes are learned directly on BGP sessions that are established over the tunnel. For this reason, prefix filtering is not enabled for these connections.
 * If you select **Request connection to a network in another account** as the connect reach option, you cannot set prefix filters because you are not the network owner of the connection. Set the prefix filter on the account that owns the connection.
 * Prefix filter subnet masks are specific. For example, a rule that is defined as `10.10.20.0/24` does not match with subnet `10.10.20.0/28` or any other subnet prefix.
 
@@ -44,8 +44,7 @@ You can add prefix filters when you add a new connection. You can also add a fil
 To add a prefix filter to a new connection in the UI, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-1. Select the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
-1. Click **Transit Gateway** from the left navigation window to show the Transit Gateway page.
+1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity** > **Transit Gateway**.
 1. From the Transit Gateway page, click the name of the gateway where you want to add prefix filters.
 1. From the gateway's details page, click **Add connection**.
 1. Enter the following information:

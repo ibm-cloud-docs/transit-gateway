@@ -12,7 +12,7 @@ subcollection: transit-gateway
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Creating an unbound Generic Routing Encapsulation tunnel connection
+# Creating an unbound GRE tunnel
 {: #unbound-gre-connection}
 
 You can use an unbound Generic Routing Encapsulation (GRE) tunnel transit gateway connection to connect endpoints. This connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources.
@@ -21,107 +21,71 @@ You can use an unbound Generic Routing Encapsulation (GRE) tunnel transit gatewa
 ## Before you begin
 {: #unbound-gre-begin}
 
-Before creating an unbound GRE tunnel connection, review
-[Generic Routing Encapsulation connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-considerations)
+Before creating an unbound GRE tunnel, review
+[GRE connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-considerations)
 for additional prerequisites.
 
-Unbound transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point-to-point connection, has no built in redundancy, and is a single point of failure. When configuring an unbound GRE connection on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections using different availability zones.
+Unbound transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point-to-point connection, has no built in redundancy, and is a single point of failure. When configuring an unbound GRE tunnel on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections using different availability zones.
 {: important}
 
-Keep in mind that you are required to enter four IP addresses when you create an unbound GRE tunnel connection. These are:
+Keep in mind that you are required to enter four IP addresses when you create an unbound GRE tunnel. These are:
 
 * **Remote gateway IP** - the IP address of your GRE tunnel endpoint. This IP address must be a private IP and be the private IP from the classic environment. For example, this IP can be a hardware appliance or even a VM.
 * **Local gateway IP** - the IP address that your tunnel endpoint connects to. This IP is the transit gateway's IP for the purpose of establishing the tunnel so that when you enter the "remote IP" on your tunnel endpoint, you use this IP address.
 * **Remote tunnel IP** - the GRE tunnel address on the tunnel endpoint.
 * **Local tunnel IP** - the GRE tunnel address on the transit gateway side.
 
-## Creating an unbound GRE tunnel connection in the UI
+These IP addresses must comply with [RFC 1918 IP addresses](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpc-connection-consideration) and cannot be in conflict with any existing networks that are connected to the transit gateway.
+{: important}
+
+## Creating an unbound GRE tunnel in the UI
 {: #tg-ui-adding-unbound-gre-connection-transit-gateway}
 {: ui}
 
-You can create an unbound GRE tunnel connection on an existing transit gateway, or when you are creating a new transit gateway.
+You can create an unbound GRE tunnel on an existing transit gateway, or when you are creating a new transit gateway.
 
-### Creating an unbound GRE tunnel connection on an existing transit gateway
-{: #creating-unbound-gre-existing-tg}
+To create an unbound GRE tunnel, follow these steps:
 
-To create your unbound GRE tunnel on an existing transit gateway, follow these steps:
+1. Select one of the following choices:
 
-1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
-1. Click **Transit Gateway** from the left navigation panel. Click the name of the transit gateway where you want to add a connection.
+   * To create an unbound GRE tunnel on an existing transit gateway:
+      1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
+      1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity** > **Transit Gateway**.
+      1. Click the name of the transit gateway where you want to add a connection.
+      1. Click **Add connection** in the Connections tab.
 
-   If you are in the expanded view, click **View details**.
-   {: tip}
+   * To create an unbound GRE tunnel while creating a transit gateway:
+      1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
+      1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
+      1. Click **Transit Gateway** from the left navigation window. Then, click **Create transit gateway**.
+      1. Enter the transit gateway name, resource group, and location.
 
-1. Click **Add connection** in the Connections tab.
 1. Choose **Unbound GRE tunnel** as your network connection type.
+1. Enter the tunnel name.
 1. Select the base network type and whether this is a connection to a network in another account.
 1. If this connection is to a network in another account, enter the account ID.
 1. Choose an availability zone in which to create the tunnel.
 1. Configure the remaining parameters for the connection:
-   * Enter the remote gateway IP[^ip1] for the endpoint of the GRE tunnel.
-   * Enter a `/30` remote tunnel IP[^ip2] for both ends of the tunnel, for example `192.168.103.2`.
-   * Enter the local gateway IP address[^ip3] that the transit gateway uses to host the underlay network for the GRE tunnel. This user-selected IP address is configured on the transit gateway GRE tunnel after the tunnel is created.
-   * Enter a `/30` local tunnel IP[^ip4] for both ends of the tunnel, for example `192.168.103.1`.
+   * Enter the remote gateway IP for the endpoint of the GRE tunnel.
+   * Enter a `/30` remote tunnel IP for both ends of the tunnel, for example `192.168.103.2`.
+   * Enter the local gateway IP address[^ip1] that the transit gateway uses to host the underlay network for the GRE tunnel. This user-selected IP address is configured on the transit gateway GRE tunnel after the tunnel is created.
+   * Enter a `/30` local tunnel IP for both ends of the tunnel, for example `192.168.103.1`.
    * Optionally, enter the remote BGP ASN, which is a valid 2 or 4 byte value of your choosing.
 
       You can leave this blank and a unique ASN is assigned.
       {: tip}
 
    * Enter a connection name for your GRE tunnel.
-
-1. Click the **Add** button to create the GRE tunnel.
-
-### Creating an unbound GRE tunnel connection while creating a new transit gateway
-{: #creating-unbound-gre-new-tg}
-
-To create your unbound GRE tunnel connection while creating a new transit gateway, follow these steps:
-
-1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity**.
-1. Click **Transit Gateway** from the left navigation panel. Click **Create transit gateway**.
-1. Enter the transit gateway name, resource group, and location.
-1. Choose **Unbound GRE tunnel** as your network connection type for the connection to create.
-1. Select the base network type and whether this is a connection to a network in another account.
-1. If this connection is to a network in another account, enter the account ID.
-1. Choose an availability zone in which to create the tunnel.
-1. Configure the remaining parameters for the connection:
-   * Enter the remote gateway IP[^ip5] for the endpoint of the GRE tunnel.
-   * Enter a `/30` remote tunnel IP[^ip6] for both ends of the tunnel, for example `192.168.103.2`.
-   * Enter the local gateway IP address[^ip7] that the transit gateway uses to host the underlay network for the GRE tunnel. This user-selected IP address is configured on the transit gateway GRE tunnel after the tunnel is created.
-   * Enter a `/30` local tunnel IP[^ip8] for both ends of the tunnel, for example `192.168.103.1`.
-   * Optionally, enter the remote BGP ASN, which is a valid 2 or 4 byte value of your choosing.
-
-      You can leave this blank and a unique ASN is assigned.
-      {: tip}
-
-   * Enter a connection name for your GRE tunnel.
-
-1. Click the **Add connection** button to add the unbound GRE tunnel to the transit gateway.
-1. After all connections have been added, click **Create** to create the transit gateway with the network connections.
+1. Click **Add** to create the GRE tunnel.
 
 ### Next steps
 {: #tgw-next-step-unbound-gre}
 
 To configure the other end of the BGP tunnel, expand the newly created unbound GRE tunnel in the Connections panel to see its details. It will show the Local BGP ASN. If you created an optional remote BGP ASN, it also shows in the Connections panel. You must give this ASN information to the person creating the other end of the BGP tunnel, so that the BGP session can be fully configured.
 
-[^ip1]: This address must comply with rfc1918 IP addresses and cannot be in conflict with any existing networks connected to the transit gateway.
+[^ip1]: This IP address must not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and cannot be in conflict with any existing networks connected to the transit gateway.
 
-[^ip2]: This address must comply with rfc1918 IP addresses and cannot be in conflict with any existing networks connected to the transit gateway.
-
-[^ip3]: This address must not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and cannot be in conflict with any existing networks connected to the transit gateway.
-
-[^ip4]: This address must comply with rfc1918 IP addresses and cannot be in conflict with any existing networks connected to the transit gateway.
-
-[^ip5]: This address must comply with rfc1918 IP addresses and cannot be in conflict with any existing networks connected to the transit gateway.
-
-[^ip6]: This address must comply with rfc1918 IP addresses and cannot be in conflict with any existing networks connected to the transit gateway.
-
-[^ip7]: This address must not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and cannot be in conflict with any existing networks connected to the transit gateway.
-
-[^ip8]: This address must comply with rfc1918 IP addresses and cannot be in conflict with any existing networks connected to the transit gateway.
-
-## Creating an unbound Generic Routing Encapsulation tunnel connection from the CLI
+## Creating an unbound GRE tunnel from the CLI
 {: #tg-cli-adding-unbound-gre-connection-transit-gateway}
 {: cli}
 
@@ -179,23 +143,23 @@ Where:
 ### Example
 {: #connection-create-unbound-gre-examples}
 
-This example illustrates creating an unbound GRE tunnel connection named `unbound-gre-connection` to a classic network:
+This example illustrates creating an unbound GRE tunnel named `unbound-gre-connection` to a classic network:
 
 ```sh
 ibmcloud tg connection-create-gre $gateway  --network-type unbound_gre_tunnel --name unbound-gre-connection --base-network-type classic  --zone us-south-2 --local-gateway-ip 192.168.100.1 --local-tunnel-ip 192.168.101.1 --remote-gateway-ip 10.242.63.12 --remote-tunnel-ip 192.168.101.2
 ```
 {: pre}
 
-## Creating an unbound Generic Routing Encapsulation (GRE) tunnel connection with the API
+## Creating an unbound GRE tunnel with the API
 {: #tg-api-adding-unbound-gre-connection-transit-gateway}
 {: api}
 
 To create an unbound Generic Routing Encapsulation (GRE) tunnel connection with the API, perform the following actions:
 
 ### Request
-{: #add-unbound-gre-connection-curl-api-request}
+{: #unbound-gre-connection-curl-api-request}
 
-To request a creation of an Unbound Generic Routing Encapsulation (GRE) tunnel connection, set the following parameters:
+To request a creation of an unbound GRE tunnel, set the following parameters:
 
 | Path parameters | Details |
 |--|--|
@@ -210,7 +174,7 @@ To request a creation of an Unbound Generic Routing Encapsulation (GRE) tunnel c
 |**base_network_type**  \n Required  \n string | Defines what type of network the GRE tunnel is targeting. This field is required for and only applicable to type `unbound_gre_tunnel` connections.  \n **Allowable value:** `[classic]`  \n **Example:** `classic`|
 |**local_gateway_ip**  \n string | Local gateway IP address. This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Example:** `192.168.100.1`|
 |**local_tunnel_ip**  \n string|Local tunnel IP address. This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections. The `local_tunnel_ip` and `remote_tunnel_ip` addresses must be in the same `/30` network. Neither can be the network nor the broadcast addresses.  \n **Example:** `192.168.129.2` |
-|**name**  \n Name | The user-defined name for this transit gateway connection.  \n Name specification is required for network type `gre_tunnel` and `unbound_gre_tunnel` connections.  \n **Possible values:** `1 ≤ length ≤ 63`, value must match the regular expression: `^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
+|**name**  \n Name | The user-defined name for this transit gateway connection.  \n Name specification is required for network type `gre_tunnel` and `unbound_gre_tunnel` connections.  \n **Possible values:** `1 ≤ length ≤ 63`, value must match the regular expression: `^([a-zA-Z]&#124;[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
 |**remote_bgp_asn**  \n string | Remote network BGP ASN. This field is only applicable to `gre_tunnel` and `unbound_gre_tunnel` type connections. The following ASN values are reserved and unavailable: `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200–‍65234`, `65402‍–‍65433`, `65500`, and `4201065000‍–‍4201065999`. If `remote_bgp_asn` is omitted on `gre_tunnel` connection create requests, IBM will assign an ASN.  \n **Example:** `65010`|
 |**remote_gateway_ip**  \n string | Remote gateway IP address. This field is required for, and only applicable to type `gre_tunnel` and `unbound_gre_tunnel` connections.  \n **Example:** `10.242.63.12`|
 |**remote_tunnel_ip**  \n string|Remote tunnel IP address. This field is required for and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections. The `local_tunnel_ip` and `remote_tunnel_ip` addresses must be in the same `/30` network. Neither can be the network nor broadcast addresses.  \n **Example:** `192.168.129.1` |
@@ -297,7 +261,7 @@ This example illustrates the response from creating an unbound GRE tunnel:
 For more information (including Java, Node, Python and Go examples), refer to [Add Connection to a Transit Gateway](/apidocs/transit-gateway#create-transit-gateway-connection).
 {: note}
 
-## Creating a Generic Routing Encapsulation tunnel connection using Terraform
+## Creating a GRE tunnel connection using Terraform
 {: #tg-terraform-adding-unbound-gre-connection-transit-gateway}
 {: terraform}
 
@@ -320,7 +284,7 @@ You can specify the following argument references for your resource when creatin
 ### Example
 {: #tg-terraform-adding-unbound-gre-connection-transit-gateway-example}
 
-This example illustrates requesting an unbound GRE tunnel connection:
+This example illustrates requesting an unbound GRE tunnel:
 
 ```sh
 resource "ibm_tg_connection" "test_ibm_tg_connection" {

@@ -30,7 +30,10 @@ These frequently asked questions can help you when working with the {{site.data.
 {: faq}
 {: support}
 
-You can estimate the cost of a transit gateway using the cost estimator on the provisioning page for {{site.data.keyword.tg_full_notm}} Transit Gateway. For example, from the [{{site.data.keyword.cloud_notm}} console](/login){: external}, click the Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left and select **Interconnectivity > Transit Gateway**. Then, click **Create transit gateway** to open the provisioning page.
+You can estimate the cost of a transit gateway using the cost estimator on the provisioning page for {{site.data.keyword.tg_full_notm}}. For example, from the [{{site.data.keyword.cloud_notm}} console](/login){: external}, click the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left and select **Interconnectivity > Transit Gateway**. Then, click **Create transit gateway** to open the provisioning page.
+
+See [Pricing considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#pricing-considerations) for more information.
+{: note}
 
 ## If I connect a classic connection to a transit gateway provisioned with local routing, does that mean I can only communicate with classic infrastructure resources that are in the same location as the transit gateway?
 {: #communicate-same-resources}
