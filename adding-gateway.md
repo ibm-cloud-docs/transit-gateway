@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2023-01-22"
+
 
 keywords: features, overview
 
@@ -131,36 +131,7 @@ To add a connection with the API, follow these steps:
 1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment&interface=api#api-prerequisites-setup).
 1. Store any additional variables to be used in the API commands.
 
-### Request
-{: ##tg-api-adding-connection-transit-gateway-request}
-
-To add a connection to the transit gateway, adjust the following parameters:
-
-| Path parameters | Details |
-|--|--|
-|**transit_gateway_id**  \n Required  \n string | The transit gateway identifier|
-{: caption="Table 1. Path parameters for adding a connection" caption-side="bottom"}
-
-|Query Parameters| Details |
-|--|--|
-|**version**  \n Required  \n string | Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date may be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
-|**Request Body**  \n Required  \n TransitGatewayConnectionTemplate | The connection template|
-|**network_type**  \n Required  \n string | Defines the type of network being connected to. For access to `gre_tunnel` connections, contact IBM support.  \n **Allowable values:** [`classic`,`directlink`,`gre_tunnel`,`unbound_gre_tunnel`,`vpc`]  \n **Example:** `vpc`|
-|**base_connection_id**  \n string | The ID of an active transit gateway. `network_type` `gre_tunnel` connections must be created over an existing `network_type` `classic` connection. This field is required for `gre_tunnel` connections and must specify the ID of an active transit gateway network_type `classic` connection in the same transit gateway. Omit `base_connection_id` for any connection type other than `gre_tunnel`. \n **Example:** `975f58c1-afe7-469a-9727-7f3d720f2d32`|
-|**base_network_type**  \n string | Defines the type of network the GRE tunnel is targeting. This field is required for, and only applicable to, `unbound_gre_tunnel` type connections.  \n **Allowable value:** [`classic`]  \n **Example:** `classic`|
-|**local_gateway_ip**  \n string | The local gateway IP address. This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Example:** `192.168.100.1`|
-|**local_tunnel_ip**  \n string | The local tunnel IP address. This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections. The `local_tunnel_ip` and `remote_tunnel_ip` addresses must be in the same `/30` network. Neither can be the network nor the broadcast addresses.  \n **Example:** `192.168.129.2`|
-|**name**  \n Name|The user-defined name for this transit gateway connection. Network type `vpc` connections are defaulted to the name of the VPC. Network type `classic` connections are named 'Classic'.  \n Name specification is required for network `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression `^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
-|**network_account_id**  \n AccountID | The ID of the account, which owns the network that is being connected. Generally, only used if the network is in a different account than the gateway. This field is required to be unspecified for network type `gre_tunnel`.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
-|**network_id**  \n string | The ID of the network, which is being connected to this connection. This field is required for some types, such as `vpc` and `directlink`. For network types `vpc` and `directlink` this is the CRN of the VPC / Direct Link gateway respectively. This field is required to be unspecified for `classic`, `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
-|**remote_bgp_asn**  \n string | The remote network BGP ASN. This field is only applicable to `gre_tunnel` and `unbound_gre_tunnel` type connections. The following ASN values are reserved and unavailable: `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200–‍65234`, `65402‍–‍65433`, `65500`, and `4201065000‍–‍4201065999`. If `remote_bgp_asn` is omitted on `gre_tunnel` connection create requests, IBM assigns an ASN.  \n **Example:** `65010`|
-|**remote_gateway_ip**  \n string | The remote gateway IP address. This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Example:** `10.242.63.12`|
-|**remote_tunnel_ip**  \n string | The remote tunnel IP address. This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections. The `local_tunnel_ip` and `remote_tunnel_ip` addresses must be in the same `/30` network. Neither can be the network nor the broadcast addresses. \n **Example:** `192.168.129.1` |
-|**zone**  \n ZoneIdentityByName | For `gre_tunnel` and `unbound_gre_tunnel` type connections, specify the connection's location. The specified availability zone must reside in the gateway's region. Use the IBM Cloud global catalog to list zones within the desired region. This field is required for, and only applicable to, network type `gre_tunnel` and `unbound_gre_tunnel` connections. |
-|- **name**  \n string|Availability zone name.  \n **Example:** `us-south-1`|
-{: caption="Table 2. Query parameters for adding a connection" caption-side="bottom"}
-
-#### Example Request
+### Example request
 {: ##tg-api-adding-connection-transit-gateway-request-example}
 
 This example illustrates adding a connection to the transit gateway with the API:
@@ -198,44 +169,7 @@ curl -X POST --location --header "Authorization: Bearer {iam_token}" \
 ```
 {: screen}
 
-### Response
-{: #add-connection-curl-api-response}
-
-The following response shows once you initiate the request:
-
-| Response Body| Details |
-|--|--|
-|**name**  \n Always included*  \n Name|The user-defined name for this transit gateway connection.  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression  `^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
-|**network_type**  \n Always included*  \n string|Defines what type of network is connected via this connection. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`classic`,`directlink`,`gre_tunnel`,`unbound_gre_tunnel`,`vpc`]  \n **Example:** `vpc`|
-|**id**  \n Always included*  \n string | The unique identifier for this Transit Gateway Connection  \n **Example:** `1a15dca5-7e33-45e1-b7c5-bc690e569531`|
-|**created_at** \n Always included*  \n date-time|The date and time that this connection was created|
-|**network_id**  \n string|The ID of the network being connected via this connection. This field is required for some types, such as `vpc` and `directlink` For network types `vpc` and `directlink` it should be the CRN of the target vpc / gateway respectively.  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
-|**base_connection_id**  \n string|network_type `gre_tunnel` connections use `base_connection_id` to specify the ID of a network_type `classic` connection the tunnel is configured over. The specified connection must reside in the same transit gateway and be in an active state. The `classic` connection cannot be deleted until any `gre_tunnel` connections that use it are deleted. This field only applies to and is required for network type `gre_tunnel` connections.  \n **Example:** `975f58c1-afe7-469a-9727-7f3d720f2d32`|
-|**base_network_type**  \n string | Defines what type of network the GRE tunnel is targeting. This field is required for, and only applicable to, `unbound_gre_tunnel` type connections.  \n **Allowable value:** [`classic`]  \n **Example:** `classic`|
-|**local_bgp_asn** \n integer | The local network BGP ASN. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `64490` |
-|**local_gateway_ip** \n string | The local gateway IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `192.168.100.1` |
-|**local_tunnel_ip** \n string | The local tunnel IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `192.168.129.2` |
-|**mtu** \n integer | GRE tunnel MTU. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `9000`|
-|**network_account_id** \n AccountID|The ID of the account, which owns the connected network. Generally only used if the network is in a different IBM Cloud account than the gateway.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
-|**remote_bgp_asn** \n integer | The remote network BGP ASN. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `65010` |
-|**remote_gateway_ip** \n string | The remote gateway IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `10.242.63.12`|
-|**remote_tunnel_ip** \n string | The remote tunnel IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. \n **Example:** `192.168.129.1`|
-|**request_status** \n string | Represents the status of a connection request between IBM Cloud accounts, and is only visible for cross account connections. The list of enumerated values for this property might expand in the future. Code and processes that use this field must tolerate unexpected values. \n **Possible values:** [`pending`,`approved`,`rejected`,`expired`,`detached`]|
-|**status**  \n string|Connection's current configuration state. The list of enumerated values for this property might expand in the future. Code and processes that use this field must tolerate unexpected values.  \n **Possible values:** [`attached`,`failed`,`pending`,`deleting`,`detaching`,`detached`]|
-|**updated_at**  \n date-time|The date and time that this connection was last updated|
-|**zone**  \n ZoneReference | The location of the GRE tunnel. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
-|- **name**  \n Always included*  \n string|Availability zone name  \n **Example:** `us-south-1`|
-{: caption="Table 3. Initiation request" caption-side="bottom"}
-
-|Status Code||
-|--|--|
-|**201**|The Transit Gateway connection was created successfully.|
-|**400**|An invalid connection template was provided.|
-|**404**|The specified Transit Gateway cannot be found, the specified resource group cannot be found, or the default resource group cannot be found (if the resource group was not specified in the template).|
-|**409**|The network that is being connected must either be in a location that is considered "local" to the specified Transit Gateway, or the specified Transit Gateway needs to be global. The network that is being connected cannot already be connected to another Transit Gateway.|
-{: caption="Table 4. Status codes" caption-side="bottom"}
-
-#### Example Response
+### Example response
 {: #add-connection-curl-api-response-example}
 
 This example response illustrates that the connection was created successfully:
@@ -279,7 +213,7 @@ This example response illustrates that the connection was created successfully:
 ```
 {: screen}
 
-For more information (including Java, Node, Python, and Go examples), see "Add Connection to a Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway?code=java#create-transit-gateway-connection).
+For more information (including Java, Node, Python, and Go examples), see "Adds a connection to a Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway?code=java#create-transit-gateway-connection).
 {: note}
 
 ## Adding a connection by using Terraform
