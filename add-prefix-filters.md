@@ -227,78 +227,41 @@ You can add prefix filters when you add a connection with the API. You can also 
 {: #adding-prefix-filters-api}
 {: api}
 
-For more information (including Java, Node, Python and Go examples), see "Add a prefix filter to a Transit Gateway Connection" in the [Transit Gateway API reference](/apidocs/transit-gateway#create-transit-gateway-connection-prefix-filter).
+Follow these instructions to add prefix filter to a connection with the API:
+
+1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment&interface=api#api-prerequisites-setup).
+1. Store any additional variables to be used in the API commands.
+1. When all variables are initiated, add prefix filters. For example:
+
+   ```curl
+   curl -X POST --location --header "Authorization: Bearer
+   {iam_token}" \
+   --header "Accept: application/json" \
+   --header "Content-Type: application/json" \
+   --data '{ "location": "us-south", "name": "Transit_Service_BWTN_SJ_DL" }' \
+   "{base_url}/transit_gateways?version={version}"
+   ```
+   {: pre}
+
+For more information (including Java, Node, Python and Go examples), see [Adds a prefix filter to a Transit Gateway Connection](/apidocs/transit-gateway#create-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
 {: note}
-
-#### Example request
-{: #adding-prefix-filters-api-request-example}
-
-This example illustrates adding a prefix filter to a connection:
-
-```sh
-curl -X POST --location --header "Authorization: Bearer {iam_token}" --header "Accept: application/json" --header "Content-Type: application/json" --data '{ "action": "permit", "prefix": "192.168.100.0/24" }' "{base_url}/transit_gateways/{transit_gateway_id}/connections/{id}/prefix_filters?version={version}"
-
-POST /transit_gateways/{transit_gateway_id}/connections/{id}/prefix_filters
-```
-
-```sh
-curl -X POST "https://transit.cloud.ibm.com/v1/transit_gateways/9f559c43-63f4-4da5-b306-b525a8ddb275/connections/6c1bdc19-4adb-4550-8cdc-ef3b74b739f8/prefix_filters?version=2020-03-31" -H "Authorization: Bearer $iam_token" -H "Content-Type: application/json" -d '{"action": "deny", "prefix": "10-10.0.10/30"}'
-```
- 
-#### Example response
-{: #adding-prefix-filters-api-response-example}
-
-This example illustrates the response that a prefix filter was added successfully:
-
-```sh
-{
-  "action": "permit",
-  "before": "1a15dcab-7e40-45e1-b7c5-bc690eaa9782",
-  "created_at": "2021-11-15T12:08:05Z",
-  "ge": 0,
-  "id": "1a15dcab-7e30-45e1-b7c5-bc690eaa9865",
-  "le": 32,
-  "prefix": "192.168.100.0/24",
-  "updated_at": "2021-11-15T12:08:05Z"
-}
-```
 
 ### Deleting prefix filters with the API
 {: #deleting-prefix-filters-api}
 
-For more information (including Java, Node, Python, and Go examples), see "Remove prefix filter from Transit Gateway Connection" in the [Transit Gateway API reference](/apidocs/transit-gateway#delete-transit-gateway-connection-prefix-filter).
+1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment&interface=api#api-prerequisites-setup).
+1. Store any additional variables to be used in the API commands.
+1. When all variables are initiated, add prefix filters. For example:
+
+   ```curl
+   curl -X DELETE --location \
+   --header "Authorization: Bearer {iam_token}" \
+   "{base_url}/transit_gateways/{transit_gateway_id}/connections/{id}/prefix_filters/{filter_id}?version={version}"
+   ```
+   {: pre}
+
+For more information (including Java, Node, Python, and Go examples), see [Removes a prefix filter from Transit Gateway Connection](/apidocs/transit-gateway#delete-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
 {: note}
- 
-#### Example request
-{: #deleting-prefix-filters-api-request-example}
-
-This example illustrates deleting a prefix filter from a connection:
-
-```sh
-curl -X DELETE --location --header "Authorization: Bearer {iam_token}"   "{base_url}/transit_gateways/{transit_gateway_id}/connections/{id}/prefix_filters/{filter_id}?version={version}"
-```
-
-```sh
-curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/9f559c43-63f4-4da5-b306-b525a8ddb275/connections/6c1bdc19-4adb-4550-8cdc-ef3b74b739f8/prefix_filters/a4aad53e-5828-4ac1-8dad-a08d940772d4?version=2020-03-31" -H "Authorization: Bearer $iam_token" -H "Content-Type: application/json"
-```
- 
-#### Example response
-{: #deleting-prefix-filters-api-response-example}
-
-This example illustrates the response that a prefix filter with the specified ID cannot be found:
-
-```sh
-{
-  "errors": [
-    {
-      "code": "not_found",
-      "message": "Cannot find Prefix Filter",
-      "more_info": "https://cloud.ibm.com/apidocs/transit-gateway#error-handling"
-    }
-  ],
-  "trace": "request_id"
-}
-```
 
 ## Working with prefix filters by using Terraform
 {: #working-prefix-filters-terraform}

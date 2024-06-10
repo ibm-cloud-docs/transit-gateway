@@ -160,44 +160,20 @@ Follow these instructions to create a transit gateway with the API:
 
 1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment&interface=api#api-prerequisites-setup).
 1. Store any additional variables to be used in the API commands.
-1. For more information (including Java, Node, Python and Go examples), see "Creates a Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway?code=java#create-transit-gateway). 
+1. When all variables are initiated, create the transit gateway:
 
-### Example request
-{: #tg-api-creating-transit-gateway-request-example}
+   ```sh
+   curl -X POST --location --header "Authorization: Bearer
+   {iam_token}" \
+   --header "Accept: application/json" \
+   --header "Content-Type: application/json" \
+   --data '{ "location": "us-south", "name": "Transit_Service_BWTN_SJ_DL" }' \
+   "{base_url}/transit_gateways?version={version}"
+   ```
+   {: pre}
 
-This example illustrates creating a transit gateway with the API:
-
-```sh
-curl -X POST --location --header "Authorization: Bearer
-{iam_token}" \
---header "Accept: application/json" \
---header "Content-Type: application/json" \
---data '{ "location": "us-south", "name": "Transit_Service_BWTN_SJ_DL" }' \
-"{base_url}/transit_gateways?version={version}"
-```
-{: pre}
-
-### Example response
-{: #tg-api-creating-transit-gateway-response-example}
-
-This example response illustrates that the transit gateway was created successfully:
-
-```sh
-{
-  "created_at": "2020-03-31T12:08:05Z",
-  "crn": "crn:[...]",
-  "global": true,
-  "id": "ef4dcb1a-fee4-41c7-9e11-9cd99e65c1f4",
-  "location": "us-south",
-  "name": "example-gateway",
-  "resource_group": {
-    "id": "56969d6043e9465c883cb9f7363e78e8"
-  },
-  "status": "pending",
-  "updated_at": "2020-03-31T12:08:05Z"
-}
-```
-{: screen}
+For more information (including Java, Node, Python and Go examples), see [Creates a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway) in the Transit Gateway API reference.
+{: note}
 
 ## Creating a transit gateway using Terraform
 {: #tg-terraform-creating-transit-gateway}
