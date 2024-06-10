@@ -162,7 +162,7 @@ Follow these instructions to create a transit gateway with the API:
 1. Store any additional variables to be used in the API commands.
 1. When all variables are initiated, create the transit gateway:
 
-   ```sh
+   ```curl
    curl -X POST --location --header "Authorization: Bearer
    {iam_token}" \
    --header "Accept: application/json" \
