@@ -153,7 +153,7 @@ ibmcloud tg connection-create-gre $gateway  --network-type unbound_gre_tunnel --
 
 For more information (including Java, Node, Python and Go examples), refer to [Adds a connection to a Transit Gateway](/apidocs/transit-gateway#create-transit-gateway-connection).
 {: note}
- 
+
 ### Example request
 {: #add-unbound-gre-connection-curl-api-request-example}
 
@@ -162,6 +162,7 @@ This example illustrates requesting a GRE connection:
 ```sh
 curl -X POST "https://transit.cloud.ibm.com/v1/transit_gateways/test/connections?version=2022-01-27" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"local_gateway_ip\":\"192.168.100.1\",\"local_tunnel_ip\":\"192.168.129.2\",\"name\":\"Transit_Service_BWTN_SJ_DL\",\"network_type\":\"unbound_gre_tunnel\",\"base_network_type\":\"classic\",\"remote_bgp_asn\":65010,\"remote_gateway_ip\":\"10.242.63.12\",\"remote_tunnel_ip\":\"192.168.129.1\",\"zone\":{\"name\":\"us-south-1\"}}"
 ```
+{: pre}
 
 The payload for this request is as follows:
 

@@ -92,6 +92,7 @@ For example, to request a connection to communicate with another account, run th
 ```sh
 ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-type NETWORK-TYPE --network-id NETWORK_ID [-h, --help]
 ```
+{: pre}
 
 Where:
 
@@ -182,6 +183,7 @@ curl -X POST --location --header "Authorization: Bearer {iam_token}" \
   "
 {base_url}/transit_gateways/{transit_gateway_id}/connections?version={version}"
 ```
+{: pre}
 
 ```sh
   "name": "Transit_Service_BWTN_SJ_DL",
@@ -197,6 +199,7 @@ curl -X POST --location --header "Authorization: Bearer {iam_token}" \
   ],
   "prefix_filters_default": "permit",
 ```
+{: pre}
 
 #### Example response
 {: #tg-api-adding-cross-account-connection-transit-gateway-response-example}
@@ -214,6 +217,7 @@ This example illustrates the response from a request for a cross-account connect
   "updated_at": "2020-03-31T12:08:05Z"
 }
 ```
+{: pre}
 
 ### Perform actions on a requested connection
 {: #tg-api-adding-cross-account-connection-transit-gateway-actions}
@@ -233,6 +237,7 @@ This example illustrates approving a cross-account connection:
 }
 
 ```
+{: pre}
 
 #### Example response
 {: #tg-api-adding-cross-account-connection-transit-gateway-actions-response-example}
@@ -255,6 +260,7 @@ This example illustrates a Status 403 response in which the caller is not author
   "trace": "86780a34-e651-4b47-9fb0-184a169cc9af"
 }
 ```
+{: pre}
 
 ## Adding a connection by using Terraform
 {: #tg-terraform-adding-cross-connection-transit-gateway}

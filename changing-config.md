@@ -71,7 +71,6 @@ ibmcloud tg gwu $gateway --routing global
 ```
 {: pre}
 
-
 ## Changing your configuration with the API
 {: #change-configuration-api}
 {: api}

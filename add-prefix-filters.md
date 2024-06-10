@@ -146,6 +146,7 @@ To add prefix filters from the CLI, follow these steps:
 ```sh
 ibmcloud tg prefix-filter-create GATEWAY_ID CONNECTION_ID --prefix PREFIX --action ACTION [--le LE] [--ge GE] [--before BEFORE] [--output json]
 ```
+{: pre}
 
 Where:
 
@@ -182,6 +183,7 @@ Before
 Created    2022-02-28T12:35:09.226-06:00
 Updated    2022-02-28T12:35:09.226-06:00
 ```
+{: pre}
 
 #### Deleting prefix filters from the CLI
 {: #deleting-prefix-filters-cli}
@@ -192,6 +194,7 @@ To delete prefix filters from the CLI, follow these steps:
 ```sh
 ibmcloud tg prefix-filter-delete GATEWAY_ID CONNECTION_ID FILTER_ID [-f, --force]
 ```
+{: pre}
 
 Where:
 
@@ -216,6 +219,7 @@ Deleting filter b4dbe0a6-c52d-4128-cc32-6f53d86bc82b on gateway 9f559c43-63f4-4d
 OK
 Filter b4dbe0a6-c52d-4128-cc32-6f53d86bc82b is deleted.
 ```
+{: pre}
 
 ## Working with prefix filters with the API
 {: #working-prefix-filters-api}
