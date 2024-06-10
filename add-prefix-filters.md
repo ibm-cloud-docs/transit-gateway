@@ -227,32 +227,8 @@ You can add prefix filters when you add a connection with the API. You can also 
 {: #adding-prefix-filters-api}
 {: api}
 
-To add prefix filters with the API, follow these steps:
-
-#### Request
-{: #adding-prefix-filters-api-request}
-
-To add prefix filters with the API, adjust the following parameters:
-
-|Path parameters | Details|
-|--|--|
-|**transit_gateway_id**  \n Required  \n string| The transit gateway identifier|
-|**id**  \n Required  \n string| The connection identifier|
-{: caption="Table 1. Path parameters for adding prefix filters" caption-side="bottom"}
-
-|Query parameters|Details|
-|--|--|
-|**version**  \n Required  \n string|Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date can be provided. Specify the current date to request the latest version.  \n **Possible values**: Value must match regular expression `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
-{: caption="Table 2. Query parameters for adding prefix filters" caption-side="bottom"}
-
-|Request body|Details|
-|--|--|
-|**action**  \n Required  \n string | Whether to permit or deny prefix filter.  \n **Possible values**: `[permit,deny]`  \n **Example**: `permit`|
-|**prefix**  \n Required  \n string | IP prefix and subnet mask  \n **Example**: `192.168.100.0/24`|
-|**before**  \n string | Identifier of prefix filter to handle the ordering and follow semantics:  \n - When a filter reference another filter in it's before field, then the filter making the reference is applied before the referenced filter. For example: if filter A references filter B in its before field, A is applied before B.  \n - When a new filter is added that has the same before as an existing filter, then the older filter has its before field updated to point to the new filter. Starting with this example: if filter C is added and it references B in its before field, then A's before field should be modified to point to C, so the order of application would be A, C and finally B.  \n - A filter that has an empty before reference is applied last (though the date order mentioned still applies). So, continuing the preceding examples, if filter B has an empty before field, then it is applied last, but if filter D is created with an empty before field, then B's before field is modified to point to D, so B is applied before D.  \n **Example**: `1a15dcab-7e40-45e1-b7c5-bc690eaa9782`|
-|**ge**  \n integer | IP prefix greater than or equal to this number is processed.|
-|**le**  \n integer | IP prefix less than or equal to this number is processed.|
-{: caption="Table 3. Request body attributes for adding prefix filters" caption-side="bottom"}
+For more information (including Java, Node, Python and Go examples), see "Add a prefix filter to a Transit Gateway Connection" in the [Transit Gateway API reference](/apidocs/transit-gateway#create-transit-gateway-connection-prefix-filter).
+{: note}
 
 #### Example request
 {: #adding-prefix-filters-api-request-example}
@@ -268,31 +244,7 @@ POST /transit_gateways/{transit_gateway_id}/connections/{id}/prefix_filters
 ```sh
 curl -X POST "https://transit.cloud.ibm.com/v1/transit_gateways/9f559c43-63f4-4da5-b306-b525a8ddb275/connections/6c1bdc19-4adb-4550-8cdc-ef3b74b739f8/prefix_filters?version=2020-03-31" -H "Authorization: Bearer $iam_token" -H "Content-Type: application/json" -d '{"action": "deny", "prefix": "10-10.0.10/30"}'
 ```
-
-#### Response
-{: #adding-prefix-filters-api-response}
-
-The following response details show once you initiate the request:
-
-|Response body| Details|
-|--|--|
-|**action**  \n Always included  \n string | Whether to permit or deny the prefix filter  \n **Possible values**: `[permit,deny]`  \n **Example**: `permit`|
-|**created_at**  \n Always included  \n date-time | The date and time that this prefix filter was created |
-|**id**  \n Always included  \n string | Prefix filter identified  \n **Example**: `1a15dcab-7e30-45e1-b7c5-bc690eaa9865`|
-|**prefix**  \n Always included  \n string | IP prefix and subnet mask  \n **Example**: `192.168.100.0/24`|
-|**before**  \n string | Identifier of prefix filter to handle the ordering and follow semantics:  \n - When a filter references another filter in it's before field, then the filter making the reference is applied before the referenced filter. For example: if filter A references filter B in its before field, A is applied before B.  \n - When a new filter is added that has the same before as an existing filter, then the older filter has its before field updated to point to the new filter. Starting with the preceding example, if filter C is added and references B in its before field, then A's before field must be modified to point to C, so the order of application would be A, C and finally B.  \n - A filter that has an empty before reference is applied last (though the date order mentioned still applies). So continuing these examples, if filter B has an empty before field, then it is applied last, but if filter D is created with an empty before field, then B's before field is modified to point to D, so B is applied before D.  \n **Example**: `1a15dcab-7e40-45e1-b7c5-bc690eaa9782`|
-|**ge**  \n integer | IP prefix greater than or equal to this number is processed.|
-|**le**  \n integer | IP prefix less than or equal to this number is processed.|
-|**updated_at**  \n date-time| The date and time that this prefix filter was last updated |
-{: caption="Table 4. Response details for adding prefix filters" caption-side="bottom"}
-
-|Status code | Details |
-|--|--|
-|**201**| The transit gateway connection prefix filters was created successfully.|
-|**400**| An invalid prefix filter template was provided. |
-|**404**| The specified transit gateway could not be found.|
-{: caption="Table 5. Status codes" caption-side="bottom"}
-
+ 
 #### Example response
 {: #adding-prefix-filters-api-response-example}
 
@@ -311,31 +263,12 @@ This example illustrates the response that a prefix filter was added successfull
 }
 ```
 
-For more information (including Java, Node, Python and Go examples), see "Add a prefix filter to a Transit Gateway Connection" in the [Transit Gateway API reference](/apidocs/transit-gateway#create-transit-gateway-connection-prefix-filter).
-{: note}
-
 ### Deleting prefix filters with the API
 {: #deleting-prefix-filters-api}
 
-To delete prefix filters with the API, follow these steps:
-
-#### Request
-{: #deleting-prefix-filters-api-request}
-
-To delete prefix filters with the API, adjust the following parameters:
-
-|Path parameters | Details|
-|--|--|
-|**transit_gateway_id**  \n Required  \n string| The transit gateway identifier|
-|**id**  \n Required  \n string| The connection identifier|
-|**filter_id**  \n Required  \n string | The prefix filter identifier|
-{: caption="Table 6. Path parameters for deleting prefix filters" caption-side="bottom"}
-
-|Query parameters|Details|
-|--|--|
-|**version**  \n Required  \n string|Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date may be provided. Specify the current date to request the latest version.  \n **Possible values**: Value must match regular expression `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
-{: caption="Table 7. Query parameters for deleting prefix filters" caption-side="bottom"}
-
+For more information (including Java, Node, Python, and Go examples), see "Remove prefix filter from Transit Gateway Connection" in the [Transit Gateway API reference](/apidocs/transit-gateway#delete-transit-gateway-connection-prefix-filter).
+{: note}
+ 
 #### Example request
 {: #deleting-prefix-filters-api-request-example}
 
@@ -348,18 +281,7 @@ curl -X DELETE --location --header "Authorization: Bearer {iam_token}"   "{base_
 ```sh
 curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/9f559c43-63f4-4da5-b306-b525a8ddb275/connections/6c1bdc19-4adb-4550-8cdc-ef3b74b739f8/prefix_filters/a4aad53e-5828-4ac1-8dad-a08d940772d4?version=2020-03-31" -H "Authorization: Bearer $iam_token" -H "Content-Type: application/json"
 ```
-
-#### Response
-{: #deleting-prefix-filters-api-response}
-
-The following response details show after you initiate the request:
-
-|Status code| Details |
-|--|--|
-|**204**|Prefix filter deleted successfully.|
-|**404**|Prefix filter with the specified identifier cannot be found.|
-{: caption="Table 8. Response details for deleting prefix filters" caption-side="bottom"}
-
+ 
 #### Example response
 {: #deleting-prefix-filters-api-response-example}
 
@@ -377,9 +299,6 @@ This example illustrates the response that a prefix filter with the specified ID
   "trace": "request_id"
 }
 ```
-
-For more information (including Java, Node, Python, and Go examples), see "Remove prefix filter from Transit Gateway Connection" in the [Transit Gateway API reference](/apidocs/transit-gateway#delete-transit-gateway-connection-prefix-filter).
-{: note}
 
 ## Working with prefix filters by using Terraform
 {: #working-prefix-filters-terraform}
