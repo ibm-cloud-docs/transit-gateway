@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-10-27"
+  years: 2020, 2024
+
 
 keywords: help, tips, connections, provision
 
@@ -77,13 +77,13 @@ Review the following considerations for your particular GRE connection.
 {: #unbound-gre-connection-considerations}
 
 * Classic routes are advertised through an unbound GRE tunnel.
-* Unbound GRE tunnels can communicate through other unbound GRE tunnels connected to the same transit gateway in the same availability zone.
-* Unbound GRE tunnels cannot communicate with other unbound GRE tunnels on the same transit gateway if they are in a different availability zone. Unbound GRE tunnels in this scenario cannot be relied on for network isolation.
+* Can communicate through other unbound GRE tunnels connected to the same transit gateway in the same availability zone.
+* Cannot communicate with other unbound GRE tunnels on the same transit gateway if they are in a different availability zone. Unbound GRE tunnels in this scenario cannot be relied on for network isolation.
 
 If you require network isolation, consider using separate transit gateways.
 {: tip}
 
-* Unbound GRE tunnels do not require a classic connection on the transit gateway. Classic network subnets will not be advertised to the connections on the transit gateway (or vice versa).
+* Do not require a classic connection on the transit gateway. Classic network subnets will not be advertised to the connections on the transit gateway (or vice versa).
 * The default number of unique base networks that can be targeted by unbound GRE tunnels is limited to five. You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need these service limits expanded.
 
 For more information and a use case example, see [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).
@@ -92,8 +92,8 @@ For more information and a use case example, see [Connect networks using a High 
 {: #legacy-gre-connection-considerations}
 
 * Classic routes are not advertised through a traditional GRE tunnel.
-* Legacy GRE tunnels cannot communicate through other GRE tunnels on the same transit gateway.
-* Legacy GRE tunnels require a classic connection on the transit gateway before creation. As a result, all classic subnets will be advertised to all connections attached to the transit gateway, as well as any other of the connection's subnets on the classic network.
+* Cannot communicate through other GRE tunnels on the same transit gateway.
+* Require a classic connection on the transit gateway before creation. As a result, all classic subnets will be advertised to all connections attached to the transit gateway, as well as any other of the connection's subnets on the classic network.
 
 ## Direct Link connection consideration
 {: #dl_considerations}
