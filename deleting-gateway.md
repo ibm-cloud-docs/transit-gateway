@@ -80,11 +80,7 @@ For more information (including Java, Node, Python and Go examples), see "Delete
 This example iiilustrates a transit gateway deletion request:
 
 ```sh
-DELETE /transit_gateways/{id}
-
-"{base_url}/transit_gateways/{id}?version={version}"
-
-curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/testgateway?version=2022-02-10" -H "accept: */*"
+curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/$TRANSIT_GATEWAY_ID?version=2022-02-10" -H "accept: */*"
 ```
 {: pre}
 
@@ -93,7 +89,7 @@ curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/testgateway?ve
 
 This example illustrates that the transit gateway could not be found, leading to a Status 404 response:
 
-```sh
+```json
 {
   "errors": [
     {

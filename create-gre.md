@@ -114,7 +114,11 @@ This example illustrates requesting a GRE connection:
 
 ```sh
 curl -X POST "https://transit.cloud.ibm.com/v1/transit_gateways/test/connections?version=2022-01-27" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"base_connection_id\":\"975f58c1-afe7-469a-9727-7f3d720f2d32\",\"local_gateway_ip\":\"192.168.100.1\",\"local_tunnel_ip\":\"192.168.129.2\",\"name\":\"Transit_Service_BWTN_SJ_DL\",\"network_type\":\"gre_tunnel\",\"remote_bgp_asn\":65010,\"remote_gateway_ip\":\"10.242.63.12\",\"remote_tunnel_ip\":\"192.168.129.1\"}"
+```
 
+The payload for this request is as follows:
+
+```json
 {
   "base_connection_id": "975f58c1-afe7-469a-9727-7f3d720f2d32",
   "local_gateway_ip": "192.168.100.1",
@@ -126,13 +130,14 @@ curl -X POST "https://transit.cloud.ibm.com/v1/transit_gateways/test/connections
   "remote_tunnel_ip": "192.168.129.1"
 }
 ```
+
 {: pre}
 ### Example response
 {: #add-gre-connection-curl-api-response-example}
 
 This example illustrates the response from creating a GRE tunnel:
 
-```sh
+```json
 {
   "created_at": "2020-03-31T12:08:05Z",
   "id": "1a15dca5-7e33-45e1-b7c5-bc690e569531",
@@ -142,6 +147,7 @@ This example illustrates the response from creating a GRE tunnel:
   "updated_at": "2020-03-31T12:08:05Z"
 }
 ```
+
 {: screen}
 
 ## Creating a GRE tunnel connection using Terraform

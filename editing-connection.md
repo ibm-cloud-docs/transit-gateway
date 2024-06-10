@@ -75,17 +75,15 @@ For more information (including Java, Node, Python and Go examples), see "Update
 {: note}
 
 ### Example request
- {: #editing-connections-api-request-example}
+{: #editing-connections-api-request-example}
 
 This example illustrates editing the name of a transit gateway connection:
 
 ```sh
-PATCH
-/transit_gateways/{transit_gateway_id}/connections/{id}
-{
+curl -H "Content-Type: application/json" -X PATCH https://$TS_ENDPOINT/v1/transit_gateways/$GATEWAY_ID/connections/$CONNECTION_ID?version=2020-03-31   -H "authorization: Bearer $IAM_TOKEN"   -d '{
   "name":  "Transit_Service_BWTN_SJ_DL",
   "prefix_filters_default":  "permit"
-}
+}'
 ```
 {: pre}
 
@@ -94,7 +92,7 @@ PATCH
 
 The following response indicates that the connection was updated successfully:
 
-```sh
+```json
 {
   "name": "Transit_Service_BWTN_SJ_DL",
   "network_id": "crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b",
@@ -131,6 +129,7 @@ The following response indicates that the connection was updated successfully:
   }
 }
 ```
+
 {: screen}
 
 ## Editing a connection using terraform

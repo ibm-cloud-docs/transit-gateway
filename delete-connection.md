@@ -79,11 +79,7 @@ For more information (including Java, Node, Python and Go examples), see "Remove
 This example request illustrates deleting a connection:
 
 ```sh
-DELETE /transit_gateways/{transit_gateway_id}/connections/{id}
-
-"{base_url}/transit_gateways/{transit_gateway_id}/connections/{id}?version={version}"
-
-curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/testgateway/connections/testconnection?version=2022-02-09" -H "accept: */*"
+curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/$TRANSIT_GATEWAY_ID/connections/$CONNECTION_ID?version=2022-02-09" -H "accept: */*"
 ```
 {: pre}
 
@@ -92,7 +88,7 @@ curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/testgateway/co
 
 This example illustrates the returned response when the connection could not be found:
 
-```sh
+```json
 {
   "errors": [
     {

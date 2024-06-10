@@ -161,7 +161,11 @@ This example illustrates requesting a GRE connection:
 
 ```sh
 curl -X POST "https://transit.cloud.ibm.com/v1/transit_gateways/test/connections?version=2022-01-27" -H "accept: application/json" -H "Content-Type: application/json" -d "{\"local_gateway_ip\":\"192.168.100.1\",\"local_tunnel_ip\":\"192.168.129.2\",\"name\":\"Transit_Service_BWTN_SJ_DL\",\"network_type\":\"unbound_gre_tunnel\",\"base_network_type\":\"classic\",\"remote_bgp_asn\":65010,\"remote_gateway_ip\":\"10.242.63.12\",\"remote_tunnel_ip\":\"192.168.129.1\",\"zone\":{\"name\":\"us-south-1\"}}"
+```
 
+The payload for this request is as follows:
+
+```json
 {
   "local_gateway_ip": "192.168.100.1",
   "local_tunnel_ip": "192.168.129.2",
@@ -176,13 +180,15 @@ curl -X POST "https://transit.cloud.ibm.com/v1/transit_gateways/test/connections
   }
 }
 ```
+
 {: pre}
+
 ### Example response
 {: #add-unbound-gre-connection-curl-api-response-example}
 
 This example illustrates the response from creating an unbound GRE tunnel:
 
-```sh
+```json
 {
   "created_at": "2020-03-31T12:08:05Z",
   "id": "1a15dca5-7e33-45e1-b7c5-bc690e569531",
