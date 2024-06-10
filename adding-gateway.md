@@ -132,7 +132,7 @@ To add a connection with the API, follow these steps:
 1. Store any additional variables to be used in the API commands.
 1. Add a connection to the transit gateway. For example:
 
-   ```curl
+   ```sh
    curl -X POST --location --header "Authorization: Bearer {iam_token}" \
      --header "Accept: application/json" \
      --header "Content-Type: application/json" \

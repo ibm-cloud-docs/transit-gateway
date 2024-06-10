@@ -233,7 +233,7 @@ Follow these instructions to add prefix filter to a connection with the API:
 1. Store any additional variables to be used in the API commands.
 1. When all variables are initiated, add prefix filters. For example:
 
-   ```curl
+   ```sh
    curl -X POST --location --header "Authorization: Bearer
    {iam_token}" \
    --header "Accept: application/json" \
@@ -253,7 +253,7 @@ For more information (including Java, Node, Python and Go examples), see [Adds a
 1. Store any additional variables to be used in the API commands.
 1. When all variables are initiated, add prefix filters. For example:
 
-   ```curl
+   ```sh
    curl -X DELETE --location \
    --header "Authorization: Bearer {iam_token}" \
    "{base_url}/transit_gateways/{transit_gateway_id}/connections/{id}/prefix_filters/{filter_id}?version={version}"
