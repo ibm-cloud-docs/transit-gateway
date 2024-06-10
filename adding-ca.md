@@ -161,32 +161,15 @@ To add a cross-account connection, follow these steps:
 For classic cross-account connections, be sure that the `network-account-id` is set to the account you are requesting to communicate with. For VPC cross-account connections, be sure that the `network-id` is set to the account that you are requesting to communicate with.
 {: important}
 
+For API information (including Java, Node, Python, and Go examples), see "Adds a connection to a Transit Gateway" and "Performs actions on a connection for a Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway?code=java#create-transit-gateway-connection).
+{: note}
+
 ### Request cross-account connection
 {: #request-cross-account-connection}
 
 The original account must request a connection to communicate with the other account.
 
-#### Request
-{: #tg-api-adding-cross-account-connection-transit-gateway-request}
-
-To request a cross-account connection, set the following parameters:
-
-| Path parameters | Details |
-|--|--|
-|**transit_gateway_id**  \n Required  \n string | The transit gateway identifier|
-{: caption="Table 1. Path parameters for adding a cross-account connection" caption-side="bottom"}
-
-|Query parameters| Details |
-|--|--|
-|**version**  \n Required  \n string | Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date can be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
-|**Request Body**  \n Required  \n TransitGatewayConnectionTemplate | The connection template|
-|**network_type**  \n Required  \n string | Defines what type of network is connected using this connection.  \n **Allowable values:** `classic`, `vpc`, `unbound_gre_tunnel`, `directlink`, or `power_virtual_server`  \n **Example:** `vpc`|
-|**name**  \n Name|The user-defined name for this transit gateway connection. Network type `vpc` connections are defaulted to the name of the VPC. Network type `classic` connections are named `Classic`.  \n **Possible values:** `1 ≤ length ≤ 63`, Value must match regular expression  `^([a-zA-Z]-[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
-|**network_account_id**  \n AccountID|The ID of the account, which owns the network that is being connected. Generally only used if the network is in a different account than the gateway.  \n This field is used when gateway connection is in network type `classic`.  \n This field is required to be unspecified for network type `gre_tunnel`.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
-|**network_id**  \n string | The ID of the network that is being connected using this connection. This field is required for `vpc` and `directlink`. This is the target CRN for network type `vpc` or `directlink`.  \n This field is required to be unspecified for network type `classic`, `gre_tunnel`, and `unbound_gre_tunnel` connections.  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
-{: caption="Table 2. Query parameters for adding a cross-account connection" caption-side="bottom"}
-
-##### Example request
+#### Example request
 {: #tg-api-adding-cross-account-connection-transit-gateway-request-example}
 
 This example illustrates the original account requesting a cross-account connection:
@@ -215,33 +198,7 @@ curl -X POST --location --header "Authorization: Bearer {iam_token}" \
   "prefix_filters_default": "permit",
 ```
 
-#### Response
-{: #tg-api-adding-cross-account-connection-transit-gateway-response}
-
-The following response details show once you initiate the request:
-
-| Response Body | Details |
-|--|--|
-|**name**  \n Always included*  \n Name|The user-defined name for this transit gateway connection.  \n **Possible values:** `1 ≤ length ≤ 63`, Value must match regular expression  `^([a-zA-Z]-[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`.  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
-|**network_type**  \n Always included*  \n string|Defines what type of network is connected using this connection. The list of enumerated values for this property might expand in the future. Code and processes that use this field must tolerate unexpected values.  \n **Possible values:** [`classic`, `directlink`, `vpc`]  \n **Example:** `vpc`|
-|**id**  \n Always included*  \n string | The unique identifier for this Transit Gateway Connection  \n **Example:** `1a15dca5-7e33-45e1-b7c5-bc690e569531`|
-|**created_at** \n Always included*  \n date-time|The date and time that this connection was created|
-|**network_id**  \n string|The ID of the network that is being connected using this connection. This field is required for some types, such as `vpc`, `power_virtual_server`, and `directlink`.  \n This is the target CRN for network type `vpc`  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
-|**network_account_id**  \n AccountID|The ID of the account, which owns the connected network. Generally only used if the network is in a different IBM Cloud account than the gateway.  \n This value is used for network type `classic`.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
-|**request_status**  \n string|Only visible for cross-account connections, this field represents the status of a connection request between IBM Cloud accounts. The list of enumerated values for this property might expand in the future. Code and processes that use this field must tolerate unexpected values.  \n **Possible values:** [`pending`,`approved`,`rejected`,`expired`,`detached`]|
-|**status**  \n string|Connection's current configuration state. The list of enumerated values for this property might expand in the future. Code and processes that use this field must tolerate unexpected values.  \n **Possible values:** [`attached`,`failed`,`pending`,`deleting`,`detaching`,`detached`]|
-|**updated_at**  \n date-time|The date and time that this connection was last updated|
-{: caption="Table 3. Initiate request response" caption-side="bottom"}
-
-|Status code||
-|--|--|
-|**201**|The transit gateway connection was created successfully.|
-|**400**|An invalid connection template was provided.|
-|**404**|The specified Transit Gateway cannot be found, the specified resource group cannot be found, or the default resource group cannot be found (if the resource group was not specified in the template).|
-|**409**|The network that is being connected must either be in a location that is considered "local" to the specified Transit Gateway, or the specified Transit Gateway must be global. The network that is being connected cannot already be connected to another Transit Gateway.|
-{: caption="Table 4. Status codes" caption-side="bottom"}
-
-##### Example response
+#### Example response
 {: #tg-api-adding-cross-account-connection-transit-gateway-response-example}
 
 This example illustrates the response from a request for a cross-account connection:
@@ -263,19 +220,7 @@ This example illustrates the response from a request for a cross-account connect
 
 After the original account requests a cross-account connection, the other account must perform actions on a requested connection.
 
-#### Request
-{: #tg-api-adding-cross-account-connection-transit-gateway-actions-request}
-
-To perform actions on a requested cross-account connection, set the following parameters:
-
-|Query parameters|Details|
-|--|--|
-|**version**  \n Required  \n string|Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date can be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
-|**Request Body**  \n Required  \n TransitGatewayConnectionActions | The action template|
-|**action**  \n Required  \n string| The action that is to be performed against the connection request  \n **Allowable values:** [`approve`,`reject`]  \n **Example:** `approve`|
-{: caption="Table 5. Query parameters for requesting a cross-account connection" caption-side="bottom"}
-
-##### Example request
+#### Example request
 {: #tg-api-adding-cross-account-connection-transit-gateway-actions-request-example}
 
 This example illustrates approving a cross-account connection:
@@ -289,20 +234,7 @@ This example illustrates approving a cross-account connection:
 
 ```
 
-#### Response
-{: #tg-api-adding-cross-account-connection-transit-gateway-actions-response}
-
-The following response results show once you initiate the request:
-
-|Status code||
-|--|--|
-|**204**|The connection approval/rejection was successful.|
-|**403**|The caller is not authorized to perform the requested action, or the action was called by the gateway owning account.|
-|**404**|  A transit gateway or transit gateway connection with the specified identifier might not be found.|
-|**409**|Attempted to approve a classic_access VPC connection.|
-{: caption="Table 6. Status codes" caption-side="bottom"}
-
-##### Example response
+#### Example response
 {: #tg-api-adding-cross-account-connection-transit-gateway-actions-response-example}
 
 This example illustrates a Status 403 response in which the caller is not authorized to perform the requested action:
@@ -323,10 +255,6 @@ This example illustrates a Status 403 response in which the caller is not author
   "trace": "86780a34-e651-4b47-9fb0-184a169cc9af"
 }
 ```
-
-For more information (including Java, Node, Python, and Go examples), see "Add Connection to a Transit Gateway" and "Perform actions on a connection for a Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway?code=java#create-transit-gateway-connection).
-{: note}
-
 
 ## Adding a connection by using Terraform
 {: #tg-terraform-adding-cross-connection-transit-gateway}
