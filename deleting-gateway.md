@@ -71,22 +71,10 @@ To delete a transit gateway with the API, follow these steps:
 1. Remove all connections from the transit gateway.
 1. Request the deletion of the gateway with the API.
 
-### Request
-{: #delete-gateway-api-request}
-
-To delete a transit gateway, set the following parameters:
-
-|Path parameters|Details|
-|--|--|
-|**id**  \n Required  \n string|The Transit Gateway identifier|
-{: caption="Table 1. Path parameters for deleting a transit gateway" caption-side="bottom"}
-
-|Query parameters|Details|
-|--|--|
-|**version**  \n Required  \n string|Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date can be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
-{: caption="Table 2. Query parameters for deleting a transit gateway" caption-side="bottom"}
-
-#### Example request
+For more information (including Java, Node, Python and Go examples), see "Deletes specified Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#delete-transit-gateway).
+{: note}
+ 
+### Example request
 {: #delete-gateway-api-request-example}
 
 This example iiilustrates a transit gateway deletion request:
@@ -100,19 +88,7 @@ curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/testgateway?ve
 ```
 {: pre}
 
-### Response
-{: #delete-gateway-api-response}
-
-The following status codes will be returned:
-
-|Status code|Details|
-|--|--|
-|**204**|The transit gateway was deleted successfully.|
-|**404**|A transit gateway with the specified identifier could not be found.|
-|**409**|The transit gateway could not be deleted as there are pre-existing connections attached.|
-{: caption="Table 3. Status codes when deleting a transit gateway" caption-side="bottom"}
-
-#### Example response
+### Example response
 {: #delete-gateway-api-response-example}
 
 This example illustrates that the transit gateway could not be found, leading to a Status 404 response:
@@ -130,9 +106,6 @@ This example illustrates that the transit gateway could not be found, leading to
 }
 ```
 {: pre}
-
-For more information (including Java, Node, Python and Go examples), see "Deletes Specified Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#delete-transit-gateway).
-{: note}
 
 ## Deleting a transit gateway using Terraform
 {: #delete-gateway-terraform}
