@@ -71,31 +71,17 @@ ibmcloud tg gwu $gateway --routing global
 ```
 {: pre}
 
+
 ## Changing your configuration with the API
 {: #change-configuration-api}
 {: api}
 
 You can update your transit gateway's name, global parameters, or both with the API.
 
-### Request
-{: #change-configuration-api-request}
+For more information (including Java, Node, Python, and Go examples), see "Updates specified Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#update-transit-gateway).
+{: note}
 
-To change the configuration on your transit gateway, set the following parameters:
-
-| Path Parameters | Details |
-|--|--|
-|**id**  \n Required  \n string | The transit gateway identifier|
-{: caption="Table 1. Path parameters for changing your configuration" caption-side="bottom"}
-
-|Query parameters| Details |
-|--|--|
-|**version**  \n Required  \n string | Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date can be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
-|**Request Body**  \n Required  \n TGPatchTemplate |Update a transit gateway|
-|**global**  \n global|Allow global routing for a transit gateway  \n **Example**: `true`|
-|**name**  \n Name|The user-defined name for this transit gateway connection.  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression ^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
-{: caption="Table 2. Query parameters for changing your configuration" caption-side="bottom"}
-
-#### Example Request
+### Example request
 {: #change-configuration-api-request-example}
 
 This example illustrates changing your configuration with the API:
@@ -110,35 +96,7 @@ PATCH /transit_gateways/{id}
 ```
 {: pre}
 
-### Response
-{: #change-configuration-api-response}
-
-The following response shows once you initiate the request:
-
-|Response Body |Details|
-|--|--|
-|**id**  \n Always included  \n ID|The unique identifier for this transit gateway  \n **Example:** `ef4dcb1a-fee4-41c7-9e11-9cd99e65c1f4`|
-|**crn**  \n Always included  \n CRN|The CRN for this transit gateway  \n **Example:** `crn:v1:bluemix:public:transit:dal03:a/57a7d05f36894e3cb9b46a43556d903e::gateway:ef4dcb1a-fee4-41c7-9e11-9cd99e65c1f4`|
-|**name**  \n Always included  \n string|A human readable name for the transit gateway  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression  `^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `my-transit-gateway-in-TransitGateway`|
-|**location**  \n Always included  \n string|Location of the transit gateway \n **Example:** `us-south`|
-|**created_at**  \n Always included  \n date-time |The date and time that this gateway was created|
-|**global**  \n Always included  \n Boolean| Allow global routing for a transit gateway  \n **Example**: `true`|
-|**status**  \n Always included  \n string|The status of the transit gateway. The list of enumerated values for this property might expand in the future. Code and processes that use this field must tolerate unexpected values.  \n **Possible values:** [`available`,`failed`,`pending`,`deleting`]|
-|**resource_group**  \n ResourceGroupReference  \n |The resource group to use. If unspecified, the account's [default resource group](/apidocs/resource-manager#introduction) is used.
-|- **id**  \n Always included  \n string|The unique identifier for this resource group  \n **Possible values:** Value must match regular expression  `^[0-9a-f]{32}$`  \n **Example:** `56969d6043e9465c883cb9f7363e78e8`|
-|- **href**  \n Always included=  \n URL|The URL for this resource group  \n **Possible values:** Value must match regular expression  `^http(s)?:\/\/([^\/?#]*)([^?#]*)(\?([^#]*))?(#(.*))?$`  \n **Example:** `https://resource-manager.bluemix.net/v1/resource_groups/56969d6043e9465c883cb9f7363e78e8`|
-|**updated_at**  \n date-time | The date and time that this gateway was last updated.|
-{: caption="Table 3. Initiation request response" caption-side="bottom"}
-
-|Status code||
-|--|--|
-|**200**| The Transit Gateway was updated successfully.|
-|**400**| The supplied Transit Gateway patch was invalid.|
-|**404**| A Transit Gateway with the specified identifier cannot be found.|
-|**409**| The Transit Gateway could not be updated because there are pre-existing cross-region connections attached.|
-{: caption="Table 4. Status codes" caption-side="bottom"}
-
-#### Example Response
+### Example response
 {: #change-configuration-api-response-example}
 
 This response indicates that the transit gateway was updated successfully:
@@ -159,9 +117,6 @@ This response indicates that the transit gateway was updated successfully:
 }
 ```
 {: screen}
-
-For more information (including Java, Node, Python, and Go examples), see "Updates specified Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#update-transit-gateway).
-{: note}
 
 ## Changing your configuration by using the Terraform
 {: #change-configuration-terraform}
