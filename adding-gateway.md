@@ -142,29 +142,6 @@ To add a connection with the API, follow these steps:
    ```
    {: pre}
 
-   ```sh
-     "base_connection_id": "975f58c1-afe7-469a-9727-7f3d720f2d32",
-     "local_gateway_ip": "192.168.100.1",
-     "local_tunnel_ip": "192.168.129.2",
-     "name": "Transit_Service_BWTN_SJ_DL",
-     "network_account_id": "28e4d90ac7504be694471ee66e70d0d5",
-     "network_id": "crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b",
-     "network_type": "vpc",
-     "prefix_filters": [
-       {
-         "action": "permit",
-         "ge": 0,
-         "le": 32,
-         "prefix": "192.168.100.0/24"
-       }
-     ],
-     "prefix_filters_default": "permit",
-     "remote_bgp_asn": 65010,
-     "remote_gateway_ip": "10.242.63.12",
-     "remote_tunnel_ip": "192.168.129.1"
-   ```
-   {: screen}
-
 For more information (including Java, Node, Python, and Go examples), see [Adds a connection to a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
