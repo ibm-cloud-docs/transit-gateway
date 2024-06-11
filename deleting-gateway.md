@@ -71,9 +71,6 @@ To delete a transit gateway with the API, follow these steps:
 1. Remove all connections from the transit gateway.
 1. Request the deletion of the gateway with the API.
 
-For more information (including Java, Node, Python and Go examples), see "Deletes specified Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#delete-transit-gateway).
-{: note}
-
 ### Example Request
 {: #delete-gateway-api-request-example}
 
@@ -102,6 +99,9 @@ This example illustrates that the transit gateway could not be found, leading to
 }
 ```
 {: pre}
+
+For more information, see [Deletes specified Transit Gateway](/apidocs/transit-gateway#delete-transit-gateway) in the Transit Gateway API reference.
+{: note}
 
 ## Deleting a transit gateway using Terraform
 {: #delete-gateway-terraform}

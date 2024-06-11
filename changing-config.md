@@ -77,7 +77,7 @@ ibmcloud tg gwu $gateway --routing global
 
 You can update your transit gateway's name, global parameters, or both with the API.
 
-For more information (including Java, Node, Python, and Go examples), see "Updates specified Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#update-transit-gateway).
+For more information, see [Updates specified Transit Gateway](/apidocs/transit-gateway#update-transit-gateway) in the Transit Gateway API reference.
 {: note}
 
 ### Example Request

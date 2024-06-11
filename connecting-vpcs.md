@@ -172,7 +172,7 @@ Follow these steps to create a transit gateway with the API:
    ```
    {: pre}
 
-For more information (including Java, Node, Python and Go examples), see [Creates a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway) in the Transit Gateway API reference.
+For more information, see [Creates a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway) in the Transit Gateway API reference.
 {: note}
 
 ## Creating a transit gateway using Terraform

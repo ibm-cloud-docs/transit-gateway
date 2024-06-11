@@ -104,7 +104,7 @@ ibmcloud tg connection-create-gre $gateway  --name gre-connection --base-connect
 {: #tg-api-adding-gre-connection-transit-gateway}
 {: api}
 
-For more information (including Java, Node, Python and Go examples), see "Add Connection to a Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway?code=java#create-transit-gateway-connection).
+For more information, see [Adds a connection to a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
 ### Example Request

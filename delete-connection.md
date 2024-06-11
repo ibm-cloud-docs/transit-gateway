@@ -70,9 +70,6 @@ After the specified connection is detached, entities still within the transit ga
 
 You can delete a connection with the API.
 
-For more information (including Java, Node, Python and Go examples), see "Remove connection from Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#delete-transit-gateway-connection).
-{: note}
-
 ### Example Request
 {: #deleting-connections-api-request-example}
 
@@ -101,6 +98,9 @@ This example illustrates the returned response when the connection could not be 
 }
 ```
 {: pre}
+
+For more information, see [Removes a connection from Transit Gateway](/apidocs/transit-gateway#delete-transit-gateway-connection) in the Transit Gateway API reference.
+{: note}
 
 ## Deleting a connection using Terraform
 {: #deleting-connections-terraform}

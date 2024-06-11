@@ -247,7 +247,7 @@ Follow these steps to add a prefix filter to a connection with the API:
    ```
    {: pre}
 
-For more information (including Java, Node, Python and Go examples), see [Adds a prefix filter to a Transit Gateway Connection](/apidocs/transit-gateway#create-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
+For more information, see [Adds a prefix filter to a Transit Gateway Connection](/apidocs/transit-gateway#create-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
 {: note}
 
 ### Deleting prefix filters with the API
@@ -264,7 +264,7 @@ For more information (including Java, Node, Python and Go examples), see [Adds a
    ```
    {: pre}
 
-For more information (including Java, Node, Python, and Go examples), see [Removes a prefix filter from Transit Gateway Connection](/apidocs/transit-gateway#delete-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
+For more information, see [Removes a prefix filter from Transit Gateway Connection](/apidocs/transit-gateway#delete-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
 {: note}
 
 ## Working with prefix filters by using Terraform

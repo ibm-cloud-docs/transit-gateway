@@ -142,7 +142,7 @@ To add a connection with the API, follow these steps:
    ```
    {: pre}
 
-For more information (including Java, Node, Python, and Go examples), see [Adds a connection to a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.
+For more information, see [Adds a connection to a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
 ## Adding a connection by using Terraform
