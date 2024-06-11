@@ -170,7 +170,7 @@ For API information (including Java, Node, Python, and Go examples), see [Adds a
 
 The original account must request a connection to communicate with the other account.
 
-#### Example request
+#### Example Request
 {: #tg-api-adding-cross-account-connection-transit-gateway-request-example}
 
 This example illustrates the original account requesting a cross-account connection:
@@ -201,7 +201,7 @@ curl -X POST --location --header "Authorization: Bearer {iam_token}" \
 ```
 {: pre}
 
-#### Example response
+#### Example Response
 {: #tg-api-adding-cross-account-connection-transit-gateway-response-example}
 
 This example illustrates the response from a request for a cross-account connection:
@@ -224,7 +224,7 @@ This example illustrates the response from a request for a cross-account connect
 
 After the original account requests a cross-account connection, the other account must perform actions on a requested connection.
 
-#### Example request
+#### Example Request
 {: #tg-api-adding-cross-account-connection-transit-gateway-actions-request-example}
 
 This example illustrates approving a cross-account connection:
@@ -239,7 +239,7 @@ This example illustrates approving a cross-account connection:
 ```
 {: pre}
 
-#### Example response
+#### Example Response
 {: #tg-api-adding-cross-account-connection-transit-gateway-actions-response-example}
 
 This example illustrates a Status 403 response in which the caller is not authorized to perform the requested action:

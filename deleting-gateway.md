@@ -73,8 +73,8 @@ To delete a transit gateway with the API, follow these steps:
 
 For more information (including Java, Node, Python and Go examples), see "Deletes specified Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#delete-transit-gateway).
 {: note}
- 
-### Example request
+
+### Example Request
 {: #delete-gateway-api-request-example}
 
 This example iiilustrates a transit gateway deletion request:
@@ -84,7 +84,7 @@ curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/$TRANSIT_GATEW
 ```
 {: pre}
 
-### Example response
+### Example Response
 {: #delete-gateway-api-response-example}
 
 This example illustrates that the transit gateway could not be found, leading to a Status 404 response:

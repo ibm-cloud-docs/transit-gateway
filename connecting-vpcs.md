@@ -156,7 +156,7 @@ ibmcloud tg gwc --name myGateway --location us-south
 {: #tg-api-creating-transit-gateway}
 {: api}
 
-Follow these instructions to create a transit gateway with the API:
+Follow these steps to create a transit gateway with the API:
 
 1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment&interface=api#api-prerequisites-setup).
 1. Store any additional variables to be used in the API commands.

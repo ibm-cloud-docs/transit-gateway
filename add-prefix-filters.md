@@ -231,7 +231,7 @@ You can add prefix filters when you add a connection with the API. You can also 
 {: #adding-prefix-filters-api}
 {: api}
 
-Follow these instructions to add prefix filter to a connection with the API:
+Follow these steps to add a prefix filter to a connection with the API:
 
 1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment&interface=api#api-prerequisites-setup).
 1. Store any additional variables to be used in the API commands.

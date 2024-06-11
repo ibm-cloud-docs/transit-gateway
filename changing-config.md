@@ -80,7 +80,7 @@ You can update your transit gateway's name, global parameters, or both with the 
 For more information (including Java, Node, Python, and Go examples), see "Updates specified Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#update-transit-gateway).
 {: note}
 
-### Example request
+### Example Request
 {: #change-configuration-api-request-example}
 
 This example illustrates changing your configuration with the API:
@@ -95,7 +95,7 @@ PATCH /transit_gateways/{id}
 ```
 {: pre}
 
-### Example response
+### Example Response
 {: #change-configuration-api-response-example}
 
 This response indicates that the transit gateway was updated successfully:

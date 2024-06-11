@@ -107,7 +107,7 @@ ibmcloud tg connection-create-gre $gateway  --name gre-connection --base-connect
 For more information (including Java, Node, Python and Go examples), see "Add Connection to a Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway?code=java#create-transit-gateway-connection).
 {: note}
 
-### Example request
+### Example Request
 {: #add-gre-connection-curl-api-request-example}
 
 This example illustrates requesting a GRE connection:
@@ -133,7 +133,7 @@ The payload for this request is as follows:
 ```
 
 {: pre}
-### Example response
+### Example Response
 {: #add-gre-connection-curl-api-response-example}
 
 This example illustrates the response from creating a GRE tunnel:

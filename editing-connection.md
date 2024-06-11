@@ -74,7 +74,7 @@ You can update the name of a connection for a transit gateway with the API.
 For more information (including Java, Node, Python and Go examples), see "Update Specified Transit Gateway Connection" in the [Transit Gateway API reference](/apidocs/transit-gateway#update-transit-gateway-connection).
 {: note}
 
-### Example request
+### Example Request
 {: #editing-connections-api-request-example}
 
 This example illustrates editing the name of a transit gateway connection:
@@ -87,7 +87,7 @@ curl -H "Content-Type: application/json" -X PATCH https://$TS_ENDPOINT/v1/transi
 ```
 {: pre}
 
-### Example response
+### Example Response
 {: #editing-connections-api-response-example}
 
 The following response indicates that the connection was updated successfully:

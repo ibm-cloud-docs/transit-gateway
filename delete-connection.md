@@ -73,7 +73,7 @@ You can delete a connection with the API.
 For more information (including Java, Node, Python and Go examples), see "Remove connection from Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#delete-transit-gateway-connection).
 {: note}
 
-### Example request
+### Example Request
 {: #deleting-connections-api-request-example}
 
 This example request illustrates deleting a connection:
@@ -83,7 +83,7 @@ curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/$TRANSIT_GATEW
 ```
 {: pre}
 
-### Example response
+### Example Response
 {: #example-returned-response}
 
 This example illustrates the returned response when the connection could not be found:

@@ -154,7 +154,7 @@ ibmcloud tg connection-create-gre $gateway  --network-type unbound_gre_tunnel --
 For more information (including Java, Node, Python and Go examples), refer to [Adds a connection to a Transit Gateway](/apidocs/transit-gateway#create-transit-gateway-connection).
 {: note}
 
-### Example request
+### Example Request
 {: #add-unbound-gre-connection-curl-api-request-example}
 
 This example illustrates requesting a GRE connection:
@@ -184,7 +184,7 @@ The payload for this request is as follows:
 
 {: pre}
 
-### Example response
+### Example Response
 {: #add-unbound-gre-connection-curl-api-response-example}
 
 This example illustrates the response from creating an unbound GRE tunnel:
