@@ -77,9 +77,6 @@ ibmcloud tg gwu $gateway --routing global
 
 You can update your transit gateway's name, global parameters, or both with the API.
 
-For more information, see [Updates specified Transit Gateway](/apidocs/transit-gateway#update-transit-gateway) in the Transit Gateway API reference.
-{: note}
-
 ### Example Request
 {: #change-configuration-api-request-example}
 
@@ -116,6 +113,9 @@ This response indicates that the transit gateway was updated successfully:
 }
 ```
 {: screen}
+
+For more information, see [Updates specified Transit Gateway](/apidocs/transit-gateway#update-transit-gateway) in the Transit Gateway API reference.
+{: note}
 
 ## Changing your configuration by using the Terraform
 {: #change-configuration-terraform}
