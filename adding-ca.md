@@ -84,6 +84,7 @@ To connect networks that different accounts own by using the UI, follow these st
 {: cli}
 
 Creating a cross-account connection consists of the following steps:
+
 1. Request connection to communicate with other account.
 1. Approve/Reject connection on other account.
 
