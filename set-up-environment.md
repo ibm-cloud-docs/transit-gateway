@@ -39,6 +39,7 @@ Run the following command to store the API key for your account in an environmen
 ```sh
 apikey="<YOUR_API_KEY>"
 ```
+{: pre}
 
 ### Step 2: Get an IBM Identity and Access Management (IAM) token
 {: #get-iam-token}
@@ -53,6 +54,7 @@ IAM_TOKEN=`curl -k -X POST \
   --data-urlencode "apikey=$apikey" \
   "https://iam.cloud.ibm.com/identity/token"  |jq -r '(.token_type + " " + .access_token)'`
 ```
+{: pre}
 
 To view the IAM token, run `echo $IAM_TOKEN`. The result look similar to the following:
 ```text
@@ -75,12 +77,14 @@ Public endpoint:
 ```sh
 transit_api_endpoint="https://transit.cloud.ibm.com"
 ```
+{: pre}
 
 Virtual private endpoint:
 
 ```sh
 transit_api_endpoint="https://private.transit.cloud.ibm.com"
 ```
+{: pre}
 
 To verify that the variable was saved, run `echo $transit_api_endpoint` and ensure that the response is not empty.
 
@@ -92,6 +96,7 @@ Every API request must include the `version` parameter in the format `YYYY-MM-DD
 ```sh
 api_version="2020-03-31"
 ```
+{: pre}
 
 To verify that this variable was saved, run ``echo $api_version`` and make sure that the response is not empty.
 
@@ -106,9 +111,11 @@ If you run into unexpected results, add the `--verbose` (debug) flag after the `
     ```sh
     curl -X GET "$transit_api_endpoint/v1/offering_types/dedicated/locations?version=$api_version"   -H "Authorization: $IAM_TOKEN"
     ```
+    {: pre}
 
 * Call the [List gateways](/apidocs/transit-gateway#list-transit-gateways) API to see any gateways that you already created under your account, in JSON format.
 
     ```sh
     curl -X GET "$transit_api_endpoint/v1/transit_gateways?version=$api_version"   -H "Authorization: $IAM_TOKEN"
     ```
+    {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-
+lastupdated: "2024-06-12"
 
 keywords: features, overview
 
@@ -35,7 +35,7 @@ To add a connection to a transit gateway, follow these steps:
 
    * **VPC** - Allows you to connect to your account's VPC resources, or VPC resources from other accounts as well.
    * **Classic infrastructure** - Allows you to connect to IBM Cloud classic resources.
-   
+   * **Redundant GRE** allows unbound GRE tunnels to connect to endpoints in either VPC or classic infrastructure networks, thus allowing you to build in redundancy for GRE tunnels. For more information, see [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection).
    * **Direct Link** - Creates a network connection to and from Direct Link gateways so that there is a secure connection to on-premises networks and other resources that are connected to the transit gateway.
 
       If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (that uses the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link.
@@ -130,90 +130,19 @@ To add a connection with the API, follow these steps:
 
 1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment&interface=api#api-prerequisites-setup).
 1. Store any additional variables to be used in the API commands.
+1. Add a connection to the transit gateway. For example:
 
-### Example request
-{: ##tg-api-adding-connection-transit-gateway-request-example}
+   ```sh
+   curl -X POST --location --header "Authorization: Bearer {iam_token}" \
+     --header "Accept: application/json" \
+     --header "Content-Type: application/json" \
+     --data '{ "network_type": "vpc" }'
+     "
+   {base_url}/transit_gateways/{transit_gateway_id}/connections?version={version}"
+   ```
+   {: pre}
 
-This example illustrates adding a connection to the transit gateway with the API:
-
-```sh
-curl -X POST --location --header "Authorization: Bearer {iam_token}" \
-  --header "Accept: application/json" \
-  --header "Content-Type: application/json" \
-  --data '{ "network_type": "vpc" }'
-  "
-{base_url}/transit_gateways/{transit_gateway_id}/connections?version={version}"
-```
-{: pre}
-
-```sh
-  "base_connection_id": "975f58c1-afe7-469a-9727-7f3d720f2d32",
-  "local_gateway_ip": "192.168.100.1",
-  "local_tunnel_ip": "192.168.129.2",
-  "name": "Transit_Service_BWTN_SJ_DL",
-  "network_account_id": "28e4d90ac7504be694471ee66e70d0d5",
-  "network_id": "crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b",
-  "network_type": "vpc",
-  "prefix_filters": [
-    {
-      "action": "permit",
-      "ge": 0,
-      "le": 32,
-      "prefix": "192.168.100.0/24"
-    }
-  ],
-  "prefix_filters_default": "permit",
-  "remote_bgp_asn": 65010,
-  "remote_gateway_ip": "10.242.63.12",
-  "remote_tunnel_ip": "192.168.129.1"
-```
-{: screen}
-
-### Example response
-{: #add-connection-curl-api-response-example}
-
-This example response illustrates that the connection was created successfully:
-
-```sh
-{
-  "name": "Transit_Service_BWTN_SJ_DL",
-  "network_id": "crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b",
-  "network_type": "vpc",
-  "id": "1a15dca5-7e33-45e1-b7c5-bc690e569531",
-  "base_connection_id": "975f58c1-afe7-469a-9727-7f3d720f2d32",
-  "created_at": "2022-02-18T16:51:50.748Z",
-  "local_bgp_asn": 64490,
-  "local_gateway_ip": "192.168.100.1",
-  "local_tunnel_ip": "192.168.129.2",
-  "mtu": 9000,
-  "network_account_id": "28e4d90ac7504be694471ee66e70d0d5",
-  "prefix_filters": [
-    {
-      "action": "permit",
-      "before": "1a15dcab-7e40-45e1-b7c5-bc690eaa9782",
-      "created_at": "2022-02-18T16:51:50.748Z",
-      "ge": 0,
-      "id": "1a15dcab-7e30-45e1-b7c5-bc690eaa9865",
-      "le": 32,
-      "prefix": "192.168.100.0/24",
-      "updated_at": "2022-02-18T16:51:50.748Z"
-    }
-  ],
-  "prefix_filters_default": "permit",
-  "remote_bgp_asn": 65010,
-  "remote_gateway_ip": "10.242.63.12",
-  "remote_tunnel_ip": "192.168.129.1",
-  "request_status": "pending",
-  "status": "attached",
-  "updated_at": "2022-02-18T16:51:50.748Z",
-  "zone": {
-    "name": "us-south-1"
-  }
-}
-```
-{: screen}
-
-For more information (including Java, Node, Python, and Go examples), see "Adds a connection to a Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway?code=java#create-transit-gateway-connection).
+For more information, see [Adds a connection to a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
 ## Adding a connection by using Terraform

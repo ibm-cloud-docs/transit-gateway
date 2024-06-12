@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-
+lastupdated: "2024-06-12"
 
 keywords: help, tips, connections, provision
 
@@ -71,7 +71,24 @@ Review the following considerations for your particular GRE connection.
 * GRE tunnel routes are learned directly on BGP sessions established over the tunnel. For this reason, prefix filtering is not enabled for these connections.
 * The number of GRE tunnels connected to a transit gateway is quota limited. The default quota is 12.
 
+### Redundant GRE considerations
+{: #redundant-gre-connection-considerations}
 
+* A redundant GRE is essentially a grouping of at least two GRE tunnels.
+* The number of tunnels cannot exceed two tunnels per zone.
+* You can place the tunnels within a redundant GRE in the same or different zones.
+* All connections and tunnels on the transit gateway must have unique names.
+* All tunnels in a redundant GRE target the same network and account.
+* Known limitation: Currently, tunnels in the same zone in a redundant GRE do not have tunnel-to-tunnel traffic.
+
+When using the `VPC` base network type:
+
+   * You must enable the IP spoofing flag for VPC network type. For information about enabling IP spoofing checks, see [About IP spoofing](/docs/vpc?topic=vpc-ip-spoofing-about).
+   * The virtual server interface profile must be v2.
+   * The local gateway IP:
+      *  Must must comply with [RFC 1918](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpc-connection-consideration) (or no floating IPs or public gateways on the VPC).
+      * Must not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and cannot be in conflict with any existing networks that are connected to the transit gateway.
+      * Cannot be used as the `local-gateway-ip `for another GRE using the same underlay network.
 
 ### Unbound GRE tunnel considerations
 {: #unbound-gre-connection-considerations}
@@ -120,7 +137,7 @@ The same network subnet considerations for transit gateway connections also appl
 
 * You can create a single transit gateway or multiple transit gateways to interconnect more than one IBM Cloud VPCs. You can also connect your IBM Cloud classic infrastructure to a transit gateway to provide seamless communication with classic infrastructure resources. For more information, refer to [Interconnecting VPCs](/docs/vpc?topic=vpc-interconnectivity&interface=cli#interconnecting-vpcs).
 
-
+* Bare Metal in VPC is not supported.
 
 ## Routing considerations
 {: #routing-considerations}

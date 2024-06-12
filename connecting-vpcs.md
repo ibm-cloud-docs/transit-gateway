@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-
+lastupdated: "2024-06-12"
 
 keywords: connecting, region, order
 
@@ -60,7 +60,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
       * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
       * **Classic infrastructure** networks allow you to connect to IBM Cloud classic resources. Only one classic infrastructure connection is allowed per account.
-      
+      * **Redundant GRE tunnel** allows unbound GRE tunnels to connect to endpoints in either VPC or classic infrastructure networks, thus allowing you to build in redundancy for GRE tunnels. For more information, see [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection).
       * **Direct Link** creates a network connection to and from Direct Link gateways so that there is a secure connection to on-premises networks and other resources connected to the transit gateway.
 
          If you select **Direct Link**, you must also log in to the [Direct Link console](/interconnectivity/direct-link){: external} and specify **Transit Gateway** as the type of network connection for your direct link.
@@ -156,92 +156,23 @@ ibmcloud tg gwc --name myGateway --location us-south
 {: #tg-api-creating-transit-gateway}
 {: api}
 
-Follow these instructions to create a transit gateway with the API:
+Follow these steps to create a transit gateway with the API:
 
 1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment&interface=api#api-prerequisites-setup).
 1. Store any additional variables to be used in the API commands.
+1. When all variables are initiated, create the transit gateway:
 
-### Request
-{: #tg-api-creating-transit-gateway-request}
+   ```sh
+   curl -X POST --location --header "Authorization: Bearer
+   {iam_token}" \
+   --header "Accept: application/json" \
+   --header "Content-Type: application/json" \
+   --data '{ "location": "us-south", "name": "Transit_Service_BWTN_SJ_DL" }' \
+   "{base_url}/transit_gateways?version={version}"
+   ```
+   {: pre}
 
-To create a transit gateway, adjust the following parameters:
-
-|Query parameters|Information|
-|--|--|
-| **version**  \n Required  \n string | Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date may be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`
-|**Request Body**  \n Required  \n TGCreateTemplate |The Transit Gateway Template|
-|**location**  \n Required  \n string|Location of Transit Gateway Services  \n **Example:** `us-south`|
-|**name**  \n Required  \n Name | Name Transit Gateway Services  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression  `^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
-|**global**  \n boolean | Allow global routing for a transit gateway. If unspecified, the default value is `false`.  \n **Default:** `false`  \n **Example:** `true`|
-|**resource_group**  \n ResourceGroupIdentity | The resource group to use. If unspecified, the account’s [default resource group](/apidocs/resource-manager#introduction) is used.|
-|**id**  \n Required  \n string | The unique identifier for this resource group  \n **Possible values:** Value must match regular expression  `^[0-9a-f]{32}$`  \n **Example:** `56969d6043e9465c883cb9f7363e78e8`|
-{: caption="Table 1. Parameters for creating a transit gateway" caption-side="bottom"}
-
-#### Example Request
-{: #tg-api-creating-transit-gateway-request-example}
-
-This example illustrates creating a transit gateway with the API:
-
-```sh
-curl -X POST --location --header "Authorization: Bearer
-{iam_token}" \
---header "Accept: application/json" \
---header "Content-Type: application/json" \
---data '{ "location": "us-south", "name": "Transit_Service_BWTN_SJ_DL" }' \
-"{base_url}/transit_gateways?version={version}"
-```
-{: pre}
-
-### Response
-{: #tg-api-creating-transit-gateway-response}
-
-The following response shows once you initiate the request:
-
-|Response Body |Details|
-|--|--|
-|**id**  \n Always included  \n ID|The unique identifier for this transit gateway  \n **Example:** `ef4dcb1a-fee4-41c7-9e11-9cd99e65c1f4`|
-|**crn**  \n Always included  \n CRN|The CRN for this transit gateway  \n **Example:** `crn:v1:bluemix:public:transit:dal03:a/57a7d05f36894e3cb9b46a43556d903e::gateway:ef4dcb1a-fee4-41c7-9e11-9cd99e65c1f4`|
-|**name**  \n Always included  \n string|A human readable name for the transit gateway  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression  `^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `my-transit-gateway-in-TransitGateway`|
-|**location**  \n Always included  \n string|Location of the transit gateway \n **Example:** `us-south`|
-|**created_at**  \n Always included  \n boolean|Allow global routing for a transit gateway  \n **Example:** `true`|
-|**status**  \n Always included  \n string|The status of the transit gateway. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`available`,`failed`,`pending`,`deleting`]|
-|**resource_group**  \n ResourceGroupReference  \n |The resource group to use. If unspecified, the account's [default resource group](/apidocs/resource-manager#introduction) is used.
-|- **id**  \n Always included  \n string|The unique identifier for this resource group  \n **Possible values:** Value must match regular expression  `^[0-9a-f]{32}$`  \n **Example:** `56969d6043e9465c883cb9f7363e78e8`|
-|- **href**  \n Always included*  \n URL|The URL for this resource group  \n **Possible values:** Value must match regular expression  `^http(s)?:\/\/([^\/?#]*)([^?#]*)(\?([^#]*))?(#(.*))?$`  \n **Example:** `https://resource-manager.bluemix.net/v1/resource_groups/56969d6043e9465c883cb9f7363e78e8`|
-|**updated_at**  \n date-time | The date and time that this gateway was last updated.|
-{: caption="Table 2. Initiate response example" caption-side="bottom"}
-
-|Status Code||
-|--|--|
-|**201**|The transit gateway was created successfully.|
-|**400**|  An invalid transit gateway template was provided.|
-|**404**|A transit gateway location could not be found for the identifier given in the template, a resource group could not be found for the given resource group identifier, or the default resource group could not be found for the account (if no resource group identifier was supplied).|
-|**409**| The transit gateway could not be created as a transit gateway with the same name already exists.|
-{: caption="Table 3. Status codes" caption-side="bottom"}
-
-#### Example Response
-{: #tg-api-creating-transit-gateway-response-example}
-
-This example response illustrates that the transit gateway was created successfully:
-
-```sh
-{
-  "created_at": "2020-03-31T12:08:05Z",
-  "crn": "crn:[...]",
-  "global": true,
-  "id": "ef4dcb1a-fee4-41c7-9e11-9cd99e65c1f4",
-  "location": "us-south",
-  "name": "example-gateway",
-  "resource_group": {
-    "id": "56969d6043e9465c883cb9f7363e78e8"
-  },
-  "status": "pending",
-  "updated_at": "2020-03-31T12:08:05Z"
-}
-```
-{: screen}
-
-For more information (including Java, Node, Python and Go examples), see "Creates a Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway?code=java#create-transit-gateway).
+For more information, see [Creates a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway) in the Transit Gateway API reference.
 {: note}
 
 ## Creating a transit gateway using Terraform

@@ -65,58 +65,27 @@ ibmcloud tg cd $gateway $connection -f
 {: #deleting-connections-api}
 {: api}
 
+You can delete a connection with the API.
+
 After the specified connection is detached, entities still within the transit gateway will no longer be able to communicate directly to it through the IBM Cloud private backbone.
 {: note}
 
-You can delete a connection with the API.
-
-### Request
-{: #deleting-connections-api-request}
-
-To delete a connection with the API, set the following parameters:
-
-|Path Parameters|Details|
-|--|--|
-|**transit_gateway_id**  \n Required  \n string|The Transit Gateway identifier|
-|**id**  \n Required  \n string|The connection identifier|
-{: caption="Table 1. Path parameters for deleting a connection" caption-side="bottom"}
-
-|Query Parameters|Details|
-|--|--|
-|**version**  \n Required  \n string|Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date may be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
-{: caption="Table 1. Query parameters for deleting a connection" caption-side="bottom"}
-
-#### Example Request
+### Example Request
 {: #deleting-connections-api-request-example}
 
 This example request illustrates deleting a connection:
 
 ```sh
-DELETE /transit_gateways/{transit_gateway_id}/connections/{id}
-
-"{base_url}/transit_gateways/{transit_gateway_id}/connections/{id}?version={version}"
-
-curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/testgateway/connections/testconnection?version=2022-02-09" -H "accept: */*"
+curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/$TRANSIT_GATEWAY_ID/connections/$CONNECTION_ID?version=2022-02-09" -H "accept: */*"
 ```
 {: pre}
 
-### Response
-{: #deleting-connections-api-response}
-
-The following status codes will be returned:
-
-|Status code||
-|--|--|
-|**200**|The connection was removed successfully.|
-|**404**|A Transit Gateway or Transit Gateway connection with the specified identifier could not be found.|
-{: caption="Table 1. Status codes for deleting a connection" caption-side="bottom"}
-
-#### Example Response
+### Example Response
 {: #example-returned-response}
 
 This example illustrates the returned response when the connection could not be found:
 
-```sh
+```json
 {
   "errors": [
     {
@@ -130,7 +99,7 @@ This example illustrates the returned response when the connection could not be 
 ```
 {: pre}
 
-For more information (including Java, Node, Python and Go examples), see "Remove connection from Transit Gateway" in the [Transit Gateway API reference](/apidocs/transit-gateway#delete-transit-gateway-connection).
+For more information, see [Removes a connection from Transit Gateway](/apidocs/transit-gateway#delete-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
 ## Deleting a connection using Terraform

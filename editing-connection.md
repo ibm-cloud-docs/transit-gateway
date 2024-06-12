@@ -71,82 +71,25 @@ ibmcloud tg cu $gateway $connection --name MyConn2
 
 You can update the name of a connection for a transit gateway with the API.
 
-### Request
-{: #editing-connections-api-request}
-
-To edit a connection, set the following parameters:
-
-|Path parameters|Details|
-|--|--|
-|**transit_gateway_id**  \n Required  \n string|The Transit Gateway identifier|
-|**id**  \n Required  \n string|The connection identifier|
-{: caption="Table 1. Path parameters for editing a connection" caption-side="bottom"}
-
-|Query parameters|Details|
-|--|--|
-|**version**  \n Required  \n string|Requests the version of the API as of a date in the format `YYYY-MM-DD`. Any date up to the current date may be provided. Specify the current date to request the latest version.  \n **Possible values:** Value must match regular expression  `^[0-9]{4}-[0-9]{2}-[0-9]{2}$`|
-|**Request Body**  \n Required  \n TransitGatewayConnectionActions | The action template|
-|**name**  \n Name|The user-defined name for this transit gateway connection.  \n Name specification is required for network type `gre_tunnel` and `unbound_gre_tunnel` connections.  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression ^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
-{: caption="Table 2. Query parameters for editing a connection" caption-side="bottom"}
-
-#### Example Request
- {: #editing-connections-api-request-example}
+### Example Request
+{: #editing-connections-api-request-example}
 
 This example illustrates editing the name of a transit gateway connection:
 
-
 ```sh
-PATCH
-/transit_gateways/{transit_gateway_id}/connections/{id}
-{
+curl -H "Content-Type: application/json" -X PATCH https://$TS_ENDPOINT/v1/transit_gateways/$GATEWAY_ID/connections/$CONNECTION_ID?version=2020-03-31   -H "authorization: Bearer $IAM_TOKEN"   -d '{
   "name":  "Transit_Service_BWTN_SJ_DL",
   "prefix_filters_default":  "permit"
-}
+}'
 ```
 {: pre}
 
-### Response
-{: #editing-connections-api-response}
-
-The following response shows after you initiate the request:
-
-| Response body |Details|
-|--|--|
-|**name**  \n Always included  \n Name|The user-defined name for this transit gateway connection.  \n **Possible values:** 1 ≤ length ≤ 63, Value must match regular expression  `^([a-zA-Z]|[a-zA-Z][-_a-zA-Z0-9]*[a-zA-Z0-9])$`  \n **Example:** `Transit_Service_BWTN_SJ_DL`|
-|**network_type**  \n Always included  \n string|Defines what type of network is connected via this connection. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`classic`,`directlink`,`gre_tunnel`,`unbound_gre_tunnel`,`vpc`]  \n **Example:** `vpc`|
-|**id**  \n Always included  \n string | The unique identifier for this Transit Gateway Connection  \n **Example:** `1a15dca5-7e33-45e1-b7c5-bc690e569531`|
-|**created_at** \n Always included  \n date-time|The date and time that this connection was created|
-|**base_network_type**  \n string|Defines the type of network the GRE tunnel targets. This field only applies to `unbound_gre_tunnel` type connections. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.
-|**network_id**  \n string|The ID of the network being connected to using this connection. This field is required for some types, such as `vpc` and `directlink` For network types `vpc` and `directlink` it should be the CRN of the target vpc / gateway respectively.  \n **Example:** `crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
-|**base_connection_id**  \n string|network_type `gre_tunnel` connections use `base_connection_id` to specify the ID of a network_type `classic` connection the tunnel is configured over. The specified connection must reside in the same transit gateway and be in an active state. The `classic` connection cannot be deleted until any `gre_tunnel` connections using it are deleted. This field only applies to and is required for network type `gre_tunnel` connections.  \n **Example:** `975f58c1-afe7-469a-9727-7f3d720f2d32`|
-|**local_bgp_asn**  \n integer|The local network BGP ASN. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Example:** `64490`|
-|**local_gateway_ip**  \n string| The local gateway IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Example:** `192.168.100.1`|
-|**local_tunnel_ip** \n string|The local tunnel IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Example:** `192.168.129.2`|
-|**mtu**  \n integer|The GRE tunnel MTU. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Example:** `9000`|
-|**network_account_id**  \n AccountID|The ID of the account which owns the connected network. Generally only used if the network is in a different IBM Cloud account than the gateway.  \n **Example:** `28e4d90ac7504be694471ee66e70d0d5`|
-|**remote_bgp_asn**  \n integer | The remote network BGP ASN. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Example:** `65010`|
-|**remote_gateway_ip**  \n string|The remote gateway IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Example:** `10.242.63.12`|
-|**remote_tunnel_ip**  \n string|Remote tunnel IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.  \n **Example:** `192.168.129.1`|
-|**request_status**  \n string|Only visible for cross account connections, this field represents the status of a connection request between IBM Cloud accounts. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`pending`,`approved`,`rejected`,`expired`,`detached`]|
-|**status**  \n string|Connection's current configuration state. The list of enumerated values for this property may expand in the future. Code and processes using this field must tolerate unexpected values.  \n **Possible values:** [`attached`,`failed`,`pending`,`deleting`,`detaching`,`detached`]|
-|**updated_at**  \n date-time|The date and time that this connection was last updated|
-|**zone**  \n ZoneReference|The location of the GRE tunnel. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
-|- **name**  \n Always included  \n string|Availability zone name  \n **Example:** `us-south-1`|
-{: caption="Table 3. Initiation request" caption-side="bottom"}
-
-|Status Code||
-|--|--|
-|**200**|The connection was updated successfully.|
-|**400**|The connection update template was invalid.|
-|**404**|A connection or gateway with the specified identifier(s) could not be found.|
-{: caption="Table 4. Status codes" caption-side="bottom"}
-
-#### Example Response
+### Example Response
 {: #editing-connections-api-response-example}
 
 The following response indicates that the connection was updated successfully:
 
-```sh
+```json
 {
   "name": "Transit_Service_BWTN_SJ_DL",
   "network_id": "crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b",
@@ -183,9 +126,11 @@ The following response indicates that the connection was updated successfully:
   }
 }
 ```
+
 {: screen}
 
-For more information (including Java, Node, Python and Go examples), see "Update Specified Transit Gateway Connection" in the [Transit Gateway API reference](/apidocs/transit-gateway#update-transit-gateway-connection).
+
+For more information, see [Updates specified Transit Gateway connection](/apidocs/transit-gateway#update-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
 ## Editing a connection using terraform

@@ -17,6 +17,18 @@ subcollection: transit-gateway
 
 In this change log, you can learn about the latest changes, improvements, and updates for {{site.data.keyword.tg_full}}.
 
+## 12 June 2024
+{: #cli-june1224}
+
+Support for redundant Generic Routing Encapsulation (GRE) tunnel connections
+:    To build in redundancy and eliminate the need to schedule an outage when a Transit Gateway router must down for maintenance, there is a new redundant GRE type, which is essentially a grouping of at least two GRE tunnels that can connect to classic or VPC networks. This connection type allows GRE tunnels to be placed on different devices in the same zone and not flag overlapping routes that are in the redundant GRE's tunnels. For more information, see [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection&interface=ui).
+
+   New commands:
+
+    * [**`tg connection-rgre-create`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#connection-create-redundant-gre) - Create a redundant GRE.
+    * [**`tg redundant-gre-tunnel-add`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#redundant-gre-tunnel-add) - Add a tunnel to a redundant GRE.
+    * [**`tg redundant-gre-tunnel-remove`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#redundant-gre-tunnel-remove) - Remove a tunnel from a redundant GRE.
+
 
 
 ## 24 June 2023
