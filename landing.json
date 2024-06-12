@@ -32,7 +32,7 @@
       "view_more": "/docs/transit-gateway?topic=transit-gateway-transit-gateway-release-notes",
       "tiles": [
         {
-          "date": "14 June 2024",
+          "date": "12 June 2024",
           "title": "Support for redundant Generic Routing Encapsulation (GRE) tunnel connections",
           "description": "To build in redundancy and eliminate the need to schedule an outage when a Transit Gateway router must go down for maintenance, there is a new redundant GRE type, which is essentially a grouping of at least two GRE tunnels that can connect to classic or VPC networks. This connection type allows GRE tunnels to be placed on different devices in the same zone and not flag overlapping routes that are in the redundant GRE's tunnels."
         },

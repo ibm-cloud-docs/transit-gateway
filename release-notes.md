@@ -19,8 +19,8 @@ content-type: release-note
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
 
-## 14 June 2024
-{: #transit-gateway-june1424}
+## 12 June 2024
+{: #transit-gateway-june1224}
 {: release-note}
 
 Support for redundant Generic Routing Encapsulation (GRE) tunnel connections
