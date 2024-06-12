@@ -20,7 +20,27 @@ content-type: release-note
 Check back regularly to see what's new with {{site.data.keyword.cloud}} Transit Gateway API.
 {: shortdesc}
 
+## 14 June 2024
+{: #transit-gateway-june1424}
 
+Redundant Generic Routing Encapsulation (GRE)
+
+To build in redundancy and eliminate the need to schedule an outage when a Transit Gateway router must go down for maintenance, there is a new **Redundant GRE**  connection type, which is essentially a grouping of at least two GRE tunnels that can connect to classic or VPC networks. This connection type allows GRE tunnels to be placed on different devices in the same zone and not flag overlapping routes that are in the redundant GRE's tunnels.
+
+Information for at least two GRE tunnels are required in the tunnel array on the `POST` call to create a redundant GRE. When retrieving connections, redundant GREs have a tunnel array listing the GRE tunnels within the redundant GRE. New APIs enable you to [create](/apidocs/transit-gateway?code=go#create-transit-gateway-gre-tunnel), [delete](/apidocs/transit-gateway?code=go#delete-transit-gateway-connection-tunnels), [update](/apidocs/transit-gateway?code=go#update-transit-gateway-connection-tunnels), and [retrieve](/apidocs/transit-gateway?code=go#get-transit-gateway-connection-tunnels) tunnels within a redundant GRE. This uses the tunnels resource on the REST API for a connection that is a redundant GRE.
+
+There is also a change to the `GET /locations/{name}` API, which now includes an array of zones that lists which zones are valid for GREs for a given region.
+
+## 20 May 2024
+{: #transit-gateway-may2024}
+
+Transit Gateway connections list supports pagination
+:    To improve performance and reliability, the operation to [retrieve all connections for a transit gateway](/apidocs/transit-gateway#list-transit-gateway-connections) has been enhanced to support pagination. With pagination, if you have more connections than the requested `limit` (default: 50, maximum 500) only the number of connections within the size limit are returned, sorted by date with the oldest first.
+
+   While the default `limit` value allows your existing clients to retrieve the entire list of connections with one request, the default `limit` value is expected to be lowered in a future release. Additionally, we expect the number of transit gateway connections will continue to increase. Therefore, to ensure your clients continue to be aware of all connections, you must upgrade your clients to follow our [pagination guidance](/apidocs/transit-gateway#api-pagination). To test that your clients have been upgraded correctly, specify a `limit` value of `1`. For more information, see [Retrieves all connections](/apidocs/transit-gateway?code=go#list-connections).
+
+   The SDK automatically handles pagination. No action is necessary.
+   {: note}
 
 ## 24 June 2023
 {: #transit-gateway-ju2423}

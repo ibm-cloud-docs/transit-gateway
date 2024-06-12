@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-
+lastupdated: "2024-06-14"
 
 keywords: features, overview
 
@@ -35,7 +35,7 @@ To add a connection to a transit gateway, follow these steps:
 
    * **VPC** - Allows you to connect to your account's VPC resources, or VPC resources from other accounts as well.
    * **Classic infrastructure** - Allows you to connect to IBM Cloud classic resources.
-   
+   * **Redundant GRE** allows unbound GRE tunnels to connect to endpoints in either VPC or classic infrastructure networks, thus allowing you to build in redundancy for GRE tunnels. For more information, see [Creating a redundant GRE tunnel connection](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection).
    * **Direct Link** - Creates a network connection to and from Direct Link gateways so that there is a secure connection to on-premises networks and other resources that are connected to the transit gateway.
 
       If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (that uses the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link.

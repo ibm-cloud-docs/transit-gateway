@@ -17,7 +17,25 @@ subcollection: transit-gateway
 
 In this change log, you can learn about the latest changes, improvements, and updates for {{site.data.keyword.tg_full}}.
 
+## 14 June 2024
+{: #cli-june1424}
 
+Support for redundant Generic Routing Encapsulation (GRE) tunnel connections
+:    To build in redundancy and eliminate the need to schedule an outage when a Transit Gateway router must down for maintenance, there is a new redundant GRE type, which is essentially a grouping of at least two GRE tunnels that can connect to classic or VPC networks. This connection type allows GRE tunnels to be placed on different devices in the same zone and not flag overlapping routes that are in the redundant GRE's tunnels. For more information, see [Creating a redundant GRE tunnel connection](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection&interface=ui).
+
+   New commands:
+
+    * [**`tg connection-rgre-create`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#connection-create-redundant-gre) - Create a redundant GRE.
+    * [**`tg redundant-gre-tunnel-add`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#redundant-gre-tunnel-add) - Add a tunnel to a redundant GRE.
+    * [**`tg redundant-gre-tunnel-remove`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#redundant-gre-tunnel-remove) - Remove a tunnel from a redundant GRE.
+
+## 20 May 2024
+{: #cli-may2024}
+
+Pagination support
+:    To improve performance and reliability, the [**`ibmcloud tg connections`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-connections) command has been enhanced to support pagination. With pagination, if you have more connections than the requested `limit` (default: 100, maximum 500) only the number of connections within the size limit are returned, sorted by date with the oldest first.
+
+   To avoid disruption, upgrade your CLI version and update your tooling that uses CLI to handle the pagination. To test that your tooling handles pagination correctly, set the `limit` size on the [**`ibmcloud tg connections`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-connections) command. For more information, see [Preparing for connection lists pagination support](/docs/transit-gateway?topic=transit-gateway-notification-tgw-pagination-support-connections-lists).
 
 ## 24 June 2023
 {: #cli-june2424}
