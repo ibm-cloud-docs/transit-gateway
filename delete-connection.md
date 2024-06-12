@@ -65,10 +65,10 @@ ibmcloud tg cd $gateway $connection -f
 {: #deleting-connections-api}
 {: api}
 
+You can delete a connection with the API.
+
 After the specified connection is detached, entities still within the transit gateway will no longer be able to communicate directly to it through the IBM Cloud private backbone.
 {: note}
-
-You can delete a connection with the API.
 
 ### Example Request
 {: #deleting-connections-api-request-example}
