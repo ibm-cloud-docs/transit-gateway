@@ -104,9 +104,6 @@ ibmcloud tg connection-create-gre $gateway  --name gre-connection --base-connect
 {: #tg-api-adding-gre-connection-transit-gateway}
 {: api}
 
-For more information, see [Adds a connection to a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.
-{: note}
-
 ### Example Request
 {: #add-gre-connection-curl-api-request-example}
 
@@ -133,6 +130,7 @@ The payload for this request is as follows:
 ```
 
 {: pre}
+
 ### Example Response
 {: #add-gre-connection-curl-api-response-example}
 
@@ -150,6 +148,9 @@ This example illustrates the response from creating a GRE tunnel:
 ```
 
 {: screen}
+
+For more information, see [Adds a connection to a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.
+{: note}
 
 ## Creating a GRE tunnel connection using Terraform
 {: #tg-terraform-adding-gre-connection-transit-gateway}
