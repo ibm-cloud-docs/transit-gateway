@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-04-16"
+  years: 2020, 2024
+lastupdated: "2024-06-12"
 
 keywords: transit, gateway, ordering, getting, started
 

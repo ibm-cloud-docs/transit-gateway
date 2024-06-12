@@ -86,7 +86,7 @@ When using the `VPC` base network type:
    * You must enable the IP spoofing flag for VPC network type. For information about enabling IP spoofing checks, see [About IP spoofing](/docs/vpc?topic=vpc-ip-spoofing-about).
    * The virtual server interface profile must be v2.
    * The local gateway IP:
-      *  Must must comply with [RFC 1918](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpc-connection-consideration) (or no floating IPs or public gateways on the VPC).
+      *  Must comply with [RFC 1918](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpc-connection-consideration) (or there are no floating IPs or public gateways on the VPC).
       * Must not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and cannot be in conflict with any existing networks that are connected to the transit gateway.
       * Cannot be used as the `local-gateway-ip `for another GRE using the same underlay network.
 

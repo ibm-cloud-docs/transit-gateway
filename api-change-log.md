@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-06-24"
+  years: 2022, 2024
+lastupdated: "2024-06-12"
 
 keywords: transit gateway api change log
 
