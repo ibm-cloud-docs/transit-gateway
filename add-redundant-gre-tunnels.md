@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-07-01"
 
 keywords:
 
@@ -218,7 +218,6 @@ curl -H "Content-Type: application/json" -X POST https://$TS_ENDPOINT/v1/transit
   }
 }
 ```
-
 {: screen}
 
 For more information, see [Adding a connection to a Transit Gateway](/apidocs/transit-gateway#create-transit-gateway-gre-tunnel) in the Transit Gateway API reference.

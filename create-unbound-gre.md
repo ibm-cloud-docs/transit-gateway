@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-10-09"
+  years: 2020, 2024
+lastupdated: "2024-07-01"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -178,7 +178,6 @@ The payload for this request is as follows:
   }
 }
 ```
-
 {: pre}
 
 ### Example Response

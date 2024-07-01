@@ -29,7 +29,7 @@ A direct link must be in transit mode so that it can only connect to transit gat
 
 All transit gateways with either a classic or Direct Link connection can be affected by this change to `10.0.0.0/14`, `10.198.0.0/15`, and `10.200.0.0/14` routes.
 
- * Classic connections will no longer see these routes, even if they previously did from other non-Direct Link connections.
+* Classic connections will no longer see these routes, even if they previously did from other non-Direct Link connections.
 * Other non-classic connections will see these routes from Direct Link connections.
 
 Keep in mind that:
@@ -46,7 +46,7 @@ No customer action is required to enable these routing changes on Transit Gatewa
 
 1. Remove the direct link as a connection from all transit gateways. For more information, see [Deleting a connection](/docs/transit-gateway?topic=transit-gateway-deleting-connections&interface=ui).
 1. Open the [Direct Link console](/interconnectivity/direct-link){: external} and click the Direct Link name to display its Details page.
-1. Click the Edit icon ![Edit icon](/images/edit.png). The Edit cofiguration side panel displays.
+1. Click the Edit icon ![Edit icon](images/edit.png). The Edit configuration side panel displays.
 1. Scroll down to the Connections section and change **Transit Gateway** to **Direct resources**.
 1. Read and agree to the Direct Link prerequisites, then click **Submit**.
 1. Edit the Details page again and change the Connections setting back to **Transit Gateway.**

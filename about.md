@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-06-24"
+  years: 2020, 2024
+lastupdated: "2024-07-01"
 
 keywords: features, overview
 
@@ -75,35 +75,35 @@ Here are some ways that you can implement the {{site.data.keyword.tg_full_notm}}
 
 Connect two VPCs in the same region with a local transit gateway.
 
-![Connect two or more VPCs in the same MZR](images/TGW_SameRegion.png "Connect two or more VPCs in the same MZR"){: caption="Figure 1. Connect two or more VPCs in the same MZR" caption-side="bottom"}
+![Connect two or more VPCs in the same MZR](/images/TGW_SameRegion.png "Connect two or more VPCs in the same MZR"){: caption="Figure 1. Connect two or more VPCs in the same MZR" caption-side="bottom"}
 
 ### Use case 2: Interconnect two or more VPCs across multiple MZRs
 {: #use-case-2}
 
 Connect VPCs in multiple regions by using a global transit gateway.
 
-![Connect two or more VPCs across multiple MZRs](images/TGW_Multi-Multi.png "Connect two or more VPCs across multiple MZRs"){: caption="Figure 2. Connect two or more VPCs across multiple MZRs" caption-side="bottom"}
+![Connect two or more VPCs across multiple MZRs](/images/TGW_Multi-Multi.png "Connect two or more VPCs across multiple MZRs"){: caption="Figure 2. Connect two or more VPCs across multiple MZRs" caption-side="bottom"}
 
 ### Use case 3: Interconnect one or more VPCs in the same MZR and an IBM classic network
 {: #use-case-3}
 
 Connect VPCs in the same region with {{site.data.keyword.cloud_notm}} classic through a local transit gateway.
 
-![Connect to the IBM classic network and one or more VPCs in the same MZR](images/TGW_Classic.png "Connect an IBM classic network and one or more VPCs in the same MZR"){: caption="Figure 3. Connect to the IBM classic network and one or more VPCs in the same MZR" caption-side="bottom"}
+![Connect to the IBM classic network and one or more VPCs in the same MZR](/images/TGW_Classic.png "Connect an IBM classic network and one or more VPCs in the same MZR"){: caption="Figure 3. Connect to the IBM classic network and one or more VPCs in the same MZR" caption-side="bottom"}
 
 ### Use case 4: Interconnect VPCs and an IBM classic network to access all your resources across all MZRs
 {: #use-case-4}
 
 Connect VPCs from multiple regions with {{site.data.keyword.cloud_notm}} classic through a global transit gateway.
 
-![Connect to the IBM classic network and VPCs to access all your resources across all MZRs](images/twg_use_4.png "Connect an IBM classic network and VPCs to access all your resources across all MZRs"){: caption="Figure 4. Connect to the IBM classic network and VPCs to access all your resources across all MZRs" caption-side="bottom"}
+![Connect to the IBM classic network and VPCs to access all your resources across all MZRs](/images/twg_use_4.png "Connect an IBM classic network and VPCs to access all your resources across all MZRs"){: caption="Figure 4. Connect to the IBM classic network and VPCs to access all your resources across all MZRs" caption-side="bottom"}
 
 ### Use case 5: Interconnect VPCs across accounts
 {: #use-case-5}
 
 Connect VPCs in the same region owned by different {{site.data.keyword.cloud_notm}} accounts through a local transit gateway.
 
-![Connect two or more VPCs across accounts](images/TGW_UC5_Cross_Account-VPC.png "Connect two or more VPCs across IBM Cloud accounts"){: caption="Figure 5. Connect two or more VPCs across accounts" caption-side="bottom"}
+![Connect two or more VPCs across accounts](/images/TGW_UC5_Cross_Account-VPC.png "Connect two or more VPCs across IBM Cloud accounts"){: caption="Figure 5. Connect two or more VPCs across accounts" caption-side="bottom"}
 
 ### Use case 6: Connect networks (VPC and classic) to multiple local gateways
 {: #use-case-6}
@@ -114,14 +114,14 @@ Keep in mind:
 - Highly Available (HA) capabilities are provided, as data in VPCs C and D might be replicated in VPCs in E and F.
 - Classic infrastructure transit gateway connections are required to be in the same account as the transit gateway owner.
 
-![Connect networks (VPC and classic) to multiple gateways](images/TGW_1.2.png "Connect networks (VPC and classic) to multiple gateways"){: caption="Figure 6. Connect networks (VPC and classic) to multiple local gateways" caption-side="bottom"}
+![Connect networks (VPC and classic) to multiple gateways](/images/TGW_1.2.png "Connect networks (VPC and classic) to multiple gateways"){: caption="Figure 6. Connect networks (VPC and classic) to multiple local gateways" caption-side="bottom"}
 
 ### Use case 7: Interconnect networks (VPC and classic) across accounts
 {: #use-case-7}
 
 Connect cross-account {{site.data.keyword.cloud_notm}} classic accounts to one or more transit gateways. To do so, the {{site.data.keyword.cloud_notm}} account that owns the transit gateway requests permission from the {{site.data.keyword.cloud_notm}} classic account to connect it to the transit gateway. The {{site.data.keyword.cloud_notm}} classic account must approve the request before the connection is made. You can repeat this process for multiple {{site.data.keyword.cloud_notm}} classic account connections as shown.
 
-![Connect both VPC and classic across accounts](images/TGW_xac.png "Connect both VPCs and classic across IBM Cloud accounts"){: caption="Figure 7. Connect both VPC and classic across accounts" caption-side="bottom"}
+![Connect both VPC and classic across accounts](/images/TGW_xac.png "Connect both VPCs and classic across IBM Cloud accounts"){: caption="Figure 7. Connect both VPC and classic across accounts" caption-side="bottom"}
 
 ### Use case 8: Connect networks by using a High Availability GRE tunnel
 {: #use-case-8}
@@ -130,7 +130,7 @@ Connect {{site.data.keyword.cloud_notm}} classic infrastructure by using a GRE t
 
 This diagram shows a highly available GRE tunnel configuration. When you set up a GRE tunnel configuration, an availability zone must be specified. To make this use case highly available, you must set up two GRE tunnels with the same endpoints, but by using different availability zones.
 
-![Connect by using a GRE tunnel](images/HA-GRE.png "Connect by using a High Availability GRE tunnel"){: caption="Figure 8. Connect networks using a High Availability GRE tunnel" caption-side="bottom"}
+![Connect by using a GRE tunnel](/images/HA-GRE.png "Connect by using a High Availability GRE tunnel"){: caption="Figure 8. Connect networks using a High Availability GRE tunnel" caption-side="bottom"}
 
 Transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point-to-point connection, has no built-in redundancy, and is a single point of failure. When you configure a GRE connection on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections by using different availability zones.
 {: note}
@@ -143,7 +143,7 @@ Connect {{site.data.keyword.cloud_notm}} Direct Link to allow on-premises connec
 Direct Link can be connected to either local or remote transit gateways.
 {: note}
 
-![Connect On-Premise Network to Transit Gateway](images/dlaas.png "Connect Direct Link on-premises network"){: caption="Figure 9. Connect on-premises network using Direct Link" caption-side="bottom"}
+![Connect On-Premise Network to Transit Gateway](/images/dlaas.png "Connect Direct Link on-premises network"){: caption="Figure 9. Connect on-premises network using Direct Link" caption-side="bottom"}
 
 ### Power Virtual Server uses cases using Transit Gateway
 {: #use-case-10}

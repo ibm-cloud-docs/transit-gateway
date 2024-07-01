@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-07-01"
 
 keywords: updates, additions, improvements
 
@@ -45,6 +45,7 @@ Behavior change: Disable advertisement of service network routes from transit ga
 {: release-note}
 
 Madrid multi-zone region (MZR) support
+ :    Madrid MZR is now supported.
 
 ## 24 April 2023
 {: #transit-gateway-apr2423}
