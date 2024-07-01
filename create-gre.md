@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-10-09"
+  years: 2020, 2024
+lastupdated: "2024-07-01"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -128,7 +128,6 @@ The payload for this request is as follows:
   "remote_tunnel_ip": "192.168.129.1"
 }
 ```
-
 {: pre}
 
 ### Example Response
@@ -146,7 +145,6 @@ This example illustrates the response from creating a GRE tunnel:
   "updated_at": "2020-03-31T12:08:05Z"
 }
 ```
-
 {: screen}
 
 For more information, see [Adds a connection to a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.

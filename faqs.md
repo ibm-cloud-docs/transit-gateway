@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-04-10"
+  years: 2020, 2024
+lastupdated: "2024-07-01"
 
 keywords: faq, faqs, questions
 
@@ -52,7 +52,7 @@ The routing option that you choose for a transit gateway only determines what VP
 You can create more than one transit gateway in your account. Each transit gateway (and its connections) are logically isolated from your other transit gateways.
 
 ## Can I create more than two connections for a given transit gateway?
-{: connections-faq}
+{: #connections-faq}
 {: faq}
 {: support}
 

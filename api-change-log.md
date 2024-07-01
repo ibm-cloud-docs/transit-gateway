@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-06-12"
+  years: 2020, 2024
+lastupdated: "2024-07-01"
 
 keywords: transit gateway api change log
 
@@ -21,7 +21,7 @@ Check back regularly to see what's new with {{site.data.keyword.cloud}} Transit 
 {: shortdesc}
 
 ## 12 June 2024
-{: #transit-gateway-june1224}
+{: #transit-gateway-jun1224}
 
 Redundant Generic Routing Encapsulation (GRE)
 

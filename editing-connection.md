@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-02-18"
+  years: 2020, 2024
+lastupdated: "2024-07-01"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -126,7 +126,6 @@ The following response indicates that the connection was updated successfully:
   }
 }
 ```
-
 {: screen}
 
 

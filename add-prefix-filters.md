@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-01-22"
+  years: 2020, 2024
+lastupdated: "2024-07-01"
 
 keywords:
 
@@ -101,7 +101,7 @@ To add a prefix filter to a new connection in the UI, follow these steps:
 To add prefix filtering to an existing connection in the UI, follow these steps:
 
 1. From the Transit Gateway page, click the name of the gateway where you want to add prefix filters.
-1. The prefix filtering icon ![Prefix filter icon](images/prefix-filter-icon.png) shows if a connection already has prefix filters. Click **View** next to **Prefix filters** to show the prefix filter list.
+1. The prefix filtering icon ![Prefix filter icon](/images/prefix-filter-icon.png) shows if a connection already has prefix filters. Click **View** next to **Prefix filters** to show the prefix filter list.
 
     To modify an existing prefix filter, click the Actions menu ![Actions menu](/images/overflow.png) and select **Prefix filtering**.
     {: tip}
@@ -127,7 +127,7 @@ To delete a prefix filter for an existing connection in the UI, follow these ste
 
 1. From the details page of the transit gateway, identify the connection where you want to delete prefix filters.
 
-   The prefix filtering icon ![Prefix filter icon](images/prefix-filter-icon.png) shows if a connection already has prefix filters.
+   The prefix filtering icon ![Prefix filter icon](/images/prefix-filter-icon.png) shows if a connection already has prefix filters.
 1. Click the connection's Actions menu ![Actions menu icon](/images/overflow.png) and select **Prefix filtering**.
 1. Click the Actions menu ![Actions menu icon](/images/overflow.png) next to the prefix filter that you want to delete. Then, click **Delete**.
 1. Click **Delete prefix filter** to confirm deletion.
