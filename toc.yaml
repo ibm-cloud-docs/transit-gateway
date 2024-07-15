@@ -72,8 +72,7 @@ toc:
                  label: Privately connecting to Transit Gateway
                  topics:
                  - vpe.md
-            - data-security.md
-            - cbr.md
+                 - cbr.md
         - topicgroup:
             label: Transit Gateway hazardous change remediation
             topics:
