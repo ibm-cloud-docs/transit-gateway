@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-01"
+lastupdated: "2024-07-15"
 
 keywords: help, tips, connections, provision
 
@@ -39,7 +39,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 ## Pricing considerations
 {: #pricing-considerations}
 
-The [IBM Cloud cost estimator](/cloud/cloud-calculator?mhsrc=ibmsearch_a&mhq=cost%20estimator), located on the Transit Gateway provisioning page, cannot interpret network connection types. To get a reliable cost estimate, you must input the estimated number of transit gateways and connections. Keep in mind that if you create a redundant GRE, each tunnel is an individual connection that counts against your [connection limit](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits).
+The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the Transit Gateway provisioning page, cannot interpret network connection types. To get a reliable cost estimate, you must input the estimated number of transit gateways and connections. Keep in mind that if you create a redundant GRE, each tunnel is an individual connection that counts against your [connection limit](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits).
 
 ## Classic infrastructure connection considerations
 {: #classic-infra-connection-considerations}
