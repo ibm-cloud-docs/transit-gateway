@@ -75,10 +75,6 @@ toc:
             - data-security.md
             - cbr.md
         - topicgroup:
-            label: Observability
-            topics:
-            - at-events-docs-tg.md
-        - topicgroup:
             label: Transit Gateway hazardous change remediation
             topics:
             - hcr-pagination-support.md
