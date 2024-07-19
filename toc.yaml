@@ -73,6 +73,11 @@ toc:
                  topics:
                  - vpe.md
                  - cbr.md
+            - data-security.md
+        - topicgroup:
+            label: Observability
+            topics:
+            - at_events.md
         - topicgroup:
             label: Transit Gateway hazardous change remediation
             topics:
