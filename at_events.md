@@ -37,7 +37,7 @@ Activity tracker events are captured for all locations, even if recorded in `eu-
 |---------------------|-------------------------|-------------------|----------------------|
 | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} |
 {: caption="Regions where activity tracking events are sent in Americas locations" caption-side="top"}
-{: #at-table-1}
+{: #at-table-4}
 {: tab-title="Americas"}
 {: tab-group="at-gen"}
 {: class="simple-tab-table"}
@@ -47,7 +47,7 @@ Activity tracker events are captured for all locations, even if recorded in `eu-
 |---------------------|------------------|------------------|--------------------|
 | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} |
 {: caption="Regions where activity tracking events are sent in Asia Pacific locations" caption-side="top"}
-{: #at-table-2}
+{: #at-table-5}
 {: tab-title="Asia Pacific"}
 {: tab-group="at-gen"}
 {: class="simple-tab-table"}
@@ -57,7 +57,7 @@ Activity tracker events are captured for all locations, even if recorded in `eu-
 |---------------------------------------------------------------|---------------------|------------------|
 | [Yes]{: tag-green} | [No]{: tag-red} | [No]{: tag-red} |
 {: caption="Regions where activity tracking events are sent in Europe locations" caption-side="top"}
-{: #at-table-3}
+{: #at-table-6}
 {: tab-title="Europe"}
 {: tab-group="at-gen"}
 {: class="simple-tab-table"}
@@ -107,7 +107,7 @@ Activity tracker events are captured for all locations, even if recorded in `eu-
 |---------------------|-------------------------|-------------------|----------------------|
 | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} |
 {: caption="Regions where activity tracking events are sent in Americas locations" caption-side="top"}
-{: #atracker-table-1}
+{: #atracker-table-7}
 {: tab-title="Americas"}
 {: tab-group="atracker"}
 {: class="simple-tab-table"}
@@ -117,7 +117,7 @@ Activity tracker events are captured for all locations, even if recorded in `eu-
 |---------------------|------------------|------------------|--------------------|
 | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} | [No]{: tag-red} |
 {: caption="Regions where activity tracking events are sent in Asia Pacific locations" caption-side="top"}
-{: #atracker-table-2}
+{: #atracker-table-8}
 {: tab-title="Asia Pacific"}
 {: tab-group="atracker"}
 {: class="simple-tab-table"}
@@ -127,7 +127,7 @@ Activity tracker events are captured for all locations, even if recorded in `eu-
 |---------------------------------------------------------------|---------------------|------------------|
 | [Yes]{: tag-green} | [No]{: tag-red} | [No]{: tag-red} |
 {: caption="Regions where activity tracking events are sent in Europe locations" caption-side="top"}
-{: #atracker-table-3}
+{: #atracker-table-9}
 {: tab-title="Europe"}
 {: tab-group="atracker"}
 {: class="simple-tab-table"}
