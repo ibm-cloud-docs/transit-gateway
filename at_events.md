@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-18"
+lastupdated: "2024-07-19"
 
 keywords: activity tracker, event, security
 
@@ -30,6 +30,9 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on event
 
 As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.at_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Activity tracking events are the same for both services. For information about migrating from {{site.data.keyword.at_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
 {: important}
+
+Activity tracker events are captured for all locations, even if recorded in `eu-de`. Because Transit Gateway is a global control plan, if you perform an action to a resource in `us-south`, it's handled by that control plane and logged in the `us-south` activity tracker location (by default). 
+{: remember}
 
 ## Locations where activity tracking events are generated
 {: #at-locations}
