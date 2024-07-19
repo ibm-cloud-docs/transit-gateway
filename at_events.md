@@ -10,14 +10,10 @@ subcollection: transit-gateway
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}
-
-
+{{site.data.keyword.attribute-definition-list}} 
 
 # Activity tracking events for {{site.data.keyword.tg_full_notm}}
-{: #new-at_events}
-
-
+{: #new-at_events} 
 
 {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.tg_full_notm}}, generate activity tracking events.
 {: shortdesc}
