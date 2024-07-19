@@ -133,11 +133,6 @@ Activity tracker events are captured for all locations, even if recorded in `eu-
 {: class="simple-tab-table"}
 {: row-headers}
 
-## Viewing activity tracking events for {{site.data.keyword.tg_full_notm}}
-{: #at-viewing}
-
-You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
-
 ## Viewing activity tracking events for {{site.data.keyword.vpc_short}}
 {: #at-viewing}
 
