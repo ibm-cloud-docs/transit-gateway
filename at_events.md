@@ -10,10 +10,10 @@ subcollection: transit-gateway
 
 ---
 
-{{site.data.keyword.attribute-definition-list}} 
+{{site.data.keyword.attribute-definition-list}}
 
 # Activity tracking events for {{site.data.keyword.tg_full_notm}}
-{: #new-at_events} 
+{: #at_events}
 
 {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.tg_full_notm}}, generate activity tracking events.
 {: shortdesc}
@@ -27,7 +27,7 @@ You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on event
 As of 28 March 2024, the {{site.data.keyword.at_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.at_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Activity tracking events are the same for both services. For information about migrating from {{site.data.keyword.at_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
 {: important}
 
-Activity tracker events are captured for all locations, even if recorded in `eu-de`. Because Transit Gateway is a global control plan, if you perform an action to a resource in `us-south`, it's handled by that control plane and logged in the `us-south` activity tracker location (by default). 
+Activity tracker events are captured for all locations, even if recorded in `eu-de`. Because Transit Gateway is a global control plan, if you perform an action to a resource in `us-south`, it's handled by that control plane and logged in the `us-south` activity tracker location (by default).
 {: remember}
 
 ## Locations where activity tracking events are generated
@@ -100,7 +100,7 @@ Activity tracker events are captured for all locations, even if recorded in `eu-
 
 ## Locations where activity tracking events are sent by {{site.data.keyword.atracker_full_notm}}
 {: #atracker-locations}
- 
+
 {{site.data.keyword.tg_full_notm}} sends activity tracking events by {{site.data.keyword.atracker_full_notm}} in the regions that are indicated in the following table.
 
 | Dallas (`us-south`) | Washington (`us-east`)  | Toronto (`ca-tor`) | Sao Paulo (`br-sao`) |
@@ -135,7 +135,7 @@ Activity tracker events are captured for all locations, even if recorded in `eu-
 
 ## Viewing activity tracking events for {{site.data.keyword.tg_full_notm}}
 {: #at-viewing}
- 
+
 You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
 
 ## Viewing activity tracking events for {{site.data.keyword.vpc_short}}
