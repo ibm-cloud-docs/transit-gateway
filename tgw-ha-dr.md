@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-06-17"
+  years: 2020, 2024
+lastupdated: "2024-08-29"
 
 keywords: connecting, region, order, ha, recovery, disaster
 
@@ -15,15 +15,15 @@ subcollection: transit-gateway
 # High availability and disaster recovery
 {: #ha-dr}
 
-{{site.data.keyword.tg_full}} is highly available within any {{site.data.keyword.cloud_notm}} location (for example, Dallas or Washington, DC). However, recovering from disasters that affect an entire location requires planning and preparation.
+{{site.data.keyword.tg_full}} is highly available within any {{site.data.keyword.cloud_notm}} region (for example, Dallas or Washington, DC). However, recovering from disasters that affect an entire region requires planning and preparation.
 {: shortdesc}
 
-You are responsible for understanding your configuration, customization, and usage of the service. You are also responsible for being ready to re-create an instance of the service in a new location and restore your data in a new location.
+You are responsible for understanding your configuration, customization, and usage of the service. You are also responsible for being ready to recreate an instance of the service in a new region and restore your data in a new region.
 
 ## High availability
 {: #high-availability}
 
-{{site.data.keyword.cloud_notm}} supports high availability with no single point of failure. The service achieves high availability automatically and transparently by the multi-zone region ([MZR](/docs/overview?topic=overview-locations#table-mzr)) feature provided by {{site.data.keyword.cloud_notm}}.
+{{site.data.keyword.cloud_notm}} supports high availability with no single point of failure. The service achieves high availability automatically and transparently by the multi-zone region ([MZR](/docs/overview?topic=overview-locations#regions)) feature provided by {{site.data.keyword.cloud_notm}}.
 
 When you create a transit gateway instance in a particular region, the system automatically enables multiple zones, which do not share a single point of failure.
 
