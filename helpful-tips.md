@@ -35,10 +35,10 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 * The following ASNs are blocked on Transit Gateway Generic Routing Encapsulation (GRE) and Direct Link connections. Avoid using these ASNs on appliances so that they are not included on the advertised routes in the AS path. Having these ASNs included prevent networks from working properly.
 
    `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200`–‍`65234`, `65402‍`–‍`65433`, `65500`, and `4201065000‍`–‍`4201065999`
-* Known restriction: A new transit gateway will support 4-way ECMP, but existing gateways cannot utilize this feature unless one of the following actions is taken:
+* **Known restriction:** A new transit gateway will support 4-way ECMP, but existing gateways cannot utilize this feature unless one of the following actions is taken:
 
-* For transit gateways with the Local routing type, you can toggle between Local and Global to enable this functionality.
-* If an existing gateway is currently set to Global, or if the transit gateway has more than 30 connections, you must open a support case for assistance.
+   * For transit gateways with the **Local** routing type, you can toggle between **Local** and **Global** to enable this functionality.
+   * If an existing gateway is currently set to **Global**, or if the transit gateway has more than 30 connections, you must [open an IBM Support case](/docs/get-support?topic=get-support-open-case&interface=ui) for assistance.
 
 ## Pricing considerations
 {: #pricing-considerations}
