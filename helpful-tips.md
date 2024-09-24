@@ -35,9 +35,9 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 * The following ASNs are blocked on Transit Gateway Generic Routing Encapsulation (GRE) and Direct Link connections. Avoid using these ASNs on appliances so that they are not included on the advertised routes in the AS path. Having these ASNs included prevent networks from working properly.
 
    `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200`–‍`65234`, `65402‍`–‍`65433`, `65500`, and `4201065000‍`–‍`4201065999`
-* **Known restriction:** A new transit gateway will support 4-way ECMP, but existing gateways cannot utilize this feature unless one of the following actions is taken:
+* Known restriction: A new transit gateway will support 4-way ECMP, but existing gateways cannot utilize this feature unless one of the following actions is taken:
 
-   * For transit gateways with the **Local** routing type, you can toggle between **Local** and **Global** to enable this functionality.
+   * For transit gateways with the **Local** routing type, you can toggle between **Local** and **Global** to enable this functionality.  There is no impact to the network traffic when the routing type is changed.
    * If an existing gateway is currently set to **Global**, or if the transit gateway has more than 30 connections, you must [open an IBM Support case](/docs/get-support?topic=get-support-open-case&interface=ui) for assistance.
 
 ## Pricing considerations
@@ -163,11 +163,11 @@ The same network subnet considerations for transit gateway connections also appl
    Regardless of the routing type specified, {{site.data.keyword.tg_full_notm}} can connect to classic infrastructure networks located in any MZR. To achieve this, simply add the classic connection to your transit gateway.
    {: important}
 
-* You can edit a gateway's routing type after it is provisioned. However, to change the routing type from global to local, you must first remove any global connections (that is, connections to resources that are not in the same location as the gateway). Note that connections to the IBM Cloud classic infrastructure are always considered local.
+* You can edit a gateway's routing type after it is provisioned. However, to change the routing type from Global to Local, you must first remove any global connections (that is, connections to resources that are not in the same location as the gateway). Note that connections to the IBM Cloud classic infrastructure are always considered Local.
 
 * When changing from Local to Global routing, you will be charged for all associated global connections. There is no impact to the network traffic when the routing type is changed.
 
-{{site.data.content.reuse-route-report-considerations}}
+{{site.data.content.reuse-route-report-considerations}}{: #ecmp-consideration}
 
 ## Service limits
 {: #service-limits}
