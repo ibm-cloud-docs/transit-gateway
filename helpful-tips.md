@@ -167,7 +167,7 @@ The same network subnet considerations for transit gateway connections also appl
 
 * When changing from Local to Global routing, you will be charged for all associated global connections. There is no impact to the network traffic when the routing type is changed.
 
-{{site.data.content.reuse-route-report-considerations}}{: #ecmp-consideration}
+{{site.data.content.reuse-route-report-considerations}}
 
 ## Service limits
 {: #service-limits}
