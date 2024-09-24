@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-06-19"
+lastupdated: "2024-09-24"
 
 keywords:
 
@@ -24,3 +24,8 @@ content-type: conref
 * Only one report per gateway is available at any time. If you generate a new report, the old report is deleted.
 * Older route reports might be inaccurate after you add or remove a connection. As a result, if you update routes within those connections, it is recommended that you generate a new route report.
 * If one or more routes are denied by [prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters), those routes do not appear in the route report.
+* The AS path displayed in the route report provides a single zone perspective. If your source or destination spans different zones, the path length may vary. For instance, consider two direct links: one in `DAL10` and the other in `DAL12`, both advertising the same AS path length toward a `DAL`-based transit gateway connected to a VPC or classic environment. When calling from a `DAL10` virtual server instance:
+
+   * The `DAL10` direct link is preferred.
+   * For connections originating from `DAL12`, the `DAL12` direct link is preferred.
+   * In the case of `DAL13`, the AS paths are equal.
