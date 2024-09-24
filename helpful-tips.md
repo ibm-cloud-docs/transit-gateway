@@ -37,7 +37,11 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
    `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200`–‍`65234`, `65402‍`–‍`65433`, `65500`, and `4201065000‍`–‍`4201065999`
 * Known restriction: A new transit gateway will support 4-way ECMP, but existing gateways cannot utilize this feature unless one of the following actions is taken:
 
-   * For transit gateways with the **Local** routing type, you can toggle between **Local** and **Global** to enable this functionality.  There is no impact to the network traffic when the routing type is changed.
+   * For transit gateways with the **Local** routing type, toggle between **Local** and **Global** to enable this functionality.  There is no impact to the network traffic when the routing type is changed.
+
+      After you switch back to **Local**, there is a delay before ECMP is applied. The delay increases based on the number of connections.
+      {: note}
+
    * If an existing gateway is currently set to **Global**, or if the transit gateway has more than 30 connections, you must [open an IBM Support case](/docs/get-support?topic=get-support-open-case&interface=ui) for assistance.
 
 ## Pricing considerations
