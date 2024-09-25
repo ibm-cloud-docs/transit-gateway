@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-09-24"
+lastupdated: "2024-09-25"
 
 keywords: help, tips, connections, provision
 
@@ -42,7 +42,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
       After you switch back to **Local**, there is a delay before ECMP is applied. The delay increases based on the number of connections.
       {: note}
 
-   * If an existing gateway is currently set to **Global**, or if the transit gateway has more than 30 connections, [open an IBM Support case](/docs/get-support?topic=get-support-open-case&interface=ui) for assistance.
+   * If an existing gateway is currently set to **Global**, or if the transit gateway has more than 300 connections, [open an IBM Support case](/docs/get-support?topic=get-support-open-case&interface=ui) for assistance.
 
 ## Pricing considerations
 {: #pricing-considerations}
