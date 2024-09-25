@@ -167,9 +167,9 @@ The same network subnet considerations for transit gateway connections also appl
    Regardless of the routing type specified, {{site.data.keyword.tg_full_notm}} can connect to classic infrastructure networks located in any MZR. To achieve this, simply add the classic connection to your transit gateway.
    {: important}
 
-* You can edit a gateway's routing type after it is provisioned. However, to change the routing type from Global to Local, you must first remove any global connections (that is, connections to resources that are not in the same location as the gateway). Note that connections to the IBM Cloud classic infrastructure are always considered Local.
+* You can edit a gateway's routing type after it is provisioned. However, to change the routing type from **Global** to **Local**, you must first remove any global connections (that is, connections to resources that are not in the same location as the gateway). Note that connections to the IBM Cloud classic infrastructure are always considered Local.
 
-* When changing from Local to Global routing, you will be charged for all associated global connections. There is no impact to the network traffic when the routing type is changed.
+* When changing from **Local** to **Global** routing, you will be charged for all associated global connections. There is no impact to the network traffic when the routing type is changed.
 
 {{site.data.content.reuse-route-report-considerations}}
 
