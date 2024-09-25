@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-24"
+lastupdated: "2024-09-25"
 
 keywords:
 
@@ -22,7 +22,7 @@ content-type: conref
 
    * The `DAL10` direct link is preferred.
    * For connections originating from `DAL12`, the `DAL12` direct link is preferred.
-   * In the case of `DAL13`, the AS paths are equal.
+   * In the case of `DAL13`, you would either get ECMP routing, assuming your gateway is set up for it, or a direct link would be used. However, during a BGP reset, it could switch to another direct link.
 * Overlapping routes are a common issue when configuring a transit gateway. If the routes from two or more connections overlap, traffic might not be routed as intended. For more information, see [Addressing route conflicts](/docs/transit-gateway?topic=transit-gateway-route-reports&interface=ui#route-conflicts).
 * After a new virtual connection (VPC, Classic infrastructure, or Direct Link) reaches **Active** state, allow 5 minutes for the routes to be learned by your transit gateway. Generating a route report before all routes are learned results in a partial route report.
 * If a connection exposes a route of `0.0.0.0/0`, that route is ignored when computing overlapping prefixes.
