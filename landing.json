@@ -1,51 +1,71 @@
 {
-    "title": "Transit Gateway docs",
-    "lastupdated": "2024-08-29",
-    "introduction": " With IBM Cloud Transit Gateway, organizations can define and control communication between resources on the IBM Cloud network, providing dynamic scalability, high availability, and private, in-transit data between IBM Cloud data centers.",
-      "api": "/apidocs/transit-gateway",
-      "cli": "/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli",
-      "terraform": "https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started",
-    "section_recommended": [
+  "version": 2,
+  "title": "IBM Cloud Transit Gateway",
+  "introduction": "With IBM Cloud Transit Gateway, organizations can define and control communication between resources on the IBM Cloud network, providing dynamic scalability, high availability, and private, in-transit data between IBM Cloud data centers.",
+  "product_page": "https://www.ibm.com/products/transit-gateway",
+  "console_page": "/interconnectivity/transit-gateway",
+  "section_topics": {
+    "links": [
       {
         "title": "Getting started with IBM Cloud Transit Gateway",
-        "description": "Use IBM Cloud Transit Gateway to interconnect IBM Cloud classic and Virtual Private Cloud (VPC) infrastructures worldwide, keeping traffic within the IBM Cloud network.",
         "href": "/docs/transit-gateway?topic=transit-gateway-getting-started"
       },
       {
+        "title": "About IBM Cloud Transit Gateway",
+        "href": "/docs/transit-gateway?topic=transit-gateway-abouts"
+      },
+      {
         "title": "Planning for IBM Cloud Transit Gateway",
-        "description": "Review these considerations before ordering your IBM Cloud® Transit Gateway.",
         "href": "/docs/transit-gateway?topic=transit-gateway-helpful-tips"
       },
       {
         "title": "Ordering IBM Cloud Transit Gateway",
-        "description": "Order a transit gateway using these instructions.",
         "href": "/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway"
+      },
+      {
+        "title": "Adding a connection",
+        "href": "/docs/transit-gateway?topic=transit-gateway-adding-connections&interface=ui"
       }
-    ],
-    "section_learn": {
-      "developer": "https://developer.ibm.com/depmodels/cloud/",
-      "architecture": "https://www.ibm.com/architectures/hybrid",
-      "training": "https://www.ibm.com/training/cloud",
-      "community": "https://community.ibm.com/community/user/cloud/home"
+    ]
+  },
+  "section_highlights": [
+    {
+      "title": "Integrating Power Virtual Server, virtual private cloud, and classic infrastructure using Transit Gateway in IBM Cloud",
+      "description": "You can interconnect IBM Cloud classic and Virtual Private Cloud (VPC) infrastructures worldwide using MZRs and data centers.",
+      "href": "https://developer.ibm.com/tutorials/awb-integrating-power-vs-vpc-and-classic-using-transit-gateway/?mhsrc=ibmsearch_a&mhq=transit%20gateway",
+      "type": "training"
     },
-    "section_updates": {
-      "view_more": "/docs/transit-gateway?topic=transit-gateway-transit-gateway-release-notes",
-      "tiles": [
-        {
-          "date": "12 June 2024",
-          "title": "Support for redundant Generic Routing Encapsulation (GRE) tunnel connections",
-          "description": "To build in redundancy and eliminate the need to schedule an outage when a Transit Gateway router must go down for maintenance, there is a new redundant GRE type, which is essentially a grouping of at least two GRE tunnels that can connect to classic or VPC networks. This connection type allows GRE tunnels to be placed on different devices in the same zone and not flag overlapping routes that are in the redundant GRE's tunnels."
-        },
-        {
-          "date": "01 May 2024",
-          "title": "Behavior change: Disable advertisement of service network routes from transit gateway connections",
-          "description": "If any connection on a transit gateway advertises a service route, the service route is not advertised to any classic connections on that transit gateway. Before this change, Transit Gateway advertised all routes (from any connection) to all of its other connections."
-        },
-        {
-          "date": "24 June 2023",
-          "title": "Power Virtual Server connections for transit gateways",
-          "description": "Transit gateways now support Power Virtual Server connections. A Power Virtual Server connection allows a network to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway."
-        }
-      ]
+    {
+      "title": "Team-based privacy using IAM, VPC, Transit Gateway and DNS",
+      "description": "Learn how IBM Direct Link lets you provides connectivity from an on-premises external source into IBM Cloud privately and securely.",
+      "href": "/docs/vpc?topic=vpc-vpc-tg-dns-iam",
+      "type": "training",
+      "recommended": true
     }
+  ],
+  "section_devtools": {
+    "api": "/apidocs/transit-gateway",
+    "cli": "/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli",
+    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection"
+  },
+  "section_updates": {
+    "view_more": "/docs/transit-gateway?topic=transit-gateway-transit-gateway-release-notes",
+    "tiles": [
+      {
+        "date": "12 June 2024",
+        "title": "Support for redundant Generic Routing Encapsulation (GRE) tunnel connections",
+        "description": "To build in redundancy and eliminate the need to schedule an outage when a Transit Gateway router must go down for maintenance, there is a new redundant GRE type, which is essentially a grouping of at least two GRE tunnels that can connect to classic or VPC networks. This connection type allows GRE tunnels to be placed on different devices in the same zone and not flag overlapping routes that are in the redundant GRE's tunnels."
+      },
+      {
+        "date": "01 May 2024",
+        "title": "Behavior change: Disable advertisement of service network routes from transit gateway connections",
+        "description": "If any connection on a transit gateway advertises a service route, the service route is not advertised to any classic connections on that transit gateway. Before this change, Transit Gateway advertised all routes (from any connection) to all of its other connections."
+      },
+      {
+        "date": "24 June 2023",
+        "title": "Power Virtual Server connections for transit gateways",
+        "description": "Transit gateways now support Power Virtual Server connections. A Power Virtual Server connection allows a network to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway."
+      }
+    ]
   }
+}
