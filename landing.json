@@ -28,21 +28,6 @@
       }
     ]
   },
-  "section_highlights": [
-    {
-      "title": "Integrating Power Virtual Server, virtual private cloud, and classic infrastructure using Transit Gateway in IBM Cloud",
-      "description": "You can interconnect IBM Cloud classic and Virtual Private Cloud (VPC) infrastructures worldwide using MZRs and data centers.",
-      "href": "https://developer.ibm.com/tutorials/awb-integrating-power-vs-vpc-and-classic-using-transit-gateway/?mhsrc=ibmsearch_a&mhq=transit%20gateway",
-      "type": "training"
-    },
-    {
-      "title": "Team-based privacy using IAM, VPC, Transit Gateway and DNS",
-      "description": "Learn how IBM Direct Link lets you provides connectivity from an on-premises external source into IBM Cloud privately and securely.",
-      "href": "/docs/vpc?topic=vpc-vpc-tg-dns-iam",
-      "type": "training",
-      "recommended": true
-    }
-  ],
   "section_devtools": {
     "api": "/apidocs/transit-gateway",
     "cli": "/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli",
