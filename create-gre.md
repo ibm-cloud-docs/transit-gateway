@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-01"
+lastupdated: "2024-10-10"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -168,7 +168,7 @@ You can specify the following argument references for your resource when creatin
 |**remote_gateway_ip** \n Optional  \n Forces new resource  \n string | The remote gateway IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**remote_tunnel_ip** \n Optional \n Forces new resource  \n string | The remote tunnel IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**zone**  \n Optional \n Forces new resource \n string | The location of the GRE tunnel. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
-{: caption="Table 5. Terraform argument references for creating a GRE" caption-side="bottom"}
+{: caption="Terraform argument references for creating a GRE" caption-side="bottom"}
 
 ### Example
 {: #tg-terraform-adding-gre-connection-transit-gateway-example}

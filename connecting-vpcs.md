@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-10-10"
 
 keywords: connecting, region, order
 
@@ -187,7 +187,7 @@ Review the following argument references that you can specify for your resource 
 |**name**  \n Required  \n string| The unique user-defined name for the gateway.  \n **Example**: `myGateway`|
 |**global**  \n Required  \n boolean | The gateways with global routing (true) are able to connect to networks outside their associated region.|
 |**resource_group**  \n Optional  \n Forces new resource  \n string | The resource group ID where the transit gateway is to be created.|
-{: caption="Table 4. Argument references for creating a transit gateway" caption-side="bottom"}
+{: caption="Argument references for creating a transit gateway" caption-side="bottom"}
 
 ### Example
 {: #tg-terraform-creating-transit-gateway-example}

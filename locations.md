@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-04-16"
+lastupdated: "2024-10-10"
 
 keywords: about, features, overview
 
@@ -32,7 +32,7 @@ An MZR provides consistent cloud services across different zones, better resilie
 | Dallas | us-south |
 | San Paulo | br-sao |
 | Toronto | ca-tor |
-{: caption="Table 1. MZRs in North and South America" caption-side="bottom"}
+{: caption="MZRs in North and South America" caption-side="bottom"}
 {: #tg-americas-mzr}
 {: tab-title="Americas"}
 {: tab-group="mzr"}
@@ -44,7 +44,7 @@ An MZR provides consistent cloud services across different zones, better resilie
 | Frankfurt | eu-de |
 | London | eu-gb |
 | Madrid | eu-es |
-{: caption="Table 1. MZRs in Europe" caption-side="bottom"}
+{: caption="MZRs in Europe" caption-side="bottom"}
 {: #tg-europe-mzr}
 {: tab-title="Europe"}
 {: tab-group="mzr"}
@@ -56,7 +56,7 @@ An MZR provides consistent cloud services across different zones, better resilie
 | Osaka  | jp-osa |
 | Sydney | au-syd |
 | Tokyo  | jp-tok |
-{: caption="Table 1. MZRs in Asia Pacific" caption-side="bottom"}
+{: caption="MZRs in Asia Pacific" caption-side="bottom"}
 {: #tg-asiapacific-mzr}
 {: tab-title="Asia Pacific"}
 {: tab-group="mzr"}
@@ -82,4 +82,4 @@ You can establish connectivity from a VPC to resources in a data center by conne
 | Paris | PAR01 |
 | San Jose | SJC03, SJC04 |
 | Singapore | SNG01 |
-{: caption="Table 2. Data centers for classic Softlayer IaaS" caption-side="bottom"}
+{: caption="Data centers for classic Softlayer IaaS" caption-side="bottom"}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2020
-lastupdated: "2020-04-16"
+  years: 2019, 2024
+lastupdated: "2024-10-10"
 
 keywords: responsibilities, deploy, provision, requirement, capacity, compliance, regulation
 
@@ -34,7 +34,7 @@ You and IBM have unique responsibilities for infrastructure provisioning and man
 | Use the provided API or UI to configure the Transit Gateway for your connections | Customer |
 | Monitor service notifications for communications regarding maintenance operations | Customer |
 | Manage service quotas and monitor quota notifications  | Customer |
-{: caption="Table 1. IBM Cloud Infrastructure responsibilities" caption-side="bottom"}
+{: caption="IBM Cloud Infrastructure responsibilities" caption-side="bottom"}
 
 ## Security and regulation compliance
 {: #security-rich-environment}
@@ -45,7 +45,7 @@ You and IBM have unique responsibilities for security and compliance.
 |---------------------------|------|
 | Automatically apply security updates to keep the Transit Gateway service up to date | IBM |
 | Follow the instructions in the IBM Cloud Transit Gateway user documentation to make any necessary configurations based on the features used | Customer |
-{: caption="Table 2. Security and regulation responsibilities" caption-side="bottom"}
+{: caption="Security and regulation responsibilities" caption-side="bottom"}
 
 ## Disaster recovery
 {: #responsibilities-disaster-recovery}
@@ -55,4 +55,4 @@ You and IBM have unique responsibilities for disaster recovery.
 | Responsibilities |  Ownership |
 |----------|-----------------------|
 | Monitor and automatically recover the service to prevent an outage | IBM |
-{: caption="Table 3. Disaster recovery responsibilities" caption-side="bottom"}
+{: caption="Disaster recovery responsibilities" caption-side="bottom"}
