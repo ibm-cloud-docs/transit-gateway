@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-10-10"
 
 keywords: features, overview
 
@@ -166,7 +166,7 @@ Review the following argument references that you can specify for your resource 
 |**remote_gateway_ip**  \n Optional  \n Forces new resource  \n string | The remote gateway IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**remote_tunnel_ip**  \n Optional  \n Forces new resource  \n string | The remote tunnel IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**zone**  \n Optional  \n Forces new resource  \n string | The location of the GRE tunnel. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. |
-{: caption="Table 5. Terraform argument references for creating a connection" caption-side="bottom"}
+{: caption="Terraform argument references for creating a connection" caption-side="bottom"}
 
 ### Example
 {: #tg-terraform-adding-connection-transit-gateway-example}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-09-25"
+lastupdated: "2024-10-10"
 
 keywords: help, tips, connections, provision
 
@@ -149,11 +149,11 @@ The same network subnet considerations for transit gateway connections also appl
 
 * If you plan to use your gateway to connect VPCs in the same multi-zone region ([MZR](/docs/overview?topic=overview-locations#table-mzr)), use local routing to provide connectivity to all accessible resources within the same MZR; for example, `us-south` (Dallas).
 
-   ![Local routing](/images/1-aboutLocalRoutingExample.png "Local routing"){: caption="Figure 1. Simple local routing example" caption-side="bottom"}
+   ![Local routing](/images/1-aboutLocalRoutingExample.png "Local routing"){: caption="Simple local routing example" caption-side="bottom"}
 
 * If you plan to use your transit gateways to connect VPCs locally and between different [MZRs](/docs/overview?topic=overview-locations#table-mzr), use local gateways for VPCs in the same MZR, and a global gateway for VPCs across MZRs. You can use the example that follows a Highly Available (HA) scenario as well. All data in VPCs A and B can be replicated to VPCs C and D. If there is an issue in the US South region, connections reroute to US East.
 
-   ![Global routing](/images/2-aboutLocalAndGlobalRoutingExample.png "Local and Global routing"){: caption="Figure 2. Combining local and global routing example" caption-side="bottom"}
+   ![Global routing](/images/2-aboutLocalAndGlobalRoutingExample.png "Local and Global routing"){: caption="Combining local and global routing example" caption-side="bottom"}
 
    Regardless of the routing type specified, {{site.data.keyword.tg_full_notm}} can connect to classic infrastructure networks located in any MZR. To achieve this, simply add the classic connection to your transit gateway.
    {: important}
@@ -178,7 +178,7 @@ Keep in mind the following service limits while using IBM Cloud Transit Gateway.
 | Number of prefix filters per connection | 10 prefix filters per connection|
 | Number of GRE tunnels per transit gateway | 12 GRE tunnels per gateway|
 | Number of unique base networks targeted by unbound GRE tunnels per transit gateway | 5 unique base networks targeted by unbound GRE tunnels per gateway|
-{: caption="Table 1. IBM Cloud Transit Gateway service limits" caption-side="bottom"}
+{: caption="IBM Cloud Transit Gateway service limits" caption-side="bottom"}
 
 You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need your service limits expanded.
 {: note}

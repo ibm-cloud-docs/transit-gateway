@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-04-01"
+  years: 2017, 2024
+lastupdated: "2024-10-10"
 
 keywords: vpe for transit gateway, virtual private endpoints for transit gateway, using vpe for vpc with transit gateway, isolation for transit gateway, private network for transit gateway, network isolation in transit gateway, non-public routes for transit gateway, private connection for transit gateway, private connectivity for transit gateway
 
@@ -50,7 +50,7 @@ When you create a VPE gateway by using the CLI or API, you must specify the [Clo
 | Tokyo | `jp-tok` | `crn:v1:bluemix:public:container-registry:jp-tok:::endpoint:vpe.jp-tok.container-registry.cloud.ibm.com` |
 | Toronto  | `ca-tor` | `crn:v1:bluemix:public:container-registry:ca-tor:::endpoint:vpe.ca-tor.container-registry.cloud.ibm.com` |
 | Washington DC | `us-east` | `crn:v1:bluemix:public:container-registry:us-east:::endpoint:vpe.us-east.container-registry.cloud.ibm.com` |
-{: caption="Table 1. Region availability and Cloud Resource Names (CRNs) for connecting {{site.data.keyword.tg_full_notm}} over {{site.data.keyword.cloud_notm}} private networks" caption-side="bottom"}
+{: caption="Region availability and Cloud Resource Names (CRNs) for connecting {{site.data.keyword.tg_full_notm}} over {{site.data.keyword.cloud_notm}} private networks" caption-side="bottom"}
 
 ### Configuring an endpoint gateway
 {: #endpoint-gateway-servicename}

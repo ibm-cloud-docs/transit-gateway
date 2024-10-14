@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-01"
+lastupdated: "2024-10-10"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -143,7 +143,7 @@ You can specify the following argument references for your resource when editing
 |**gateway**  \n Required  \n String | Enter the transit gateway identifier.|
 |**network_type**  \n Required  \n String|Enter the network type. Allowed values are `classic, directlink, gre_tunnel, unbound_gre_tunnel, and vpc`|
 |**name**  \n Optional  \n String | Enter a name. If the name is not given, the default name is provided based on the network type, such as `vpc` for network type VPC and `classic` for network type classic.|
-{: caption="Table 5. Terraform argument references for editing a connection" caption-side="bottom"}
+{: caption="Terraform argument references for editing a connection" caption-side="bottom"}
 
 ### Example
 {: #edit-configuration-terraform-example}

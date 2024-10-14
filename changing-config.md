@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-02-14"
+  years: 2020, 2024
+lastupdated: "2024-10-10"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -127,7 +127,7 @@ You can specify the following argument references for your resource when you cha
 |--|--|
 |**name**  \n Required  \n Boolean | The unique user-defined name for the gateway. For example, `myGateway`|
 |**global**  \n Required  \n Boolean|The gateways with global routing (true) to connect to the networks outside their associated region.|
-{: caption="Table 1. Terraform argument references for changing the configuration" caption-side="bottom"}
+{: caption="Terraform argument references for changing the configuration" caption-side="bottom"}
 
 ### Example
 {: #change-configuration-terraform-example}
