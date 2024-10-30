@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-10-30"
 
 keywords: help, tips, connections, provision
 
@@ -101,7 +101,7 @@ If you require network isolation, consider using separate transit gateways.
 {: tip}
 
 * Do not require a classic connection on the transit gateway. Classic network subnets will not be advertised to the connections on the transit gateway (or vice versa).
-* The default number of unique base networks that can be targeted by unbound GRE tunnels is limited to five. You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need these service limits expanded.
+* The default number of unique base networks that can be targeted by unbound GRE tunnels is limited to five. You can open an [IBM Support case](/docs/account?topic=account-using-avatar#using-avatar) if you need these service limits expanded.
 
 For more information and a use case example, see [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).
 
@@ -180,5 +180,5 @@ Keep in mind the following service limits while using IBM Cloud Transit Gateway.
 | Number of unique base networks targeted by unbound GRE tunnels per transit gateway | 5 unique base networks targeted by unbound GRE tunnels per gateway|
 {: caption="IBM Cloud Transit Gateway service limits" caption-side="bottom"}
 
-You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need your service limits expanded.
+You can open an [IBM Support case](/docs/account?topic=account-using-avatar#using-avatar) if you need your service limits expanded.
 {: note}

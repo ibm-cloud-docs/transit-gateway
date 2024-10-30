@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-01"
+lastupdated: "2024-10-30"
 
 keywords: updates, additions, improvements
 
@@ -118,7 +118,7 @@ Classic infrastructure connections across IBM Cloud accounts
 Connect networks to multiple local gateways
 :    You can now connect networks, VPCs, and classic connections to multiple local transit gateways. Previously, you could connect a network only to a single transit gateway. Now traffic between local networks can use a local gateway. In addition, if you need to connect to a remote network, you can attach to a global gateway. Routing of traffic between networks takes an optimized path (if multiple connections exist), meaning local traffic stays local to the region and is not charged.
 
-:    The limit for the number of gateways per account has been updated to ten, and the limit of gateways per region to five. You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need to expand your service limits further.
+:    The limit for the number of gateways per account has been updated to ten, and the limit of gateways per region to five. You can open an [IBM Support case](/docs/account?topic=account-using-avatar#using-avatar) if you need to expand your service limits further.
 
 ## 01 July 2020
 {: #transit-gateway-jul-0120}
