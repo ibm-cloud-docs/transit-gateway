@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-01"
+lastupdated: "2024-10-30"
 
 keywords: faq, faqs, questions
 
@@ -165,15 +165,15 @@ It is an RFC-2547-based platform where the core network and network address are 
 
 ## What are the tools for monitoring the consumption of resources associated with the service, as well as the costs and the quality of the service?
 {: faq}
-{: #billing-usage}
+{: #account}
 
-{{site.data.keyword.tg_full_notm}} is integrated into the [IBM Cloud usage dashboard](/docs/billing-usage?topic=billing-usage-viewingusage), which provides a summary of estimated charges for all services and resources that are used per month in your organizations. This includes the number of connections and the amount of traffic flowing across your transit gateways. {{site.data.keyword.tg_full_notm}} usage is billed and reported as part of the [IBM Cloud invoice process](/docs/billing-usage?topic=billing-usage-managing-invoices).
+{{site.data.keyword.tg_full_notm}} is integrated into the [IBM Cloud usage dashboard](/docs/account?topic=account-viewingusage), which provides a summary of estimated charges for all services and resources that are used per month in your organizations. This includes the number of connections and the amount of traffic flowing across your transit gateways. {{site.data.keyword.tg_full_notm}} usage is billed and reported as part of the [IBM Cloud invoice process](/docs/account?topic=account-managing-invoices).
 
 ## Are there notifications through email for events of unavailability of the service?
 {: faq}
 {: #service-unavailability-notifications}
 
-You should use the standard [IBM Cloud notification process](/docs/get-support?topic=get-support-viewing-notifications) for any maintenance events.
+You should use the standard [IBM Cloud notification process](/docs/account?topic=account-viewing-notifications) for any maintenance events.
 
 ## Can I generate a route report for a transit gateway?
 {: faq}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-01-23"
+  years: 2020, 2024
+lastupdated: "2024-10-30"
 
 keywords:
 
@@ -23,7 +23,7 @@ If you experience an issue or have questions when using {{site.data.keyword.tg_f
 * Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
 * Review [Stack Overflow](https://stackoverflow.com/search?q=transit-gateway+ibm-cloud){: external} to see whether other users ran into the same problem. If you're using the forum to ask a question, tag your question with `ibm-cloud` and `transit-gateway` so that it is seen by the {{site.data.keyword.Bluemix_notm}} development teams.
 
-If you still can't resolve the problem, you can open a support case. For more information, see [Creating support cases](/docs/get-support?topic=get-support-open-case).
+If you still can't resolve the problem, you can open a support case. For more information, see [Creating support cases](/docs/account?topic=account-open-case).
 
 ## Providing support case details for {{site.data.keyword.tg_short}}
 {: #support-case-details}
