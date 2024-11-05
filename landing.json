@@ -38,18 +38,15 @@
     "tiles": [
       {
         "date": "12 June 2024",
-        "title": "Support for redundant Generic Routing Encapsulation (GRE) tunnel connections",
-        "description": "To build in redundancy and eliminate the need to schedule an outage when a Transit Gateway router must go down for maintenance, there is a new redundant GRE type, which is essentially a grouping of at least two GRE tunnels that can connect to classic or VPC networks. This connection type allows GRE tunnels to be placed on different devices in the same zone and not flag overlapping routes that are in the redundant GRE's tunnels."
+        "title": "Support for redundant Generic Routing Encapsulation (GRE) tunnel connections"
       },
       {
         "date": "01 May 2024",
-        "title": "Behavior change: Disable advertisement of service network routes from transit gateway connections",
-        "description": "If any connection on a transit gateway advertises a service route, the service route is not advertised to any classic connections on that transit gateway. Before this change, Transit Gateway advertised all routes (from any connection) to all of its other connections."
+        "title": "Behavior change: Disable advertisement of service network routes from transit gateway connections"
       },
       {
         "date": "24 June 2023",
-        "title": "Power Virtual Server connections for transit gateways",
-        "description": "Transit gateways now support Power Virtual Server connections. A Power Virtual Server connection allows a network to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway."
+        "title": "Power Virtual Server connections for transit gateways"
       }
     ]
   }
