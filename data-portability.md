@@ -19,7 +19,7 @@ subcollection: repo-name
 
 **This topic should be placed in a topic group with the high availability, business continuity, and disaster recovery topic. I don't see any of these topics.**
 
-*The short description should be a single, conTransit Gatewaye paragraph that contains one or two sentences and no more than 50 words. Summarize your offering's strategy for data portability. The following is a suggested short description.*
+*The short description should be a single, concise paragraph that contains one or two sentences and no more than 50 words. Summarize your offering's strategy for data portability. The following is a suggested short description.*
 
 Data portability involves a set of tools and procedures that enable customers to export the digital artifacts that are needed to implement similar workload and data processing on different service providers or on-premises software. It includes procedures for copying and storing the service customer content, including the related configuration that is used by the service to store and process the data, on the customer's own location.
 {: shortdesc}
@@ -41,7 +41,7 @@ To find out more about responsibility ownership for using {{site.data.keyword.cl
 
 *If there is a specific responsibility topic available for the product, include the next line or remove the line and include details in this section of the topic.*
 
-For more information about your responsibilities for Transit Gateway, see [Understanding your responsibilities when using Transit Gateway](/docs/Transit Gateway?topic=Transit Gateway-responsibilities-Transit Gateway).
+For more information about your responsibilities for Transit Gateway, see [Understanding your responsibilities when using Transit Gateway](/docs/transit-gateway?topic=transit-gateway-tg-responsibilities).
 
 ## Data export procedures
 {: #data-portability-procedures}
