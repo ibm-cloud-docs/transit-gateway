@@ -103,7 +103,6 @@ toc:
            href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection
        - locations.md
        - tg-responsibilities.md
-       - data-portability.md
     - navgroup:
        id: help
        topics:
