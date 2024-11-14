@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-12"
+lastupdated: "2024-11-14"
 
 keywords: Transit Gateway
 
@@ -35,8 +35,48 @@ To find out more about responsibility ownership for using {{site.data.keyword.cl
 {: #data-portability-procedures}
 
 Customer content is not stored. Only the metadata regarding the configuration of the transit gateways ordered by the customer is retained, exactly as specified by the customer. There is no need for the customer to export this metadata.
+{: important}
+
+### Exporting route report data from the UI
+{: #export-route-report-data}
+
+You can [generate a report](/docs/transit-gateway?topic=transit-gateway-route-reports&interface=ui) that lists all the routes known to a transit gateway and its associated connections. This route report also includes Border Gateway Protocol (BGP) details, such as which connections provide which routes and any overlapping routes.
+
+When creating a route report from a transit gateway's details page, you can download the data using the Download icon.
+
+![Downloading route report data from the UI](images/download-data-portability.png){: caption="Downloading route report data using the UI" caption-side="bottom"}
+
+### Exporting transit gateway data with the CLI and API
+{: #transit-gateway-export-cli-api}
+
+The following table provides mechanisms to export the settings and configurations that are used to process the customer's content through the means of the IBM Cloud Transit Gateway [CLI](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli) and API. The procedures given in the linked documentation should be followed and the output stored to ensure all necessary configuration data is available.
+
+| CLI  | API |
+|--------------------|-------------------------|
+| [ibmcloud tg gateways](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-gateways) \n [ibmcloud tg connections](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-connections) \n [ibmcloud tg locations](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#list-locations) \n [ibmcloud tg route-reports](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-routereports)| [list-transit-gateways](/apidocs/transit-gateway#list-transit-gateways) \n [list-connections](/apidocs/transit-gateway#list-connections) \n [list-gateway-locations](/apidocs/transit-gateway#list-gateway-locations) \n [list-transit-gateway-route-reports](/apidocs/transit-gateway#list-transit-gateway-route-reports)|
+
+## Exported data formats
+{: #data-portability-data-formats}
+
+Transit Gateway supports the following data format and schema of the exported data, configuration, and application:
+
+* Export in JSON format only
+
+Example command using the CLI, [ibmcloud tg gateways](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-gateways):
+
+```sh
+ibmcloud tg gateways|gws [--output json] [-h, --help]
+```
+{: pre}
+
+Example request using the API, [list-transit-gateways](/apidocs/transit-gateway#list-transit-gateways):
+
+```sh
+curl -X GET --location --header "Authorization: Bearer {iam_token}" --header "Accept: application/json" "{base_url}/transit_gateways?version={version}"
+```
+{: codeblock}
 
 ## Data ownership
 {: #data-portability-ownership}
 
-All exported data is classified as customer content. Apply the full customer ownership and licensing rights, as stated in the [IBM Cloud Service Agreement](https://www.ibm.com/terms/?id=Z126-6304_WS){: external}.
+All exported data is classified as customer content. Apply the full customer ownership and licensing rights, as stated in the [IBM Cloud Service Agreement](https://www.ibm.com/support/customer/csol/terms/?id=Z126-6304_WS){: external}.
