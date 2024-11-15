@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-14"
+lastupdated: "2024-11-15"
 
 keywords: Transit Gateway
 
@@ -53,7 +53,7 @@ The following table provides mechanisms to export the settings and configuration
 
 | CLI  | API |
 |--------------------|-------------------------|
-| [ibmcloud tg gateways](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-gateways) \n [ibmcloud tg connections](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-connections) \n [ibmcloud tg locations](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#list-locations) \n [ibmcloud tg route-reports](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-routereports)| [list-transit-gateways](/apidocs/transit-gateway#list-transit-gateways) \n [list-connections](/apidocs/transit-gateway#list-connections) \n [list-gateway-locations](/apidocs/transit-gateway#list-gateway-locations) \n [list-transit-gateway-route-reports](/apidocs/transit-gateway#list-transit-gateway-route-reports)|
+| [ibmcloud tg gateways](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-gateways) \n [ibmcloud tg connections](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-connections) \n [ibmcloud tg locations](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#list-locations) \n [ibmcloud tg route-reports](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-routereports)| [list transit gateways](/apidocs/transit-gateway#list-transit-gateways) \n [list connections](/apidocs/transit-gateway#list-connections) \n [list gateway locations](/apidocs/transit-gateway#list-gateway-locations) \n [list transit gateway route reports](/apidocs/transit-gateway#list-transit-gateway-route-reports)|
 {: caption="Exporting transit gateway data with the CLI and API" caption-side="bottom"}
 
 ## Exported data formats
