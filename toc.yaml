@@ -64,7 +64,6 @@ toc:
             - displayroutereport.md
         - terraform.md
         - set-up-environment.md
-        - tgw-ha-dr.md
         - topicgroup:
             label: Enhancing security
             topics:
