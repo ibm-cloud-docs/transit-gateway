@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-01"
+lastupdated: "2024-11-22"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -97,7 +97,7 @@ To configure the other end of the BGP tunnel, expand the newly created redundant
 To create a redundant GRE from the CLI, you must use a JSON file as input.
 
 ```sh
-ibmcloud tg connection-gre-create|cgrec JSON_FILE_PATH [--output json]
+ibmcloud tg connection-rgre-create|crgrec --file JSON_FILE_PATH [--output json]
 ```
 {: pre}
 
