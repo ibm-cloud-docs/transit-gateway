@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-11-12"
+lastupdated: "2024-11-22"
 
 keywords:
 
@@ -38,7 +38,7 @@ Transit Gateway provides mechanisms to protect your data and restore service fun
 |---|---|
 |  RPO | 24 hrs |
 |  RTO | 24 hrs |
-{: caption="Table 1. RPO and RTO for Transit Gateway" caption-side="bottom"}
+{: caption="RPO and RTO for Transit Gateway" caption-side="bottom"}
 
 ## Locations
 {: #ha-locations}
