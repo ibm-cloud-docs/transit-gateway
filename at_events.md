@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-19"
+lastupdated: "2024-11-22"
 
 keywords: activity tracker, event, security
 
@@ -139,7 +139,7 @@ Activity tracker events are captured for all locations, even if recorded in `eu-
 You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on events that are generated in your account and routed by {{site.data.keyword.atracker_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
 
 ### Launching {{site.data.keyword.logs_full_notm}} from the Observability page
-{: #log-launch-standalone}
+{: #log-launch}
 
 For information on launching the {{site.data.keyword.logs_full_notm}} UI, see [Launching the UI in the {{site.data.keyword.logs_full_notm}} documentation.](/docs/cloud-logs?topic=cloud-logs-instance-launch)
 

@@ -41,7 +41,7 @@ Transit Gateway provides mechanisms to protect your data and restore service fun
 {: caption="RPO and RTO for Transit Gateway" caption-side="bottom"}
 
 ## Locations
-{: #ha-locations}
+{: #bc-dr-locations}
 
 For more information about service availability within regions and data centers, see [Service and infrastructure availability by location](/docs/overview?topic=overview-services_region).
 
