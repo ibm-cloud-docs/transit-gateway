@@ -108,6 +108,7 @@ toc:
           - ha.md
           - bc-dr.md
        - data-portability.md
+       - service-dependency.md
     - navgroup:
        id: help
        topics:
