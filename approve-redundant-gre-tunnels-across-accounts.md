@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-01"
+lastupdated: "2024-12-18"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -27,7 +27,7 @@ When a [connection request to a network in another account](/docs/transit-gatewa
 To approve a cross-account redundant GRE request from another account in the UI, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity** > **Transit Gateway**.
+1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**.
 1. Click the name of the transit gateway in the table.
 1. In the Connections section, see **Active required** to view the incoming network connection request.
 1. Click **Approve** to approve the request.
@@ -42,7 +42,7 @@ When you change back to the original account, the status of the connection chang
 To reject a redundant GRE request from another account in the UI, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity** > **Transit Gateway**.
+1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**.
 1. Click the name of the transit gateway in the table.
 1. In the Connections section, see **Active required** to view the incoming network connection request.
 1. Click **Reject** to reject the request.

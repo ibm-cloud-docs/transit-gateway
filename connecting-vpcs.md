@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-12-18"
 
 keywords: connecting, region, order
 
@@ -30,7 +30,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog){: external} and log in to your account.
 1. Select **Networking** in the navigation pane, then click the Transit Gateway tile. The Transit Gateway ordering page displays.
 
-   You can also access the ordering page from the [{{site.data.keyword.cloud_notm}} console](/login){: external} by selecting the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page. Then, select **Interconnectivity** > **Transit Gateway** and click **Create transit gateway**.
+   You can also access the ordering page from the [{{site.data.keyword.cloud_notm}} console](/login){: external} by selecting the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page. Then, click **Infrastructure** > **Network** > **Transit Gateway**. Click **Create transit gateway** to open the provisioning page.
    {: tip}
 
 1. Enter a name for the transit gateway and choose a resource group. You can select a resource group from the list, or keep the default selection.

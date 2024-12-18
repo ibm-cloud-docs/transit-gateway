@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-12-18"
 
 keywords:
 
@@ -47,7 +47,7 @@ Before you add a cross-account connection, review these considerations:
 To connect networks that different accounts own by using the UI, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity** > **Transit Gateway**.
+1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**.
 1. Click the name of the transit gateway where you want to add a connection. Then, click **Add connection**.
 1. Choose your network connection type. Then, select **Request connection to a network in another account**.
 1. Type the CRN of the cross-account network, or if Classic infrastructure or an Unbound or RedundantGRE, enter the IBM Cloud account ID that you want to connect to.
