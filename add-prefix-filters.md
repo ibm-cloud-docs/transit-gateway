@@ -58,7 +58,7 @@ To add a prefix filter to a new connection in the UI, follow these steps:
       * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
       * **Direct Link** creates a network connection to and from Direct Link 2.0 gateways so that there is a secure connection to on-premises networks and other resources that are connected to the transit gateway.
 
-         If you select **Direct Link**, you must also log in to the [Direct Link console](https://cloud.ibm.com/interconnectivity/direct-link){: external} (that uses the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link. You can specify the connection type when you create a direct link, or after your direct link is provisioned. For instructions, see [Updating the network connection type](/docs/dl?topic=dl-virtual-connection-types){: external}.
+         If you select **Direct Link**, you must also log in to the [Direct Link console](/interconnectivity/direct-link){: external} (that uses the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link. You can specify the connection type when you create a direct link, or after your direct link is provisioned. For instructions, see [Updating the network connection type](/docs/dl?topic=dl-virtual-connection-types){: external}.
          {: important}
 
       * **{{site.data.keyword.powerSys_notm}}** creates a network connection to and from a {{site.data.keyword.powerSys_notm}} instance so that the {{site.data.keyword.powerSys_notm}} network and resources can connect to networks and other resources that are connected to the transit gateway.
