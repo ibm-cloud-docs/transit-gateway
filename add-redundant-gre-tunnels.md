@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-01"
+lastupdated: "2024-12-18"
 
 keywords:
 
@@ -29,7 +29,7 @@ Before you add a tunnel to a redundant GRE, make sure to review general and redu
 You can add tunnels when [creating a redundant GRE](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection&interface=ui), or after provisioning an existing transit gateway with a redundant GRE. To add a tunnel to an existing redundant GRE, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity** > **Transit Gateway**.
+1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**.
 1. Click the name of the transit gateway where you want to add a tunnel.
 1. In the Connections tabbed view, click the Actions menu ![Actions icon](../icons/action-menu-icon.svg "Actions") at the end of the table row of the connection where you want to add a tunnel.
 
@@ -58,7 +58,7 @@ You can add tunnels when [creating a redundant GRE](/docs/transit-gateway?topic=
 To remove a tunnel from a redundant GRE, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity** > **Transit Gateway**.
+1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**.
 1. Click the name of the transit gateway where you want to remove a tunnel.
 1. In the Connections tabbed view, click the Actions menu ![Actions icon](../icons/action-menu-icon.svg "Actions") at the end of the table row of the connection where you want to remove a tunnel.
 

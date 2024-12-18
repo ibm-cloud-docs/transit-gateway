@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2023
-lastupdated: "2023-01-25"
+  years: 2020, 2024
+lastupdated: "2024-12-18"
 
 keywords: route, report
 
@@ -31,7 +31,7 @@ A route report generates data for both the **Routes** and **BGP** tables in the 
 To generate a route report in the UI, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-1. Select the Navigation Menu ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Interconnectivity > Transit Gateway**.
+1. Select the Navigation Menu ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**.
 1. From the Transit Gateway table, select the gateway for which you want to generate the report.
 1. On the Details page, click either the **Routes** or **BGP** tab, then click **Generate report**.
 
