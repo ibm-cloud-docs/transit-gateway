@@ -77,6 +77,7 @@ toc:
             label: Observability
             topics:
             - at_events.md
+            - monitoring.md
         - topicgroup:
             label: Transit Gateway hazardous change remediation
             topics:

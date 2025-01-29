@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-30"
+  years: 2020, 2025
+lastupdated: "2025-01-29"
 
 keywords: updates, additions, improvements
 
@@ -17,7 +17,13 @@ content-type: release-note
 # Release notes for IBM Cloud Transit Gateway
 {: #transit-gateway-release-notes}
 
-Find out about new and updated features in {{site.data.keyword.tg_full}}.
+Find out about new and updated features in {{site.data.keyword.tg_full}}. 
+
+## 29 January 2025
+{: #transit-gateway-jan2925}
+
+Metrics routing support
+:    You can now monitor and track metrics for Transit Gateway physical connections and virtual interfaces, allowing you to analyze traffic flow and set up alerts. This way, you can be notified and take appropriate action if any anomalies or unusual traffic patterns are detected. For more information, see [Monitoring Transit Gateway](/docs/transit-gateway?topic=transit-gateway-monitoring). 
 
 ## 12 June 2024
 {: #transit-gateway-june1224}
