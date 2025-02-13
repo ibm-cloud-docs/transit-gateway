@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-09-25"
+  years: 2023, 2025
+lastupdated: "2025-02-13"
 
 keywords:
 
@@ -17,6 +17,7 @@ content-type: conref
 
 ## Route report considerations
 {: #reuse-route-report-considerations}
+
 
 * Overlapping routes are a common issue when configuring a transit gateway. If the routes from two or more connections overlap, traffic might not be routed as intended. For more information, see [Addressing route conflicts](/docs/transit-gateway?topic=transit-gateway-route-reports&interface=ui#route-conflicts).
 * After a new virtual connection (VPC, Classic infrastructure, or Direct Link) reaches **Active** state, allow 5 minutes for the routes to be learned by your transit gateway. Generating a route report before all routes are learned results in a partial route report.

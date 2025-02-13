@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-30"
+  years: 2020, 2025
+lastupdated: "2025-02-13"
 
 keywords: help, tips, connections, provision
 
@@ -35,6 +35,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 * The following ASNs are blocked on Transit Gateway Generic Routing Encapsulation (GRE) and Direct Link connections. Avoid using these ASNs on appliances so that they are not included on the advertised routes in the AS path. Having these ASNs included prevent networks from working properly.
 
    `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200`–‍`65234`, `65402‍`–‍`65433`, `65500`, and `4201065000‍`–‍`4201065999`
+
 
 ## Pricing considerations
 {: #pricing-considerations}
