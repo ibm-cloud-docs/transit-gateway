@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-02-17"
 
 keywords:
 
@@ -25,6 +25,7 @@ You can configure only one instance of the {{site.data.keyword.mon_full}} servic
 
 - Provision an instance of the {{site.data.keyword.mon_full_notm}} service. After you provision the Monitoring instance, the *Observability* page opens. To continue working with {{site.data.keyword.cloud_notm}}, go back to the {{site.data.keyword.cloud_notm}} console.
 - To configure the Monitoring instance, you must turn on the *service metrics* configuration setting.
+- To view metrics for a transit gateway, you must have at least one connection associated with it.
 - If a Monitoring instance in a region is already enabled to collect service metrics, metrics from enabled-monitoring services are collected automatically and available for monitoring through this instance. For more information about enabled-monitoring services, see [IBM Cloud Monitoring](https://www.ibm.com/products/cloud-monitoring){: external}.
 
 To monitor service metrics, check that the Monitoring instance is provisioned in the same region where the {{site.data.keyword.cloud_notm}} instance is provisioned.
