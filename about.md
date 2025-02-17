@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-10"
+  years: 2020, 2025
+lastupdated: "2025-02-13"
 
 keywords: features, overview
 
@@ -27,13 +27,6 @@ Transit gateways provide flexibility by allowing you to add networks to local ga
 
 {{site.data.keyword.tg_full_notm}} offers the following features:
 
-### Routing
-{: #routing}
-
-{{site.data.keyword.tg_full_notm}} supports local and global routing between VPCs and the {{site.data.keyword.cloud_notm}} classic infrastructure. All routing options remain within the private {{site.data.keyword.cloud_notm}} infrastructure without operating on the public internet, and are optimized for performance. {{site.data.keyword.tg_full_notm}} allows customers greater flexibility, redundancy, and speed in scaling their workloads, and in connecting isolated networks that run on {{site.data.keyword.cloud_notm}}.
-
-For more information, see [IBM Cloud Transit Gateway route reports](/docs/transit-gateway?topic=transit-gateway-route-reports).
-
 ### Privacy
 {: #privacy}
 
@@ -42,6 +35,11 @@ For more information, see [IBM Cloud Transit Gateway route reports](/docs/transi
 * {{site.data.keyword.tg_full_notm}} is a fully redundant, fault-tolerant service with no single point of failure within these [{{site.data.keyword.cloud_notm}} Multi-Zone Regions (MZR)](/docs/transit-gateway?topic=transit-gateway-tg-locations).
 
 * {{site.data.keyword.tg_full_notm}} integrates with Identity and Access Management (IAM), by letting you manage access to your transit gateway. Using IAM, you can create and manage [{{site.data.keyword.cloud_notm}} users and groups](/docs/transit-gateway?topic=transit-gateway-iam), as well as user permissions to allow or deny their access.
+
+### Routing
+{: #routing}
+
+{{site.data.keyword.tg_full_notm}} supports local and global routing between VPCs and the {{site.data.keyword.cloud_notm}} classic infrastructure. All routing options remain within the private {{site.data.keyword.cloud_notm}} infrastructure without operating on the public internet, and are optimized for performance. {{site.data.keyword.tg_full_notm}} allows customers greater flexibility, redundancy, and speed in scaling their workloads, and in connecting isolated networks that run on {{site.data.keyword.cloud_notm}}.
 
 ### Easily connect across boundaries
 {: #boundaries}
