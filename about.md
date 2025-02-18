@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-13"
+lastupdated: "2025-02-18"
 
 keywords: features, overview
 
@@ -40,6 +40,16 @@ Transit gateways provide flexibility by allowing you to add networks to local ga
 {: #routing}
 
 {{site.data.keyword.tg_full_notm}} supports local and global routing between VPCs and the {{site.data.keyword.cloud_notm}} classic infrastructure. All routing options remain within the private {{site.data.keyword.cloud_notm}} infrastructure without operating on the public internet, and are optimized for performance. {{site.data.keyword.tg_full_notm}} allows customers greater flexibility, redundancy, and speed in scaling their workloads, and in connecting isolated networks that run on {{site.data.keyword.cloud_notm}}.
+
+### Optimized traffic and fault tolerance
+{: #vpc-optimized-traffic-fault-tolerance}
+
+Transit Gateway is a regional service that employs routers located in each Availability Zone. In a typical setup, when virtual server instances are deployed across different VPCs, these instances will attempt to communicate with each other. Traffic between VPCs will remain within the same zone, ensuring efficient local routing and optimized data transfer.
+
+This standard behavior also applies when using a transit VPC and advertising static routes from one VPC to advertise the same prefix across all zones. Even if firewalls are deployed within the VPCs (resulting in duplicate firewalls in the other advertised zones), traffic will still favor the transit gateway in its respective zone. This ensures that traffic returns via the same zone's transit gateway, maintaining routing within the same zone. VPCs will typically prioritize the transit gateway within their zone, minimizing cross-zone traffic.
+
+In the event of a zonal failure—such as when a transit gateway experiences a failure in one zone (resulting from the failure of all zone's routers)—communication could be disrupted. In such cases, traffic may be routed differently, with one direction of traffic sent through an alternate path, while the response might return via a different route. In general, though, VPC traffic typically remains within the same zone.
+{: note}
 
 ### Easily connect across boundaries
 {: #boundaries}

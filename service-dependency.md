@@ -1,17 +1,14 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-12-18"
+  years: 2024, 2025
+lastupdated: "2025-02-18"
 
 keywords:
 
 subcollection: transit-gateway
 
 ---
-
-
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -43,7 +40,7 @@ The following table provides the dependency listing of this service following a 
 | IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | Control plane |  Same data center  |
 | IBM Cloud Databases - databases-for-postgresql | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Data plane |  Same region  |
 | VPC Undercloud | Availability | No | Control plane |  Same data center  |
-| IBM Cloud Identity and Access Management | Access management, Availability, Instance control, Security compliance | No | Control plane |  [Global](https://cloud.ibm.com/docs/overview?topic=overview-zero-downtime#global-platform)  |
+| IBM Cloud Identity and Access Management | Access management, Availability, Instance control, Security compliance | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Databases | Availability, Change management, Disaster recovery, Instance control | No | Control plane |  Same region  |
 | IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud - containers-kubernetes | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Control plane |  Same region  |
 | IBM Cloud Databases | Availability, Change management, Disaster recovery, Instance control | No | Control plane |  Same region  |
@@ -60,9 +57,9 @@ The following table provides the dependency listing of this service following a 
 | Oculus Automation API | Availability, Instance control, Operations | No | Control plane |  Same data center  |
 | IBM Cloud Classic NTP Servers | Availability, Change management, Instance control | No | Control plane |  Same data center  |
 | IBM Key Protect for IBM Cloud | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Control plane |  Same region  |
-| IBM Cloud Internet Services | Availability, configuration-management, Customer responsibility, Operations | No | Control plane |  [Global](https://cloud.ibm.com/docs/overview?topic=overview-zero-downtime#global-platform)  |
+| IBM Cloud Internet Services | Availability, configuration-management, Customer responsibility, Operations | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | Teleport Bastion | Availability, Change management, configuration-management, Operations | No | Control plane |  Same region  |
-| IBM Cloud Global Resource Catalog | Availability, Change management, Instance control, Security compliance | No | Control plane |  [Global](https://cloud.ibm.com/docs/overview?topic=overview-zero-downtime#global-platform)  |
+| IBM Cloud Global Resource Catalog | Availability, Change management, Instance control, Security compliance | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 {: row-headers}
 {: caption="IBM Cloud Transit Gateway service dependency information - Significant dependencies" caption-side="top"}
 {: tab-title="Significant dependencies"}
@@ -73,8 +70,8 @@ The following table provides the dependency listing of this service following a 
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
-| SysDig| Access management, Change management, Operations, Security compliance | No | Control plane |  [Global](https://cloud.ibm.com/docs/overview?topic=overview-zero-downtime#global-platform)  |
-| IBM GitHub Enterprise| Change management | No | Control plane |  [Global](https://cloud.ibm.com/docs/overview?topic=overview-zero-downtime#global-platform)  |
+| SysDig| Access management, Change management, Operations, Security compliance | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM GitHub Enterprise| Change management | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 {: row-headers}
 {: caption="IBM Cloud Transit Gateway service dependency information - Medium dependencies" caption-side="top"}
 {: tab-title="Medium dependencies"}
@@ -85,13 +82,13 @@ The following table provides the dependency listing of this service following a 
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
-| SOS SIEM| Security compliance | No | Control plane |  [Global](https://cloud.ibm.com/docs/overview?topic=overview-zero-downtime#global-platform)  |
+| SOS SIEM| Security compliance | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | OSS Platform| Operations | No | Control plane |  Same region  |
 | PagerDuty| Operations | No | Control plane |  Same region  |
 | IBM Cloud Security and Compliance Center| Security compliance | No | Control plane |  Same region  |
-| IBM Cloud Business Support Services| none | No | Data plane |  [Global](https://cloud.ibm.com/docs/overview?topic=overview-zero-downtime#global-platform)  |
+| IBM Cloud Business Support Services| none | No | Data plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Object Storage| none | No | Control plane |  Same region  |
-| OSS Platform| Operations | No | Control plane |  [Global](https://cloud.ibm.com/docs/overview?topic=overview-zero-downtime#global-platform)  |
+| OSS Platform| Operations | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Log Analysis and IBM Cloud Activity Tracker| Access management, Operations, Security compliance | No | Control plane |  Same region  |
 | IBM Cloud Activity Tracker event routing| Security compliance | No | Control plane |  Same region  |
 | IBM Cloud Monitoring| Operations, Security compliance | No | Data plane |  Same region  |
