@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-10-10"
+  years: 2017, 2025
+lastupdated: "2025-03-13"
 
 keywords: vpe for transit gateway, virtual private endpoints for transit gateway, using vpe for vpc with transit gateway, isolation for transit gateway, private network for transit gateway, network isolation in transit gateway, non-public routes for transit gateway, private connection for transit gateway, private connectivity for transit gateway
 
@@ -36,14 +36,14 @@ Before you target a virtual private endpoint for {{site.data.keyword.cloud}}, yo
 
 When you create a VPE gateway by using the CLI or API, you must specify the [Cloud Resource Name (CRN)](/docs/account?topic=account-crn) of the region in which you want to connect to {{site.data.keyword.tg_full_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
 
-
 {{site.data.keyword.tg_full_notm}} supports VPEs in all the VPC regions as shown.
 
 | Location | Region | Cloud Resource Name (CRN) |
 |---------|-------|----------------|
 | Dallas | `us-south` | `crn:v1:bluemix:public:container-registry:us-south:::endpoint:vpe.us-south.container-registry.cloud.ibm.com` |
 | Frankfurt | `eu-de` | `crn:v1:bluemix:public:container-registry:eu-de:::endpoint:vpe.eu-de.container-registry.cloud.ibm.com` |
-| London | `eu-gb` | `crn:v1:bluemix:public:container-registry:eu-gb:::endpoint:vpe.eu-gb.container-registry.cloud.ibm.com` |
+| London | `eu-gb` | `crn:v1:bluemix:public:container-registry:eu-gb:::endpoint:vpe.eu-gb.container-registry.cloud.ibm.com` | 
+| Montreal | `ca-mon` | `crn:v1:bluemix:public:container-registry:ca-mon:::endpoint:vpe.ca-mon.container-registry.cloud.ibm.com` | 
 | Osaka | `jp-osa` | `crn:v1:bluemix:public:container-registry:jp-osa:::endpoint:vpe.jp-osa.container-registry.cloud.ibm.com` |
 | Sao Paulo | `br-sao` | `crn:v1:bluemix:public:container-registry:br-sao:::endpoint:vpe.br-sao.container-registry.cloud.ibm.com` |
 | Sydney | `au-syd` | `crn:v1:bluemix:public:container-registry:au-syd:::endpoint:vpe.au-syd.container-registry.cloud.ibm.com` |
