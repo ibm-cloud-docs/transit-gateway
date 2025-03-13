@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-01-30"
+lastupdated: "2025-03-13"
 
 keywords: updates, additions, improvements
 
@@ -18,6 +18,12 @@ content-type: release-note
 {: #transit-gateway-release-notes}
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}. 
+
+## 13 March 2025
+{: #transit-gateway-mar1325}
+
+Montreal region now available
+:    Montreal is now a supported region for xxx service. For more information, see [IBM Cloud region and data center locations for resource deployment](/docs/overview?topic=overview-locations).
 
 ## 30 January 2025
 {: #transit-gateway-jan3025}
