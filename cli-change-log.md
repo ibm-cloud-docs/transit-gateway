@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2020, 2024
-lastupdated: "2024-10-30"
+  years:  2020, 2025
+lastupdated: "2025-03-13"
 
 keywords: change log for transit gateway, updates to transit gateway
 
@@ -35,7 +35,7 @@ Support for redundant Generic Routing Encapsulation (GRE) tunnel connections
 {: #cli-june2424}
 
 {{site.data.keyword.powerSys_notm}} connections for transit gateways
-:    Transit gateways now support {{site.data.keyword.powerSys_notm}} connections. A {{site.data.keyword.powerSys_notm}} connection allows {{site.data.keyword.powerSys_notm}} networks to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway. For details, see [**`ibmcloud tg connection-create`**](/docs/tg-cli-plugin?topic=tg-cli-plugin-transit-gateway-cli#connection-create).
+:    Transit gateways now support {{site.data.keyword.powerSys_notm}} connections. A {{site.data.keyword.powerSys_notm}} connection allows {{site.data.keyword.powerSys_notm}} networks to connect to other networks (for instance, VPC and classic infrastructure) that are connected to the same transit gateway. For details, see [**`ibmcloud tg connection-create`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#connection-create).
 
 ## 24 April 2023
 {: #cli-apr-2423}
