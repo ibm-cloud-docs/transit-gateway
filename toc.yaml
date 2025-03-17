@@ -96,7 +96,7 @@ toc:
        - topicgroup:
             label: Transit Gateway CLI reference
             topics:
-            - include: ../tg-cli-plugin/transit-gateway-cli.md
+            - transit-gateway-cli.md
             - cli-change-log.md
        - link:
            label: Terraform reference
