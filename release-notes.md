@@ -23,7 +23,7 @@ Find out about new and updated features in {{site.data.keyword.tg_full}}.
 {: #transit-gateway-mar1325}
 
 Montreal region now available
-:    Montreal is now a supported region for the Transit Gateway service, available in the `ca-mon-1` zone for Generic Routing Encapsulation (GRE) tunnels. For more information, see [IBM Cloud region and data center locations for resource deployment](/docs/overview?topic=overview-locations).
+:    Montreal is now a supported region for the Transit Gateway service, available in zone `ca-mon-1` for Generic Routing Encapsulation (GRE) tunnels. For more information, see [IBM Cloud region and data center locations for resource deployment](/docs/overview?topic=overview-locations).
 
 ## 30 January 2025
 {: #transit-gateway-jan3025}
