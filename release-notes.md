@@ -19,12 +19,6 @@ content-type: release-note
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}. 
 
-## xx March 2025
-{: #transit-gateway-marxx25}
-
-4-way ECMP support now available
-:    Newly created transit gateways now support 4-way ECMP. For more information, see [ECMP planning considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#general-considerations). Existing gateways can be [enabled upon request](/docs/transit-gateway?topic=transit-gateway-faqs-for-transit-gateway&interface=ui#faq-ecmp).  
-
 ## 13 March 2025
 {: #transit-gateway-mar1325}
 
