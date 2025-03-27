@@ -32,9 +32,19 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 * Transit gateways and their connections can take several minutes after provisioning before they are available.
 * Be descriptive when naming your transit gateway connections. When connecting to resources across accounts, you must specify a connection name. When connecting to resources in the same account as the transit gateway, the VPC name or the word 'classic' is the default selection and can be modified.
 * {{site.data.keyword.tg_full_notm}} is a multi-tenant application, where a single instance of the software, and its supporting infrastructure, serves multiple customers. As a result, monitoring your bandwidth use is important. If you use too much bandwidth, your transit gateway instance may be suspended. If you suspect this is the case, check the transit gateway instance connection status to see if it is in a `Suspended` state. If so, [contact support](/docs/transit-gateway?topic=transit-gateway-getting-help-and-support) to reinstate it.
-* The following ASNs are blocked on Transit Gateway Generic Routing Encapsulation (GRE) and Direct Link connections. Avoid using these ASNs on appliances so that they are not included on the advertised routes in the AS path. Having these ASNs included prevent networks from working properly. {: #ecmp-considerations}
+* The following ASNs are blocked on Transit Gateway Generic Routing Encapsulation (GRE) and Direct Link connections. Avoid using these ASNs on appliances so that they are not included on the advertised routes in the AS path. Having these ASNs included prevent networks from working properly.  
 
-   `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200`–‍`65234`, `65402‍`–‍`65433`, `65500`, and `4201065000‍`–‍`4201065999`
+   `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200`–‍`65234`, `65402‍`–‍`65433`, `65500`, and `4201065000‍`–‍`4201065999` 
+
+## ECMP considerations
+{: #ecmp-considerations} 
+
+   * When planning for ECMP (Equal-Cost Multi-Path), keep in mind that throughput won't scale linearly with the number of direct links. For example, if you connect two 10 GB direct links to an ECMP-capable transit gateway, you won’t get 20 GB throughput; you'll see more than 10 GB, but less than 20 GB. This is because ECMP works on a per-stream or per-source basis, meaning if traffic comes from a single endpoint, it will likely favor one link, not both. To achieve more balanced throughput, it's recommended to drive traffic from multiple sources, as this will distribute the load more evenly across the available direct links.
+   * Limitation: ECMP doesn't work for direct links on a single router. Instead, it is supported across multiple routers with direct links, as long as those routers are advertising the same prefix.
+   * Known restriction: New transit gateways support 4-way ECMP, but existing gateways can't use this feature unless you [open a support case](/docs/account?topic=account-open-case&interface=ui) for assistance. 
+
+      If you don't want the ECMP feature enabled on your transit gateways, you can open a support case to be added to a denylist, which will disable this feature on your gateways.
+      {: note}
 
 ## Pricing considerations
 {: #pricing-considerations}

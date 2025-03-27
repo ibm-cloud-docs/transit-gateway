@@ -2,7 +2,7 @@
 
 copyright:
   years:  2020, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-03-27"
 
 keywords: change log for transit gateway, updates to transit gateway
 
@@ -29,7 +29,13 @@ Support for redundant Generic Routing Encapsulation (GRE) tunnel connections
     * [**`tg redundant-gre-tunnel-add`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#redundant-gre-tunnel-add) - Add a tunnel to a redundant GRE.
     * [**`tg redundant-gre-tunnel-remove`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#redundant-gre-tunnel-remove) - Remove a tunnel from a redundant GRE.
 
+## 20 May 2024
+{: #cli-may2024}
 
+Pagination support
+:    To improve performance and reliability, the [**`ibmcloud tg connections`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-connections) command has been enhanced to support pagination. With pagination, if you have more connections than the requested `limit` (default: 100, maximum 500) only the number of connections within the size limit are returned, sorted by date with the oldest first.
+
+   To avoid disruption, upgrade your CLI version and update your tooling that uses CLI to handle the pagination. To test that your tooling handles pagination correctly, set the `limit` size on the [**`ibmcloud tg connections`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-connections) command. For more information, see [Preparing for connection lists pagination support](/docs/transit-gateway?topic=transit-gateway-notification-tgw-pagination-support-connections-lists).
 
 ## 24 June 2023
 {: #cli-june2424}

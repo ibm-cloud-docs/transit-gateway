@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-20"
+lastupdated: "2025-03-27"
 
 keywords: updates, additions, improvements
 
@@ -17,7 +17,13 @@ content-type: release-note
 # Release notes for IBM Cloud Transit Gateway
 {: #transit-gateway-release-notes}
 
-Find out about new and updated features in {{site.data.keyword.tg_full}}. 
+Find out about new and updated features in {{site.data.keyword.tg_full}}.
+
+## 27 March 2025
+{: #transit-gateway-mar2725}
+
+4-way ECMP support now available
+:    Newly created transit gateways now support 4-way ECMP. Existing gateways can be [enabled upon request](/docs/transit-gateway?topic=transit-gateway-faqs-for-transit-gateway&interface=ui#faq-ecmp). For more information, see [ECMP planning considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#ecmp-considerations). 
 
 ## 13 March 2025
 {: #transit-gateway-mar1325}
