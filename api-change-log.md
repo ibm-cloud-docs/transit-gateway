@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-07-01"
+  years: 2020, 2025
+lastupdated: "2025-03-27"
 
 keywords: transit gateway api change log
 
@@ -31,7 +31,16 @@ Redundant Generic Routing Encapsulation (GRE)
 
    There is also a change to the `GET /locations/{name}` API, which now includes an array of zones that lists which zones are valid for GREs for a given region.
 
+## 20 May 2024
+{: #transit-gateway-may2024}
 
+Transit Gateway connections list supports pagination
+:    To improve performance and reliability, the operation to [retrieve all connections for a transit gateway](/apidocs/transit-gateway#list-transit-gateway-connections) has been enhanced to support pagination. With pagination, if you have more connections than the requested `limit` (default: 50, maximum 500) only the number of connections within the size limit are returned, sorted by date with the oldest first.
+
+   While the default `limit` value allows your existing clients to retrieve the entire list of connections with one request, the default `limit` value is expected to be lowered in a future release. Additionally, we expect the number of transit gateway connections will continue to increase. Therefore, to ensure your clients continue to be aware of all connections, you must upgrade your clients to follow our [pagination guidance](/apidocs/transit-gateway#api-pagination). To test that your clients have been upgraded correctly, specify a `limit` value of `1`. For more information, see [Retrieves all connections](/apidocs/transit-gateway?code=go#list-connections).
+
+   The SDK automatically handles pagination. No action is necessary.
+   {: note} 
 
 ## 24 June 2023
 {: #transit-gateway-ju2423}
