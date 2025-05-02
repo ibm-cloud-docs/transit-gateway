@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-27"
+lastupdated: "2025-05-02"
 
 keywords: faq, faqs, questions
 
@@ -198,3 +198,11 @@ This time, by default, is set as 5 minutes (300 seconds), and defined by the con
 {: #faq-ecmp}
 
 If your transit gateway doesn’t support ECMP (Equal-Cost Multi-Path Routing) and you need it for improved traffic routing, you can [open a support case](/docs/account?topic=account-open-case&interface=ui). IBM Support can assist in enabling ECMP for your transit gateway, allowing your traffic to be distributed across multiple paths for better redundancy and load balancing.
+
+## Can I use multiple local BGP ASNs within the same zone?
+{: faq}
+{: #faq-multiple-local-bgp-asns}
+
+ No. IBM Cloud Transit Gateway assigns a single local ASN per zone because each zone is backed by a specific data center. This means all connections within the same zone will share the same local ASN by design.
+
+If you require different local ASNs for isolation purposes (for example, per tenant), the only workaround is to create connections in different zones. Currently, the platform doesn't support assigning multiple local ASNs within a single zone.
