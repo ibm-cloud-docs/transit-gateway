@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-27"
+lastupdated: "2025-05-16"
 
 keywords: help, tips, connections, provision
 
@@ -105,7 +105,7 @@ When using the `VPC` base network type:
 
 * Classic routes are advertised through an unbound GRE tunnel.
 * Can communicate through other unbound GRE tunnels connected to the same transit gateway in the same availability zone.
-* Cannot communicate with other unbound GRE tunnels on the same transit gateway if they are in a different availability zone. Unbound GRE tunnels in this scenario cannot be relied on for network isolation.
+* Cannot communicate with other unbound GRE tunnels on the same transit gateway that does not have GRE enhanced route propagation enabledand they are in different availability zones. Unbound GRE tunnels in this scenario cannot be relied on for network isolation.
 
 If you require network isolation, consider using separate transit gateways.
 {: tip}
