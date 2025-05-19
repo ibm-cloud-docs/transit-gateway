@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-27"
+lastupdated: "2025-05-19"
 
 keywords: help, tips, connections, provision
 
@@ -34,7 +34,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 * {{site.data.keyword.tg_full_notm}} is a multi-tenant application, where a single instance of the software, and its supporting infrastructure, serves multiple customers. As a result, monitoring your bandwidth use is important. If you use too much bandwidth, your transit gateway instance may be suspended. If you suspect this is the case, check the transit gateway instance connection status to see if it is in a `Suspended` state. If so, [contact support](/docs/transit-gateway?topic=transit-gateway-getting-help-and-support) to reinstate it.
 * The following ASNs are blocked on Transit Gateway Generic Routing Encapsulation (GRE) and Direct Link connections. Avoid using these ASNs on appliances so that they are not included on the advertised routes in the AS path. Having these ASNs included prevent networks from working properly.  
 
-   `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200`–‍`65234`, `65402‍`–‍`65433`, `65500`, and `4201065000‍`–‍`4201065999` 
+    `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200-65234`, `65402-65433`, `65500`, `65516`, `65519`, `65521`, `65531` and `4201065000-4201065999`
 
 ## ECMP considerations
 {: #ecmp-considerations} 
@@ -105,7 +105,7 @@ When using the `VPC` base network type:
 
 * Classic routes are advertised through an unbound GRE tunnel.
 * Can communicate through other unbound GRE tunnels connected to the same transit gateway in the same availability zone.
-* Cannot communicate with other unbound GRE tunnels on the same transit gateway if they are in a different availability zone. Unbound GRE tunnels in this scenario cannot be relied on for network isolation.
+* Cannot communicate with other unbound GRE tunnels on the same transit gateway that does not have GRE enhanced route propagation enabledand they are in different availability zones. Unbound GRE tunnels in this scenario cannot be relied on for network isolation.
 
 If you require network isolation, consider using separate transit gateways.
 {: tip}
