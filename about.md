@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-18"
+lastupdated: "2025-05-29"
 
 keywords: features, overview
 
@@ -56,7 +56,7 @@ In the event of a zonal failure—such as when a transit gateway experiences a f
 
 {{site.data.keyword.tg_full_notm}} interconnects your {{site.data.keyword.cloud_notm}} VPCs with compute and classic resources across the globe. You can also interconnect VPCs and classic resources across {{site.data.keyword.cloud_notm}} accounts.
 
-{{site.data.keyword.tg_full_notm}} also supports the use of Generic Routing Encapsulation (GRE) tunnels to connect endpoints. The GRE tunnel connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources in unique use cases.
+BM Cloud Transit Gateway supports the use of Generic Routing Encapsulation (GRE) tunnels to connect endpoints. GRE tunnels enable the transit gateway to connect to overlay networks hosted on classic infrastructure resources for unique use cases.
 
 ### Direct Link connectivity
 {: #directlink}
