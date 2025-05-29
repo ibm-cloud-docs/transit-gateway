@@ -29,7 +29,7 @@ To change your transit gateway configuration in the UI, follow these steps:
 
 1. From the Connections page, click **Actions** in the upper right, then select **Edit**.
 
-   From here, you can change the gateway's name and its routing type (Local or Global). 
+   From here, you can change the gateway's name and its routing type (Local or Global).  
 
    To change a transit gateway's routing type from Global to Local, you must delete any connections that aren't local to the transit gateway's location.
    {: tip}
