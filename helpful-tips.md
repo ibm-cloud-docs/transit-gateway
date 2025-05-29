@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-19"
+lastupdated: "2025-05-29"
 
 keywords: help, tips, connections, provision
 
@@ -80,6 +80,7 @@ Review the following considerations for your particular GRE connection.
 * GRE connections require the use of a BGP service between GRE tunnel IP addresses. The transit gateway configures a BGP service on the tunnel connection, before connecting to the other tunnel endpoint. Then, once the BGP protocol exchanges routes between the connected endpoint and the transit gateway, the GRE tunnel becomes the data path for the routed traffic.
 * GRE tunnel routes are learned directly on BGP sessions established over the tunnel. For this reason, prefix filtering is not enabled for these connections.
 * The number of GRE tunnels connected to a transit gateway is quota limited. The default quota is 12.
+* If you are using equal-cost paths between GRE and Direct Link (the same path length), the Direct Link is preferred instead of load balancing between the GRE and Direct Link.
 
 ### Redundant GRE considerations
 {: #redundant-gre-connection-considerations}
@@ -105,7 +106,7 @@ When using the `VPC` base network type:
 
 * Classic routes are advertised through an unbound GRE tunnel.
 * Can communicate through other unbound GRE tunnels connected to the same transit gateway in the same availability zone.
-* Cannot communicate with other unbound GRE tunnels on the same transit gateway that does not have GRE enhanced route propagation enabledand they are in different availability zones. Unbound GRE tunnels in this scenario cannot be relied on for network isolation.
+* Cannot communicate with other unbound GRE tunnels on the same transit gateway that doesn't have GRE enhanced route propagation enabled and they are in different availability zones. Unbound GRE tunnels in this scenario cannot be relied on for network isolation.
 
 If you require network isolation, consider using separate transit gateways.
 {: tip}

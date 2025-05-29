@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-18"
+  years: 2020, 2025
+lastupdated: "2025-05-29"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -30,9 +30,9 @@ To change your transit gateway configuration in the UI, follow these steps:
 
 1. From the Connections page, click **Actions** in the upper right, then select **Edit**.
 
-   From here, you can change the gateway's name and its routing type (Local or Global).
+   From here, you can change the gateway's name and its routing type (Local or Global). 
 
-   To change a transit gateway's routing type from global to local, you must delete any connections that are not local to the transit gateway's location.
+   To change a transit gateway's routing type from Global to Local, you must delete any connections that aren't local to the transit gateway's location.
    {: tip}
 
    When you change from Local to Global routing for a specific transit gateway, you are charged for all associated connection traffic.
@@ -45,7 +45,7 @@ To change your transit gateway configuration in the UI, follow these steps:
 To update properties on an existing gateway from the CLI, run the following command:
 
 ```sh
-ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--output json] [-h, --help]
+ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING]  [--output json] [-h, --help]
 ```
 {: pre}
 
@@ -55,7 +55,7 @@ Where:
 
 - **--name**: Optional: New name of the gateway.
 
-- **--routing**: Optional: Gateway routing of resources (global | local). Select global to connect resources across regions. Changing routing from global to local requires all existing connections to be local.
+- **--routing**: Optional: Gateway routing of resources (`global` | `local`). Select `global` to connect resources across regions. Changing routing from `global` to `local` requires all existing connections to be local.
 
 - **--output JSON**: Optional: Specify whether you want the output that is displayed in JSON format.
 
