@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-27"
+lastupdated: "2025-05-29"
 
 keywords: transit gateway api change log
 
@@ -19,6 +19,8 @@ content-type: release-note
 
 Check back regularly to see what's new with {{site.data.keyword.cloud}} Transit Gateway API.
 {: shortdesc}
+
+
 
 ## 12 June 2024
 {: #transit-gateway-jun1224}
