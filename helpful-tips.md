@@ -111,7 +111,7 @@ When using the `VPC` base network type:
 If you require network isolation, consider using separate transit gateways.
 {: tip}
 
-* Do not require a classic connection on the transit gateway. Classic network subnets will not be advertised to the connections on the transit gateway (or vice versa).
+* Do not require a classic connection on the transit gateway. Classic network subnets won't be advertised to the connections on the transit gateway (or vice versa).
 * The default number of unique base networks that can be targeted by unbound GRE tunnels is limited to five. You can open an [IBM Support case](/docs/account?topic=account-using-avatar#using-avatar) if you need these service limits expanded.
 
 For more information and a use case example, see [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).
