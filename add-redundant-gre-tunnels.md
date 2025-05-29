@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-18"
+  years: 2020, 2025
+lastupdated: "2025-05-29"
 
 keywords:
 
@@ -36,7 +36,7 @@ You can add tunnels when [creating a redundant GRE](/docs/transit-gateway?topic=
    If you expand the row of the connection, tunnel details and their states are listed.
    {: note}
 
-1. Click **Add tunnel**. You can add more tunnels, but you cannot exceed two tunnels per zone.
+1. Click **Add tunnel**. You can add more tunnels, but you can't exceed two tunnels per zone.
 1. In the Add tunnel window, choose an availability zone in which to create the tunnel. Then, complete the following fields.
 
    When you select a zone for the tunnel, only valid zones for a GRE connection are shown as options.
@@ -66,9 +66,9 @@ To remove a tunnel from a redundant GRE, follow these steps:
    {: note}
 
 1. Click **Remove tunnel**.
-1. In the Delete GRE tunnel window, select the name of the GRE tunnel that you want to remove, then click **Delete**. You cannot undo this action.
+1. In the Delete GRE tunnel window, select the name of the GRE tunnel that you want to remove, then click **Delete**. You can't undo this action.
 
-A connection cannot have less than two tunnels attached to a redundant GRE.
+A connection can't have less than two tunnels attached to a redundant GRE.
 {: important}
 
 ## Adding a tunnel to a redundant GRE from the CLI

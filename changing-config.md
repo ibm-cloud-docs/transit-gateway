@@ -45,7 +45,7 @@ To change your transit gateway configuration in the UI, follow these steps:
 To update properties on an existing gateway from the CLI, run the following command:
 
 ```sh
-ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING]  [--output json] [-h, --help]
+ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--output json] [-h, --help]
 ```
 {: pre}
 

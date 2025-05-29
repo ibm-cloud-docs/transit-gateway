@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-18"
+  years: 2020, 2025
+lastupdated: "2025-05-29"
 
 keywords: route, report
 
@@ -35,7 +35,7 @@ To generate a route report in the UI, follow these steps:
 1. From the Transit Gateway table, select the gateway for which you want to generate the report.
 1. On the Details page, click either the **Routes** or **BGP** tab, then click **Generate report**.
 
-   The route report begins building, and might take a few minutes to generate depending on the complexity of the gateway. Keep in mind that you cannot generate another report until the report is finished processing, or unless you click **Cancel**.
+   The route report begins building, and might take a few minutes to generate depending on the complexity of the gateway. Keep in mind that you can't generate another report until the report is finished processing, or unless you click **Cancel**.
 
 After the report generates, the following columns are displayed in the route report table.
 

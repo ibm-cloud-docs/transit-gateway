@@ -26,7 +26,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 
 * {{site.data.keyword.tg_full_notm}} supports provisioning transit gateways in the regions listed in [IBM Cloud Transit Gateway locations](/docs/transit-gateway?topic=transit-gateway-tg-locations).
 * Create your transit gateway in a location that makes sense for your workload. For example, if you are connecting two VPCs in the `us-south` (Dallas) region and one VPC in the `eu-de` (Frankfurt) region, creating your gateway in `us-south` region would be the most efficient for your workload.
-* You cannot connect a [classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) directly to a transit gateway. To connect the classic resources, use the {{site.data.keyword.cloud_notm}} classic infrastructure connection, and then all the resources in your classic access VPC are automatically connected.
+* You can't connect a [classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) directly to a transit gateway. To connect the classic resources, use the {{site.data.keyword.cloud_notm}} classic infrastructure connection, and then all the resources in your classic access VPC are automatically connected.
 *  A transit gateway requires at least two connections before network traffic can flow over the transit gateway. Transit gateways that have less than two connections for 45 days or more are subject to be reclaimed (suspended, then deleted after 30 days).
 * You can connect a VPC, Direct Link, or classic infrastructure to multiple local gateways and a single global gateway.
 * Transit gateways and their connections can take several minutes after provisioning before they are available.
@@ -49,7 +49,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 ## Pricing considerations
 {: #pricing-considerations}
 
-The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the Transit Gateway provisioning page, cannot interpret network connection types. To get a reliable cost estimate, input the estimated number of transit gateways and connections. Keep in mind that if you create a redundant GRE, each tunnel is an individual connection that counts against your [connection limit](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits).
+The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the Transit Gateway provisioning page, can't interpret network connection types. To get a reliable cost estimate, input the estimated number of transit gateways and connections. Keep in mind that if you create a redundant GRE, each tunnel is an individual connection that counts against your [connection limit](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits).
 
 ## Classic infrastructure connection considerations
 {: #classic-infra-connection-considerations}
@@ -86,7 +86,7 @@ Review the following considerations for your particular GRE connection.
 {: #redundant-gre-connection-considerations}
 
 * A redundant GRE is essentially a grouping of at least two GRE tunnels.
-* The number of tunnels cannot exceed two tunnels per zone.
+* The number of tunnels can't exceed two tunnels per zone.
 * You can place the tunnels within a redundant GRE in the same or different zones.
 * All connections and tunnels on the transit gateway must have unique names.
 * All tunnels in a redundant GRE target the same network and account.
@@ -98,15 +98,14 @@ When using the `VPC` base network type:
    * The virtual server interface profile must be v2.
    * The local gateway IP:
       *  Must comply with [RFC 1918](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpc-connection-consideration) (or there are no floating IPs or public gateways on the VPC).
-      * Must not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and cannot be in conflict with any existing networks that are connected to the transit gateway.
-      * Cannot be used as the `local-gateway-ip` for another GRE using the same underlay network.
+      * Must not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and can't be in conflict with any existing networks that are connected to the transit gateway.
+      * Can't be used as the `local-gateway-ip` for another GRE using the same underlay network.
 
 ### Unbound GRE tunnel considerations
 {: #unbound-gre-connection-considerations}
 
 * Classic routes are advertised through an unbound GRE tunnel.
 * Can communicate through other unbound GRE tunnels connected to the same transit gateway in the same availability zone.
-* Cannot communicate with other unbound GRE tunnels on the same transit gateway that doesn't have GRE enhanced route propagation enabled and they are in different availability zones. Unbound GRE tunnels in this scenario cannot be relied on for network isolation.
 
 If you require network isolation, consider using separate transit gateways.
 {: tip}
@@ -120,7 +119,7 @@ For more information and a use case example, see [Connect networks using a High 
 {: #legacy-gre-connection-considerations}
 
 * Classic routes are not advertised through a traditional GRE tunnel.
-* Cannot communicate through other GRE tunnels on the same transit gateway.
+* Can't communicate through other GRE tunnels on the same transit gateway.
 * Require a classic connection on the transit gateway before creation. As a result, all classic subnets will be advertised to all connections attached to the transit gateway, as well as any other of the connection's subnets on the classic network.
 
 ## Direct Link connection consideration

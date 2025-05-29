@@ -25,7 +25,7 @@ subcollection: transit-gateway
 | Role | Description of Actions |  Actions |
 |---|---|---|
 | Administrator | Can perform all actions, including managing gateways and connections, and assign {{site.data.keyword.tg_full_notm}} IAM access policies to other users. | Create gateways  \n Delete gateways  \n Edit gateways  \n Add or remove gateway connections  \n Accept or reject a cross account connection request  \n Edit gateway connections  \n Update user access policies for the service |                     |
-| Editor | Can perform all actions, including managing gateways and connections, but cannot assign {{site.data.keyword.tg_full_notm}} IAM access policies to other users. |Create gateways  \n Delete gateways  \n Edit gateways  \n Add or remove gateway connections  \n Accept or reject a cross account connection request  \n Edit gateway connections |
+| Editor | Can perform all actions, including managing gateways and connections, but can't assign {{site.data.keyword.tg_full_notm}} IAM access policies to other users. |Create gateways  \n Delete gateways  \n Edit gateways  \n Add or remove gateway connections  \n Accept or reject a cross account connection request  \n Edit gateway connections |
 | Operator and Viewer | Can only perform actions that don't change the state of resources. | List gateways  \n Get gateways  \n List a gateway's connections  \n View a gateway's connections  \n View incoming connection requests |
 {: caption="IAM platform-access user roles and actions" caption-side="bottom"}
 

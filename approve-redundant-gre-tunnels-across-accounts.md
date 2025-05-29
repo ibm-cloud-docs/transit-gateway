@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-18"
+  years: 2020, 2025
+lastupdated: "2025-05-29"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -15,7 +15,7 @@ subcollection: transit-gateway
 # Approving and rejecting cross-account redundant GRE requests
 {: #approve-reject-redundant-gre-tunnels}
 
-As the network owner, you can approve or reject a cross-account connection request. However, keep in mind that for redundant GRE requests, approval or rejection is done at the redundant GRE level. You cannot approve or reject individual redundant GRE tunnels. Supply the redundant GRE ID as the connection ID.
+As the network owner, you can approve or reject a cross-account connection request. However, keep in mind that for redundant GRE requests, approval or rejection is done at the redundant GRE level. You can't approve or reject individual redundant GRE tunnels. Supply the redundant GRE ID as the connection ID.
 {: shortdesc}
 
 ## Approving cross-account redundant GRE requests in the UI

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-18"
+  years: 2020, 2025
+lastupdated: "2025-05-29"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -70,7 +70,7 @@ To create a redundant GRE, follow these steps:
    To find the CRN, click **Navigation Menu** ![Navigation Menu icon](../../icons/icon_hamburger.svg) > **Resource List** from the {{site.data.keyword.cloud_notm}} console. Expand the Networking section, then click the table row of the Virtual Private Cloud whose CRN you want to find. The VPC CRN is shown in the details on the Overview tab.
    {: tip}
 
-1. Add GRE tunnels for this connection. A minimum of two GRE tunnels are required. You can click **Add tunnel** to add more tunnels, but you cannot exceed two tunnels per zone.
+1. Add GRE tunnels for this connection. A minimum of two GRE tunnels are required. You can click **Add tunnel** to add more tunnels, but you can't exceed two tunnels per zone.
    {: note}
 
    1. Select an availability zone in which to create the tunnels. When you select a zone for the tunnel, only valid zones for a redundant GRE are shown as options.
@@ -169,7 +169,7 @@ JSON file:
 :   Collection of all tunnels for this redundant GRE.
 
 `local_gateway_ip`
-:   Local gateway IP address for the GRE tunnel connection. This IP address must not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and cannot be in conflict with any existing networks that are connected to the transit gateway.
+:   Local gateway IP address for the GRE tunnel connection. This IP address must not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and can't be in conflict with any existing networks that are connected to the transit gateway.
 
 `local_tunnel_ip`
 :   Local tunnel IP address for the GRE tunnel connection.

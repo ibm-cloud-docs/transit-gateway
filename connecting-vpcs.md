@@ -199,7 +199,6 @@ resource "ibm_tg_gateway" "new_tg_gw"{
 name="transit-gateway-1"
 location="us-south"
 global=true
-allow_gre_traffic_across_zones=false
 resource_group="30951d2dff914dafb26455a88c0c0092"
 }
 ```

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-10"
+  years: 2020, 2025
+lastupdated: "2025-05-29"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -33,7 +33,7 @@ To migrate from a GRE tunnel to an unbound GRE tunnel:
 1. [Delete your old GRE tunnel](/docs/transit-gateway?topic=transit-gateway-deleting-connections&interface=ui).
 1. If desired, delete any classic connections.
 
-   Classic connections cannot be deleted if they are being used by other GRE tunnels.
+   Classic connections can't be deleted if they are being used by other GRE tunnels.
    {: note}
 
 1. [Create the new unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection&interface=ui).
