@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-14"
+lastupdated: "2025-05-29"
 
 keywords: command line interface, commands, CLI
 
@@ -707,7 +707,7 @@ The type of network to use. Options are `classic` and `vpc`.
 `local_gateway_ip`
 :   Local gateway IP address for the GRE tunnel connection. This field is required for network type `redundant_gre` connections.
 
-    When using a `vpc` base network type, this IP address must comply with RFC 1918 and not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and cannot be in conflict with any existing networks that are connected to the transit gateway. Also, this IP address cannot be used as the `local-gateway-ip` for another GRE using the same underlay network.
+    When using a `vpc` base network type, this IP address must comply with RFC 1918 and not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and can't be in conflict with any existing networks that are connected to the transit gateway. Also, this IP address can't be used as the `local-gateway-ip` for another GRE using the same underlay network.
     {: important}
 
 `local_tunnel_ip`

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-02-23"
+  years: 2023, 2025
+lastupdated: "2025-05-29"
 
 keywords:
 
@@ -22,7 +22,7 @@ There are several simple issues that might be causing your connectivity issues. 
 
 If you are encountering resource issues on the provisioning page, make sure you have the correct [IAM permissions](/docs/transit-gateway?topic=transit-gateway-iam) in order to use {{site.data.keyword.tg_full_notm}} and {{site.data.keyword.cloud_notm}} VPC for the connections you are attempting to make.
 
-If you cannot successfully provision a transit gateway, your account administrator may have disabled certain users' visibility to the [IBM Cloud catalog](/docs/account?topic=account-accounts#accounts).
+If you can't successfully provision a transit gateway, your account administrator may have disabled certain users' visibility to the [IBM Cloud catalog](/docs/account?topic=account-accounts#accounts).
 {: tip}
 
 ## Using supported locations

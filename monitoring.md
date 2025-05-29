@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-02-17"
+lastupdated: "2025-05-29"
 
 keywords:
 
@@ -21,7 +21,7 @@ Service Metrics enable gathering usage and status metrics. Metrics datasets are 
 ## Platform Metrics overview
 {: #platform-metrics-pm}
 
-You can configure only one instance of the {{site.data.keyword.mon_full}} service per region to collect service metrics. Service metrics are enabled by default in all instances, and cannot be disabled.
+You can configure only one instance of the {{site.data.keyword.mon_full}} service per region to collect service metrics. Service metrics are enabled by default in all instances, and can't be disabled.
 
 - Provision an instance of the {{site.data.keyword.mon_full_notm}} service. After you provision the Monitoring instance, the *Observability* page opens. To continue working with {{site.data.keyword.cloud_notm}}, go back to the {{site.data.keyword.cloud_notm}} console.
 - To configure the Monitoring instance, you must turn on the *service metrics* configuration setting.

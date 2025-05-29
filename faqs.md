@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-02"
+lastupdated: "2025-05-29"
 
 keywords: faq, faqs, questions
 
@@ -107,12 +107,12 @@ By enabling global routing, you can connect VPCs located in different [MZRs](/do
 
 For more information, see [Service limits](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits).
 
-## Classic access VPCs cannot be attached to a transit gateway. How can I connect and access classic resources in those VPCs?
+## Classic access VPCs can't be attached to a transit gateway. How can I connect and access classic resources in those VPCs?
 {: #classic-resources}
 {: faq}
 {: support}
 
-Although [classic-access VPCs](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) cannot be attached to a transit gateway, access to classic resources and classic-access VPC resources can be achieved by adding the classic infrastructure connection to a transit gateway. For more information, see [Classic infrastructure connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#classic-infra-connection-considerations).
+Although [classic-access VPCs](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) can't be attached to a transit gateway, access to classic resources and classic-access VPC resources can be achieved by adding the classic infrastructure connection to a transit gateway. For more information, see [Classic infrastructure connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#classic-infra-connection-considerations).
 
 ## How can "VPC peering" be achieved on {{site.data.keyword.cloud_notm}}?
 {: #vpc-peering}
@@ -128,7 +128,7 @@ Although [classic-access VPCs](/docs/vpc?topic=vpc-setting-up-access-to-classic-
 
 {{site.data.keyword.cloud_notm}} Direct Link can be connected to either a local or global transit gateway.
 
-Currently, you cannot connect a VPN to a transit gateway.
+Currently, you can't connect a VPN to a transit gateway.
 
 ## Can I create a global transit network using the {{site.data.keyword.tg_full_notm}}?
 {: #global-transit}
@@ -153,7 +153,7 @@ The {{site.data.keyword.cloud_notm}} infrastructure manages all transit gateways
 {: faq}
 {: #ddos}
 
-Neither third-parties nor the internet can see your transit gateway traffic. As no critical information, such as IP router addresses, is open to anyone but you, DDoS attacks cannot bring down the network. In addition, a typical Multi-protocol Label Switching service (MPLS) uses packet filtering and applies access control lists (ACLs) to limit access. Only the ports with routing protocols from a specific area of the network can access the information.
+Neither third-parties nor the internet can see your transit gateway traffic. As no critical information, such as IP router addresses, is open to anyone but you, DDoS attacks can't bring down the network. In addition, a typical Multi-protocol Label Switching service (MPLS) uses packet filtering and applies access control lists (ACLs) to limit access. Only the ports with routing protocols from a specific area of the network can access the information.
 
 ## How does my transit gateway handle encryption for connectivity between VPCs?
 {: faq}

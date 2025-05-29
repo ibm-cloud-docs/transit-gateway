@@ -2,7 +2,7 @@
 
 copyright:
   years:  2020, 2025
-lastupdated: "2025-03-27"
+lastupdated: "2025-05-29"
 
 keywords: change log for transit gateway, updates to transit gateway
 
@@ -20,7 +20,7 @@ In this change log, you can learn about the latest changes, improvements, and up
 ## 12 June 2024
 {: #cli-june1224}
 
-Support for redundant Generic Routing Encapsulation (GRE) tunnel connections
+Redundant GRE tunnel connections support
 :    To build in redundancy and eliminate the need to schedule an outage when a Transit Gateway router must down for maintenance, there is a new redundant GRE type, which is essentially a grouping of at least two GRE tunnels that can connect to classic or VPC networks. This connection type allows GRE tunnels to be placed on different devices in the same zone and not flag overlapping routes that are in the redundant GRE's tunnels. For more information, see [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection&interface=ui).
 
    New commands:

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-18"
+  years: 2020, 2025
+lastupdated: "2025-05-29"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -80,7 +80,7 @@ To create an unbound GRE tunnel, follow these steps:
 
 To configure the other end of the BGP tunnel, expand the newly created unbound GRE tunnel in the Connections panel to see its details. It will show the Local BGP ASN. If you created an optional remote BGP ASN, it also shows in the Connections panel. You must give this ASN information to the person creating the other end of the BGP tunnel, so that the BGP session can be fully configured.
 
-[^ip1]: This IP address must not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and cannot be in conflict with any existing networks connected to the transit gateway.
+[^ip1]: This IP address must not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and can't be in conflict with any existing networks connected to the transit gateway.
 
 ## Creating an unbound GRE tunnel from the CLI
 {: #tg-cli-adding-unbound-gre-connection-transit-gateway}
