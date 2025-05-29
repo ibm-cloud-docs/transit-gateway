@@ -26,7 +26,6 @@ To change your transit gateway configuration in the UI, follow these steps:
 1. Click the name of the transit gateway that you want to edit.
 
    If you are in the expanded view, click **View details**.
-   {: tip}
 
 1. From the Connections page, click **Actions** in the upper right, then select **Edit**.
 
