@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-05-30"
 
 keywords: help, tips, connections, provision
 
@@ -91,7 +91,6 @@ Review the following considerations for your particular GRE connection.
 * You can place the tunnels within a redundant GRE in the same or different zones.
 * All connections and tunnels on the transit gateway must have unique names.
 * All tunnels in a redundant GRE target the same network and account.
-* Known limitation: Currently, tunnels in the same zone in a redundant GRE do not have tunnel-to-tunnel traffic.
 
 When using the `VPC` base network type:
 
