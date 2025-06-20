@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-03-27"
+lastupdated: "2025-06-20"
 
 keywords: updates, additions, improvements
 
@@ -82,8 +82,7 @@ Unbound GRE tunnels
    * The ability to communicate through other unbound GRE tunnels on the same transit gateway.
    * Do not require a classic connection on the transit gateway. The classic network's subnets will not be advertised to all the connections on the transit gateway and vice versa.
 
-:    See [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection) for more information.
-
+:    For more information, see [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
 
 ## 26 March 2022
 {: #transit-gateway-mar2622}

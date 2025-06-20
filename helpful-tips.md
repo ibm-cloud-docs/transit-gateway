@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-30"
+lastupdated: "2025-06-20"
 
 keywords: help, tips, connections, provision
 
@@ -35,7 +35,6 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 * The following ASNs are blocked on Transit Gateway Generic Routing Encapsulation (GRE) and Direct Link connections. Avoid using these ASNs on appliances so that they are not included on the advertised routes in the AS path. Having these ASNs included prevent networks from working properly.
 
     `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200-65234`, `65402-65433`, `65500`, `65516`, `65519`, `65521`, `65531` and `4201065000-4201065999`
-* 
 
 ## ECMP considerations
 {: #ecmp-considerations} 
@@ -91,9 +90,7 @@ Review the following considerations for your particular GRE connection.
 * You can place the tunnels within a redundant GRE in the same or different zones.
 * All connections and tunnels on the transit gateway must have unique names.
 * All tunnels in a redundant GRE target the same network and account.
-
-When using the `VPC` base network type:
-
+* When using the `VPC` base network type:
    * You must enable the IP spoofing flag for VPC network type. For information about enabling IP spoofing checks, see [About IP spoofing](/docs/vpc?topic=vpc-ip-spoofing-about).
    * The virtual server interface profile must be v2.
    * The local gateway IP:
