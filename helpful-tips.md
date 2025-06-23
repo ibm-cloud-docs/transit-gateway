@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-06-20"
 
 keywords: help, tips, connections, provision
 
@@ -32,7 +32,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 * Transit gateways and their connections can take several minutes after provisioning before they are available.
 * Be descriptive when naming your transit gateway connections. When connecting to resources across accounts, you must specify a connection name. When connecting to resources in the same account as the transit gateway, the VPC name or the word 'classic' is the default selection and can be modified.
 * {{site.data.keyword.tg_full_notm}} is a multi-tenant application, where a single instance of the software, and its supporting infrastructure, serves multiple customers. As a result, monitoring your bandwidth use is important. If you use too much bandwidth, your transit gateway instance may be suspended. If you suspect this is the case, check the transit gateway instance connection status to see if it is in a `Suspended` state. If so, [contact support](/docs/transit-gateway?topic=transit-gateway-getting-help-and-support) to reinstate it.
-* The following ASNs are blocked on Transit Gateway Generic Routing Encapsulation (GRE) and Direct Link connections. Avoid using these ASNs on appliances so that they are not included on the advertised routes in the AS path. Having these ASNs included prevent networks from working properly.  
+* The following ASNs are blocked on Transit Gateway Generic Routing Encapsulation (GRE) and Direct Link connections. Avoid using these ASNs on appliances so that they are not included on the advertised routes in the AS path. Having these ASNs included prevent networks from working properly.
 
     `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200-65234`, `65402-65433`, `65500`, `65516`, `65519`, `65521`, `65531` and `4201065000-4201065999`
 
@@ -90,10 +90,7 @@ Review the following considerations for your particular GRE connection.
 * You can place the tunnels within a redundant GRE in the same or different zones.
 * All connections and tunnels on the transit gateway must have unique names.
 * All tunnels in a redundant GRE target the same network and account.
-* Known limitation: Currently, tunnels in the same zone in a redundant GRE do not have tunnel-to-tunnel traffic.
-
-When using the `VPC` base network type:
-
+* When using the `VPC` base network type:
    * You must enable the IP spoofing flag for VPC network type. For information about enabling IP spoofing checks, see [About IP spoofing](/docs/vpc?topic=vpc-ip-spoofing-about).
    * The virtual server interface profile must be v2.
    * The local gateway IP:
@@ -110,7 +107,7 @@ When using the `VPC` base network type:
 If you require network isolation, consider using separate transit gateways.
 {: tip}
 
-* Do not require a classic connection on the transit gateway. Classic network subnets will not be advertised to the connections on the transit gateway (or vice versa).
+* Do not require a classic connection on the transit gateway. Classic network subnets won't be advertised to the connections on the transit gateway (or vice versa).
 * The default number of unique base networks that can be targeted by unbound GRE tunnels is limited to five. You can open an [IBM Support case](/docs/account?topic=account-using-avatar#using-avatar) if you need these service limits expanded.
 
 For more information and a use case example, see [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).

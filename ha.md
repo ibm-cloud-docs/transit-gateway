@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-18"
+lastupdated: "2025-06-23"
 
 keywords:
 
@@ -27,10 +27,7 @@ You are responsible for understanding your configuration, customization, and usa
 
 When you create a transit gateway instance in a particular region, the system automatically enables multiple zones, which do not share a single point of failure.
 
-Transit gateway GRE connections require the gateway owner to configure HA to meet their specific needs. When you configure a GRE connection on a transit gateway, you must specify the availability zone. For a more robust solution, use a Redundant GRE that requires you to configure at least 2 tunnels or configure multiple GRE connections that use different availability zones.
-
-Transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point-to-point connection, has no built-in redundancy, and is a single point of failure. When you configure a GRE connection on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections that use different availability zones.
-{: note}
+Transit gateway GRE connections are point-to-point, have no built-in redundancy, and require the gateway owner to configure high availability (HA) based on their specific needs. When setting up a GRE connection, you must specify the availability zone. For a more robust HA solution, configure multiple GRE connections across different availability zones or use Redundant GRE with at least two tunnels.
 
 See [How IBM Cloud ensures high availability and disaster recovery](/docs/resiliency?topic=resiliency-ha-redundancy#zero-downtime) to learn more about the high availability and disaster recovery standards in {{site.data.keyword.cloud_notm}}. You can also find information about [Service Level Agreements](/docs/overview?topic=overview-slas#slas).
 

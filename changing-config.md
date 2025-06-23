@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-06-20"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -26,17 +26,19 @@ To change your transit gateway configuration in the UI, follow these steps:
 1. Click the name of the transit gateway that you want to edit.
 
    If you are in the expanded view, click **View details**.
-   {: tip}
 
 1. From the Connections page, click **Actions** in the upper right, then select **Edit**.
 
    From here, you can change the gateway's name and its routing type (Local or Global). 
+    
+    Changes to routing type can take several minutes to apply, depending on the number of existing connections.
+    {: note}
 
-   To change a transit gateway's routing type from Global to Local, you must delete any connections that aren't local to the transit gateway's location.
-   {: tip}
+   Important routing type considerations:
 
-   When you change from Local to Global routing for a specific transit gateway, you are charged for all associated connection traffic.
-   {: important}
+   * To switch to a different routing type, you must delete any connections that aren't local to the transit gateway’s location.
+   * When you change from Local to Global routing for a specific transit gateway, you are charged for all associated connection traffic. 
+   * The transit gateway must have fewer than 30 connections to change the routing type.    
 
 ## Changing your configuration from the CLI
 {: #change-configuration-cli}
@@ -125,8 +127,8 @@ You can specify the following argument references for your resource when you cha
 
 |Argument|Details|
 |--|--|
-|**name**  \n Required  \n Boolean | The unique user-defined name for the gateway. For example, `myGateway`|
-|**global**  \n Required  \n Boolean|The gateways with global routing (true) to connect to the networks outside their associated region.|
+|**name**  \n Required  \n boolean | The unique user-defined name for the gateway. For example, `myGateway`|
+|**global**  \n Required  \n boolean|The gateways with global routing (true) to connect to the networks outside their associated region.|
 {: caption="Terraform argument references for changing the configuration" caption-side="bottom"}
 
 ### Example
