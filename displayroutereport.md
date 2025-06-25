@@ -78,6 +78,7 @@ ibmcloud tg rrc $gateway
 {: pre}
 
 
+
 ## Generating and viewing a route report with the API
 {: #generate-route-report-api}
 {: api}
