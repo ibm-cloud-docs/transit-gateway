@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-06-25"
 
 keywords: route, report
 
@@ -76,6 +76,7 @@ For example, to create a route report for a gateway:
 ibmcloud tg rrc $gateway
 ```
 {: pre}
+
 
 ## Generating and viewing a route report with the API
 {: #generate-route-report-api}
