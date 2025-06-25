@@ -4,7 +4,7 @@ copyright:
   years: 2020, 2025
 lastupdated: "2025-06-25"
 
-keywords: route, report
+keywords: route report
 
 subcollection: transit-gateway
 
