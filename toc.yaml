@@ -102,12 +102,8 @@ toc:
            label: Terraform reference
            href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection
        - locations.md
-       - tg-responsibilities.md
-       - topicgroup:
-          label: High availability and disaster recovery
-          topics:
-          - ha.md
-          - bc-dr.md
+       - tg-responsibilities.md 
+       - ha-dr.md
        - data-portability.md
        - service-dependency.md
     - navgroup:
