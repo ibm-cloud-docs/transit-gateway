@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-20"
+lastupdated: "2025-07-15"
 
 keywords: faq, faqs, questions
 
@@ -12,7 +12,7 @@ subcollection: transit-gateway
 
 {{site.data.keyword.attribute-definition-list}}
 
-# FAQs for IBM Cloud Transit Gateway
+# FAQ for IBM Cloud Transit Gateway
 {: #faqs-for-transit-gateway}
 
 These frequently asked questions can help you when working with the {{site.data.keyword.tg_full}}.
