@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-20"
+lastupdated: "2025-07-24"
 
 keywords: help, tips, connections, provision
 
@@ -136,6 +136,8 @@ You can connect a {{site.data.keyword.powerSys_notm}} instance to a transit gate
 
 The same network subnet considerations for transit gateway connections also apply to {{site.data.keyword.powerSys_notm}} connections. To ensure successful connectivity, do not use prefixes in your {{site.data.keyword.powerSys_notm}} instance that overlap with other connections. Note that Transit Gateway provides prefix filtering to limit the prefixes being exposed, as well as a routing table report to see any overlaps after the connection is created.
 {: important}
+
+
 
 ## VPC considerations
 {: #vpc-connection-consideration}
