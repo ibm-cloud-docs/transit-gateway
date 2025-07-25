@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-24"
+lastupdated: "2025-07-25"
 
 keywords: command line interface, commands, CLI
 
@@ -355,6 +355,7 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-type NETWORK_T
    ```sh
    ibmcloud is vpc VPC_ID --json
    ```
+   {: pre}
 
 `--network-account-id`
 :   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account.

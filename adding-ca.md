@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-24"
+lastupdated: "2025-07-25"
 
 keywords:
 
@@ -110,7 +110,11 @@ Where:
     {: note}
 
 `--network-id`
-:   ID of the network connection. For `classic` connections, do not set a value. Use the CRN for all other network types.
+:   ID of the network connection. For `classic` connections, do not set a value. Use the CRN for all other network types. For example, to find the CRN of a VPC:
+
+   ```sh
+   ibmcloud is vpc VPC_ID --json
+   ```
 
 `--output json`
 :   Optional. Specify whether you want the output to display in JSON format.
