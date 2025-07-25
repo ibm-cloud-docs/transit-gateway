@@ -110,7 +110,7 @@ Where:
     {: note}
 
 `--network-id`
-:   ID of the network connection. For `classic` connections, do not set a value. Use the CRN for all other network types. For example, to find the CRN of a VPC:
+:   ID of the network connection. For `classic` connections, don't set a value. Use the CRN for all other network types. For example, to find the CRN of a VPC:
 
    ```sh
    ibmcloud is vpc VPC_ID --json

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-20"
+lastupdated: "2025-07-25"
 
 keywords: activity tracker, event, security
 
@@ -91,6 +91,6 @@ Refer to the following information when analyzing events:
 
 * Events that are associated with a specific connection will include the connection's id in `target.connectionId`.
 
-* Events that report update actions do not include information about the delta of the change.
+* Events that report update actions don't include information about the delta of the change.
 
 * The event's initiator field contains information about who initiated each request. In authorized cross account scenarios, `IBM` will be identified as the initiator.

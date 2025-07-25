@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-06-30"
+lastupdated: "2025-07-25"
 
 keywords: HA for transit gateway, DR for transit gateway, transit gateway recovery time objective, transit gateway recovery point objective
 
@@ -184,7 +184,7 @@ When it comes to zone and regional failures, IBM takes the following recovery ac
 ### How IBM recovers from zone failures
 {: #ibm-zone-failure}
 
-A zone failure refers to the failure of an availability zone within a region. In the event of a zone failure, IBM Cloud will identify the issue, perform repairs, and restore the zone as quickly as possible. If a zone becomes unavailable, traffic is automatically routed to healthy zones. Customers do not need to take any action to restore their transit gateway.
+A zone failure refers to the failure of an availability zone within a region. In the event of a zone failure, IBM Cloud will identify the issue, perform repairs, and restore the zone as quickly as possible. If a zone becomes unavailable, traffic is automatically routed to healthy zones. Customers don't need to take any action to restore their transit gateway.
 
 ### How IBM recovers from regional failures
 {: #ibm-regional-failure}
