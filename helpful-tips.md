@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-20"
+lastupdated: "2025-07-25"
 
 keywords: help, tips, connections, provision
 
@@ -21,7 +21,7 @@ Make sure that you review the following considerations before ordering your {{si
 ## General considerations
 {: #general-considerations}
 
-All prefixes of a VPC and all subnets of a classic network will connect to the transit gateway, so it's important that they do not overlap. When creating VPCs that are intended to connect to a transit gateway, make sure to create the VPCs with non-overlapping VPC prefixes.
+All prefixes of a VPC and all subnets of a classic network will connect to the transit gateway, so it's important that they don't overlap. When creating VPCs that are intended to connect to a transit gateway, make sure to create the VPCs with non-overlapping VPC prefixes.
 {: important}
 
 * {{site.data.keyword.tg_full_notm}} supports provisioning transit gateways in the regions listed in [IBM Cloud Transit Gateway locations](/docs/transit-gateway?topic=transit-gateway-tg-locations).
@@ -56,7 +56,7 @@ The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the 
 
 * To use a transit gateway to connect your VPCs to your IBM Cloud classic infrastructure, you must enable your classic account for virtual routing and forwarding (VRF) and link it to your IBM Cloud account. For information on enabling your account for VRF, see [Enabling VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint).
 
-* When you connect a VPC and the classic infrastructure to a transit gateway, all prefixes in the VPC become visible to the classic infrastructure VRF, which uses IP addresses in the `10.0.0.0/8` space. To ensure successful connectivity with the classic infrastructure, do not use prefixes in your VPCs that overlap with the `10.0.0.0/14`, `10.200.0.0/14`, `10.198.0.0/15`, and `10.254.0.0/16` blocks. Also, don't use addresses from your classic infrastructure subnets. To view a list of your classic infrastructure subnets, see [View all subnets](/docs/subnets?topic=subnets-view-all-subnets).
+* When you connect a VPC and the classic infrastructure to a transit gateway, all prefixes in the VPC become visible to the classic infrastructure VRF, which uses IP addresses in the `10.0.0.0/8` space. To ensure successful connectivity with the classic infrastructure, don't use prefixes in your VPCs that overlap with the `10.0.0.0/14`, `10.200.0.0/14`, `10.198.0.0/15`, and `10.254.0.0/16` blocks. Also, don't use addresses from your classic infrastructure subnets. To view a list of your classic infrastructure subnets, see [View all subnets](/docs/subnets?topic=subnets-view-all-subnets).
 
 * Classic virtual server instances can have both a private (`eth0`) and a public (`eth1`) network interface. Currently, the routing tables for these interfaces point the default gateway to the public interface (`eth1`). You might have to add routing entries to route the subnets from other VPCs through the private interface.
 
@@ -124,7 +124,7 @@ For more information and a use case example, see [Connect networks using a High 
 
 You can create Direct Link connections to a transit gateway to allow on-premises networks to connect to other networks in {{site.data.keyword.cloud_notm}}. After the direct link connects to the transit gateway, the on-premises network receives access to all other transit gateway connections. Likewise, all other networks connected to the transit gateway have access to the on-premises network. Direct Link connections follow the same process for physical or virtual cross connections as the standard Direct Link offering. After the connection is deleted from a transit gateway, the transit gateway operates as if it was never connected to a direct link.
 
-The same network subnet considerations for transit gateway connections also apply to Direct Link connections. To ensure successful connectivity, do not use prefixes in your Direct Link connected network that overlap with other connections.
+The same network subnet considerations for transit gateway connections also apply to Direct Link connections. To ensure successful connectivity, don't use prefixes in your Direct Link connected network that overlap with other connections.
 {: important}
 
 ## {{site.data.keyword.powerSys_notm}} connection considerations
@@ -134,8 +134,10 @@ You can connect a {{site.data.keyword.powerSys_notm}} instance to a transit gate
 
 {{site.data.keyword.powerSys_notm}} connections can use Local or Global routing. However, only {{site.data.keyword.powerSys_notm}} instances in the same region as the transit gateway can use local routing. Also, a {{site.data.keyword.powerSys_notm}} instance can be connected to multiple transit gateways with local routing, but only one transit gateway with global routing. Downstream services will honor route preference based on the transit gateway type.
 
-The same network subnet considerations for transit gateway connections also apply to {{site.data.keyword.powerSys_notm}} connections. To ensure successful connectivity, do not use prefixes in your {{site.data.keyword.powerSys_notm}} instance that overlap with other connections. Note that Transit Gateway provides prefix filtering to limit the prefixes being exposed, as well as a routing table report to see any overlaps after the connection is created.
+The same network subnet considerations for transit gateway connections also apply to {{site.data.keyword.powerSys_notm}} connections. To ensure successful connectivity, don't use prefixes in your {{site.data.keyword.powerSys_notm}} instance that overlap with other connections. Note that Transit Gateway provides prefix filtering to limit the prefixes being exposed, as well as a routing table report to see any overlaps after the connection is created.
 {: important}
+
+
 
 ## VPC considerations
 {: #vpc-connection-consideration}

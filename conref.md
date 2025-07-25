@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-03-27"
+lastupdated: "2025-07-25"
 
 keywords:
 
@@ -28,4 +28,4 @@ content-type: conref
 * If a connection exposes a route of `0.0.0.0/0`, that route is ignored when computing overlapping prefixes.
 * Only one report per gateway is available at any time. If you generate a new report, the old report is deleted.
 * Older route reports might be inaccurate after you add or remove a connection. As a result, if you update routes within those connections, it is recommended that you generate a new route report.
-* If one or more routes are denied by [prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters), those routes do not appear in the route report.
+* If one or more routes are denied by [prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters), those routes don't appear in the route report.

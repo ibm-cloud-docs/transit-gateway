@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-07-25"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -28,7 +28,7 @@ Before you create a redundant GRE, read the following planning considerations:
 * Review [General](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-general-considerations) and [Redundant](/docs/transit-gateway?topic=transit-gateway-helpful-tips#redundant-gre-connection-considerations) GRE considerations.
 * You must enter the following four IP addresses when you add a tunnel to a redundant GRE.
 
-   * **Remote gateway IP** - IP address of your GRE tunnel endpoint. This IP address must be a private IP and be the private IP from the classic environment. For example, this IP can be a hardware appliance or even a VM.
+   * **Remote gateway IP** - IP address of your GRE tunnel endpoint. This IP address must be a private IP from either a VPC or Classic environment, such as the private IP of a hardware appliance, a virtual server instance, or even a VM.
    * **Local gateway IP** - IP address that your tunnel endpoint connects to. This IP is the transit gateway's IP for establishing the tunnel so that when you enter the **Remote tunnel IP** on your tunnel endpoint, you use this IP address.
    * **Local tunnel IP** - GRE tunnel address on the transit gateway side.
    * **Remote tunnel IP** - GRE tunnel address on the tunnel endpoint.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-18"
+  years: 2020, 2025
+lastupdated: "2025-07-25"
 
 keywords: features, overview
 
@@ -33,9 +33,7 @@ To add a connection to a transit gateway, follow these steps:
 1. In the Connections view, click **Add connection**.
 1. Choose and configure the specific network connections that you want to add to your transit gateway. Choices include:
 
-   * **VPC** - Allows you to connect to your account's VPC resources, or VPC resources from other accounts as well.
    * **Classic infrastructure** - Allows you to connect to IBM Cloud classic resources.
-   * **Redundant GRE** allows unbound GRE tunnels to connect to endpoints in either VPC or classic infrastructure networks, thus allowing you to build in redundancy for GRE tunnels. For more information, see [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection).
    * **Direct Link** - Creates a network connection to and from Direct Link gateways so that there is a secure connection to on-premises networks and other resources that are connected to the transit gateway.
 
       If you select **Direct Link**, you must also log in to the [Direct Link console](/interconnectivity/direct-link){: external} (that uses the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link.
@@ -50,7 +48,11 @@ To add a connection to a transit gateway, follow these steps:
       To find out if your {{site.data.keyword.powerSys_notm}} workspace is set up correctly, go to the workspace and check the navigation for a Cloud connections page. If there isn't a **Cloud connections** page, the workspace leverages the Power Edge Router and can be added as a connection to Transit Gateway. Otherwise, you must configure virtual connections with Cloud connections on the {{site.data.keyword.powerSys_notm}}.
       {: important}
 
+   * **Redundant GRE** allows unbound GRE tunnels to connect to endpoints in either VPC or classic infrastructure networks, thus allowing you to build in redundancy for GRE tunnels. For more information, see [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection).
+
    * **Unbound GRE tunnel** - Allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For prerequisites and detailed instructions, see [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
+
+   * **VPC** - Allows you to connect to your account's VPC resources, or VPC resources from other accounts as well.
 
 1. Click **Add** to create a connection.
 
@@ -91,8 +93,8 @@ Where:
 
 - **GATEWAY_ID**: ID of the gateway that the new connection will be on.
 - **--name**: Name for the new connection.
-- **--network-type**: Network type of the connection. Values are `vpc`, `directlink`, or `classic`.
-- **--network-id**: ID of the network connection. For classic, do not set a value. For `vpc` and `directlink`, use the CRN. To find the CRN of a VPC:
+- **--network-type**: Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, and `vpc`.
+- **--network-id**: ID of the network connection. For `classic`, don't set a value. Use the CRN for all other network types. For example, to find the CRN of a VPC:
 
    ```sh
    ibmcloud is vpc VPC_ID --json

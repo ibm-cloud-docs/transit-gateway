@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-07-25"
 
 keywords: command line interface, commands, CLI
 
@@ -347,14 +347,15 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-type NETWORK_T
 :   Name for the new connection.
 
 `--network-type`
-:   Network type of the connection. Values are `classic`, `vpc`, `directlink`, or `power_virtual_server`.
+:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, and `vpc`.
 
 `--network-id`
-:   ID of the network connection. For `classic`, do not set a value. Use the CRN for all other network types. For example, to find the CRN of a VPC:
+:   ID of the network connection. For `classic`, don't set a value. Use the CRN for all other network types. For example, to find the CRN of a VPC:
 
    ```sh
    ibmcloud is vpc VPC_ID --json
    ```
+   {: pre}
 
 `--network-account-id`
 :   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account.

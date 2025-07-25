@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-07-25"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -30,7 +30,7 @@ Unbound transit gateway GRE connections require the gateway owner to specificall
 
 Keep in mind that you are required to enter four IP addresses when you create an unbound GRE tunnel. These are:
 
-* **Remote gateway IP** - the IP address of your GRE tunnel endpoint. This IP address must be a private IP and be the private IP from the classic environment. For example, this IP can be a hardware appliance or even a VM.
+* **Remote gateway IP** -  IP address of your GRE tunnel endpoint. This IP address must be a private IP from the Classic environment, such as the private IP of a hardware appliance, or even a VM.
 * **Local gateway IP** - the IP address that your tunnel endpoint connects to. This IP is the transit gateway's IP for the purpose of establishing the tunnel so that when you enter the "remote IP" on your tunnel endpoint, you use this IP address.
 * **Remote tunnel IP** - the GRE tunnel address on the tunnel endpoint.
 * **Local tunnel IP** - the GRE tunnel address on the transit gateway side.

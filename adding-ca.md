@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-18"
+  years: 2020, 2025
+lastupdated: "2025-07-25"
 
 keywords:
 
@@ -25,12 +25,12 @@ Before you add a cross-account connection, review these considerations:
 
 * After you connect a transit gateway to a network in another account, all resources that are connected to that transit gateway are accessible from the other network. Make sure that you use a trusted account. The following network connections are permitted as cross-account connections:
 
-   * VPC
    * Classic infrastructure
-   * Redundant GRE
    * Direct Link
    * Power System Virtual Server
-   * Unbound GRE tunnel
+   * Redundant GRE
+   * Unbound GRE tunnel   
+   * VPC
 
 * Only 10 pending requests are allowed per gateway. To create more requests, you can cancel the pending connection request, or wait for it to be approved. Connection requests expire if not approved within 72 hours.
 * Use of [security controls](/docs/vpc?topic=vpc-security-in-your-vpc), such as ACLs, security groups, or other network services to control traffic flow are highly recommended. IBM Cloud Transit Gateway does not provide security groups or ACLs, but the networks they attach to might and can affect transit gateway communications. For more information on ACLs and security groups, refer to the following topics:
@@ -104,13 +104,17 @@ Where:
 :   Name of the new connection.
 
 `--network-type`
-:   Network type of the connection. Values are `classic`, `vpc`, `directlink`, or `power_virtual_server`.
+:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, and `vpc`.
 
     To create an unbound GRE tunnel, see the [`ibmcloud tg connection-create-gre`](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=cli#connection-create-gre) command.
     {: note}
 
 `--network-id`
-:   ID of the network connection. For `classic` connections, do not set a value. Use the CRN for all other network types.
+:   ID of the network connection. For `classic` connections, don't set a value. Use the CRN for all other network types. For example, to find the CRN of a VPC:
+
+   ```sh
+   ibmcloud is vpc VPC_ID --json
+   ```
 
 `--output json`
 :   Optional. Specify whether you want the output to display in JSON format.
