@@ -2,13 +2,13 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-07-25"
+lastupdated: "2025-07-29"
 
 keywords:
 
 subcollection: transit-gateway
 
---- 
+---
 
 {{site.data.keyword.attribute-definition-list}}
 
