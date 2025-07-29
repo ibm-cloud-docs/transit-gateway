@@ -54,6 +54,45 @@ To add a connection to a transit gateway, follow these steps:
 
    * **VPC** - Allows you to connect to your account's VPC resources, or VPC resources from other accounts as well.
 
+   1. Select the network connection to be attached to the transit gateway. To add connections later, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-adding-connections).
+
+      You can add a new connection on the same account as the connection type, or request to connect to a network in another account.
+      {: note}
+
+      Select from the following connection types:
+
+      * **Classic infrastructure** networks allow you to connect to IBM Cloud classic resources. Only one classic infrastructure connection is allowed per account.
+
+      * **Direct Link** creates a network connection to and from Direct Link gateways so that there is a secure connection to on-premises networks and other resources connected to the transit gateway.
+
+         If you select **Direct Link**, you must also log in to the [Direct Link console](/interconnectivity/direct-link){: external} and specify **Transit Gateway** as the type of network connection for your direct link.
+         {: important}
+
+      * **{{site.data.keyword.powerSys_notm}}** - Creates a network connection to a {{site.data.keyword.powerSys_notm}} workspace to access the resources in a {{site.data.keyword.powerSys_notm}} colo.
+
+         If you select **{{site.data.keyword.powerSys_notm}}**, a {{site.data.keyword.powerSys_notm}} workspace must be created in a PER-enabled data center. For a list of PER-enabled data centers, see [Getting started with the Power Edge Router](/docs/power-iaas?topic=power-iaas-per).
+         {: note}
+
+      * **Redundant GRE tunnel** allows unbound GRE tunnels to connect to endpoints in either VPC or classic infrastructure networks, thus allowing you to build in redundancy for GRE tunnels. For more information, see [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection).
+ 
+      * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For more information, see [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
+
+      * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
+
+   1. After you select a network connection, choose a connection reach option:
+
+      * **Add new connection in this account** - Enter a connection name and any other required information for your connection.
+
+         * For **{{site.data.keyword.powerSys_notm}}**, select a location for the {{site.data.keyword.powerSys_notm}} workspace. Then, select from the list of  {{site.data.keyword.powerSys_notm}} workspaces that are enabled for Transit Gateway. Keep in mind that not all {{site.data.keyword.powerSys_notm}} workspaces show in this menu. 
+ 
+      * **Request connection to a network in another account** - Enter either the IBM Cloud ID or Cloud Resource Name (CRN) of the account that manages the network where you want to connect. Then, complete any remaining information. All resources connected to that transit gateway will be accessible from the other network. For more information, including how to obtain the Cloud ID or CRN, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
+
+         * IBM Cloud ID - Required by **Classic infrastructure** and **Unbound GRE tunnel**.
+         * CRN - Required by all other connections.
+
+         To find out if your Power Systems Virtual Server workspace is set up correctly, go to the Power Systems Virtual Server UI and check the navigation for a Cloud connections page. If there isn't a Cloud connections page, the workspace leverages Transit Gateway. Otherwise, you must configure virtual connections with Cloud connections on the Power Systems Virtual Server.
+         {: important}
+
 1. Click **Add** to create a connection.
 
 ## Adding a connection from the CLI
