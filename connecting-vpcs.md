@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-07-29"
 
 keywords: connecting, region, order
 
@@ -58,9 +58,8 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
       Select from the following connection types:
 
-      * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
       * **Classic infrastructure** networks allow you to connect to IBM Cloud classic resources. Only one classic infrastructure connection is allowed per account.
-      * **Redundant GRE tunnel** allows unbound GRE tunnels to connect to endpoints in either VPC or classic infrastructure networks, thus allowing you to build in redundancy for GRE tunnels. For more information, see [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection).
+
       * **Direct Link** creates a network connection to and from Direct Link gateways so that there is a secure connection to on-premises networks and other resources connected to the transit gateway.
 
          If you select **Direct Link**, you must also log in to the [Direct Link console](/interconnectivity/direct-link){: external} and specify **Transit Gateway** as the type of network connection for your direct link.
@@ -71,36 +70,26 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
          If you select **{{site.data.keyword.powerSys_notm}}**, a {{site.data.keyword.powerSys_notm}} workspace must be created in a PER-enabled data center. For a list of PER-enabled data centers, see [Getting started with the Power Edge Router](/docs/power-iaas?topic=power-iaas-per).
          {: note}
 
+      * **Redundant GRE tunnel** allows unbound GRE tunnels to connect to endpoints in either VPC or classic infrastructure networks, thus allowing you to build in redundancy for GRE tunnels. For more information, see [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection).
+ 
       * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For more information, see [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
+
+      * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
 
    1. After you select a network connection, choose a connection reach option:
 
       * **Add new connection in this account** - Enter a connection name and any other required information for your connection.
 
-         For **{{site.data.keyword.powerSys_notm}}**, select a location for the {{site.data.keyword.powerSys_notm}} workspace. Then, select from the list of  {{site.data.keyword.powerSys_notm}} workspaces that are enabled for Transit Gateway. Keep in mind that not all {{site.data.keyword.powerSys_notm}} workspaces show in this menu.
-         {: note}
+         * For **{{site.data.keyword.powerSys_notm}}**, select a location for the {{site.data.keyword.powerSys_notm}} workspace. Then, select from the list of  {{site.data.keyword.powerSys_notm}} workspaces that are enabled for Transit Gateway. Keep in mind that not all {{site.data.keyword.powerSys_notm}} workspaces show in this menu. 
 
       * **Request connection to a network in another account** - Enter either the IBM Cloud ID or Cloud Resource Name (CRN) of the account that manages the network where you want to connect. Then, complete any remaining information. All resources connected to that transit gateway will be accessible from the other network. For more information, including how to obtain the Cloud ID or CRN, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
 
-         * IBM Cloud ID - Required by Classic infrastructure and unbound GRE tunnels.
-         * CRN - Required by VPC, Direct Link, and Power Systems Virtual Server connections.
+         * IBM Cloud ID - Required by **Classic infrastructure** and **Unbound GRE tunnel**.
+         * CRN - Required by all other connections.
 
          To find out if your Power Systems Virtual Server workspace is set up correctly, go to the Power Systems Virtual Server UI and check the navigation for a Cloud connections page. If there isn't a Cloud connections page, the workspace leverages Transit Gateway. Otherwise, you must configure virtual connections with Cloud connections on the Power Systems Virtual Server.
          {: important}
-
-1. Optionally, you can create prefix filters to permit or deny specific routes on specific connections. For prefix filtering considerations and step-by-step instructions, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters).
-
-   To begin, expand the drop-down arrow in the upper right of the Prefix filtering section, and complete the following information:
-
-   1. Select the default filter that you want to use. You can either permit (default) or deny all prefixes.
-
-      The default filter is applied only if you don't create prefix filters that bypass this default setting.
-      {: note}
-
-   1. Click **Create prefix filter** to open the side panel and start creating prefix filters. In turn, your prefix filters are added to an ordered list that is processed sequentially.
-   1. Click **Save** to save your changes.
-
-1. **View Terms** on the right of the page.
+ 
 1. Click **Create** to complete your order.
 
 ## Creating a transit gateway from the CLI
@@ -121,7 +110,7 @@ Before you begin, complete these prerequisites to use the Transit Gateway CLI, w
 
 If you are going to use the CLI with a Virtual Private Endpoint (VPE), you must set the following variable:
 
-```bash
+```sh
 export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 ```
    {: pre}
