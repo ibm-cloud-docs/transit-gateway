@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-29"
+lastupdated: "2025-07-30"
 
 keywords:
 
@@ -29,7 +29,6 @@ Make sure that you review the following considerations before you create a prefi
 * Review the [prefix service limits](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits) for transit gateways.
 * For cross-account connections, only the account owner of the respective connection can modify prefix filters. Other accounts can view the connection, but can't modify the filters.
 * GRE tunnel configurations are not implemented as connections. Instead, their routes are learned directly on BGP sessions that are established over the tunnel. For this reason, prefix filtering is not enabled for these connections.
-* [REVIEW]{: tag-red} VPN gateway connections do not support prefix filtering. You are responsible for managing any route filtering on your side of the BGP session.
 * If you select **Request connection to a network in another account** as the connect reach option, you can't set prefix filters because you are not the network owner of the connection. Set the prefix filter on the account that owns the connection.
 * Prefix filter subnet masks are specific. For example, a rule that is defined as `10.10.20.0/24` does not match with subnet `10.10.20.0/28` or any other subnet prefix.
 

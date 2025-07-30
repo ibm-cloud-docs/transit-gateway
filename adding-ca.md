@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-28"
+lastupdated: "2025-07-30"
 
 keywords:
 
@@ -53,7 +53,7 @@ To connect networks that different accounts own by using the UI, follow these st
 1. Type the CRN of the cross-account network, or if Classic infrastructure or an Unbound or Redundant GRE, enter the IBM Cloud account ID that you want to connect to.
 
    * To get the IBM Cloud account ID for a Classic infrastructure or an Unbound or Redundant GRE tunnel connection, select **Manage > Account** from the {{site.data.keyword.cloud_notm}} console and choose **Account Settings**. Your account ID shows in the **Account** section of the **Account settings** page.
-   * To get the CRN of a VPC,<staged> VPN gateway,</staged> Direct Link, or Power Systems Virtual Server, select the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Resource list**. Expand **Networking** (for VPC and Direct Link) or **Computing** (for Power Systems Virtual Server) to list your networking resources, then locate the service that you are looking for. Next, click anywhere in the service's table row (except for the Name link). From the side window that appears, copy the CRN and paste it into the Add connection pane.
+   * To get the CRN of a VPC, Direct Link, or Power Systems Virtual Server, select the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Resource list**. Expand **Networking** (for VPC and Direct Link) or **Computing** (for Power Systems Virtual Server) to list your networking resources, then locate the service that you are looking for. Next, click anywhere in the service's table row (except for the Name link). From the side window that appears, copy the CRN and paste it into the Add connection pane.
 
 1. Complete any remaining fields, then click **Add**. The network connection now shows the **Pending** approval status in the gateway owner's account.
 
