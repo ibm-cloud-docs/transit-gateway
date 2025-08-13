@@ -12,7 +12,6 @@ subcollection: transit-gateway
 
 
 
-=======
 
 {{site.data.keyword.attribute-definition-list}}
 
