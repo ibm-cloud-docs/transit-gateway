@@ -2,13 +2,16 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-07-29"
+lastupdated: "2025-08-13"
 
 keywords:
 
 subcollection: transit-gateway
 
 ---
+
+
+
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -37,14 +40,14 @@ The following table provides the dependency listing of this service following a 
 |:---|:---|:---|:---|:---|
 | IBM Cloud Secrets Manager | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Control plane |  Same region  |
 | IBM Cloud Identity and Access Management | Access management, Availability, Instance control, Security compliance | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Cloud Databases - databases-for-postgresql | Availability, Change management, Disaster recovery, Instance control | No | Control plane |  Same region  |
+| ibm-cloud-databases | Availability, Change management, Disaster recovery, Instance control | No | Control plane |  Same region  |
 | IBM Cloud Direct Link | Availability | Yes | Control plane |  Same region  |
 | IBM Cloud Classic Infrastructure Resource Management | Change management, Instance control | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Public IP Address Management | Change management, Instance control | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | Control plane |  Same data center  |
-| IBM Cloud Databases - databases-for-postgresql | Availability, Change management, Disaster recovery, Instance control | No | Control plane |  Same region  |
+| ibm-cloud-databases | Availability, Change management, Disaster recovery, Instance control | No | Control plane |  Same region  |
 | IBM Cloud Internet Services | Instance control | No | Control plane |  Same region  |
-| IBM Cloud Databases - databases-for-postgresql | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Data plane |  Same region  |
+| ibm-cloud-databases | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Data plane |  Same region  |
 | IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud - containers-kubernetes | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Control plane |  Same region  |
 | VPC Undercloud | Availability | No | Control plane |  Same data center  |
 {: row-headers}
@@ -57,7 +60,7 @@ The following table provides the dependency listing of this service following a 
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
-| Oculus Automation API | Availability, Instance control, Operations | No | Control plane |  Same data center  |
+| oculus | Availability, Instance control, Operations | No | Control plane |  Same data center  |
 | VPC Zonal Control Plane | Instance control | No | Control plane |  Same region  |
 | IBM Cloud Business Support Services | Instance control, Operations | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Classic NTP Servers | Availability, Change management, Instance control | No | Control plane |  Same data center  |
@@ -129,3 +132,10 @@ This table can be used to answer the following questions:
 - **Where are the separate control plane and data plane located, if applicable?** Sometimes, the dependency might have a separate control plane and data plane. In these cases, there are separate lines that show the location in relation to the deployed customer instance of the service where these will be provisioned. The lines might have different impacts and different functions. See the Control or data plane column to understand what possible impact this type of outage might have.
 
    Same region means that the dependent services are in the same region as the provisioned instance. Other values might show data center or region names if the service must be used from a specific region, a specific availability zone, or set of availability zones. If a service is tied to a specific region or site, and the region goes offline, the service might go offline as well. It is recommended that you go through the high availability and disaster recovery documentation of the dependency to determine if there are any steps that you should take to mitigate these types of risks.
+
+
+For more information about the policies that are related to the services, you can refer to the following resources:
+
+* [Service Level Agreement](https://www.ibm.com/support/customer/csol/terms/?id=i126-6605&lc=en){: external}
+* [Shared responsibilities for using {{site.data.keyword.cloud_notm}} products](/docs/overview?topic=overview-shared-responsibilities)
+* [Service and infrastructure availability by location](/docs/overview?topic=overview-services_region)
