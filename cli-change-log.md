@@ -18,10 +18,10 @@ subcollection: transit-gateway
 In this change log, you can learn about the latest changes, improvements, and updates for {{site.data.keyword.tg_full}}.
 
 ## 27 August 2025
-{: #cli-august2725}
+{: #cli-august272025}
 
 GRE enhanced route propagation
-:    Allows routes to propagate between all GRE tunnels connected to the same transit gateway. This enables data traffic to flow between GRE tunnels that were previously isolated. GRE tunnels connected to networks that couldn’t communicate before can now exchange traffic.
+:    Allows routes to propagate between all GRE tunnels connected to the same transit gateway. This enables data traffic to flow between GRE tunnels that were previously isolated. GRE tunnels connected to networks that couldn’t communicate before can now exchange traffic. For more information, see [GRE enhanced route propagation considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-enhanced-route-propagation-considerations).
 
    New command options:
 

@@ -24,9 +24,9 @@ Check back regularly to see what's new with {{site.data.keyword.cloud}} Transit 
 {: #transit-gateway-aug2725}
 
 GRE enhanced route propagation
-:    Allows routes to propagate between all GRE tunnels connected to the same transit gateway. This enables data traffic to flow between GRE tunnels that were previously isolated. GRE tunnels connected to networks that couldn’t communicate before can now exchange traffic. 
+:    Allows routes to propagate between all GRE tunnels connected to the same transit gateway. This enables data traffic to flow between GRE tunnels that were previously isolated. GRE tunnels connected to networks that couldn’t communicate before can now exchange traffic. For more information, see [GRE enhanced route propagation considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-enhanced-route-propagation-considerations).
 
-For more information about the new `gre_enhanced_route_propagation` property, see [creating a transit gateway](/apidocs/transit-gateway#create-transit-gateway) and [updating a specific transit gateway](/apidocs/transit-gateway#update-transit-gateway).
+For information about the new `gre_enhanced_route_propagation` property, see [creating a transit gateway](/apidocs/transit-gateway#create-transit-gateway) and [updating a specific transit gateway](/apidocs/transit-gateway#update-transit-gateway).
         
 The API also returns the following properties on a transit gateway:
 
