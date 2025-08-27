@@ -20,8 +20,8 @@ content-type: release-note
 Check back regularly to see what's new with {{site.data.keyword.cloud}} Transit Gateway API.
 {: shortdesc}
 
-## 8 August 2025
-{: #transit-gateway-aug0825}
+## 27 August 2025
+{: #transit-gateway-aug2725}
 
 GRE enhanced route propagation
 :    Allows routes to propagate between all GRE tunnels connected to the same transit gateway. This enables data traffic to flow between GRE tunnels that were previously isolated. GRE tunnels connected to networks that couldn’t communicate before can now exchange traffic. 
