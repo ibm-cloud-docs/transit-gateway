@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-22"
+lastupdated: "2025-08-27"
 
 keywords: updates, additions, improvements
 
@@ -18,6 +18,14 @@ content-type: release-note
 {: #transit-gateway-release-notes}
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
+
+## 27 August 2025
+{: #transit-gateway-au0825}
+
+GRE enhanced route propagation
+:    Allows routes to propagate between all GRE tunnels connected to the same transit gateway. This enables data traffic to flow between GRE tunnels that were previously isolated. GRE tunnels connected to networks that couldn’t communicate before can now exchange traffic.
+
+:    This option reduces the need to create multiple GRE tunnels for communication between route tables in the same multi-zone region. By default, the "GRE enhanced route propagation" toggle is disabled to maintain existing behavior.
 
 ## 27 March 2025
 {: #transit-gateway-mar2725}

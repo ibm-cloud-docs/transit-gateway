@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-20"
+lastupdated: "2025-08-27"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -29,9 +29,9 @@ To change your transit gateway configuration in the UI, follow these steps:
 
 1. From the Connections page, click **Actions** in the upper right, then select **Edit**.
 
-   From here, you can change the gateway's name and its routing type (Local or Global). 
+   From here, you can change the gateway's name and its routing type (Local or Global). You can also enable or disable route propagation across all GREs connected to the same transit gateway. 
     
-    Changes to routing type can take several minutes to apply, depending on the number of existing connections.
+    Changes to route propagation or routing type can take several minutes to apply, depending on the number of existing connections.
     {: note}
 
    Important routing type considerations:
@@ -47,7 +47,7 @@ To change your transit gateway configuration in the UI, follow these steps:
 To update properties on an existing gateway from the CLI, run the following command:
 
 ```sh
-ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--output json] [-h, --help]
+ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING][--gre_enhanced_route_propagation] [--output json] [-h, --help]
 ```
 {: pre}
 
@@ -58,6 +58,8 @@ Where:
 - **--name**: Optional: New name of the gateway.
 
 - **--routing**: Optional: Gateway routing of resources (`global` | `local`). Select `global` to connect resources across regions. Changing routing from `global` to `local` requires all existing connections to be local.
+
+- **--gre-enhanced-route-propagation**: Optional: Specify whether you want enable or disable route propagation across all GREs connected to the same transit gateway. One of: `true` or `false` (default)
 
 - **--output JSON**: Optional: Specify whether you want the output that is displayed in JSON format.
 
@@ -129,6 +131,7 @@ You can specify the following argument references for your resource when you cha
 |--|--|
 |**name**  \n Required  \n boolean | The unique user-defined name for the gateway. For example, `myGateway`|
 |**global**  \n Required  \n boolean|The gateways with global routing (true) to connect to the networks outside their associated region.|
+|**gre_enhanced_route_propagation** \n Optional  \n boolean| Specify whether you want enable or disable route propagation across all GREs connected to the same transit gateway. Values are one of: `true` or `false` (default) |
 {: caption="Terraform argument references for changing the configuration" caption-side="bottom"}
 
 ### Example
@@ -141,6 +144,7 @@ resource "ibm_tg_gateway" "new_tg_gw"{
 name="transit-gateway-1"
 location="us-south"
 global=true
+gre_enhanced_route_propagation=false
 resource_group="30951d2dff914dafb26455a88c0c0092"
 }
 ```

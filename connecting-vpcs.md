@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-29"
+lastupdated: "2025-08-27"
 
 keywords: connecting, region, order
 
@@ -34,6 +34,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
    {: tip}
 
 1. Enter a name for the transit gateway and choose a resource group. You can select a resource group from the list, or keep the default selection.
+1. Optional: Click the **GRE enhanced route propagation** toggle to allow GRE tunnel traffic to flow across all GRE tunnels connected to this gateway.
 1. Choose a routing option:
 
    All of your classic resources and Direct Link connections across MZRs can be accessed regardless of whether local or global routing is enabled.
