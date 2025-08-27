@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-08-27"
 
 keywords: transit gateway api change log
 
@@ -20,7 +20,19 @@ content-type: release-note
 Check back regularly to see what's new with {{site.data.keyword.cloud}} Transit Gateway API.
 {: shortdesc}
 
+## 8 August 2025
+{: #transit-gateway-aug0825}
 
+GRE enhanced route propagation
+:    Allows routes to propagate between all GRE tunnels connected to the same transit gateway. This enables data traffic to flow between GRE tunnels that were previously isolated. GRE tunnels connected to networks that couldn’t communicate before can now exchange traffic. 
+
+For more information about the new `gre_enhanced_route_propagation` property, see [creating a transit gateway](/apidocs/transit-gateway#create-transit-gateway) and [updating a specific transit gateway](/apidocs/transit-gateway#update-transit-gateway).
+        
+The API also returns the following properties on a transit gateway:
+
+* `gre_enhanced_route_propagation` - Indicates whether GRE enhanced route propagation is enabled or not.
+* `connection_count` - The number of connections on the transit gateway.
+* `connections_need_attention` - Indicates whether there are any connections on the transit gateway that require attention.
 
 ## 12 June 2024
 {: #transit-gateway-jun1224}

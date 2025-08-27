@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-08-27"
 
 keywords: help, tips, connections, provision
 
@@ -96,13 +96,20 @@ Review the following considerations for your particular GRE connection.
    * The local gateway IP:
       *  Must comply with [RFC 1918](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpc-connection-consideration) (or there are no floating IPs or public gateways on the VPC).
       * Must not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and can't be in conflict with any existing networks that are connected to the transit gateway.
-      * Can't be used as the `local-gateway-ip` for another GRE using the same underlay network.
+      * Can't be used as the `local-gateway-ip` for another GRE using the same underlay network. 
+
+* GRE enhanced route propagation:
+
+   * When disabled (default), all tunnels within a redundant GRE don’t have their routes propagated to each other and can’t communicate with each other. However, redundant GRE tunnels can have their routes propagated to GRE tunnels outside the redundant GRE that are connected to the same transit gateway and are in the same zone.
+
+   * When enabled, all GRE tunnels propagate their routes to other GREs if they’re connected to the same transit gateway.
 
 ### Unbound GRE tunnel considerations
 {: #unbound-gre-connection-considerations}
 
 * Classic routes are advertised through an unbound GRE tunnel.
 * Can communicate through other unbound GRE tunnels connected to the same transit gateway in the same availability zone.
+* Unbound GRE tunnels on the same transit gateway, located in different availability zones, can't communicate unless GRE enhanced route propagation is enabled. However, having GRE enhanced route propagation disabled shouldn't be relied on for network isolation as the absence of unbound GRE cross-zone traffic doesn't guarantee enforced separation.
 
 If you require network isolation, consider using separate transit gateways.
 {: tip}

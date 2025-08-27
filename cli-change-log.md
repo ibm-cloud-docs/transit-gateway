@@ -2,7 +2,7 @@
 
 copyright:
   years:  2020, 2025
-lastupdated: "2025-07-22"
+lastupdated: "2025-08-27"
 
 keywords: change log for transit gateway, updates to transit gateway
 
@@ -16,6 +16,16 @@ subcollection: transit-gateway
 {: #cli-change-log}
 
 In this change log, you can learn about the latest changes, improvements, and updates for {{site.data.keyword.tg_full}}.
+
+## 27 August 2025
+{: #cli-august2725}
+
+GRE enhanced route propagation
+:    Allows routes to propagate between all GRE tunnels connected to the same transit gateway. This enables data traffic to flow between GRE tunnels that were previously isolated. GRE tunnels connected to networks that couldn’t communicate before can now exchange traffic.
+
+   New command options:
+
+    * [**`tg gateway-create`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#gateway-create) and [**`tg gateway-update`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#gateway-update) - Added a new boolean option `gre_enhanced_route_propagation` to enable or disable this feature. If not specified, the option is `false`. 
 
 ## 12 June 2024
 {: #cli-june1224}
