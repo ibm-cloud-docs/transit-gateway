@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-25"
+lastupdated: "2025-08-27"
 
 keywords: command line interface, commands, CLI
 
@@ -127,7 +127,7 @@ gateway="bdf8fa2b-c518-9999-9028-f3c9ece86159"
 Create a transit gateway.
 
 ```sh
-ibmcloud tg gateway-create|gwc --name NAME --location LOCATION [--routing ROUTING] [--resource-group-id RES_GROUP_ID] [--output json] [-h, --help]
+ibmcloud tg gateway-create|gwc --name NAME --location LOCATION [--routing ROUTING] [--gre-enhanced-route-propagation true | false] [--resource-group-id RES_GROUP_ID] [--output json] [-h, --help]
 ```
 {: pre}
 
@@ -145,6 +145,9 @@ ibmcloud tg gateway-create|gwc --name NAME --location LOCATION [--routing ROUTIN
 
 `--resource-group-id`
 :   Optional: Gateway resource group ID. Uses default resource group, if not specified.
+
+`--gre-enhanced-route-propagation`
+:   Optional: Specify whether you want to enable route propagation across all GREs connected to the same transit gateway. Valid values are `true` and `false` (default).
 
 `--output json`
 :   Optional: Specify whether you want the output displayed in JSON format.
@@ -199,7 +202,7 @@ ibmcloud tg gwd $gateway -f
 Update properties on an existing gateway.
 
 ```sh
-ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--output json] [-h, --help]
+ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING][--gre-enhanced-route-propagation true | false] [--output json] [-h, --help]
 ```
 
 #### Command options
@@ -213,6 +216,12 @@ ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--o
 
 `--routing`
 :   Optional: Gateway routing of resources (`global` | `local`). Select global to connect resources across regions. Changing routing from `global` to `local` requires all existing connections to be `local`.
+
+`--gre-enhanced-route-propagation`
+:   Optional: Specify whether you want to enable route propagation across all GREs connected to the same transit gateway. Valid values are `true` and `false` (default).
+    
+    After changing this value, allow a few minutes for the change to take effect.
+    {: note}
 
 `--output json`
 :   Optional: Specify whether you want the output displayed in JSON format.
