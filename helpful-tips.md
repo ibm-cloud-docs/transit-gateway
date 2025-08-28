@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-08-27"
+lastupdated: "2025-08-28"
 
 keywords: help, tips, connections, provision
 
@@ -81,6 +81,31 @@ Review the following considerations for your particular GRE connection.
 * GRE tunnel routes are learned directly on BGP sessions established over the tunnel. For this reason, prefix filtering is not enabled for these connections.
 * The number of GRE tunnels connected to a transit gateway is quota limited. The default quota is 12.
 * If you are using equal-cost paths between GRE and Direct Link (the same path length), the Direct Link is preferred instead of load balancing between the GRE and Direct Link.
+
+### GRE enhanced route propagation considerations
+{: #gre-enhanced-route-propagation-considerations} 
+ 
+GRE enhanced route propagation controls whether GRE tunnels connected to the same transit gateway can learn routes from each other, when across zones or within a Redundant GRE (RGRE) pair.
+
+When you create or update a transit gateway, assess whether GRE tunnels should be able to share routes. Enabling the **GRE enhanced route propagation** toggle allows interconnectivity between GREs on the same transit gateway and can reduce the need for redundant tunnel configurations. Depending on your topology, this setting can introduce meaningful changes in how routes are propagated and how traffic flows.
+
+Enabling or disabling this toggle can cause immediate route propagation changes. Make sure you understand the impact before making changes in a production environment.
+{: important}
+
+When the toggle is disabled:
+
+* GRE tunnels in the same RGRE don't learn routes from each other.
+* Unbound GRE tunnels that land in different transit gateway zones don't learn routes from each other.
+* GRE tunnels in the same zone still learn routes from one another.
+
+The configuration limits route propagation between GRE tunnels, but doesn't provide strict network isolation or guarantee enforced separation.
+
+When the toggle is enabled:
+
+* GRE tunnels in an RGRE pair learn routes from each other, even if they're in the same zone.
+* Unbound GREs in different transit gateway zones also learn routes from each other, allowing cross-zone route propagation.
+
+This configuration allows GREs to learn routes from other GREs, across zones or within the same RGRE, which can change how routes are propagated and how traffic flows through your network.
 
 ### Redundant GRE considerations
 {: #redundant-gre-connection-considerations}
