@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-08-27"
+lastupdated: "2025-09-15"
 
 keywords: features, overview
 
@@ -156,6 +156,6 @@ Direct Link can be connected to either local or remote transit gateways.
 ![Connect On-Premise Network to Transit Gateway](/images/dlaas.png "Connect Direct Link on-premises network"){: caption="Connect on-premises network using Direct Link" caption-side="bottom"}
 
 ### Power Virtual Server uses cases using Transit Gateway
-{: #use-case-10}
+{: #use-case-11}
 
 For use cases involving {{site.data.keyword.powerSys_notm}} workplaces, see [Power Edge Router use cases](/docs/power-iaas?topic=power-iaas-network-architecture-diagrams#per-use-cases).
