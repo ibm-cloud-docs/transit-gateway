@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-09-18"
 
 keywords: features, overview
 
@@ -128,7 +128,7 @@ ibmcloud tg cc $gateway --name vpc-connection --network-id $vpcCRN --network-typ
 ```
 {: pre}
 
-Create Classic connection named `classic-conn`.
+Create classic connection named `classic-conn`.
 
 ```sh
 ibmcloud tg cc $gateway --name classic-conn --network-type classic
@@ -155,7 +155,7 @@ To add a connection with the API, follow these steps:
    ```
    {: pre}
 
-For more information, see [Adds a connection to a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.
+For more information, see [Adds a connection to a transit gateway](/apidocs/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
 ## Adding a connection by using Terraform
@@ -166,7 +166,7 @@ Review the following argument references that you can specify for your resource 
 
 |Argument|Details|
 |--|--|
-|**base_connection_id**  \n Optional  \n Forces new resource \n string | The ID of a network_type 'classic' connection a tunnel is configured over.  \n This field only applies to network type `gre_tunnel` connections.|
+|**base_connection_id**  \n Optional  \n Forces new resource \n string | The ID of a `classic` `network_type` connection a tunnel is configured over.  \n This field only applies to network type `gre_tunnel` connections.|
 |**base_network_type**  \n Optional  \n Forces new resource  \n string | The base network type. Allowed values are `classic`.  \n This field only applies to `unbound_gre_tunnel` type connections.
 |**gateway**  \n Required  \n Forces new resource  \n string | Enter the transit gateway identifier.|
 |**local_gateway_ip**  \n Optional  \n Forces new resource  \n string | The local gateway IP address. \n This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections. |
