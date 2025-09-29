@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-25"
+lastupdated: "2025-09-29"
 
 keywords: route report
 
@@ -77,7 +77,25 @@ ibmcloud tg rrc $gateway
 ```
 {: pre}
 
+## Exporting a route report from the CLI
+{: #export-route-report-cli}
+{: cli}
 
+To export a route report, first output the data in JSON format as shown. Then, use a command-line parsing tool like **jq** to convert the JSON to CSV. Finally, you can open the CSV file in a spreadsheet application. 
+
+```sh
+ibmcloud tg rrs GATEWAY_ID --output json | jq -r '(map(keys) | add | unique) as $cols | $cols, (.[] as $row | $cols | map(if $row[.] == null then "" elif ($row[.] | type) == "object" or ($row[.] | type) == "array" then ($row[.] | tostring) else $row[.] end)) | @csv'
+```
+{: pre}
+
+For example:
+
+```sh
+~$ ibmcloud tg rrs 97883b3c-db0c-4ce8-99e6-8ecbf2b19677 --output json | jq -r '(map(keys) | add | unique) as $cols | $cols, (.[] as $row | $cols | map(if $row[.] == null then "" elif ($row[.] | type) == "object" or ($row[.] | type) == "array" then ($row[.] | tostring) else $row[.] end)) | @csv'
+"connections","created_at","id","overlapping_routes","status","updated_at"
+"[{""bgps"":[{""as_path"":""(65201 4201065540)"",""is_used"":true,""local_preference"":""195"",""prefix"":""10.38.136.64/26""},{""as_path"":""(65201 65521)"",""is_used"":true,""local_preference"":""195"",""prefix"":""10.135.64.0/26""},{""as_path"":""(65201) 65233"",""is_used"":true,""local_preference"":""195"",""prefix"":""10.144.104.0/24""},{""as_path"":""(65201 4201065544)"",""is_used"":true,""local_preference"":""195"",""prefix"":""10.185.92.192/26""},{""as_path"":""(65201 4201065547)"",""is_used"":true,""local_preference"":""195"",""prefix"":""10.190.25.64/26""},{""is_used"":true,""local_preference"":""195"",""prefix"":""10.208.197.0/26""},{""is_used"":true,""local_preference"":""195"",""prefix"":""10.220.200.64/26""}],""id"":""8f9618bb-ed97-42da-8a82-cd2ab022a807"",""name"":""classic-ag1411"",""routes"":[{""prefix"":""10.38.136.64/26""},{""prefix"":""10.135.64.0/26""},{""prefix"":""10.144.104.0/24""},{""prefix"":""10.185.92.192/26""},{""prefix"":""10.190.25.64/26""},{""prefix"":""10.208.197.0/26""},{""prefix"":""10.220.200.64/26""}],""type"":""classic""},{""bgps"":null,""id"":""2e771012-fd5b-42b2-b6d2-1e45fa45a5a5"",""name"":""Gre_Tunnel_OldCon_AG1411"",""routes"":null,""type"":""gre_tunnel""},{""bgps"":null,""id"":""109ad1eb-f82f-4e14-b226-38f6080a738c"",""name"":""ju-dlaas-test"",""routes"":null,""type"":""directlink""},{""bgps"":null,""id"":""c284335e-879a-49d1-a714-808dd2026371"",""name"":""test-ugre01-ag1710"",""routes"":null,""type"":""unbound_gre_tunnel""},{""bgps"":null,""id"":""c57e67bd-0140-4539-b0bd-1615ba555827"",""name"":""UnboundGreTunnel_Conn02_AG1710"",""routes"":null,""type"":""unbound_gre_tunnel""}]","2025-05-02T19:29:35.970Z","bd282fd4-4389-4f78-9ad0-495a27df54a4","[]","complete","2025-05-02T19:30:16.511Z"
+```
+{: codeblock}
 
 ## Generating and viewing a route report with the API
 {: #generate-route-report-api}

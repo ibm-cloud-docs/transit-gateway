@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-08-27"
+lastupdated: "2025-09-29"
 
 keywords: connecting, region, order
 
@@ -119,7 +119,7 @@ export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 To create a transit gateway from the CLI, enter the following command:
 
 ```sh
-ibmcloud tg gateway-create|gwc --name NAME --location LOCATION [--routing ROUTING] [--resource-group-id RES_GROUP_ID] [--output json] [-h, --help]
+ibmcloud tg gateway-create|gwc --name NAME --location LOCATION [--routing ROUTING] [--gre-enhanced-route-propagation true | false] [--resource-group-id RES_GROUP_ID] [--output json] [-h, --help]
 ```
 {: pre}
 
@@ -129,6 +129,7 @@ Where:
 - **--location** - Location of the gateway (see possible values by using : `ibmcloud tg locations`)
 - **--routing** - Gateway routing of resources (`global` | `local`). Use `global` to connect resources across regions. The default value is `local`.
 - **--resource-group-id** - Optional: Gateway resource group ID. Uses the default resource group, if not specified.
+- **--gre-enhanced-route-propagation** - Optional: Specify if you want to enable route propagation across all GREs connected to the same transit gateway. One of: `true` or `false` (default).
 - **--output json** - Optional: Specify to display the output in JSON format.
 - **--help | -h** - Optional: Get help on this command.
 
@@ -176,6 +177,7 @@ Review the following argument references that you can specify for your resource 
 |**location**  \n Optional  \n Forces new resource  \n integer| The location of the transit gateway.  \n **Example**: `us-south`|
 |**name**  \n Required  \n string| The unique user-defined name for the gateway.  \n **Example**: `myGateway`|
 |**global**  \n Required  \n boolean | The gateways with global routing (true) are able to connect to networks outside their associated region.|
+|**gre_enhanced_route_propagation** \n  Optional \n boolean | Specify if you want to enable route propagation across all GREs connected to the same transit gateway. |
 |**resource_group**  \n Optional  \n Forces new resource  \n string | The resource group ID where the transit gateway is to be created.|
 {: caption="Argument references for creating a transit gateway" caption-side="bottom"}
 
@@ -189,6 +191,7 @@ resource "ibm_tg_gateway" "new_tg_gw"{
 name="transit-gateway-1"
 location="us-south"
 global=true
+gre_enhanced_route_propagation=false
 resource_group="30951d2dff914dafb26455a88c0c0092"
 }
 ```
