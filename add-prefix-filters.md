@@ -94,10 +94,10 @@ To add prefix filtering to an existing connection in the UI, follow these steps:
 1. From the Transit Gateway page, click the name of the gateway where you want to add prefix filters.
 1. The prefix filtering icon ![Prefix filter icon](/images/prefix-filter-icon.png) shows if a connection already has prefix filters. Click **View** next to **Prefix filters** to show the prefix filter list.
 
-    To modify an existing prefix filter, click the Actions menu ![Actions menu](/images/overflow.png) and select **Prefix filtering**.
+    To modify an existing prefix filter, click the Actions menu ![Actions menu](../../icons/action-menu-icon.svg) and select **Prefix filtering**.
     {: tip}
 
-1. If the connection does not have existing prefix filters, click the Actions menu ![Actions menu](/images/overflow.png) and select **Prefix filtering**.
+1. If the connection does not have existing prefix filters, click the Actions menu ![Actions menu](../../icons/action-menu-icon.svg) and select **Prefix filtering**.
 1. Adjust the default filter as needed. Your choices are as follows:
 
     * **Permit prefixes** (default) indicates that all prefixes in this connection are accessible to all other connections in this transit gateway. In this case, "all" means up to the established quota and limits.
@@ -119,8 +119,8 @@ To delete a prefix filter for an existing connection in the UI, follow these ste
 1. From the details page of the transit gateway, identify the connection where you want to delete prefix filters.
 
    The prefix filtering icon ![Prefix filter icon](/images/prefix-filter-icon.png) shows if a connection already has prefix filters.
-1. Click the connection's Actions menu ![Actions menu icon](/images/overflow.png) and select **Prefix filtering**.
-1. Click the Actions menu ![Actions menu icon](/images/overflow.png) next to the prefix filter that you want to delete. Then, click **Delete**.
+1. Click the connection's Actions menu ![Actions menu icon](../../icons/action-menu-icon.svg) and select **Prefix filtering**.
+1. Click the Actions menu ![Actions menu icon](../../icons/action-menu-icon.svg) next to the prefix filter that you want to delete. Then, click **Delete**.
 1. Click **Delete prefix filter** to confirm deletion.
 
 ## Working with prefix filters from the CLI

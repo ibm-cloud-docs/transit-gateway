@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-18"
+  years: 2020, 2025
+lastupdated: "2025-10-01"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -28,7 +28,7 @@ To delete a connection from a transit gateway, follow these steps:
    If you are in the expanded view, click **View details**.
    {: tip}
 
-1. From the Connections page, click the Actions menu ![Actions menu](/images/overflow.png) next to the connection that you want to delete and select **Delete**.
+1. From the Connections page, click the Actions menu ![Actions menu](../../icons/action-menu-icon.svg) next to the connection that you want to delete and select **Delete**.
 
 ## Deleting a connection from the CLI
 {: #deleting-connections-cli}
