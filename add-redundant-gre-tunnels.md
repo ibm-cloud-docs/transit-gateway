@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-10-01"
 
 keywords:
 
@@ -20,7 +20,7 @@ You can add or remove tunnels attached to GRE redundant connections. Keep in min
 ## Before you begin
 {: #add-remove-redundant-gre-planning}
 
-Before you add a tunnel to a redundant GRE, make sure to review general and redundant [Generic Routing Encapsulation (GRE) considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-considerations).
+Before you add a tunnel to a redundant GRE, make sure to review [General](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-general-considerations) and [Redundant](/docs/transit-gateway?topic=transit-gateway-helpful-tips#redundant-gre-connection-considerations) GRE considerations.
 
 ## Adding a tunnel to a redundant GRE in the UI
 {: #tg-ui-adding-redundant-gre-tunnels}
