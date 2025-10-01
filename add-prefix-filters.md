@@ -46,7 +46,6 @@ To add a prefix filter to a new connection in the UI, follow these steps:
    * Choose a network connection. You can select from the following connection types:
 
       * **Classic infrastructure** networks allow you to connect to IBM Cloud classic resources. Only one classic infrastructure connection is allowed per account.
-      * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
       * **Direct Link** creates a network connection to and from Direct Link 2.0 gateways so that there is a secure connection to on-premises networks and other resources that are connected to the transit gateway.
 
          If you select **Direct Link**, you must also log in to the [Direct Link console](/interconnectivity/direct-link){: external} (that uses the same IBM Cloud account) and specify **Transit Gateway** as the type of network connection for your direct link. You can specify the connection type when you create a direct link, or after your direct link is provisioned. For instructions, see [Updating the network connection type](/docs/dl?topic=dl-virtual-connection-types){: external}.
@@ -56,11 +55,8 @@ To add a prefix filter to a new connection in the UI, follow these steps:
 
          If you select **{{site.data.keyword.powerSys_notm}}**, a Power Systems Virtual Server workspace must be created in a PER-enabled data center. For a list of PER-enabled data centers, see [Getting started with the Power Edge Router](/docs/power-iaas?topic=power-iaas-per).
          {: important}
-
-   * For Connection reach, select one of the following options:
-      * **Add new connection in this account** - Enter an optional connection name.
-      * **Request connection to a network in another account** - Enter the IBM Cloud ID of the account that manages the network that you want to connect to, and a connection name. All resources connected to that transit gateway are accessible from the other network.
-   * Complete all other required information for your connection.
+      * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources.     
+      * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
 
 1. Optionally, you can create prefix filters to permit or deny specific routes on specific connections.
 
@@ -68,8 +64,8 @@ To add a prefix filter to a new connection in the UI, follow these steps:
 
    * Adjust the **Default filter** as needed. Your choices are as follows:
 
-      * **Permit prefixes** (default) accepts all prefixes after entries in the prefix filter list are processed.
-      * **Deny prefixes** denies all prefixes after entries in the prefix filter list are processed.
+     * **Permit prefixes** (default) accepts all prefixes after entries in the prefix filter list are processed.
+     * **Deny prefixes** denies all prefixes after entries in the prefix filter list are processed.
 
       Regardless of the default setting, you can still permit or deny network traffic by creating prefix filters.
       {: important}
@@ -84,7 +80,11 @@ To add a prefix filter to a new connection in the UI, follow these steps:
     Connections are denied or permitted based on the order of the filters in the list. Edit the prefix filter list to adjust the order in which prefixes are processed.
     {: tip}
 
-1. On the Add connection page, click **Add** to finalize the connection using the prefix filters.
+1. In the Base network section, complete the information for your specific network connection.  For Connection reach, select one of the following options:
+      * **Add new connection in this account** - Enter an optional connection name.
+      * **Request connection to a network in another account** - Enter the IBM Cloud ID of the account that manages the network that you want to connect to, and a connection name. All resources connected to that transit gateway are accessible from the other network.
+
+1. On the Add connection page, click **Add** to add the connection.
 
 ### Adding prefix filters to an existing connection
 {: #adding-prefix-filters-ui-new-existing}
