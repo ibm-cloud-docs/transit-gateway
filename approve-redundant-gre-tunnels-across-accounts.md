@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-10-01"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -180,4 +180,6 @@ Tunnel-level rejection is not allowed.
 ## Related link
 {: #related-links-approve-reject-connection-requests}
 
+* [Creating a redundant GRE](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection&interface=ui)
+* [Adding and removing redundant GRE connections](/docs/transit-gateway?topic=transit-gateway-add-remove-redundant-gre-tunnels&interface=ui)
 * [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui)
