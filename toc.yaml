@@ -49,14 +49,11 @@ toc:
             - adding-gateway.md
             - adding-ca.md
             - add-prefix-filters.md
-            - changing-config.md
-            - topicgroup:
-                label: Creating a redundant GRE
-                topics:
-                - create-redundant-gre.md
-                - add-redundant-gre-tunnels.md
-                - approve-redundant-gre-tunnels-across-accounts.md
+            - changing-config.md 
             - create-unbound-gre.md
+            - create-redundant-gre.md
+            - add-redundant-gre-tunnels.md
+            - approve-redundant-gre-tunnels-across-accounts.md
             - create-gre.md
             - delete-connection.md
             - deleting-gateway.md
