@@ -70,8 +70,10 @@ To create a redundant GRE, follow these steps:
    To find the CRN, click **Navigation Menu** ![Navigation Menu icon](../../icons/icon_hamburger.svg) > **Resource List** from the {{site.data.keyword.cloud_notm}} console. Expand the Networking section, then click the table row of the Virtual Private Cloud whose CRN you want to find. The VPC CRN is shown in the details on the Overview tab.
    {: tip}
 
-1. Add GRE tunnels for this connection. A minimum of two GRE tunnels are required. You can click **Add tunnel** to add more tunnels, but you can't exceed two tunnels per zone.
-   {: note}
+1. Add a minimum of of two GRE tunnels for this connection.  
+
+   You can click **Add tunnel** to add more tunnels, but you can't exceed two tunnels per zone.
+   {: important}
 
    1. Select an availability zone in which to create the tunnels. When you select a zone for the tunnel, only valid zones for a redundant GRE are shown as options.
    1. Optionally, enter the remote BGP ASN, which is a valid 2 or 4-byte value of your choosing. If you leave this field blank, a unique ASN is assigned.
