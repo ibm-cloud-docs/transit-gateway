@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-15"
+lastupdated: "2025-10-01"
 
 keywords: faq, faqs, questions
 
@@ -30,7 +30,7 @@ These frequently asked questions can help you when working with the {{site.data.
 {: faq}
 {: support}
 
-You can estimate the cost of a transit gateway using the cost estimator on the provisioning page for {{site.data.keyword.tg_full_notm}}. For example, from the [{{site.data.keyword.cloud_notm}} console](/login){: external}, click the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**. Click **Create transit gateway** to open the provisioning page.
+You can estimate the cost of a transit gateway using the cost estimator on the provisioning page for {{site.data.keyword.tg_full_notm}}. For example, from the [{{site.data.keyword.cloud_notm}} console](/login){: external}, click the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**. Click **Create** to open the provisioning page.
 
 For more information, see [Pricing considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#pricing-considerations).
 {: note}

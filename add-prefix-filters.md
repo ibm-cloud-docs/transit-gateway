@@ -21,7 +21,7 @@ With prefix filtering, you can set an ordered list of prefix route filters for a
 ## Before you begin
 {: #adding-prefix-filters-begin}
 
-Make sure that you review the following [Prefix filtering considerations]() before you create a prefix filter.
+Make sure that you review the following [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#prefix-filtering-considerations) before you create a prefix filter.
 
 ## Working with prefix filters in the UI
 {: #adding-prefix-filters-ui}
