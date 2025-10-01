@@ -273,3 +273,9 @@ terraform destroy -target=ibm_tg_connection_rgre_tunnel.test_ibm_tg_connection_t
 {: pre}
 
 For more information, see the [Terraform registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection){: external}.
+
+## Related link
+{: #related-links-add-remove-redundant-gre}
+
+* [Creating a redundant GRE](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection&interface=ui) 
+* [Approving and rejecting cross-account redundant GRE requests](/docs/transit-gateway?topic=transit-gateway-approve-reject-redundant-gre-tunnels&interface=ui)
