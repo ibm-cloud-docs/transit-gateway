@@ -43,17 +43,17 @@ To create a redundant GRE, follow these steps:
 
 1. Select one of the following choices:
 
-   * To create a redundant GRE on an existing transit gateway:
-      1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-      1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**.
-      1. Click the name of the transit gateway where you want to add a connection.
-      1. Click **Add connection** in the Connections tab.
-
    * To create a redundant GRE while creating a transit gateway:
       1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
       1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**.
       1. Click **Create**.
       1. Enter the transit gateway name, resource group, and location.
+
+   * To create a redundant GRE on an existing transit gateway:
+      1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
+      1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**.
+      1. Click the name of the transit gateway where you want to add a connection.
+      1. Click **Add connection** in the Connections tab.
 
 1. Select **Redundant GRE** as your network connection type.
 1. Enter the connection name.
