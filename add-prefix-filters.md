@@ -80,11 +80,11 @@ To add a prefix filter to a new connection in the UI, follow these steps:
     Connections are denied or permitted based on the order of the filters in the list. Edit the prefix filter list to adjust the order in which prefixes are processed.
     {: tip}
 
-1. In the Base network section, complete the information for your specific network connection.  For Connection reach, select one of the following options:
+1. In the Base network section, complete the information for your specific network connection. For the connection reach, select one of the following options:
       * **Add new connection in this account** - Enter an optional connection name.
       * **Request connection to a network in another account** - Enter the IBM Cloud ID of the account that manages the network that you want to connect to, and a connection name. All resources connected to that transit gateway are accessible from the other network.
 
-1. On the Add connection page, click **Add** to add the connection.
+1. Click **Add** to add the connection.
 
 ### Adding prefix filters to an existing connection
 {: #adding-prefix-filters-ui-new-existing}
