@@ -11,116 +11,113 @@ toc:
     path: transit-gateway
     label: Transit Gateway
   entries:
-    - navgroup:
-       id: learn
-       topics:
-       - getting-started.md
-       - about.md
-       - helpful-tips.md
-       - topicgroup:
-           label: Related links
-           topics:
-            - link:
-                label: Getting started with Direct Link
-                href: /dl/dl-get-started-with-ibm-cloud-dl
-            - link:
-                label: Getting started with Virtual Private Cloud (VPC)
-                href: /vpc/vpc-getting-started
-            - include: ../vpc/private-connectivity-vpe.md
-            - include: ../vpc/interconnectivity.md
-       - release-notes.md
-    - navgroup:
-       id: tutorial
-       topics:
-       - topicgroup:
+  - navgroup:
+      id: learn
+      topics:
+      - getting-started.md
+      - about.md
+      - helpful-tips.md
+      - topicgroup:
+          label: Related links
+          topics:
+          - link:
+              label: Getting started with Direct Link
+              href: /dl/dl-get-started-with-ibm-cloud-dl
+          - link:
+              label: Getting started with Virtual Private Cloud (VPC)
+              href: /vpc/vpc-getting-started
+          - include: ../vpc/private-connectivity-vpe.md
+          - include: ../vpc/interconnectivity.md
+      - release-notes.md
+  - navgroup:
+      id: tutorial
+      topics:
+      - topicgroup:
           label: Interconnectivity
           topics:
           - include: ../solution-tutorials/vpc-tg-dns-iam.md
           - include: ../solution-tutorials/vpc-transit1.md
           - include: ../solution-tutorials/vpc-transit2.md
-    - navgroup:
-       id: howto
-       topics:
-        - connecting-vpcs.md
-        - iam.md
-        - topicgroup:
-            label: Managing transit gateways
-            topics:
-            - adding-gateway.md
-            - adding-ca.md
-            - add-prefix-filters.md
-            - changing-config.md
-            - topicgroup:
-                label: Creating a redundant GRE
-                topics:
-                - create-redundant-gre.md
-                - add-redundant-gre-tunnels.md
-                - approve-redundant-gre-tunnels-across-accounts.md
-            - create-unbound-gre.md
-            - create-gre.md
-            - delete-connection.md
-            - deleting-gateway.md
-            - editing-connection.md
-            - displayroutereport.md
-        - terraform.md
-        - set-up-environment.md
-        - topicgroup:
-            label: Enhancing security
-            topics:
-            - topicgroup:
-                 label: Privately connecting to Transit Gateway
-                 topics:
-                 - vpe.md
-                 - cbr.md
-            - data-security.md
-        - topicgroup:
-            label: Observability
-            topics:
-            - at_events.md
-            - monitoring.md
-        - topicgroup:
-            label: Transit Gateway hazardous change remediation
-            topics:
-            - hcr-pagination-support.md
-            - hcr-removing-restrictions.md
-    - navgroup:
-       id: reference
-       topics:
-       - topicgroup:
+  - navgroup:
+      id: howto
+      topics:
+      - connecting-vpcs.md
+      - create-unbound-gre.md
+      - create-redundant-gre.md
+      - iam.md
+      - topicgroup:
+          label: Managing transit gateways
+          topics:
+          - adding-gateway.md
+          - adding-ca.md
+          - add-prefix-filters.md
+          - changing-config.md
+          - add-redundant-gre-tunnels.md
+          - approve-redundant-gre-tunnels-across-accounts.md
+          - create-gre.md
+          - delete-connection.md
+          - deleting-gateway.md
+          - editing-connection.md
+          - displayroutereport.md
+      - terraform.md
+      - set-up-environment.md
+      - topicgroup:
+          label: Enhancing security
+          topics:
+          - topicgroup:
+              label: Privately connecting to Transit Gateway
+              topics:
+              - vpe.md
+              - cbr.md
+          - data-security.md
+      - topicgroup:
+          label: Observability
+          topics:
+          - at_events.md
+          - monitoring.md
+      - topicgroup:
+          label: Transit Gateway hazardous change remediation
+          topics:
+          - hcr-pagination-support.md
+          - hcr-removing-restrictions.md
+  - navgroup:
+      id: reference
+      topics:
+      - topicgroup:
           label: Transit Gateway API
           topics:
           - link:
               label: Transit Gateway API
               href: https://{DomainName}/apidocs/transit-gateway
           - api-change-log.md
-       - topicgroup:
-            label: Transit Gateway CLI reference
-            topics:
-            - transit-gateway-cli.md
-            - cli-change-log.md
-       - link:
-           label: Terraform reference
-           href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection
-       - locations.md
-       - tg-responsibilities.md 
-       - ha-dr.md
-       - data-portability.md
-       - service-dependency.md
-    - navgroup:
-       id: help
-       topics:
-       - topic: faqs.md
-         navtitle: FAQs
-       - topicgroup:
-            label: Troubleshooting
-            topics:
-            - verifying-connectivity.md
-            - conn-basics.md
-            - conn-firewalls.md
-            - conn-prefixes.md
-            - conn-nic.md
-            - conn-routing-vsi.md
-            - conn-gre.md
-            - ts-route-report-overlaps.md
-       - topic: getting-help.md
-         navtitle: Getting help and support
+      - topicgroup:
+          label: Transit Gateway CLI reference
+          topics:
+          - transit-gateway-cli.md
+          - cli-change-log.md
+      - link:
+          label: Terraform reference
+          href: https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection
+      - locations.md
+      - tg-responsibilities.md
+      - ha-dr.md
+      - data-portability.md
+      - service-dependency.md
+  - navgroup:
+      id: help
+      topics:
+      - topic: faqs.md
+        navtitle: FAQs
+      - topicgroup:
+          label: Troubleshooting
+          topics:
+          - verifying-connectivity.md
+          - conn-basics.md
+          - conn-firewalls.md
+          - conn-prefixes.md
+          - conn-nic.md
+          - conn-routing-vsi.md
+          - conn-gre.md
+          - ts-route-report-overlaps.md
+      - topic: getting-help.md
+        navtitle: Getting help and support

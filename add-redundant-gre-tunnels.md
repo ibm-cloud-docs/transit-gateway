@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-10-01"
 
 keywords:
 
@@ -20,7 +20,7 @@ You can add or remove tunnels attached to GRE redundant connections. Keep in min
 ## Before you begin
 {: #add-remove-redundant-gre-planning}
 
-Before you add a tunnel to a redundant GRE, make sure to review general and redundant [Generic Routing Encapsulation (GRE) considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-considerations).
+Before you add a tunnel to a redundant GRE, make sure to review [General](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-general-considerations) and [Redundant](/docs/transit-gateway?topic=transit-gateway-helpful-tips#redundant-gre-connection-considerations) GRE considerations.
 
 ## Adding a tunnel to a redundant GRE in the UI
 {: #tg-ui-adding-redundant-gre-tunnels}
@@ -273,3 +273,9 @@ terraform destroy -target=ibm_tg_connection_rgre_tunnel.test_ibm_tg_connection_t
 {: pre}
 
 For more information, see the [Terraform registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection){: external}.
+
+## Related link
+{: #related-links-add-remove-redundant-gre}
+
+* [Creating a redundant GRE](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection&interface=ui) 
+* [Approving and rejecting cross-account redundant GRE requests](/docs/transit-gateway?topic=transit-gateway-approve-reject-redundant-gre-tunnels&interface=ui)

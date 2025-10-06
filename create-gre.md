@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-06-20"
+lastupdated: "2025-10-01"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -18,13 +18,13 @@ subcollection: transit-gateway
 You can connect endpoints using a Generic Routing Encapsulation (GRE) tunnel transit gateway connection. This connection allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources.
 {: shortdesc}
 
-This form of GRE tunnel is now deprecated, and we suggest using an unbound GRE tunnel instead. Unbound GRE tunnels provide the following benefits:
+This form of GRE tunnel is now deprecated. Use of unbound GRE tunnels is recommended. For more information, see [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
+{: deprecated}
+
+Unbound GRE tunnels provide the following benefits:
    * The ability to receive classic network subnets from a classic connection.
    * The ability to communicate through other unbound GRE tunnels on the same transit gateway in the same availability zone.
    * Does not require a classic connection on the transit gateway. As a result, the classic network's subnets will not be advertised to the connections on the transit gateway (and vice versa).
-   {: important}
-
-For more information, see [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
 
 Migrating your GRE tunnels to unbound GRE tunnels requires deleting any existing GRE tunnels before creating new unbound ones. Migration will also cause a network disruption for anything that uses the old GRE tunnel until you create the new one.
 

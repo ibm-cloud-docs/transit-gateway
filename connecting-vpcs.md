@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-09-29"
+lastupdated: "2025-10-06"
 
 keywords: connecting, region, order
 
@@ -12,7 +12,7 @@ subcollection: transit-gateway
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Ordering IBM Cloud Transit Gateway
+# Creating a transit gateway
 {: #ordering-transit-gateway}
 {: help}
 {: support}
@@ -30,11 +30,15 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog){: external} and log in to your account.
 1. Select **Networking** in the navigation pane, then click the Transit Gateway tile. The Transit Gateway ordering page displays.
 
-   You can also access the ordering page from the [{{site.data.keyword.cloud_notm}} console](/login){: external} by selecting the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page. Then, click **Infrastructure** > **Network** > **Transit Gateway**. Click **Create transit gateway** to open the provisioning page.
+   You can also access the ordering page from the [{{site.data.keyword.cloud_notm}} console](/login){: external} by selecting the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page. Then, click **Infrastructure** > **Network** > **Transit Gateway**. Click **Create** to open the provisioning page.
    {: tip}
 
-1. Enter a name for the transit gateway and choose a resource group. You can select a resource group from the list, or keep the default selection.
-1. Optional: Click the **GRE enhanced route propagation** toggle to allow GRE tunnel traffic to flow across all GRE tunnels connected to this gateway.
+1. Enter a name for the transit gateway and choose a resource group. You can select a resource group from the list, or keep the **default** selection.
+1. Optional: Click the **GRE enhanced route propagation** toggle to allow GRE tunnel traffic to flow across all GRE tunnels connected to this transit gateway. 
+
+   Make sure to review [GRE enhanced propagation considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#gre-enhanced-route-propagation-considerations) before enabling this toggle.
+   {: note}
+
 1. Choose a routing option:
 
    All of your classic resources and Direct Link connections across MZRs can be accessed regardless of whether local or global routing is enabled.
@@ -54,7 +58,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
    1. Select the network connection to be attached to the transit gateway. To add connections later, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-adding-connections).
 
-      You can add a new connection on the same account as the connection type, or request to connect to a network in another account.
+      You can add a connection on the same account as the connection type, or request to connect to a network in another account.
       {: note}
 
       Select from the following connection types:
@@ -71,13 +75,28 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
          If you select **{{site.data.keyword.powerSys_notm}}**, a {{site.data.keyword.powerSys_notm}} workspace must be created in a PER-enabled data center. For a list of PER-enabled data centers, see [Getting started with the Power Edge Router](/docs/power-iaas?topic=power-iaas-per).
          {: note}
 
-      * **Redundant GRE tunnel** allows unbound GRE tunnels to connect to endpoints in either VPC or classic infrastructure networks, thus allowing you to build in redundancy for GRE tunnels. For more information, see [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection).
+      * **Redundant GRE** allows unbound GRE tunnels to connect to endpoints in either VPC or classic infrastructure networks, thus allowing you to build in redundancy for GRE tunnels. See [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection) for further instructions.
  
-      * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For more information, see [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
+      * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. See [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection) for further instructions.
 
       * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
 
-   1. After you select a network connection, choose a connection reach option:
+   1. [REVIEW]{: tag-red} Optionally, expand the Prefix filtering section to show the **Permit prefixes** toggle where you can create prefix filters. Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny.   
+
+         Make sure to review [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#prefix-filtering-considerations) before creating prefix filters. Also, note that the default filter applies to all prefixes except those that you create.
+      {: attention}
+
+      To create a prefix filter, click **Create prefix filter**, then complete the following information:
+    
+      1. Select an action type: **Permit** or **Deny**.
+      1. Enter the network prefix along with its subnet mask (for example, `10.0.0.0/16`).
+      1. Optionally, enter values for whether the network should be greater than or equal to the subnet mask you chose.
+      1. Click **Save** to add the prefix filter.
+
+      Connections are denied or permitted based on the order of the filters in the list. Edit the prefix filter list to adjust the order in which prefixes are processed.
+      {: tip}
+
+   1. Complete base network information (different depending on selected network connection) and choose a connection reach option:
 
       * **Add new connection in this account** - Enter a connection name and any other required information for your connection.
 

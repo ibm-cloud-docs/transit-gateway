@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-07-25"
+lastupdated: "2025-10-06"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -43,20 +43,41 @@ To create a redundant GRE, follow these steps:
 
 1. Select one of the following choices:
 
+   * To create a redundant GRE while creating a transit gateway:
+      1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
+      1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**.
+      1. Click **Create**.
+      1. Enter a name for the transit gateway and choose a resource group. You can select a resource group from the list, or keep the **default** selection.
+      1. Optional: Click the **GRE enhanced route propagation** toggle to allow GRE tunnel traffic to flow across all GRE tunnels connected to this transit gateway. 
+
+         Make sure to review [GRE enhanced propagation considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#gre-enhanced-route-propagation-considerations) before enabling this toggle.
+         {: note}
+
+      1. Choose a routing option:
+
+         All of your classic resources and Direct Link connections across MZRs can be accessed regardless of whether local or global routing is enabled.
+         {: remember}
+
+         * Select **Local routing** to allow your transit gateway to connect to all VPC and classic resources within the transit gateway's provisioned region.
+         * Select **Global routing** to allow your transit gateway to connect to VPC resources in all IBM [Multi-Zone Regions (MZRs)](/docs/overview?topic=overview-locations#table-mzr).
+
+         You can upgrade routing options at a later point if your needs change. Pricing is changed accordingly.
+         {: note}
+
+      
+      1. Choose the location where you want to provision your transit gateway.
+
+         If you are using local routing, the specified location limits you to connect VPCs located in that region only. If you are using global routing, the specified location affects network latency, so choose the region closest to the resources that you need connected.
+
    * To create a redundant GRE on an existing transit gateway:
       1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
       1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**.
       1. Click the name of the transit gateway where you want to add a connection.
       1. Click **Add connection** in the Connections tab.
 
-   * To create a redundant GRE while creating a transit gateway:
-      1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
-      1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**.
-      1. Click **Create transit gateway**.
-      1. Enter the transit gateway name, resource group, and location.
-
 1. Select **Redundant GRE** as your network connection type.
-1. Enter the connection name.
+1. Enter a connection name.
+   
 1. Select the base network type (**Classic infrastructure** or **VPC**) and whether this is a connection to a network in another account. If you select **VPC** as the base network, you can select the region and VPC that you want to target.
 
    Prefixes of the base network are not advertised to the transit gateway.
@@ -70,8 +91,10 @@ To create a redundant GRE, follow these steps:
    To find the CRN, click **Navigation Menu** ![Navigation Menu icon](../../icons/icon_hamburger.svg) > **Resource List** from the {{site.data.keyword.cloud_notm}} console. Expand the Networking section, then click the table row of the Virtual Private Cloud whose CRN you want to find. The VPC CRN is shown in the details on the Overview tab.
    {: tip}
 
-1. Add GRE tunnels for this connection. A minimum of two GRE tunnels are required. You can click **Add tunnel** to add more tunnels, but you can't exceed two tunnels per zone.
-   {: note}
+1. Add a minimum of of two GRE tunnels for this connection.  
+
+   You can click **Add tunnel** to add more tunnels, but you can't exceed two tunnels per zone.
+   {: important}
 
    1. Select an availability zone in which to create the tunnels. When you select a zone for the tunnel, only valid zones for a redundant GRE are shown as options.
    1. Optionally, enter the remote BGP ASN, which is a valid 2 or 4-byte value of your choosing. If you leave this field blank, a unique ASN is assigned.

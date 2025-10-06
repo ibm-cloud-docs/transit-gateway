@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-09-18"
+lastupdated: "2025-10-06"
 
 keywords: features, overview
 
@@ -65,7 +65,7 @@ To add a connection to a transit gateway, follow these steps:
       To find out if your Power Systems Virtual Server workspace is set up correctly, go to the Power Systems Virtual Server UI and check the navigation for a Cloud connections page. If there isn't a Cloud connections page, the workspace leverages Transit Gateway. Otherwise, you must configure virtual connections with Cloud connections on the Power Systems Virtual Server.
       {: important}
 
-1. Click **Add** to create a connection.
+1. After you complete your network connection information, click **Add** to create a connection.
 
 ## Adding a connection from the CLI
 {: #tg-cli-adding-connection-transit-gateway}
@@ -158,7 +158,7 @@ To add a connection with the API, follow these steps:
 For more information, see [Adds a connection to a transit gateway](/apidocs/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
-## Adding a connection by using Terraform
+## Adding a connection with Terraform
 {: #tg-terraform-adding-connection-transit-gateway}
 {: terraform}
 

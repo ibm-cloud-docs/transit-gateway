@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-12-18"
+  years: 2020, 2025
+lastupdated: "2025-10-01"
 
 keywords: deleting, delete
 
@@ -30,7 +30,7 @@ To delete an {{site.data.keyword.tg_full}}, follow these steps:
    For each connection you want to delete, click the Actions menu next to it, then select **Delete**.
 1. After the connections are removed, you can delete the transit gateway in two ways:
 
-   * From the transit gateway's details page, click the Actions menu ![Actions menu](/images/overflow.png) next to the gateway you want to delete and select **Delete**.
+   * From the transit gateway's details page, click the Actions menu ![Actions menu](../../icons/action-menu-icon.svg) next to the gateway you want to delete and select **Delete**.
    * From an individual transit gateway page, select **Actions > Delete**.
 
 ## Deleting a transit gateway from the CLI
