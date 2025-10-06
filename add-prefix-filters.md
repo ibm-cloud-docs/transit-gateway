@@ -15,7 +15,7 @@ subcollection: transit-gateway
 # Adding and deleting prefix filters
 {: #adding-prefix-filters}
 
-With prefix filtering, you can set an ordered list of prefix route filters for a transit gateway connection.
+Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny.
 {: shortdesc}
 
 ## Before you begin
@@ -30,11 +30,7 @@ Make sure to review [Prefix filtering considerations](/docs/transit-gateway?topi
 To add prefix filtering to an existing connection in the UI, follow these steps:
 
 1. From the Transit Gateway page, click the name of the gateway where you want to add prefix filters.
-1. The prefix filtering icon ![Prefix filter icon](/images/prefix-filter-icon.png) shows if a connection already has prefix filters. Click **View** next to **Prefix filters** to show the prefix filter list.
-
-    To modify an existing prefix filter, click the Actions menu ![Actions menu](../../icons/action-menu-icon.svg) and select **Prefix filtering**.
-    {: tip}
-
+1. The prefix filtering icon ![Prefix filter icon](/images/prefix-filter-icon.png) shows if a connection already has prefix filters. Click the icon and then click **View** to show the prefix filtering side panel. 
 1. If the connection does not have existing prefix filters, click the Actions menu ![Actions menu](../../icons/action-menu-icon.svg) and select **Prefix filtering**.
 1. Adjust the default filter as needed. Your choices are as follows:
 
@@ -43,10 +39,13 @@ To add prefix filtering to an existing connection in the UI, follow these steps:
 
 1. Click **Create prefix filter**, then configure the filter with the following options:
 
-    * Select an action.
-    * Enter the network prefix along with the subnet mask.
-    * Optionally, enter values if the network should be greater than or equal to a wanted subnet mask.
-    * Adjust the order of the filters in the routing table as needed, then click **Save**.
+    * Select an action type: **Permit** or **Deny**. 
+    * Enter the network prefix along with its subnet mask (for example, `10.0.0.0/16`). 
+    * Optionally, enter values for whether the network should be greater than or equal to the subnet mask that you chose.
+    * Click **Save** to add the prefix filter.
+
+   Connections are denied or permitted based on the order of the filters in the list. Edit the prefix filter list to adjust the order in which prefixes are processed.
+   {: tip}
 
 ## Deleting prefix filters in the UI
 {: #deleting-prefix-filters-ui}
