@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-01"
+lastupdated: "2025-10-06"
 
 keywords: connecting, region, order
 
@@ -12,7 +12,7 @@ subcollection: transit-gateway
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Ordering IBM Cloud Transit Gateway
+# Creating a transit gateway
 {: #ordering-transit-gateway}
 {: help}
 {: support}
@@ -75,9 +75,9 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
          If you select **{{site.data.keyword.powerSys_notm}}**, a {{site.data.keyword.powerSys_notm}} workspace must be created in a PER-enabled data center. For a list of PER-enabled data centers, see [Getting started with the Power Edge Router](/docs/power-iaas?topic=power-iaas-per).
          {: note}
 
-      * **Redundant GRE** allows unbound GRE tunnels to connect to endpoints in either VPC or classic infrastructure networks, thus allowing you to build in redundancy for GRE tunnels. See [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection) for detailed instructions.
+      * **Redundant GRE** allows unbound GRE tunnels to connect to endpoints in either VPC or classic infrastructure networks, thus allowing you to build in redundancy for GRE tunnels. See [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection) for further instructions.
  
-      * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. See [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection) for detailed instructions.
+      * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. See [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection) for further instructions.
 
       * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
 

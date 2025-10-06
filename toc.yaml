@@ -42,6 +42,8 @@ toc:
       id: howto
       topics:
       - connecting-vpcs.md
+      - create-unbound-gre.md
+      - create-redundant-gre.md
       - iam.md
       - topicgroup:
           label: Managing transit gateways
@@ -50,8 +52,6 @@ toc:
           - adding-ca.md
           - add-prefix-filters.md
           - changing-config.md
-          - create-unbound-gre.md
-          - create-redundant-gre.md
           - add-redundant-gre-tunnels.md
           - approve-redundant-gre-tunnels-across-accounts.md
           - create-gre.md
