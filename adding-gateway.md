@@ -65,7 +65,7 @@ To add a connection to a transit gateway, follow these steps:
       To find out if your Power Systems Virtual Server workspace is set up correctly, go to the Power Systems Virtual Server UI and check the navigation for a Cloud connections page. If there isn't a Cloud connections page, the workspace leverages Transit Gateway. Otherwise, you must configure virtual connections with Cloud connections on the Power Systems Virtual Server.
       {: important}
 
-1. Click **Add** to create a connection.
+1. After you complete your network connection information, click **Add** to create a connection.
 
 ## Adding a connection from the CLI
 {: #tg-cli-adding-connection-transit-gateway}
