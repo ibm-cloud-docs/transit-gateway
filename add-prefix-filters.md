@@ -12,7 +12,7 @@ subcollection: transit-gateway
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Adding and deleting prefix filters
+# Creating and deleting prefix filters
 {: #adding-prefix-filters}
 
 Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny. You can add optional prefix filters when you add connections while creating a transit gateway, or ater a transit gateway is provisioned. 
@@ -21,15 +21,15 @@ Prefix filtering allows you to set an ordered list of filters that determine the
 ## Before you begin
 {: #adding-prefix-filters-begin}
 
-Make sure to review [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#prefix-filtering-considerations) before you add or delete a prefix filter.
+Make sure to review [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#prefix-filtering-considerations) before you create or delete a prefix filter.
 
-## Adding prefix filters to a connection in the UI
+## Creating prefix filters in the UI
 {: #adding-prefix-filters-ui-new-existing}
 {: ui}
 
-To add prefix filtering to an existing connection in the UI, follow these steps:
+To create a prefix filter in the UI, follow these steps:
 
-1. From the Transit Gateway page, click the name of the gateway where you want to add prefix filters.
+1. From the Transit Gateway page, click the name of the gateway where you want to create prefix filters.
 1. The prefix filtering icon ![Prefix filter icon](/images/prefix-filter-icon.png) shows if a connection already has prefix filters. Click the icon and then click **View** to show the prefix filtering side panel. 
 1. If the connection does not have existing prefix filters, click the Actions menu ![Actions menu](../../icons/action-menu-icon.svg) and select **Prefix filtering**.
 1. Adjust the default filter as needed. Your choices are as follows:
@@ -42,7 +42,7 @@ To add prefix filtering to an existing connection in the UI, follow these steps:
     * Select an action type: **Permit** or **Deny**. 
     * Enter the network prefix along with its subnet mask (for example, `10.0.0.0/16`). 
     * Optionally, enter values for whether the network should be greater than or equal to the subnet mask that you chose.
-    * Click **Save** to add the prefix filter.
+    * Click **Save** to create the prefix filter.
 
    Connections are denied or permitted based on the order of the filters in the list. Edit the prefix filter list to adjust the order in which prefixes are processed.
    {: tip}
@@ -60,11 +60,11 @@ To delete a prefix filter for an existing connection in the UI, follow these ste
 1. Click the Actions menu ![Actions menu icon](../../icons/action-menu-icon.svg) next to the prefix filter that you want to delete. Then, click **Delete**.
 1. Click **Delete prefix filter** to confirm deletion.
 
-## Adding prefix filters to a connection from the CLI
+## Creating prefix filters from the CLI
 {: #adding-prefix-filters-cli}
 {: cli}
 
-To add prefix filters from the CLI, follow these steps:
+To create prefix filters from the CLI, follow these steps:
 
 ```sh
 ibmcloud tg prefix-filter-create GATEWAY_ID CONNECTION_ID --prefix PREFIX --action ACTION [--le LE] [--ge GE] [--before BEFORE] [--output json]
@@ -144,15 +144,15 @@ Filter b4dbe0a6-c52d-4128-cc32-6f53d86bc82b is deleted.
 ```
 {: pre}
 
-## Adding prefix filters to a connection with the API
+## Creating prefix filters with the API
 {: #adding-prefix-filters-api}
 {: api}
 
-Follow these steps to add a prefix filter to a connection with the API:
+Follow these steps to create a prefix filter with the API:
 
 1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment&interface=api#api-prerequisites-setup).
 1. Store any additional variables to be used in the API commands.
-1. When all variables are initiated, add prefix filters. For example:
+1. When all variables are initiated, create prefix filters. For example:
 
    ```sh
    curl -X POST --location --header "Authorization: Bearer
@@ -169,10 +169,11 @@ For more information, see [Adds a prefix filter to a Transit Gateway Connection]
 
 ## Deleting prefix filters with the API
 {: #deleting-prefix-filters-api}
+{: api}
 
 1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment&interface=api#api-prerequisites-setup).
 1. Store any additional variables to be used in the API commands.
-1. When all variables are initiated, add prefix filters. For example:
+1. When all variables are initiated, create prefix filters. For example:
 
    ```sh
    curl -X DELETE --location \
@@ -184,11 +185,11 @@ For more information, see [Adds a prefix filter to a Transit Gateway Connection]
 For more information, see [Removes a prefix filter from Transit Gateway Connection](/apidocs/transit-gateway#delete-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
 {: note}
 
-## Adding and deleting prefix filters with Terraform
+## Creating and deleting prefix filters with Terraform
 {: #working-prefix-filters-terraform}
 {: terraform}
 
-Review the following argument references that you can specify for your resource when you add or delete a prefix filter:
+Review the following argument references that you can specify for your resource when you create or delete a prefix filter:
 
 |Argument|Details|
 |--|--|
@@ -204,7 +205,7 @@ Review the following argument references that you can specify for your resource 
 ### Example
 {: #working-prefix-filters-terraform-example}
 
-This example shows how to add a prefix filter:
+This example shows how to create a prefix filter:
 
 ``` sh
 resource "ibm_tg_connection_prefix_filter" "test_tg_prefix_filter" {
