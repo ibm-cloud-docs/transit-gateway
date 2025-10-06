@@ -15,7 +15,7 @@ subcollection: transit-gateway
 # Adding and deleting prefix filters
 {: #adding-prefix-filters}
 
-Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny.
+Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny. You can add optional prefix filters when you add connections while creating a transit gateway, or ater a transit gateway is provisioned. 
 {: shortdesc}
 
 ## Before you begin
@@ -23,7 +23,7 @@ Prefix filtering allows you to set an ordered list of filters that determine the
 
 Make sure to review [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#prefix-filtering-considerations) before you add or delete a prefix filter.
 
-## Adding prefix filters to an existing connection in the UI
+## Adding prefix filters to a connection in the UI
 {: #adding-prefix-filters-ui-new-existing}
 {: ui}
 
@@ -60,7 +60,7 @@ To delete a prefix filter for an existing connection in the UI, follow these ste
 1. Click the Actions menu ![Actions menu icon](../../icons/action-menu-icon.svg) next to the prefix filter that you want to delete. Then, click **Delete**.
 1. Click **Delete prefix filter** to confirm deletion.
 
-## Adding prefix filters from the CLI
+## Adding prefix filters to a connection from the CLI
 {: #adding-prefix-filters-cli}
 {: cli}
 
@@ -144,7 +144,7 @@ Filter b4dbe0a6-c52d-4128-cc32-6f53d86bc82b is deleted.
 ```
 {: pre}
 
-## Adding prefix filters with the API
+## Adding prefix filters to a connection with the API
 {: #adding-prefix-filters-api}
 {: api}
 
