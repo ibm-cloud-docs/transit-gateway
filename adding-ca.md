@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-06"
+lastupdated: "2025-10-09"
 
 keywords:
 
@@ -37,7 +37,7 @@ Before you add a cross-account connection, review these considerations:
 
    * [About network ACLs](/docs/vpc?topic=vpc-using-acls)
    * [Security groups versus network ACLs](/docs/vpc?topic=vpc-using-security-groups&interface=ui#security-groups-vs-network-acls)
-   * [Configuring ACLs and security groups for use with VPN](/docs/vpc?topic=vpc-acls-security-groups-vpn)
+   * [Configuring network ACLs for use with VPN](/docs/vpc?topic=vpc-configuring-acls-vpn)
    * [Configuring ACLs and security groups for use with endpoint gateways](/docs/vpc?topic=vpc-configure-acls-sgs-endpoint-gateways)
 
 ## Adding a cross-account connection in the UI
