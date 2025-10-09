@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-06"
+lastupdated: "2025-10-09"
 
 keywords:
 
@@ -155,12 +155,11 @@ Follow these steps to create a prefix filter with the API:
 1. When all variables are initiated, create prefix filters. For example:
 
    ```sh
-   curl -X POST --location --header "Authorization: Bearer
-   {iam_token}" \
+   curl -X POST --location --header "Authorization: Bearer {iam_token}" \
    --header "Accept: application/json" \
    --header "Content-Type: application/json" \
-   --data '{ "location": "us-south", "name": "Transit_Service_BWTN_SJ_DL" }' \
-   "{base_url}/transit_gateways?version={version}"
+   --data '{ "action": "permit", "prefix": "192.168.100.0/24" }' \
+   "{base_url}/transit_gateways/{transit_gateway_id}/connections/{id}/prefix_filters?version={version}"
    ```
    {: pre}
 
