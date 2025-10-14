@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-08-22"
+lastupdated: "2025-10-14"
 
 keywords:
 
@@ -39,17 +39,18 @@ The following table provides the dependency listing of this service following a 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
 | IBM Cloud Secrets Manager | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Control plane |  Same region  |
-| IBM Cloud Identity and Access Management | Access management, Availability, Instance control, Security compliance | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Cloud Databases - databases-for-postgresql | Availability, Change management, Disaster recovery, Instance control | No | Control plane |  Same region  |
-| IBM Cloud Direct Link | Availability | Yes | Control plane |  Same region  |
-| IBM Cloud Classic Infrastructure Resource Management | Change management, Instance control | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Cloud Public IP Address Management | Change management, Instance control | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | Control plane |  Same data center  |
 | IBM Cloud Databases - databases-for-postgresql | Availability, Change management, Disaster recovery, Instance control | No | Control plane |  Same region  |
 | IBM Cloud Internet Services | Instance control | No | Control plane |  Same region  |
 | IBM Cloud Databases - databases-for-postgresql | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Data plane |  Same region  |
+| IBM Cloud Direct Link | Availability | Yes | Control plane |  Same region  |
 | IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud - containers-kubernetes | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Control plane |  Same region  |
 | VPC Undercloud | Availability | No | Control plane |  Same data center  |
+| IBM Cloud Databases - databases-for-postgresql | Availability, Change management, Disaster recovery, Instance control | No | Control plane |  Same region  |
+| IBM Cloud VPN for VPC Site to Site Gateway | Availability | Yes | Control plane |  Same region  |
+| IBM Cloud Classic Infrastructure Resource Management | Change management, Instance control | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Public IP Address Management | Change management, Instance control | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | Control plane |  Same data center  |
+| IBM Cloud Identity and Access Management | Access management, Availability, Instance control, Security compliance | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 {: row-headers}
 {: caption="IBM Cloud Transit Gateway service dependency information - Critical dependencies" caption-side="top"}
 {: tab-title="Critical dependencies"}
@@ -61,15 +62,15 @@ The following table provides the dependency listing of this service following a 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
 | Oculus Automation API | Availability, Instance control, Operations | No | Control plane |  Same data center  |
+| IBM Cloud Internet Services | Availability, configuration-management, Customer responsibility, Operations | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | VPC Zonal Control Plane | Instance control | No | Control plane |  Same region  |
 | IBM Cloud Business Support Services | Instance control, Operations | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| Teleport Bastion | Availability, Change management, configuration-management, Operations | No | Control plane |  Same region  |
 | IBM Cloud Classic NTP Servers | Availability, Change management, Instance control | No | Control plane |  Same data center  |
-| VPC Operations API | Instance control | No | Control plane |  Same region  |
 | VPC Undercloud | Instance control | No | Data plane |  Same data center  |
 | IBM Key Protect for IBM Cloud | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | Control plane |  Same region  |
 | IBM Cloud Global Resource Catalog | Availability, Change management, Instance control, Security compliance | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Cloud Internet Services | Availability, configuration-management, Customer responsibility, Operations | No | Control plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| Teleport Bastion | Availability, Change management, configuration-management, Operations | No | Control plane |  Same region  |
+| VPC Operations API | Instance control | No | Control plane |  Same region  |
 | IBM Power Virtual Server on IBM Cloud | Instance control | Yes | Control plane |  Same region  |
 {: row-headers}
 {: caption="IBM Cloud Transit Gateway service dependency information - Significant dependencies" caption-side="top"}
