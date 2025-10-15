@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-01"
+lastupdated: "2025-10-15"
 
 keywords: help, tips, connections, provision
 
@@ -70,7 +70,6 @@ The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the 
 
 ## Prefix filtering considerations
 {: #prefix-filtering-considerations}
- 
 * Only users in the account that contains the network can filter prefixes of that network.
 * You can't filter incoming prefixes from another account.
 * Prefix filters in the list are processed sequentially. You can modify the order at any time.
