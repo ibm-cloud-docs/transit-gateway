@@ -2,7 +2,7 @@
 
 copyright:
   years:  2020, 2025
-lastupdated: "2025-08-27"
+lastupdated: "2025-10-20"
 
 keywords: change log for transit gateway, updates to transit gateway
 
@@ -25,7 +25,7 @@ GRE enhanced route propagation
 
    New command options:
 
-    * [**`tg gateway-create`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#gateway-create) and [**`tg gateway-update`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#gateway-update) - Added a new boolean option `gre_enhanced_route_propagation` to enable or disable this feature. If not specified, the option is `false`. 
+    [**`tg gateway-create`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#gateway-create) and [**`tg gateway-update`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#gateway-update) - Added a new boolean option `gre_enhanced_route_propagation` to enable or disable this feature. If not specified, the option is `false`. 
 
 ## 12 June 2024
 {: #cli-june1224}
