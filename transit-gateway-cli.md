@@ -351,7 +351,6 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID 
 `--network-type`
 :   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, and `vpc`.
 
-
 `--network-account-id`
 :   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account.
 
