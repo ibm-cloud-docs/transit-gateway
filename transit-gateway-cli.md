@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-08-27"
+lastupdated: "2025-10-20"
 
 keywords: command line interface, commands, CLI
 
@@ -328,7 +328,7 @@ connection="4892849f-368e-9999-bb58-8888fb21e513"
 Create a connection on the transit gateway.
 
 ```sh
-ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-type NETWORK_TYPE --network-id NETWORK_ID --network-account-id NETWORK_ACCOUNT_ID [--output json] [-h, --help]
+ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID --network-type NETWORK_TYPE --network-account-id ACCOUNT_ID [--default-prefix-filter DEFAULT_PREFIX_FILTER]  [--output json]
 ```
 
 #### Command options
@@ -340,9 +340,6 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-type NETWORK_T
 `--name`
 :   Name for the new connection.
 
-`--network-type`
-:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, and `vpc`.
-
 `--network-id`
 :   ID of the network connection. For `classic`, don't set a value. Use the CRN for all other network types. For example, to find the CRN of a VPC:
 
@@ -350,6 +347,10 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-type NETWORK_T
    ibmcloud is vpc VPC_ID --json
    ```
    {: pre}
+
+`--network-type`
+:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, and `vpc`.
+
 
 `--network-account-id`
 :   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account.
