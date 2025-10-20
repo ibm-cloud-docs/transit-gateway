@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-09"
+lastupdated: "2025-10-20"
 
 keywords:
 
@@ -91,36 +91,39 @@ Creating a cross-account connection consists of the following steps:
 For example, to request a connection to communicate with another account, run the following command:
 
 ```sh
-ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-type NETWORK-TYPE --network-id NETWORK_ID [-h, --help]
+ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID --network-type NETWORK_TYPE --network-account-id ACCOUNT_ID [--default-prefix-filter DEFAULT_PREFIX_FILTER]  [--output json]
 ```
 {: pre}
 
 Where:
-
 `GATEWAY_ID`
 :   ID of the gateway that the new connection is on.
 
 `--name`
-:   Name of the new connection.
-
-`--network-type`
-:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, and `vpc`.
-
-    To create an unbound GRE tunnel, see the [`ibmcloud tg connection-create-gre`](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=cli#connection-create-gre) command.
-    {: note}
+:   Name for the new connection.
 
 `--network-id`
-:   ID of the network connection. For `classic` connections, don't set a value. Use the CRN for all other network types. For example, to find the CRN of a VPC:
+:   ID of the network connection. For `classic`, don't set a value. Use the CRN for all other network types. For example, to find the CRN of a VPC:
 
    ```sh
    ibmcloud is vpc VPC_ID --json
    ```
+   {: pre}
+
+`--network-type`
+:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, and `vpc`.
+
+`--network-account-id`
+:   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account.
+
+`--default-prefix-filter`
+:   Optional: Default prefix filter of the connection (`permit` | `deny`).
 
 `--output json`
-:   Optional. Specify whether you want the output to display in JSON format.
+:   Optional: Specify whether you want the output displayed in JSON format.
 
 `--help | -h`
-:   Optional. Get help on this command.
+:   Optional: Get help on this command.
 
 ### Examples
 {: #tg-cli-adding-cross-account-connection-transit-gateway-connection-request-examples}

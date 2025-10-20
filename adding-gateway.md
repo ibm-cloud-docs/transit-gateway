@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-06"
+lastupdated: "2025-10-20"
 
 keywords: features, overview
 
@@ -96,27 +96,41 @@ export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 To add a connection on the transit gateway from the CLI, enter the following command:
 
 ```sh
-ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-type [vpc | directlink | classic] --network-id NETWORK_ID --network-account-id NETWORK-ACCOUNT-ID [--output json] [-h, --help]
+ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID --network-type NETWORK_TYPE --network-account-id ACCOUNT_ID [--default-prefix-filter DEFAULT_PREFIX_FILTER]  [--output json]
 ```
 {: pre}
 
-Where:
+#### Command options
+{: #connection-create-parameters}
 
-- **GATEWAY_ID**: ID of the gateway that the new connection will be on.
-- **--name**: Name for the new connection.
-- **--network-type**: Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, and `vpc`.
-- **--network-id**: ID of the network connection. For `classic`, don't set a value. Use the CRN for all other network types. For example, to find the CRN of a VPC:
+`GATEWAY_ID`
+:   ID of the gateway that the new connection is on.
+
+`--name`
+:   Name for the new connection.
+
+`--network-id`
+:   ID of the network connection. For `classic`, don't set a value. Use the CRN for all other network types. For example, to find the CRN of a VPC:
 
    ```sh
    ibmcloud is vpc VPC_ID --json
    ```
    {: pre}
 
-- **--network-account-id**: ID of the IBM Cloud account to use for creating a classic connection. Only used with 'classic' type, when the account of the connection is different than the gateway's account.
+`--network-type`
+:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, and `vpc`.
 
-- **--output JSON**: Optional: Specify if you want the output to display in JSON format.
+`--network-account-id`
+:   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account.
 
-- **--help | -h**: Optional: Get help on this command.
+`--default-prefix-filter`
+:   Optional: Default prefix filter of the connection (`permit` | `deny`).
+
+`--output json`
+:   Optional: Specify whether you want the output displayed in JSON format.
+
+`--help | -h`
+:   Optional: Get help on this command.
 
 #### Examples
 {: #connection-create-examples}

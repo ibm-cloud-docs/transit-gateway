@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-15"
+lastupdated: "2025-10-20"
 
 keywords: help, tips, connections, provision
 
@@ -70,14 +70,12 @@ The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the 
 
 ## Prefix filtering considerations
 {: #prefix-filtering-considerations}
-* Only users in the account that contains the network can filter prefixes of that network.
+* For cross-account connections, only the account owner of the respective connection can modify prefix filters. Other accounts can view the connection, but can't modify the filters.
 * You can't filter incoming prefixes from another account.
 * Prefix filters in the list are processed sequentially. You can modify the order at any time.
-* Review the [prefix service limits](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits) for transit gateways.
-* For cross-account connections, only the account owner of the respective connection can modify prefix filters. Other accounts can view the connection, but can't modify the filters.
-* GRE tunnel configurations are not implemented as connections. Instead, their routes are learned directly on BGP sessions that are established over the tunnel. For this reason, prefix filtering is not enabled for these connections.
-* If you select **Request connection to a network in another account** as the connect reach option, you can't set prefix filters because you are not the network owner of the connection. Set the prefix filter on the account that owns the connection.
+* If you select **Request connection to a network in another account** as the connect reach option, you can't set prefix filters because you are not the network owner for that connection. Prefix filters must be configured in the account that owns the network.
 * Prefix filter subnet masks are specific. For example, a rule that is defined as `10.10.20.0/24` does not match with subnet `10.10.20.0/28` or any other subnet prefix.
+* Review the [prefix service limits](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits) for transit gateways.
 
 ## Generic Routing Encapsulation (GRE) connection considerations
 {: #gre-considerations}
