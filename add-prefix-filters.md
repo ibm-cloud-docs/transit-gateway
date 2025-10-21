@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-09"
+lastupdated: "2025-10-21"
 
 keywords:
 
@@ -166,6 +166,28 @@ Follow these steps to create a prefix filter with the API:
 For more information, see [Adds a prefix filter to a Transit Gateway Connection](/apidocs/transit-gateway#create-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
 {: note}
 
+## Update prefix filters with the API
+{: #update-prefix-filters-api}
+{: api}
+
+Follow these steps to update a prefix filter with the API:
+
+1. Set up your [API environment](/docs/vpc?topic=vpc-set-up-environment&interface=api#api-prerequisites-setup).
+1. Store any additional variables to be used in the API commands.
+1. When all variables are initiated, update the prefix filter. For example:
+
+   ```sh
+   curl -X PATCH --location --header "Authorization: Bearer {iam_token}" \
+   --header "Accept: application/json" \
+   --header "Content-Type: application/json" \
+   --data '{ "action": "deny"}' \
+   "{base_url}/transit_gateways/{transit_gateway_id}/connections/{id}/prefix_filters/{filter_id}?version={version}"
+   ```
+   {: pre}
+
+For more information, see [Updates specified Transit Gateway connection prefix filter](/apidocs/transit-gateway#update-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
+{: note}
+
 ## Deleting prefix filters with the API
 {: #deleting-prefix-filters-api}
 {: api}
@@ -181,7 +203,7 @@ For more information, see [Adds a prefix filter to a Transit Gateway Connection]
    ```
    {: pre}
 
-For more information, see [Removes a prefix filter from Transit Gateway Connection](/apidocs/transit-gateway#delete-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
+For more information, see [Remove prefix filter from Transit Gateway connection](/apidocs/transit-gateway#delete-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
 {: note}
 
 ## Creating and deleting prefix filters with Terraform
