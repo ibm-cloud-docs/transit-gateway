@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-06"
+lastupdated: "2025-11-04"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -63,7 +63,6 @@ To create a redundant GRE, follow these steps:
 
          You can upgrade routing options at a later point if your needs change. Pricing is changed accordingly.
          {: note}
-
       
       1. Choose the location where you want to provision your transit gateway.
 

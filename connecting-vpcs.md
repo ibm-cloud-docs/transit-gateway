@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-06"
+lastupdated: "2025-11-04"
 
 keywords: connecting, region, order
 
@@ -79,28 +79,23 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
  
       * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. See [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection) for further instructions.
 
-      * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
-
-   1. [REVIEW]{: tag-red} Optionally, expand the Prefix filtering section to show the **Permit prefixes** toggle where you can create prefix filters. Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny.   
-
-         Make sure to review [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#prefix-filtering-considerations) before creating prefix filters. Also, note that the default filter applies to all prefixes except those that you create.
-      {: attention}
-
-      To create a prefix filter, click **Create prefix filter**, then complete the following information:
-    
-      1. Select an action type: **Permit** or **Deny**.
-      1. Enter the network prefix along with its subnet mask (for example, `10.0.0.0/16`).
-      1. Optionally, enter values for whether the network should be greater than or equal to the subnet mask you chose.
-      1. Click **Save** to add the prefix filter.
-
-      Connections are denied or permitted based on the order of the filters in the list. Edit the prefix filter list to adjust the order in which prefixes are processed.
-      {: tip}
+      * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources. 
+      * **VPN gateway** connections link on-premises or external networks with IBM Cloud by attaching a VPN gateway as a spoke to a transit gateway. These connections use redundant GRE tunnels and dynamic routing with eBGP to enable efficient and scalable network integration. For more information, [Creating a VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway&interface=ui).
 
    1. Complete base network information (different depending on selected network connection) and choose a connection reach option:
 
       * **Add new connection in this account** - Enter a connection name and any other required information for your connection.
 
-         * For **{{site.data.keyword.powerSys_notm}}**, select a location for the {{site.data.keyword.powerSys_notm}} workspace. Then, select from the list of  {{site.data.keyword.powerSys_notm}} workspaces that are enabled for Transit Gateway. Keep in mind that not all {{site.data.keyword.powerSys_notm}} workspaces show in this menu. 
+         * For **{{site.data.keyword.powerSys_notm}}**, select a location for the {{site.data.keyword.powerSys_notm}} workspace. Then, select from the list of  {{site.data.keyword.powerSys_notm}} workspaces that are enabled for Transit Gateway. Keep in mind that not all {{site.data.keyword.powerSys_notm}} workspaces show in this menu.
+         * For **VPN gateway**, first select the region where your VPN gateway is deployed. Then, select from the available VPN gateways that support dynamic routing. 
+      
+            You must specify a custom CIDR block for the connection. The CIDR defines the IP range used to allocate addresses on the redundant GRE tunnels and must use [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: externa} private address space, be at least a `/27` subnet, and must not overlap with other connection CIDRs on the transit gateway.
+
+            Only VPN gateways with dynamic routing enabled are shown in the Available connections list. The selected region and zone determine which Transit Gateway routers the VPN gateway connects to.
+            {: note}
+
+            Specifying a zone is optional if the VPN gateway and the transit gateway are in the same multi-zone region (MZR); in that case, the connection uses the VPN gateway’s zone.
+            {: attention}
 
       * **Request connection to a network in another account** - Enter either the IBM Cloud ID or Cloud Resource Name (CRN) of the account that manages the network where you want to connect. Then, complete any remaining information. All resources connected to that transit gateway will be accessible from the other network. For more information, including how to obtain the Cloud ID or CRN, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
 

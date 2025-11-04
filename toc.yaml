@@ -118,6 +118,7 @@ toc:
           - conn-nic.md
           - conn-routing-vsi.md
           - conn-gre.md
+          - error-messages-vpn-gateway.md
           - ts-route-report-overlaps.md
       - topic: getting-help.md
         navtitle: Getting help and support
