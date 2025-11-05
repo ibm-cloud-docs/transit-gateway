@@ -2,7 +2,7 @@
 
 copyright:
   years:  2020, 2025
-lastupdated: "2025-10-20"
+lastupdated: "2025-11-05"
 
 keywords: change log for transit gateway, updates to transit gateway
 
@@ -16,6 +16,21 @@ subcollection: transit-gateway
 {: #cli-change-log}
 
 In this change log, you can learn about the latest changes, improvements, and updates for {{site.data.keyword.tg_full}}.
+
+## 06 November 2025
+{: #cli-nov0725}
+
+VPN gateway connection support
+
+:   You can now create VPN gateway connections to a transit gateway in IBM Cloud using route-based VPNs over redundant GRE tunnels. Attaching a VPN gateway to a transit gateway requires a dynamic VPN connection.
+
+   New command option:
+
+   [**`tg connection-create`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#connection-create) - Added a new network connection `vpn_gateway` with optional `--cidr` and `--zone` options that defines the IP range used to allocate addresses on the redundant GRE tunnels (default is `100.64.0.0/10`).
+    
+   New command:
+
+   [**`tg acc-connections`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=cli#connections-list-account-connections) - List all account connections on the transit gateway. 
 
 ## 27 August 2025
 {: #cli-august272025}
