@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-11-05"
+lastupdated: "2025-11-06"
 
 keywords: transit gateway api change log
 
