@@ -23,7 +23,7 @@ Find out about new and updated features in {{site.data.keyword.tg_full}}.
 {: #transit-gateway-nov0625}
 
 Support for VPN gateway connections
-:    You can now create VPN gateway connections to a transit gateway in {{site.data.keyword.cloud_notm}} using route-based VPNs over redundant GRE tunnels. Attaching a VPN gateway to a transit gateway requires a dynamic VPN connection. This connection type enables more efficient and scalable hybrid cloud networking, allowing services like Power Virtual Server to seamlessly connect through VPN gateway connections. 
+:    You can now create VPN gateway connections to a transit gateway in {{site.data.keyword.cloud_notm}} using route-based VPNs over redundant GRE tunnels. Attaching a VPN gateway to a transit gateway requires a dynamic VPN connection. This connection type enables more efficient and scalable hybrid cloud networking, allowing services like Power Virtual Server to seamlessly connect through VPN gateway connections. For more information, see [VPN gateway connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpn-connection-considerations).
 
 ## 27 August 2025
 {: #transit-gateway-au0825}
