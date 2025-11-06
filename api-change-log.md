@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-08-27"
+lastupdated: "2025-11-06"
 
 keywords: transit gateway api change log
 
@@ -19,6 +19,12 @@ content-type: release-note
 
 Check back regularly to see what's new with {{site.data.keyword.cloud}} Transit Gateway API.
 {: shortdesc}
+
+## 06 November 2025
+{: #transit-gateway-nov0625}
+
+VPN connections for transit gateways
+:    Transit gateways now support VPN gateway connections. A VPN gateway connection allows VPN gateways to connect to other networks (for instance, VPC, Direct Link, classic infrastructure, and Power Virtual Server) that are connected to the same transit gateway. This adds a new `network_type` value of `vpn_gateway` to the choices when creating a new connection.
 
 ## 27 August 2025
 {: #transit-gateway-aug2725}

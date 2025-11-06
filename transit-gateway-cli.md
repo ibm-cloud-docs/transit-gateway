@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-20"
+lastupdated: "2025-11-04"
 
 keywords: command line interface, commands, CLI
 
@@ -244,6 +244,58 @@ ibmcloud tg gwu $gateway --routing global
 
 This section provides information about CLI commands for connection functions.
 
+### `ibmcloud tg acc-connections`
+{: #connections-list-account-connections}
+
+List all account connections on the transit gateway.
+
+```sh
+ibmcloud tg acc-connections|ac [--network-id NETWORK_ID] [--network-type NETWORK_TYPE] [--all-pages] [--limit NUMERIC_VALUE] [--output json] [-h, --help]
+```
+
+#### Command options
+{: #connection-account-details}
+
+`--network-id`
+:   Optional. For `classic`, don't set a value. Use the CRN for all other network types. For example, to find the CRN of a VPC:
+
+   ```sh
+   ibmcloud is vpc VPC_ID --json
+   ```
+   {: pre}
+
+`--network-type`
+:   Optional. Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, `vpn_gateway`, and `vpc`.
+
+`--all-pages`
+:   Optional: Lists all connections regardless of whether a `--limit` size is specified.
+
+`--limit NUMERIC_VALUE`
+:   Optional: The maximum number of resources to return per page. The default limit is `50`. Possible values: `1` ≤ value ≤ `500`
+
+`--output json`
+:   Optional: Specify whether you want the output displayed in JSON format.
+
+`--help | -h`
+:   Optional: Get help on this command.
+
+#### Examples
+{: #connection-account-examples}
+
+List all account connections:
+
+```sh
+ibmcloud tg acc-connections|ac
+```
+{: pre}
+
+List account connections filtered by network type:
+
+```sh
+ibmcloud tg acc-connections|ac --network-type vpc|classic|directlink|vpn_gateway|power_virtual_server
+```
+{: pre}
+
 ### `ibmcloud tg connection`
 {: #connection-details}
 
@@ -328,7 +380,7 @@ connection="4892849f-368e-9999-bb58-8888fb21e513"
 Create a connection on the transit gateway.
 
 ```sh
-ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID --network-type NETWORK_TYPE --network-account-id ACCOUNT_ID [--default-prefix-filter DEFAULT_PREFIX_FILTER]  [--output json]
+ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID --network-type NETWORK_TYPE --network-account-id ACCOUNT_ID [--zone ZONE] [--default-prefix-filter DEFAULT_PREFIX_FILTER] [--cidr CIDR] [--output json]
 ```
 
 #### Command options
@@ -349,13 +401,19 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID 
    {: pre}
 
 `--network-type`
-:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, and `vpc`.
+:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, `vpn_gateway`, and `vpc`.
 
 `--network-account-id`
 :   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account.
 
+`--zone`
+:   Optional: Availability zone where a GRE tunnel or VPN connection will be deployed. Only applicable to the `vpn_gateway` network type.
+
 `--default-prefix-filter`
 :   Optional: Default prefix filter of the connection (`permit` | `deny`).
+
+`--cidr`
+:   Optional: CIDR block to use for the connection. Only applicable to the `vpn_gateway` network type.
 
 `--output json`
 :   Optional: Specify whether you want the output displayed in JSON format.

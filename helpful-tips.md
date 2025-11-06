@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-20"
+lastupdated: "2025-11-04"
 
 keywords: help, tips, connections, provision
 
@@ -70,9 +70,11 @@ The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the 
 
 ## Prefix filtering considerations
 {: #prefix-filtering-considerations}
+
 * For cross-account connections, only the account owner of the respective connection can modify prefix filters. Other accounts can view the connection, but can't modify the filters.
 * You can't filter incoming prefixes from another account.
 * Prefix filters in the list are processed sequentially. You can modify the order at any time.
+* VPN gateway connections don't support prefix filtering. You are responsible for managing any route filtering on your side of the BGP session.
 * If you select **Request connection to a network in another account** as the connect reach option, you can't set prefix filters because you are not the network owner for that connection. Prefix filters must be configured in the account that owns the network.
 * Prefix filter subnet masks are specific. For example, a rule that is defined as `10.10.20.0/24` does not match with subnet `10.10.20.0/28` or any other subnet prefix.
 * Review the [prefix service limits](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits) for transit gateways.
@@ -178,7 +180,24 @@ You can connect a {{site.data.keyword.powerSys_notm}} instance to a transit gate
 The same network subnet considerations for transit gateway connections also apply to {{site.data.keyword.powerSys_notm}} connections. To ensure successful connectivity, don't use prefixes in your {{site.data.keyword.powerSys_notm}} instance that overlap with other connections. Note that Transit Gateway provides prefix filtering to limit the prefixes being exposed, as well as a routing table report to see any overlaps after the connection is created.
 {: important}
 
+## VPN gateway connection considerations 
+{: #vpn-connection-considerations}
 
+You can create VPN gateway connections to a transit gateway to enable on-premises or external networks to connect with other networks in {{site.data.keyword.cloud_notm}}. The VPN gateway acts as a spoke within the transit gateway architecture, enabling efficient peering across multiple networks while reducing tunnel complexity. This design uses dynamic routing with eBGP over redundant GRE tunnels to provide scalable and resilient connectivity.
+
+* Each VPN gateway connection automatically provisions four redundant GRE tunnels between the VPN gateway and the transit gateway. IBM manages these tunnels, with eBGP sessions running over them for dynamic routing. On-premises connectivity uses eBGP over IPsec tunnels for secure communication. While you can create, delete, and rename VPN gateway connections, you cannot modify or remove the individual GRE tunnels.
+* Pricing is based on the cost of 4 GRE tunnels per connection plus data traffic charges.
+* VPN gateway connections are limited to 2 per zone and 4 per transit gateway by default.
+* When you create a VPN gateway connection, you must specify a CIDR block for the GRE tunnel IP addresses. The CIDR must use [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: externa} private address space, be at least a `/27` subnet, and must not overlap with any other connection CIDRs on the transit gateway.
+* VPN gateway connections do not support prefix filtering. You are responsible for managing any route filtering on your side of the BGP session.
+* You can create dynamic or static VPN connections at any time. Static connections are functional with or without a transit gateway attachment. Dynamic connections require the VPN gateway to be attached to a transit gateway before traffic can flow.
+* After a VPN gateway is attached to a transit gateway, the local ASN can't be changed.
+* To configure a VPN as a backup for a Direct Link connection, you must ensure that routes from the Direct Link are preferred. To do so, you can leverage mechanisms, such as AS Path prepending or MED (Multi-Exit Discriminator) on your on-premises device.
+* If the VPN gateway is assigned a CIDR that is not within the standard private IP ranges (`10.0.0.0/8`, `172.16.0.0/12`, or `192.168.0.0/16`), you must manually add routes in the VPC routing table (same zone as the VPN gateway) to enable proper traffic flow. You have two options:
+   * Add one route with the destination set to the full VPN-assigned CIDR (for example, `100.31.128.0/18`) and action set to **Delegate-VPC**.
+   * Add four separate routes, each targeting the local gateway IP of each VPN tunnel (for example, `100.31.128.1/32`) with the action set to **Delegate-VPC**.
+
+   The first option is simpler, while the second option offers more granular routing control, which might be preferred in advanced network designs or for troubleshooting.
 
 ## VPC considerations
 {: #vpc-connection-consideration}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-20"
+lastupdated: "2025-11-04"
 
 keywords: features, overview
 
@@ -50,12 +50,23 @@ To add a connection to a transit gateway, follow these steps:
    * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For more information, see [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
 
    * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
+   * **VPN gateway** connections link on-premises or external networks with IBM Cloud by attaching a VPN gateway as a spoke to a transit gateway. These connections use redundant GRE tunnels and dynamic routing with eBGP to enable efficient and scalable network integration. For more information, see [Creating a VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway&interface=ui).
 
 1. After you select a network connection, choose a connection reach option:
 
    * **Add new connection in this account** - Enter a connection name and any other required information for your connection.
 
-      * For **{{site.data.keyword.powerSys_notm}}**, select a location for the {{site.data.keyword.powerSys_notm}} workspace. Then, select from the list of  {{site.data.keyword.powerSys_notm}} workspaces that are enabled for Transit Gateway. Keep in mind that not all {{site.data.keyword.powerSys_notm}} workspaces show in this menu. 
+      * For **{{site.data.keyword.powerSys_notm}}**, select a location for the {{site.data.keyword.powerSys_notm}} workspace. Then, select from the list of  {{site.data.keyword.powerSys_notm}} workspaces that are enabled for Transit Gateway. Keep in mind that not all {{site.data.keyword.powerSys_notm}} workspaces show in this menu.
+
+      * For **VPN gateway**, first select the region where your VPN gateway is deployed. Then, select from the available VPN gateways that support dynamic routing. 
+      
+         You must specify a custom CIDR block for the connection. The CIDR defines the IP range used to allocate addresses on the redundant GRE tunnels and must use [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} private address space, be at least a `/27` subnet, and must not overlap with other connection CIDRs on the transit gateway.
+
+         Only VPN gateways with dynamic routing enabled are shown in the Available connections list. The selected region and zone determine which Transit Gateway routers the VPN gateway connects to.
+         {: note}
+
+         Specifying a zone is optional if the VPN gateway and the transit gateway are in the same multi-zone region (MZR); in that case, the connection uses the VPN gateway’s zone.
+         {: attention}
  
    * **Request connection to a network in another account** - Enter either the IBM Cloud ID or Cloud Resource Name (CRN) of the account that manages the network where you want to connect. Then, complete any remaining information. All resources connected to that transit gateway will be accessible from the other network. For more information, including how to obtain the Cloud ID or CRN, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
 
@@ -96,7 +107,7 @@ export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 To add a connection on the transit gateway from the CLI, enter the following command:
 
 ```sh
-ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID --network-type NETWORK_TYPE --network-account-id ACCOUNT_ID [--default-prefix-filter DEFAULT_PREFIX_FILTER]  [--output json]
+ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID --network-type NETWORK_TYPE --network-account-id ACCOUNT_ID [--zone ZONE] [--default-prefix-filter DEFAULT_PREFIX_FILTER] [--cidr CIDR] [--output json]
 ```
 {: pre}
 
@@ -118,13 +129,19 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID 
    {: pre}
 
 `--network-type`
-:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, and `vpc`.
+:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, `vpn_gateway`, and `vpc`.
 
 `--network-account-id`
-:   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account.
+:   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account. 
+
+`--zone`
+:   Optional: Availability zone where a GRE tunnel or VPN connection will be deployed. Only applicable to the `vpn_gateway` network type. 
 
 `--default-prefix-filter`
-:   Optional: Default prefix filter of the connection (`permit` | `deny`).
+:   Optional: Default prefix filter of the connection (`permit` | `deny`). 
+
+`--cidr`
+:   Optional: CIDR block to use for the connection. Only applicable to the `vpn_gateway` network type. 
 
 `--output json`
 :   Optional: Specify whether you want the output displayed in JSON format.
@@ -187,7 +204,7 @@ Review the following argument references that you can specify for your resource 
 |**local_tunnel_ip**  \n Optional  \n Forces new resource  \n string | The local tunnel IP address. \n This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**name**  \n Optional  \n string | The connection name. If the name is not given, a default name is provided based on the network type, such as `vpc` for network type VPC and `classic` for network type classic.|
 |**network_account_id**  \n Optional  \n Forces new resource  \n string|The ID of the network connected account. This is used if the network is in a different account than the gateway.|
-|**network_type**  \n Required  \n Forces new resource  \n string | The network type. Allowed values are `classic`, `directlink`, `gre_tunnel`, `unbound_gre_tunnel`, and `vpc`. |
+|**network_type**  \n Required  \n Forces new resource  \n string | The network type. Allowed values are `classic`, `directlink`, `gre_tunnel`, `unbound_gre_tunnel`, `vpn_gateway`, and `vpc`. |
 |**network_id**  \n Optional  \n Forces new resource  \n string | The ID of the network that is being connected to through this connection. \n This parameter is required for network type `vpc` and `directlink`, the CRN of the VPC or direct link gateway to be connected.  \n This field is required to be unspecified for network type `classic`.  \n **Example**:`crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
 |**remote_bgp_asn**  \n Optional  \n Forces new resource  \n integer | The remote network BGP ASN (will be generated for the connection if not specified).  \n This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**remote_gateway_ip**  \n Optional  \n Forces new resource  \n string | The remote gateway IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|

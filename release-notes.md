@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-08-27"
+lastupdated: "2025-11-06"
 
 keywords: updates, additions, improvements
 
@@ -18,6 +18,12 @@ content-type: release-note
 {: #transit-gateway-release-notes}
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
+
+## 06 November 2025
+{: #transit-gateway-nov0625}
+
+Support for VPN gateway connections
+:    You can now create VPN gateway connections to a transit gateway in {{site.data.keyword.cloud_notm}} using route-based VPNs over redundant GRE tunnels. Attaching a VPN gateway to a transit gateway requires a dynamic VPN connection. This connection type enables more efficient and scalable hybrid cloud networking, allowing services like Power Virtual Server to seamlessly connect through VPN gateway connections. 
 
 ## 27 August 2025
 {: #transit-gateway-au0825}
