@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-11-04"
+lastupdated: "2025-11-06"
 
 keywords: help, tips, connections, provision
 
@@ -70,7 +70,6 @@ The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the 
 
 ## Prefix filtering considerations
 {: #prefix-filtering-considerations}
-
 * For cross-account connections, only the account owner of the respective connection can modify prefix filters. Other accounts can view the connection, but can't modify the filters.
 * You can't filter incoming prefixes from another account.
 * Prefix filters in the list are processed sequentially. You can modify the order at any time.
@@ -187,7 +186,7 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 
 * Each VPN gateway connection automatically provisions four redundant GRE tunnels between the VPN gateway and the transit gateway. IBM manages these tunnels, with eBGP sessions running over them for dynamic routing. On-premises connectivity uses eBGP over IPsec tunnels for secure communication. While you can create, delete, and rename VPN gateway connections, you cannot modify or remove the individual GRE tunnels.
 * Pricing is based on the cost of 4 GRE tunnels per connection plus data traffic charges.
-* VPN gateway connections are limited to 2 per zone and 4 per transit gateway by default.
+* VPN gateway connections are limited to 4 per transit gateway and 2 per zone by default.
 * When you create a VPN gateway connection, you must specify a CIDR block for the GRE tunnel IP addresses. The CIDR must use [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: externa} private address space, be at least a `/27` subnet, and must not overlap with any other connection CIDRs on the transit gateway.
 * VPN gateway connections do not support prefix filtering. You are responsible for managing any route filtering on your side of the BGP session.
 * You can create dynamic or static VPN connections at any time. Static connections are functional with or without a transit gateway attachment. Dynamic connections require the VPN gateway to be attached to a transit gateway before traffic can flow.
