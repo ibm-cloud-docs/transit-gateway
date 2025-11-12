@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-11-06"
+lastupdated: "2025-11-12"
 
 keywords: help, tips, connections, provision
 
@@ -241,7 +241,7 @@ Keep in mind the following service limits while using IBM Cloud Transit Gateway.
 |---------------------------|------|
 | Number of transit gateways | 10 gateways per account, 5 gateways per region |
 | Number of connections per transit gateway |  * 10 IBM Cloud VPC connections  \n * 5 IBM Cloud classic connections  \n * 5 IBM Cloud Direct Link connections  \n * 5 {{site.data.keyword.powerSys_notm}} connections |
-| Number of prefixes per connection | * 25 prefixes for VPC connections  \n * 120 prefixes for classic connections  \n * 120 prefixes for GRE connections  \n * 120 prefixes for Direct Link connections  \n * 120 prefixes for {{site.data.keyword.powerSys_notm}} connections |
+| Number of prefixes per connection | * 50 prefixes for VPC connections  \n * 120 prefixes for classic connections  \n * 120 prefixes for GRE connections  \n * 120 prefixes for Direct Link connections  \n * 120 prefixes for {{site.data.keyword.powerSys_notm}} connections |
 | Number of connections with prefix filters | 2 connections with prefix filters per gateway|
 | Number of prefix filters per connection | 10 prefix filters per connection|
 | Number of GRE tunnels per transit gateway | 12 GRE tunnels per gateway|
