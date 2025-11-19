@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-11-04"
+lastupdated: "2025-11-19"
 
 keywords:
 
@@ -26,8 +26,8 @@ Before you add a cross-account connection, review these considerations:
 * After you connect a transit gateway to a network in another account, all resources that are connected to that transit gateway are accessible from the other network. Make sure that you use a trusted account. The following network connections are permitted as cross-account connections:
 
    * Classic infrastructure
-   * Direct Link
-   * Power System Virtual Server
+   * {{site.data.keyword.dl_full_notm}}
+   * {{site.data.keyword.powerSysFull}}
    * Redundant GRE
    * Unbound GRE tunnel   
    * VPC
