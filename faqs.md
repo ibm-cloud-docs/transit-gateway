@@ -49,14 +49,15 @@ This means:
 
 The following table shows the change in billing behavior:
 
-| Source\Destination | uGRE/rGRE | GRE tunnel | Classic | VPC | PowerVS | Direct Link |
+| Source\Destination | uGRE/rGRE | GRE tunnel | Classic | VPC | Power Virtual Server | Direct Link |
 |------------------|-----------|------------|---|---|---|---|
 | **uGRE/rGRE**   | 0x → 1x  | 0x → 1x | 1x | 1x  | 1x | 1x |
 | **GRE tunnel**  | 0x → 1x  | 0x → 1x | 1x | 1x  | 1x | 1x |
 | **Classic**     | 0x → 1x  | 0x → 1x | 1x | 1x  | 1x | 1x |
 | **VPC**         | 0x → 1x  | 0x → 1x | 1x | 1x  | 1x | 1x |
-| **PowerVS**     | 0x → 1x  | 0x → 1x | 1x | 1x  | 1x | 1x |
+| **Power Virtual Server**     | 0x → 1x  | 0x → 1x | 1x | 1x  | 1x | 1x |
 | **Direct Link** | 0x → 1x  | 0x → 1x | 1x | 1x  | 1x | 1x |
+{: caption="Comparison of current and upcoming GRE billing behavior" caption-side="bottom"}
 
 **Legend:**  
 - **0x → 1x** = Previously not billed, now billed  
