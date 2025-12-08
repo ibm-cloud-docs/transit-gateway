@@ -47,7 +47,7 @@ This means:
 - Traffic from GRE tunnels toward other connections was already billed and remains unchanged.
 - GRE traffic will be billed at the same rate as other Transit Gateway connection types.
 
-The following table shows the change in billing behavior. (Scroll horizontally to see all table columns.)
+The following table shows the change in billing behavior.
 
 | Source/Destination | uGRE/rGRE | GRE tunnel | Classic | VPC | Power Virtual Server | Direct Link |
 |------------------|-----------|------------|---|---|---|---|
@@ -58,6 +58,7 @@ The following table shows the change in billing behavior. (Scroll horizontally t
 | **Power Virtual Server**     | 0x → 1x  | 0x → 1x | 1x | 1x  | 1x | 1x |
 | **Direct Link** | 0x → 1x  | 0x → 1x | 1x | 1x  | 1x |  |
 {: caption="Comparison of current and upcoming GRE billing behavior" caption-side="bottom"}
+ (Scroll horizontally to see all table columns.)
 
 **Legend:**  
 - **0x → 1x** = Previously not billed, now billed  
