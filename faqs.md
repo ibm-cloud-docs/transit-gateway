@@ -49,7 +49,7 @@ This means:
 
 The following table shows the change in billing behavior:
 
- (Scroll horizontally to see all table columns.)
+ (Scroll horizontally to view all table columns.)
 
 | Source/Destination | uGRE/rGRE | GRE tunnel | Classic | VPC | Power Virtual Server | Direct Link |
 |------------------|-----------|------------|---|---|---|---|
