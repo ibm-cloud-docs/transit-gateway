@@ -53,11 +53,11 @@ The following table shows the change in billing behavior:
 | Source \ Destination | uGRE/rGRE | GRE tunnel | Classic | VPC | Power Virtual Server | Direct Link |
 |----------------------|-----------|------------|---------|-----|---------|----|
 | **uGRE/rGRE**        | 0x → 1x  | 0x → 1x    | 1x      | 1x  | 1x      | 1x |
-| **gre_tunnel**       | 0x → 1x  | 0x → 1x    | 1x      | 1x  | 1x      | 1x |
-| **classic**          | 0x → 1x  | 0x → 1x    | 1x      | 1x  | 1x      | 1x |
+| **GRE tunnel**       | 0x → 1x  | 0x → 1x    | 1x      | 1x  | 1x      | 1x |
+| **Classic**          | 0x → 1x  | 0x → 1x    | 1x      | 1x  | 1x      | 1x |
 | **VPC**              | 0x → 1x  | 0x → 1x    | 1x      | 1x  | 1x      | 1x |
-| **PowerVS**          | 0x → 1x  | 0x → 1x    | 1x      | 1x  | 1x      | 1x |
-| **DL**               | 0x → 1x  | 0x → 1x    | 1x      | 1x  | 1x      | 1x |
+| **Power Virtual Server**          | 0x → 1x  | 0x → 1x    | 1x      | 1x  | 1x      | 1x |
+| **Direct Link**       | 0x → 1x  | 0x → 1x    | 1x      | 1x  | 1x      | 1x |
 
 **Legend:**  
 - **0x → 1x** = Previously not billed, now billed  
