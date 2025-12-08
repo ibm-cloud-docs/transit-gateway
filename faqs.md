@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-10-01"
+lastupdated: "2025-12-08"
 
 keywords: faq, faqs, questions
 
@@ -34,6 +34,37 @@ You can estimate the cost of a transit gateway using the cost estimator on the p
 
 For more information, see [Pricing considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#pricing-considerations).
 {: note}
+
+## What is changing in billing for GRE traffic?
+{: #transit-gateway-gre-billing}
+{: faq}
+{: support}
+
+Starting 12 January 2026, IBM Cloud Transit Gateway will begin billing for data transferred toward GRE tunnels. Previously, only traffic flowing from GRE tunnels toward other connections was billed, while traffic toward GRE tunnels was not. This update aligns GRE connections with the existing usage-based billing model applied to other connection types such as VPC, Direct Link, and Power Virtual Server. 
+
+This means:
+- If data flows into a GRE tunnel, charges will now apply.
+- Traffic from GRE tunnels toward other connections was already billed and remains unchanged.
+- GRE traffic will be billed at the same rate as other Transit Gateway connection types.
+
+The following table shows the change in billing behavior:
+
+ (Scroll horizontally to view all table columns.)
+
+| Source/Destination | uGRE/rGRE | GRE tunnel | Classic | VPC | Power Virtual Server | Direct Link |
+|------------------|-----------|------------|---|---|---|---|
+| **uGRE/rGRE**   | 0x → 1x  | 0x → 1x | 1x | 1x  | 1x | 1x |
+| **GRE tunnel**  | 0x → 1x  | 0x → 1x | | 1x  | 1x | 1x |
+| **Classic**     | 0x → 1x  |   | 1x | 1x  | 1x | 1x |
+| **VPC**         | 0x → 1x  | 0x → 1x | 1x | 1x  | 1x | 1x |
+| **Power Virtual Server**     | 0x → 1x  | 0x → 1x | 1x | 1x  | 1x | 1x |
+| **Direct Link** | 0x → 1x  | 0x → 1x | 1x | 1x  | 1x |  |
+{: caption="Comparison of current and upcoming GRE billing behavior" caption-side="bottom"}
+
+**Legend:**  
+- uGRE = Unbound GRE tunnel; rGRE = Redundant GRE tunnel
+- 0x → 1x = Previously not billed, now billed  
+- 1x = Already billed, remains unchanged 
 
 ## If I connect a classic connection to a transit gateway provisioned with local routing, does that mean I can only communicate with classic infrastructure resources that are in the same location as the transit gateway?
 {: #communicate-same-resources}
