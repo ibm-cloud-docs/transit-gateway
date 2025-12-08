@@ -62,8 +62,9 @@ The following table shows the change in billing behavior:
 {: caption="Comparison of current and upcoming GRE billing behavior" caption-side="bottom"}
 
 **Legend:**  
-- **0x → 1x** = Previously not billed, now billed  
-- **1x** = Already billed, remains unchanged 
+- uGRE = Unbound GRE tunnel; rGRE = Redundant GRE tunnel
+- 0x → 1x = Previously not billed, now billed  
+- 1x = Already billed, remains unchanged 
 
 ## If I connect a classic connection to a transit gateway provisioned with local routing, does that mean I can only communicate with classic infrastructure resources that are in the same location as the transit gateway?
 {: #communicate-same-resources}
