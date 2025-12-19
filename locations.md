@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-05-20"
+lastupdated: "2025-12-19"
 
 keywords: about, features, overview
 
@@ -79,7 +79,6 @@ You can establish connectivity from a VPC to resources in a data center by conne
 | Chennai | CHE01 |
 | Dallas | DAL09 |
 | London | LON02 |
-| Milan | MIL01 |
 | Montreal | MON01 |
 | Paris | PAR01 |
 | San Jose | SJC03, SJC04 |
