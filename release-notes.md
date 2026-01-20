@@ -19,7 +19,7 @@ content-type: release-note
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
 
-## 21 January 2026
+## 20 January 2026
 {: #transit-gateway-jan2026}
 
 Prefix filtering for GRE connections
