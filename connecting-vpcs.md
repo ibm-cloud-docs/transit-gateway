@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-11-06"
+  years: 2020, 2026
+lastupdated: "2026-01-20"
 
 keywords: connecting, region, order
 
@@ -81,6 +81,21 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
       * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources. 
       * **VPN gateway** connections link on-premises or external networks with IBM Cloud by attaching a VPN gateway as a spoke to a transit gateway. These connections use redundant GRE tunnels and dynamic routing with eBGP to enable efficient and scalable network integration. For more information, [Creating a VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway&interface=ui).
+
+   1. Optionally, expand the Prefix filtering section to show the **Permit prefixes** toggle where you can create prefix filters. Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny.   
+
+         Make sure to review [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#prefix-filtering-considerations) before creating prefix filters. Also, note that the default filter applies to all prefixes except those that you create.
+      {: attention}
+
+      To create a prefix filter, click **Create prefix filter**, then complete the following information:
+    
+      1. Select an action type: **Permit** or **Deny**.
+      1. Enter the network prefix along with its subnet mask (for example, `10.0.0.0/16`).
+      1. Optionally, enter values for whether the network should be greater than or equal to the subnet mask you chose.
+      1. Click **Save** to add the prefix filter.
+
+      Connections are denied or permitted based on the order of the filters in the list. Edit the prefix filter list to adjust the order in which prefixes are processed.
+      {: tip}
 
    1. Complete base network information (different depending on selected network connection) and choose a connection reach option:
 

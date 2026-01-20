@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-11-19"
+  years: 2020, 2026
+lastupdated: "2026-01-20"
 
 keywords:
 
@@ -33,6 +33,7 @@ Before you add a cross-account connection, review these considerations:
    * VPC
    * VPN gateway
 
+* For cross-account GRE connections, the transit gateway owner manages the filters, since GRE peers already control which routes they advertise. A default filter is enabled for all GRE connections by default, so existing connections will continue accepting all routes unless you create custom prefix filters.
 * Only 10 pending requests are allowed per gateway. To create more requests, you can cancel the pending connection request, or wait for it to be approved. Connection requests expire if not approved within 72 hours.
 * Use of [security controls](/docs/vpc?topic=vpc-security-in-your-vpc), such as ACLs, security groups, or other network services to control traffic flow are highly recommended. IBM Cloud Transit Gateway does not provide security groups or ACLs, but the networks they attach to might and can affect transit gateway communications. For more information on ACLs and security groups, refer to the following topics:
 
