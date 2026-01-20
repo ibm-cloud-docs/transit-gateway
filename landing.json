@@ -37,16 +37,16 @@
     "view_more": "/docs/transit-gateway?topic=transit-gateway-transit-gateway-release-notes",
     "tiles": [
       {
-        "date": "12 June 2024",
-        "title": "Support for redundant Generic Routing Encapsulation (GRE) tunnel connections"
+        "date": "20 January 2026",
+        "title": "Support for prefix filtering for GRE connections"
       },
       {
-        "date": "01 May 2024",
-        "title": "Behavior change: Disable advertisement of service network routes from transit gateway connections"
+        "date": "06 November 2025",
+        "title": "Support for VPN gateway connections"
       },
       {
-        "date": "24 June 2023",
-        "title": "Power Virtual Server connections for transit gateways"
+        "date": "27 August 2025",
+        "title": "Support for GRE enhanced route propagation"
       }
     ]
   }
