@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-21"
+  years: 2020, 2026
+lastupdated: "2026-01-20"
 
 keywords:
 
@@ -87,7 +87,7 @@ Where:
 
 - **--before**: Optional: Identifier of the prefix filter that this filter should be applied before. If empty, this filter is applied last.
 
-- **--output**: Optional: Specify whether you want the output to display in JSON format.
+- **--output**: Optional: Specify whether you want the output to display in JSON format. All details are displayed.
  
 ### Example: Creating a prefix filter
 {: #adding-prefix-filters-cli-example}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-07-25"
+  years: 2026
+lastupdated: "2026-01-20"
 
 keywords: HA for transit gateway, DR for transit gateway, transit gateway recovery time objective, transit gateway recovery point objective
 
@@ -44,7 +44,7 @@ IBM Cloud regions that support Transit Gateway are multi-zone regions except for
 
 ### High availability features
 {: #high-availability-features}
-  
+
 {{site.data.keyword.dl_full_notm}} supports the following high availability features:
 
 | Feature| Description | Consideration |
@@ -64,7 +64,7 @@ Customers are responsible for maintaining network connectivity into IBM Cloud. T
 | Connection to different AZs | Connect devices to different Availability Zones (AZs) within the same Multi-Zone Region (MZR) | Ensure diverse physical paths and coordinate with providers to avoid shared risk groups. |
 | AS Prepending, BGP | Configure AS prepending and BGP routing to manage traffic flow between active and passive connections | Define clear routing policies for inbound and outbound traffic. Monitor BGP advertisements for correctness. |
 {: caption="Customer HA features for {{site.data.keyword.tg_full_notm}}" caption-side="bottom"}
- 
+
 ## Disaster recovery architecture
 {: #disaster-recovery-intro}
 
@@ -77,23 +77,23 @@ Using global routing capabilities allows for interconnecting VPCs and classic in
 By combining IBM Cloud Transit Gateway's features with strategic deployment and configuration practices, organizations can establish robust disaster recovery architectures that ensure continuity and minimize downtime during disruptions.
 
 The following table outlines these features and key considerations.
- 
+
 ### Disaster recovery features
 {: #dr-features}
 
 Transit Gateway supports the following disaster recovery features:
- 
+
 | Feature | Description | Consideration |
-| -------------- | -------------- | -------------- |  
+| -------------- | -------------- | -------------- |
 | Global routing | Supports interconnectivity between VPCs and classic infrastructure across different regions. | Facilitates workload distribution and failover between regions. |
 {: caption="Disaster Recovery features for {{site.data.keyword.tg_full_notm}}" caption-side="bottom"}
- 
+
 As a customer, you can create and support the following other disaster recovery options:
 
 | Feature | Description | Consideration |
-| -------------- | -------------- | -------------- |  
+| -------------- | -------------- | -------------- |
 | Global routing configuration | Configures global routing to interconnect VPCs and classic infrastructure across different regions. | Supports workload distribution and failover between regions. |                       |   |
-| Direct Link integration | Integrates IBM Cloud Direct Link with Transit Gateway for dedicated, private connectivity between on-premises networks and IBM Cloud. | Requires proper configuration to avoid IP overlap and ensure seamless connectivity. |   
+| Direct Link integration | Integrates IBM Cloud Direct Link with Transit Gateway for dedicated, private connectivity between on-premises networks and IBM Cloud. | Requires proper configuration to avoid IP overlap and ensure seamless connectivity. |
 {: caption="Customer disaster recovery features for {{site.data.keyword.tg_full_notm}}" caption-side="bottom"}
 
 ### Planning for disaster recovery
@@ -104,13 +104,13 @@ It’s critical to regularly practice your disaster recovery steps to ensure tha
 There can be multiple ways to recover from certain failures, so be sure to assess each scenario based on your specific architecture and requirements. Here are common failure scenarios, along with potential recovery actions:
 
 | Failure | Resolution |
-| -------------- | -------------- |  
+| -------------- | -------------- |
 | Regional Transit Gateway outage   | Redirect traffic through a transit gateway in another region.                 |
 | BGP session loss                  | Verify routing configuration and peer device status; restart the BGP session. |
 | VPC attachment failure            | Recreate the attachment or fail over to an alternate path.                    |
 | Accidental configuration deletion | Restore configuration using backups or automation tools.    |
 | Logging or monitoring failure     | Reconfigure logging/monitoring endpoints; verify IAM and service status.      |
-{: caption="Disaster recovery scenarios for {{site.data.keyword.tg_full_notm}}" caption-side="bottom"} 
+{: caption="Disaster recovery scenarios for {{site.data.keyword.tg_full_notm}}" caption-side="bottom"}
 
 ### Backing up transit gateways for disaster recovery
 {: #disaster-recovery-tgw}
@@ -138,11 +138,11 @@ Saving the information that is returned from these commands helps you recover fr
 
 For background information about responsibility ownership for using Direct Link between {{site.data.keyword.IBM_notm}} and you, the customer, see [Understanding your responsibilities when using IBM Cloud Transit Gateway](/docs/transit-gateway?topic=transit-gateway-tg-responsibilities). It is your responsibility to continuously test your plan for HA and DR.
 
-Interruptions in network connectivity and short periods of unavailability of a service might occur. It is your responsibility to make sure that application source code includes [client availability retry logic](/docs/resiliency?topic=resiliency-high-availability-design#client-retry-logic-for-ha) to maintain high availability of the application.   
-{: note}  
+Interruptions in network connectivity and short periods of unavailability of a service might occur. It is your responsibility to make sure that application source code includes [client availability retry logic](/docs/resiliency?topic=resiliency-high-availability-design#client-retry-logic-for-ha) to maintain high availability of the application.
+{: note}
 
-## Recovery time objective (RTO) 
-{: #rto-features}  
+## Recovery time objective (RTO)
+{: #rto-features}
 
 Transit Gateway provides mechanisms to protect your data and restore service functions. Business continuity plans are in place to achieve targeted [recovery time objective](#x3167918){: term} (RTO) for the service. The following table outlines the targets for Transit Gateway.
 
@@ -161,14 +161,14 @@ Transit Gateway provides mechanisms to protect your data and restore service fun
 Change management includes tasks, such as configuration changes and deletion.
 
 Grant users and processes the Identity and Access Management (IAM) roles and actions with the least privilege that is required for their work. For more information, see [How can I prevent accidental deletion of services?](/docs/resiliency?topic=resiliency-dr-faq#prevent-accidental-deletion).
-{: tip} 
+{: tip}
 
 Best practices for managing change also include:
- 
-* Plan and document changes by maintaining a change log for any modifications that are made to your Transit Gateway configuration. 
+
+* Plan and document changes by maintaining a change log for any modifications that are made to your Transit Gateway configuration.
 * Create a backup of critical configurations before performing major changes.
 * Schedule high-impact changes during low-traffic windows and notify impacted teams.
-* Monitor your Transit Gateway health and metrics to ensure that everything is performing as expected. 
+* Monitor your Transit Gateway health and metrics to ensure that everything is performing as expected.
 
 ## How IBM supports disaster recovery planning
 {: #ibm-disaster-recovery-planning}
@@ -194,6 +194,6 @@ In the rare event of a regional failure, IBM Cloud will identify and repair the 
 ## How IBM maintains services
 {: #ibm-service-maintenance}
 
-All upgrades follow {{site.data.keyword.IBM_notm}} service best practices, including recovery plans and rollback processes. Regular maintenance might cause short interruptions, mitigated by [client availability retry logic](/docs/resiliency?topic=resiliency-high-availability-design#client-retry-logic-for-ha). Changes are rolled out sequentially, region by region, and zone by zone within a region. {{site.data.keyword.IBM_notm}} reverts updates at the first sign of a defect. 
+All upgrades follow {{site.data.keyword.IBM_notm}} service best practices, including recovery plans and rollback processes. Regular maintenance might cause short interruptions, mitigated by [client availability retry logic](/docs/resiliency?topic=resiliency-high-availability-design#client-retry-logic-for-ha). Changes are rolled out sequentially, region by region, and zone by zone within a region. {{site.data.keyword.IBM_notm}} reverts updates at the first sign of a defect.
 
 IBM provides advance notice for all planned maintenance activities. If a change is expected to affect your workloads, IBM communicates this through official notifications. To stay updated on maintenance, service announcements, and other updates, see the [Monitoring notifications and status](/docs/account?topic=account-viewing-cloud-status) page.

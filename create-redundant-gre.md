@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-11-04"
+  years: 2020, 2026
+lastupdated: "2026-01-20"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -76,6 +76,20 @@ To create a redundant GRE, follow these steps:
 
 1. Select **Redundant GRE** as your network connection type.
 1. Enter a connection name.
+1. Optionally, expand the Prefix filtering section to show the **Permit prefixes** toggle where you can create prefix filters. Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny.   
+
+   Make sure to review [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#prefix-filtering-considerations) before creating prefix filters. Also, note that the default filter applies to all prefixes except those that you create.
+   {: attention}
+
+   To create a prefix filter, click **Create prefix filter**, then complete the following information:
+    
+   1. Select an action type: **Permit** or **Deny**.
+   1. Enter the network prefix along with its subnet mask (for example, `10.0.0.0/16`).
+   1. Optionally, enter values for whether the network should be greater than or equal to the subnet mask you chose.
+   1. Click **Save** to add the prefix filter.
+
+   Connections are denied or permitted based on the order of the filters in the list. Edit the prefix filter list to adjust the order in which prefixes are processed.
+   {: tip}
    
 1. Select the base network type (**Classic infrastructure** or **VPC**) and whether this is a connection to a network in another account. If you select **VPC** as the base network, you can select the region and VPC that you want to target.
 

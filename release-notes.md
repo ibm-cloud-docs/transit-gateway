@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-11-06"
+  years: 2020, 2026
+lastupdated: "2026-01-20"
 
 keywords: updates, additions, improvements
 
@@ -18,6 +18,12 @@ content-type: release-note
 {: #transit-gateway-release-notes}
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
+
+## 21 January 2026
+{: #transit-gateway-jan2026}
+
+Prefix filtering for GRE connections
+:   You can now set up prefix filters on GRE connections to control which routes are accepted from GRE peers. For cross-account GRE connections, the transit gateway owner manages the filters, since GRE peers already control which routes they advertise. By default, a filter that allows all routes is automatically applied to all GRE connections. Existing connections will continue accepting all routes unless you create custom prefix filters.
 
 ## 06 November 2025
 {: #transit-gateway-nov0625}

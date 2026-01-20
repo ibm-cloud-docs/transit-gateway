@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-11-12"
+  years: 2020, 2026
+lastupdated: "2026-01-20"
 
 keywords: help, tips, connections, provision
 
@@ -70,11 +70,14 @@ The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the 
 
 ## Prefix filtering considerations
 {: #prefix-filtering-considerations}
+
+* Prefix filters are supported for all network connection types.
+* For non-GRE connections, the network owner can add prefix filters. For GRE connections, only the Transit Gateway owner can add or modify prefix filters, which is an important consideration for cross-account connections.
 * For cross-account connections, only the account owner of the respective connection can modify prefix filters. Other accounts can view the connection, but can't modify the filters.
 * You can't filter incoming prefixes from another account.
+* For Redundant GRE and VPN gateway connections, prefix filters can only be configured at the top-level connection. Individual tunnels under these connections don't support separate prefix filters; any filter applied at the top level will apply to all associated tunnels.
 * Prefix filters in the list are processed sequentially. You can modify the order at any time.
-* VPN gateway connections don't support prefix filtering. You are responsible for managing any route filtering on your side of the BGP session.
-* If you select **Request connection to a network in another account** as the connect reach option, you can't set prefix filters because you are not the network owner for that connection. Prefix filters must be configured in the account that owns the network.
+* If you select **Request connection to a network in another account** as the connect reach option, you can't set prefix filters because you are not the network owner for that connection. Prefix filters must be configured in the account that owns the network. For GRE connections, only the Transit Gateway owner can set prefix filters when creating the connection.
 * Prefix filter subnet masks are specific. For example, a rule that is defined as `10.10.20.0/24` does not match with subnet `10.10.20.0/28` or any other subnet prefix.
 * Review the [prefix service limits](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits) for transit gateways.
 

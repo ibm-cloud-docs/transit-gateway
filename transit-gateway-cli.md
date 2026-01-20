@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-11-04"
+  years: 2020, 2026
+lastupdated: "2026-01-20"
 
 keywords: command line interface, commands, CLI
 
@@ -94,7 +94,7 @@ Request details for gateway.
 ibmcloud tg gw $gateway
 ```
 {: pre}
- 
+
 ### `ibmcloud tg gateways`
 {: #list-gateways}
 
@@ -120,7 +120,7 @@ Other commands require a gateway ID. Save the ID as an environment variable so y
 gateway="bdf8fa2b-c518-9999-9028-f3c9ece86159"
 ```
 {: screen}
- 
+
 ### `ibmcloud tg gateway-create`
 {: #gateway-create}
 
@@ -164,7 +164,7 @@ Create a gateway that is named `myGateway` in `us-south` with `local` routing an
 ibmcloud tg gwc --name myGateway --location us-south
 ```
 {: pre}
- 
+
 ### `ibmcloud tg gateway-delete`
 {: #gateway-delete}
 
@@ -195,7 +195,7 @@ Delete gateway with no confirmation.
 ibmcloud tg gwd $gateway -f
 ```
 {: pre}
- 
+
 ### `ibmcloud tg gateway-update`
 {: #gateway-update}
 
@@ -219,7 +219,7 @@ ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING][--gr
 
 `--gre-enhanced-route-propagation`
 :   Optional: Specify whether you want to enable route propagation across all GREs connected to the same transit gateway. Valid values are `true` and `false` (default).
-    
+
     After changing this value, allow a few minutes for the change to take effect.
     {: note}
 
@@ -238,7 +238,7 @@ Update the gateway with a routing value of `global`.
 ibmcloud tg gwu $gateway --routing global
 ```
 {: pre}
- 
+
 ## Connections
 {: #connections}
 
@@ -329,7 +329,7 @@ Request details for a specific connection ID.
 ibmcloud tg c $gateway $connection
 ```
 {: pre}
- 
+
 ### `ibmcloud tg connections`
 {: #list-connections}
 
@@ -373,7 +373,7 @@ Other commands require a connection ID. Save the ID as an environment variable s
 connection="4892849f-368e-9999-bb58-8888fb21e513"
 ```
 {: screen}
- 
+
 ### `ibmcloud tg connection-create`
 {: #connection-create}
 
@@ -436,7 +436,7 @@ Create a Classic connection named `classic-conn`.
 ```sh
 ibmcloud tg cc $gateway --name classic-conn --network-type classic
 ```
-{: pre} 
+{: pre}
 
 ### `ibmcloud tg connection-delete`
 {: #connection-delete}
@@ -471,7 +471,7 @@ Delete connection without confirmation.
 ibmcloud tg cd $gateway $connection -f
 ```
 {: pre}
- 
+
 ### `ibmcloud tg connection-create-gre` (Deprecated)
 {: #connection-create-gre}
 
@@ -538,7 +538,7 @@ Create a GRE tunnel connection that is named `gre-connection` and uses classic c
 ```sh
 ibmcloud tg connection-create-gre $gateway --name gre-connection --base-connection-id 9037f710-8dfb-9999-a2bd-847c8dde96d3  --zone us-south-2 --local-gateway-ip 192.168.100.1 --local-tunnel-ip 192.168.101.1 --remote-gateway-ip 10.242.63.12 --remote-tunnel-ip 192.168.101.2
 ```
-{: pre} 
+{: pre}
 
 ### `ibmcloud tg connection-approve`
 {: #connection-approve}
@@ -570,7 +570,7 @@ Approve the connection request.
 ibmcloud tg ca $gateway $connection
 ```
 {: pre}
- 
+
 ### `ibmcloud tg connection-gre-create`
 {: #connection-gre-create}
 
@@ -635,7 +635,7 @@ Create a GRE tunnel connection that is named `gre-connection` and uses classic c
 ibmcloud tg connection-gre-create $gateway --name gre-connection --base-connection-id 9037f710-8dfb-9999-a2bd-847c8dde96d3  --zone us-south-2 --local-gateway-ip 192.168.100.1 --local-tunnel-ip 192.168.101.1 --remote-gateway-ip 10.242.63.12 --remote-tunnel-ip 192.168.101.2
 ```
 {: pre}
- 
+
 ### `ibmcloud tg connection-reject`
 {: #connection-reject}
 
@@ -666,7 +666,7 @@ Reject the connection request.
 ibmcloud tg cr $gateway $connection
 ```
 {: pre}
- 
+
 ### `ibmcloud tg connection-rgre-create`
 {: #connection-create-redundant-gre}
 
@@ -808,7 +808,7 @@ Update name of connection to `MyConn2`.
 ibmcloud tg cu $gateway $connection --name MyConn2
 ```
 {: pre}
- 
+
 ### `ibmcloud tg redundant-gre-tunnel-add`
 {: #redundant-gre-tunnel-add}
 
@@ -858,10 +858,10 @@ ibmcloud tg redundant-gre-tunnel-add|targre GATEWAY_ID REDUNDANT_GRE_ID --name N
 {: #add-redundant-gre-tunnel-example}
 
 ```sh
-ibmcloud tg redundant-gre-tunnel-add e47d6b9c-095f-4d31-aa47-5c89c2ded820 e4e37e31-8895-4594-be6b-61e8088b53c7 --name gre-tunnel3  --zone us-south-3 --local-gateway-ip 192.193.202.1 --local-tunnel-ip 192.193.237.2 -ibmcloud login -a https://test.cloud.ibm.com -r us-south --sso -remote-gateway-ip 10.186.203.5 --remote-tunnel-ip 192.193.237.1
+ibmcloud tg redundant-gre-tunnel-add e47d6b9c-095f-4d31-aa47-5c89c2ded820 e4e37e31-8895-4594-be6b-61e8088b53c7 --name gre-tunnel3  --zone us-south-3 --local-gateway-ip 192.193.202.1 --local-tunnel-ip 192.193.237.2 -ibmcloud login -a https://cloud.ibm.com -r us-south --sso -remote-gateway-ip 10.186.203.5 --remote-tunnel-ip 192.193.237.1
 ```
 {: pre}
- 
+
 ### `ibmcloud tg redundant-gre-tunnel-remove`
 {: #redundant-gre-tunnel-remove}
 
@@ -896,7 +896,7 @@ ibmcloud tg redundant-gre-tunnel-remove|trrgre GATEWAY_ID REDUNDANT_GRE_ID TUNNE
 ibmcloud tg redundant-gre-tunnel-remove e47d6b9c-095f-4d31-aa47-5c89c2ded820 e4e37e31-8895-4594-be6b-61e8088b53c7 b97a5cf5-7ee4-4073-b719-f6df36dea08f
 ```
 {: pre}
- 
+
 ### `ibmcloud tg tunnels`
 {: #redundant-gre-tunnels-list}
 
@@ -913,7 +913,7 @@ ibmcloud tg tunnels|ts GATEWAY_ID REDUNDANT_GRE_ID [--output json]
 :   ID of the gateway where the new connection is bound.
 
 `REDUNDANT_GRE_ID`
-:   ID of the redundant GRE connection. 
+:   ID of the redundant GRE connection.
 
 `--output json`
 :   Optional: Specify whether you want the output displayed in JSON format.
@@ -931,7 +931,7 @@ ibmcloud tg tunnels|ts GATEWAY_ID REDUNDANT_GRE_ID [--output json]
 ibmcloud tg ts e47d6b9c-095f-4d31-aa47-5c89c2ded820 e4e37e31-8895-4594-be6b-61e8088b53c7
 ```
 {: pre}
- 
+
 ## Locations
 {: #locations}
 
@@ -987,7 +987,7 @@ Request details for location `us-south`.
 ibmcloud tg location us-south
 ```
 {: pre}
- 
+
 ## Connection prefix filters
 {: #connection-prefix-filters}
 
@@ -1027,7 +1027,7 @@ ibmcloud tg prefix-filter-create GATEWAY_ID CONNECTION_ID --prefix PREFIX --acti
 :   Optional: Identifier of the prefix filter this filter should be applied before. If empty, this filter is applied last.
 
 `--output`
-:   Optional: Specify output format; Only `json` is supported.
+:   Optional: Specify output format; Only `json` is supported. All details are displayed.
 
 ##### Examples
 {: #prefix-filter-create-examples}
@@ -1038,7 +1038,7 @@ Add prefix filter for `10.0.250.0/24` to gateway `9f559c43-63f4-4da5-b312-b525a8
 ibmcloud tg pfc 9f559c43-63f4-4da5-b312-b525a8dce185 6c1bdc19-4adb-4760-8cdc-ef3b74b626f7 --prefix 10.0.250.0/24 --action permit
 ```
 {: pre}
- 
+
 ### `ibmcloud tg prefix-filter-delete`
 {: #prefix-filter-delete}
 
@@ -1072,7 +1072,7 @@ Delete prefix filter ID `b4dbe0a6-c52d-4128-cc32-6f53d86bc82b` from gateway `9f5
 ibmcloud tg pfd 9f559c43-63f4-4da5-b312-b525a8dce185 6c1bdc19-4adb-4760-8cdc-ef3b74b626f7 b4dbe0a6-c52d-4128-cc32-6f53d86bc82b
 ```
 {: pre}
- 
+
 ## Route reports
 {: #route-report}
 
@@ -1115,7 +1115,7 @@ Other commands require a route report ID. Save the ID as an environment variable
 report="4892849f-368e-9999-4444-8888fb21e513"
 ```
 {: screen}
- 
+
 ### `ibmcloud tg route-report`
 {: #routereport-details}
 
@@ -1149,7 +1149,7 @@ Request details for a route report.
 ibmcloud tg rr $gateway $report
 ```
 {: pre}
- 
+
 ### `ibmcloud tg route-report-create`
 {: #routereport-create}
 
@@ -1180,7 +1180,7 @@ Create a route report for a gateway.
 ibmcloud tg rrc $gateway
 ```
 {: pre}
- 
+
 ### `ibmcloud tg route-report-delete`
 {: #routereport-delete}
 
@@ -1214,4 +1214,3 @@ Delete route report with no confirmation.
 ibmcloud tg rrd $gateway $report -f
 ```
 {: pre}
- 
