@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-01-29"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: transit-gateway
 # Creating and deleting prefix filters
 {: #adding-prefix-filters}
 
-Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny. You can add optional prefix filters when you add connections while creating a transit gateway, or ater a transit gateway is provisioned. 
+Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny. You can add optional prefix filters when you add connections while creating a transit gateway, or after a transit gateway is provisioned. 
 {: shortdesc}
 
 ## Before you begin
