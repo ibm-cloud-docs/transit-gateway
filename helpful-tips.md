@@ -195,9 +195,10 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 * You can create dynamic or static VPN connections at any time. Static connections are functional with or without a transit gateway attachment. Dynamic connections require the VPN gateway to be attached to a transit gateway before traffic can flow.
 * After a VPN gateway is attached to a transit gateway, the local ASN can't be changed.
 * To configure a VPN as a backup for a Direct Link connection, you must ensure that routes from the Direct Link are preferred. To do so, you can leverage mechanisms, such as AS Path prepending or MED (Multi-Exit Discriminator) on your on-premises device.
-* When you create a VPN gateway connection, you are required to define a CIDR block for the GRE tunnel IP addresses. It is recommended to use an [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} private address range, as it does not require an additional route. The CIDR block must be a minimum of `/27` and must not overlap with any other connection CIDRs configured on the transit gateway.
+* When you create a VPN gateway connection, you are required to define a CIDR block for the GRE tunnel IP addresses. It is recommended to use an [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} private address range, as it does not require an additional **Delegate-VPC** route. The CIDR block must be a minimum of `/27` and must not overlap with any other connection CIDRs configured on the transit gateway.
 
    If you assign a CIDR to a VPN gateway that is outside the standard private IP ranges (`10.0.0.0/8`, `172.16.0.0/12`, or `192.168.0.0/16`), you must manually add routes in the VPC routing table (in the same zone as the VPN gateway) to enable proper traffic flow. You have two options:
+  
       * Add a single route with the destination set to the full VPN-assigned CIDR (for example, `100.31.128.0/18`) and action set to **Delegate-VPC**.
       * Add four separate routes, each targeting the local gateway IP of each VPN tunnel (for example, `100.31.128.1/32`) with the action set to **Delegate-VPC**.
 
