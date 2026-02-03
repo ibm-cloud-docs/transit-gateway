@@ -199,8 +199,8 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 
    If you assign a CIDR to a VPN gateway that is outside the standard private IP ranges (`10.0.0.0/8`, `172.16.0.0/12`, or `192.168.0.0/16`), you must manually add routes in the VPC routing table (in the same zone as the VPN gateway) to enable proper traffic flow. You have two options:
   
-      * Add a single route with the destination set to the full VPN-assigned CIDR (for example, `100.31.128.0/18`) and action set to **Delegate-VPC**.
-      * Add four separate routes, each targeting the local gateway IP of each VPN tunnel (for example, `100.31.128.1/32`) with the action set to **Delegate-VPC**.
+   * Add a single route with the destination set to the full VPN-assigned CIDR (for example, `100.31.128.0/18`) and action set to **Delegate-VPC**.
+   * Add four separate routes, each targeting the local gateway IP of each VPN tunnel (for example, `100.31.128.1/32`) with the action set to **Delegate-VPC**.
 
    The first option is simpler, while the second option offers more granular routing control, which might be preferred in advanced network designs or for troubleshooting.
 
