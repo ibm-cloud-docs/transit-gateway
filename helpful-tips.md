@@ -190,7 +190,6 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 * Each VPN gateway connection automatically provisions four redundant GRE tunnels between the VPN gateway and the transit gateway. IBM manages these tunnels, with eBGP sessions running over them for dynamic routing. On-premises connectivity uses eBGP over IPsec tunnels for secure communication. While you can create, delete, and rename VPN gateway connections, you cannot modify or remove the individual GRE tunnels.
 * Pricing is based on the cost of 4 GRE tunnels per connection plus data traffic charges.
 * VPN gateway connections are limited to 4 per transit gateway and 2 per zone by default.
-* When you create a VPN gateway connection, you are required to define a CIDR block for the GRE tunnel IP addresses. It is recommended to use an RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} private address range, as it does not require an additional route. The CIDR block must be a minimum of /27 and must not overlap with any other connection CIDRs configured on the transit gateway.
 * VPN gateway connections do not support prefix filtering. You are responsible for managing any route filtering on your side of the BGP session.
 * You can create dynamic or static VPN connections at any time. Static connections are functional with or without a transit gateway attachment. Dynamic connections require the VPN gateway to be attached to a transit gateway before traffic can flow.
 * After a VPN gateway is attached to a transit gateway, the local ASN can't be changed.
