@@ -1,12 +1,13 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-12-19"
+  years: 2024, 2026
+lastupdated: "2026-02-11"
 
 keywords:
 
 subcollection: transit-gateway
+
 
 ---
 
@@ -68,6 +69,17 @@ The following dependencies apply to the following deployment locations: Dallas (
 {: tab-group="service-dependency-data-for-transit-Data-plane-deployment"}
 {: class="comparison-tab-table"}
 {: #significant-deps-data-plane-deployment}
+{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
+
+|Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
+|:---|:---|:---|:---|:---|
+| SysDig| Access management, Change management, Operations, Security compliance | No | data-plane |  Same region  |
+{: row-headers}
+{: caption="IBM Cloud Transit Gateway - Data plane deployment service dependency information - Medium dependencies" caption-side="top"}
+{: tab-title="Medium dependencies"}
+{: tab-group="service-dependency-data-for-transit-Data-plane-deployment"}
+{: class="comparison-tab-table"}
+{: #medium-deps-data-plane-deployment}
 {: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
@@ -196,6 +208,17 @@ The following dependencies apply to the following deployment locations: Montreal
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
+| SysDig| Access management, Change management, Operations, Security compliance | No | ngdc-data-plane |  Same region  |
+{: row-headers}
+{: caption="IBM Cloud Transit Gateway - NGDC data plane deployment service dependency information - Medium dependencies" caption-side="top"}
+{: tab-title="Medium dependencies"}
+{: tab-group="service-dependency-data-for-transit-NGDC-data-plane-deployment"}
+{: class="comparison-tab-table"}
+{: #medium-deps-ngdc-data-plane-deployment}
+{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers detail the specific dependent service. The column headers identify the details about the dependency and its impact. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
+
+|Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
+|:---|:---|:---|:---|:---|
 | IBM Cloud Business Support Services| none | No | ngdc-data-plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | OSS Platform| Operations | No | ngdc-data-plane |  Same region  |
 | SOS SIEM| Security compliance | No | ngdc-data-plane |  Same region  |
@@ -217,6 +240,8 @@ The following dependencies apply to the following deployment locations: Montreal
 
 ## Understanding service dependency data
 {: #understand-dependency-data}
+
+
 
 If you have any questions about the service dependency data as you review the service dependency information in the tables, you can refer to the following FAQ:
 
