@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-02-20"
 
 keywords: command line interface, commands, CLI
 
@@ -48,15 +48,6 @@ Show Transit Gateway CLI plug-in information.
 ibmcloud plugin show tg
 ```
 {: pre}
-
-## `ibmcloud tg --help`
-{: #command-help}
-
-Get help on Transit Gateway commands.
-
-```sh
-ibmcloud tg -h|--help
-```
 
 ## Transit gateways
 {: #gateways}
