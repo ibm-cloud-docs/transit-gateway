@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-12-08"
+  years: 2020, 2026
+lastupdated: "2026-02-23"
 
 keywords: faq, faqs, questions
 
@@ -31,6 +31,8 @@ These frequently asked questions can help you when working with the {{site.data.
 {: support}
 
 You can estimate the cost of a transit gateway using the cost estimator on the provisioning page for {{site.data.keyword.tg_full_notm}}. For example, from the [{{site.data.keyword.cloud_notm}} console](/login){: external}, click the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**. Click **Create** to open the provisioning page.
+
+The provisioning page also includes a Pricing tab, which provides a high-level overview of the billing model, including monthly connection (connect) fees and per-GB data transfer charges.
 
 For more information, see [Pricing considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#pricing-considerations).
 {: note}
