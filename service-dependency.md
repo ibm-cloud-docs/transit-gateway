@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-02-28"
 
 keywords:
 
@@ -91,7 +91,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 | {{site.data.keyword.logs_full}}| Access management, Operations, Security compliance | No | data-plane |  Same region  |
 | Synthetics| Operations | No | data-plane |  Same region  |
 | OSS Platform| Operations | No | data-plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| {{site.data.keyword.compliance_full}}| Security compliance | No | data-plane |  Same region  |
+| IBM Cloud Security and Compliance Center| Security compliance | No | data-plane |  Same region  |
 | {{site.data.keyword.atracker_full}}| Security compliance | No | data-plane |  Same region  |
 | {{site.data.keyword.monitoringlong}}| Operations, Security compliance | No | data-plane |  Same region  |
 {: row-headers}
@@ -160,7 +160,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 | {{site.data.keyword.logs_full}}| Access management, Operations, Security compliance | No | control-plane |  Same region  |
 | Synthetics| Operations | No | control-plane |  Same region  |
 | OSS Platform| Operations | No | control-plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| {{site.data.keyword.compliance_full}}| Security compliance | No | control-plane |  Same region  |
+| IBM Cloud Security and Compliance Center| Security compliance | No | control-plane |  Same region  |
 | PagerDuty| Operations | No | control-plane |  Same region  |
 | {{site.data.keyword.atracker_full}}| Security compliance | No | control-plane |  Same region  |
 {: row-headers}
@@ -226,7 +226,7 @@ The following dependencies apply to the following deployment locations: Montreal
 | {{site.data.keyword.logs_full}}| Access management, Operations, Security compliance | No | ngdc-data-plane |  Same region  |
 | Synthetics| Operations | No | ngdc-data-plane |  Same region  |
 | OSS Platform| Operations | No | ngdc-data-plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| {{site.data.keyword.compliance_full}}| Security compliance | No | ngdc-data-plane |  Same region  |
+| IBM Cloud Security and Compliance Center| Security compliance | No | ngdc-data-plane |  Same region  |
 | {{site.data.keyword.atracker_full}}| Security compliance | No | ngdc-data-plane |  Same region  |
 | {{site.data.keyword.monitoringlong}}| Operations, Security compliance | No | ngdc-data-plane |  Same region  |
 {: row-headers}
