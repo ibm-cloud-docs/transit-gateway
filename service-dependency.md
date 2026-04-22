@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-02-28"
+lastupdated: "2026-04-22"
 
 keywords:
 
@@ -86,7 +86,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 |:---|:---|:---|:---|:---|
 | IBM Cloud Business Support Services| none | No | data-plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | OSS Platform| Operations | No | data-plane |  Same region  |
-| SOS SIEM| Security compliance | No | data-plane |  Same region  |
+| None| Security compliance | No | data-plane |  Same region  |
 | {{site.data.keyword.cos_full}}| none | No | data-plane |  Same region  |
 | {{site.data.keyword.logs_full}}| Access management, Operations, Security compliance | No | data-plane |  Same region  |
 | Synthetics| Operations | No | data-plane |  Same region  |
@@ -132,6 +132,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 | IBM Cloud Classic NTP Servers | Availability, Change management, Instance control | No | control-plane |  Same data center  |
 | {{site.data.keyword.keymanagementservicefull}} | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | control-plane |  Same region  |
 | IBM Cloud Global Resource Catalog | Availability, Change management, Instance control, Security compliance | No | control-plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| None | Access management, Availability, Instance control, Operations, Security compliance | No | control-plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 {: row-headers}
 {: caption="IBM Cloud Transit Gateway - Control plane deployment service dependency information - Significant dependencies" caption-side="top"}
 {: tab-title="Significant dependencies"}
@@ -155,7 +156,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
 | OSS Platform| Operations | No | control-plane |  Same region  |
-| SOS SIEM| Security compliance | No | control-plane |  Same region  |
+| None| Security compliance | No | control-plane |  Same region  |
 | {{site.data.keyword.cos_full}}| none | No | control-plane |  Same region  |
 | {{site.data.keyword.logs_full}}| Access management, Operations, Security compliance | No | control-plane |  Same region  |
 | Synthetics| Operations | No | control-plane |  Same region  |
@@ -174,7 +175,7 @@ The following dependencies apply to the following deployment locations: Dallas (
 ## NGDC data plane deployment
 {: #ngdc-data-plane-deployment}
 
-The following dependencies apply to the following deployment locations: Montreal (ca-mon).
+The following dependencies apply to the following deployment locations: Chennai - Airtel (in-che), Montreal (ca-mon).
 
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
@@ -221,7 +222,7 @@ The following dependencies apply to the following deployment locations: Montreal
 |:---|:---|:---|:---|:---|
 | IBM Cloud Business Support Services| none | No | ngdc-data-plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | OSS Platform| Operations | No | ngdc-data-plane |  Same region  |
-| SOS SIEM| Security compliance | No | ngdc-data-plane |  Same region  |
+| None| Security compliance | No | ngdc-data-plane |  Same region  |
 | {{site.data.keyword.cos_full}}| none | No | ngdc-data-plane |  Same region  |
 | {{site.data.keyword.logs_full}}| Access management, Operations, Security compliance | No | ngdc-data-plane |  Same region  |
 | Synthetics| Operations | No | ngdc-data-plane |  Same region  |
