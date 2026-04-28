@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-02-23"
+lastupdated: "2026-04-27"
 
 keywords: faq, faqs, questions
 
@@ -42,7 +42,7 @@ For more information, see [Pricing considerations](/docs/transit-gateway?topic=t
 {: faq}
 {: support}
 
-Starting 12 January 2026, IBM Cloud Transit Gateway will begin billing for data transferred toward GRE tunnels. Previously, only traffic flowing from GRE tunnels toward other connections was billed, while traffic toward GRE tunnels was not. This update aligns GRE connections with the existing usage-based billing model applied to other connection types such as VPC, Direct Link, and Power Virtual Server. 
+Starting 12 January 2026, IBM Cloud Transit Gateway will begin billing for data transferred toward GRE tunnels. Previously, only traffic flowing from GRE tunnels toward other connections was billed, while traffic toward GRE tunnels was not. This update aligns GRE connections with the existing usage-based billing model applied to other connection types such as VPC, Direct Link, and Power Virtual Server.
 
 This means:
 - If data flows into a GRE tunnel, charges will now apply.
@@ -63,10 +63,10 @@ The following table shows the change in billing behavior:
 | **Direct Link** | 0x → 1x  | 0x → 1x | 1x | 1x  | 1x |  |
 {: caption="Comparison of current and upcoming GRE billing behavior" caption-side="bottom"}
 
-**Legend:**  
+**Legend:**
 - uGRE = Unbound GRE tunnel; rGRE = Redundant GRE tunnel
-- 0x → 1x = Previously not billed, now billed  
-- 1x = Already billed, remains unchanged 
+- 0x → 1x = Previously not billed, now billed
+- 1x = Already billed, remains unchanged
 
 ## If I connect a classic connection to a transit gateway provisioned with local routing, does that mean I can only communicate with classic infrastructure resources that are in the same location as the transit gateway?
 {: #communicate-same-resources}
@@ -159,9 +159,7 @@ Although [classic-access VPCs](/docs/vpc?topic=vpc-setting-up-access-to-classic-
 {: faq}
 {: support}
 
-{{site.data.keyword.cloud_notm}} Direct Link can be connected to either a local or global transit gateway.
-
-Currently, you can't connect a VPN to a transit gateway.
+Yes, you can connect a VPN or {{site.data.keyword.cloud_notm}} Direct Link to either a local or global transit gateway.
 
 ## Can I create a global transit network using the {{site.data.keyword.tg_full_notm}}?
 {: #global-transit}
@@ -224,7 +222,7 @@ You can create a single transit gateway or multiple transit gateways to intercon
 {: faq}
 {: #faq-stale-routes-time}
 
-This time, by default, is set as 5 minutes (300 seconds), and defined by the configuration statement `stale-routes-time`. The `stale-routes-time` statement allows you to set the length of time the routing device waits to receive messages from restarting neighbors before declaring them inactive. This means, in the case of a GRE HA failover to a second GRE tunnel, the traffic takes 5 minutes to be reflected by the second tunnel. 
+This time, by default, is set as 5 minutes (300 seconds), and defined by the configuration statement `stale-routes-time`. The `stale-routes-time` statement allows you to set the length of time the routing device waits to receive messages from restarting neighbors before declaring them inactive. This means, in the case of a GRE HA failover to a second GRE tunnel, the traffic takes 5 minutes to be reflected by the second tunnel.
 
 ## My existing transit gateway doesn't support ECMP. What can I do?
 {: faq}
