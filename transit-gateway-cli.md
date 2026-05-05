@@ -2,11 +2,13 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-05-01"
 
 keywords: command line interface, commands, CLI
 
 subcollection: transit-gateway
+
+content-type: cli-docs
 
 ---
 
