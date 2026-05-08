@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-05-29"
+  years: 2026
+lastupdated: "2026-05-07"
 
 keywords:
 
@@ -41,10 +41,10 @@ Each metric is composed of the following metadata types:
 * Value type - A unit of measurement for a specific metric. Examples include bytes or counts. A value type of `none` means that the metric value represents individual occurrences of that metric type.
 * Segment - How you want {{site.data.keyword.mon_full_notm}} to divide and display the monitoring metrics.
 
-### ConnectionBpsIngress
-{: #ibm_cloud_tranist_gateway_bytes_per_second_ingress}
+### Transit Gateway - Bytes per second data for ingress traffic
+{: #ibm_cloud_transit_gateway_bytes_per_second_ingress}
 
-Bytes per second data for all the ingress data flow on a gateway.
+Bytes per second data for all the ingress data flow on a gateway. This metric aggregates traffic from both device connections and GRE tunnel connections.
 
 The metric contains the following metadata:
 
@@ -56,6 +56,21 @@ The metric contains the following metadata:
 | Segment by |`ibm_ctype`, `ibm_scope`,`ibm_location`,`ibm_service_name`, `ibm_resource_name`, `ibm_resource`, `ibm_resource_type`|
 {: caption="IBM Cloud Transit Gateway Ingress bytes per second metrics" caption-side="bottom"}
 
+### Transit Gateway - GRE Connection BGP Status
+{: #ibm_transit_gateway_gre_connection_bgp_state}
+
+Transit Gateway GRE connection BGP session status (1=Idle, 2=Connect, 3=Active, 4=OpenSent, 5=OpenConfirm, 6=Established).
+
+The metric contains the following metadata:
+
+| Metadata | Description |
+|----------|-------------|
+| Metric name | `ibm_transit_gateway_gre_connection_bgp_state` |
+| Metric type | `gauge` |
+| Value type | `state` |
+| Segment by | `ibm_ctype`, `ibm_scope`, `ibm_location`, `ibm_service_name`, `ibm_resource_type`, `ibm_gateway_resource_id`, `ibm_gateway_name`, `ibm_connection_resource_id`, `ibm_connection_name`, `ibm_primary_connection_id`, `ibm_primary_connection_name`|
+{: caption="IBM Cloud Transit Gateway GRE Connection BGP State metrics" caption-side="bottom"}
+
 The Segment By labels correspond to the following definitions:
 
 * **ibm_ctype** - Type of cloud instance: `public`
@@ -64,7 +79,13 @@ The Segment By labels correspond to the following definitions:
 * **ibm_service_name** - `transit`
 * **ibm_resource_name** - Gateway's name
 * **ibm_resource** - Gateway's resource ID
-* **ibm_resource_type** - Type of resource: `gateway`
+* **ibm_resource_type** - Type of resource: `gateway` or `tgw-connection`
+* **ibm_gateway_resource_id** - Gateway resource ID (for BGP metrics)
+* **ibm_gateway_name** - Gateway name (for BGP metrics)
+* **ibm_connection_resource_id** - Connection resource ID (for BGP metrics)
+* **ibm_connection_name** - Connection name (for BGP metrics)
+* **ibm_primary_connection_id** - Primary connection ID (for redundant GRE connections)
+* **ibm_primary_connection_name** - Primary connection name (for redundant GRE connections)
 
 ### Launching {{site.data.keyword.mon_full_notm}} web UI from the Observability page
 {: #view_metrics}
