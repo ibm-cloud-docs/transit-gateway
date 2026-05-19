@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-02-03"
+lastupdated: "2026-05-19"
 
 keywords: help, tips, connections, provision
 
@@ -37,11 +37,11 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
     `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200-65234`, `65402-65433`, `65500`, `65516`, `65519`, `65521`, `65531` and `4201065000-4201065999`
 
 ## ECMP considerations
-{: #ecmp-considerations} 
+{: #ecmp-considerations}
 
    * When planning for ECMP (Equal-Cost Multi-Path), keep in mind that throughput won't scale linearly with the number of direct links. For example, if you connect two 10 GB direct links to an ECMP-capable transit gateway, you won’t get 20 GB throughput; you'll see more than 10 GB, but less than 20 GB. This is because ECMP works on a per-stream or per-source basis, meaning if traffic comes from a single endpoint, it will likely favor one link, not both. To achieve more balanced throughput, it's recommended to drive traffic from multiple sources, as this will distribute the load more evenly across the available direct links.
    * Limitation: ECMP doesn't work for direct links on a single router. Instead, it is supported across multiple routers with direct links, as long as those routers are advertising the same prefix.
-   * Known restriction: New transit gateways support 4-way ECMP, but existing gateways can't use this feature unless you [open a support case](/docs/account?topic=account-open-case&interface=ui) for assistance. 
+   * Known restriction: New transit gateways support 4-way ECMP, but existing gateways can't use this feature unless you [open a support case](/docs/account?topic=account-open-case&interface=ui) for assistance.
 
       If you don't want the ECMP feature enabled on your transit gateways, you can open a support case to be added to a denylist, which will disable this feature on your gateways.
       {: note}
@@ -71,7 +71,7 @@ The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the 
 ## Prefix filtering considerations
 {: #prefix-filtering-considerations}
 
-* Prefix filters are supported for all network connection types.
+* Prefix filters are supported for all Transit Gateway connection types except legacy GRE tunnel connections. For GRE connections, prefix filtering is supported for both redundant GRE and unbound GRE connection types.
 * For non-GRE connections, the network owner can add prefix filters. For GRE connections, only the Transit Gateway owner can add or modify prefix filters, which is an important consideration for cross-account connections.
 * For cross-account connections, only the account owner of the respective connection can modify prefix filters. Other accounts can view the connection, but can't modify the filters.
 * You can't filter incoming prefixes from another account.
@@ -96,8 +96,8 @@ Review the following considerations for your particular GRE connection.
 * If you are using equal-cost paths between GRE and Direct Link (the same path length), the Direct Link is preferred instead of load balancing between the GRE and Direct Link.
 
 ### GRE enhanced route propagation considerations
-{: #gre-enhanced-route-propagation-considerations} 
- 
+{: #gre-enhanced-route-propagation-considerations}
+
 GRE enhanced route propagation controls whether GRE tunnels connected to the same transit gateway can learn routes from each other, when across zones or within a Redundant GRE (RGRE) pair.
 
 When you create or update a transit gateway, assess whether GRE tunnels should be able to share routes. Enabling the **GRE enhanced route propagation** toggle allows interconnectivity between GREs on the same transit gateway and can reduce the need for redundant tunnel configurations. Depending on your topology, this setting can introduce meaningful changes in how routes are propagated and how traffic flows.
@@ -134,7 +134,7 @@ This configuration allows GREs to learn routes from other GREs, across zones or 
    * The local gateway IP:
       *  Must comply with [RFC 1918](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpc-connection-consideration) (or there are no floating IPs or public gateways on the VPC).
       * Must not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and can't be in conflict with any existing networks that are connected to the transit gateway.
-      * Can't be used as the `local-gateway-ip` for another GRE using the same underlay network. 
+      * Can't be used as the `local-gateway-ip` for another GRE using the same underlay network.
 
 * GRE enhanced route propagation:
 
@@ -182,7 +182,7 @@ You can connect a {{site.data.keyword.powerSys_notm}} instance to a transit gate
 The same network subnet considerations for transit gateway connections also apply to {{site.data.keyword.powerSys_notm}} connections. To ensure successful connectivity, don't use prefixes in your {{site.data.keyword.powerSys_notm}} instance that overlap with other connections. Note that Transit Gateway provides prefix filtering to limit the prefixes being exposed, as well as a routing table report to see any overlaps after the connection is created.
 {: important}
 
-## VPN gateway connection considerations 
+## VPN gateway connection considerations
 {: #vpn-connection-considerations}
 
 You can create VPN gateway connections to a transit gateway to enable on-premises or external networks to connect with other networks in {{site.data.keyword.cloud_notm}}. The VPN gateway acts as a spoke within the transit gateway architecture, enabling efficient peering across multiple networks while reducing tunnel complexity. This design uses dynamic routing with eBGP over redundant GRE tunnels to provide scalable and resilient connectivity.
@@ -197,7 +197,7 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 * When you create a VPN gateway connection, you are required to define a CIDR block for the GRE tunnel IP addresses. It is recommended to use an [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} private address range, as it does not require an additional **Delegate-VPC** route. The CIDR block must be a minimum of `/27` and must not overlap with any other connection CIDRs configured on the transit gateway.
 
    If you assign a CIDR to a VPN gateway that is outside the standard private IP ranges (`10.0.0.0/8`, `172.16.0.0/12`, or `192.168.0.0/16`), you must manually add routes in the VPC routing table (in the same zone as the VPN gateway) to enable proper traffic flow. You have two options:
-  
+
    * Add a single route with the destination set to the full VPN-assigned CIDR (for example, `100.31.128.0/18`) and action set to **Delegate-VPC**.
    * Add four separate routes, each targeting the local gateway IP of each VPN tunnel (for example, `100.31.128.1/32`) with the action set to **Delegate-VPC**.
 
