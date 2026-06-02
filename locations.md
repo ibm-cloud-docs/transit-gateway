@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-12-19"
+  years: 2020, 2026
+lastupdated: "2026-06-02"
 
 keywords: about, features, overview
 
@@ -55,6 +55,8 @@ An MZR provides consistent cloud services across different zones, better resilie
 
 | Location | Region |
 |-----------|----------|
+| Chennai- Airtel | in-che |
+| Mumbai - Airtel | in-mum |
 | Osaka  | jp-osa |
 | Sydney | au-syd |
 | Tokyo  | jp-tok |
