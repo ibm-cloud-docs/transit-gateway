@@ -82,7 +82,6 @@ You can establish connectivity from a VPC to resources in a data center by conne
 | Dallas | DAL09 |
 | London | LON02 |
 | Montreal | MON01 |
-| Paris | PAR01 |
 | San Jose | SJC03, SJC04 |
 | Singapore | SNG01 |
 {: caption="Data centers for classic Softlayer IaaS" caption-side="bottom"}
