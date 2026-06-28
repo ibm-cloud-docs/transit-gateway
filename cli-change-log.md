@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years:  2020, 2025
-lastupdated: "2025-11-05"
+  years:  2020, 2026
+lastupdated: "2026-06-28"
 
 keywords: change log for transit gateway, updates to transit gateway
 
@@ -17,6 +17,8 @@ subcollection: transit-gateway
 
 In this change log, you can learn about the latest changes, improvements, and updates for {{site.data.keyword.tg_full}}.
 
+
+
 ## 06 November 2025
 {: #cli-nov0725}
 
@@ -27,10 +29,10 @@ VPN gateway connection support
    New command option:
 
    [**`tg connection-create`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#connection-create) - Added a new network connection `vpn_gateway` with optional `--cidr` and `--zone` options that defines the IP range used to allocate addresses on the redundant GRE tunnels (default is `100.64.0.0/10`).
-    
+
    New command:
- 
-   [**`tg acc-connections`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=cli#connections-list-account-connections) - List all account connections on the transit gateway.  
+
+   [**`tg acc-connections`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=cli#connections-list-account-connections) - List all account connections on the transit gateway.
 
 ## 27 August 2025
 {: #cli-august272025}
@@ -40,7 +42,7 @@ GRE enhanced route propagation
 
    New command options:
 
-    [**`tg gateway-create`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#gateway-create) and [**`tg gateway-update`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#gateway-update) - Added a new boolean option `gre_enhanced_route_propagation` to enable or disable this feature. If not specified, the option is `false`. 
+    [**`tg gateway-create`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#gateway-create) and [**`tg gateway-update`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#gateway-update) - Added a new boolean option `gre_enhanced_route_propagation` to enable or disable this feature. If not specified, the option is `false`.
 
 ## 12 June 2024
 {: #cli-june1224}

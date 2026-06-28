@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-11-06"
+  years: 2020, 2026
+lastupdated: "2026-06-28"
 
 keywords: transit gateway api change log
 
@@ -20,6 +20,8 @@ content-type: release-note
 Check back regularly to see what's new with {{site.data.keyword.cloud}} Transit Gateway API.
 {: shortdesc}
 
+
+
 ## 06 November 2025
 {: #transit-gateway-nov0625}
 
@@ -33,7 +35,7 @@ GRE enhanced route propagation
 :    Allows routes to propagate between all GRE tunnels connected to the same transit gateway. This enables data traffic to flow between GRE tunnels that were previously isolated. GRE tunnels connected to networks that couldn’t communicate before can now exchange traffic. For more information, see [GRE enhanced route propagation considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-enhanced-route-propagation-considerations).
 
 For information about the new `gre_enhanced_route_propagation` property, see [creating a transit gateway](/apidocs/transit-gateway#create-transit-gateway) and [updating a specific transit gateway](/apidocs/transit-gateway#update-transit-gateway).
-        
+
 The API also returns the following properties on a transit gateway:
 
 * `gre_enhanced_route_propagation` - Indicates whether GRE enhanced route propagation is enabled or not.
@@ -60,7 +62,7 @@ Transit Gateway connections list supports pagination
    While the default `limit` value allows your existing clients to retrieve the entire list of connections with one request, the default `limit` value is expected to be lowered in a future release. Additionally, we expect the number of transit gateway connections will continue to increase. Therefore, to ensure your clients continue to be aware of all connections, you must upgrade your clients to follow our [pagination guidance](/apidocs/transit-gateway#api-pagination). To test that your clients have been upgraded correctly, specify a `limit` value of `1`. For more information, see [Retrieves all connections](/apidocs/transit-gateway?code=go#list-connections).
 
    The SDK automatically handles pagination. No action is necessary.
-   {: note} 
+   {: note}
 
 ## 24 June 2023
 {: #transit-gateway-ju2423}
