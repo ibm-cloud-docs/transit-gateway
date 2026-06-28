@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-06-28"
 
 keywords: updates, additions, improvements
 
@@ -93,7 +93,7 @@ Multi-account support for IBM Cloud Direct Link
  :    Transit Gateway now includes cross-account support for Direct Link connections. For more information, see [Ordering a transit gateway](/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway) and [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections).
 
 ## 30 November 2022
-{: #transit-gateway-jan2023}
+{: #transit-gateway-nov3022}
 {: release-note}
 
 Unbound GRE tunnels
