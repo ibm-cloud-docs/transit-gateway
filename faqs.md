@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-04-27"
+lastupdated: "2026-06-28"
 
 keywords: faq, faqs, questions
 
@@ -236,4 +236,4 @@ If your transit gateway doesn’t support ECMP (Equal-Cost Multi-Path Routing) a
 
  No. IBM Cloud Transit Gateway assigns a single local ASN per zone because each zone is backed by a specific data center. This means all connections within the same zone will share the same local ASN by design.
 
-If you require different local ASNs for isolation purposes (for example, per tenant), the only workaround is to create connections in different zones. Currently, the platform doesn't support assigning multiple local ASNs within a single zone.
+If you require different local ASNs for isolation purposes (for example, per tenant), the only workaround is to create connections in different zones. Currently, the platform doesn't support assigning multiple local ASNs within a single zone.[START]{: tag-purple} 
