@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2020-04-16"
+  years: 2020, 2026
+lastupdated: "2026-06-28"
 
 keywords: iam, permissions
 
@@ -17,6 +17,8 @@ subcollection: transit-gateway
 
 {{site.data.keyword.tg_full}} uses the IBM Cloud Identity and Access Management (IAM) platform access roles to manage access to the service's resources. IAM access roles allow account administrators to assign different levels of permission for using the service. The following tables provide the list of actions that you can take against the {{site.data.keyword.tg_full_notm}} service and its resources depending on a user's assigned roles.
 
+
+
 ## Platform-access roles
 {: #platform-roles-iam}
 
@@ -24,7 +26,7 @@ subcollection: transit-gateway
 
 | Role | Description of Actions |  Actions |
 |---|---|---|
-| Administrator | Can perform all actions, including managing gateways and connections, and assign {{site.data.keyword.tg_full_notm}} IAM access policies to other users. | Create gateways  \n Delete gateways  \n Edit gateways  \n Add or remove gateway connections  \n Accept or reject a cross account connection request  \n Edit gateway connections  \n Update user access policies for the service |                     |
+| Administrator | Can perform all actions, including managing gateways and connections, and assign {{site.data.keyword.tg_full_notm}} IAM access policies to other users. | Create gateways  \n Delete gateways  \n Edit gateways  \n Add or remove gateway connections  \n Accept or reject a cross account connection request  \n Edit gateway connections  \n Update user access policies for the service |
 | Editor | Can perform all actions, including managing gateways and connections, but can't assign {{site.data.keyword.tg_full_notm}} IAM access policies to other users. |Create gateways  \n Delete gateways  \n Edit gateways  \n Add or remove gateway connections  \n Accept or reject a cross account connection request  \n Edit gateway connections |
 | Operator and Viewer | Can only perform actions that don't change the state of resources. | List gateways  \n Get gateways  \n List a gateway's connections  \n View a gateway's connections  \n View incoming connection requests |
 {: caption="IAM platform-access user roles and actions" caption-side="bottom"}
