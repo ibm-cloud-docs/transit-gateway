@@ -20,7 +20,6 @@ You can request connections to networks in other {{site.data.keyword.cloud_notm}
 
 
 
-
 ## Planning considerations
 {: #tg-ca-planning}
 
