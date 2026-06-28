@@ -18,7 +18,6 @@ subcollection: transit-gateway
 In this change log, you can learn about the latest changes, improvements, and updates for {{site.data.keyword.tg_full}}.
 
 
-
 ## 06 November 2025
 {: #cli-nov0725}
 
