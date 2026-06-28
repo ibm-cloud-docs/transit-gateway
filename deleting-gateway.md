@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-01"
+  years: 2020, 2026
+lastupdated: "2026-06-28"
 
 keywords: deleting, delete
 
@@ -33,6 +33,8 @@ To delete an {{site.data.keyword.tg_full}}, follow these steps:
    * From the transit gateway's details page, click the Actions menu ![Actions menu](../../icons/action-menu-icon.svg) next to the gateway you want to delete and select **Delete**.
    * From an individual transit gateway page, select **Actions > Delete**.
 
+
+
 ## Deleting a transit gateway from the CLI
 {: #delete-gateway-cli}
 {: cli}
@@ -46,11 +48,14 @@ ibmcloud tg gateway-delete|gwd GATEWAY_ID [-f, --force] [-h, --help]
 
 Where:
 
-- **GATEWAY_ID**: ID of the gateway you want to delete.
+`GATEWAY_ID`
+:   ID of the gateway you want to delete.
 
-- **--force | -f**: Optional: Force the delete without confirmation.
+`--force | -f`
+:   Optional: Force the delete without confirmation.
 
-- **--help | -h**: Optional: Get help on this command.
+`--help | -h`
+:   Optional: Get help on this command.
 
 ### Example
 {: #tgw-delete-examples}

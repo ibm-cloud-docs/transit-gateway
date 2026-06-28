@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-01"
+  years: 2020, 2026
+lastupdated: "2026-06-28"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -43,13 +43,17 @@ ibmcloud tg connection-delete|cd GATEWAY_ID CONNECTION_ID [-f, --force] [-h, --h
 
 Where:
 
-- **GATEWAY_ID**: ID of the gateway of the connection being deleted.
+`GATEWAY_ID`
+:   ID of the gateway of the connection being deleted.
 
-- **CONNECTION_ID**: ID of the connection being deleted.
+`CONNECTION_ID`
+:   ID of the connection being deleted.
 
-- **--force | -f**: Optional: Force the delete without confirmation.
+`--force | -f`
+:   Optional: Force the delete without confirmation.
 
-- **--help | -h**: Optional: Get help on this command.
+`--help | -h`
+:   Optional: Get help on this command.
 
 ### Example
 {: #connection-delete-example}

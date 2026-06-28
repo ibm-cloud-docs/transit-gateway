@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-08-27"
+  years: 2020, 2026
+lastupdated: "2026-06-28"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -29,16 +29,16 @@ To change your transit gateway configuration in the UI, follow these steps:
 
 1. From the Connections page, click **Actions** in the upper right, then select **Edit**.
 
-   From here, you can change the gateway's name and its routing type (Local or Global). You can also enable or disable route propagation across all GREs connected to the same transit gateway. 
-    
-    Changes to route propagation or routing type can take several minutes to apply, depending on the number of existing connections.
-    {: note}
+   From here, you can change the gateway's name and its routing type (Local or Global). You can also enable or disable route propagation across all GREs connected to the same transit gateway.
+
+   Changes to route propagation or routing type can take several minutes to apply, depending on the number of existing connections.
+   {: note}
 
    Important routing type considerations:
 
    * To switch to a different routing type, you must delete any connections that aren't local to the transit gateway’s location.
-   * When you change from Local to Global routing for a specific transit gateway, you are charged for all associated connection traffic. 
-   * The transit gateway must have fewer than 30 connections to change the routing type.    
+   * When you change from Local to Global routing for a specific transit gateway, you are charged for all associated connection traffic.
+   * The transit gateway must have fewer than 30 connections to change the routing type.
 
 ## Changing your configuration from the CLI
 {: #change-configuration-cli}
@@ -47,23 +47,29 @@ To change your transit gateway configuration in the UI, follow these steps:
 To update properties on an existing gateway from the CLI, run the following command:
 
 ```sh
-ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING][--gre_enhanced_route_propagation] [--output json] [-h, --help]
+ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--redundancy-group GROUP_NAME][--gre_enhanced_route_propagation] [--output json] [-h, --help]
 ```
 {: pre}
 
 Where:
 
-- **GATEWAY_ID**: ID of the gateway you want to update.
+`GATEWAY_ID`
+:   ID of the gateway you want to update.
 
-- **--name**: Optional: New name of the gateway.
+`--name`
+:   Optional: New name of the gateway.
 
-- **--routing**: Optional: Gateway routing of resources (`global` | `local`). Select `global` to connect resources across regions. Changing routing from `global` to `local` requires all existing connections to be local.
+`--routing`
+:   Optional: Gateway routing of resources (`global` | `local`). Select `global` to connect resources across regions. Changing routing from `global` to `local` requires all existing connections to be local.
 
-- **--gre-enhanced-route-propagation**: Optional: Specify whether you want enable or disable route propagation across all GREs connected to the same transit gateway. One of: `true` or `false` (default)
+`--gre-enhanced-route-propagation`
+:   Optional: Specify whether you want enable or disable route propagation across all GREs connected to the same transit gateway. One of: `true` or `false` (default)
 
-- **--output JSON**: Optional: Specify whether you want the output that is displayed in JSON format.
+`--output json`
+:   Optional: Specify whether you want the output displayed in JSON format.
 
-- **--help | -h**: Optional: Get help on this command.
+`--help | -h`
+:   Optional: Get help on this command.
 
 ### Example
 {: #gateway-update-example}
@@ -92,9 +98,12 @@ PATCH /transit_gateways/{id}
 {
   "global": true,
   "name": "my-transit-gateway"
-}
++ ,
+
 ```
 {: pre}
+
+
 
 ### Example Response
 {: #change-configuration-api-response-example}
@@ -141,11 +150,11 @@ This example illustrates changing the configuration of your transit gateway:
 
 ```sh
 resource "ibm_tg_gateway" "new_tg_gw"{
-name="transit-gateway-1"
-location="us-south"
-global=true
-gre_enhanced_route_propagation=false
-resource_group="30951d2dff914dafb26455a88c0c0092"
+ name="transit-gateway-1"
+ location="us-south"
+ global=true
+ gre_enhanced_route_propagation=false
+ resource_group="30951d2dff914dafb26455a88c0c0092"
 }
 ```
 {: pre}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-01"
+  years: 2020, 2026
+lastupdated: "2026-06-28"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -45,15 +45,20 @@ ibmcloud tg connection-update|cu GATEWAY_ID CONNECTION_ID --name NAME [--output 
 
 Where:
 
-- **GATEWAY_ID**: ID of the gateway the connection being updated is on.
+`GATEWAY_ID`
+:   ID of the gateway the connection being updated is on.
 
-- **CONNECTION_ID**: ID of the connection to update.
+`CONNECTION_ID`
+:   ID of the connection to update.
 
-- **--name**: New name of the connection.
+`--name`
+:   New name of the connection.
 
-- **--output json**: Optional: Specify if you want the output displayed in JSON format.
+`--output json`
+:   Optional: Specify if you want the output displayed in JSON format.
 
-- **--help | -h**: Optional: Get help on this command.
+`--help | -h`
+:   Optional: Get help on this command.
 
 ### Example
 {: #editing-connections-cli-example}

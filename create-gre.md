@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-01"
+  years: 2020, 2026
+lastupdated: "2026-06-28"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -68,27 +68,38 @@ ibmcloud tg connection-create-gre|ccgre GATEWAY_ID --name NAME --zone ZONE --bas
 
 Where:
 
-- **GATEWAY_ID**: ID of the gateway where the new connection is bound.
+`GATEWAY_ID`
+:   ID of the gateway where the new connection is bound.
 
-- **--name**: Name of the new connection.
+`--name`
+:   Name of the new connection.
 
-- **--zone**: Availability zone for the GRE tunnel. Example: `us-south-1`
+`--zone`
+:   Availability zone for the GRE tunnel. Example: `us-south-1`
 
-- **--base-connection-id**: ID of the classic network connection that will be the underlay for the GRE tunnel.
+`--base-connection-id`
+:   ID of the classic network connection that will be the underlay for the GRE tunnel.
 
-- **--local-gateway-ip**: Local gateway IP address for the GRE tunnel connection.
+`--local-gateway-ip`
+:   Local gateway IP address for the GRE tunnel connection.
 
-- **--local-tunnel-ip**: Local tunnel IP address for the GRE tunnel connection.
+`--local-tunnel-ip`
+:   Local tunnel IP address for the GRE tunnel connection.
 
-- **--remote-gateway-ip**: Remote gateway IP address for the GRE tunnel connection.
+`--remote-gateway-ip`
+:   Remote gateway IP address for the GRE tunnel connection.
 
-- **--local-tunnel-ip**: Remote tunnel IP address for the GRE tunnel connection.
+`--remote-tunnel-ip`
+:   Remote tunnel IP address for the GRE tunnel connection.
 
-- **--remote-bgp-asn**: Optional: If the remote BGP ASN is not specified, one is generated.
+`--remote-bgp-asn`
+:   Optional: If the remote BGP ASN is not specified, one is generated.
 
-- **--output json**: Optional: Shows the output in JSON format.
+`--output json`
+:   Optional: Shows the output in JSON format.
 
-- **--help | -h**: Optional: Get help on this command.
+`--help | -h`
+:   Optional: Get help on this command.
 
 ### Example
 {: #connection-create-gre-example}

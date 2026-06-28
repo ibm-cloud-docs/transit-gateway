@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-06-28"
 
 keywords: features, overview
 
@@ -17,6 +17,8 @@ subcollection: transit-gateway
 
 You can add a connection to a transit gateway by using the UI, CLI, API, and Terraform.
 {: shortdesc}
+
+ 
 
 ## Adding a connection in the UI
 {: #tg-ui-adding-connection-transit-gateway}
@@ -46,10 +48,13 @@ To add a connection to a transit gateway, follow these steps:
       {: note}
 
    * **Redundant GRE tunnel** allows unbound GRE tunnels to connect to endpoints in either VPC or classic infrastructure networks, thus allowing you to build in redundancy for GRE tunnels. For more information, see [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection).
- 
+
    * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. For more information, see [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).
 
    * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
+
+   
+
    * **VPN gateway** connections link on-premises or external networks with IBM Cloud by attaching a VPN gateway as a spoke to a transit gateway. These connections use redundant GRE tunnels and dynamic routing with eBGP to enable efficient and scalable network integration. For more information, see [Creating a VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway&interface=ui).
 
 1. Optionally, create prefix filters to set an ordered list of filters that determine the routes your transit gateway should accept or deny. For more information, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters&interface=ui).
@@ -60,8 +65,8 @@ To add a connection to a transit gateway, follow these steps:
 
       * For **{{site.data.keyword.powerSys_notm}}**, select a location for the {{site.data.keyword.powerSys_notm}} workspace. Then, select from the list of  {{site.data.keyword.powerSys_notm}} workspaces that are enabled for Transit Gateway. Keep in mind that not all {{site.data.keyword.powerSys_notm}} workspaces show in this menu.
 
-      * For **VPN gateway**, first select the region where your VPN gateway is deployed. Then, select from the available VPN gateways that support dynamic routing. 
-      
+      * For **VPN gateway**, first select the region where your VPN gateway is deployed. Then, select from the available VPN gateways that support dynamic routing.
+
          You must specify a custom CIDR block for the connection. The CIDR defines the IP range used to allocate addresses on the redundant GRE tunnels and must use [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} private address space, be at least a `/27` subnet, and must not overlap with other connection CIDRs on the transit gateway.
 
          Only VPN gateways with dynamic routing enabled are shown in the Available connections list. The selected region and zone determine which Transit Gateway routers the VPN gateway connects to.
@@ -69,7 +74,7 @@ To add a connection to a transit gateway, follow these steps:
 
          Specifying a zone is optional if the VPN gateway and the transit gateway are in the same multi-zone region (MZR); in that case, the connection uses the VPN gateway’s zone.
          {: attention}
- 
+
    * **Request connection to a network in another account** - Enter either the IBM Cloud ID or Cloud Resource Name (CRN) of the account that manages the network where you want to connect. Then, complete any remaining information. All resources connected to that transit gateway will be accessible from the other network. For more information, including how to obtain the Cloud ID or CRN, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
 
       * IBM Cloud ID - Required by **Classic infrastructure** and **Unbound GRE tunnel**.
@@ -134,16 +139,16 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID 
 :   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, `vpn_gateway`, and `vpc`.
 
 `--network-account-id`
-:   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account. 
+:   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account.
 
 `--zone`
-:   Optional: Availability zone where a GRE tunnel or VPN connection will be deployed. Only applicable to the `vpn_gateway` network type. 
+:   Optional: Availability zone where a GRE tunnel or VPN connection will be deployed. Only applicable to the `vpn_gateway` network type.
 
 `--default-prefix-filter`
-:   Optional: Default prefix filter of the connection (`permit` | `deny`). 
+:   Optional: Default prefix filter of the connection (`permit` | `deny`).
 
 `--cidr`
-:   Optional: CIDR block to use for the connection. Only applicable to the `vpn_gateway` network type. 
+:   Optional: CIDR block to use for the connection. Only applicable to the `vpn_gateway` network type.
 
 `--output json`
 :   Optional: Specify whether you want the output displayed in JSON format.

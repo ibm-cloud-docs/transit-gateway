@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-29"
+lastupdated: "2026-06-28"
 
 keywords:
 
@@ -73,21 +73,29 @@ ibmcloud tg prefix-filter-create GATEWAY_ID CONNECTION_ID --prefix PREFIX --acti
 
 Where:
 
-- **GATEWAY_ID**: ID of the gateway that the prefix filter is being applied to.
+`GATEWAY_ID`
+:   ID of the gateway that the prefix filter is being applied to.
 
-- **CONNECTION_ID**: ID of the connection that the prefix filter is being applied to.
+`CONNECTION_ID`
+:   ID of the connection that the prefix filter is being applied to.
 
-- **--prefix**: Network prefix that the filter will be applied to.
+`--prefix`
+:   Network prefix that the filter will be applied to.
 
-- **--action**: Action to take on the specified prefix (`permit` | `deny`).
+`--action`
+:   Action to take on the specified prefix (`permit` | `deny`).
 
-- **--le**: Optional: The prefix filter is applied to a subnet mask less than or equal to this value.
+`--le`
+:   Optional: The prefix filter is applied to a subnet mask less than or equal to this value.
 
-- **--ge**: Optional: The prefix filter is applied to a subnet mask greater than or equal to this value.
+`--ge`
+:   Optional: The prefix filter is applied to a subnet mask greater than or equal to this value.
 
-- **--before**: Optional: Identifier of the prefix filter that this filter should be applied before. If empty, this filter is applied last.
+`--before`
+:   Optional: Identifier of the prefix filter that this filter should be applied before. If empty, this filter is applied last.
 
-- **--output**: Optional: Specify whether you want the output to display in JSON format. All details are displayed.
+`--output json`
+:   Optional: Specify whether you want the output to display in JSON format. All details are displayed.
  
 ### Example: Creating a prefix filter
 {: #adding-prefix-filters-cli-example}
@@ -121,13 +129,17 @@ ibmcloud tg prefix-filter-delete GATEWAY_ID CONNECTION_ID FILTER_ID [-f, --force
 
 Where:
 
-- **GATEWAY_ID**: ID of the gateway that the prefix filter will be deleted from.
+`GATEWAY_ID`
+:   ID of the gateway that the prefix filter will be deleted from.
 
-- **CONNECTION_ID**: ID of the connection that the prefix filter will be deleted from.
+`CONNECTION_ID`
+:   ID of the connection that the prefix filter will be deleted from.
 
-- **FILTER_ID**: ID of the prefix filter that is being deleted.
+`FILTER_ID`
+:   ID of the prefix filter that is being deleted.
 
-- **--force, -f**: Force the deletion operation without confirmation.
+`--force | -f`
+:   Force the deletion operation without confirmation.
 
 ### Example: Deleting a prefix filter
 {: #deleting-prefix-filters-cli-example}
