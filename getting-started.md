@@ -32,7 +32,7 @@ With {{site.data.keyword.tg_full_notm}}, you can connect:
 * Network resources across multiple IBM Cloud accounts (with appropriate access authorization)
 
 ## Procedure
-{: #getting-started}
+{: #getting-started-procedure}
 
 To get started using {{site.data.keyword.tg_full_notm}}:
 
