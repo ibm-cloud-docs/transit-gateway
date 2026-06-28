@@ -31,6 +31,8 @@ With {{site.data.keyword.tg_full_notm}}, you can connect:
 * External networks by using Generic Routing Encapsulation (GRE) tunnels
 * Network resources across multiple IBM Cloud accounts (with appropriate access authorization)
 
+
+
 ## Procedure
 {: #getting-started-procedure}
 
