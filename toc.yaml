@@ -107,7 +107,7 @@ toc:
       id: help
       topics:
       - topic: faqs.md
-        navtitle: FAQs
+        navtitle: FAQ
       - topicgroup:
           label: Troubleshooting
           topics:
