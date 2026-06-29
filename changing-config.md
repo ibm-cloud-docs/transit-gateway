@@ -109,7 +109,8 @@ PATCH /transit_gateways/{id}
 "{base_url}/transit_gateways/{id}?version={version}"
 {
   "global": true,
-  "name": "my-transit-gateway",
+  "name": "my-transit-gateway"
+}
 ```
 {: pre}
 
@@ -143,7 +144,7 @@ This response indicates that the transit gateway was updated successfully:
 For more information, see [Updates specified Transit Gateway](/apidocs/transit-gateway#update-transit-gateway) in the Transit Gateway API reference.
 {: note}
 
-## Changing your configuration by using the Terraform
+## Changing your configuration by using Terraform
 {: #change-configuration-terraform}
 {: terraform}
 
