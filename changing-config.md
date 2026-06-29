@@ -30,7 +30,7 @@ To change your transit gateway configuration in the UI, follow these steps:
 
    If you are in the expanded view, click **View details**.
 
-1. From the Connections page, click **Actions** in the upper right, then select **Edit**.
+1. From the Connections page, click **Actions**, then select **Edit**.
 
    From here, you can:
 
@@ -40,7 +40,7 @@ To change your transit gateway configuration in the UI, follow these steps:
       Changes to route propagation or routing type can take several minutes to apply, depending on the number of existing connections.
 
 
-   Important routing type considerations:
+   Routing type considerations:
 
    * To switch to a different routing type, you must delete any connections that aren't local to the transit gateway’s location.
    * When you change from Local to Global routing for a specific transit gateway, you are charged for all associated connection traffic.
@@ -97,7 +97,7 @@ ibmcloud tg gwu $gateway --routing global
 
 You can update your transit gateway's name, global parameters, or both with the API.
 
-### Example Request
+### Example request
 {: #change-configuration-api-request-example}
 
 This example illustrates changing your configuration with the API:
@@ -119,7 +119,7 @@ PATCH /transit_gateways/{id}
 
 
 
-### Example Response
+### Example response
 {: #change-configuration-api-response-example}
 
 This response indicates that the transit gateway was updated successfully:
