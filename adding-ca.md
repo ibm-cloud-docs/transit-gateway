@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-28"
+lastupdated: "2026-06-29"
 
 keywords:
 
@@ -280,7 +280,7 @@ This example illustrates a Status 403 response in which the caller is not author
 ```
 {: pre}
 
-## Adding a connection with Terraform
+## Adding a cross-account connection with Terraform
 {: #tg-terraform-adding-cross-connection-transit-gateway}
 {: terraform}
 
