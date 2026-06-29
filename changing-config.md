@@ -106,11 +106,10 @@ PATCH /transit_gateways/{id}
 "{base_url}/transit_gateways/{id}?version={version}"
 {
   "global": true,
-  "name": "my-transit-gateway"
-+ ,
-
+  "name": "my-transit-gateway",
 ```
 {: pre}
+
 
 
 
