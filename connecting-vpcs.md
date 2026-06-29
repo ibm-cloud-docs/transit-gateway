@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-28"
+lastupdated: "2026-06-29"
 
 keywords: connecting, region, order
 
@@ -146,16 +146,18 @@ export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 
 To create a transit gateway from the CLI, enter the following command:
 
-```sh
 
+```sh
 ibmcloud tg gateway-create|gwc --name NAME --location LOCATION \
 [--routing ROUTING] \
-[--redundancy-group GROUP_NAME] \
 [--gre-enhanced-route-propagation true | false] \
 [--resource-group-id RES_GROUP_ID] \
 [--output json] [-h, --help]
 ```
 {: pre}
+
+
+
 
 Where:
 
@@ -200,6 +202,7 @@ Follow these steps to create a transit gateway with the API:
 1. Store any additional variables to be used in the API commands.
 1. When all variables are initiated, create the transit gateway:
 
+   
    ```sh
    curl -X POST --location --header "Authorization: Bearer {iam_token}" \
    --header "Accept: application/json" \
@@ -208,11 +211,15 @@ Follow these steps to create a transit gateway with the API:
      "location": "us-south",
      "name": "Transit_Service_BWTN_SJ_DL",
      "global": true,
-     "redundancy_group": "group1"
    }' \
    "{base_url}/transit_gateways?version={version}"
    ```
    {: pre}
+   
+
+   
+
+   
 
 For more information, see [Creates a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway) in the Transit Gateway API reference.
 {: note}
