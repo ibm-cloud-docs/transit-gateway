@@ -73,7 +73,7 @@ Where:
 :   Optional: Gateway routing of resources (`global` | `local`). Select `global` to connect resources across regions. Changing routing from `global` to `local` requires all existing connections to be local.
 
 `--gre-enhanced-route-propagation`
-:   Optional: Specify whether you want enable or disable route propagation across all GREs connected to the same transit gateway. One of: `true` or `false` (default)
+:   Optional: Specify whether you want to enable or disable route propagation across all GREs connected to the same transit gateway. One of: `true` or `false` (default)
 
 `--output json`
 :   Optional: Specify whether you want the output displayed in JSON format.
