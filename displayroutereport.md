@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-09-29"
+  years: 2020, 2026
+lastupdated: "2026-06-29"
 
 keywords: route report
 
@@ -15,7 +15,8 @@ subcollection: transit-gateway
 # Generating a route report
 {: #route-reports}
 
-You can request a report of all routes known to a transit gateway and each of its connections. The report shows  Border Gateway Protocol (BGP) information associated with these routes, which connections supply which routes, and overlapping routes.
+You can request a report of all routes known to a transit gateway and each of its connections. The report shows Border Gateway Protocol (BGP) information associated with these routes, which connections supply which routes, and overlapping routes.
+{: shortdesc}
 
 You can retrieve a route report by using the UI, CLI, or API.
 
@@ -118,7 +119,7 @@ To generate and view a route report with the API, follow these steps:
    ```
    {: pre}
 
-   For the rest of the calls, you'll need to know the ID of the newly created report. Save the ID in a variable, for example:
+   For the rest of the calls, you need to know the ID of the newly created report. Save the ID in a variable, for example:
 
    ```sh
    route_report="22222222-c540-4766-a196-14368f328eb2"

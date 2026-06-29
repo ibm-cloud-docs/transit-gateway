@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-05-19"
+lastupdated: "2026-06-29"
 
 keywords: help, tips, connections, provision
 
@@ -27,7 +27,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 * {{site.data.keyword.tg_full_notm}} supports provisioning transit gateways in the regions listed in [IBM Cloud Transit Gateway locations](/docs/transit-gateway?topic=transit-gateway-tg-locations).
 * Create your transit gateway in a location that makes sense for your workload. For example, if you are connecting two VPCs in the `us-south` (Dallas) region and one VPC in the `eu-de` (Frankfurt) region, creating your gateway in `us-south` region would be the most efficient for your workload.
 * You can't connect a [classic access VPC](/docs/vpc?topic=vpc-setting-up-access-to-classic-infrastructure) directly to a transit gateway. To connect the classic resources, use the {{site.data.keyword.cloud_notm}} classic infrastructure connection, and then all the resources in your classic access VPC are automatically connected.
-*  A transit gateway requires at least two connections before network traffic can flow over the transit gateway. Transit gateways that have less than two connections for 45 days or more are subject to be reclaimed (suspended, then deleted after 30 days).
+* A transit gateway requires at least two connections before network traffic can flow over the transit gateway. Transit gateways that have less than two connections for 45 days or more are subject to be reclaimed (suspended, then deleted after 30 days).
 * You can connect a VPC, Direct Link, or classic infrastructure to multiple local gateways and a single global gateway.
 * Transit gateways and their connections can take several minutes after provisioning before they are available.
 * Be descriptive when naming your transit gateway connections. When connecting to resources across accounts, you must specify a connection name. When connecting to resources in the same account as the transit gateway, the VPC name or the word 'classic' is the default selection and can be modified.
@@ -39,12 +39,12 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 ## ECMP considerations
 {: #ecmp-considerations}
 
-   * When planning for ECMP (Equal-Cost Multi-Path), keep in mind that throughput won't scale linearly with the number of direct links. For example, if you connect two 10 GB direct links to an ECMP-capable transit gateway, you won’t get 20 GB throughput; you'll see more than 10 GB, but less than 20 GB. This is because ECMP works on a per-stream or per-source basis, meaning if traffic comes from a single endpoint, it will likely favor one link, not both. To achieve more balanced throughput, it's recommended to drive traffic from multiple sources, as this will distribute the load more evenly across the available direct links.
-   * Limitation: ECMP doesn't work for direct links on a single router. Instead, it is supported across multiple routers with direct links, as long as those routers are advertising the same prefix.
-   * Known restriction: New transit gateways support 4-way ECMP, but existing gateways can't use this feature unless you [open a support case](/docs/account?topic=account-open-case&interface=ui) for assistance.
+* When planning for ECMP (Equal-Cost Multi-Path), keep in mind that throughput does not scale linearly with the number of direct links. For example, if you connect two 10 GB direct links to an ECMP-capable transit gateway, you do not get 20 GB throughput; you see more than 10 GB, but less than 20 GB. This is because ECMP works on a per-stream or per-source basis, meaning if traffic comes from a single endpoint, it likely favors one link, not both. To achieve more balanced throughput, it is recommended to drive traffic from multiple sources, as this distributes the load more evenly across the available direct links.
+* Limitation: ECMP doesn't work for direct links on a single router. Instead, it is supported across multiple routers with direct links, as long as those routers are advertising the same prefix.
+* Known restriction: New transit gateways support 4-way ECMP, but existing gateways can't use this feature unless you [open a support case](/docs/account?topic=account-open-case&interface=ui) for assistance.
 
-      If you don't want the ECMP feature enabled on your transit gateways, you can open a support case to be added to a denylist, which will disable this feature on your gateways.
-      {: note}
+   If you don't want the ECMP feature enabled on your transit gateways, you can open a support case to be added to a denylist, which will disable this feature on your gateways.
+   {: note}
 
 ## Pricing considerations
 {: #pricing-considerations}
@@ -152,7 +152,7 @@ This configuration allows GREs to learn routes from other GREs, across zones or 
 If you require network isolation, consider using separate transit gateways.
 {: tip}
 
-* Do not require a classic connection on the transit gateway. Classic network subnets won't be advertised to the connections on the transit gateway (or vice versa).
+* Do not require a classic connection on the transit gateway. Classic network subnets are not advertised to the connections on the transit gateway (or vice versa).
 * The default number of unique base networks that can be targeted by unbound GRE tunnels is limited to five. You can open an [IBM Support case](/docs/account?topic=account-using-avatar#using-avatar) if you need these service limits expanded.
 
 For more information and a use case example, see [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).
@@ -160,7 +160,7 @@ For more information and a use case example, see [Connect networks using a High 
 ### Legacy GRE considerations
 {: #legacy-gre-connection-considerations}
 
-* Classic routes are not advertised through a traditional GRE tunnel.
+* Classic routes are not advertised through a legacy GRE tunnel.
 * Can't communicate through other GRE tunnels on the same transit gateway.
 * Require a classic connection on the transit gateway before creation. As a result, all classic subnets will be advertised to all connections attached to the transit gateway, as well as any other of the connection's subnets on the classic network.
 
@@ -175,7 +175,7 @@ The same network subnet considerations for transit gateway connections also appl
 ## {{site.data.keyword.powerSys_notm}} connection considerations
 {: #power-considerations}
 
-You can connect a {{site.data.keyword.powerSys_notm}} instance to a transit gateway. This allows you to directly attach the {{site.data.keyword.powerSys_notm}} to a downstream transit gateway. After the {{site.data.keyword.powerSys_notm}} is connected to the transit gateway, your {{site.data.keyword.powerSys_notm}} service instance then has have access to all downstream transit gateway resources and services. Likewise, all downstream networks connected to the transit gateway will have access to the {{site.data.keyword.powerSys_notm}} instance.
+You can connect a {{site.data.keyword.powerSys_notm}} instance to a transit gateway. This allows you to directly attach the {{site.data.keyword.powerSys_notm}} to a downstream transit gateway. After the {{site.data.keyword.powerSys_notm}} is connected to the transit gateway, your {{site.data.keyword.powerSys_notm}} service instance has access to all downstream transit gateway resources and services. Likewise, all downstream networks connected to the transit gateway have access to the {{site.data.keyword.powerSys_notm}} instance.
 
 {{site.data.keyword.powerSys_notm}} connections can use Local or Global routing. However, only {{site.data.keyword.powerSys_notm}} instances in the same region as the transit gateway can use local routing. Also, a {{site.data.keyword.powerSys_notm}} instance can be connected to multiple transit gateways with local routing, but only one transit gateway with global routing. Downstream services will honor route preference based on the transit gateway type.
 
@@ -233,9 +233,11 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 
 * You can edit a gateway's routing type after it is provisioned. However, to change the routing type from **Global** to **Local**, you must first remove any global connections (that is, connections to resources that are not in the same location as the gateway). Note that connections to the IBM Cloud classic infrastructure are always considered Local.
 
-* When changing from **Local** to **Global** routing, you will be charged for all associated global connections. There is no impact to the network traffic when the routing type is changed.
+* When changing from **Local** to **Global** routing, you are charged for all associated global connections. There is no impact to the network traffic when the routing type is changed.
 
 {{site.data.content.reuse-route-report-considerations}}
+
+
 
 ## Service limits
 {: #service-limits}

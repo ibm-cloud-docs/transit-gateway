@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-06-29"
 
 keywords:
 
@@ -18,6 +18,8 @@ subcollection: transit-gateway
 You can request connections to networks in other {{site.data.keyword.cloud_notm}} accounts, by using the UI, CLI, API, and Terraform.
 {: shortdesc}
 
+
+
 ## Planning considerations
 {: #tg-ca-planning}
 
@@ -29,7 +31,7 @@ Before you add a cross-account connection, review these considerations:
    * {{site.data.keyword.dl_full_notm}}
    * {{site.data.keyword.powerSysFull}}
    * Redundant GRE
-   * Unbound GRE tunnel   
+   * Unbound GRE tunnel
    * VPC
    * VPN gateway
 
@@ -278,7 +280,7 @@ This example illustrates a Status 403 response in which the caller is not author
 ```
 {: pre}
 
-## Adding a connection with Terraform
+## Adding a cross-account connection with Terraform
 {: #tg-terraform-adding-cross-connection-transit-gateway}
 {: terraform}
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-01"
+  years: 2020, 2026
+lastupdated: "2026-06-29"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -38,7 +38,7 @@ To migrate from a GRE tunnel to an unbound GRE tunnel:
 
 1. [Create the new unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection&interface=ui).
 
-Transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point to point connection, has no built in redundancy, and is a single point of failure. When configuring a GRE connection on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections using different availability zones.
+Transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point-to-point connection, has no built-in redundancy, and is a single point of failure. When configuring a GRE connection on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections by using different availability zones.
 {: note}
 
 ## Before you begin
@@ -68,27 +68,38 @@ ibmcloud tg connection-create-gre|ccgre GATEWAY_ID --name NAME --zone ZONE --bas
 
 Where:
 
-- **GATEWAY_ID**: ID of the gateway where the new connection is bound.
+`GATEWAY_ID`
+:   ID of the gateway where the new connection is bound.
 
-- **--name**: Name of the new connection.
+`--name`
+:   Name of the new connection.
 
-- **--zone**: Availability zone for the GRE tunnel. Example: `us-south-1`
+`--zone`
+:   Availability zone for the GRE tunnel. Example: `us-south-1`
 
-- **--base-connection-id**: ID of the classic network connection that will be the underlay for the GRE tunnel.
+`--base-connection-id`
+:   ID of the classic network connection that will be the underlay for the GRE tunnel.
 
-- **--local-gateway-ip**: Local gateway IP address for the GRE tunnel connection.
+`--local-gateway-ip`
+:   Local gateway IP address for the GRE tunnel connection.
 
-- **--local-tunnel-ip**: Local tunnel IP address for the GRE tunnel connection.
+`--local-tunnel-ip`
+:   Local tunnel IP address for the GRE tunnel connection.
 
-- **--remote-gateway-ip**: Remote gateway IP address for the GRE tunnel connection.
+`--remote-gateway-ip`
+:   Remote gateway IP address for the GRE tunnel connection.
 
-- **--local-tunnel-ip**: Remote tunnel IP address for the GRE tunnel connection.
+`--remote-tunnel-ip`
+:   Remote tunnel IP address for the GRE tunnel connection.
 
-- **--remote-bgp-asn**: Optional: If the remote BGP ASN is not specified, one is generated.
+`--remote-bgp-asn`
+:   Optional: If the remote BGP ASN is not specified, one is generated.
 
-- **--output json**: Optional: Shows the output in JSON format.
+`--output json`
+:   Optional: Shows the output in JSON format.
 
-- **--help | -h**: Optional: Get help on this command.
+`--help | -h`
+:   Optional: Get help on this command.
 
 ### Example
 {: #connection-create-gre-example}
@@ -128,7 +139,7 @@ The payload for this request is as follows:
   "remote_tunnel_ip": "192.168.129.1"
 }
 ```
-{: pre}
+{: screen}
 
 ### Example Response
 {: #add-gre-connection-curl-api-response-example}
@@ -175,7 +186,7 @@ You can specify the following argument references for your resource when creatin
 
 This example illustrates requesting a GRE tunnel connection:
 
-```sh
+```terraform
 resource "ibm_tg_connection" "test_ibm_tg_connection" {
   gateway            = ibm_tg_gateway.test_tg_gateway.id
   network_type       = "gre_tunnel"
@@ -189,4 +200,4 @@ resource "ibm_tg_connection" "test_ibm_tg_connection" {
   zone               = us-east
 }
 ```
-{: pre}
+{: codeblock}

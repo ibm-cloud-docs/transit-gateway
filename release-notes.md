@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-06-29"
 
 keywords: updates, additions, improvements
 
@@ -93,13 +93,13 @@ Multi-account support for IBM Cloud Direct Link
  :    Transit Gateway now includes cross-account support for Direct Link connections. For more information, see [Ordering a transit gateway](/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway) and [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections).
 
 ## 30 November 2022
-{: #transit-gateway-jan2023}
+{: #transit-gateway-nov3022}
 {: release-note}
 
 Unbound GRE tunnels
 :    You can now use an unbound Generic Routing Encapsulation (GRE) tunnel transit gateway connection to connect endpoints, which allows a transit gateway to connect to overlay networks hosted on classic infrastructure resource. Unbound GRE tunnels have the following advantages over legacy GRE tunnels:
    * The ability to receive classic network subnets from a classic connection.
    * The ability to communicate through other unbound GRE tunnels on the same transit gateway.
-   * Do not require a classic connection on the transit gateway. The classic network's subnets will not be advertised to all the connections on the transit gateway and vice versa.
+   * Do not require a classic connection on the transit gateway. The classic network's subnets are not advertised to all the connections on the transit gateway and vice versa.
 
 :    For more information, see [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).

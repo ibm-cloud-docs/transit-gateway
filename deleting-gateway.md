@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-01"
+  years: 2020, 2026
+lastupdated: "2026-06-29"
 
 keywords: deleting, delete
 
@@ -16,6 +16,9 @@ subcollection: transit-gateway
 {: #delete-gateway}
 {: help}
 {: support}
+
+You can delete a transit gateway and its connections by using the UI, CLI, API, or Terraform.
+{: shortdesc}
 
 ## Deleting a transit gateway in the UI
 {: #delete-gateway-ui}
@@ -33,6 +36,8 @@ To delete an {{site.data.keyword.tg_full}}, follow these steps:
    * From the transit gateway's details page, click the Actions menu ![Actions menu](../../icons/action-menu-icon.svg) next to the gateway you want to delete and select **Delete**.
    * From an individual transit gateway page, select **Actions > Delete**.
 
+
+
 ## Deleting a transit gateway from the CLI
 {: #delete-gateway-cli}
 {: cli}
@@ -46,11 +51,14 @@ ibmcloud tg gateway-delete|gwd GATEWAY_ID [-f, --force] [-h, --help]
 
 Where:
 
-- **GATEWAY_ID**: ID of the gateway you want to delete.
+`GATEWAY_ID`
+:   ID of the gateway you want to delete.
 
-- **--force | -f**: Optional: Force the delete without confirmation.
+`--force | -f`
+:   Optional: Force the delete without confirmation.
 
-- **--help | -h**: Optional: Get help on this command.
+`--help | -h`
+:   Optional: Get help on this command.
 
 ### Example
 {: #tgw-delete-examples}
@@ -74,7 +82,7 @@ To delete a transit gateway with the API, follow these steps:
 ### Example Request
 {: #delete-gateway-api-request-example}
 
-This example iiilustrates a transit gateway deletion request:
+This example illustrates a transit gateway deletion request:
 
 ```sh
 curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/$TRANSIT_GATEWAY_ID?version=2022-02-10" -H "accept: */*"
@@ -98,7 +106,7 @@ This example illustrates that the transit gateway could not be found, leading to
   "trace": "request_id"
 }
 ```
-{: pre}
+{: screen}
 
 For more information, see [Deletes specified Transit Gateway](/apidocs/transit-gateway#delete-transit-gateway) in the Transit Gateway API reference.
 {: note}
@@ -116,7 +124,7 @@ terraform destroy -target=resource_type.resource_name
 
 Where:
 
-- **resource_type**: ibm_tg_gateway
+- **resource_type**: `ibm_tg_gateway`
 
 - **resource_name**: Name of transit gateway
 

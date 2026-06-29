@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-06-29"
 
 keywords: about, features, overview
 
@@ -31,7 +31,7 @@ An MZR provides consistent cloud services across different zones, better resilie
 |-----------|----------|
 | Dallas | us-south |
 | Montreal | ca-mon |
-| San Paulo | br-sao |
+| São Paulo | br-sao |
 | Toronto | ca-tor |
 | Washington DC | us-east |
 {: caption="MZRs in North and South America" caption-side="bottom"}

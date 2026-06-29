@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-06-29"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -332,7 +332,7 @@ To use Terraform, download the Terraform CLI and configure the {{site.data.keywo
 
 The following example illustrates creating a redundant GRE and adding its tunnels using Terraform:
 
-```sh
+```terraform
 resource "ibm_tg_connection" "test_ibm_tg_rgre_connection" {
   gateway      = ibm_tg_gateway.test_tg_gateway.id
   name = redundant_ugre_vpc
@@ -357,7 +357,7 @@ resource "ibm_tg_connection" "test_ibm_tg_rgre_connection" {
          }
 }
 ```
-{: pre}
+{: codeblock}
 
 For more information, see the [Terraform registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection){: external}.
 

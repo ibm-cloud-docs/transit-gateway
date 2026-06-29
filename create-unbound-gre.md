@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-06-29"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -25,7 +25,7 @@ Before creating an unbound GRE tunnel, review
 [GRE connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-considerations)
 for additional prerequisites.
 
-Unbound transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point-to-point connection, has no built in redundancy, and is a single point of failure. When configuring an unbound GRE tunnel on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections using different availability zones.
+Unbound transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point-to-point connection, has no built-in redundancy, and is a single point of failure. When configuring an unbound GRE tunnel on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections by using different availability zones.
 {: important}
 
 Keep in mind that you are required to enter four IP addresses when you create an unbound GRE tunnel. These are:
@@ -75,7 +75,6 @@ To create an unbound GRE tunnel, follow these steps:
    {: tip}
 
 1. Select the base network type (**Classic infrastructure**) and whether this is a connection to a network in another account.
-1. Select the base network type and whether this is a connection to a network in another account.
 1. If this connection is to a network in another account, enter the account ID.
 1. Choose an availability zone in which to create the tunnel.
 1. Configure the remaining parameters for the connection:
@@ -94,7 +93,7 @@ To create an unbound GRE tunnel, follow these steps:
 ### Next steps
 {: #tgw-next-step-unbound-gre}
 
-To configure the other end of the BGP tunnel, expand the newly created unbound GRE tunnel in the Connections panel to see its details. It will show the Local BGP ASN. If you created an optional remote BGP ASN, it also shows in the Connections panel. You must give this ASN information to the person creating the other end of the BGP tunnel, so that the BGP session can be fully configured.
+To configure the other end of the BGP tunnel, expand the newly created unbound GRE tunnel in the Connections panel to see its details. It shows the local BGP ASN. If you created an optional remote BGP ASN, it also shows in the Connections panel. You must give this ASN information to the person creating the other end of the BGP tunnel, so that the BGP session can be fully configured.
 
 [^ip1]: This IP address must not be an IP address within the multicast range of `224.0.0.0` to `239.255.255.255` and can't be in conflict with any existing networks connected to the transit gateway.
 
@@ -129,7 +128,7 @@ Where:
 **--remote-gateway-ip**
 :   Remote gateway IP address for the GRE tunnel connection.
 
-**--local-tunnel-ip**
+**--remote-tunnel-ip**
 :   Remote tunnel IP address for the GRE tunnel connection.
 
 **--network-type**
@@ -242,7 +241,7 @@ You can specify the following argument references for your resource when creatin
 
 This example illustrates requesting an unbound GRE tunnel:
 
-```sh
+```terraform
 resource "ibm_tg_connection" "test_ibm_tg_connection" {
   gateway            = ibm_tg_gateway.test_tg_gateway.id
   network_type       = "unbound_gre_tunnel"
@@ -256,4 +255,4 @@ resource "ibm_tg_connection" "test_ibm_tg_connection" {
   zone               = us-east
 }
 ```
-{: pre}
+{: codeblock}

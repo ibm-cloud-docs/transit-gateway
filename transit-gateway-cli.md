@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-06-28"
 
 keywords: command line interface, commands, CLI
 
@@ -120,7 +120,7 @@ gateway="bdf8fa2b-c518-9999-9028-f3c9ece86159"
 Create a transit gateway.
 
 ```sh
-ibmcloud tg gateway-create|gwc --name NAME --location LOCATION [--routing ROUTING] [--gre-enhanced-route-propagation true | false] [--resource-group-id RES_GROUP_ID] [--output json] [-h, --help]
+ibmcloud tg gateway-create|gwc --name NAME --location LOCATION [--routing ROUTING][--gre-enhanced-route-propagation true | false] [--resource-group-id RES_GROUP_ID] [--output json] [-h, --help]
 ```
 {: pre}
 

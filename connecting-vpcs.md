@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-06-29"
 
 keywords: connecting, region, order
 
@@ -34,7 +34,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
    {: tip}
 
 1. Enter a name for the transit gateway and choose a resource group. You can select a resource group from the list, or keep the **default** selection.
-1. Optional: Click the **GRE enhanced route propagation** toggle to allow GRE tunnel traffic to flow across all GRE tunnels connected to this transit gateway. 
+1. Optional: Click the **GRE enhanced route propagation** toggle to allow GRE tunnel traffic to flow across all GRE tunnels connected to this transit gateway.
 
    Make sure to review [GRE enhanced propagation considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#gre-enhanced-route-propagation-considerations) before enabling this toggle.
    {: note}
@@ -47,8 +47,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
    * Select **Local routing** to allow your transit gateway to connect to all VPC and classic resources within the transit gateway's provisioned region.
    * Select **Global routing** to allow your transit gateway to connect to VPC resources in all IBM [Multi-Zone Regions (MZRs)](/docs/overview?topic=overview-locations#table-mzr).
 
-   You can upgrade routing options at a later point if your needs change. Pricing is changed accordingly.
-   {: note}
+   You can upgrade routing options at a later point if your needs change. Pricing changes accordingly.
 
 1. Choose the location where you want to provision your transit gateway.
 
@@ -76,19 +75,19 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
          {: note}
 
       * **Redundant GRE** allows unbound GRE tunnels to connect to endpoints in either VPC or classic infrastructure networks, thus allowing you to build in redundancy for GRE tunnels. See [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection) for further instructions.
- 
+
       * **Unbound GRE tunnel** allows a transit gateway to connect to overlay networks hosted on classic infrastructure resources. See [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection) for further instructions.
 
-      * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources. 
-      * **VPN gateway** connections link on-premises or external networks with IBM Cloud by attaching a VPN gateway as a spoke to a transit gateway. These connections use redundant GRE tunnels and dynamic routing with eBGP to enable efficient and scalable network integration. For more information, [Creating a VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway&interface=ui).
+      * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
+      * **VPN gateway** connections link on-premises or external networks with IBM Cloud by attaching a VPN gateway as a spoke to a transit gateway. These connections use redundant GRE tunnels and dynamic routing with eBGP to enable efficient and scalable network integration. For more information, see [Creating a VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway&interface=ui).
 
-   1. Optionally, expand the Prefix filtering section to show the **Permit prefixes** toggle where you can create prefix filters. Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny.   
+   1. Optionally, expand the Prefix filtering section to show the **Permit prefixes** toggle where you can create prefix filters. Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny.
 
          Make sure to review [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#prefix-filtering-considerations) before creating prefix filters. Also, note that the default filter applies to all prefixes except those that you create.
       {: attention}
 
       To create a prefix filter, click **Create prefix filter**, then complete the following information:
-    
+
       1. Select an action type: **Permit** or **Deny**.
       1. Enter the network prefix along with its subnet mask (for example, `10.0.0.0/16`).
       1. Optionally, enter values for whether the network should be greater than or equal to the subnet mask you chose.
@@ -102,8 +101,8 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
       * **Add new connection in this account** - Enter a connection name and any other required information for your connection.
 
          * For **{{site.data.keyword.powerSys_notm}}**, select a location for the {{site.data.keyword.powerSys_notm}} workspace. Then, select from the list of  {{site.data.keyword.powerSys_notm}} workspaces that are enabled for Transit Gateway. Keep in mind that not all {{site.data.keyword.powerSys_notm}} workspaces show in this menu.
-         * For **VPN gateway**, first select the region where your VPN gateway is deployed. Then, select from the available VPN gateways that support dynamic routing. 
-      
+         * For **VPN gateway**, first select the region where your VPN gateway is deployed. Then, select from the available VPN gateways that support dynamic routing.
+
             You must specify a custom CIDR block for the connection. The CIDR defines the IP range used to allocate addresses on the redundant GRE tunnels and must use [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: externa} private address space, be at least a `/27` subnet, and must not overlap with other connection CIDRs on the transit gateway.
 
             Only VPN gateways with dynamic routing enabled are shown in the Available connections list. The selected region and zone determine which Transit Gateway routers the VPN gateway connects to.
@@ -119,7 +118,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
          To find out if your Power Systems Virtual Server workspace is set up correctly, go to the Power Systems Virtual Server UI and check the navigation for a Cloud connections page. If there isn't a Cloud connections page, the workspace leverages Transit Gateway. Otherwise, you must configure virtual connections with Cloud connections on the Power Systems Virtual Server.
          {: important}
- 
+
 1. Click **Create** to complete your order.
 
 ## Creating a transit gateway from the CLI
@@ -147,20 +146,41 @@ export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 
 To create a transit gateway from the CLI, enter the following command:
 
+
 ```sh
-ibmcloud tg gateway-create|gwc --name NAME --location LOCATION [--routing ROUTING] [--gre-enhanced-route-propagation true | false] [--resource-group-id RES_GROUP_ID] [--output json] [-h, --help]
+ibmcloud tg gateway-create|gwc --name NAME --location LOCATION \
+[--routing ROUTING] \
+[--gre-enhanced-route-propagation true | false] \
+[--resource-group-id RES_GROUP_ID] \
+[--output json] [-h, --help]
 ```
 {: pre}
 
+
+
+
 Where:
 
-- **--name** - Name for the new gateway.
-- **--location** - Location of the gateway (see possible values by using : `ibmcloud tg locations`)
-- **--routing** - Gateway routing of resources (`global` | `local`). Use `global` to connect resources across regions. The default value is `local`.
-- **--resource-group-id** - Optional: Gateway resource group ID. Uses the default resource group, if not specified.
-- **--gre-enhanced-route-propagation** - Optional: Specify if you want to enable route propagation across all GREs connected to the same transit gateway. One of: `true` or `false` (default).
-- **--output json** - Optional: Specify to display the output in JSON format.
-- **--help | -h** - Optional: Get help on this command.
+`--name`
+:   Name for the new gateway.
+
+`--location`
+:   Location of the gateway (see possible values by using `ibmcloud tg locations`)
+
+`--routing`
+:   Gateway routing of resources (`global` | `local`). Use `global` to connect resources across regions. The default value is `local`.
+
+`--resource-group-id`
+:   Optional: Gateway resource group ID. Uses the default resource group, if not specified.
+
+`--gre-enhanced-route-propagation`
+:   Optional: Specify if you want to enable route propagation across all GREs connected to the same transit gateway. One of: `true` or `false` (default).
+
+`--output json`
+:   Optional: Specify to display the output in JSON format.
+
+`--help | -h`
+:   Optional: Get help on this command.
 
 ### Example
 {: #tgw-create-examples}
@@ -182,15 +202,24 @@ Follow these steps to create a transit gateway with the API:
 1. Store any additional variables to be used in the API commands.
 1. When all variables are initiated, create the transit gateway:
 
+   
    ```sh
-   curl -X POST --location --header "Authorization: Bearer
-   {iam_token}" \
+   curl -X POST --location --header "Authorization: Bearer {iam_token}" \
    --header "Accept: application/json" \
    --header "Content-Type: application/json" \
-   --data '{ "location": "us-south", "name": "Transit_Service_BWTN_SJ_DL" }' \
+   --data '{
+     "location": "us-south",
+     "name": "Transit_Service_BWTN_SJ_DL",
+     "global": true,
+   }' \
    "{base_url}/transit_gateways?version={version}"
    ```
    {: pre}
+   
+
+   
+
+   
 
 For more information, see [Creates a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway) in the Transit Gateway API reference.
 {: note}
@@ -205,23 +234,27 @@ Review the following argument references that you can specify for your resource 
 |--|--|
 |**location**  \n Optional  \n Forces new resource  \n integer| The location of the transit gateway.  \n **Example**: `us-south`|
 |**name**  \n Required  \n string| The unique user-defined name for the gateway.  \n **Example**: `myGateway`|
-|**global**  \n Required  \n boolean | The gateways with global routing (true) are able to connect to networks outside their associated region.|
+|**global**  \n Required  \n boolean | The gateways with global routing (true) are able to connect to networks outside their associated region.| 
 |**gre_enhanced_route_propagation** \n  Optional \n boolean | Specify if you want to enable route propagation across all GREs connected to the same transit gateway. |
 |**resource_group**  \n Optional  \n Forces new resource  \n string | The resource group ID where the transit gateway is to be created.|
 {: caption="Argument references for creating a transit gateway" caption-side="bottom"}
+
+
 
 ### Example
 {: #tg-terraform-creating-transit-gateway-example}
 
 This example illustrates creating a transit gateway in Terraform:
 
-```sh
-resource "ibm_tg_gateway" "new_tg_gw"{
-name="transit-gateway-1"
-location="us-south"
-global=true
-gre_enhanced_route_propagation=false
-resource_group="30951d2dff914dafb26455a88c0c0092"
+
+
+```terraform
+resource "ibm_tg_gateway" "new_tg_gw" {
+  name              = "transit-gateway-1"
+  location          = "us-south"
+  global            = true
+  gre_enhanced_route_propagation = false
+  resource_group    = "30951d2dff914dafb26455a88c0c0092"
 }
 ```
-{: screen}
+{: codeblock}

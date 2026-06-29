@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-11-06"
+  years: 2020, 2026
+lastupdated: "2026-06-29"
 
 keywords: features, overview
 
@@ -41,6 +41,8 @@ Transit gateways provide flexibility by allowing you to add networks to local ga
 
 {{site.data.keyword.tg_full_notm}} supports local and global routing between VPCs and the {{site.data.keyword.cloud_notm}} classic infrastructure. All routing options remain within the private {{site.data.keyword.cloud_notm}} infrastructure without operating on the public internet, and are optimized for performance. {{site.data.keyword.tg_full_notm}} allows customers greater flexibility, redundancy, and speed in scaling their workloads, and in connecting isolated networks that run on {{site.data.keyword.cloud_notm}}.
 
+
+
 ### Optimized traffic and fault tolerance
 {: #vpc-optimized-traffic-fault-tolerance}
 
@@ -51,6 +53,8 @@ This standard behavior also applies when using a transit VPC and advertising sta
 In the event of a zonal failure—such as when a transit gateway experiences a failure in one zone (resulting from the failure of all zone's routers)—communication could be disrupted. In such cases, traffic may be routed differently, with one direction of traffic sent through an alternate path, while the response might return via a different route. In general, though, VPC traffic typically remains within the same zone.
 {: note}
 
+
+
 ### Easily connect across boundaries
 {: #boundaries}
 
@@ -58,7 +62,7 @@ In the event of a zonal failure—such as when a transit gateway experiences a f
 
 IBM Cloud Transit Gateway supports the use of Generic Routing Encapsulation (GRE) tunnels to connect endpoints. GRE tunnels enable the transit gateway to connect to overlay networks hosted on classic infrastructure resources for unique use cases.
 
-With GRE enhanced route propagation, all GRE tunnels connected to the same transit gateway will share routes and communicate even with GREs across zones. When this setting is disabled, network traffic can't be exchanged between unbound GRE tunnels in different zones and between tunnels within redundant GREs.
+With GRE enhanced route propagation enabled, all GRE tunnels connected to the same transit gateway share routes and can communicate across zones. When this setting is disabled, network traffic cannot be exchanged between unbound GRE tunnels in different zones or between tunnels within redundant GREs. For more information, see [GRE tunnels](/docs/transit-gateway?topic=transit-gateway-GRE-connection).
 
 ### Direct Link connectivity
 {: #directlink}
@@ -68,12 +72,12 @@ With GRE enhanced route propagation, all GRE tunnels connected to the same trans
 ### {{site.data.keyword.powerSys_notm}} connectivity
 {: #powervs}
 
-{{site.data.keyword.tg_full_notm}} supports {{site.data.keyword.powerSys_notm}} connections. Connecting a {{site.data.keyword.powerSys_notm}} instance to your {{site.data.keyword.tg_full_notm}} network grants access to all networks connected on the transit gateway. Similarly, all other connections on the transit gateway will have access to your network. As with other network connections to the {{site.data.keyword.tg_full_notm}}, special consideration must be taken to avoid IP overlap issues. For more information, see [Dealing with overlapping VPC prefixes and classic infrastructure subnets](/docs/transit-gateway?topic=transit-gateway-overlapping-vpc-prefixes-and-classic-subnets).
+{{site.data.keyword.tg_full_notm}} supports {{site.data.keyword.powerSys_notm}} connections. Connecting a {{site.data.keyword.powerSys_notm}} instance to your {{site.data.keyword.tg_full_notm}} network grants access to all networks connected on the transit gateway. Similarly, all other connections on the transit gateway have access to your network. As with other network connections to the {{site.data.keyword.tg_full_notm}}, special consideration must be taken to avoid IP overlap issues. For more information, see [Dealing with overlapping VPC prefixes and classic infrastructure subnets](/docs/transit-gateway?topic=transit-gateway-overlapping-vpc-prefixes-and-classic-subnets).
 
 ## Interconnectivity patterns
 {: #patterns}
 
-{{site.data.keyword.tg_full_notm}} enables you to connect {{site.data.keyword.cloud_notm}} VPCs and classic infrastructure to transit gateways, allowing you to build global networks of multiple VPCs and classic infrastructure resources across {{site.data.keyword.cloud_notm}} regions to keep up with your business needs. {{site.data.keyword.tg_full_notm}} works across {{site.data.keyword.cloud_notm}} VPCs as well as IBM classic networks.
+{{site.data.keyword.tg_full_notm}} enables you to connect {{site.data.keyword.cloud_notm}} VPCs and classic infrastructure to transit gateways, allowing you to build global networks of multiple VPCs and classic infrastructure resources across {{site.data.keyword.cloud_notm}} regions to keep up with your business needs.
 
 {{site.data.keyword.tg_full_notm}} can connect to classic networks located in any MZR, regardless of the location of the transit gateway or the routing type specified.
 {: note}
@@ -93,6 +97,8 @@ Connect two VPCs in the same region with a local transit gateway.
 Connect VPCs in multiple regions by using a global transit gateway.
 
 ![Connect two or more VPCs across multiple MZRs](/images/TGW_Multi-Multi.png "Connect two or more VPCs across multiple MZRs"){: caption="Connect two or more VPCs across multiple MZRs" caption-side="bottom"}
+
+
 
 ### Use case 3: Interconnect one or more VPCs in the same MZR and an IBM classic network
 {: #use-case-3}
@@ -164,7 +170,7 @@ To enhance availability without the added cost of a second direct link, a VPN ga
 
 ![VPN gateway as a backup connection for Direct Link](/images/tgw-vpn-spoke.svg "VPN gateway as a backup connection for Direct Link"){: caption="VPN gateway as a backup connection for Direct Link" caption-side="bottom"}
 
-### Power Virtual Server uses cases using Transit Gateway
-{: #use-case-11}
+### Power Virtual Server use cases using Transit Gateway
+{: #use-case-12}
 
-For use cases involving {{site.data.keyword.powerSys_notm}} workplaces, see [Power Edge Router use cases](/docs/power-iaas?topic=power-iaas-network-architecture-diagrams#per-use-cases).
+For use cases involving {{site.data.keyword.powerSys_notm}} workspaces, see [Power Edge Router use cases](/docs/power-iaas?topic=power-iaas-network-architecture-diagrams#per-use-cases).

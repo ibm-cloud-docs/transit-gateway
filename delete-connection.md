@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-01"
+  years: 2020, 2026
+lastupdated: "2026-06-29"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -14,6 +14,9 @@ subcollection: transit-gateway
 
 # Deleting a connection
 {: #deleting-connections}
+
+You can delete a connection from a transit gateway by using the UI, CLI, API, or Terraform.
+{: shortdesc}
 
 ## Deleting a connection in the UI
 {: #deleting-connections-ui}
@@ -43,13 +46,17 @@ ibmcloud tg connection-delete|cd GATEWAY_ID CONNECTION_ID [-f, --force] [-h, --h
 
 Where:
 
-- **GATEWAY_ID**: ID of the gateway of the connection being deleted.
+`GATEWAY_ID`
+:   ID of the gateway of the connection being deleted.
 
-- **CONNECTION_ID**: ID of the connection being deleted.
+`CONNECTION_ID`
+:   ID of the connection being deleted.
 
-- **--force | -f**: Optional: Force the delete without confirmation.
+`--force | -f`
+:   Optional: Force the delete without confirmation.
 
-- **--help | -h**: Optional: Get help on this command.
+`--help | -h`
+:   Optional: Get help on this command.
 
 ### Example
 {: #connection-delete-example}
