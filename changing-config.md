@@ -38,7 +38,7 @@ To change your transit gateway configuration in the UI, follow these steps:
    * Enable or disable route propagation across all GREs connected to the same transit gateway.
 
       Changes to route propagation or routing type can take several minutes to apply, depending on the number of existing connections.
- 
+
 
    Important routing type considerations:
 
@@ -153,7 +153,7 @@ You can specify the following argument references for your resource when you cha
 |Argument|Details|
 |--|--|
 |**name**  \n Required  \n boolean | The unique user-defined name for the gateway. For example, `myGateway`|
-|**global**  \n Required  \n boolean|The gateways with global routing (true) to connect to the networks outside their associated region.| 
+|**global**  \n Required  \n boolean|The gateways with global routing (true) to connect to the networks outside their associated region.|
 |**gre_enhanced_route_propagation** \n Optional  \n boolean| Specify whether you want enable or disable route propagation across all GREs connected to the same transit gateway. Values are one of: `true` or `false` (default) |
 {: caption="Terraform argument references for changing the configuration" caption-side="bottom"}
 
