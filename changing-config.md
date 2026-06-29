@@ -54,7 +54,7 @@ To update properties on an existing gateway from the CLI, run the following comm
 
 
 ```sh
-ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--gre_enhanced_route_propagation] [--output json] [-h, --help]
+ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--gre-enhanced-route-propagation true | false] [--output json] [-h, --help]
 ```
 {: pre}
 
@@ -153,9 +153,9 @@ You can specify the following argument references for your resource when you cha
 
 |Argument|Details|
 |--|--|
-|**name**  \n Required  \n boolean | The unique user-defined name for the gateway. For example, `myGateway`|
-|**global**  \n Required  \n boolean|The gateways with global routing (true) to connect to the networks outside their associated region.|
-|**gre_enhanced_route_propagation** \n Optional  \n boolean| Specify whether you want enable or disable route propagation across all GREs connected to the same transit gateway. Values are one of: `true` or `false` (default) |
+|**name**  \n Required  \n string | The unique user-defined name for the gateway. For example, `myGateway`|
+|**global**  \n Required  \n boolean|The gateways with global routing (true) are able to connect to the networks outside their associated region.|
+|**gre_enhanced_route_propagation** \n Optional  \n boolean| Specify whether you want to enable or disable route propagation across all GREs connected to the same transit gateway. Values are one of: `true` or `false` (default) |
 {: caption="Terraform argument references for changing the configuration" caption-side="bottom"}
 
 
