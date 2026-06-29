@@ -106,7 +106,7 @@ This example illustrates changing your configuration with the API:
 
 
 
-```json
+```sh
 PATCH /transit_gateways/{id}
 
 {
