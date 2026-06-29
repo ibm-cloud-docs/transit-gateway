@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-01-20"
+lastupdated: "2026-06-29"
 
 keywords: HA for transit gateway, DR for transit gateway, transit gateway recovery time objective, transit gateway recovery point objective
 
@@ -83,10 +83,14 @@ The following table outlines these features and key considerations.
 
 Transit Gateway supports the following disaster recovery features:
 
+
 | Feature | Description | Consideration |
 | -------------- | -------------- | -------------- |
-| Global routing | Supports interconnectivity between VPCs and classic infrastructure across different regions. | Facilitates workload distribution and failover between regions. |
+| Global routing | Supports interconnectivity between VPCs and classic infrastructure across different regions. | Facilitates workload distribution and failover between regions. | 
 {: caption="Disaster Recovery features for {{site.data.keyword.tg_full_notm}}" caption-side="bottom"}
+
+
+
 
 As a customer, you can create and support the following other disaster recovery options:
 
@@ -103,14 +107,18 @@ It’s critical to regularly practice your disaster recovery steps to ensure tha
 
 There can be multiple ways to recover from certain failures, so be sure to assess each scenario based on your specific architecture and requirements. Here are common failure scenarios, along with potential recovery actions:
 
+
 | Failure | Resolution |
 | -------------- | -------------- |
-| Regional Transit Gateway outage   | Redirect traffic through a transit gateway in another region.                 |
+| Regional Transit Gateway outage   | Redirect traffic through a transit gateway in another region.  |
 | BGP session loss                  | Verify routing configuration and peer device status; restart the BGP session. |
 | VPC attachment failure            | Recreate the attachment or fail over to an alternate path.                    |
 | Accidental configuration deletion | Restore configuration using backups or automation tools.    |
 | Logging or monitoring failure     | Reconfigure logging/monitoring endpoints; verify IAM and service status.      |
 {: caption="Disaster recovery scenarios for {{site.data.keyword.tg_full_notm}}" caption-side="bottom"}
+
+
+
 
 ### Backing up transit gateways for disaster recovery
 {: #disaster-recovery-tgw}

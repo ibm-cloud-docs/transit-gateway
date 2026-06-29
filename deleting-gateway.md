@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-28"
+lastupdated: "2026-06-29"
 
 keywords: deleting, delete
 
@@ -121,7 +121,7 @@ terraform destroy -target=resource_type.resource_name
 
 Where:
 
-- **resource_type**: ibm_tg_gateway
+- **resource_type**: `ibm_tg_gateway`
 
 - **resource_name**: Name of transit gateway
 

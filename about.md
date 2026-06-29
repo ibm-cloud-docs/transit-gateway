@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-28"
+lastupdated: "2026-06-29"
 
 keywords: features, overview
 
@@ -53,6 +53,8 @@ This standard behavior also applies when using a transit VPC and advertising sta
 In the event of a zonal failure—such as when a transit gateway experiences a failure in one zone (resulting from the failure of all zone's routers)—communication could be disrupted. In such cases, traffic may be routed differently, with one direction of traffic sent through an alternate path, while the response might return via a different route. In general, though, VPC traffic typically remains within the same zone.
 {: note}
 
+
+
 ### Easily connect across boundaries
 {: #boundaries}
 
@@ -95,6 +97,7 @@ Connect two VPCs in the same region with a local transit gateway.
 Connect VPCs in multiple regions by using a global transit gateway.
 
 ![Connect two or more VPCs across multiple MZRs](/images/TGW_Multi-Multi.png "Connect two or more VPCs across multiple MZRs"){: caption="Connect two or more VPCs across multiple MZRs" caption-side="bottom"}
+
 
 
 ### Use case 3: Interconnect one or more VPCs in the same MZR and an IBM classic network

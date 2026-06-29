@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-28"
+lastupdated: "2026-06-29"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -92,6 +92,8 @@ You can update your transit gateway's name, global parameters, or both with the 
 
 This example illustrates changing your configuration with the API:
 
+
+
 ```sh
 PATCH /transit_gateways/{id}
 "{base_url}/transit_gateways/{id}?version={version}"
@@ -102,6 +104,8 @@ PATCH /transit_gateways/{id}
 
 ```
 {: pre}
+
+
 
 
 
@@ -136,17 +140,22 @@ For more information, see [Updates specified Transit Gateway](/apidocs/transit-g
 
 You can specify the following argument references for your resource when you change the configuration of your transit gateway by using Terraform:
 
+
 |Argument|Details|
 |--|--|
 |**name**  \n Required  \n boolean | The unique user-defined name for the gateway. For example, `myGateway`|
-|**global**  \n Required  \n boolean|The gateways with global routing (true) to connect to the networks outside their associated region.|
+|**global**  \n Required  \n boolean|The gateways with global routing (true) to connect to the networks outside their associated region.| 
 |**gre_enhanced_route_propagation** \n Optional  \n boolean| Specify whether you want enable or disable route propagation across all GREs connected to the same transit gateway. Values are one of: `true` or `false` (default) |
 {: caption="Terraform argument references for changing the configuration" caption-side="bottom"}
+
+
+
 
 ### Example
 {: #change-configuration-terraform-example}
 
 This example illustrates changing the configuration of your transit gateway:
+
 
 ```sh
 resource "ibm_tg_gateway" "new_tg_gw"{
