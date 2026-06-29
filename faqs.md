@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-28"
+lastupdated: "2026-06-29"
 
 keywords: faq, faqs, questions
 
@@ -75,7 +75,7 @@ The following table shows the change in billing behavior:
 
 A classic connection allows you to communicate with all of your global classic infrastructure resources across MZRs, even if it is connected to a transit gateway provisioned with local routing.
 
-The routing option that you choose for a transit gateway only determines what VPCs you can connect to it. Local routing restricts you to connecting VPCs in the same MZR as the transit gateway, while global routing allows you to connect any VPC across the MZRs. Select the routing option that is right for your applications - pricing is changed accordingly.
+The routing option that you choose for a transit gateway only determines what VPCs you can connect to it. Local routing restricts you to connecting VPCs in the same MZR as the transit gateway, while global routing allows you to connect any VPC across the MZRs. Select the routing option that is right for your applications - pricing changes accordingly.
 
 ## Can I create more than one transit gateway in my account?
 {: #gateway_create}

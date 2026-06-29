@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-28"
+lastupdated: "2026-06-29"
 
 keywords: help, tips, connections, provision
 
@@ -39,7 +39,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 ## ECMP considerations
 {: #ecmp-considerations}
 
-* When planning for ECMP (Equal-Cost Multi-Path), keep in mind that throughput won't scale linearly with the number of direct links. For example, if you connect two 10 GB direct links to an ECMP-capable transit gateway, you won't get 20 GB throughput; you'll see more than 10 GB, but less than 20 GB. This is because ECMP works on a per-stream or per-source basis, meaning if traffic comes from a single endpoint, it will likely favor one link, not both. To achieve more balanced throughput, it's recommended to drive traffic from multiple sources, as this will distribute the load more evenly across the available direct links.
+* When planning for ECMP (Equal-Cost Multi-Path), keep in mind that throughput does not scale linearly with the number of direct links. For example, if you connect two 10 GB direct links to an ECMP-capable transit gateway, you do not get 20 GB throughput; you see more than 10 GB, but less than 20 GB. This is because ECMP works on a per-stream or per-source basis, meaning if traffic comes from a single endpoint, it likely favors one link, not both. To achieve more balanced throughput, it is recommended to drive traffic from multiple sources, as this distributes the load more evenly across the available direct links.
 * Limitation: ECMP doesn't work for direct links on a single router. Instead, it is supported across multiple routers with direct links, as long as those routers are advertising the same prefix.
 * Known restriction: New transit gateways support 4-way ECMP, but existing gateways can't use this feature unless you [open a support case](/docs/account?topic=account-open-case&interface=ui) for assistance.
 
@@ -152,7 +152,7 @@ This configuration allows GREs to learn routes from other GREs, across zones or 
 If you require network isolation, consider using separate transit gateways.
 {: tip}
 
-* Do not require a classic connection on the transit gateway. Classic network subnets won't be advertised to the connections on the transit gateway (or vice versa).
+* Do not require a classic connection on the transit gateway. Classic network subnets are not advertised to the connections on the transit gateway (or vice versa).
 * The default number of unique base networks that can be targeted by unbound GRE tunnels is limited to five. You can open an [IBM Support case](/docs/account?topic=account-using-avatar#using-avatar) if you need these service limits expanded.
 
 For more information and a use case example, see [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).
@@ -175,7 +175,7 @@ The same network subnet considerations for transit gateway connections also appl
 ## {{site.data.keyword.powerSys_notm}} connection considerations
 {: #power-considerations}
 
-You can connect a {{site.data.keyword.powerSys_notm}} instance to a transit gateway. This allows you to directly attach the {{site.data.keyword.powerSys_notm}} to a downstream transit gateway. After the {{site.data.keyword.powerSys_notm}} is connected to the transit gateway, your {{site.data.keyword.powerSys_notm}} service instance has access to all downstream transit gateway resources and services. Likewise, all downstream networks connected to the transit gateway will have access to the {{site.data.keyword.powerSys_notm}} instance.
+You can connect a {{site.data.keyword.powerSys_notm}} instance to a transit gateway. This allows you to directly attach the {{site.data.keyword.powerSys_notm}} to a downstream transit gateway. After the {{site.data.keyword.powerSys_notm}} is connected to the transit gateway, your {{site.data.keyword.powerSys_notm}} service instance has access to all downstream transit gateway resources and services. Likewise, all downstream networks connected to the transit gateway have access to the {{site.data.keyword.powerSys_notm}} instance.
 
 {{site.data.keyword.powerSys_notm}} connections can use Local or Global routing. However, only {{site.data.keyword.powerSys_notm}} instances in the same region as the transit gateway can use local routing. Also, a {{site.data.keyword.powerSys_notm}} instance can be connected to multiple transit gateways with local routing, but only one transit gateway with global routing. Downstream services will honor route preference based on the transit gateway type.
 

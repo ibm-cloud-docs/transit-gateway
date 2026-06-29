@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-28"
+lastupdated: "2026-06-29"
 
 keywords:
 
@@ -240,7 +240,7 @@ Review the following argument references that you can specify for your resource 
 
 This example shows how to create a prefix filter:
 
-``` sh
+```terraform
 resource "ibm_tg_connection_prefix_filter" "test_tg_prefix_filter" {
     gateway = ibm_tg_gateway.new_tg_gw.id
     connection_id = ibm_tg_connection.test_ibm_tg_connection.connection_id

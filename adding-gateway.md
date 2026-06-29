@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-28"
+lastupdated: "2026-06-29"
 
 keywords: features, overview
 
@@ -224,7 +224,7 @@ Review the following argument references that you can specify for your resource 
 
 This example illustrates creating a transit gateway connection that uses Terraform:
 
-```sh
+```terraform
 resource "ibm_tg_connection" "test_ibm_tg_connection" {
   gateway      = ibm_tg_gateway.test_tg_gateway.id
   network_type = "vpc"
@@ -232,4 +232,4 @@ resource "ibm_tg_connection" "test_ibm_tg_connection" {
   network_id   = ibm_is_vpc.test_tg_vpc.resource_crn
 }
 ```
-{: pre}
+{: codeblock}

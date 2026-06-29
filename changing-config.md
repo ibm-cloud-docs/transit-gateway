@@ -15,6 +15,9 @@ subcollection: transit-gateway
 # Changing your configuration
 {: #change-configuration}
 
+You can change your transit gateway name, routing type, and other settings by using the UI, CLI, API, or Terraform.
+{: shortdesc}
+
 ## Changing your configuration in the UI
 {: #change-configuration-ui}
 {: ui}
@@ -101,7 +104,7 @@ This example illustrates changing your configuration with the API:
 
 
 
-```sh
+```json
 PATCH /transit_gateways/{id}
 "{base_url}/transit_gateways/{id}?version={version}"
 {
@@ -120,7 +123,7 @@ PATCH /transit_gateways/{id}
 
 This response indicates that the transit gateway was updated successfully:
 
-```sh
+```json
 {
   "created_at": "2020-03-31T12:08:05Z",
   "crn": "crn:[...]",
@@ -163,7 +166,7 @@ You can specify the following argument references for your resource when you cha
 This example illustrates changing the configuration of your transit gateway:
 
 
-```sh
+```terraform
 resource "ibm_tg_gateway" "new_tg_gw"{
  name="transit-gateway-1"
  location="us-south"
@@ -172,4 +175,4 @@ resource "ibm_tg_gateway" "new_tg_gw"{
  resource_group="30951d2dff914dafb26455a88c0c0092"
 }
 ```
-{: pre}
+{: codeblock}

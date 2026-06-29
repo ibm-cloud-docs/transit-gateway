@@ -246,14 +246,15 @@ Review the following argument references that you can specify for your resource 
 
 This example illustrates creating a transit gateway in Terraform:
 
-```sh
+
+
+```terraform
 resource "ibm_tg_gateway" "new_tg_gw" {
   name              = "transit-gateway-1"
   location          = "us-south"
   global            = true
-  redundancy_group  = "group1"
   gre_enhanced_route_propagation = false
   resource_group    = "30951d2dff914dafb26455a88c0c0092"
 }
 ```
-{: screen}
+{: codeblock}

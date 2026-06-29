@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-28"
+lastupdated: "2026-06-29"
 
 keywords: iam, permissions
 
@@ -16,6 +16,7 @@ subcollection: transit-gateway
 {: #iam}
 
 {{site.data.keyword.tg_full}} uses the IBM Cloud Identity and Access Management (IAM) platform access roles to manage access to the service's resources. IAM access roles allow account administrators to assign different levels of permission for using the service. The following tables provide the list of actions that you can take against the {{site.data.keyword.tg_full_notm}} service and its resources depending on a user's assigned roles.
+{: shortdesc}
 
 
 

@@ -17,6 +17,9 @@ subcollection: transit-gateway
 {: help}
 {: support}
 
+You can delete a transit gateway and its connections by using the UI, CLI, API, or Terraform.
+{: shortdesc}
+
 ## Deleting a transit gateway in the UI
 {: #delete-gateway-ui}
 {: ui}
@@ -79,7 +82,7 @@ To delete a transit gateway with the API, follow these steps:
 ### Example Request
 {: #delete-gateway-api-request-example}
 
-This example iiilustrates a transit gateway deletion request:
+This example illustrates a transit gateway deletion request:
 
 ```sh
 curl -X DELETE "https://transit.cloud.ibm.com/v1/transit_gateways/$TRANSIT_GATEWAY_ID?version=2022-02-10" -H "accept: */*"
@@ -103,7 +106,7 @@ This example illustrates that the transit gateway could not be found, leading to
   "trace": "request_id"
 }
 ```
-{: pre}
+{: screen}
 
 For more information, see [Deletes specified Transit Gateway](/apidocs/transit-gateway#delete-transit-gateway) in the Transit Gateway API reference.
 {: note}

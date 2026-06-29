@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-28"
+lastupdated: "2026-06-29"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -14,6 +14,9 @@ subcollection: transit-gateway
 
 # Editing a connection
 {: #editing-connections}
+
+You can edit a connection on a transit gateway by using the UI, CLI, API, or Terraform.
+{: shortdesc}
 
 ## Editing a connection in the UI
 {: #editing-connections-ui}

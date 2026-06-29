@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-28"
+lastupdated: "2026-06-29"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -38,7 +38,7 @@ To migrate from a GRE tunnel to an unbound GRE tunnel:
 
 1. [Create the new unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection&interface=ui).
 
-Transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point to point connection, has no built in redundancy, and is a single point of failure. When configuring a GRE connection on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections using different availability zones.
+Transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point-to-point connection, has no built-in redundancy, and is a single point of failure. When configuring a GRE connection on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections by using different availability zones.
 {: note}
 
 ## Before you begin
@@ -139,7 +139,7 @@ The payload for this request is as follows:
   "remote_tunnel_ip": "192.168.129.1"
 }
 ```
-{: pre}
+{: screen}
 
 ### Example Response
 {: #add-gre-connection-curl-api-response-example}
@@ -186,7 +186,7 @@ You can specify the following argument references for your resource when creatin
 
 This example illustrates requesting a GRE tunnel connection:
 
-```sh
+```terraform
 resource "ibm_tg_connection" "test_ibm_tg_connection" {
   gateway            = ibm_tg_gateway.test_tg_gateway.id
   network_type       = "gre_tunnel"
@@ -200,4 +200,4 @@ resource "ibm_tg_connection" "test_ibm_tg_connection" {
   zone               = us-east
 }
 ```
-{: pre}
+{: codeblock}

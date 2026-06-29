@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-01"
+  years: 2020, 2026
+lastupdated: "2026-06-29"
 
 keywords:
 
@@ -16,6 +16,7 @@ subcollection: transit-gateway
 {: #add-remove-redundant-gre-tunnels}
 
 You can add or remove tunnels attached to GRE redundant connections. Keep in mind that a minimum of two GRE tunnels are required.
+{: shortdesc}
 
 ## Before you begin
 {: #add-remove-redundant-gre-planning}
