@@ -29,10 +29,13 @@ To change your transit gateway configuration in the UI, follow these steps:
 
 1. From the Connections page, click **Actions** in the upper right, then select **Edit**.
 
-   From here, you can change the gateway's name and its routing type (Local or Global). You can also enable or disable route propagation across all GREs connected to the same transit gateway.
+   From here, you can:
 
-   Changes to route propagation or routing type can take several minutes to apply, depending on the number of existing connections.
-   {: note}
+   * Change the gateway's name and its routing type (Local or Global).
+   * Enable or disable route propagation across all GREs connected to the same transit gateway.
+
+      Changes to route propagation or routing type can take several minutes to apply, depending on the number of existing connections.
+ 
 
    Important routing type considerations:
 
@@ -45,7 +48,8 @@ To change your transit gateway configuration in the UI, follow these steps:
 {: cli}
 
 To update properties on an existing gateway from the CLI, run the following command:
-<publish.
+
+
 ```sh
 ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--gre_enhanced_route_propagation] [--output json] [-h, --help]
 ```
