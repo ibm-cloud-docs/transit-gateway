@@ -38,6 +38,7 @@ To change your transit gateway configuration in the UI, follow these steps:
    * Enable or disable route propagation across all GREs connected to the same transit gateway.
 
       Changes to route propagation or routing type can take several minutes to apply, depending on the number of existing connections.
+     
 
 
    Routing type considerations:
@@ -57,6 +58,7 @@ To update properties on an existing gateway from the CLI, run the following comm
 ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--gre-enhanced-route-propagation true | false] [--output json] [-h, --help]
 ```
 {: pre}
+  
 
 
 
@@ -104,9 +106,9 @@ This example illustrates changing your configuration with the API:
 
 
 
-```json
+```sh
 PATCH /transit_gateways/{id}
-"{base_url}/transit_gateways/{id}?version={version}"
+
 {
   "global": true,
   "name": "my-transit-gateway"

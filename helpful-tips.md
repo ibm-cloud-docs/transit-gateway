@@ -235,9 +235,9 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 
 * When changing from **Local** to **Global** routing, you are charged for all associated global connections. There is no impact to the network traffic when the routing type is changed.
 
+
+
 {{site.data.content.reuse-route-report-considerations}}
-
-
 
 ## Service limits
 {: #service-limits}
