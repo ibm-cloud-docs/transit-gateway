@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-28"
+lastupdated: "2026-07-02"
 
 keywords: command line interface, commands, CLI
 
@@ -195,7 +195,7 @@ ibmcloud tg gwd $gateway -f
 Update properties on an existing gateway.
 
 ```sh
-ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING][--gre-enhanced-route-propagation true | false] [--output json] [-h, --help]
+ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--gre-enhanced-route-propagation true | false] [--output json] [-h, --help]
 ```
 
 #### Command options
@@ -208,7 +208,7 @@ ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING][--gr
 :   Optional: New name of the gateway.
 
 `--routing`
-:   Optional: Gateway routing of resources (`global` | `local`). Select global to connect resources across regions. Changing routing from `global` to `local` requires all existing connections to be `local`.
+:   Optional: Gateway routing of resources (`global` | `local`). Select global to connect resources across regions. Changing routing from `global` to `local` requires all existing connections to be `local`. 
 
 `--gre-enhanced-route-propagation`
 :   Optional: Specify whether you want to enable route propagation across all GREs connected to the same transit gateway. Valid values are `true` and `false` (default).
