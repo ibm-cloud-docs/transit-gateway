@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-06"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -137,7 +137,7 @@ The following response indicates that the connection was updated successfully:
 {: screen}
 
 
-For more information, see [Updates specified Transit Gateway connection](/apidocs/transit-gateway#update-transit-gateway-connection) in the Transit Gateway API reference.
+For more information, see [Updates specified Transit Gateway connection](/docs/apis/transit-gateway#update-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
 ## Editing a connection using terraform

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-06"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -38,7 +38,7 @@ To change your transit gateway configuration in the UI, follow these steps:
    * Enable or disable route propagation across all GREs connected to the same transit gateway.
 
       Changes to route propagation or routing type can take several minutes to apply, depending on the number of existing connections.
-     
+
 
 
    Routing type considerations:
@@ -58,7 +58,7 @@ To update properties on an existing gateway from the CLI, run the following comm
 ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--gre-enhanced-route-propagation true | false] [--output json] [-h, --help]
 ```
 {: pre}
-  
+
 
 
 
@@ -143,7 +143,7 @@ This response indicates that the transit gateway was updated successfully:
 ```
 {: screen}
 
-For more information, see [Updates specified Transit Gateway](/apidocs/transit-gateway#update-transit-gateway) in the Transit Gateway API reference.
+For more information, see [Updates specified Transit Gateway](/docs/apis/transit-gateway#update-transit-gateway) in the Transit Gateway API reference.
 {: note}
 
 ## Changing your configuration by using Terraform

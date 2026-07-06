@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-06"
 
 keywords:
 
@@ -15,7 +15,7 @@ subcollection: transit-gateway
 # Creating and deleting prefix filters
 {: #adding-prefix-filters}
 
-Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny. You can add optional prefix filters when you add connections while creating a transit gateway, or after a transit gateway is provisioned. 
+Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny. You can add optional prefix filters when you add connections while creating a transit gateway, or after a transit gateway is provisioned.
 {: shortdesc}
 
 ## Before you begin
@@ -30,7 +30,7 @@ Make sure to review [Prefix filtering considerations](/docs/transit-gateway?topi
 To create a prefix filter in the UI, follow these steps:
 
 1. From the Transit Gateway page, click the name of the gateway where you want to create prefix filters.
-1. The prefix filtering icon ![Prefix filter icon](/images/prefix-filter-icon.png) shows if a connection already has prefix filters. Click the icon and then click **View** to show the prefix filtering side panel. 
+1. The prefix filtering icon ![Prefix filter icon](/images/prefix-filter-icon.png) shows if a connection already has prefix filters. Click the icon and then click **View** to show the prefix filtering side panel.
 1. If the connection does not have existing prefix filters, click the Actions menu ![Actions menu](../../icons/action-menu-icon.svg) and select **Prefix filtering**.
 1. Adjust the default filter as needed. Your choices are as follows:
 
@@ -39,8 +39,8 @@ To create a prefix filter in the UI, follow these steps:
 
 1. Click **Create prefix filter**, then configure the filter with the following options:
 
-    * Select an action type: **Permit** or **Deny**. 
-    * Enter the network prefix along with its subnet mask (for example, `10.0.0.0/16`). 
+    * Select an action type: **Permit** or **Deny**.
+    * Enter the network prefix along with its subnet mask (for example, `10.0.0.0/16`).
     * Optionally, enter values for whether the network should be greater than or equal to the subnet mask that you chose.
     * Click **Save** to create the prefix filter.
 
@@ -96,7 +96,7 @@ Where:
 
 `--output json`
 :   Optional: Specify whether you want the output to display in JSON format. All details are displayed.
- 
+
 ### Example: Creating a prefix filter
 {: #adding-prefix-filters-cli-example}
 
@@ -175,7 +175,7 @@ Follow these steps to create a prefix filter with the API:
    ```
    {: pre}
 
-For more information, see [Adds a prefix filter to a Transit Gateway Connection](/apidocs/transit-gateway#create-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
+For more information, see [Adds a prefix filter to a Transit Gateway Connection](/docs/apis/transit-gateway#create-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
 {: note}
 
 ## Update prefix filters with the API
@@ -197,7 +197,7 @@ Follow these steps to update a prefix filter with the API:
    ```
    {: pre}
 
-For more information, see [Updates specified Transit Gateway connection prefix filter](/apidocs/transit-gateway#update-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
+For more information, see [Updates specified Transit Gateway connection prefix filter](/docs/apis/transit-gateway#update-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
 {: note}
 
 ## Deleting prefix filters with the API
@@ -215,7 +215,7 @@ For more information, see [Updates specified Transit Gateway connection prefix f
    ```
    {: pre}
 
-For more information, see [Remove prefix filter from Transit Gateway connection](/apidocs/transit-gateway#delete-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
+For more information, see [Remove prefix filter from Transit Gateway connection](/docs/apis/transit-gateway#delete-transit-gateway-connection-prefix-filter) in the Transit Gateway API reference.
 {: note}
 
 ## Creating and deleting prefix filters with Terraform

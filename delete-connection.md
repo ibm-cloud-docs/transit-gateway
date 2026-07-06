@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-06"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -98,7 +98,7 @@ This example illustrates the returned response when the connection could not be 
     {
       "code": "not_found",
       "message": "Cannot find Connection",
-      "more_info": "https://cloud.ibm.com/apidocs/transit-gateway#error-handling"
+      "more_info": "https://cloud.ibm.com/docs/apis/transit-gateway#error-handling"
     }
   ],
   "trace": "request_id"
@@ -106,7 +106,7 @@ This example illustrates the returned response when the connection could not be 
 ```
 {: pre}
 
-For more information, see [Removes a connection from Transit Gateway](/apidocs/transit-gateway#delete-transit-gateway-connection) in the Transit Gateway API reference.
+For more information, see [Removes a connection from Transit Gateway](/docs/apis/transit-gateway#delete-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
 ## Deleting a connection using Terraform

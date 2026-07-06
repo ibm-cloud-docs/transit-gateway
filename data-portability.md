@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-11-15"
+  years: 2024, 2026
+lastupdated: "2026-07-06"
 
 keywords: Transit Gateway
 
@@ -49,11 +49,11 @@ When creating a route report from a transit gateway's details page, you can down
 ### Exporting transit gateway data with the CLI and API
 {: #transit-gateway-export-cli-api}
 
-The following table provides mechanisms to export the settings and configurations that are used to process the customer's content through the means of the IBM Cloud Transit Gateway [CLI](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli) and [API](/apidocs/transit-gateway). The procedures given in the linked documentation should be followed and the output stored to ensure all necessary configuration data is available.
+The following table provides mechanisms to export the settings and configurations that are used to process the customer's content through the means of the IBM Cloud Transit Gateway [CLI](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli) and [API](/docs/apis/transit-gateway). The procedures given in the linked documentation should be followed and the output stored to ensure all necessary configuration data is available.
 
 | CLI  | API |
 |--------------------|-------------------------|
-| [ibmcloud tg gateways](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-gateways) \n [ibmcloud tg connections](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-connections) \n [ibmcloud tg locations](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#list-locations) \n [ibmcloud tg route-reports](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-routereports)| [list transit gateways](/apidocs/transit-gateway#list-transit-gateways) \n [list connections](/apidocs/transit-gateway#list-connections) \n [list gateway locations](/apidocs/transit-gateway#list-gateway-locations) \n [list transit gateway route reports](/apidocs/transit-gateway#list-transit-gateway-route-reports)|
+| [ibmcloud tg gateways](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-gateways) \n [ibmcloud tg connections](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-connections) \n [ibmcloud tg locations](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli&interface=ui#list-locations) \n [ibmcloud tg route-reports](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-routereports)| [list transit gateways](/docs/apis/transit-gateway#list-transit-gateways) \n [list connections](/docs/apis/transit-gateway#list-connections) \n [list gateway locations](/docs/apis/transit-gateway#list-gateway-locations) \n [list transit gateway route reports](/docs/apis/transit-gateway#list-transit-gateway-route-reports)|
 {: caption="Exporting transit gateway data with the CLI and API" caption-side="bottom"}
 
 ## Exported data formats
@@ -70,7 +70,7 @@ ibmcloud tg gateways|gws [--output json] [-h, --help]
 ```
 {: pre}
 
-Example request using the API, [list-transit-gateways](/apidocs/transit-gateway#list-transit-gateways):
+Example request using the API, [list-transit-gateways](/docs/apis/transit-gateway#list-transit-gateways):
 
 ```sh
 curl -X GET --location --header "Authorization: Bearer {iam_token}" --header "Accept: application/json" "{base_url}/transit_gateways?version={version}"

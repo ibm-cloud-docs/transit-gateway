@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-06"
 
 keywords: features, overview
 
@@ -193,7 +193,7 @@ To add a connection with the API, follow these steps:
    ```
    {: pre}
 
-For more information, see [Adds a connection to a transit gateway](/apidocs/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.
+For more information, see [Adds a connection to a transit gateway](/docs/apis/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
 ## Adding a connection with Terraform

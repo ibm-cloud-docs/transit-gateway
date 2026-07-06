@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-06"
 
 keywords: connecting, region, order
 
@@ -221,7 +221,7 @@ Follow these steps to create a transit gateway with the API:
 
    
 
-For more information, see [Creates a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway) in the Transit Gateway API reference.
+For more information, see [Creates a Transit Gateway](/docs/apis/transit-gateway?code=java#create-transit-gateway) in the Transit Gateway API reference.
 {: note}
 
 ## Creating a transit gateway using Terraform

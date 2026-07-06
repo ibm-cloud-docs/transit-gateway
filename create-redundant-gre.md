@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-06"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -48,7 +48,7 @@ To create a redundant GRE, follow these steps:
       1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**.
       1. Click **Create**.
       1. Enter a name for the transit gateway and choose a resource group. You can select a resource group from the list, or keep the **default** selection.
-      1. Optional: Click the **GRE enhanced route propagation** toggle to allow GRE tunnel traffic to flow across all GRE tunnels connected to this transit gateway. 
+      1. Optional: Click the **GRE enhanced route propagation** toggle to allow GRE tunnel traffic to flow across all GRE tunnels connected to this transit gateway.
 
          Make sure to review [GRE enhanced propagation considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#gre-enhanced-route-propagation-considerations) before enabling this toggle.
          {: note}
@@ -63,7 +63,7 @@ To create a redundant GRE, follow these steps:
 
          You can upgrade routing options at a later point if your needs change. Pricing is changed accordingly.
          {: note}
-      
+
       1. Choose the location where you want to provision your transit gateway.
 
          If you are using local routing, the specified location limits you to connect VPCs located in that region only. If you are using global routing, the specified location affects network latency, so choose the region closest to the resources that you need connected.
@@ -76,13 +76,13 @@ To create a redundant GRE, follow these steps:
 
 1. Select **Redundant GRE** as your network connection type.
 1. Enter a connection name.
-1. Optionally, expand the Prefix filtering section to show the **Permit prefixes** toggle where you can create prefix filters. Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny.   
+1. Optionally, expand the Prefix filtering section to show the **Permit prefixes** toggle where you can create prefix filters. Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny.
 
    Make sure to review [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#prefix-filtering-considerations) before creating prefix filters. Also, note that the default filter applies to all prefixes except those that you create.
    {: attention}
 
    To create a prefix filter, click **Create prefix filter**, then complete the following information:
-    
+
    1. Select an action type: **Permit** or **Deny**.
    1. Enter the network prefix along with its subnet mask (for example, `10.0.0.0/16`).
    1. Optionally, enter values for whether the network should be greater than or equal to the subnet mask you chose.
@@ -90,7 +90,7 @@ To create a redundant GRE, follow these steps:
 
    Connections are denied or permitted based on the order of the filters in the list. Edit the prefix filter list to adjust the order in which prefixes are processed.
    {: tip}
-   
+
 1. Select the base network type (**Classic infrastructure** or **VPC**) and whether this is a connection to a network in another account. If you select **VPC** as the base network, you can select the region and VPC that you want to target.
 
    Prefixes of the base network are not advertised to the transit gateway.
@@ -104,7 +104,7 @@ To create a redundant GRE, follow these steps:
    To find the CRN, click **Navigation Menu** ![Navigation Menu icon](../../icons/icon_hamburger.svg) > **Resource List** from the {{site.data.keyword.cloud_notm}} console. Expand the Networking section, then click the table row of the Virtual Private Cloud whose CRN you want to find. The VPC CRN is shown in the details on the Overview tab.
    {: tip}
 
-1. Add a minimum of of two GRE tunnels for this connection.  
+1. Add a minimum of of two GRE tunnels for this connection.
 
    You can click **Add tunnel** to add more tunnels, but you can't exceed two tunnels per zone.
    {: important}
@@ -320,7 +320,7 @@ curl -H "Content-Type: application/json" -X POST https://$TS_ENDPOINT/v1/transit
 ```
 {: screen}
 
-For more information, see [Adding a connection to a Transit Gateway](/apidocs/transit-gateway#create-transit-gateway-connection) in the Transit Gateway API reference.
+For more information, see [Adding a connection to a Transit Gateway](/docs/apis/transit-gateway#create-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
 ## Creating a redundant GRE using Terraform

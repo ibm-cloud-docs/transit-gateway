@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-06"
 
 keywords: deleting, delete
 
@@ -100,7 +100,7 @@ This example illustrates that the transit gateway could not be found, leading to
     {
       "code": "not_found",
       "message": "Cannot find Gateway",
-      "more_info": "https://cloud.ibm.com/apidocs/transit-gateway#error-handling"
+      "more_info": "https://cloud.ibm.com/docs/apis/transit-gateway#error-handling"
     }
   ],
   "trace": "request_id"
@@ -108,7 +108,7 @@ This example illustrates that the transit gateway could not be found, leading to
 ```
 {: screen}
 
-For more information, see [Deletes specified Transit Gateway](/apidocs/transit-gateway#delete-transit-gateway) in the Transit Gateway API reference.
+For more information, see [Deletes specified Transit Gateway](/docs/apis/transit-gateway#delete-transit-gateway) in the Transit Gateway API reference.
 {: note}
 
 ## Deleting a transit gateway using Terraform
