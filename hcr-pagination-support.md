@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2024-05-20"
+  years: 2024, 2026
+lastupdated: "2026-07-06"
 keywords:
 
 subcollection: transit-gateway
@@ -41,7 +41,7 @@ The SDK automatically handles pagination.
 
 Upgrade your CLI and Terraform versions and update your tooling that uses REST API to handle the pagination.
 
-While the default `limit` value allows your existing clients to retrieve the entire list of connections with one request, the default `limit` value is expected to be lowered in a future release. Additionally, we expect the number of transit gateway connections will continue to increase. Therefore, to ensure your clients continue to be aware of all connections, you must upgrade your clients to follow our [pagination guidance](/apidocs/transit-gateway#api-pagination).
+While the default `limit` value allows your existing clients to retrieve the entire list of connections with one request, the default `limit` value is expected to be lowered in a future release. Additionally, we expect the number of transit gateway connections will continue to increase. Therefore, to ensure your clients continue to be aware of all connections, you must upgrade your clients to follow our [pagination guidance](/docs/apis/transit-gateway#api-pagination).
 
 ## How do you set this optional `limit` value?
 {: #set-limit-parameter}
@@ -49,7 +49,7 @@ While the default `limit` value allows your existing clients to retrieve the ent
 The list of connections uses the default value unless you set a `limit` value.
 
 * For CLI, use the [`ibmcloud tg connections`](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#list-connections) command.
-* For API, [retrieve all connections for a transit gateway](/apidocs/transit-gateway#list-connections).
+* For API, [retrieve all connections for a transit gateway](/docs/apis/transit-gateway#list-connections).
 * For Terraform, no action is necessary. When you update the provider version to the recommended version, pagination is handled automatically.
 
  To test that your clients have been upgraded correctly, specify a `limit` value of `1`.

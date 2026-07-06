@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-06"
 
 keywords:
 
@@ -221,7 +221,7 @@ curl -H "Content-Type: application/json" -X POST https://$TS_ENDPOINT/v1/transit
 ```
 {: screen}
 
-For more information, see [Adding a connection to a Transit Gateway](/apidocs/transit-gateway#create-transit-gateway-gre-tunnel) in the Transit Gateway API reference.
+For more information, see [Adding a connection to a Transit Gateway](/docs/apis/transit-gateway#create-transit-gateway-gre-tunnel) in the Transit Gateway API reference.
 {: note}
 
 ## Removing a tunnel from a redundant GRE with the API
@@ -235,7 +235,7 @@ curl -X DELETE https://$TS_ENDPOINT/v1/transit_gateways/$GATEWAY_ID/connections/
 ```
 {: pre}
 
-An HTTP `204` code is returned on successful deletion with no response body. For API parameters and examples, see [Deletes specified Transit Gateway redundant GRE tunnel](/apidocs/transit-gateway#delete-transit-gateway-connection-tunnels) in the Transit Gateway API reference.
+An HTTP `204` code is returned on successful deletion with no response body. For API parameters and examples, see [Deletes specified Transit Gateway redundant GRE tunnel](/docs/apis/transit-gateway#delete-transit-gateway-connection-tunnels) in the Transit Gateway API reference.
 
 ## Adding a tunnel to a redundant GRE using Terraform
 {: #add-tunnel-redundant-gre-terraform}
@@ -278,5 +278,5 @@ For more information, see the [Terraform registry](https://registry.terraform.io
 ## Related link
 {: #related-links-add-remove-redundant-gre}
 
-* [Creating a redundant GRE](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection&interface=ui) 
+* [Creating a redundant GRE](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection&interface=ui)
 * [Approving and rejecting cross-account redundant GRE requests](/docs/transit-gateway?topic=transit-gateway-approve-reject-redundant-gre-tunnels&interface=ui)

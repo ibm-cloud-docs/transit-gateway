@@ -29,7 +29,7 @@
     ]
   },
   "section_devtools": {
-    "api": "/apidocs/transit-gateway",
+    "api": "/docs/apis/transit-gateway",
     "cli": "/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli",
     "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection"
   },

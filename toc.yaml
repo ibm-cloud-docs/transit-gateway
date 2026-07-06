@@ -88,7 +88,7 @@ toc:
           topics:
           - link:
               label: Transit Gateway API
-              href: https://{DomainName}/apidocs/transit-gateway
+              href: https://{DomainName}/docs/apis/transit-gateway
           - api-change-log.md
       - topicgroup:
           label: Transit Gateway CLI reference

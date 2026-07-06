@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2025
-lastupdated: "2025-10-01"
+  years: 2020, 2026
+lastupdated: "2026-07-06"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -110,7 +110,7 @@ curl -X POST https://$TS_ENDPOINT/v1/transit_gateways/$GATEWAY_ID/connections/$C
 ```
 {: pre}
 
-For more information, see [Performs actions on a connection for a Transit Gateway](/apidocs/transit-gateway#create-transit-gateway-connection-actions).
+For more information, see [Performs actions on a connection for a Transit Gateway](/docs/apis/transit-gateway#create-transit-gateway-connection-actions).
 {: note}
 
 ## Rejecting cross-account redundant GRE requests with the API
@@ -129,7 +129,7 @@ curl -X POST https://$TS_ENDPOINT/v1/transit_gateways/$GATEWAY_ID/connections/$C
 ```
 {: pre}
 
-For more information, see [Performs actions on a connection for a Transit Gateway](/apidocs/transit-gateway#create-transit-gateway-connection-actions).
+For more information, see [Performs actions on a connection for a Transit Gateway](/docs/apis/transit-gateway#create-transit-gateway-connection-actions).
 {: note}
 
 ## Approving cross-account redundant GRE requests using Terraform

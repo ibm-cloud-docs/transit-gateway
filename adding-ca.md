@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-06"
 
 keywords:
 
@@ -180,7 +180,7 @@ To add a cross-account connection, follow these steps:
 For classic cross-account connections, be sure that the `network-account-id` is set to the account you are requesting to communicate with. For VPC cross-account connections, be sure that the `network-id` is set to the account that you are requesting to communicate with.
 {: important}
 
-For more information, see [Adds a connection to a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway-connection) and [Performs actions on a connection for a Transit Gateway](/apidocs/transit-gateway?code=java#create-transit-gateway-connection-actions) in the Transit Gateway API reference.
+For more information, see [Adds a connection to a Transit Gateway](/docs/apis/transit-gateway?code=java#create-transit-gateway-connection) and [Performs actions on a connection for a Transit Gateway](/docs/apis/transit-gateway?code=java#create-transit-gateway-connection-actions) in the Transit Gateway API reference.
 {: note}
 
 ### Request cross-account connection

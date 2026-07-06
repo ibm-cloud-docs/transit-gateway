@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-06"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -59,13 +59,13 @@ To create an unbound GRE tunnel, follow these steps:
 
 1. Choose **Unbound GRE tunnel** as your network connection type.
 1. Enter the tunnel name.
-1. Optionally, expand the Prefix filtering section to show the **Permit prefixes** toggle where you can create prefix filters. Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny.   
+1. Optionally, expand the Prefix filtering section to show the **Permit prefixes** toggle where you can create prefix filters. Prefix filtering allows you to set an ordered list of filters that determine the routes your transit gateway should accept or deny.
 
    Make sure to review [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips&interface=ui#prefix-filtering-considerations) before creating prefix filters. Also, note that the default filter applies to all prefixes except those that you create.
    {: attention}
 
    To create a prefix filter, click **Create prefix filter**, then complete the following information:
-    
+
    1. Select an action type: **Permit** or **Deny**.
    1. Enter the network prefix along with its subnet mask (for example, `10.0.0.0/16`).
    1. Optionally, enter values for whether the network should be greater than or equal to the subnet mask you chose.
@@ -213,7 +213,7 @@ This example illustrates the response from creating an unbound GRE tunnel:
 ```
 {: screen}
 
-For more information, see [Adds a connection to a Transit Gateway](/apidocs/transit-gateway#create-transit-gateway-connection) in the Transit Gateway API reference.
+For more information, see [Adds a connection to a Transit Gateway](/docs/apis/transit-gateway#create-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
 ## Creating a GRE tunnel connection using Terraform
