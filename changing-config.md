@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-07-14"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -119,8 +119,6 @@ PATCH /transit_gateways/{id}
 
 
 
-
-
 ### Example Response
 {: #change-configuration-api-response-example}
 
@@ -174,8 +172,14 @@ resource "ibm_tg_gateway" "new_tg_gw"{
  name="transit-gateway-1"
  location="us-south"
  global=true
+ redundancy_group=ibm_tg_redundancy_group.tg_rg
  gre_enhanced_route_propagation=false
  resource_group="30951d2dff914dafb26455a88c0c0092"
 }
+
+resource "ibm_tg_redundancy_group" "tg_rg"{
+name="group-1"
+}  
+
 ```
 {: codeblock}
