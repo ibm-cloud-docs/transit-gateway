@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-08-04"
 
 keywords: features, overview
 
@@ -62,7 +62,7 @@ In the event of a zonal failure—such as when a transit gateway experiences a f
 
 IBM Cloud Transit Gateway supports the use of Generic Routing Encapsulation (GRE) tunnels to connect endpoints. GRE tunnels enable the transit gateway to connect to overlay networks hosted on classic infrastructure resources for unique use cases.
 
-With GRE enhanced route propagation enabled, all GRE tunnels connected to the same transit gateway share routes and can communicate across zones. When this setting is disabled, network traffic cannot be exchanged between unbound GRE tunnels in different zones or between tunnels within redundant GREs. For more information, see [GRE tunnels](/docs/transit-gateway?topic=transit-gateway-GRE-connection).
+With GRE enhanced route propagation enabled, all GRE tunnels connected to the same transit gateway share routes and can communicate across zones. When this setting is disabled, network traffic cannot be exchanged between unbound GRE tunnels in different zones or between tunnels within redundant GREs. For more information, see [GRE tunnels](/docs/transit-gateway?topic=transit-gateway-gre-connection&interface=ui).
 
 ### Direct Link connectivity
 {: #directlink}

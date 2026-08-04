@@ -2,7 +2,7 @@
 
 copyright:
   years:  2023, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-08-04"
 
 keywords: CBR, context-based restrictions
 
@@ -18,14 +18,14 @@ subcollection: transit-gateway
 Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to Transit Gateway resources can be controlled with context-based restrictions and identity and access management policies.
 {: shortdesc}
 
-These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
+These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/support?topic=support-context-restrictions-whatis).
 
 A user must have the Administrator role on the Transit Gateway service to create, update, or delete rules. And a user must have either the Editor or Administrator role on the Context-based restrictions service to create, update, or delete network zones.
 {: note}
 
-Any {{site.data.keyword.cloudaccesstraillong_notm}} or audit log events that are generated will come from the context-based restrictions service, and not Transit Gateway. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
+Any {{site.data.keyword.cloudaccesstraillong_notm}} or audit log events that are generated will come from the context-based restrictions service, and not Transit Gateway. For more information, see [Monitoring context-based restrictions](/docs/support?topic=support-cbr-monitor).
 
-To get started protecting your Transit Gateway with context-based restrictions, see the tutorial for [Leveraging context-based restrictions to secure your resources](/docs/account?topic=account-context-restrictions-tutorial).
+To get started protecting your Transit Gateway with context-based restrictions, see the tutorial for [Leveraging context-based restrictions to secure your resources](/docs/support?topic=support-context-restrictions-tutorial).
 
 ## Limitations
 {: #cbr-limitations}
@@ -34,8 +34,6 @@ Context-based restrictions protect only the actions associated with the [Transit
 
 - [Resource Instance APIs](/docs/apis/resource-controller/resource-controller#list-resource-instances)
 - [Resource Keys APIs](/docs/apis/resource-controller/resource-controller#list-resource-keys)
-- [Resource Bindings APIs](/docs/apis/resource-controller/resource-controller#list-resource-bindings)
-- [Resource Aliases APIs](/docs/apis/resource-controller/resource-controller#list-resource-aliases)
 - [IAM Policy APIs](/docs/apis/iam-policy-management#list-policies)
 - [Global Search APIs](/docs/apis/search)
 - Global Tagging [Attach](/docs/apis/tagging#attach-tag) and [Detach](/docs/apis/tagging#detach-tag) APIs
@@ -52,8 +50,8 @@ Additionally, rules can be scoped to a specific instance of the service or a res
 {: #cbr-rules-cli}
 {: cli}
 
-1. To create rules from the CLI, [install the CBR CLI plug-in](/docs/account?topic=account-cbr-plugin).
-1. Use the [`ibmcloud cbr rule-create` command](/docs/account?topic=account-cbr-plugin#cbr-cli-rule-create-command) to create CBR rules. For more information, see the CBR [CLI reference](/docs/account?topic=account-cbr-plugin).
+1. To create rules from the CLI, [install the CBR CLI plug-in](/docs/support?topic=support-cbr-plugin).
+1. Use the [`ibmcloud cbr rule-create` command](/docs/support?topic=support-cbr-plugin#cbr-cli-rule-create-command) to create CBR rules. For more information, see the CBR [CLI reference](/docs/support?topic=support-cbr-plugin).
 
 The examples in this section are enforcement rules. You can make them report-only by adding `--enforcement-mode report`.
 

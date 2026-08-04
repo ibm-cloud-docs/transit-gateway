@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-08-04"
 
 keywords: faq, faqs, questions
 
@@ -72,13 +72,13 @@ It is an RFC-2547-based platform where the core network and network address are 
 {: faq}
 {: #account}
 
-{{site.data.keyword.tg_full_notm}} is integrated into the [IBM Cloud usage dashboard](/docs/account?topic=account-viewingusage), which provides a summary of estimated charges for all services and resources that are used per month in your organizations. This includes the number of connections and the amount of traffic flowing across your transit gateways. {{site.data.keyword.tg_full_notm}} usage is billed and reported as part of the [IBM Cloud invoice process](/docs/account?topic=account-managing-invoices).
+{{site.data.keyword.tg_full_notm}} is integrated into the [IBM Cloud usage dashboard](/docs/support?topic=support-viewingusage), which provides a summary of estimated charges for all services and resources that are used per month in your organizations. This includes the number of connections and the amount of traffic flowing across your transit gateways. {{site.data.keyword.tg_full_notm}} usage is billed and reported as part of the [IBM Cloud invoice process](/docs/support?topic=support-managing-invoices).
 
 ### Are there notifications through email for events of unavailability of the service?
 {: faq}
 {: #service-unavailability-notifications}
 
-You should use the standard [IBM Cloud notification process](/docs/account?topic=account-viewing-notifications) for any maintenance events.
+You should use the standard [IBM Cloud notification process](/docs/support?topic=support-viewing-notifications) for any maintenance events.
 
 ## Pricing and billing
 {: #faqs-pricing}
@@ -234,7 +234,7 @@ By enabling global routing, you can connect VPCs located in different [MZRs](/do
 {: faq}
 {: #faq-ecmp}
 
-If your transit gateway doesn't support ECMP (Equal-Cost Multi-Path Routing) and you need it for improved traffic routing, you can [open a support case](/docs/account?topic=account-open-case&interface=ui). IBM Support can assist in enabling ECMP for your transit gateway, allowing your traffic to be distributed across multiple paths for better redundancy and load balancing.
+If your transit gateway doesn't support ECMP (Equal-Cost Multi-Path Routing) and you need it for improved traffic routing, you can [open a support case](/docs/support?topic=support-open-case&interface=ui). IBM Support can assist in enabling ECMP for your transit gateway, allowing your traffic to be distributed across multiple paths for better redundancy and load balancing.
 
 ### In a Highly Available (HA) configuration, how long after the failover of the primary GRE tunnel does the routing device wait before declaring it inactive?
 {: faq}
