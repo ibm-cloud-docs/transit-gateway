@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-14"
+lastupdated: "2026-08-04"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -179,7 +179,7 @@ resource "ibm_tg_gateway" "new_tg_gw"{
 
 resource "ibm_tg_redundancy_group" "tg_rg"{
 name="group-1"
-}  
+}
 
 ```
 {: codeblock}

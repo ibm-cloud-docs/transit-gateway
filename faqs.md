@@ -33,7 +33,7 @@ These frequently asked questions can help you when working with the {{site.data.
 {: faq}
 {: support}
 
-You can create more than one transit gateway in your account. Each transit gateway (and its connections) are logically isolated from your other transit gateways.
+You can create more than one transit gateway in your account. Each transit gateway (and its connections) is logically isolated from your other transit gateways.
 
 ### What are the service limits that I must keep in mind while using {{site.data.keyword.tg_full_notm}}?
 {: #service-limits-faq}
@@ -46,7 +46,7 @@ For more information, see [Service limits](/docs/transit-gateway?topic=transit-g
 {: faq}
 {: #scalability}
 
-The {{site.data.keyword.cloud_notm}} infrastructure manages all transit gateways. There are no scalability options available.
+The {{site.data.keyword.cloud_notm}} infrastructure manages all transit gateways. No scalability options are available.
 
 ### How can I guarantee one of my clients is not going to impact the others?
 {: faq}
@@ -71,15 +71,15 @@ It is an RFC-2547-based platform where the core network and network address are 
 ### What are the tools for monitoring the consumption of resources associated with the service, as well as the costs and the quality of the service?
 {: faq}
 {: #account}
-
+  
 {{site.data.keyword.tg_full_notm}} is integrated into the [IBM Cloud usage dashboard](/docs/support?topic=support-viewingusage), which provides a summary of estimated charges for all services and resources that are used per month in your organizations. This includes the number of connections and the amount of traffic flowing across your transit gateways. {{site.data.keyword.tg_full_notm}} usage is billed and reported as part of the [IBM Cloud invoice process](/docs/support?topic=support-managing-invoices).
-
+ 
 ### Are there notifications through email for events of unavailability of the service?
 {: faq}
 {: #service-unavailability-notifications}
-
-You should use the standard [IBM Cloud notification process](/docs/support?topic=support-viewing-notifications) for any maintenance events.
-
+ 
+When the service is unavailable, use the standard [IBM Cloud notification process](/docs/account?topic=account-viewing-notifications) for any maintenance events.
+ 
 ## Pricing and billing
 {: #faqs-pricing}
 
@@ -100,12 +100,12 @@ For more information, see [Pricing considerations](/docs/transit-gateway?topic=t
 {: faq}
 {: support}
 
-Starting 12 January 2026, IBM Cloud Transit Gateway will begin billing for data transferred toward GRE tunnels. Previously, only traffic flowing from GRE tunnels toward other connections was billed, while traffic toward GRE tunnels was not. This update aligns GRE connections with the existing usage-based billing model applied to other connection types such as VPC, Direct Link, and Power Virtual Server.
+Starting 12 January 2026, IBM Cloud Transit Gateway will begin billing for data that is transferred toward GRE tunnels. Previously, only traffic flowing from GRE tunnels toward other connections was billed, while traffic toward GRE tunnels was not. This update aligns GRE connections with the existing usage-based billing model that is applied to other connection types such as VPC, Direct Link, and Power Virtual Server.
 
-This means:
+This change means:
 - If data flows into a GRE tunnel, charges will now apply.
 - Traffic from GRE tunnels toward other connections was already billed and remains unchanged.
-- GRE traffic will be billed at the same rate as other Transit Gateway connection types.
+- GRE traffic is billed at the same rate as other Transit Gateway connection types.
 
 The following table shows the change in billing behavior:
 
@@ -134,14 +134,14 @@ The following table shows the change in billing behavior:
 {: faq}
 {: support}
 
-You can connect multiple VPCs in the same region to a single transit gateway with the local routing option, and connect them across regions by using global routing. Keep in mind that all of a transit gateway's network connections are interconnected, so carefully consider all resources that you want to connect. Make sure each connection receives a unique name in the gateway, and that you choose the appropriate routing type (local or global) based on the location of the connections.
+You can connect multiple VPCs in the same region to a single transit gateway with the local routing option, and connect them across regions by using global routing. Keep in mind that all of a transit gateway's network connections are interconnected, so carefully consider all resources that you want to connect. Make sure that each connection receives a unique name in the gateway, and that you choose the appropriate routing type (local or global) based on the location of the connections.
 
 ### Can I connect to a VPC or classic infrastructure in another {{site.data.keyword.cloud_notm}} account?
 {: #connect-vpc-in-another-account}
 {: faq}
 {: support}
 
-You can connect to both a VPC or classic infrastructure in another {{site.data.keyword.cloud_notm}} account by providing the appropriate connection information when adding a connection to your transit gateway. The account containing the VPC or classic infrastructure is then able to view the gateway and all of its connections, and must choose to opt-in to allow account-to-account interconnectivity for that VPC. For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections).
+You can connect to both a VPC or classic infrastructure in another {{site.data.keyword.cloud_notm}} account by providing the appropriate connection information when adding a connection to your transit gateway. The account containing the VPC or classic infrastructure is then able to view the gateway and all of its connections, and must choose to opt in to allow account-to-account interconnectivity for that VPC. For more information, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections).
 
 ### How many connection requests can I make from one account to VPCs in other {{site.data.keyword.cloud_notm}} accounts?
 {: #connection-requests-account-vpcs}
@@ -169,7 +169,7 @@ You can connect a classic connection to multiple local transit gateways and a si
 {: faq}
 {: support}
 
-No, you must choose to connect to a direct resource (VPC or classic infrastructure), or bind your direct link to one or more local transit gateways, or one global gateway. Your on-premises network can then access IBM Cloud resources connected through the transit gateways.
+No, you must choose to connect to a direct resource (VPC or classic infrastructure), or bind your direct link to one or more local transit gateways, or one global gateway. Your on-premises network can then access IBM Cloud resources that are connected through the transit gateways.
 
 ### Can I connect a VPN or a direct link to a transit gateway?
 {: #vpn}
@@ -190,7 +190,7 @@ Although [classic-access VPCs](/docs/vpc?topic=vpc-setting-up-access-to-classic-
 {: faq}
 {: support}
 
-{{site.data.keyword.tg_full_notm}} can be used to connect multiple VPCs to each other. As such, connecting/peering two VPCs is just a part of the functionality that the transit gateway service offers. {{site.data.keyword.cloud_notm}} does not provide a standalone VPC peering service or capability.
+{{site.data.keyword.tg_full_notm}} can be used to connect multiple VPCs to each other. As such, connecting/peering two VPCs is just a part of the functionality that the transit gateway service offers. {{site.data.keyword.cloud_notm}} does not provide a stand-alone VPC peering service or capability.
 
 ### Can I interconnect VPCs using a transit gateway?
 {: #faq-interconnecting-vpcs}
@@ -207,7 +207,7 @@ Yes, you can. For detailed instructions, see [IBM Cloud Transit Gateway route re
 ## Routing
 {: #faqs-routing}
 
-### If I connect a classic connection to a transit gateway provisioned with local routing, does that mean I can only communicate with classic infrastructure resources that are in the same location as the transit gateway?
+### If I connect a classic connection to a transit gateway provisioned with local routing, does that mean I can communicate only with classic infrastructure resources that are in the same location as the transit gateway?
 {: #communicate-same-resources}
 {: faq}
 {: support}
@@ -233,20 +233,20 @@ By enabling global routing, you can connect VPCs located in different [MZRs](/do
 ### My existing transit gateway doesn't support ECMP. What can I do?
 {: faq}
 {: #faq-ecmp}
-
-If your transit gateway doesn't support ECMP (Equal-Cost Multi-Path Routing) and you need it for improved traffic routing, you can [open a support case](/docs/support?topic=support-open-case&interface=ui). IBM Support can assist in enabling ECMP for your transit gateway, allowing your traffic to be distributed across multiple paths for better redundancy and load balancing.
-
+ 
+If your transit gateway doesn't support ECMP (Equal-Cost Multi-Path Routing) and you need it for improved traffic routing, you can [open a support case](/docs/account?topic=account-open-case&interface=ui). IBM Support can help you enable ECMP for your transit gateway, allowing your traffic to be distributed across multiple paths for better redundancy and load balancing.
+ 
 ### In a Highly Available (HA) configuration, how long after the failover of the primary GRE tunnel does the routing device wait before declaring it inactive?
 {: faq}
 {: #faq-stale-routes-time}
 
-This time, by default, is set as 5 minutes (300 seconds), and defined by the configuration statement `stale-routes-time`. The `stale-routes-time` statement allows you to set the length of time the routing device waits to receive messages from restarting neighbors before declaring them inactive. This means, in the case of a GRE HA failover to a second GRE tunnel, the traffic takes 5 minutes to be reflected by the second tunnel.
+The waiting time, by default, is set as 5 minutes (300 seconds), and defined by the configuration statement `stale-routes-time`. The `stale-routes-time` statement allows you to set the length of time the routing device waits to receive messages from restarting neighbors before declaring them inactive. This means, during a GRE HA failover to a second GRE tunnel, the traffic takes 5 minutes to be reflected by the second tunnel.
 
 ### Can I use multiple local BGP ASNs within the same zone?
 {: faq}
 {: #faq-multiple-local-bgp-asns}
 
-No. IBM Cloud Transit Gateway assigns a single local ASN per zone because each zone is backed by a specific data center. This means all connections within the same zone will share the same local ASN by design.
+No. IBM Cloud Transit Gateway assigns a single local ASN per zone because each zone is backed by a specific data center. All connections within the same zone share the same local ASN by design.
 
 If you require different local ASNs for isolation purposes (for example, per tenant), the only workaround is to create connections in different zones. Currently, the platform doesn't support assigning multiple local ASNs within a single zone.
 

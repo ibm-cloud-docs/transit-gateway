@@ -18,7 +18,7 @@ subcollection: transit gateway
 [High availability](#x2284708){: term} (HA) is the ability for a service to remain operational and accessible in the presence of unexpected failures. [Disaster recovery](#x2113280){: term} (DR) is the process of recovering the service instance to a working state.
 {: shortdesc}
 
-IBM Cloud Transit Gateway is a highly available service designed to meet the [Service Level Objectives (SLO)](/docs/resiliency?topic=resiliency-slo#slo-high-network-services). It is a regional service built on a resilient, distributed infrastructure and supports connectivity across multiple zones within a region. Transit Gateway enables seamless communication between IBM Cloud resources, such as Virtual Private Clouds (VPCs), and supports highly available network architectures through redundant connections and automatic route propagation.
+IBM Cloud Transit Gateway is a highly available service that is designed to meet the [Service Level Objectives (SLO)](/docs/resiliency?topic=resiliency-slo#slo-high-network-services). It is a regional service that is built on a resilient, distributed infrastructure and supports connectivity across multiple zones within a region. Transit Gateway enables seamless communication between IBM Cloud resources, such as Virtual Private Clouds (VPCs), and supports highly available network architectures through redundant connections and automatic route propagation.
 
 You are responsible for understanding your configuration, customization, and usage of the service. You are also responsible for being ready to recreate an instance of the service in a new region and restore your data in a new region.
 {: important}
@@ -30,16 +30,16 @@ To better understand the underlying infrastructure, including definitions of dat
 
 IBM Cloud Transit Gateway is a regional, highly available service built on Multi-Zone Regions (MZRs), offering a 99.99% SLA with no single point of failure within a region. When you create a Transit Gateway, it is automatically deployed across multiple availability zones, each located in a distinct physical facility, ensuring resilience against zone-level failures.
 
-Transit Gateway ensures that traffic remains within its originating zone when possible. In the event of a zonal outage, traffic is transparently rerouted through the remaining zones, maintaining uninterrupted connectivity across your IBM Cloud environment.
+Transit Gateway ensures that traffic remains within its originating zone when possible. During a zonal outage, traffic is transparently rerouted through the remaining zones, maintaining uninterrupted connectivity across your IBM Cloud environment.
 
 For GRE tunnel-based connections, which are single-threaded by default, high availability requires explicit redundancy. When you configure a GRE connection on a Transit Gateway, you must specify the availability zone. To meet high availability needs, use a Redundant GRE configuration with at least two tunnels, or configure multiple GRE connections across different availability zones.
 
 GRE connections require the gateway owner to configure high availability based on their specific requirements.
 {: note}
 
-While Transit Gateway supports global routing to link multiple regions, it does not automatically replicate configuration or state across regional instances. To protect against full-region outages, deploy a mirrored Transit Gateway in a secondary region, replicate your attachments and routing configurations, and plan failover mechanisms accordingly.
+While Transit Gateway supports global routing to link multiple regions, it does not automatically replicate configuration or state across regional instances. To protect against full-region outages, deploy a mirrored Transit Gateway in a secondary region, replicate your attachments and routing configurations, and plan failover mechanisms.
 
-IBM Cloud regions that support Transit Gateway are multi-zone regions except for Montreal, which is a single-zone region. In Montreal, Transit Gateway does not offer zone-level redundancy. If deploying in this region, be sure to implement additional measures, such as a mirrored transit gateway in a secondary region, to ensure availability and fault tolerance.
+IBM Cloud regions that support Transit Gateway are multi-zone regions except for Montreal, which is a single-zone region. In Montreal, Transit Gateway does not offer zone-level redundancy. If you plan to deploy in this region, make sure to implement additional measures, such as a mirrored transit gateway in a secondary region, to ensure availability and fault tolerance.
 {: note}
 
 ### High availability features
@@ -49,7 +49,7 @@ IBM Cloud regions that support Transit Gateway are multi-zone regions except for
 
 | Feature| Description | Consideration |
 | -------------- | -------------- | -------------- |
-| Multi-zone deployment | Deployed across multiple availability zones within a MZR | Deploy a transit gateway at the region level; for redundancy, consider deploying an additional transit gateway in a separate region. |
+| Multi-zone deployment | Deployed across multiple availability zones within an MZR | Deploy a transit gateway at the region level; for redundancy, consider deploying an additional transit gateway in a separate region. |
 | GRE tunnel redundancy | Configure at least two GRE tunnels in different availability zones | Transit Gateway doesn't provide automatic GRE failover; manual configuration of multiple tunnels is required. |
 | Global routing | Interconnect VPCs and classic infrastructure across different regions | Ensure proper configuration of routing policies and monitor inter-region traffic to maintain optimal performance. |
 | Direct Link integration | Connect on-premises networks to IBM Cloud using Direct Link | Implement redundancy in on-premises connections to avoid single points of failure.                      |
@@ -70,7 +70,7 @@ Customers are responsible for maintaining network connectivity into IBM Cloud. T
 
 IBM Cloud Transit Gateway supports disaster recovery by enabling secure, high-availability connectivity across IBM Cloud environments.
 
-Deploying Transit Gateway across multiple AZs within a MZR ensures fault tolerance within a single region. This setup mitigates the impact of localized failures, maintaining connectivity between VPCs and classic infrastructure.
+Deploying Transit Gateway across multiple AZs within an MZR ensures fault tolerance within a single region. This setup mitigates the impact of localized failures, maintaining connectivity between VPCs and classic infrastructure.
 
 Using global routing capabilities allows for interconnecting VPCs and classic infrastructure across different regions. This approach supports workload distribution and failover between regions, enhancing the overall resilience of the network architecture.
 
@@ -103,7 +103,7 @@ As a customer, you can create and support the following other disaster recovery 
 ### Planning for disaster recovery
 {: #disaster-recovery-planning}
 
-It’s critical to regularly practice your disaster recovery steps to ensure that you are well-prepared for unexpected disruptions. As you build your disaster recovery plan, consider the following failure scenarios and resolutions for IBM Cloud Transit Gateway.
+It’s critical to regularly practice your disaster recovery steps to ensure that you are well prepared for unexpected disruptions. As you build your disaster recovery plan, consider the following failure scenarios and resolutions for IBM Cloud Transit Gateway.
 
 There can be multiple ways to recover from certain failures, so be sure to assess each scenario based on your specific architecture and requirements. Here are common failure scenarios, along with potential recovery actions:
 
@@ -123,7 +123,7 @@ There can be multiple ways to recover from certain failures, so be sure to asses
 ### Backing up transit gateways for disaster recovery
 {: #disaster-recovery-tgw}
 
-Be prepared to re-create your transit gateways and connections. This section helps you ensure that you have all the data needed for this purpose.
+Be prepared to re-create your transit gateways and connections. The following section helps you ensure that you have all the data that is needed for this purpose.
 
 {{site.data.keyword.tg_full_notm}} backups are cross-regionally durable. They are stored across multiple regions, and are restorable to other regions.
 {: note}
@@ -139,7 +139,7 @@ Preserve a list of all of your transit gateways and their connections. To do so,
 For more information, see the [Transit Gateway CLI reference](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli).
 {: tip}
 
-Saving the information that is returned from these commands helps you recover from a failure quickly. In the event of a failure, use the saved information and run the `ibmcloud tg gateway-create` and `ibmcloud tg connection-create` commands to re-create your transit gateways and connections.
+Saving the information that is returned from these commands helps you recover from a failure quickly. When a failure occurs, use the saved information and run the `ibmcloud tg gateway-create` and `ibmcloud tg connection-create` commands to re-create your transit gateways and connections.
 
 ## Your responsibilities for HA and DR
 {: #ha-dr-responsibilities}
@@ -184,7 +184,7 @@ Best practices for managing change also include:
 Built for resiliency, IBM Cloud Transit Gateway simplifies and secures connectivity across VPCs, on-premises networks, and hybrid cloud environments. In the event of a failure:
 
 * Incident response teams quickly identify and isolate the failure.
-* Traffic rerouting is performed when possible using IBM’s backbone and provider networks.
+* Traffic is rerouted when possible using IBM’s backbone and provider networks.
 * Service status communication is maintained through the IBM Cloud Status page to keep you informed.
 
 When it comes to zone and regional failures, IBM takes the following recovery actions:
@@ -192,7 +192,7 @@ When it comes to zone and regional failures, IBM takes the following recovery ac
 ### How IBM recovers from zone failures
 {: #ibm-zone-failure}
 
-A zone failure refers to the failure of an availability zone within a region. In the event of a zone failure, IBM Cloud will identify the issue, perform repairs, and restore the zone as quickly as possible. If a zone becomes unavailable, traffic is automatically routed to healthy zones. Customers don't need to take any action to restore their transit gateway.
+A zone failure refers to the failure of an availability zone within a region. When a zone failure occurs, IBM Cloud identifies the issue, perform repairs, and restore the zone as quickly as possible. If a zone becomes unavailable, traffic is automatically routed to healthy zones. Customers don't need to take any action to restore their transit gateway.
 
 ### How IBM recovers from regional failures
 {: #ibm-regional-failure}
@@ -203,5 +203,6 @@ In the rare event of a regional failure, IBM Cloud will identify and repair the 
 {: #ibm-service-maintenance}
 
 All upgrades follow {{site.data.keyword.IBM_notm}} service best practices, including recovery plans and rollback processes. Regular maintenance might cause short interruptions, mitigated by [client availability retry logic](/docs/resiliency?topic=resiliency-high-availability-design#client-retry-logic-for-ha). Changes are rolled out sequentially, region by region, and zone by zone within a region. {{site.data.keyword.IBM_notm}} reverts updates at the first sign of a defect.
-
-IBM provides advance notice for all planned maintenance activities. If a change is expected to affect your workloads, IBM communicates this through official notifications. To stay updated on maintenance, service announcements, and other updates, see the [Monitoring notifications and status](/docs/support?topic=support-viewing-cloud-status) page.
+ 
+IBM provides advance notice for all planned maintenance activities. If a change is expected to affect your workloads, IBM communicates this change through official notifications. To stay updated on maintenance, service announcements, and other updates, see the [Monitoring notifications and status](/docs/account?topic=account-viewing-cloud-status) page.
+ 

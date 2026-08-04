@@ -46,11 +46,11 @@ Transit gateways provide flexibility by allowing you to add networks to local ga
 ### Optimized traffic and fault tolerance
 {: #vpc-optimized-traffic-fault-tolerance}
 
-Transit Gateway is a regional service that employs routers located in each Availability Zone. In a typical setup, when virtual server instances are deployed across different VPCs, these instances will attempt to communicate with each other. Traffic between VPCs will remain within the same zone, ensuring efficient local routing and optimized data transfer.
+Transit Gateway is a regional service that employs routers located in each Availability Zone. In a typical setup, when virtual server instances are deployed across different VPCs, these instances attempt to communicate with each other. Traffic between VPCs remains within the same zone, ensuring efficient local routing and optimized data transfer.
 
-This standard behavior also applies when using a transit VPC and advertising static routes from one VPC to advertise the same prefix across all zones. Even if firewalls are deployed within the VPCs (resulting in duplicate firewalls in the other advertised zones), traffic will still favor the transit gateway in its respective zone. This ensures that traffic returns via the same zone's transit gateway, maintaining routing within the same zone. VPCs will typically prioritize the transit gateway within their zone, minimizing cross-zone traffic.
+This standard behavior also applies when using a transit VPC and advertising static routes from one VPC to advertise the same prefix across all zones. Even if firewalls are deployed within the VPCs (resulting in duplicate firewalls in the other advertised zones), traffic still favors the transit gateway in its respective zone. This routing behavior ensures that traffic returns through the same zone's transit gateway, maintaining routing within the same zone. VPCs typically prioritize the transit gateway within their zone, minimizing cross-zone traffic.
 
-In the event of a zonal failure—such as when a transit gateway experiences a failure in one zone (resulting from the failure of all zone's routers)—communication could be disrupted. In such cases, traffic may be routed differently, with one direction of traffic sent through an alternate path, while the response might return via a different route. In general, though, VPC traffic typically remains within the same zone.
+During a zonal failure, such as when a transit gateway experiences a failure in one zone (resulting from the failure of all zone's routers), communication could be disrupted. In such cases, traffic might be routed differently, with one direction of traffic sent through an alternate path, while the response might return from a different route. In general, though, VPC traffic typically remains within the same zone.
 {: note}
 
 
@@ -154,7 +154,7 @@ Transit gateway GRE connections require the gateway owner to specifically config
 ### Use case 9: Connect an on-premises network by using Direct Link
 {: #use-case-9}
 
-Connect {{site.data.keyword.cloud_notm}} Direct Link to allow on-premises connectivity to {{site.data.keyword.cloud_notm}} networks through a transit gateway. This allows the on-premises network to access all networks that are connected to the transit gateway. In the following example, the Direct Link gateway connects to a global transit gateway, along with 4 VPCs and {{site.data.keyword.cloud_notm}} Classic Infrastructure. The inverse is also true, in that all other networks that are connected to the transit gateway are now connected to the on-premises network.
+Connect {{site.data.keyword.cloud_notm}} Direct Link to allow on-premises connectivity to {{site.data.keyword.cloud_notm}} networks through a transit gateway. This connection allows the on-premises network to access all networks that are connected to the transit gateway. In the following example, the Direct Link gateway connects to a global transit gateway, along with 4 VPCs and {{site.data.keyword.cloud_notm}} Classic Infrastructure. The inverse is also true, in that all other networks that are connected to the transit gateway are now connected to the on-premises network.
 
 Direct Link can be connected to either local or remote transit gateways.
 {: note}
@@ -166,7 +166,7 @@ Direct Link can be connected to either local or remote transit gateways.
 
 In this use case, a VPN gateway is configured as a spoke to the transit gateway to provide a redundant network path between the on-premises environment and IBM Cloud. The primary connectivity is established using Direct Link, which offers private, dedicated connectivity with assured bandwidth and low-latency performance. This direct connection terminates in the IBM Cloud Transit VPC, which connects to the transit gateway. From there, traffic is routed to multiple environments including Power Virtual Servers, virtual server instances in spoke VPCs, and classic infrastructure.
 
-To enhance availability without the added cost of a second direct link, a VPN gateway is deployed as a secondary path. This path provides secure connectivity over the internet, using BGP VPN tunnels between the on-prem network and the VPN gateway. Multiple GRE tunnels are established between the VPN gateway appliances and the transit gateway routers (TGRs), allowing the VPN to act as a spoke within the Transit Gateway topology. While this path doesn't provide the same performance guarantees as Direct Link, it ensures continued connectivity in the event of a primary path failure, making it a cost-effective and resilient solution for hybrid cloud networking.
+To enhance availability without the added cost of a second direct link, a VPN gateway is deployed as a secondary path. This path provides secure connectivity over the internet, using BGP VPN tunnels between the on-prem network and the VPN gateway. Multiple GRE tunnels are established between the VPN gateway appliances and the transit gateway routers (TGRs), allowing the VPN to act as a spoke within the Transit Gateway topology. While this path doesn't provide the same performance guarantees as Direct Link, it ensures continued connectivity during a primary path failure, making it a cost-effective and resilient solution for hybrid cloud networking.
 
 ![VPN gateway as a backup connection for Direct Link](/images/tgw-vpn-spoke.svg "VPN gateway as a backup connection for Direct Link"){: caption="VPN gateway as a backup connection for Direct Link" caption-side="bottom"}
 

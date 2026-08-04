@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-08-04"
 
 keywords:
 
@@ -89,7 +89,7 @@ To connect networks that different accounts own by using the UI, follow these st
 
 Creating a cross-account connection consists of the following steps:
 
-1. Request connection to communicate with other account.
+1. **Request connection to a network in another account**
 1. Approve/Reject connection on other account.
 
 For example, to request a connection to communicate with another account, run the following command:
@@ -175,7 +175,7 @@ For more information about available commands and options, see [Connections](/do
 To add a cross-account connection, follow these steps:
 
 1. Request a connection to communicate between other accounts.
-1. Perform actions on a requested connection. This must be completed.
+1. Perform actions on a requested connection. This action must be completed.
 
 For classic cross-account connections, be sure that the `network-account-id` is set to the account you are requesting to communicate with. For VPC cross-account connections, be sure that the `network-id` is set to the account that you are requesting to communicate with.
 {: important}
@@ -288,19 +288,19 @@ Review the following argument references that you can specify for your resource 
 
 |Argument|Details|
 |--|--|
-|**base_connection_id**  \n Optional  \n Forces new resource \n string | The ID of a network_type 'classic' connection a tunnel is configured over.  \n This field only applies to network type `gre_tunnel` connections.|
-|**base_network_type**  \n Optional  \n Forces new resource  \n string | The base network type. Allowed values are `classic`.  \n This field only applies to `unbound_gre_tunnel` type connections.
-|**gateway**  \n Required  \n Forces new resource  \n string | Enter the transit gateway identifier.|
-|**local_gateway_ip**  \n Optional  \n Forces new resource  \n string | The local gateway IP address. \n This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections. |
-|**local_tunnel_ip**  \n Optional  \n Forces new resource  \n string | The local tunnel IP address. \n This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections.|
-|**name**  \n Optional  \n string | The connection name. If the name is not given, a default name is provided based on the network type, such as `vpc` for network type VPC and `classic` for network type classic.|
-|**network_account_id**  \n Optional  \n Forces new resource  \n string|The ID of the network connected account. This is used if the network is in a different account than the gateway.|
-|**network_type**  \n Required  \n Forces new resource  \n string | The network type. Allowed values are `classic`, `directlink`, `gre_tunnel`, `unbound_gre_tunnel`, `vpn_gateway`, and `vpc`. |
-|**network_id**  \n Optional  \n Forces new resource  \n string | The ID of the network that is being connected to through this connection. \n This parameter is required for network type `vpc` and `directlink`, the CRN of the VPC or direct link gateway to be connected.  \n This field is required to be unspecified for network type `classic`.  \n **Example**:`crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
-|**remote_bgp_asn**  \n Optional  \n Forces new resource  \n integer | The remote network BGP ASN (will be generated for the connection if not specified).  \n This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
-|**remote_gateway_ip**  \n Optional  \n Forces new resource  \n string | The remote gateway IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
-|**remote_tunnel_ip**  \n Optional  \n Forces new resource  \n string | The remote tunnel IP address. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
-|**zone**  \n Optional  \n Forces new resource  \n string | The location of the GRE tunnel. This field only applies to `gre_tunnel` and `unbound_gre_tunnel` type connections. |
+|**base_connection_id** \n Optional \n Forces new resource \n string | The ID of a network_type 'classic' connection a tunnel is configured over. \n This field applies only to network type `gre_tunnel` connections.|
+|**base_network_type** \n Optional \n Forces new resource \n string | The base network type. Allowed values are `classic`. \n This field applies only to `unbound_gre_tunnel` type connections.
+|**gateway** \n Required  \n Forces new resource  \n string | Enter the transit gateway identifier.|
+|**local_gateway_ip** \n Optional \n Forces new resource  \n string | The local gateway IP address. \n This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections. |
+|**local_tunnel_ip** \n Optional \n Forces new resource  \n string | The local tunnel IP address. \n This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections.|
+|**name**  \n Optional \n string | The connection name. If the name is not given, a default name is provided based on the network type, such as `vpc` for network type VPC and `classic` for network type classic.|
+|**network_account_id** \n Optional \n Forces new resource \n string|The ID of the network connected account. This argument is used if the network is in a different account than the gateway.|
+|**network_type** \n Required \n Forces new resource  \n string | The network type. Allowed values are `classic`, `directlink`, `gre_tunnel`, `unbound_gre_tunnel`, `vpn_gateway`, and `vpc`. |
+|**network_id** \n Optional \n Forces new resource \n string | The ID of the network that is being connected to through this connection. \n This parameter is required for network type `vpc` and `directlink`, the CRN of the VPC or direct link gateway to be connected.  \n This field is required to be unspecified for network type `classic`.  \n **Example**:`crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
+|**remote_bgp_asn** \n Optional \n Forces new resource \n integer | The remote network BGP ASN (will be generated for the connection if not specified).  \n This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
+|**remote_gateway_ip** \n Optional \n Forces new resource \n string | The remote gateway IP address. This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
+|**remote_tunnel_ip** \n Optional  \n Forces new resource \n string | The remote tunnel IP address. This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
+|**zone** \n Optional \n Forces new resource \n string | The location of the GRE tunnel. This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections. |
 {: caption="Terraform argument references for creating a connection" caption-side="bottom"}
 
 ### Example
