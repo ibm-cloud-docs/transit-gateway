@@ -34,8 +34,6 @@ Context-based restrictions protect only the actions associated with the [Transit
 
 - [Resource Instance APIs](/docs/apis/resource-controller/resource-controller#list-resource-instances)
 - [Resource Keys APIs](/docs/apis/resource-controller/resource-controller#list-resource-keys)
-- [Resource Bindings APIs](/docs/apis/resource-controller/resource-controller#list-resource-bindings)
-- [Resource Aliases APIs](/docs/apis/resource-controller/resource-controller#list-resource-aliases)
 - [IAM Policy APIs](/docs/apis/iam-policy-management#list-policies)
 - [Global Search APIs](/docs/apis/search)
 - Global Tagging [Attach](/docs/apis/tagging#attach-tag) and [Detach](/docs/apis/tagging#detach-tag) APIs
