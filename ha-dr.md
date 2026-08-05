@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-05"
 
 keywords: HA for transit gateway, DR for transit gateway, transit gateway recovery time objective, transit gateway recovery point objective
 
@@ -204,5 +204,5 @@ In the rare event of a regional failure, IBM Cloud will identify and repair the 
 
 All upgrades follow {{site.data.keyword.IBM_notm}} service best practices, including recovery plans and rollback processes. Regular maintenance might cause short interruptions, mitigated by [client availability retry logic](/docs/resiliency?topic=resiliency-high-availability-design#client-retry-logic-for-ha). Changes are rolled out sequentially, region by region, and zone by zone within a region. {{site.data.keyword.IBM_notm}} reverts updates at the first sign of a defect.
  
-IBM provides advance notice for all planned maintenance activities. If a change is expected to affect your workloads, IBM communicates this change through official notifications. To stay updated on maintenance, service announcements, and other updates, see the [Monitoring notifications and status](/docs/account?topic=account-viewing-cloud-status) page.
+IBM provides advance notice for all planned maintenance activities. If a change is expected to affect your workloads, IBM communicates this change through official notifications. To stay updated on maintenance, service announcements, and other updates, see the [Monitoring notifications and status](/docs/get-support?topic=get-support-viewing-cloud-status) page.
  

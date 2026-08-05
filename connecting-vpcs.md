@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-08-05"
 
 keywords: connecting, region, order
 
@@ -69,7 +69,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
          If you select **Direct Link**, you must also log in to the [Direct Link console](/interconnectivity/direct-link){: external} and specify **Transit Gateway** as the type of network connection for your direct link.
          {: important}
 
-      * **{{site.data.keyword.powerSys_notm}}** - Creates a network connection to a {{site.data.keyword.powerSys_notm}} workspace to access the resources in a {{site.data.keyword.powerSys_notm}} colo.
+      * **{{site.data.keyword.powerSys_notm}}** - Creates a network connection to a {{site.data.keyword.powerSys_notm}} workspace to access the resources in a {{site.data.keyword.powerSys_notm}} colocation.
 
          If you select **{{site.data.keyword.powerSys_notm}}**, a {{site.data.keyword.powerSys_notm}} workspace must be created in a PER-enabled data center. For a list of PER-enabled data centers, see [Getting started with the Power Edge Router](/docs/power-iaas?topic=power-iaas-per).
          {: note}
@@ -103,7 +103,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
          * For **{{site.data.keyword.powerSys_notm}}**, select a location for the {{site.data.keyword.powerSys_notm}} workspace. Then, select from the list of  {{site.data.keyword.powerSys_notm}} workspaces that are enabled for Transit Gateway. Keep in mind that not all {{site.data.keyword.powerSys_notm}} workspaces show in this menu.
          * For **VPN gateway**, first select the region where your VPN gateway is deployed. Then, select from the available VPN gateways that support dynamic routing.
 
-            You must specify a custom CIDR block for the connection. The CIDR defines the IP range used to allocate addresses on the redundant GRE tunnels and must use [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: externa} private address space, be at least a `/27` subnet, and must not overlap with other connection CIDRs on the transit gateway.
+            You must specify a custom CIDR block for the connection. The CIDR defines the IP range used to allocate addresses on the redundant GRE tunnels and must use [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} private address space, be at least a `/27` subnet, and must not overlap with other connection CIDRs on the transit gateway.
 
             Only VPN gateways with dynamic routing enabled are shown in the Available connections list. The selected region and zone determine which Transit Gateway routers the VPN gateway connects to.
             {: note}

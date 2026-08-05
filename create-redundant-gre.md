@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-08-05"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -104,7 +104,7 @@ To create a redundant GRE, follow these steps:
    To find the CRN, click **Navigation Menu** ![Navigation Menu icon](../../icons/icon_hamburger.svg) > **Resource List** from the {{site.data.keyword.cloud_notm}} console. Expand the Networking section, then click the table row of the Virtual Private Cloud whose CRN you want to find. The VPC CRN is shown in the details on the Overview tab.
    {: tip}
 
-1. Add a minimum of of two GRE tunnels for this connection.
+1. Add a minimum of two GRE tunnels for this connection.
 
    You can click **Add tunnel** to add more tunnels, but you can't exceed two tunnels per zone.
    {: important}

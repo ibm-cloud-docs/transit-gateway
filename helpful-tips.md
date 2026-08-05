@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-05"
 
 keywords: help, tips, connections, provision
 
@@ -41,7 +41,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 
 * When planning for ECMP (Equal-Cost Multi-Path), keep in mind that throughput does not scale linearly with the number of direct links. For example, if you connect two 10 GB direct links to an ECMP-capable transit gateway, you do not get 20 GB throughput; you see more than 10 GB, but less than 20 GB. This is because ECMP works on a per-stream or per-source basis, meaning if traffic comes from a single endpoint, it likely favors one link, not both. To achieve more balanced throughput, it is recommended to drive traffic from multiple sources, as this distributes the load more evenly across the available direct links.
 * Limitation: ECMP doesn't work for direct links on a single router. Instead, it is supported across multiple routers with direct links, as long as those routers are advertising the same prefix.
-* Known restriction: New transit gateways support 4-way ECMP, but existing gateways can't use this feature unless you [open a support case](/docs/support?topic=support-open-case&interface=ui) for assistance.
+* Known restriction: New transit gateways support 4-way ECMP, but existing gateways can't use this feature unless you [open a support case](/docs/get-support?topic=get-support-open-case) for assistance.
 
    If you don't want the ECMP feature enabled on your transit gateways, you can open a support case to be added to a denylist, which will disable this feature on your gateways.
    {: note}
@@ -54,7 +54,7 @@ The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the 
 ## Classic infrastructure connection considerations
 {: #classic-infra-connection-considerations}
 
-* To use a transit gateway to connect your VPCs to your IBM Cloud classic infrastructure, you must enable your classic account for virtual routing and forwarding (VRF) and link it to your IBM Cloud account. For information on enabling your account for VRF, see [Enabling VRF and service endpoints](/docs/support?topic=support-vrf-service-endpoint).
+* To use a transit gateway to connect your VPCs to your IBM Cloud classic infrastructure, you must enable your classic account for virtual routing and forwarding (VRF) and link it to your IBM Cloud account. For information on enabling your account for VRF, see [Enabling VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint).
 
 * When you connect a VPC and the classic infrastructure to a transit gateway, all prefixes in the VPC become visible to the classic infrastructure VRF, which uses IP addresses in the `10.0.0.0/8` space. To ensure successful connectivity with the classic infrastructure, don't use prefixes in your VPCs that overlap with the `10.0.0.0/14`, `10.200.0.0/14`, `10.198.0.0/15`, and `10.254.0.0/16` blocks. Also, don't use addresses from your classic infrastructure subnets. To view a list of your classic infrastructure subnets, see [View all subnets](/docs/subnets?topic=subnets-view-all-subnets).
 
@@ -64,7 +64,7 @@ The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the 
 
 * Classic infrastructure resources located in these [data centers](/docs/transit-gateway?topic=transit-gateway-tg-locations#szr-table) connect through a transit gateway to VPC resources.
 
-* When classic infrastructure is connected to a transit gateway, it also includes any "Classic Access VPCs" attached to the account, because the subnets for these VPCs are associated with the classic infrastructure VRF. This is the only way to connect a transit gateway to a Classic Access VPC: by connecting the entire classic infrastructure to the transit gateway (instead of the specific Classic Access VPCs).
+* When classic infrastructure is connected to a transit gateway, it also includes any **Classic Access VPCs** attached to the account, because the subnets for these VPCs are associated with the classic infrastructure VRF. This is the only way to connect a transit gateway to a Classic Access VPC: by connecting the entire classic infrastructure to the transit gateway (instead of the specific Classic Access VPCs).
 
 * Classic connections residing in the same data center are unable to communicate with each other if they are in a different region than the transit gateway.
 
@@ -153,7 +153,7 @@ If you require network isolation, consider using separate transit gateways.
 {: tip}
 
 * Do not require a classic connection on the transit gateway. Classic network subnets are not advertised to the connections on the transit gateway (or vice versa).
-* The default number of unique base networks that can be targeted by unbound GRE tunnels is limited to five. You can open an [IBM Support case](/docs/support?topic=support-using-avatar#using-avatar) if you need these service limits expanded.
+* The default number of unique base networks that can be targeted by unbound GRE tunnels is limited to five. You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need these service limits expanded.
 
 For more information and a use case example, see [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).
 
@@ -255,5 +255,5 @@ Keep in mind the following service limits while using IBM Cloud Transit Gateway.
 | Number of unique base networks targeted by unbound GRE tunnels per transit gateway | 5 unique base networks targeted by unbound GRE tunnels per gateway|
 {: caption="IBM Cloud Transit Gateway service limits" caption-side="bottom"}
 
-You can open an [IBM Support case](/docs/support?topic=support-using-avatar#using-avatar) if you need your service limits expanded.
+You can open an [IBM Support case](/docs/get-support?topic=get-support-using-avatar#using-avatar) if you need your service limits expanded.
 {: note}

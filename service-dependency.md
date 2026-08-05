@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-08-05"
 
 keywords:
 
@@ -23,7 +23,7 @@ If a service depends on other {{site.data.keyword.cloud_notm}} services, there c
 {: shortdesc}
 
 Critical
-:   When the the dependency is down, the service is down.
+:   When the dependency is down, the service is down.
 
 Significant
 :   When the dependency is down, the service features are impacted.

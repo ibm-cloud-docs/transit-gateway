@@ -31,7 +31,7 @@ However, the purpose of {{site.data.keyword.tg_full_notm}} is to join your netwo
 ## Protecting your sensitive data
 {: #data-encryption}
 
-Data related to {{site.data.keyword.tg_full_notm}}'s configuration is not considered sensitive data. The configuration data is encrypted at rest at database level. The transit gatewat does not manage any customer-managed keys. As a result, there is no need or use for either Key Protect or Hyper Protect Crypto Services.
+Data related to {{site.data.keyword.tg_full_notm}}'s configuration is not considered sensitive data. The configuration data is encrypted at rest at database level. The transit gateway does not manage any customer-managed keys. As a result, there is no need or use for either Key Protect or Hyper Protect Crypto Services.
 
 ### About customer-managed keys
 {: #about-encryption}
