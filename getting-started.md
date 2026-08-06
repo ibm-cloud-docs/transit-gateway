@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-28"
+lastupdated: "2026-08-04"
 
 keywords: transit, gateway, ordering, getting, started
 
@@ -49,4 +49,4 @@ To get started using {{site.data.keyword.tg_full_notm}}:
    For more information, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-adding-connections) and [Generating a route report](/docs/transit-gateway?topic=transit-gateway-route-reports&interface=ui).
 
 1. Configure Transit Gateway connection authorization. Control which accounts or networks are allowed to attach to the gateway and exchange traffic. Ensure that appropriate IAM permissions are also in place for the underlying resources, such as VPCs or Direct Link connections. For more information, see [Using IAM permissions with IBM Cloud Transit Gateway](/docs/transit-gateway?topic=transit-gateway-iam).
-1. Test traffic flow and validate resilience. Confirm connectivity between networks, verify routes using route reports, and test failover scenarios (for example, redundant GRE tunnels) to ensure traffic continues to flow as expected when paths are unavailable. For more information, see [Monitoring Transit Gateway](/docs/transit-gateway?topic=transit-gateway-monitoring).
+1. Test traffic flow and validate resilience. Confirm connectivity between networks, verify routes using route reports, and test failover scenarios (for example, redundant GRE tunnels) to ensure that traffic continues to flow as expected when paths are unavailable. For more information, see [Monitoring Transit Gateway](/docs/transit-gateway?topic=transit-gateway-monitoring).

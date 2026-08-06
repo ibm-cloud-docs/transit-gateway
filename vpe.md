@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-05"
 
 keywords: vpe for transit gateway, virtual private endpoints for transit gateway, using vpe for vpc with transit gateway, isolation for transit gateway, private network for transit gateway, network isolation in transit gateway, non-public routes for transit gateway, private connection for transit gateway, private connectivity for transit gateway
 
@@ -26,30 +26,30 @@ VPEs are virtual IP interfaces that are bound to an endpoint gateway created on 
 Before you target a virtual private endpoint for {{site.data.keyword.cloud}}, you must complete the following tasks.
 
 * Ensure that a [Virtual Private Cloud is created](/docs/vpc?topic=vpc-getting-started).
-* Make a plan for your [virtual private endpoints](/docs/vpc?topic=vpc-planning-considerations).
+* Make a plan for your [virtual private endpoints](/docs/vpc?topic=vpc-vpe-about).
 * Ensure that [correct access controls](/docs/vpc?topic=vpc-configure-acls-sgs-endpoint-gateways) are set for your virtual private endpoint.
-* Understand the [limitations](/docs/vpc?topic=vpc-limitations-vpe) of having a virtual private endpoint.
+* Understand the [limitations](/docs/vpc?topic=vpc-limitations-vpes) of having a virtual private endpoint.
 * Understand how to [view details](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) about a virtual private endpoint.
 
 ## Setting up a VPE for {{site.data.keyword.tg_full_notm}}
 {: #vpe-endpoint-setup}
 
-When you create a VPE gateway by using the CLI or API, you must specify the [Cloud Resource Name (CRN)](/docs/support?topic=support-crn) of the region in which you want to connect to {{site.data.keyword.tg_full_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
+When you create a VPE gateway by using the CLI or API, you must specify the [Cloud Resource Name (CRN)](/docs/account?topic=account-crn) of the region in which you want to connect to {{site.data.keyword.tg_full_notm}}. Review the following table for the available regions and CRNs to use to create your VPE gateway.
 
 {{site.data.keyword.tg_full_notm}} supports VPEs in all the VPC regions as shown.
 
 | Location | Region | Cloud Resource Name (CRN) |
 |---------|-------|----------------|
-| Dallas | `us-south` | `crn:v1:bluemix:public:container-registry:us-south:::endpoint:vpe.us-south.container-registry.cloud.ibm.com` |
-| Frankfurt | `eu-de` | `crn:v1:bluemix:public:container-registry:eu-de:::endpoint:vpe.eu-de.container-registry.cloud.ibm.com` |
-| London | `eu-gb` | `crn:v1:bluemix:public:container-registry:eu-gb:::endpoint:vpe.eu-gb.container-registry.cloud.ibm.com` |
-| Montreal | `ca-mon` | `crn:v1:bluemix:public:container-registry:ca-mon:::endpoint:vpe.ca-mon.container-registry.cloud.ibm.com` |
-| Osaka | `jp-osa` | `crn:v1:bluemix:public:container-registry:jp-osa:::endpoint:vpe.jp-osa.container-registry.cloud.ibm.com` |
-| Sao Paulo | `br-sao` | `crn:v1:bluemix:public:container-registry:br-sao:::endpoint:vpe.br-sao.container-registry.cloud.ibm.com` |
-| Sydney | `au-syd` | `crn:v1:bluemix:public:container-registry:au-syd:::endpoint:vpe.au-syd.container-registry.cloud.ibm.com` |
-| Tokyo | `jp-tok` | `crn:v1:bluemix:public:container-registry:jp-tok:::endpoint:vpe.jp-tok.container-registry.cloud.ibm.com` |
-| Toronto  | `ca-tor` | `crn:v1:bluemix:public:container-registry:ca-tor:::endpoint:vpe.ca-tor.container-registry.cloud.ibm.com` |
-| Washington DC | `us-east` | `crn:v1:bluemix:public:container-registry:us-east:::endpoint:vpe.us-east.container-registry.cloud.ibm.com` |
+| Dallas | `us-south` | `crn:v1:bluemix:public:transit:us-south:::endpoint:vpe.us-south.transit.cloud.ibm.com` |
+| Frankfurt | `eu-de` | `crn:v1:bluemix:public:transit:eu-de:::endpoint:vpe.eu-de.transit.cloud.ibm.com` |
+| London | `eu-gb` | `crn:v1:bluemix:public:transit:eu-gb:::endpoint:vpe.eu-gb.transit.cloud.ibm.com` |
+| Montreal | `ca-mon` | `crn:v1:bluemix:public:transit:ca-mon:::endpoint:vpe.ca-mon.transit.cloud.ibm.com` |
+| Osaka | `jp-osa` | `crn:v1:bluemix:public:transit:jp-osa:::endpoint:vpe.jp-osa.transit.cloud.ibm.com` |
+| Sao Paulo | `br-sao` | `crn:v1:bluemix:public:transit:br-sao:::endpoint:vpe.br-sao.transit.cloud.ibm.com` |
+| Sydney | `au-syd` | `crn:v1:bluemix:public:transit:au-syd:::endpoint:vpe.au-syd.transit.cloud.ibm.com` |
+| Tokyo | `jp-tok` | `crn:v1:bluemix:public:transit:jp-tok:::endpoint:vpe.jp-tok.transit.cloud.ibm.com` |
+| Toronto  | `ca-tor` | `crn:v1:bluemix:public:transit:ca-tor:::endpoint:vpe.ca-tor.transit.cloud.ibm.com` |
+| Washington DC | `us-east` | `crn:v1:bluemix:public:transit:us-east:::endpoint:vpe.us-east.transit.cloud.ibm.com` |
 {: caption="Region availability and Cloud Resource Names (CRNs) for connecting {{site.data.keyword.tg_full_notm}} over {{site.data.keyword.cloud_notm}} private networks" caption-side="bottom"}
 
 ### Configuring an endpoint gateway
