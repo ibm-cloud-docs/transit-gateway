@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-05"
+lastupdated: "2026-08-06"
 keywords: api
 
 subcollection: transit-gateway
@@ -34,7 +34,7 @@ The following examples use the `transit.cloud.ibm.com` global endpoint.
 ### Step 1: Store your API key as a variable
 {: #store-api-key-variable}
 
-Run the following command to store the API key for your account in an environment variable. If you don't have an API key, see [Creating an API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key){: external}.
+Run the following command to store the API key for your account in an environment variable. If you don't have an API key, see [Creating an API key](/docs/account?topic=account-userapikey&interface=ui#create-user-key){: external}.
 
 ```sh
 apikey="<YOUR_API_KEY>"
