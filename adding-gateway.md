@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-06"
 
 keywords: features, overview
 
@@ -42,7 +42,7 @@ To add a connection to a transit gateway, follow these steps:
       If you select **Direct Link**, you must also log in to the [Direct Link console](/interconnectivity/direct-link){: external} and specify **Transit Gateway** as the type of network connection for your direct link.
       {: important}
 
-   * **{{site.data.keyword.powerSys_notm}}** - Creates a network connection to and from a {{site.data.keyword.powerSys_notm}} workspace to access the resources in a {{site.data.keyword.powerSys_notm}}.
+   * **{{site.data.keyword.powerSys_notm}}** - Creates a network connection to and from a {{site.data.keyword.powerSys_notm}} workspace to access the resources in a {{site.data.keyword.powerSys_notm}} colocation.
 
       If you select **{{site.data.keyword.powerSys_notm}}**, a {{site.data.keyword.powerSys_notm}} workspace must be created in a PER-enabled data center. For a list of PER-enabled data centers, see [Getting started with the Power Edge Router](/docs/power-iaas?topic=power-iaas-per).
       {: note}
@@ -57,7 +57,7 @@ To add a connection to a transit gateway, follow these steps:
 
    * **VPN gateway** connections link on-premises or external networks with IBM Cloud by attaching a VPN gateway as a spoke to a transit gateway. These connections use redundant GRE tunnels and dynamic routing with eBGP to enable efficient and scalable network integration. For more information, see [Creating a VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway&interface=ui).
 
-1. Optionally, create prefix filters to set an ordered list of filters that determine the routes your transit gateway must accept or deny. For more information, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters&interface=ui).
+1. Optionally, create prefix filters to set an ordered list of filters that determine the routes your transit gateway accepts or denies. For more information, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters&interface=ui).
 
 1. After you select a network connection, choose a connection reach option:
 

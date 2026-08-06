@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-06"
 
 keywords:
 
@@ -175,7 +175,7 @@ For more information about available commands and options, see [Connections](/do
 To add a cross-account connection, follow these steps:
 
 1. Request a connection to communicate between other accounts.
-1. Perform actions on a requested connection. This action must be completed.
+1. Perform actions on a requested connection.
 
 For classic cross-account connections, be sure that the `network-account-id` is set to the account you are requesting to communicate with. For VPC cross-account connections, be sure that the `network-id` is set to the account that you are requesting to communicate with.
 {: important}
