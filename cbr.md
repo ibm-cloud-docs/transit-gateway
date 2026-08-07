@@ -23,7 +23,7 @@ These restrictions work with traditional IAM policies, which are based on identi
 A user must have the Administrator role on the Transit Gateway service to create, update, or delete rules. And a user must have either the Editor or Administrator role on the Context-based restrictions service to create, update, or delete network zones.
 {: note}
 
-Any {{site.data.keyword.cloudaccesstraillong_notm}} or audit log events that are generated will come from the context-based restrictions service, and not Transit Gateway. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor).
+Any {{site.data.keyword.cloudaccesstraillong_notm}} or audit log events that are generated will come from the context-based restrictions service, and not Transit Gateway. For more information, see [Monitoring context-based restrictions](/docs/iam?topic=iam-cbr-monitor).
 
 To get started protecting your Transit Gateway with context-based restrictions, see the tutorial for [Leveraging context-based restrictions to secure your resources](/docs/account?topic=account-cbr-overview).
 
