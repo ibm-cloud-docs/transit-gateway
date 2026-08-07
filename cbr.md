@@ -25,7 +25,7 @@ A user must have the Administrator role on the Transit Gateway service to create
 
 Any {{site.data.keyword.cloudaccesstraillong_notm}} or audit log events that are generated will come from the context-based restrictions service, and not Transit Gateway. For more information, see [Monitoring context-based restrictions](/docs/iam?topic=iam-cbr-monitor).
 
-To get started protecting your Transit Gateway with context-based restrictions, see the tutorial for [Leveraging context-based restrictions to secure your resources](/docs/account?topic=account-cbr-overview).
+To get started protecting your Transit Gateway with context-based restrictions, see the tutorial for [Leveraging context-based restrictions to secure your resources](/docs/iam?topic=iam-context-restrictions-tutorial&interface=ui).
 
 ## Limitations
 {: #cbr-limitations}
