@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-05"
+lastupdated: "2026-08-07"
 
 keywords: vpe for transit gateway, virtual private endpoints for transit gateway, using vpe for vpc with transit gateway, isolation for transit gateway, private network for transit gateway, network isolation in transit gateway, non-public routes for transit gateway, private connection for transit gateway, private connectivity for transit gateway
 
@@ -26,9 +26,9 @@ VPEs are virtual IP interfaces that are bound to an endpoint gateway created on 
 Before you target a virtual private endpoint for {{site.data.keyword.cloud}}, you must complete the following tasks.
 
 * Ensure that a [Virtual Private Cloud is created](/docs/vpc?topic=vpc-getting-started).
-* Make a plan for your [virtual private endpoints](/docs/vpc?topic=vpc-vpe-about).
+* Make a plan for your [virtual private endpoints](/docs/vpc?topic=vpc-about-vpe).
 * Ensure that [correct access controls](/docs/vpc?topic=vpc-configure-acls-sgs-endpoint-gateways) are set for your virtual private endpoint.
-* Understand the [limitations](/docs/vpc?topic=vpc-limitations-vpes) of having a virtual private endpoint.
+* Understand the [planning considerations and limitations](/docs/vpc?topic=vpc-vpe-planning-considerations) of having a virtual private endpoint.
 * Understand how to [view details](/docs/vpc?topic=vpc-vpe-viewing-details-of-an-endpoint-gateway) about a virtual private endpoint.
 
 ## Setting up a VPE for {{site.data.keyword.tg_full_notm}}

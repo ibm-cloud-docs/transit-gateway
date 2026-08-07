@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-05"
+lastupdated: "2026-08-07"
 
 keywords:
 
@@ -22,9 +22,9 @@ If you experience an issue or have questions when using {{site.data.keyword.tg_f
 * Review [FAQs](/docs/transit-gateway?topic=transit-gateway-faqs-for-transit-gateway) in the product documentation.
 * Review [Troubleshooting](/docs/transit-gateway?topic=transit-gateway-troubleshooting-connectivity) to diagnose and resolve common issues.
 * Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](/status){: external}.
-* Review [Stack Overflow](https://stackoverflow.com/search?q=transit-gateway+ibm-cloud){: external} to see whether other users ran into the same problem. If you're using the forum to ask a question, tag your question with `ibm-cloud` and `transit-gateway` so that it is seen by the {{site.data.keyword.Bluemix_notm}} development teams.
+* Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+transit-gateway){: external} to see whether other users ran into the same problem. If you're using the forum to ask a question, tag your question with `ibm-cloud` and `transit-gateway` so that it is seen by the {{site.data.keyword.Bluemix_notm}} development teams.
 
-If you still can't resolve the problem, you can open a support case. For more information, see [Creating support cases](/docs/get-support?topic=get-support-open-case). And if you're looking to provide feedback, see [Submitting feedback](/docs/overview?topic=overview-feedback).
+If you still can't resolve the problem, you can open a support case. For more information, see [Creating support cases](/docs/support?topic=support-open-case&interface=ui). And if you're looking to provide feedback, see [Submitting feedback](/docs/overview?topic=overview-feedback).
 
 ## Providing support case details for {{site.data.keyword.tg_short}}
 {: #support-case-details}
