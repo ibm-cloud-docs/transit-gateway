@@ -75,7 +75,7 @@ Before you can create an authorization by using Terraform, make sure that you ha
       {: pre}
 
 1. From the [{{site.data.keyword.cloud_notm}} resource list](/resources){: external}, select the {{site.data.keyword.keymanagementserviceshort}} instance that you created and note the instance ID.
-1. Verify that the access policy is successfully assigned. For more information, see [Reviewing assigned access in the console](/docs/account?topic=account-iamassigned).
+1. Verify that the access policy is successfully assigned.
 
 ## What's next?
 {: #tgw-terraform-setup-next}
