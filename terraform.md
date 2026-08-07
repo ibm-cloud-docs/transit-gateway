@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-07"
 
 subcollection: transit-gateway
 
@@ -75,7 +75,7 @@ Before you can create an authorization by using Terraform, make sure that you ha
       {: pre}
 
 1. From the [{{site.data.keyword.cloud_notm}} resource list](/resources){: external}, select the {{site.data.keyword.keymanagementserviceshort}} instance that you created and note the instance ID.
-1. Verify that the access policy is successfully assigned. For more information, see [Reviewing assigned access in the console](/docs/account?topic=account-review-assigned-access).
+1. Verify that the access policy is successfully assigned. For more information, see [Reviewing assigned access in the console](/docs/account?topic=account-iamassigned).
 
 ## What's next?
 {: #tgw-terraform-setup-next}

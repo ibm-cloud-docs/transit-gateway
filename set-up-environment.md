@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-07"
 keywords: api
 
 subcollection: transit-gateway
@@ -21,7 +21,7 @@ Before you can use the transit gateway API, you need to setup your environment.
 ## General prerequisites
 {: #general-prerequisites}
 
-Set up your account to access the transit gateway. Make sure that your account is [upgraded to a paid account](/docs/account?topic=account-accountfaqs#changeacct){: external}.
+Set up your account to access the transit gateway. Make sure that your account is [upgraded to a paid account](/docs/account?topic=account-accountfaqs#changeacct).
 
 ## API prerequisites
 {: #api-prerequisites-setup}
@@ -34,7 +34,7 @@ The following examples use the `transit.cloud.ibm.com` global endpoint.
 ### Step 1: Store your API key as a variable
 {: #store-api-key-variable}
 
-Run the following command to store the API key for your account in an environment variable. If you don't have an API key, see [Creating an API key](/docs/account?topic=account-userapikey&interface=ui#create-user-key){: external}.
+Run the following command to store the API key for your account in an environment variable. If you don't have an API key, see [Creating an API key](/docs/account?topic=account-userapikey#create-user-key).
 
 ```sh
 apikey="<YOUR_API_KEY>"
