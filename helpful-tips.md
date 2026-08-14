@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-07"
+lastupdated: "2026-08-14"
 
 keywords: help, tips, connections, provision
 
@@ -41,7 +41,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 
 * When planning for ECMP (Equal-Cost Multi-Path), keep in mind that throughput does not scale linearly with the number of direct links. For example, if you connect two 10 GB direct links to an ECMP-capable transit gateway, you do not get 20 GB throughput; you see more than 10 GB, but less than 20 GB. This is because ECMP works on a per-stream or per-source basis, meaning if traffic comes from a single endpoint, it likely favors one link, not both. To achieve more balanced throughput, it is recommended to drive traffic from multiple sources, as this distributes the load more evenly across the available direct links.
 * Limitation: ECMP doesn't work for direct links on a single router. Instead, it is supported across multiple routers with direct links, as long as those routers are advertising the same prefix.
-* Known restriction: New transit gateways support 4-way ECMP, but existing gateways can't use this feature unless you [open a support case](/docs/support?topic=support-open-case&interface=ui) for assistance.
+* Known restriction: Transit gateways created after 27 March 2025 support 4-way ECMP by default. If your transit gateway was created before this date, you can [open a support case](/docs/support?topic=support-open-case&interface=ui) to request ECMP enablement.
 
    If you don't want the ECMP feature enabled on your transit gateways, you can open a support case to be added to a denylist, which will disable this feature on your gateways.
    {: note}
