@@ -59,6 +59,7 @@ toc:
           - deleting-gateway.md
           - editing-connection.md
           - displayroutereport.md
+          - testing-redundancy.md
       - terraform.md
       - set-up-environment.md
       - topicgroup:
