@@ -30,6 +30,5 @@ content-type: conref
 * Older route reports might be inaccurate after you add or remove a connection. As a result, if you update routes within those connections, it is recommended that you generate a new route report.
 * If one or more routes are denied by [prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters), those routes don't appear in the route report.
 
-[START]{: tag-purple}
-* A route report only shows routes from the connections on the transit gateway it is run on. If your transit gateway belongs to a redundancy group, routes from connections on other transit gateways in the group are not included in the report. To get a complete view of routes across the group, generate a route report on each transit gateway individually.
+* [START]{: tag-purple} A route report only shows routes from the connections on the transit gateway it is run on. If your transit gateway belongs to a redundancy group, routes from connections on other transit gateways in the group are not included in the report. To get a complete view of routes across the group, generate a route report on each transit gateway individually.
 [END]{: tag-purple}
