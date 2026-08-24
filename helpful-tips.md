@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-24"
 
 keywords: help, tips, connections, provision
 
@@ -62,7 +62,7 @@ The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the 
 
 * All of your IBM Cloud classic infrastructure networks across [MZRs](/docs/overview?topic=overview-locations#table-mzr) are accessible through this connection, regardless of the location of the transit gateway or the routing type specified.
 
-* Classic infrastructure resources located in these [data centers](/docs/transit-gateway?topic=transit-gateway-tg-locations#szr-table) connect through a transit gateway to VPC resources.
+* Classic infrastructure resources located in these [data centers](/docs/transit-gateway?topic=transit-gateway-tg-locations#classic-dc-table) connect through a transit gateway to VPC resources.
 
 * When classic infrastructure is connected to a transit gateway, it also includes any **Classic Access VPCs** attached to the account, because the subnets for these VPCs are associated with the classic infrastructure VRF. This is the only way to connect a transit gateway to a Classic Access VPC: by connecting the entire classic infrastructure to the transit gateway (instead of the specific Classic Access VPCs).
 

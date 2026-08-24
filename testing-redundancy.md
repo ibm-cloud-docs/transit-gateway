@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-24"
 
 keywords: redundancy, testing, BGP, GRE, failover, AS path prepending, prefix filter
 
@@ -38,7 +38,7 @@ Using more than one method can provide a more complete validation of your redund
 ## Shutting down a BGP session
 {: #testing-redundancy-bgp-shutdown}
 
-Administratively shut down a BGP session on one of your peer devices. This approach simulates a routing peer failure and verifies that traffic transitions to an alternate path when routes are withdrawn. For more information about BGP, see [Border Gateway Protocol](https://www.ibm.com/topics/border-gateway-protocol){: external}.
+Administratively shut down a BGP session on one of your peer devices. This approach simulates a routing peer failure and verifies that traffic transitions to an alternate path when routes are withdrawn. For more information about BGP, see [Border Gateway Protocol](https://www.ibm.com/think/topics/border-gateway-protocol){: external}.
 
 To shut down a BGP session, follow these steps:
 
