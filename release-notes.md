@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-08-14"
 
 keywords: updates, additions, improvements
 
@@ -43,7 +43,7 @@ GRE enhanced route propagation
 {: #transit-gateway-mar2725}
 
 4-way ECMP support now available
-:    Newly created transit gateways now support 4-way ECMP. Existing gateways can be [enabled upon request](/docs/transit-gateway?topic=transit-gateway-faqs-for-transit-gateway&interface=ui#faq-ecmp). For more information, see [ECMP planning considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#ecmp-considerations).
+:    Transit gateways created on or after this date support 4-way ECMP by default. Existing gateways can be [enabled upon request](/docs/transit-gateway?topic=transit-gateway-faqs-for-transit-gateway&interface=ui#faq-ecmp). For more information, see [ECMP planning considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#ecmp-considerations).
 
 ## 13 March 2025
 {: #transit-gateway-mar1325}

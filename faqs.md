@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-07"
+lastupdated: "2026-08-14"
 
 keywords: faq, faqs, questions
 
@@ -230,11 +230,13 @@ By enabling global routing, you can connect VPCs located in different [MZRs](/do
 
 {{site.data.keyword.tg_full_notm}} enables standard IP routing between networks (for example, global VPCs) that are connected to it. You can add additional functionality by configuring {{site.data.keyword.IBM_notm}} or third-party virtual network functions, such as VPN, NAT, and firewalls, within one or more of the interconnected networks (for instance, using the "Transit VPC" concept).
 
-### My existing transit gateway doesn't support ECMP. What can I do?
+### My transit gateway might not support ECMP. What can I do?
 {: faq}
 {: #faq-ecmp}
 
-If your transit gateway doesn't support ECMP (Equal-Cost Multi-Path Routing) and you need it for improved traffic routing, you can [open a support case](/docs/support?topic=support-open-case&interface=ui). IBM Support can help you enable ECMP for your transit gateway, allowing your traffic to be distributed across multiple paths for better redundancy and load balancing.
+Transit gateways created after 27 March 2025 have 4-way ECMP enabled by default. If your gateway was created before this date, it may not have ECMP enabled.
+
+There is currently no way for customers to verify whether ECMP is enabled on a transit gateway. If you are unsure, or if you need ECMP enabled, you can [open a support case](/docs/support?topic=support-open-case&interface=ui) and IBM Support can confirm the status and enable ECMP for your gateway.
 
 ### In a Highly Available (HA) configuration, how long after the failover of the primary GRE tunnel does the routing device wait before declaring it inactive?
 {: faq}
