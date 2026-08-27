@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-27"
 
 keywords: faq, faqs, questions
 
@@ -255,4 +255,4 @@ If you require different local ASNs for isolation purposes (for example, per ten
 ## Redundancy groups
 {: #faqs-redundancy-groups}
 
-[START]{: tag-purple} 
+ 
