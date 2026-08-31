@@ -22,6 +22,7 @@ Find out about new and updated features in {{site.data.keyword.tg_full}}.
 
 
 
+
 ## 20 January 2026
 {: #transit-gateway-jan2026}
 
