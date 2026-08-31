@@ -34,7 +34,10 @@ Transit gateways provide flexibility by allowing you to add networks to local ga
 
 * {{site.data.keyword.tg_full_notm}} is a fully redundant, fault-tolerant service with no single point of failure within these [{{site.data.keyword.cloud_notm}} Multi-Zone Regions (MZR)](/docs/transit-gateway?topic=transit-gateway-tg-locations).
 
-* {{site.data.keyword.tg_full_notm}} integrates with Identity and Access Management (IAM), by letting you manage access to your transit gateway. Using IAM, you can create and manage [{{site.data.keyword.cloud_notm}} users and groups](/docs/transit-gateway?topic=transit-gateway-iam), as well as user permissions to allow or deny their access.
+### Security and access management
+{: #security-iam}
+
+{{site.data.keyword.tg_full_notm}} integrates with Identity and Access Management (IAM), letting you manage access to your transit gateway. Using IAM, you can create and manage [{{site.data.keyword.cloud_notm}} users and groups](/docs/transit-gateway?topic=transit-gateway-iam), as well as user permissions to allow or deny their access.
 
 ### Routing
 {: #routing}
@@ -42,6 +45,16 @@ Transit gateways provide flexibility by allowing you to add networks to local ga
 {{site.data.keyword.tg_full_notm}} supports local and global routing between VPCs and the {{site.data.keyword.cloud_notm}} classic infrastructure. All routing options remain within the private {{site.data.keyword.cloud_notm}} infrastructure without operating on the public internet, and are optimized for performance. {{site.data.keyword.tg_full_notm}} allows customers greater flexibility, redundancy, and speed in scaling their workloads, and in connecting isolated networks that run on {{site.data.keyword.cloud_notm}}.
 
 
+
+### Prefix filtering
+{: #prefix-filtering}
+
+{{site.data.keyword.tg_full_notm}} supports prefix filtering on connections, allowing you to control which routes are advertised to and from each connected network. You can permit or deny specific prefixes to prevent unintended route propagation and reduce the risk of routing conflicts. For more information, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters).
+
+### Route reports
+{: #route-reports}
+
+{{site.data.keyword.tg_full_notm}} provides route reports that display all the routes known to a transit gateway across its connections. Route reports help you verify connectivity, identify overlapping prefixes, and troubleshoot routing issues before they affect traffic. For more information, see [Generating a route report](/docs/transit-gateway?topic=transit-gateway-route-reports&interface=ui).
 
 ### Optimized traffic and fault tolerance
 {: #vpc-optimized-traffic-fault-tolerance}
@@ -68,6 +81,13 @@ With GRE enhanced route propagation enabled, all GRE tunnels connected to the sa
 {: #directlink}
 
 {{site.data.keyword.tg_full_notm}} supports Direct Link connections. Connecting Direct Link to your {{site.data.keyword.tg_full_notm}} on-premises network grants access to all networks connected on the transit gateway. Similarly, all other connections on the transit gateway have access to your network. As with other network connections to the {{site.data.keyword.tg_full_notm}}, special consideration must be taken to avoid IP overlap issues. For more information, see [Dealing with overlapping VPC prefixes and classic infrastructure subnets](/docs/transit-gateway?topic=transit-gateway-overlapping-vpc-prefixes-and-classic-subnets).
+
+### VPN gateway connectivity
+{: #vpn-connectivity}
+
+{{site.data.keyword.tg_full_notm}} supports VPN gateway connections, enabling on-premises or external networks to connect with other networks in {{site.data.keyword.cloud_notm}} over secure IPsec tunnels. The VPN gateway acts as a spoke within the transit gateway architecture, using dynamic routing with eBGP over redundant GRE tunnels to provide scalable and resilient connectivity. For more information, see [VPN gateway connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpn-connection-considerations).
+
+
 
 ### {{site.data.keyword.powerSys_notm}} connectivity
 {: #powervs}
