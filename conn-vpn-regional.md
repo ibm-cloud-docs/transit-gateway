@@ -24,7 +24,7 @@ subcollection: transit-gateway
 You can attach a regional VPN gateway to a transit gateway as a spoke connection. A regional VPN gateway provides zone-level resiliency by deploying two VPN appliances in separate zones within the same region. If one zone becomes unavailable, traffic automatically fails over to the appliance in the healthy zone—without requiring you to create multiple VPN gateways or specify a zone when creating the connection.
 {: shortdesc}
 
-Unlike a zonal VPN connection, a regional VPN connection does not require an availability zone as an input. The zone for each tunnel is derived automatically from the VPN gateway's member configuration.
+Unlike a zonal VPN connection, a regional VPN connection does not require an availability zone as an input. The zone for each tunnel is derived automatically from the VPN gateway's member configuration. For more information, including a zone layout and a comparison of zonal and regional gateways, see [VPN gateway overview](/docs/vpc?topic=vpc-using-vpn#regional-vpn-gateway).
 
 ## Before you begin
 {: #vpn-regional-connection-prereqs}
@@ -41,6 +41,8 @@ Before you connect a regional VPN gateway to a transit gateway, make sure that:
 
 If no CIDR is specified, the default range `198.19.174.0/23` is used.
 {: note}
+
+For more information about VPN gateway planning requirements, see [Planning considerations for VPN gateways](/docs/vpc?topic=vpc-planning-considerations-vpn).
 
 ## Creating a regional VPN connection in the UI
 {: #vpn-regional-connection-ui}
@@ -137,15 +139,16 @@ curl -X POST --location --header "Authorization: Bearer {iam_token}" \
 Do not include a `zone` property in the request body for a regional VPN connection. Zone selection is derived automatically from the VPN gateway member configuration.
 {: important}
 
-For more information, see [Adds a connection to a transit gateway](/docs/apis/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.
+For more information, see [Create a connection](/docs/apis/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
 ## Considerations for regional VPN connections
 {: #vpn-regional-connection-considerations}
 
-- **Zone is automatic.** You cannot specify a zone when connecting a regional VPN gateway. Each tunnel is placed on Transit Gateway routers in the zone that corresponds to the VPN member's zone.
+- **Zone is automatic.** You cannot specify a zone when connecting a regional VPN gateway. Each tunnel is placed on Transit Gateway routers in the zone that corresponds to the VPN member's zone. For more information, see [Planning considerations for VPN gateways](/docs/vpc?topic=vpc-planning-considerations-vpn) and [Use case 9: Zone-resilient VPN connectivity](/docs/vpc?topic=vpc-using-vpn#use-case-9-vpn).
 - **Two appliances, two zones.** The transit gateway creates two sets of redundant GRE tunnels—one set per VPN appliance—distributed across the appliances' zones. Each zone gets two tunnels on separate Transit Gateway routers.
-- **Failover is automatic.** If a zone fails, the VPN appliance in the healthy zone continues routing traffic. BGP sessions for the failed appliance are withdrawn, and the healthy appliance takes over within BGP convergence time.
+- **Automatic GRE tunnel updates.** When a regional VPN gateway member is moved to a new subnet—changing its zone or private IP address—the VPN service automatically notifies the connected transit gateway. The transit gateway then updates its GRE tunnels to reflect the new appliance location. No manual action is required on the transit gateway side. For more information, see [Updating a regional VPN gateway member](/docs/vpc?topic=vpc-vpn-update-regional-member) and [HA with a regional gateway](/docs/vpc?topic=vpc-vpn-ha#vpn-ha-regional).
+- **Failover is automatic.** If a zone fails, the VPN appliance in the healthy zone continues routing traffic. BGP sessions for the failed appliance are withdrawn, and the healthy appliance takes over within BGP convergence time. For more information, see [HA with a regional gateway](/docs/vpc?topic=vpc-vpn-ha#vpn-ha-regional).
 - **Cross-zone latency.** If a VPN appliance in one zone handles traffic for a workload in another zone, the traffic traverses the IBM Cloud backbone network between zones, adding minimal latency.
 - **One connection per VPN gateway.** A VPN gateway can be attached to only one transit gateway at a time.
 - **Route propagation.** To maintain high availability across GRE connections, enable [GRE enhanced route propagation](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-enhanced-route-propagation-considerations) on the transit gateway.

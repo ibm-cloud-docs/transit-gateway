@@ -191,10 +191,10 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 * Pricing is based on the cost of 4 GRE tunnels per connection plus data traffic charges.
 * VPN gateway connections are limited to 4 per transit gateway and 2 per zone by default.
 * VPN gateway connections do not support prefix filtering. You are responsible for managing any route filtering on your side of the BGP session.
-* You can create dynamic or static VPN connections at any time. Static connections are functional with or without a transit gateway attachment. Dynamic connections require the VPN gateway to be attached to a transit gateway before traffic can flow.
-* After a VPN gateway is attached to a transit gateway, the local ASN can't be changed.
+* Dynamic VPN connections require the VPN gateway to be attached to a transit gateway before traffic can flow.
+* After a VPN gateway is attached to a transit gateway, the local ASN cannot be changed.
 * To configure a VPN as a backup for a Direct Link connection, you must ensure that routes from the Direct Link are preferred. To do so, you can leverage mechanisms, such as AS Path prepending or MED (Multi-Exit Discriminator) on your on-premises device.
-* When you create a VPN gateway connection, you are required to define a CIDR block for the GRE tunnel IP addresses. It is recommended to use an [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} private address range, as it does not require an additional **Delegate-VPC** route. The CIDR block must be a minimum of `/27` and must not overlap with any other connection CIDRs configured on the transit gateway.
+* When you create a VPN gateway connection, you must define a CIDR block for the GRE tunnel IP addresses. Use an [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} private address range, which does not require an additional **Delegate-VPC** route. The CIDR block must be a minimum of `/27` and must not overlap with any other connection CIDRs configured on the transit gateway.
 
    If you assign a CIDR to a VPN gateway that is outside the standard private IP ranges (`10.0.0.0/8`, `172.16.0.0/12`, or `192.168.0.0/16`), you must manually add routes in the VPC routing table (in the same zone as the VPN gateway) to enable proper traffic flow. You have two options:
 
@@ -209,12 +209,13 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 ### Regional VPN gateway considerations
 {: #regional-vpn-connection-considerations}
 
-Regional VPN gateways extend zonal VPN availability to the region level by deploying two VPN appliances in separate zones within the same VPC.
+Regional VPN gateways extend zonal VPN availability to the region level by deploying two VPN appliances in separate zones within the same VPC. For more information, see [VPN gateway overview](/docs/vpc?topic=vpc-using-vpn#regional-vpn-gateway), [Use case 9: Zone-resilient VPN connectivity](/docs/vpc?topic=vpc-using-vpn#use-case-9-vpn), and [Planning considerations for VPN gateways](/docs/vpc?topic=vpc-planning-considerations-vpn).
 
 * **No zone selection required.** When connecting a regional VPN gateway to a transit gateway, you do not specify an availability zone. The zone for each set of tunnels is automatically derived from the zone of each VPN member appliance.
 * **Two appliance topology.** The transit gateway creates two sets of redundant GRE tunnels, one per VPN member. Each set is placed on Transit Gateway routers in the corresponding member's zone, so each zone gets two tunnels on separate routers.
-* **Automatic failover.** If a zone becomes unavailable, the BGP sessions for the affected appliance are withdrawn and traffic automatically shifts to the healthy appliance within BGP convergence time. No manual intervention is required.
-* **CIDR block still required.** You must still specify a CIDR block for GRE tunnel IP addresses, or accept the default `198.19.174.0/23`. The CIDR must be at least a `/27` subnet, use RFC 1918 private address space, and must not overlap with VPN member subnets or other connection CIDRs on the transit gateway.
+* **Automatic GRE tunnel updates.** When a regional VPN gateway member is moved to a new subnet—changing its zone or private IP address—the VPN service automatically notifies the connected transit gateway. The transit gateway then updates its GRE tunnels to reflect the new appliance location. No manual action is required on the transit gateway side. For more information, see [Updating a regional VPN gateway member](/docs/vpc?topic=vpc-vpn-update-regional-member) and [HA with a regional gateway](/docs/vpc?topic=vpc-vpn-ha#vpn-ha-regional).
+* **Automatic failover.** If a zone becomes unavailable, the BGP sessions for the affected appliance are withdrawn and traffic automatically shifts to the healthy appliance within BGP convergence time. No manual intervention is required. For more information, see [HA with a regional gateway](/docs/vpc?topic=vpc-vpn-ha#vpn-ha-regional).
+* **CIDR block required.** You must specify a CIDR block for GRE tunnel IP addresses, or accept the default `198.19.174.0/23`. The CIDR must be at least a `/27` subnet, use RFC 1918 private address space, and must not overlap with VPN member subnets or other connection CIDRs on the transit gateway.
 * **Cross-zone latency.** If a VPN appliance in one zone handles traffic for a workload in another zone, traffic traverses the IBM Cloud backbone network between zones, adding minimal latency.
 * **Quota.** The default limit for regional VPN gateways is 3 per region per VPC. Contact IBM Support if you need this limit increased.
 * **One transit gateway per VPN gateway.** A regional VPN gateway can be attached to only one transit gateway at a time.
