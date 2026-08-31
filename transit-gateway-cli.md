@@ -400,7 +400,7 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID 
 :   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account.
 
 `--zone`
-:   Optional: Availability zone where a GRE tunnel or VPN connection will be deployed. Only applicable to the `vpn_gateway` network type.<regional> Do not specify `--zone` when connecting a regional VPN gateway (`availability_mode: regional`). Zone placement is derived automatically from the VPN gateway member configuration. Specifying a zone for a regional VPN gateway returns an error.</regional>
+:   Optional: Availability zone where a GRE tunnel or VPN connection will be deployed. Only applicable to the `vpn_gateway` network type.
 
 `--default-prefix-filter`
 :   Optional: Default prefix filter of the connection (`permit` | `deny`).

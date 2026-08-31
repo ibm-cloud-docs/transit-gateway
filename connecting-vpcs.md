@@ -111,13 +111,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
             Specifying a zone is optional if the VPN gateway and the transit gateway are in the same multi-zone region (MZR); in that case, the connection uses the VPN gateway's zone.
             {: attention}
 
-            [New]{: tag-new}
-            <regional>
-
-            **Regional:** If you select a regional VPN gateway, the zone field is not available. The availability zone for each tunnel is automatically derived from the VPN gateway's member configuration. A regional VPN gateway connects with two appliances, one per zone, providing automatic failover if a zone becomes unavailable.
-            {: note}
-
-            </regional>
+            
 
       * **Request connection to a network in another account** - Enter either the IBM Cloud ID or Cloud Resource Name (CRN) of the account that manages the network where you want to connect. Then, complete any remaining information. All resources connected to that transit gateway will be accessible from the other network. For more information, including how to obtain the Cloud ID or CRN, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
 

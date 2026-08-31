@@ -26,7 +26,7 @@ With {{site.data.keyword.tg_full_notm}}, you can connect:
 * VPCs across different regions (global routing)
 * VPCs to IBM Cloud classic infrastructure
 * Power Virtual Server workspaces
-* VPN gateways for site-to-site or client VPN connectivity<regional> (including regional VPN gateways for multi-zone resiliency)</regional>
+* VPN gateways for site-to-site or client VPN connectivity
 * On-premises networks using Direct Link connections
 * External networks by using Generic Routing Encapsulation (GRE) tunnels
 * Network resources across multiple IBM Cloud accounts (with appropriate access authorization)

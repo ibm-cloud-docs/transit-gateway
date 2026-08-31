@@ -56,13 +56,7 @@ To add a connection to a transit gateway, follow these steps:
    
 
    * **VPN gateway** connections link on-premises or external networks with IBM Cloud by attaching a VPN gateway as a spoke to a transit gateway. These connections use redundant GRE tunnels and dynamic routing with eBGP to enable efficient and scalable network integration. For more information, see [Creating a VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway&interface=ui).
-   [New]{: tag-new}
-   <regional>
-
-   **Regional:** Transit Gateway now supports regional VPN gateway connections. A regional VPN gateway deploys two appliances across different zones in the same region, providing automatic failover without requiring zone-specific configuration. When you connect a regional VPN gateway, you cannot specify a zone—the zone is automatically derived from the VPN gateway's member configuration. For more information, see [Connecting a regional VPN gateway](/docs/transit-gateway?topic=transit-gateway-vpn-regional-connection).
-   {: note}
-
-   </regional>
+   
 
 1. Optionally, create prefix filters to set an ordered list of filters that determine the routes your transit gateway accepts or denies. For more information, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters&interface=ui).
 
