@@ -109,7 +109,6 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
             {: attention}
             
             
-
       * **Request connection to a network in another account** - Enter either the IBM Cloud ID or Cloud Resource Name (CRN) of the account that manages the network where you want to connect. Then, complete any remaining information. All resources connected to that transit gateway will be accessible from the other network. For more information, including how to obtain the Cloud ID or CRN, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
 
          * IBM Cloud ID - Required by **Classic infrastructure** and **Unbound GRE tunnel**.
