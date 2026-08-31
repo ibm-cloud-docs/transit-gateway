@@ -205,6 +205,7 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 
 
 
+
 ## VPC considerations
 {: #vpc-connection-consideration}
 
