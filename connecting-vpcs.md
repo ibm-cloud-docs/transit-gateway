@@ -105,12 +105,9 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
             You must specify a custom CIDR block for the connection. The CIDR defines the IP range used to allocate addresses on the redundant GRE tunnels and must use [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} private address space, be at least a `/27` subnet, and must not overlap with other connection CIDRs on the transit gateway.
 
-            Only VPN gateways with dynamic routing enabled are shown in the Available connections list. The selected region and zone determine which Transit Gateway routers the VPN gateway connects to.
-            {: note}
-
-            Specifying a zone is optional if the VPN gateway and the transit gateway are in the same multi-zone region (MZR); in that case, the connection uses the VPN gateway's zone.
+            For planning considerations about VPN gateway connections, including zone behavior, see [VPN gateway connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpn-connection-considerations).
             {: attention}
-
+            
             
 
       * **Request connection to a network in another account** - Enter either the IBM Cloud ID or Cloud Resource Name (CRN) of the account that manages the network where you want to connect. Then, complete any remaining information. All resources connected to that transit gateway will be accessible from the other network. For more information, including how to obtain the Cloud ID or CRN, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).

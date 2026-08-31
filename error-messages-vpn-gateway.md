@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2026
+  years: 2026, 2026
 lastupdated: "2026-08-31"
 
 keywords: overlapping routes
@@ -13,6 +13,8 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
+[New]{: tag-new}
 
 # Why does my VPN gateway fail to connect to the transit gateway?
 {: #troubleshoot-vpn-gateway}

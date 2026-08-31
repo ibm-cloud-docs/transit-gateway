@@ -187,6 +187,9 @@ The same network subnet considerations for transit gateway connections also appl
 
 You can create VPN gateway connections to a transit gateway to enable on-premises or external networks to connect with other networks in {{site.data.keyword.cloud_notm}}. The VPN gateway acts as a spoke within the transit gateway architecture, enabling efficient peering across multiple networks while reducing tunnel complexity. This design uses dynamic routing with eBGP over redundant GRE tunnels to provide scalable and resilient connectivity.
 
+### General considerations
+{: #vpn-general-considerations}
+
 * Each VPN gateway connection automatically provisions four redundant GRE tunnels between the VPN gateway and the transit gateway. IBM manages these tunnels, with eBGP sessions running over them for dynamic routing. On-premises connectivity uses eBGP over IPsec tunnels for secure communication. While you can create, delete, and rename VPN gateway connections, you cannot modify or remove the individual GRE tunnels.
 * Pricing is based on the cost of 4 GRE tunnels per connection plus data traffic charges.
 * VPN gateway connections are limited to 4 per transit gateway and 2 per zone by default.
@@ -194,6 +197,13 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 * Dynamic VPN connections require the VPN gateway to be attached to a transit gateway before traffic can flow.
 * After a VPN gateway is attached to a transit gateway, the local ASN cannot be changed.
 * To configure a VPN as a backup for a Direct Link connection, you must ensure that routes from the Direct Link are preferred. To do so, you can leverage mechanisms, such as AS Path prepending or MED (Multi-Exit Discriminator) on your on-premises device.
+* Only VPN gateways with dynamic routing enabled are available to connect to a transit gateway. The selected region and zone determine which Transit Gateway routers the VPN gateway connects to.
+* Specifying a zone is optional if the VPN gateway and the transit gateway are in the same multi-zone region (MZR); in that case, the connection uses the VPN gateway's zone.
+
+
+### CIDR block requirements
+{: #vpn-cidr-requirements}
+
 * When you create a VPN gateway connection, you must define a CIDR block for the GRE tunnel IP addresses. Use an [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} private address range, which does not require an additional **Delegate-VPC** route. The CIDR block must be a minimum of `/27` and must not overlap with any other connection CIDRs configured on the transit gateway.
 
    If you assign a CIDR to a VPN gateway that is outside the standard private IP ranges (`10.0.0.0/8`, `172.16.0.0/12`, or `192.168.0.0/16`), you must manually add routes in the VPC routing table (in the same zone as the VPN gateway) to enable proper traffic flow. You have two options:
@@ -202,7 +212,6 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
    * Add four separate routes, each targeting the local gateway IP of each VPN tunnel (for example, `100.31.128.1/32`) with the action set to **Delegate-VPC**.
 
    The first option is simpler, while the second option offers more granular routing control, which might be preferred in advanced network designs or for troubleshooting.
-
 
 
 
