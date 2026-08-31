@@ -402,6 +402,8 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID 
 `--zone`
 :   Optional: Availability zone where a GRE tunnel or VPN connection will be deployed. Only applicable to the `vpn_gateway` network type.
 
+
+
 `--default-prefix-filter`
 :   Optional: Default prefix filter of the connection (`permit` | `deny`).
 
