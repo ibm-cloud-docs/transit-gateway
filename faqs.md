@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-08-31"
 
 keywords: faq, faqs, questions
 
@@ -177,6 +177,45 @@ No, you must choose to connect to a direct resource (VPC or classic infrastructu
 {: support}
 
 Yes, you can connect a VPN or {{site.data.keyword.cloud_notm}} Direct Link to either a local or global transit gateway.
+
+[New]{: tag-new}
+<regional>
+
+### What is the difference between a zonal and a regional VPN gateway?
+{: #faq-zonal-vs-regional-vpn}
+{: faq}
+{: support}
+
+A zonal VPN gateway deploys both VPN appliances in a single availability zone. If that zone becomes unavailable, the gateway goes offline.
+
+A regional VPN gateway deploys two VPN appliances in separate zones within the same region. If one zone becomes unavailable, traffic automatically fails over to the appliance in the healthy zone using BGP. This provides zone-level resiliency from a single gateway without requiring you to create and manage two separate VPN gateways.
+
+For more information, see [Connecting a regional VPN gateway](/docs/transit-gateway?topic=transit-gateway-vpn-regional-connection).
+
+### Can I attach a regional VPN gateway to more than one transit gateway?
+{: #faq-regional-vpn-multiple-tgw}
+{: faq}
+{: support}
+
+No. A regional VPN gateway can be attached to only one transit gateway at a time. If you attempt to create a connection to a second transit gateway while the VPN gateway is already attached, the request fails.
+
+To connect a regional VPN gateway to a different transit gateway, delete the existing connection first.
+
+### Do I need to specify a zone when connecting a regional VPN gateway?
+{: #faq-regional-vpn-zone}
+{: faq}
+{: support}
+
+No. When you connect a regional VPN gateway to a transit gateway, you do not specify an availability zone. The zone for each set of GRE tunnels is derived automatically from the zone of each VPN member appliance. If you include a zone parameter in your request, the request fails with an error.
+
+### Can I migrate an existing zonal VPN gateway to regional?
+{: #faq-regional-vpn-migration}
+{: faq}
+{: support}
+
+Migration from zonal to regional is available for SAP enterprise accounts only. For all other accounts, create a new regional VPN gateway. For more information, contact [IBM Support](/docs/transit-gateway?topic=transit-gateway-getting-help-and-support).
+
+</regional>
 
 ### Classic access VPCs can't be attached to a transit gateway. How can I connect and access classic resources in those VPCs?
 {: #classic-resources}

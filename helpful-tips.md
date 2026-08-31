@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-31"
 
 keywords: help, tips, connections, provision
 
@@ -203,6 +203,25 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 
    The first option is simpler, while the second option offers more granular routing control, which might be preferred in advanced network designs or for troubleshooting.
 
+[New]{: tag-new}
+<regional>
+
+### Regional VPN gateway considerations
+{: #regional-vpn-connection-considerations}
+
+Regional VPN gateways extend zonal VPN availability to the region level by deploying two VPN appliances in separate zones within the same VPC.
+
+* **No zone selection required.** When connecting a regional VPN gateway to a transit gateway, you do not specify an availability zone. The zone for each set of tunnels is automatically derived from the zone of each VPN member appliance.
+* **Two appliance topology.** The transit gateway creates two sets of redundant GRE tunnels, one per VPN member. Each set is placed on Transit Gateway routers in the corresponding member's zone, so each zone gets two tunnels on separate routers.
+* **Automatic failover.** If a zone becomes unavailable, the BGP sessions for the affected appliance are withdrawn and traffic automatically shifts to the healthy appliance within BGP convergence time. No manual intervention is required.
+* **CIDR block still required.** You must still specify a CIDR block for GRE tunnel IP addresses, or accept the default `198.19.174.0/23`. The CIDR must be at least a `/27` subnet, use RFC 1918 private address space, and must not overlap with VPN member subnets or other connection CIDRs on the transit gateway.
+* **Cross-zone latency.** If a VPN appliance in one zone handles traffic for a workload in another zone, traffic traverses the IBM Cloud backbone network between zones, adding minimal latency.
+* **Quota.** The default limit for regional VPN gateways is 3 per region per VPC. Contact IBM Support if you need this limit increased.
+* **One transit gateway per VPN gateway.** A regional VPN gateway can be attached to only one transit gateway at a time.
+* **Migration is restricted.** Migration of an existing zonal VPN to regional is available for SAP enterprise accounts only.
+
+</regional>
+
 ## VPC considerations
 {: #vpc-connection-consideration}
 
@@ -247,12 +266,13 @@ Keep in mind the following service limits while using IBM Cloud Transit Gateway.
 | Service limit |  Default |
 |---------------------------|------|
 | Number of transit gateways | 10 gateways per account, 5 gateways per region |
-| Number of connections per transit gateway | * 10 IBM Cloud VPC connections  \n * 5 IBM Cloud classic connections  \n * 5 IBM Cloud Direct Link connections  \n * 5 {{site.data.keyword.powerSys_notm}} connections |
+| Number of connections per transit gateway | * 10 IBM Cloud VPC connections  \n * 5 IBM Cloud classic connections  \n * 5 IBM Cloud Direct Link connections  \n * 5 {{site.data.keyword.powerSys_notm}} connections<regional>  \n * 4 VPN gateway connections (2 per zone)</regional> |
 | Number of prefixes per connection | * 50 prefixes for VPC connections  \n * 120 prefixes for classic connections  \n * 120 prefixes for GRE connections  \n * 120 prefixes for Direct Link connections  \n * 120 prefixes for {{site.data.keyword.powerSys_notm}} connections |
 | Number of connections with prefix filters | 2 connections with prefix filters per gateway|
 | Number of prefix filters per connection | 10 prefix filters per connection|
 | Number of GRE tunnels per transit gateway | 12 GRE tunnels per gateway|
-| Number of unique base networks targeted by unbound GRE tunnels per transit gateway | 5 unique base networks targeted by unbound GRE tunnels per gateway|
+| Number of unique base networks targeted by unbound GRE tunnels per transit gateway | 5 unique base networks targeted by unbound GRE tunnels per gateway|<regional>
+| Number of regional VPN gateways | 3 per region per VPC |</regional>
 {: caption="IBM Cloud Transit Gateway service limits" caption-side="bottom"}
 
 You can open an [IBM Support case](/docs/support?topic=support-open-case&interface=ui) if you need your service limits expanded.

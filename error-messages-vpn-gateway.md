@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-11-04"
+  years: 2026
+lastupdated: "2026-08-31"
 
 keywords: overlapping routes
 
@@ -30,6 +30,12 @@ When creating a VPN connection to a transit gateway, the request fails with a `4
 * `Tunnel IPs overlap with VPN gateway connection tunnel IPs. Specify a valid CIDR block.`
 * `Tunnel IP overlaps with the VPN gateway peer address. Specify a different CIDR block.`
 
+<regional>
+
+* `Zone cannot be specified for a regional VPN gateway connection. Remove the zone parameter and try again.`
+
+</regional>
+
 These errors typically occur due to misconfigurations in the VPN connection setup, including:
 {: tsCauses}
 
@@ -37,5 +43,18 @@ These errors typically occur due to misconfigurations in the VPN connection setu
 * Tunnel IP range overlaps with VPN gateway subnets or existing tunnel IPs.
 * Tunnel IP overlaps with the peer address.
 
+<regional>
+
+* A zone was specified when connecting a regional VPN gateway. Regional VPN connections do not accept a zone parameter—zone placement is derived automatically from the VPN member configuration.
+
+</regional>
+
 To resolve these issues, check all the tunnel IPs and the provided configuration, and select non-overlapping CIDR blocks.
-{: tsResolve} 
+{: tsResolve}
+
+<regional>
+
+If you are connecting a regional VPN gateway, remove the `zone` parameter from your request and try again.
+{: tsResolve}
+
+</regional>

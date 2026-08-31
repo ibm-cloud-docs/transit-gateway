@@ -49,7 +49,8 @@ toc:
           label: Managing transit gateways
           topics:
           - adding-gateway.md
-          - adding-ca.md
+          - adding-ca.md<regional>
+          - conn-vpn-regional.md</regional>
           - add-prefix-filters.md
           - changing-config.md
           - add-redundant-gre-tunnels.md
@@ -120,6 +121,8 @@ toc:
           - conn-routing-vsi.md
           - conn-gre.md
           - error-messages-vpn-gateway.md
-          - ts-route-report-overlaps.md
+          - ts-route-report-overlaps.md<regional>
+          - ts-regional-vpn-connection-pending.md
+          - ts-regional-vpn-failover.md</regional>
       - topic: getting-help.md
         navtitle: Getting help and support

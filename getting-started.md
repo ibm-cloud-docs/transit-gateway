@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-31"
 
 keywords: transit, gateway, ordering, getting, started
 
@@ -26,7 +26,7 @@ With {{site.data.keyword.tg_full_notm}}, you can connect:
 * VPCs across different regions (global routing)
 * VPCs to IBM Cloud classic infrastructure
 * Power Virtual Server workspaces
-* VPN gateways for site-to-site or client VPN connectivity
+* VPN gateways for site-to-site or client VPN connectivity<regional> (including regional VPN gateways for multi-zone resiliency)</regional>
 * On-premises networks using Direct Link connections
 * External networks by using Generic Routing Encapsulation (GRE) tunnels
 * Network resources across multiple IBM Cloud accounts (with appropriate access authorization)
