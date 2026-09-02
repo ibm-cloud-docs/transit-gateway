@@ -24,6 +24,8 @@ Check back regularly to see what's new with {{site.data.keyword.cloud}} Transit 
 
 
 
+
+
 ## 06 November 2025
 {: #transit-gateway-nov0625}
 
