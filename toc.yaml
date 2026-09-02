@@ -16,6 +16,7 @@ toc:
       topics:
       - getting-started.md
       - about.md
+      - tg-patterns.md
       - helpful-tips.md
       - topicgroup:
           label: Related links

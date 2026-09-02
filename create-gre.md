@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-09-02"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -44,10 +44,12 @@ Transit gateway GRE connections require the gateway owner to specifically config
 ## Before you begin
 {: #gre-begin}
 
-The following prerequisites must be met before you can create a GRE tunnel connection:
+Review [GRE connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-considerations) before you proceed. These considerations cover IP address requirements, zone placement, tunnel limits, and other constraints that affect whether the connection can be created successfully.
+{: important}
+
+The following prerequisites must also be met before you can create a GRE tunnel connection:
 
 * Ensure that you have an existing classic infrastructure connection, or create one. For more information, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-adding-connections). The GRE tunnel connection connects with an endpoint only on classic infrastructure.
-* Review the [GRE connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-considerations) for additional prerequisites.
 
 ## Creating a GRE tunnel connection in the UI
 {: #tg-ui-adding-gre-connection-transit-gateway}

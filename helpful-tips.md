@@ -265,7 +265,7 @@ Keep in mind the following service limits while using IBM Cloud Transit Gateway.
 | Number of prefixes per connection | * 50 prefixes for VPC connections  \n * 120 prefixes for classic connections  \n * 120 prefixes for GRE connections  \n * 120 prefixes for Direct Link connections  \n * 120 prefixes for {{site.data.keyword.powerSys_notm}} connections |
 | Number of connections with prefix filters | 2 connections with prefix filters per gateway|
 | Number of prefix filters per connection | 10 prefix filters per connection|
-| Number of GRE tunnels per transit gateway | 12 GRE tunnels per gateway|
+| Number of GRE tunnels per transit gateway | 12 GRE tunnels per gateway (dynamic route server connections contribute 2 tunnels per appliance — a 1-appliance instance uses 2, a 2-appliance instance uses 4, and a 3-appliance instance uses 6)|
 | Number of unique base networks targeted by unbound GRE tunnels per transit gateway | 5 unique base networks targeted by unbound GRE tunnels per gateway|
 {: caption="IBM Cloud Transit Gateway service limits" caption-side="bottom"}
 
