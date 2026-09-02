@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-31"
+lastupdated: "2026-09-02"
 
 keywords: transit, gateway, ordering, getting, started
 
@@ -29,6 +29,7 @@ With {{site.data.keyword.tg_full_notm}}, you can connect:
 * VPN gateways for site-to-site or client VPN connectivity
 
 * On-premises networks using Direct Link connections
+
 * External networks by using Generic Routing Encapsulation (GRE) tunnels
 * Network resources across multiple IBM Cloud accounts (with appropriate access authorization)
 

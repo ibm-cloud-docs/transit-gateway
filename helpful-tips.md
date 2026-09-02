@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-31"
+lastupdated: "2026-09-02"
 
 keywords: help, tips, connections, provision
 
@@ -71,7 +71,7 @@ The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the 
 ## Prefix filtering considerations
 {: #prefix-filtering-considerations}
 
-* Prefix filters are supported for all Transit Gateway connection types except legacy GRE tunnel connections. For GRE connections, prefix filtering is supported for both redundant GRE and unbound GRE connection types.
+* Prefix filters are supported for all Transit Gateway connection types except VPN gateway connections,  and legacy GRE tunnel connections. For GRE connections, prefix filtering is supported for both redundant GRE and unbound GRE connection types.
 * For non-GRE connections, the network owner can add prefix filters. For GRE connections, only the Transit Gateway owner can add or modify prefix filters, which is an important consideration for cross-account connections.
 * For cross-account connections, only the account owner of the respective connection can modify prefix filters. Other accounts can view the connection, but can't modify the filters.
 * You can't filter incoming prefixes from another account.
@@ -181,6 +181,8 @@ You can connect a {{site.data.keyword.powerSys_notm}} instance to a transit gate
 
 The same network subnet considerations for transit gateway connections also apply to {{site.data.keyword.powerSys_notm}} connections. To ensure successful connectivity, don't use prefixes in your {{site.data.keyword.powerSys_notm}} instance that overlap with other connections. Note that Transit Gateway provides prefix filtering to limit the prefixes being exposed, as well as a routing table report to see any overlaps after the connection is created.
 {: important}
+
+
 
 ## VPN gateway connection considerations
 {: #vpn-connection-considerations}

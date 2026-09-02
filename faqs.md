@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-31"
+lastupdated: "2026-09-02"
 
 keywords: faq, faqs, questions
 
@@ -177,6 +177,8 @@ No, you must choose to connect to a direct resource (VPC or classic infrastructu
 {: support}
 
 Yes, you can connect a VPN or {{site.data.keyword.cloud_notm}} Direct Link to either a local or global transit gateway.
+
+
 
 
 
