@@ -18,6 +18,7 @@ toc:
       - about.md
       - tg-patterns.md
       - helpful-tips.md
+      - service-limits.md
       - topicgroup:
           label: Related links
           topics:

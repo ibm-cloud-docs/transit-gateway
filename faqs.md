@@ -40,7 +40,7 @@ You can create more than one transit gateway in your account. Each transit gatew
 {: faq}
 {: support}
 
-For more information, see [Service limits](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits).
+For more information, see [Quotas and service limits](/docs/transit-gateway?topic=transit-gateway-service-limits).
 
 ### What scalability options do I have for my transit gateway? Does it manage itself? How do I know if it's reaching maximum capacity?
 {: faq}

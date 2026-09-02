@@ -15,7 +15,7 @@ subcollection: transit-gateway
 # Planning for IBM Cloud Transit Gateway
 {: #helpful-tips}
 
-Make sure that you review the following considerations before ordering your {{site.data.keyword.tg_full}}.
+Make sure that you review the following considerations before ordering your {{site.data.keyword.tg_full}}. For information about resource quotas and default limits, see [Quotas and service limits](/docs/transit-gateway?topic=transit-gateway-service-limits).
 {: shortdesc}
 
 ## General considerations
@@ -49,7 +49,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 ## Pricing considerations
 {: #pricing-considerations}
 
-The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the Transit Gateway provisioning page, can't interpret network connection types. To get a reliable cost estimate, input the estimated number of transit gateways and connections. Keep in mind that if you create a redundant GRE, each tunnel is an individual connection that counts against your [connection limit](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits).
+The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the Transit Gateway provisioning page, can't interpret network connection types. To get a reliable cost estimate, input the estimated number of transit gateways and connections. Keep in mind that if you create a redundant GRE, each tunnel is an individual connection that counts against your [connection limit](/docs/transit-gateway?topic=transit-gateway-service-limits).
 
 ## Classic infrastructure connection considerations
 {: #classic-infra-connection-considerations}
@@ -79,7 +79,7 @@ The [IBM Cloud cost estimator](https://cloud.ibm.com/estimator), located on the 
 * Prefix filters in the list are processed sequentially. You can modify the order at any time.
 * If you select **Request connection to a network in another account** as the connect reach option, you can't set prefix filters because you are not the network owner for that connection. Prefix filters must be configured in the account that owns the network. For GRE connections, only the Transit Gateway owner can set prefix filters when creating the connection.
 * Prefix filter subnet masks are specific. For example, a rule that is defined as `10.10.20.0/24` does not match with subnet `10.10.20.0/28` or any other subnet prefix.
-* Review the [prefix service limits](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits) for transit gateways.
+* Review the [prefix service limits](/docs/transit-gateway?topic=transit-gateway-service-limits) for transit gateways.
 
 ## Generic Routing Encapsulation (GRE) connection considerations
 {: #gre-considerations}
@@ -256,18 +256,4 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 ## Service limits
 {: #service-limits}
 
-Keep in mind the following service limits while using IBM Cloud Transit Gateway.
-
-| Service limit |  Default |
-|---------------------------|------|
-| Number of transit gateways | 10 gateways per account, 5 gateways per region |
-| Number of connections per transit gateway | * 10 IBM Cloud VPC connections  \n * 5 IBM Cloud classic connections  \n * 5 IBM Cloud Direct Link connections  \n * 5 {{site.data.keyword.powerSys_notm}} connections |
-| Number of prefixes per connection | * 50 prefixes for VPC connections  \n * 120 prefixes for classic connections  \n * 120 prefixes for GRE connections  \n * 120 prefixes for Direct Link connections  \n * 120 prefixes for {{site.data.keyword.powerSys_notm}} connections |
-| Number of connections with prefix filters | 2 connections with prefix filters per gateway|
-| Number of prefix filters per connection | 10 prefix filters per connection|
-| Number of GRE tunnels per transit gateway | 12 GRE tunnels per gateway (dynamic route server connections contribute 2 tunnels per appliance — a 1-appliance instance uses 2, a 2-appliance instance uses 4, and a 3-appliance instance uses 6)|
-| Number of unique base networks targeted by unbound GRE tunnels per transit gateway | 5 unique base networks targeted by unbound GRE tunnels per gateway|
-{: caption="IBM Cloud Transit Gateway service limits" caption-side="bottom"}
-
-You can open an [IBM Support case](/docs/support?topic=support-open-case&interface=ui) if you need your service limits expanded.
-{: note}
+For the full list of quotas and service limits that apply to {{site.data.keyword.tg_full_notm}}, see [Quotas and service limits](/docs/transit-gateway?topic=transit-gateway-service-limits).
