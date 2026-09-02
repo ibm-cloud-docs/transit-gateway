@@ -112,6 +112,9 @@ To enhance availability without the added cost of a second direct link, a VPN ga
 
 
 
+
+
+
 ## Power Virtual Server use cases using Transit Gateway
 {: #use-case-powervs}
 
