@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-09-02"
 
 keywords:
 
@@ -275,8 +275,8 @@ terraform destroy -target=ibm_tg_connection_rgre_tunnel.test_ibm_tg_connection_t
 
 For more information, see the [Terraform registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection){: external}.
 
-## Related link
+## Next steps
 {: #related-links-add-remove-redundant-gre}
 
-* [Creating a redundant GRE](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection&interface=ui)
-* [Approving and rejecting cross-account redundant GRE requests](/docs/transit-gateway?topic=transit-gateway-approve-reject-redundant-gre-tunnels&interface=ui)
+- If this is a cross-account connection, the network owner must [approve the redundant GRE connection request](/docs/transit-gateway?topic=transit-gateway-approve-reject-redundant-gre-tunnels&interface=ui) before the tunnels become active.
+- [Generate a route report](/docs/transit-gateway?topic=transit-gateway-route-reports) to verify that the expected prefixes are being advertised across the updated tunnels.

@@ -234,3 +234,11 @@ resource "ibm_tg_connection" "test_ibm_tg_connection" {
 }
 ```
 {: codeblock}
+
+
+
+## Next steps
+{: #adding-connections-next-steps}
+
+- After adding connections, [generate a route report](/docs/transit-gateway?topic=transit-gateway-route-reports) to verify that all expected prefixes are visible across your connected networks.
+- To control which routes are advertised between connections, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters).

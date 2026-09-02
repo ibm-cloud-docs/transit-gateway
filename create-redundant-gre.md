@@ -361,8 +361,8 @@ resource "ibm_tg_connection" "test_ibm_tg_rgre_connection" {
 
 For more information, see the [Terraform registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection){: external}.
 
-## Related links
+## Next steps
 {: #gre-related-links}
 
-* [Adding and removing redundant GRE tunnels](/docs/transit-gateway?topic=transit-gateway-add-remove-redundant-gre-tunnels&interface=cli)
-* [Approving and rejecting redundant GRE tunnels across accounts](/docs/transit-gateway?topic=transit-gateway-approve-reject-redundant-gre-tunnels&interface=cli)
+- After you create your redundant GRE, you can [add or remove individual tunnels](/docs/transit-gateway?topic=transit-gateway-add-remove-redundant-gre-tunnels&interface=cli) to adjust capacity or update endpoints without recreating the connection.
+- If you are connecting to a network in another account, [approve or reject the redundant GRE connection request](/docs/transit-gateway?topic=transit-gateway-approve-reject-redundant-gre-tunnels&interface=cli) from the network owner's account to complete the cross-account attachment.

@@ -203,3 +203,9 @@ resource "ibm_tg_connection" "test_ibm_tg_connection" {
 }
 ```
 {: codeblock}
+
+## Next steps
+{: #gre-next-steps}
+
+- After creating the GRE tunnel, [generate a route report](/docs/transit-gateway?topic=transit-gateway-route-reports) to verify that classic infrastructure routes are being advertised correctly across the tunnel.
+- To configure a highly available GRE setup across multiple zones, see [Creating an unbound GRE tunnel](/docs/transit-gateway?topic=transit-gateway-unbound-gre-connection).

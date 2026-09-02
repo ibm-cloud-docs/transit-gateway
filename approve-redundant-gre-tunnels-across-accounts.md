@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-09-02"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -177,9 +177,8 @@ For more information, see the [Terraform registry](https://registry.terraform.io
 Tunnel-level rejection is not allowed.
 {: note}
 
-## Related link
+## Next steps
 {: #related-links-approve-reject-connection-requests}
 
-* [Creating a redundant GRE](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection&interface=ui)
-* [Adding and removing redundant GRE connections](/docs/transit-gateway?topic=transit-gateway-add-remove-redundant-gre-tunnels&interface=ui)
-* [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui)
+- After approving the connection, [generate a route report](/docs/transit-gateway?topic=transit-gateway-route-reports) to confirm that the expected prefixes are being exchanged across the tunnels.
+- After rejecting the connection, the gateway owner can [delete the connection](/docs/transit-gateway?topic=transit-gateway-deleting-connections) to clean up the rejected request.
