@@ -238,7 +238,7 @@ For more information and a use case example, see [Connect networks using a High 
 ## Prefix filtering considerations
 {: #prefix-filtering-considerations}
 
-* Prefix filters are supported for all Transit Gateway connection types except VPN gateway connections,  and legacy GRE tunnel connections. For GRE connections, prefix filtering is supported for both redundant GRE and unbound GRE connection types.
+* Prefix filters are supported for all Transit Gateway connection types except VPN gateway connections,  and legacy GRE tunnel connections. For GRE connections, prefix filtering is supported for both redundant GRE and unbound GRE connection types. [DRS]{: tag-red}
 * For non-GRE connections, the network owner can add prefix filters. For GRE connections, only the Transit Gateway owner can add or modify prefix filters, which is an important consideration for cross-account connections.
 * For cross-account connections, only the account owner of the respective connection can modify prefix filters. Other accounts can view the connection, but can't modify the filters.
 * You can't filter incoming prefixes from another account.

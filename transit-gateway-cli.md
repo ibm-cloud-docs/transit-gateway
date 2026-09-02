@@ -370,7 +370,7 @@ connection="4892849f-368e-9999-bb58-8888fb21e513"
 ### `ibmcloud tg connection-create`
 {: #connection-create}
 
-Create a connection on the transit gateway.
+Create a connection on the transit gateway. 
 
 ```sh
 ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID --network-type NETWORK_TYPE --network-account-id ACCOUNT_ID [--zone ZONE] [--default-prefix-filter DEFAULT_PREFIX_FILTER] [--cidr CIDR] [--output json]
