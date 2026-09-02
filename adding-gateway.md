@@ -57,8 +57,7 @@ To add a connection to a transit gateway, follow these steps:
 
    * **VPN gateway** connections link on-premises or external networks with IBM Cloud by attaching a VPN gateway as a spoke to a transit gateway. These connections use redundant GRE tunnels and dynamic routing with eBGP to enable efficient and scalable network integration. For more information, see [Creating a VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway&interface=ui).
    
-
-.   
+   
 
 1. Optionally, create prefix filters to set an ordered list of filters that determine the routes your transit gateway accepts or denies. For more information, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters&interface=ui).
 
