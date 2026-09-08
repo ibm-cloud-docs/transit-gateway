@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-09-08"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -17,6 +17,7 @@ subcollection: transit-gateway
 
 You can delete a connection from a transit gateway by using the UI, CLI, API, or Terraform.
 {: shortdesc}
+
 
 ## Deleting a connection in the UI
 {: #deleting-connections-ui}
