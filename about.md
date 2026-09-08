@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-02"
+lastupdated: "2026-09-08"
 
 keywords: features, overview
 
@@ -99,4 +99,4 @@ With GRE enhanced route propagation enabled, all GRE tunnels connected to the sa
 ## Interconnectivity patterns
 {: #patterns}
 
-For examples of how you can implement {{site.data.keyword.tg_full_notm}} to interconnect VPCs, classic infrastructure, Direct Link, VPN gateways, and Power Virtual Server resources across accounts and regions, see [Interconnectivity patterns](/docs/transit-gateway?topic=transit-gateway-tg-patterns).
+For examples of how you can implement {{site.data.keyword.tg_full_notm}} to interconnect VPCs, classic infrastructure, Direct Link, VPN gateways, and Power Virtual Server resources across accounts and regions, see [Interconnectivity patterns](/docs/transit-gateway?topic=transit-gateway-patterns).

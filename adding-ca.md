@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-09-08"
 
 keywords:
 
@@ -82,6 +82,8 @@ To connect networks that different accounts own by using the UI, follow these st
 
    The gateway owner's account (or the network owner's account) can delete the connection. If the network owner deletes the connection, the gateway owner sees the connection status as **Detached**.
    {: note}
+
+
 
 ## Adding a cross-account connection from the CLI
 {: #tg-cli-adding-cross-account-connection-transit-gateway}

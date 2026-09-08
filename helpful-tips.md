@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-03"
+lastupdated: "2026-09-08"
 
 keywords: help, tips, connections, provision
 
@@ -35,6 +35,7 @@ All prefixes of a VPC and all subnets of a classic network will connect to the t
 * The following ASNs are blocked on Transit Gateway Generic Routing Encapsulation (GRE) and Direct Link connections. Avoid using these ASNs on appliances so that they are not included on the advertised routes in the AS path. Having these ASNs included prevent networks from working properly.
 
     `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200-65234`, `65402-65433`, `65500`, `65516`, `65519`, `65521`, `65531` and `4201065000-4201065999`
+
 ## Routing considerations
 {: #routing-considerations}
 
@@ -129,11 +130,13 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 * Pricing is based on the cost of 4 GRE tunnels per connection plus data traffic charges.
 * VPN gateway connections are limited to 4 per transit gateway and 2 per zone by default.
 * VPN gateway connections do not support prefix filtering. You are responsible for managing any route filtering on your side of the BGP session.
+
 * Dynamic VPN connections require the VPN gateway to be attached to a transit gateway before traffic can flow.
 * After a VPN gateway is attached to a transit gateway, the local ASN cannot be changed.
 * To configure a VPN as a backup for a Direct Link connection, you must ensure that routes from the Direct Link are preferred. To do so, you can leverage mechanisms, such as AS Path prepending or MED (Multi-Exit Discriminator) on your on-premises device.
 * Only VPN gateways with dynamic routing enabled are available to connect to a transit gateway. The selected region and zone determine which Transit Gateway routers the VPN gateway connects to.
 * Specifying a zone is optional if the VPN gateway and the transit gateway are in the same multi-zone region (MZR); in that case, the connection uses the VPN gateway's zone.
+
 
 
 ### CIDR block requirements
@@ -226,7 +229,7 @@ If you require network isolation, consider using separate transit gateways.
 * Do not require a classic connection on the transit gateway. Classic network subnets are not advertised to the connections on the transit gateway (or vice versa).
 * The default number of unique base networks that can be targeted by unbound GRE tunnels is limited to five. You can open an [IBM Support case](/docs/support?topic=support-open-case&interface=ui) if you need these service limits expanded.
 
-For more information and a use case example, see [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-about#use-case-8).
+For more information and a use case example, see [Connect networks using a High Availability GRE tunnel](/docs/transit-gateway?topic=transit-gateway-patterns#use-case-8).
 
 ### Legacy GRE considerations
 {: #legacy-gre-connection-considerations}
@@ -238,7 +241,8 @@ For more information and a use case example, see [Connect networks using a High 
 ## Prefix filtering considerations
 {: #prefix-filtering-considerations}
 
-* Prefix filters are supported for all Transit Gateway connection types except VPN gateway connections,  and legacy GRE tunnel connections. For GRE connections, prefix filtering is supported for both redundant GRE and unbound GRE connection types. 
+* Prefix filters are supported for all Transit Gateway connection types except VPN gateway connections, dynamic route server connections, and legacy GRE tunnel connections. Prefix filtering is supported for redundant and unbound GRE connection types and for VPN gateways.
+
 * For non-GRE connections, the network owner can add prefix filters. For GRE connections, only the Transit Gateway owner can add or modify prefix filters, which is an important consideration for cross-account connections.
 * For cross-account connections, only the account owner of the respective connection can modify prefix filters. Other accounts can view the connection, but can't modify the filters.
 * You can't filter incoming prefixes from another account.

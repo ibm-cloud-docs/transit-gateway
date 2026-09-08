@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-02"
+lastupdated: "2026-09-08"
 
 keywords: features, overview
 
@@ -136,19 +136,23 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID 
    {: pre}
 
 `--network-type`
-:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, `vpn_gateway`, `vpc`, and .
+:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, `vpn_gateway`, and `vpc`.
+
 
 `--network-account-id`
 :   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account.
 
 `--zone`
-:   Optional: Availability zone where a GRE tunnel or VPN connection is deployed. Only applicable to the `vpn_gateway` network type. 
+:   Optional: Availability zone where a GRE tunnel or VPN connection is deployed. Only applicable to the `vpn_gateway` network type.
+
 
 `--default-prefix-filter`
-:   Optional: Default prefix filter of the connection (`permit` | `deny`). 
+:   Optional: Default prefix filter of the connection (`permit` | `deny`).
+
 
 `--cidr`
-:   Optional: CIDR block to use for the connection. Only applicable to the `vpn_gateway` and  network types. 
+:   Optional: CIDR block to use for the connection. Only applicable to the `vpn_gateway` network type.
+
 
 `--output json`
 :   Optional: Specify whether you want the output displayed in JSON format.
@@ -211,12 +215,13 @@ Review the following argument references that you can specify for your resource 
 |**local_tunnel_ip**  \n Optional  \n Forces new resource  \n string | The local tunnel IP address. \n This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**name**  \n Optional  \n string | The connection name. If the name is not given, a default name is provided based on the network type, such as `vpc` for network type VPC and `classic` for network type classic.|
 |**network_account_id**  \n Optional  \n Forces new resource  \n string|The ID of the network connected account. This field is used if the network is in a different account than the gateway.|
-|**network_type**  \n Required  \n Forces new resource  \n string | The network type. Allowed values are `classic`, `directlink`, `gre_tunnel`, `unbound_gre_tunnel`, `vpn_gateway`, `vpc`, and . |
+|**network_type**  \n Required  \n Forces new resource  \n string | The network type. Allowed values are `classic`, `directlink`, `gre_tunnel`, `unbound_gre_tunnel`, `vpn_gateway`, and `vpc`. |
+
 |**network_id**  \n Optional  \n Forces new resource  \n string | The ID of the network that is being connected to through this connection. \n This parameter is required for network type `vpc` and `directlink`, the CRN of the VPC or direct link gateway to be connected.  \n This field is required to be unspecified for network type `classic`.  \n **Example**:`crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
 |**remote_bgp_asn**  \n Optional  \n Forces new resource  \n integer | The remote network BGP ASN (will be generated for the connection if not specified).  \n This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**remote_gateway_ip**  \n Optional  \n Forces new resource  \n string | The remote gateway IP address. This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**remote_tunnel_ip**  \n Optional  \n Forces new resource  \n string | The remote tunnel IP address. This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
-|**zone**  \n Optional  \n Forces new resource  \n string | The location of the GRE tunnel. This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections. |
+|**zone**  \n Optional  \n Forces new resource  \n string | The location of the connection. This field is required for `gre_tunnel` and `unbound_gre_tunnel` type connections and optional for `vpn_gateway` type connections. |
 {: caption="Terraform argument references for creating a connection" caption-side="bottom"}
 
 ### Example
