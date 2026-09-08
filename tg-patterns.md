@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-02"
+lastupdated: "2026-09-08"
 
 keywords: use cases, interconnectivity, patterns, VPC, classic, GRE, Direct Link, VPN
 
@@ -105,7 +105,7 @@ Direct Link can be connected to either local or remote transit gateways.
 
 In this use case, a VPN gateway is configured as a spoke to the transit gateway to provide a redundant network path between the on-premises environment and IBM Cloud. The primary connectivity is established using Direct Link, which offers private, dedicated connectivity with assured bandwidth and low-latency performance. This direct connection terminates in the IBM Cloud Transit VPC, which connects to the transit gateway. From there, traffic is routed to multiple environments including Power Virtual Servers, virtual server instances in spoke VPCs, and classic infrastructure.
 
-To enhance availability without the added cost of a second direct link, a VPN gateway is deployed as a secondary path. This path provides secure connectivity over the internet, using BGP VPN tunnels between the on-prem network and the VPN gateway. Multiple GRE tunnels are established between the VPN gateway appliances and the transit gateway routers (TGRs), allowing the VPN to act as a spoke within the Transit Gateway topology. While this path doesn't provide the same performance guarantees as Direct Link, it ensures continued connectivity during a primary path failure, making it a cost-effective and resilient solution for hybrid cloud networking.
+To enhance availability without the added cost of a second direct link, a VPN gateway is deployed as a secondary path. This path provides secure connectivity over the internet, using BGP VPN tunnels between the on-prem network and the VPN gateway. Multiple GRE tunnels are established between the VPN gateway appliances and the transit gateway routers, allowing the VPN to act as a spoke within the Transit Gateway topology. While this path doesn't provide the same performance guarantees as Direct Link, it ensures continued connectivity during a primary path failure, making it a cost-effective and resilient solution for hybrid cloud networking.
 
 ![VPN gateway as a backup connection for Direct Link](/images/tgw-vpn-spoke.svg "VPN gateway as a backup connection for Direct Link"){: caption="VPN gateway as a backup connection for Direct Link" caption-side="bottom"}
 
