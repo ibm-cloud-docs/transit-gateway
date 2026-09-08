@@ -206,6 +206,8 @@ For more information, see [Adds a connection to a transit gateway](/docs/apis/tr
 
 Review the following argument references that you can specify for your resource when you create a connection for a transit gateway using Terraform:
 
+
+
 |Argument|Details|
 |--|--|
 |**base_connection_id**  \n Optional  \n Forces new resource \n string | The ID of a `classic` `network_type` connection a tunnel is configured over. \n This field applies only to network type `gre_tunnel` connections.|
@@ -216,13 +218,15 @@ Review the following argument references that you can specify for your resource 
 |**name**  \n Optional  \n string | The connection name. If the name is not given, a default name is provided based on the network type, such as `vpc` for network type VPC and `classic` for network type classic.|
 |**network_account_id**  \n Optional  \n Forces new resource  \n string|The ID of the network connected account. This field is used if the network is in a different account than the gateway.|
 |**network_type**  \n Required  \n Forces new resource  \n string | The network type. Allowed values are `classic`, `directlink`, `gre_tunnel`, `unbound_gre_tunnel`, `vpn_gateway`, and `vpc`. |
-
 |**network_id**  \n Optional  \n Forces new resource  \n string | The ID of the network that is being connected to through this connection. \n This parameter is required for network type `vpc` and `directlink`, the CRN of the VPC or direct link gateway to be connected.  \n This field is required to be unspecified for network type `classic`.  \n **Example**:`crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
 |**remote_bgp_asn**  \n Optional  \n Forces new resource  \n integer | The remote network BGP ASN (will be generated for the connection if not specified).  \n This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**remote_gateway_ip**  \n Optional  \n Forces new resource  \n string | The remote gateway IP address. This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**remote_tunnel_ip**  \n Optional  \n Forces new resource  \n string | The remote tunnel IP address. This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**zone**  \n Optional  \n Forces new resource  \n string | The location of the connection. This field is required for `gre_tunnel` and `unbound_gre_tunnel` type connections and optional for `vpn_gateway` type connections. |
 {: caption="Terraform argument references for creating a connection" caption-side="bottom"}
+
+
+
 
 ### Example
 {: #tg-terraform-adding-connection-transit-gateway-example}
