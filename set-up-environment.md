@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-09-02"
 keywords: api
 
 subcollection: transit-gateway
@@ -119,3 +119,8 @@ If you run into unexpected results, add the `--verbose` (debug) flag after the `
     curl -X GET "$transit_api_endpoint/v1/transit_gateways?version=$api_version"   -H "Authorization: $IAM_TOKEN"
     ```
     {: pre}
+
+## Next steps
+{: #set-up-environment-next-steps}
+
+- Now that your environment is configured, [create a transit gateway](/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway) and start adding connections to your networks.

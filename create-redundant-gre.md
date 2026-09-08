@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-05"
+lastupdated: "2026-09-02"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -23,10 +23,10 @@ Unlike an unbound GRE tunnel that can be connected to only classic networks, a r
 ## Before you begin
 {: #redundant-gre-begin}
 
-Before you create a redundant GRE, read the following planning considerations:
+Review [General GRE considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-general-considerations) and [Redundant GRE considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#redundant-gre-connection-considerations) before you proceed. These considerations cover IP address requirements, zone placement, tunnel limits, and other constraints that affect whether the connection can be created successfully.
+{: important}
 
-* Review [General](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-general-considerations) and [Redundant](/docs/transit-gateway?topic=transit-gateway-helpful-tips#redundant-gre-connection-considerations) GRE considerations.
-* You must enter the following four IP addresses when you add a tunnel to a redundant GRE.
+You must enter the following four IP addresses when you add a tunnel to a redundant GRE.
 
    * **Remote gateway IP** - IP address of your GRE tunnel endpoint. This IP address must be a private IP from either a VPC or Classic environment, such as the private IP of a hardware appliance, a virtual server instance, or even a VM.
    * **Local gateway IP** - IP address that your tunnel endpoint connects to. This IP is the transit gateway's IP for establishing the tunnel so that when you enter the **Remote tunnel IP** on your tunnel endpoint, you use this IP address.
@@ -361,8 +361,8 @@ resource "ibm_tg_connection" "test_ibm_tg_rgre_connection" {
 
 For more information, see the [Terraform registry](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection){: external}.
 
-## Related links
+## Next steps
 {: #gre-related-links}
 
-* [Adding and removing redundant GRE tunnels](/docs/transit-gateway?topic=transit-gateway-add-remove-redundant-gre-tunnels&interface=cli)
-* [Approving and rejecting redundant GRE tunnels across accounts](/docs/transit-gateway?topic=transit-gateway-approve-reject-redundant-gre-tunnels&interface=cli)
+- After you create your redundant GRE, you can [add or remove individual tunnels](/docs/transit-gateway?topic=transit-gateway-add-remove-redundant-gre-tunnels&interface=cli) to adjust capacity or update endpoints without recreating the connection.
+- If you are connecting to a network in another account, [approve or reject the redundant GRE connection request](/docs/transit-gateway?topic=transit-gateway-approve-reject-redundant-gre-tunnels&interface=cli) from the network owner's account to complete the cross-account attachment.

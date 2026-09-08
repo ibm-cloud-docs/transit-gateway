@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-09-08"
 
 keywords: features, overview
 
@@ -56,6 +56,8 @@ To add a connection to a transit gateway, follow these steps:
    
 
    * **VPN gateway** connections link on-premises or external networks with IBM Cloud by attaching a VPN gateway as a spoke to a transit gateway. These connections use redundant GRE tunnels and dynamic routing with eBGP to enable efficient and scalable network integration. For more information, see [Creating a VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway&interface=ui).
+   
+   
 
 1. Optionally, create prefix filters to set an ordered list of filters that determine the routes your transit gateway accepts or denies. For more information, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters&interface=ui).
 
@@ -69,11 +71,9 @@ To add a connection to a transit gateway, follow these steps:
 
          You must specify a custom CIDR block for the connection. The CIDR defines the IP range that is used to allocate addresses on the redundant GRE tunnels and must use [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} private address space, be at least a `/27` subnet, and must not overlap with other connection CIDRs on the transit gateway.
 
-         Only VPN gateways with dynamic routing enabled are shown in the Available connections list. The selected region and zone determine which Transit Gateway routers the VPN gateway connects to.
-         {: note}
+         
 
-         Specifying a zone is optional if the VPN gateway and the transit gateway are in the same multi-zone region (MZR). In this case, the connection uses the VPN gateway’s zone.
-         {: attention}
+      
 
    * **Request connection to a network in another account** - Enter either the IBM Cloud ID or Cloud Resource Name (CRN) of the account that manages the network where you want to connect. Then, complete any remaining information. All resources connected to that transit gateway will be accessible from the other network. For more information, including how to obtain the Cloud ID or CRN, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
 
@@ -138,17 +138,21 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID 
 `--network-type`
 :   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, `vpn_gateway`, and `vpc`.
 
+
 `--network-account-id`
 :   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account.
 
 `--zone`
 :   Optional: Availability zone where a GRE tunnel or VPN connection is deployed. Only applicable to the `vpn_gateway` network type.
 
+
 `--default-prefix-filter`
 :   Optional: Default prefix filter of the connection (`permit` | `deny`).
 
+
 `--cidr`
 :   Optional: CIDR block to use for the connection. Only applicable to the `vpn_gateway` network type.
+
 
 `--output json`
 :   Optional: Specify whether you want the output displayed in JSON format.
@@ -202,6 +206,8 @@ For more information, see [Adds a connection to a transit gateway](/docs/apis/tr
 
 Review the following argument references that you can specify for your resource when you create a connection for a transit gateway using Terraform:
 
+
+
 |Argument|Details|
 |--|--|
 |**base_connection_id**  \n Optional  \n Forces new resource \n string | The ID of a `classic` `network_type` connection a tunnel is configured over. \n This field applies only to network type `gre_tunnel` connections.|
@@ -216,8 +222,11 @@ Review the following argument references that you can specify for your resource 
 |**remote_bgp_asn**  \n Optional  \n Forces new resource  \n integer | The remote network BGP ASN (will be generated for the connection if not specified).  \n This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**remote_gateway_ip**  \n Optional  \n Forces new resource  \n string | The remote gateway IP address. This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**remote_tunnel_ip**  \n Optional  \n Forces new resource  \n string | The remote tunnel IP address. This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
-|**zone**  \n Optional  \n Forces new resource  \n string | The location of the GRE tunnel. This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections. |
+|**zone**  \n Optional  \n Forces new resource  \n string | The location of the connection. This field is required for `gre_tunnel` and `unbound_gre_tunnel` type connections and optional for `vpn_gateway` type connections. |
 {: caption="Terraform argument references for creating a connection" caption-side="bottom"}
+
+
+
 
 ### Example
 {: #tg-terraform-adding-connection-transit-gateway-example}
@@ -233,3 +242,11 @@ resource "ibm_tg_connection" "test_ibm_tg_connection" {
 }
 ```
 {: codeblock}
+
+
+
+## Next steps
+{: #adding-connections-next-steps}
+
+- After adding connections, [generate a route report](/docs/transit-gateway?topic=transit-gateway-route-reports) to verify that all expected prefixes are visible across your connected networks.
+- To control which routes are advertised between connections, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters).

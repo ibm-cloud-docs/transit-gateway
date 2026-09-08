@@ -2,7 +2,7 @@
 
 copyright:
   years:  2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-09-02"
 
 keywords: change log for transit gateway, updates to transit gateway
 
@@ -17,6 +17,10 @@ subcollection: transit-gateway
 
 In this change log, you can learn about the latest changes, improvements, and updates for {{site.data.keyword.tg_full}}.
 {: shortdesc}
+
+
+
+
 
 
 

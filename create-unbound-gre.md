@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-09-02"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -21,9 +21,8 @@ You can use an unbound Generic Routing Encapsulation (GRE) tunnel transit gatewa
 ## Before you begin
 {: #unbound-gre-begin}
 
-Before creating an unbound GRE tunnel, review
-[GRE connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-considerations)
-for additional prerequisites.
+Review [GRE connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-considerations) before you proceed. These considerations cover IP address requirements, zone placement, tunnel limits, and other constraints that affect whether the connection can be created successfully.
+{: important}
 
 Unbound transit gateway GRE connections require the gateway owner to specifically configure HA for their needs. A GRE connection is a point-to-point connection, has no built-in redundancy, and is a single point of failure. When configuring an unbound GRE tunnel on a transit gateway, you must specify the availability zone. For a robust HA solution, configure multiple GRE connections by using different availability zones.
 {: important}

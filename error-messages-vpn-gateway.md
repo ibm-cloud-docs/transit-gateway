@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-11-04"
+  years: 2026, 2026
+lastupdated: "2026-09-02"
 
 keywords: overlapping routes
 
@@ -13,6 +13,8 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
+[Regional]{: tag-green}
 
 # Why does my VPN gateway fail to connect to the transit gateway?
 {: #troubleshoot-vpn-gateway}
@@ -30,6 +32,8 @@ When creating a VPN connection to a transit gateway, the request fails with a `4
 * `Tunnel IPs overlap with VPN gateway connection tunnel IPs. Specify a valid CIDR block.`
 * `Tunnel IP overlaps with the VPN gateway peer address. Specify a different CIDR block.`
 
+
+
 These errors typically occur due to misconfigurations in the VPN connection setup, including:
 {: tsCauses}
 
@@ -37,5 +41,7 @@ These errors typically occur due to misconfigurations in the VPN connection setu
 * Tunnel IP range overlaps with VPN gateway subnets or existing tunnel IPs.
 * Tunnel IP overlaps with the peer address.
 
+
+
 To resolve these issues, check all the tunnel IPs and the provided configuration, and select non-overlapping CIDR blocks.
-{: tsResolve} 
+{: tsResolve}

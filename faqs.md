@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-08"
 
 keywords: faq, faqs, questions
 
@@ -40,7 +40,7 @@ You can create more than one transit gateway in your account. Each transit gatew
 {: faq}
 {: support}
 
-For more information, see [Service limits](/docs/transit-gateway?topic=transit-gateway-helpful-tips#service-limits).
+For more information, see [Quotas and service limits](/docs/transit-gateway?topic=transit-gateway-service-limits).
 
 ### What scalability options do I have for my transit gateway? Does it manage itself? How do I know if it's reaching maximum capacity?
 {: faq}
@@ -177,6 +177,12 @@ No, you must choose to connect to a direct resource (VPC or classic infrastructu
 {: support}
 
 Yes, you can connect a VPN or {{site.data.keyword.cloud_notm}} Direct Link to either a local or global transit gateway.
+
+
+
+
+
+
 
 ### Classic access VPCs can't be attached to a transit gateway. How can I connect and access classic resources in those VPCs?
 {: #classic-resources}
