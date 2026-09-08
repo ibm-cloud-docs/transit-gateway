@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-09-03"
+lastupdated: "2026-09-08"
 
 keywords:
 
@@ -47,7 +47,6 @@ The following dependencies apply to the following deployment locations: Dallas (
 | {{site.data.keyword.secrets-manager_full}} | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | data-plane |  Same region  |
 | {{site.data.keyword.dl_full}} | Availability | Yes | data-plane |  Same region  |
 | IBM Cloud VPN for VPC Site to Site Gateway | Availability | Yes | data-plane |  Same region  |
-| Dynamic Route Server | Availability | Yes | data-plane |  Same region  |
 | IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | data-plane |  Same data center  |
 | {{site.data.keyword.iamlong}} | Access management, Availability, Instance control, Security compliance | No | data-plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 {: row-headers}
@@ -115,7 +114,6 @@ The following dependencies apply to the following deployment locations: Dallas (
 | {{site.data.keyword.dl_full}} | Availability | Yes | control-plane |  Same region  |
 | VPC Undercloud | Availability | No | control-plane |  Same data center  |
 | IBM Cloud VPN for VPC Site to Site Gateway | Availability | Yes | control-plane |  Same region  |
-| Dynamic Route Server | Availability | Yes | control-plane |  Same region  |
 | IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | control-plane |  Same data center  |
 | {{site.data.keyword.iamlong}} | Access management, Availability, Instance control, Security compliance | No | control-plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 {: row-headers}
@@ -185,7 +183,6 @@ The following dependencies apply to the following deployment locations: Chennai 
 | {{site.data.keyword.secrets-manager_full}} | Availability, Change management, Disaster recovery, Instance control, Security compliance | No | ngdc-data-plane |  Same region  |
 | {{site.data.keyword.dl_full}} | Availability | Yes | ngdc-data-plane |  Same region  |
 | IBM Cloud VPN for VPC Site to Site Gateway | Availability | Yes | ngdc-data-plane |  Same region  |
-| Dynamic Route Server | Availability | Yes | ngdc-data-plane |  Same region  |
 | IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | ngdc-data-plane |  Same data center  |
 | {{site.data.keyword.iamlong}} | Access management, Availability, Instance control, Security compliance | No | ngdc-data-plane |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 {: row-headers}
