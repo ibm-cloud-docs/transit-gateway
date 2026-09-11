@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-09-11"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -73,6 +73,8 @@ Where:
 
 `--routing`
 :   Optional: Gateway routing of resources (`global` | `local`). Select `global` to connect resources across regions. Changing routing from `global` to `local` requires all existing connections to be local.
+
+
 
 `--gre-enhanced-route-propagation`
 :   Optional: Specify whether you want to enable or disable route propagation across all GREs connected to the same transit gateway. One of: `true` or `false` (default)
