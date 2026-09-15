@@ -44,7 +44,7 @@ Transit gateways provide flexibility by allowing you to add networks to local ga
 
 {{site.data.keyword.tg_full_notm}} supports local and global routing between VPCs and the {{site.data.keyword.cloud_notm}} classic infrastructure. All routing options remain within the private {{site.data.keyword.cloud_notm}} infrastructure without operating on the public internet, and are optimized for performance. {{site.data.keyword.tg_full_notm}} allows customers greater flexibility, redundancy, and speed in scaling their workloads, and in connecting isolated networks that run on {{site.data.keyword.cloud_notm}}.
 
- For global routing deployments, you can optionally configure redundancy groups to enable multiple transit gateways in different regions to share routing behavior. This configuration improves resiliency by allowing traffic to continue flowing if a region becomes unavailable and helping to optimize routing paths between networks.
+For global routing deployments, you can optionally configure redundancy groups to enable multiple transit gateways in different regions to share routing behavior. This configuration improves resiliency by allowing traffic to continue flowing if a region becomes unavailable and helping to optimize routing paths between networks.
 
 ### Redundancy groups for high availability
 {: #redundancy-groups-for-ha}
