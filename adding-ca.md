@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-09-15"
 
 keywords:
 
@@ -18,7 +18,8 @@ subcollection: transit-gateway
 You can request connections to networks in other {{site.data.keyword.cloud_notm}} accounts, by using the UI, CLI, API, and Terraform.
 {: shortdesc}
 
-
+If you are using redundancy groups, cross-account connections must be configured on each transit gateway in the group. Connections are not shared automatically across gateways.
+{: note}
 
 ## Planning considerations
 {: #tg-ca-planning}

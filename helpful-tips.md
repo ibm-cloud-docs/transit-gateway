@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-09-15"
 
 keywords: help, tips, connections, provision
 
@@ -136,8 +136,7 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 * To configure a VPN as a backup for a Direct Link connection, you must ensure that routes from the Direct Link are preferred. To do so, you can leverage mechanisms, such as AS Path prepending or MED (Multi-Exit Discriminator) on your on-premises device.
 * Only VPN gateways with dynamic routing enabled are available to connect to a transit gateway. The selected region and zone determine which Transit Gateway routers the VPN gateway connects to.
 * Specifying a zone is optional if the VPN gateway and the transit gateway are in the same multi-zone region (MZR); in that case, the connection uses the VPN gateway's zone.
-
-
+* VPN gateway connections are not supported on redundant global transit gateways. A VPN gateway can be connected to only one transit gateway at a time and cannot be attached to multiple transit gateways in a redundancy group. For more information, see [Planning considerations for VPN gateways](/docs/vpc?topic=vpc-planning-considerations-vpn#dynamic-route-based-connection-considerations).
 
 ### CIDR block requirements
 {: #vpn-cidr-requirements}
@@ -254,7 +253,24 @@ For more information and a use case example, see [Connect networks using a High 
 
 {{site.data.content.reuse-route-report-considerations}}
 
+## Redundancy group considerations
+{: #redundancy-groups-tips}
 
+When planning global routing deployments, you can use redundancy groups to improve resiliency and flexibility across regions. Keep the following considerations and limitations in mind:
+
+* Redundancy groups are supported only for global transit gateways.
+* A redundancy group can contain only one transit gateway per region.
+* Transit gateways cannot be reassigned to a different redundancy group after they are created.
+* Adding connections to a redundant global transit gateway does not automatically add the connection to the other transit gateways in the redundancy group. You must add connections to the other transit gateways to achieve redundancy within the redundancy group and avoid asymmetric routing behavior.
+* Configure the same prefix filters on matching connections across all transit gateways in the redundancy group. If prefix filters differ between gateways, traffic that fails over to another gateway in the group may be subject to different route advertisements, which can cause unexpected routing behavior.
+* Keep configuration settings consistent across gateways to ensure predictable routing behavior.
+* Verify routing behavior after configuration to confirm that traffic flows as expected between connected networks.
+* Traffic typically prefers transit gateways in the same region when available, but actual routing depends on network path selection.
+
+* VPN gateway connections are not supported on redundant global transit gateways. A VPN gateway can be connected to only one transit gateway at a time and cannot be attached to multiple transit gateways in a redundancy group. For more information, see [Planning considerations for VPN gateways](/docs/vpc?topic=vpc-planning-considerations-vpn#dynamic-route-based-connection-considerations).
+* If GRE enhanced route propagation is enabled on transit gateways in a redundancy group, GRE routes are propagated across all transit gateways in the group. This means that a GRE connection on one transit gateway can have its traffic flow to a GRE connection on another transit gateway in the group. Plan your GRE topology accordingly, and verify that this cross-gateway traffic flow is intended before enabling GRE enhanced route propagation in a redundancy group. For more information, see [GRE enhanced route propagation considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-enhanced-route-propagation-considerations).
+
+Using redundancy groups can help maintain connectivity during regional outages and can improve routing efficiency by allowing traffic to use transit gateways that are closer to the source network.
 
 ## Quotas and service limits
 {: #service-limits}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-09-15"
 
 keywords: iam, permissions
 
@@ -18,7 +18,7 @@ subcollection: transit-gateway
 {{site.data.keyword.tg_full}} uses the IBM Cloud Identity and Access Management (IAM) platform access roles to manage access to the service's resources. IAM access roles allow account administrators to assign different levels of permission for using the service. The following tables provide the list of actions that you can take against the {{site.data.keyword.tg_full_notm}} service and its resources depending on a user assigned roles.
 {: shortdesc}
 
-
+ When using redundancy groups, access permissions apply to individual transit gateways. Actions that affect a redundancy group (such as renaming the group) require appropriate permissions on all transit gateways in the group.
 
 ## Platform-access roles
 {: #platform-roles-iam}

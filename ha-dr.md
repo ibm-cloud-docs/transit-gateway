@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-07"
+lastupdated: "2026-09-15"
 
 keywords: HA for transit gateway, DR for transit gateway, transit gateway recovery time objective, transit gateway recovery point objective
 
@@ -39,6 +39,8 @@ GRE connections require the gateway owner to configure high availability based o
 
 While Transit Gateway supports global routing to link multiple regions, it does not automatically replicate configuration or state across regional instances. To protect against full-region outages, deploy a mirrored Transit Gateway in a secondary region, replicate your attachments and routing configurations, and plan failover mechanisms.
 
+For multi-region high availability, you can use redundancy groups to deploy multiple global transit gateways across regions that operate together. Redundancy groups enable traffic to continue flowing if a region becomes unavailable.
+
 IBM Cloud regions that support Transit Gateway are multi-zone regions except for Montreal, which is a single-zone region. In Montreal, Transit Gateway does not offer zone-level redundancy. If you plan to deploy in this region, make sure to implement additional measures, such as a mirrored transit gateway in a secondary region, to ensure availability and fault tolerance.
 {: note}
 
@@ -74,6 +76,8 @@ Deploying Transit Gateway across multiple AZs within an MZR ensures fault tolera
 
 Using global routing capabilities allows for interconnecting VPCs and classic infrastructure across different regions. This approach supports workload distribution and failover between regions, enhancing the overall resilience of the network architecture.
 
+Redundancy groups enable multi-region disaster recovery designs by allowing multiple transit gateways to share routing behavior across regions. This approach supports faster recovery when regional failures occur.
+
 By combining IBM Cloud Transit Gateway's features with strategic deployment and configuration practices, organizations can establish robust disaster recovery architectures that ensure continuity and minimize downtime during disruptions.
 
 The following table outlines these features and key considerations.
@@ -83,14 +87,10 @@ The following table outlines these features and key considerations.
 
 Transit Gateway supports the following disaster recovery features:
 
-
 | Feature | Description | Consideration |
 | -------------- | -------------- | -------------- |
-| Global routing | Supports interconnectivity between VPCs and classic infrastructure across different regions. | Facilitates workload distribution and failover between regions. |
+| Global routing | Supports interconnectivity between VPCs and classic infrastructure across different regions. | Can be combined with redundancy groups for multi-region resiliency and failover. |
 {: caption="Disaster Recovery features for {{site.data.keyword.tg_full_notm}}" caption-side="bottom"}
-
-
-
 
 As a customer, you can create and support the following other disaster recovery options:
 
@@ -107,18 +107,14 @@ It’s critical to regularly practice your disaster recovery steps to ensure tha
 
 There can be multiple ways to recover from certain failures, so be sure to assess each scenario based on your specific architecture and requirements. Here are common failure scenarios, along with potential recovery actions:
 
-
 | Failure | Resolution |
 | -------------- | -------------- |
-| Regional Transit Gateway outage   | Redirect traffic through a transit gateway in another region.  |
+| Regional Transit Gateway outage | Redirect traffic through a transit gateway in another region. For automated failover patterns, use redundancy groups with consistent configurations across gateways. |
 | BGP session loss                  | Verify routing configuration and peer device status; restart the BGP session. |
 | VPC attachment failure            | Recreate the attachment or fail over to an alternate path.                    |
 | Accidental configuration deletion | Restore configuration using backups or automation tools.    |
 | Logging or monitoring failure     | Reconfigure logging/monitoring endpoints; verify IAM and service status.      |
 {: caption="Disaster recovery scenarios for {{site.data.keyword.tg_full_notm}}" caption-side="bottom"}
-
-
-
 
 ### Backing up transit gateways for disaster recovery
 {: #disaster-recovery-tgw}

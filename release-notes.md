@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-02"
+lastupdated: "2026-09-15"
 
 keywords: updates, additions, improvements
 
@@ -23,7 +23,11 @@ Find out about new and updated features in {{site.data.keyword.tg_full}}.
 
 
 
+## 15 September 2026
+{: #transit-gateway-sept1526}
 
+Redundancy groups for global transit gateways
+:   You can now use redundancy groups with global transit gateways to improve resiliency for multi-region deployments. This feature allows multiple transit gateways across regions to share routing behavior and maintain connectivity if a region becomes unavailable. For more information, see [Using redundancy groups](/docs/transit-gateway?topic=transit-gateway-using-redundancy-groups&interface=ui).
 
 ## 20 January 2026
 {: #transit-gateway-jan2026}
