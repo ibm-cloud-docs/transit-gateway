@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-11"
+lastupdated: "2026-09-15"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -39,7 +39,11 @@ To change your transit gateway configuration in the UI, follow these steps:
 
       Changes to route propagation or routing type can take several minutes to apply, depending on the number of existing connections.
 
+   * Update the redundancy group name.
 
+      * The redundancy group field is available only when global routing is enabled.
+      * The redundancy group is a shared configuration. Renaming the group updates it across all associated transit gateways.
+      * You must have permissions to edit each transit gateway in the redundancy group to update the group name.
 
    Routing type considerations:
 
@@ -53,15 +57,10 @@ To change your transit gateway configuration in the UI, follow these steps:
 
 To update properties on an existing gateway from the CLI, run the following command:
 
-
 ```sh
-ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--gre-enhanced-route-propagation true | false] [--output json] [-h, --help]
+ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--redundancy-group GROUP_NAME] [--gre-enhanced-route-propagation true | false] [--output json] [-h, --help]
 ```
 {: pre}
-
-
-
-
 
 Where:
 
@@ -74,7 +73,10 @@ Where:
 `--routing`
 :   Optional: Gateway routing of resources (`global` | `local`). Select `global` to connect resources across regions. Changing routing from `global` to `local` requires all existing connections to be local.
 
+ This cannot be changed if the gateway is in a redundancy group.
 
+`--redundancy-group`
+:   Optional: Updates the name of the redundancy group that the gateway belongs to. Only valid when the gateway is already in a redundancy group and global routing is enabled. Renaming the group updates it for all associated transit gateways.
 
 `--gre-enhanced-route-propagation`
 :   Optional: Specify whether you want to enable or disable route propagation across all GREs connected to the same transit gateway. One of: `true` or `false` (default)
@@ -106,20 +108,18 @@ You can update your transit gateway's name, global parameters, or both with the 
 
 This example illustrates changing your configuration with the API:
 
-
-
 ```sh
 PATCH /transit_gateways/{id}
 
 {
   "global": true,
-  "name": "my-transit-gateway"
+  "name": "my-transit-gateway",
+  "redundancy_group": {
+    "name": "my-redundancy-group"
+  }
 }
 ```
 {: pre}
-
-
-
 
 ### Example Response
 {: #change-configuration-api-response-example}
@@ -152,36 +152,30 @@ For more information, see [Updates specified Transit Gateway](/docs/apis/transit
 
 You can specify the following argument references for your resource when you change the configuration of your transit gateway by using Terraform:
 
-
 |Argument|Details|
 |--|--|
 |**name**  \n Required  \n string | The unique user-defined name for the gateway. For example, `myGateway`|
 |**global**  \n Required  \n boolean|The gateways with global routing (true) are able to connect to the networks outside their associated region.|
+| **redundancy_group**  \n Optional  \n string | Specifies the redundancy group for a global transit gateway. Only valid if the transit gateway already is in a redundancy group. If the redundancy group name is different, the redundancy group name will change.|
 |**gre_enhanced_route_propagation** \n Optional  \n boolean| Specify whether you want to enable or disable route propagation across all GREs connected to the same transit gateway. Values are one of: `true` or `false` (default) |
 {: caption="Terraform argument references for changing the configuration" caption-side="bottom"}
-
-
-
 
 ### Example
 {: #change-configuration-terraform-example}
 
 This example illustrates changing the configuration of your transit gateway:
 
-
 ```terraform
 resource "ibm_tg_gateway" "new_tg_gw"{
  name="transit-gateway-1"
  location="us-south"
  global=true
- redundancy_group=ibm_tg_redundancy_group.tg_rg
+ redundancy_group="group1"
  gre_enhanced_route_propagation=false
  resource_group="30951d2dff914dafb26455a88c0c0092"
 }
-
-resource "ibm_tg_redundancy_group" "tg_rg"{
-name="group-1"
-}
-
 ```
 {: codeblock}
+
+The `redundancy_group` attribute requires the transit gateway to be already in a redundancy group. If the redundancy group name is different, the redundancy group will be renamed if no redundancy group with that name in the account exists.
+{: important}

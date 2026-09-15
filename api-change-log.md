@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-09-15"
 
 keywords: transit gateway api change log
 
@@ -22,7 +22,11 @@ Check back regularly to see what's new with {{site.data.keyword.cloud}} Transit 
 
 
 
+## 15 September 2026
+{: #transit-gateway-sept1526}
 
+Redundancy groups for transit gateways
+:    Transit gateways now support redundancy groups for global routing. Redundancy groups allow multiple transit gateways across regions to share routing behavior and support resilient, multi-region network designs. This adds a new `redundancy_group` field when creating or updating a transit gateway. For more information, see [Redundancy groups for high availability](/docs/transit-gateway?topic=transit-gateway-about&interface=terraform#redundancy-groups-for-ha).
 
 ## 06 November 2025
 {: #transit-gateway-nov0625}

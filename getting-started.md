@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-09-15"
 
 keywords: transit, gateway, ordering, getting, started
 
@@ -33,7 +33,26 @@ With {{site.data.keyword.tg_full_notm}}, you can connect:
 * External networks by using Generic Routing Encapsulation (GRE) tunnels
 * Network resources across multiple IBM Cloud accounts (with appropriate access authorization)
 
+## Choosing your routing behavior
+{: #choosing-routing-behavior}
 
+When you create a transit gateway, you choose how networks communicate across it:
+
+- **Local routing** – Connects networks within the same region
+- **Global routing** – Connects networks across different regions
+
+When using global routing, you can optionally configure redundancy groups to support high availability across regions.
+
+## Design considerations
+{: #design-considerations}
+
+Before you begin configuring your transit gateway, consider the following points:
+
+- Whether your networks need to communicate within a single region or across multiple regions
+- Whether your architecture requires high availability across regions
+- How traffic must flow between connected networks
+
+These decisions influence your routing choice and whether additional configurations, such as redundancy groups, are appropriate for your deployment.
 
 ## Procedure
 {: #getting-started-procedure}
@@ -46,7 +65,7 @@ To get started using {{site.data.keyword.tg_full_notm}}:
 1. Create a transit gateway in the target region. For more information, see [Ordering an {{site.data.keyword.tg_full_notm}}](/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway).
 1. Add connections and configure routing. Attach networks, enable route propagation, and verify routes using route reports. Resolve routing conflicts (for example, overlapping CIDRs) using prefix filters.
 
-   
+ When using global routing, you can optionally configure redundancy groups to support high availability across multiple regions and improve resilience of your network connectivity.
 
    For more information, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-adding-connections) and [Generating a route report](/docs/transit-gateway?topic=transit-gateway-route-reports&interface=ui).
 

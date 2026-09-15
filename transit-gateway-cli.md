@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-11"
+lastupdated: "2026-09-15"
 
 keywords: command line interface, commands, CLI
 
@@ -120,7 +120,7 @@ gateway="bdf8fa2b-c518-9999-9028-f3c9ece86159"
 Create a transit gateway.
 
 ```sh
-ibmcloud tg gateway-create|gwc --name NAME --location LOCATION [--routing ROUTING][--gre-enhanced-route-propagation true | false] [--resource-group-id RES_GROUP_ID] [--output json] [-h, --help]
+ibmcloud tg gateway-create|gwc --name NAME --location LOCATION [--routing ROUTING] [--redundancy-group GROUP_NAME] [--redundancy-group-id GROUP_ID] [--gre-enhanced-route-propagation true | false] [--resource-group-id RES_GROUP_ID] [--output json] [-h, --help]
 ```
 {: pre}
 
@@ -135,6 +135,19 @@ ibmcloud tg gateway-create|gwc --name NAME --location LOCATION [--routing ROUTIN
 
 `--routing`
 :   Gateway routing of resources (`global` | `local`). Select `global` to connect resources across regions. The default value is `local`.
+
+`--redundancy-group`
+:   Optional: Specifies the redundancy group for a global transit gateway by name. If the group name does not exist, it is created. If it exists, the gateway joins the group.
+
+    Valid only when `--routing global` is specified.
+
+`--redundancy-group-id`
+:   Optional: Specifies the ID of an existing redundancy group for a global transit gateway. Use this option when the redundancy group already exists and you want to join the gateway to it by ID.
+
+    Valid only when `--routing global` is specified.
+
+    Redundancy groups are supported only for global transit gateways.
+    {: note}
 
 `--resource-group-id`
 :   Optional: Gateway resource group ID. Uses default resource group, if not specified.
@@ -195,7 +208,7 @@ ibmcloud tg gwd $gateway -f
 Update properties on an existing gateway.
 
 ```sh
-ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--gre-enhanced-route-propagation true | false] [--output json] [-h, --help]
+ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--redundancy-group GROUP_NAME] [--gre-enhanced-route-propagation true | false] [--output json] [-h, --help]
 ```
 
 #### Command options
@@ -208,9 +221,12 @@ ibmcloud tg gateway-update|gwu GATEWAY_ID [--name NAME] [--routing ROUTING] [--g
 :   Optional: New name of the gateway.
 
 `--routing`
-:   Optional: Gateway routing of resources (`global` | `local`). Select global to connect resources across regions. Changing routing from `global` to `local` requires all existing connections to be `local`. 
+:   Optional: Gateway routing of resources (`global` | `local`). Select global to connect resources across regions. Changing routing from `global` to `local` requires all existing connections to be `local`.
 
+ Routing cannot be changed if the gateway is part of a redundancy group.
 
+`--redundancy-group`
+:   Optional: Updates the name of the redundancy group that the gateway belongs to. Only valid when the gateway is already in a redundancy group and global routing is enabled. Renaming the group updates it for all associated transit gateways.
 
 `--gre-enhanced-route-propagation`
 :   Optional: Specify whether you want to enable route propagation across all GREs connected to the same transit gateway. Valid values are `true` and `false` (default).
@@ -1218,5 +1234,97 @@ Delete route report with no confirmation.
 
 ```sh
 ibmcloud tg rrd $gateway $report -f
+```
+{: pre}
+
+## Redundancy groups
+{: #redundancy-groups}
+
+This section provides information about CLI commands for redundancy group functions.
+
+### `ibmcloud tg redundancy-groups`
+{: #redundancy-groups-list}
+
+Lists all the redundancy groups in the account.
+
+```sh
+ibmcloud tg redundancy-groups|rgs [--output json] [-h, --help]
+```
+{: pre}
+
+#### Example
+{: #redundancy-groups-examples}
+
+Lists all the redundancy groups in the account.
+
+```sh
+ibmcloud tg rgs
+```
+{: pre}
+
+### `ibmcloud tg redundancy-group`
+{: #redundancy-group}
+
+Retrieve a redundancy group.
+
+```sh
+ibmcloud tg redundancy-group|rg ID [--output json] [-h, --help]
+```
+{: pre}
+
+#### Command options
+{: #redundancy-group-get-options}
+
+`ID`
+:   The id of the redundancy group you want to retrieve.
+
+`--output json`
+:   Optional: Specify whether you want the output displayed in JSON format.
+
+`--help | -h`
+:   Optional: Get help on this command.
+
+#### Example
+{: #redundancy-group-examples}
+
+Retrieve a redundancy group.
+
+```sh
+ibmcloud tg rg $redundancy_group_id
+```
+{: pre}
+
+### `ibmcloud tg redundancy-group-update`
+{: #redundancy-group-update}
+
+Update the redundancy group.
+
+```sh
+ibmcloud tg redundancy-group-update|rgu ID --name NEW_NAME [--output json] [-h, --help]
+```
+{: pre}
+
+#### Command options
+{: #redundancy-group-update-options}
+
+`ID`
+:   The id of the redundancy group you want to update.
+
+`--name NEW_NAME`
+:   The new name for the redundancy group. Cannot not use a name that is already in use in the account.
+
+`--output json`
+:   Optional: Specify whether you want the output displayed in JSON format.
+
+`--help | -h`
+:   Optional: Get help on this command.
+
+#### Example
+{: #redundancy-group-update-examples}
+
+Update a redundancy group.
+
+```sh
+ibmcloud tg rgu $redundancy_group_id --name NEW_NAME
 ```
 {: pre}

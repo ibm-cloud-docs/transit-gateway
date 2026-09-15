@@ -2,7 +2,7 @@
 
 copyright:
   years:  2020, 2026
-lastupdated: "2026-09-02"
+lastupdated: "2026-09-15"
 
 keywords: change log for transit gateway, updates to transit gateway
 
@@ -22,7 +22,24 @@ In this change log, you can learn about the latest changes, improvements, and up
 
 
 
+## 15 September 2026
+{: #cli-sept1526}
 
+Redundancy group support for transit gateways
+
+:   You can now create and manage redundancy groups for global transit gateways. Redundancy groups allow multiple transit gateways across regions to share routing behavior and support resilient, multi-region network designs.
+
+   New and updated command options:
+
+   [**`tg gateway-create`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#gateway-create) - Added a new option `--redundancy-group` to specify or create a redundancy group for global transit gateways.
+
+   [**`tg gateway-update`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#gateway-update) - Added a new option `--redundancy-group` to update the redundancy group name for a gateway that is already in a redundancy group.
+
+   New commands:
+
+    * [**`tg redundancy-groups`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#redundancy-groups) - List all redundancy groups in your account.
+    * [**`tg redundancy-group`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#redundancy-group) - Retrieves a redundancy group in your account.
+    * [**`tg redundancy-group-update`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#redundancy-group-update) - Renames a redundancy group. Use `ibmcloud tg rgu ID --name NEW_NAME` to update the name of an existing redundancy group. The new name cannot already be in use in the account.
 
 ## 06 November 2025
 {: #cli-nov0725}

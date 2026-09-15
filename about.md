@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-11"
+lastupdated: "2026-09-15"
 
 keywords: features, overview
 
@@ -44,7 +44,26 @@ Transit gateways provide flexibility by allowing you to add networks to local ga
 
 {{site.data.keyword.tg_full_notm}} supports local and global routing between VPCs and the {{site.data.keyword.cloud_notm}} classic infrastructure. All routing options remain within the private {{site.data.keyword.cloud_notm}} infrastructure without operating on the public internet, and are optimized for performance. {{site.data.keyword.tg_full_notm}} allows customers greater flexibility, redundancy, and speed in scaling their workloads, and in connecting isolated networks that run on {{site.data.keyword.cloud_notm}}.
 
+For global routing deployments, you can optionally configure redundancy groups to enable multiple transit gateways in different regions to share routing behavior. This configuration improves resiliency by allowing traffic to continue flowing if a region becomes unavailable and helping to optimize routing paths between networks.
 
+### Redundancy groups for high availability
+{: #redundancy-groups-for-ha}
+
+Redundancy groups enable you to deploy multiple global transit gateways across regions that operate together as a single logical routing domain.
+
+When transit gateways are part of the same redundancy group:
+
+- They share routing behavior across regions.
+- Connected networks can communicate through multiple gateways.
+- Traffic can continue to flow even if a region becomes unavailable.
+- Routing might favor gateways that are closer to the source network.
+
+This configuration extends global routing by providing additional resiliency and flexibility for multi-region network designs.
+
+A redundancy group is defined during transit gateway creation by assigning a shared group name. Transit gateways with the same group name automatically participate in the same redundancy group.
+
+To achieve redundancy, you must configure the same network connections on each transit gateway in the group.
+{: important}
 
 ### Prefix filtering
 {: #prefix-filtering}
@@ -66,7 +85,7 @@ This standard behavior also applies when using a transit VPC and advertising sta
 During a zonal failure, such as when a transit gateway experiences a failure in one zone (resulting from the failure of all zone's routers), communication could be disrupted. In such cases, traffic might be routed differently, with one direction of traffic sent through an alternate path, while the response might return from a different route. In general, though, VPC traffic typically remains within the same zone.
 {: note}
 
-
+For multi-region deployments, redundancy groups extend this fault tolerance by enabling traffic to fail over to transit gateways in other regions.
 
 ### Easily connect across boundaries
 {: #boundaries}

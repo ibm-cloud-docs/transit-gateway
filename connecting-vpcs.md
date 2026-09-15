@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-31"
+lastupdated: "2026-09-15"
 
 keywords: connecting, region, order
 
@@ -46,6 +46,11 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
    * Select **Local routing** to allow your transit gateway to connect to all VPC and classic resources within the transit gateway's provisioned region.
    * Select **Global routing** to allow your transit gateway to connect to VPC resources in all IBM [Multi-Zone Regions (MZRs)](/docs/overview?topic=overview-locations#table-mzr).
+
+   If you select **Global routing**, you can optionally assign a **redundancy group**. Enter a new name to create a group, or select an existing group.
+
+   Only one transit gateway per region is allowed in a redundancy group. Redundancy groups are supported only for global transit gateways.
+   {: note}
 
    You can upgrade routing options at a later point if your needs change. Pricing changes accordingly.
 
@@ -144,18 +149,16 @@ export IBMCLOUD_TG_API_ENDPOINT=private.transit.cloud.ibm.com
 
 To create a transit gateway from the CLI, enter the following command:
 
-
 ```sh
 ibmcloud tg gateway-create|gwc --name NAME --location LOCATION \
 [--routing ROUTING] \
+[--redundancy-group GROUP_NAME] \
+[--redundancy-group-id GROUP_ID] \
 [--gre-enhanced-route-propagation true | false] \
 [--resource-group-id RES_GROUP_ID] \
 [--output json] [-h, --help]
 ```
 {: pre}
-
-
-
 
 Where:
 
@@ -173,6 +176,12 @@ Where:
 
 `--gre-enhanced-route-propagation`
 :   Optional: Specify if you want to enable route propagation across all GREs connected to the same transit gateway. One of: `true` or `false` (default).
+
+`--redundancy-group`
+:   Optional: Specifies or creates a redundancy group by name. If the group name does not exist, it is created. If it exists, the gateway joins the group. Valid only with `--routing global`.
+
+`--redundancy-group-id`
+:   Optional: Specifies the ID of an existing redundancy group to join. Use this option when the redundancy group already exists and you want to join by ID rather than name. Valid only with `--routing global`.
 
 `--output json`
 :   Optional: Specify to display the output in JSON format.
@@ -200,7 +209,6 @@ Follow these steps to create a transit gateway with the API:
 1. Store any additional variables to be used in the API commands.
 1. When all variables are initiated, create the transit gateway:
 
-   
    ```sh
    curl -X POST --location --header "Authorization: Bearer {iam_token}" \
    --header "Accept: application/json" \
@@ -209,15 +217,14 @@ Follow these steps to create a transit gateway with the API:
      "location": "us-south",
      "name": "Transit_Service_BWTN_SJ_DL",
      "global": true,
+     "redundancy_group": "group1"
    }' \
    "{base_url}/transit_gateways?version={version}"
    ```
    {: pre}
-   
 
-   
-
-   
+   If you specify a `redundancy_group`, you must also set `"global": true` in the request. Redundancy groups are supported only for global transit gateways.
+   {: important}
 
 For more information, see [Creates a Transit Gateway](/docs/apis/transit-gateway?code=java#create-transit-gateway) in the Transit Gateway API reference.
 {: note}
@@ -232,25 +239,26 @@ Review the following argument references that you can specify for your resource 
 |--|--|
 |**location**  \n Optional  \n Forces new resource  \n integer| The location of the transit gateway.  \n **Example**: `us-south`|
 |**name**  \n Required  \n string| The unique user-defined name for the gateway.  \n **Example**: `myGateway`|
-|**global**  \n Required  \n boolean | The gateways with global routing (true) are able to connect to networks outside their associated region.| 
+|**global**  \n Required  \n boolean | The gateways with global routing (true) are able to connect to networks outside their associated region.|
+|**redundancy_group**  \n Optional  \n string | Specifies the redundancy group for a global transit gateway. Requires `global = true`. |
 |**gre_enhanced_route_propagation** \n  Optional \n boolean | Specify if you want to enable route propagation across all GREs connected to the same transit gateway. |
 |**resource_group**  \n Optional  \n Forces new resource  \n string | The resource group ID where the transit gateway is to be created.|
 {: caption="Argument references for creating a transit gateway" caption-side="bottom"}
 
-
+The `redundancy_group` attribute requires `global = true`.
+{: note}
 
 ### Example
 {: #tg-terraform-creating-transit-gateway-example}
 
 This example illustrates creating a transit gateway in Terraform:
 
-
-
 ```terraform
 resource "ibm_tg_gateway" "new_tg_gw" {
   name              = "transit-gateway-1"
   location          = "us-south"
   global            = true
+  redundancy_group  = "group1"
   gre_enhanced_route_propagation = false
   resource_group    = "30951d2dff914dafb26455a88c0c0092"
 }

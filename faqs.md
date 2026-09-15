@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-09-15"
 
 keywords: faq, faqs, questions
 
@@ -261,4 +261,54 @@ If you require different local ASNs for isolation purposes (for example, per ten
 ## Redundancy groups
 {: #faqs-redundancy-groups}
 
- 
+### Why can't I connect my VPC to multiple transit gateways?
+{: faq}
+{: #faq-multiple-transit-gateways}
+
+A VPC can only connect to multiple global transit gateways if those gateways are part of the same redundancy group.
+
+If a VPC is already connected to a global transit gateway, it cannot connect to another global gateway unless both gateways belong to the same redundancy group.
+
+### Do redundancy groups automatically replicate connections?
+{: faq}
+{: #faq-redundancy-groups-auto-replicate-connections}
+
+No. Connections are not automatically shared across transit gateways in a redundancy group.
+
+To achieve redundancy, you must configure the same connections on each transit gateway in the group.
+
+### Why is traffic not failing over as expected?
+{: faq}
+{: #faq-traffic-not-failing-over}
+
+If traffic is not failing over across regions:
+
+- Ensure that all transit gateways in the redundancy group have the same network connections configured.
+- Verify routing using route reports.
+- Confirm that alternate gateways are operational.
+
+Traffic can fail over only if equivalent connectivity exists across all gateways in the redundancy group.
+
+### Can I move a transit gateway to a different redundancy group?
+{: faq}
+{: #move-transit-gateway-to-different-redundancy-group}
+
+No. Transit gateways cannot be reassigned to a different redundancy group after creation.
+
+To use a different group, you must delete and recreate the transit gateway with the new group name.
+
+### Can transit gateways in a redundancy group have different connections?
+{: faq}
+{: #faq-redundancy-group-different-connections}
+
+Yes, but this setup is not a recommended steady-state configuration. Transit gateways in a redundancy group are designed to carry the same set of connections. If gateways have different connection inventories, connectivity and route propagation can behave differently than expected until the configuration is synchronized across the redundancy group.
+
+### How does GRE enhanced route propagation behave in a redundancy group?
+{: faq}
+{: #faq-gre-erp-redundancy-group}
+
+When GRE enhanced route propagation is enabled on transit gateways that belong to a redundancy group, GRE routes are shared (leaked) across all transit gateways in the group. This means that traffic destined for a GRE connection on one transit gateway can be routed through a GRE connection on a different transit gateway in the same redundancy group.
+
+Before enabling GRE enhanced route propagation on any transit gateway that is part of a redundancy group, verify that cross-gateway GRE traffic flow is intended for your topology. If your design requires GRE connections to remain isolated to their local transit gateway, do not enable GRE enhanced route propagation.
+
+For more information, see [GRE enhanced route propagation considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-enhanced-route-propagation-considerations) and [Redundancy group considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#redundancy-groups-tips).

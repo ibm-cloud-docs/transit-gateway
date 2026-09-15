@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-09-15"
 
 keywords: deleting, delete
 
@@ -36,7 +36,8 @@ To delete an {{site.data.keyword.tg_full}}, follow these steps:
    * From the transit gateway's details page, click the Actions menu ![Actions menu](../../icons/action-menu-icon.svg) next to the gateway you want to delete and select **Delete**.
    * From an individual transit gateway page, select **Actions > Delete**.
 
-
+ If the transit gateway is part of a redundancy group and is the last remaining gateway in that group, the redundancy group is automatically deleted.
+{: note}
 
 ## Deleting a transit gateway from the CLI
 {: #delete-gateway-cli}

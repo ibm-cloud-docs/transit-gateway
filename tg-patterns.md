@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-11"
+lastupdated: "2026-09-15"
 
 keywords: use cases, interconnectivity, patterns, VPC, classic, GRE, Direct Link, VPN
 
@@ -37,7 +37,8 @@ Connect VPCs in multiple regions by using a global transit gateway.
 
 ![Connect two or more VPCs across multiple MZRs](/images/TGW_Multi-Multi.png "Connect two or more VPCs across multiple MZRs"){: caption="Connect two or more VPCs across multiple MZRs" caption-side="bottom"}
 
-
+For higher resiliency, you can deploy multiple global transit gateways across regions and group them by using redundancy groups.
+{: note}
 
 ## Use case 3: Interconnect one or more VPCs in the same MZR and an IBM classic network
 {: #use-case-3}
@@ -109,7 +110,19 @@ To enhance availability without the added cost of a second direct link, a VPN ga
 
 ![VPN gateway as a backup connection for Direct Link](/images/vpnaas.svg "VPN gateway as a backup connection for Direct Link"){: caption="VPN gateway as a backup connection for Direct Link" caption-side="bottom"}
 
+## Use case 11: Build a highly available multi-region network
+{: #build-ha-multi-region-network}
 
+Deploy two global transit gateways in separate regions and group them into a redundancy group to create a resilient network architecture. In this example, Global Transit GW A is deployed in eu-es and Global Transit GW B is deployed in br-sao. Both gateways are members of the same redundancy group.
+
+Two VPCs under Account A are connected to both transit gateways:
+
+- **VPC A** (us-south, `10.4.0.0/16`) — connects locally to Transit GW A or B, and reaches VPC B (`10.5.0.0/16`) via Transit GW A or B
+- **VPC B** (us-east, `10.5.0.0/16`) — connects locally to Transit GW A or B, and reaches VPC A (`10.4.0.0/16`) via Transit GW A or B
+
+Because each VPC is connected to both transit gateways, traffic can be routed through either gateway. If one region becomes unavailable, the other gateway continues to forward traffic between the VPCs without interruption.
+
+![Build a highly available multi-region network](/images/rgtw-use-case.png "Build a highly available multi-region network"){: caption="Build a highly available multi-region network" caption-side="bottom"}
 
 
 

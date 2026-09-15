@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-09-15"
 
 keywords: features, overview
 
@@ -18,7 +18,8 @@ subcollection: transit-gateway
 You can add a connection to a transit gateway by using the UI, CLI, API, and Terraform.
 {: shortdesc}
 
- 
+ When using redundancy groups, connections must be created on each transit gateway in the group. Connections are not automatically shared between gateways.
+{: note}
 
 ## Adding a connection in the UI
 {: #tg-ui-adding-connection-transit-gateway}
@@ -53,9 +54,10 @@ To add a connection to a transit gateway, follow these steps:
 
    * **VPC** networks can contain compute resources, allowing you to connect to your account's VPC resources, or, with approval, another account's VPC resources.
 
-   
+    A VPC can connect to multiple global transit gateways only if those gateways are part of the same redundancy group.
 
    * **VPN gateway** connections link on-premises or external networks with IBM Cloud by attaching a VPN gateway as a spoke to a transit gateway. These connections use redundant GRE tunnels and dynamic routing with eBGP to enable efficient and scalable network integration. For more information, see [Creating a VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway&interface=ui).
+
    
    
 
