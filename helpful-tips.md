@@ -269,7 +269,7 @@ When planning global routing deployments, you can use redundancy groups to impro
 * VPN gateway connections are not supported on redundant global transit gateways. A VPN gateway can be connected to only one transit gateway at a time and cannot be attached to multiple transit gateways in a redundancy group. For more information, see [Planning considerations for VPN gateways](/docs/vpc?topic=vpc-planning-considerations-vpn#dynamic-route-based-connection-considerations).
 * If GRE enhanced route propagation is enabled on transit gateways in a redundancy group, GRE routes are propagated across all transit gateways in the group. This means that a GRE connection on one transit gateway can have its traffic flow to a GRE connection on another transit gateway in the group. Plan your GRE topology accordingly, and verify that this cross-gateway traffic flow is intended before enabling GRE enhanced route propagation in a redundancy group. For more information, see [GRE enhanced route propagation considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#gre-enhanced-route-propagation-considerations).
 
-Using redundancy groups can help maintain connectivity during regional outages and can improve routing efficiency by allowing traffic to use transit gateways that are closer to the source network.
+Using redundancy groups can help maintain connectivity during regional outages and can improve routing efficiency by allowing traffic to use transit gateways that are closer to the source network. For a use case associated with redundancy groups, see [Build a highly available multi-region network](/docs/transit-gateway?topic=transit-gateway-patterns#build-ha-multi-region-network).
 
 ## Quotas and service limits
 {: #service-limits}
