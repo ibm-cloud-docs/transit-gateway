@@ -65,9 +65,10 @@ To get started using {{site.data.keyword.tg_full_notm}}:
 1. Create a transit gateway in the target region. For more information, see [Ordering an {{site.data.keyword.tg_full_notm}}](/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway).
 1. Add connections and configure routing. Attach networks, enable route propagation, and verify routes using route reports. Resolve routing conflicts (for example, overlapping CIDRs) using prefix filters.
 
- When using global routing, you can optionally configure redundancy groups to support high availability across multiple regions and improve resilience of your network connectivity.
-
    For more information, see [Adding a connection](/docs/transit-gateway?topic=transit-gateway-adding-connections) and [Generating a route report](/docs/transit-gateway?topic=transit-gateway-route-reports&interface=ui).
+
+   When using global routing, you can optionally configure redundancy groups to support high availability across multiple regions and improve resilience of your network connectivity.
+{: note}
 
 1. Configure Transit Gateway connection authorization. Control which accounts or networks are allowed to attach to the gateway and exchange traffic. Ensure that appropriate IAM permissions are also in place for the underlying resources, such as VPCs or Direct Link connections. For more information, see [Using IAM permissions with IBM Cloud Transit Gateway](/docs/transit-gateway?topic=transit-gateway-iam).
 1. Test traffic flow and validate resilience. Confirm connectivity between networks, verify routes using route reports, and test failover scenarios (for example, redundant GRE tunnels) to ensure that traffic continues to flow as expected when paths are unavailable. For more information, see [Monitoring Transit Gateway](/docs/transit-gateway?topic=transit-gateway-monitoring).
