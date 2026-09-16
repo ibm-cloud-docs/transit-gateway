@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-15"
+lastupdated: "2026-09-16"
 
 keywords: use cases, interconnectivity, patterns, VPC, classic, GRE, Direct Link, VPN
 
@@ -122,7 +122,7 @@ Two VPCs under Account A are connected to both transit gateways:
 
 Because each VPC is connected to both transit gateways, traffic can be routed through either gateway. If one region becomes unavailable, the other gateway continues to forward traffic between the VPCs without interruption.
 
-![Build a highly available multi-region network](/images/rgtw-use-case.png "Build a highly available multi-region network"){: caption="Build a highly available multi-region network" caption-side="bottom"}
+![Build a highly available multi-region network](/images/transit-gw-redundancy-group.svg "Build a highly available multi-region network"){: caption="Build a highly available multi-region network" caption-side="bottom"}
 
 
 
