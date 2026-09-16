@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-15"
+lastupdated: "2026-09-16"
 
 keywords: help, tips, connections, provision
 
@@ -272,6 +272,6 @@ When planning global routing deployments, you can use redundancy groups to impro
 Using redundancy groups can help maintain connectivity during regional outages and can improve routing efficiency by allowing traffic to use transit gateways that are closer to the source network. For a use case associated with redundancy groups, see [Build a highly available multi-region network](/docs/transit-gateway?topic=transit-gateway-patterns#build-ha-multi-region-network).
 
 ## Quotas and service limits
-{: #service-limits}
+{: #tips-service-limits}
 
 For the full list of quotas and service limits that apply to {{site.data.keyword.tg_full_notm}}, see [Quotas and service limits](/docs/transit-gateway?topic=transit-gateway-service-limits).

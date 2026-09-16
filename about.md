@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-15"
+lastupdated: "2026-09-16"
 
 keywords: features, overview
 
@@ -71,7 +71,7 @@ To achieve redundancy, you must configure the same network connections on each t
 {{site.data.keyword.tg_full_notm}} supports prefix filtering on connections, allowing you to control which routes are advertised to and from each connected network. You can permit or deny specific prefixes to prevent unintended route propagation and reduce the risk of routing conflicts. For more information, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters).
 
 ### Route reports
-{: #route-reports}
+{: #about-route-reports}
 
 {{site.data.keyword.tg_full_notm}} provides route reports that display all the routes known to a transit gateway across its connections. Route reports help you verify connectivity, identify overlapping prefixes, and troubleshoot routing issues before they affect traffic. For more information, see [Generating a route report](/docs/transit-gateway?topic=transit-gateway-route-reports&interface=ui).
 
@@ -116,6 +116,6 @@ With GRE enhanced route propagation enabled, all GRE tunnels connected to the sa
 {{site.data.keyword.tg_full_notm}} supports {{site.data.keyword.powerSys_notm}} connections. Connecting a {{site.data.keyword.powerSys_notm}} instance to your {{site.data.keyword.tg_full_notm}} network grants access to all networks connected on the transit gateway. Similarly, all other connections on the transit gateway have access to your network. As with other network connections to the {{site.data.keyword.tg_full_notm}}, special consideration must be taken to avoid IP overlap issues. For more information, see [Dealing with overlapping VPC prefixes and classic infrastructure subnets](/docs/transit-gateway?topic=transit-gateway-overlapping-vpc-prefixes-and-classic-subnets).
 
 ## Interconnectivity patterns
-{: #patterns}
+{: #about-patterns}
 
 For examples of how you can implement {{site.data.keyword.tg_full_notm}} to interconnect VPCs, classic infrastructure, Direct Link, VPN gateways, and Power Virtual Server resources across accounts and regions, see [Interconnectivity patterns](/docs/transit-gateway?topic=transit-gateway-patterns).
