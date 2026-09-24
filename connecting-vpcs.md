@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-15"
+lastupdated: "2026-09-24"
 
 keywords: connecting, region, order
 
@@ -27,12 +27,9 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 {: shortdesc}
 
 1. Review requirements and configuration considerations in [Planning for Transit Gateway](/docs/transit-gateway?topic=transit-gateway-helpful-tips).
-1. From your browser, open the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog){: external} and log in to your account.
-1. Select **Networking** in the navigation pane, then click the Transit Gateway tile. The Transit Gateway ordering page displays.
+1. If you are already logged in to your IBM Cloud account, [open the Transit Gateway provisioning page](/interconnectivity/transit). 
 
-   You can also access the ordering page from the [{{site.data.keyword.cloud_notm}} console](/login){: external} by selecting the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page. Then, click **Infrastructure** > **Network** > **Transit Gateway**. Click **Create** to open the provisioning page.
-   {: tip}
-
+   Otherwise, log in to the [{{site.data.keyword.cloud_notm}} console](/login){: external}, select the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page, then click click **Infrastructure** > **Network** > **Transit Gateway**. Click **Create** to open the provisioning page. 
 1. Enter a name for the transit gateway and choose a resource group. You can select a resource group from the list, or keep the **default** selection.
 1. Optional: Click the **GRE enhanced route propagation** toggle to allow GRE tunnel traffic to flow across all GRE tunnels connected to this transit gateway.
 
