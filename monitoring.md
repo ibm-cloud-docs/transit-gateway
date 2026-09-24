@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-12"
+lastupdated: "2026-09-24"
 
 keywords:
 
@@ -60,6 +60,9 @@ The metric contains the following metadata:
 {: #ibm_transit_gateway_gre_connection_bgp_state}
 
 Transit Gateway GRE connection BGP session status (1=Idle, 2=Connect, 3=Active, 4=OpenSent, 5=OpenConfirm, 6=Established).
+
+During maintenance windows, BGP updates are not reported.
+{: note}
 
 The metric contains the following metadata:
 
