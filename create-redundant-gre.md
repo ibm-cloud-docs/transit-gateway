@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-02"
+lastupdated: "2026-09-29"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -120,9 +120,6 @@ To create a redundant GRE, follow these steps:
 1. Depending on where you started this procedure, click either **Add** or **Create** to create the redundant GRE.
 
 After you create the redundant GRE, you can expand the redundant GRE section to show its details, including the date created, name, zone, and status.
-
-### Next steps
-{: #tgw-next-step-redundant-gre}
 
 To configure the other end of the BGP tunnel, expand the newly created redundant GRE tunnels in the Connections page to see GRE details. It shows the local BGP ASNs. If you created optional remote BGP ASNs, these also show in the Connections page. Give this ASN information to the person creating the other end of the BGP tunnel so that the BGP session can be fully configured.
 
