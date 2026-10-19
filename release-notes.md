@@ -21,13 +21,7 @@ Find out about new and updated features in {{site.data.keyword.tg_full}}.
 
 
 
-
-
-## 24 September 2026
-{: #prefix-filtering-release-note}
-
-Prefix filtering for VPN gateway connections
-:   VPN gateway connections now support prefix filtering. You can configure prefix filters on a VPN gateway connection to control which routes are accepted from or advertised to the VPN peer. Prefix filters can only be configured at the top-level connection; individual tunnels under the connection do not support separate prefix filters. For more information, see [VPN gateway connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpn-connection-considerations) and [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#prefix-filtering-considerations).
+ 
 
 ## 15 September 2026
 {: #transit-gateway-sept1526}
