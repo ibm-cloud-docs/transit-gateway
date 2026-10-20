@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-10-20"
 
 keywords: route report
 
@@ -137,6 +137,7 @@ To generate and view a route report with the API, follow these steps:
 
 ## Addressing route conflicts
 {: #route-conflicts}
+{: ui}
 
 Conflicting routes can cause errors, which you can see in the **Conflict** column of the **Routes** view.
 

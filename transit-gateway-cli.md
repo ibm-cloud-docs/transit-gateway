@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-15"
+lastupdated: "2026-10-20"
 
 keywords: command line interface, commands, CLI
 
@@ -392,7 +392,6 @@ connection="4892849f-368e-9999-bb58-8888fb21e513"
 
 Create a connection on the transit gateway.
 
-
 ```sh
 ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID --network-type NETWORK_TYPE --network-account-id ACCOUNT_ID [--zone ZONE] [--default-prefix-filter DEFAULT_PREFIX_FILTER] [--cidr CIDR] [--output json]
 ```
@@ -764,6 +763,7 @@ The type of network to use. Options are `classic` and `vpc`.
    ```sh
    ibmcloud is vpc VPC_ID --json
    ```
+
 `tunnels`
 :   Information for the GRE tunnels.
 
@@ -1096,7 +1096,7 @@ ibmcloud tg pfd 9f559c43-63f4-4da5-b312-b525a8dce185 6c1bdc19-4adb-4760-8cdc-ef3
 {: pre}
 
 ## Route reports
-{: #route-report}
+{: #cli-route-reports}
 
 This section provides information about CLI commands for route report functions.
 
