@@ -81,7 +81,7 @@ To add a connection to a transit gateway, follow these steps:
          
 
       
-      * For **Dynamic Route Server**, select the region where the dynamic route server is deployed, then select from the Available connections list. Optionally, provide a CIDR block for the GRE tunnel IP addresses. If specified, the CIDR must be at least a `/26` subnet. If not specified, the default range `198.19.174.0/23` is used. For planning considerations, see [Dynamic route server connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#drs-connection-considerations).
+      * For **Dynamic Route Server** [Beta]{: tag-cyan}, select the region where the dynamic route server is deployed, then select from the Available connections list. Optionally, provide a CIDR block for the GRE tunnel IP addresses. If specified, the CIDR must be at least a `/26` subnet. If not specified, the default range `198.19.174.0/23` is used. For planning considerations, see [Dynamic route server connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#drs-connection-considerations).
       
 
    * **Request connection to a network in another account** - Enter either the IBM Cloud ID or Cloud Resource Name (CRN) of the account that manages the network where you want to connect. Then, complete any remaining information. All resources connected to that transit gateway will be accessible from the other network. For more information, including how to obtain the Cloud ID or CRN, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
@@ -262,6 +262,8 @@ resource "ibm_tg_connection" "test_ibm_tg_connection" {
 
 
 
+[Beta]{: tag-cyan}
+
 ### Dynamic route server example
 {: #tg-terraform-adding-drs-connection-example}
 
@@ -279,7 +281,6 @@ resource "ibm_tg_connection" "drs_connection" {
 {: codeblock}
 
 Omit `cidr` to use the default range `198.19.174.0/23`. For more information, see the [ibm_tg_connection](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection){: external} Terraform reference.
-
 
 
 ## Next steps

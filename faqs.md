@@ -180,16 +180,12 @@ Yes, you can connect a VPN or {{site.data.keyword.cloud_notm}} Direct Link to ei
 
 
 
-
-[Beta]{: tag-cyan}
-
 ### Can I use prefix filters on a VPN gateway connection?
 {: #faq-vpn-prefix-filters}
 {: faq}
 {: support}
 
 Yes. VPN gateway connections now support prefix filtering. You can configure prefix filters to control which routes are accepted from or advertised to the VPN peer. Prefix filters can only be configured at the top-level connection; individual tunnels under the connection do not support separate prefix filters. For more information, see [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#prefix-filtering-considerations).
-
 
 
 

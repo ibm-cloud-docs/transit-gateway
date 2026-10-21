@@ -110,6 +110,8 @@ With GRE enhanced route propagation enabled, all GRE tunnels connected to the sa
 
 
 
+[Beta]{: tag-cyan}
+
 ### Dynamic route server connectivity
 {: #drs-connectivity}
 

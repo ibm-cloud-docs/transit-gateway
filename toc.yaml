@@ -32,15 +32,6 @@ toc:
           - include: ../vpc/interconnectivity.md
       - release-notes.md
   - navgroup:
-      id: tutorial
-      topics:
-      - topicgroup:
-          label: Interconnectivity
-          topics:
-          - include: ../solution-tutorials/vpc-tg-dns-iam.md
-          - include: ../solution-tutorials/vpc-transit1.md
-          - include: ../solution-tutorials/vpc-transit2.md
-  - navgroup:
       id: howto
       topics:
       - connecting-vpcs.md

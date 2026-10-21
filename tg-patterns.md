@@ -141,7 +141,10 @@ The dynamic route server acts as a read-only spoke: it learns routes advertised 
 
 This use case is well suited for hybrid cloud environments that require dynamic, scalable route propagation across multiple networks without the overhead of managing static routes or separate VPN tunnels for each destination.
 
-![Single-zone dynamic route server with Transit Gateway](/images/drs-vpn-export.svg "Dynamic route learning with a transit gateway"){: caption="[Single-zone dynamic route server with Transit Gateway" caption-side="bottom"}
+![Single-zone dynamic route server with Transit Gateway](/images/drs-vpn-export.svg "Dynamic route learning with a transit gateway"){: caption="[Single-zone dynamic rou
+te server with Transit Gateway" caption-side="bottom"}
+
+[Beta]{: tag-cyan}
 
 ## Use case 14: Multi-zone dynamic route server with Transit Gateway
 {: #use-case-13-drs}
