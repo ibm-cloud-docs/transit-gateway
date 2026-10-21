@@ -2,7 +2,7 @@
 
 copyright:
   years:  2020, 2026
-lastupdated: "2026-09-15"
+lastupdated: "2026-10-21"
 
 keywords: change log for transit gateway, updates to transit gateway
 
@@ -17,6 +17,22 @@ subcollection: transit-gateway
 
 In this change log, you can learn about the latest changes, improvements, and updates for {{site.data.keyword.tg_full}}.
 {: shortdesc}
+
+
+
+## 23 October 2026
+{: #cli-drs}
+
+Dynamic route server connection support [Beta]{: tag-cyan}
+
+:   Transit Gateway now supports `dynamic_route_server` as a value for `--network-type` on `ibmcloud tg connection-create`. The `--cidr` flag is also valid for dynamic route server connections. The `--zone` flag is ignored for dynamic route server connections, while the `--default-prefix-filter` flag is not supported and returns an error.
+
+   Updated command options for [**`tg connection-create`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#connection-create):
+
+   - `--network-type`: now accepts `dynamic_route_server`.
+   - `--cidr`: now valid for `vpn_gateway` and `dynamic_route_server` connections.
+   - `--zone`: not valid for `dynamic_route_server` connections.
+   - `--default-prefix-filter`: not valid for `dynamic_route_server` connections; now valid for `vpn_gateway` connections.
 
 
 

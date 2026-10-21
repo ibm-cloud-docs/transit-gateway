@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-08"
+lastupdated: "2026-10-21"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -17,6 +17,12 @@ subcollection: transit-gateway
 
 You can delete a connection from a transit gateway by using the UI, CLI, API, or Terraform.
 {: shortdesc}
+
+
+[Beta]{: tag-cyan}
+
+If you are deleting a VPC connection that is associated with a dynamic route server connection, the dynamic route server connection must be fully deleted first. In a cross-account scenario, if the dynamic route server connection shows a `Detached` state on the gateway owner's side, the network owner cannot delete the VPC/Transit Gateway connection until the gateway owner fully removes it. For more information, see [Why can't I delete my VPC connection after removing a dynamic route server connection?](/docs/transit-gateway?topic=transit-gateway-troubleshoot-drs-vpc-deletion).
+{: attention}
 
 
 ## Deleting a connection in the UI

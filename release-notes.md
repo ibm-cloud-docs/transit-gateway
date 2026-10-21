@@ -22,6 +22,12 @@ Find out about new and updated features in {{site.data.keyword.tg_full}}.
 
 
 
+## 23 October 2026
+{: #transit-gateway-drs}
+
+Dynamic route server connections [Beta]{: tag-cyan}
+:   Accounts that have been granted special permissions to preview this feature can now attach a VPC dynamic route server to a transit gateway to enable dynamic BGP route exchange. The transit gateway establishes redundant GRE tunnels to the dynamic route server appliances and runs eBGP sessions over them. Dynamic route server connections do not support prefix filters or zone selection. For more information, see [Connecting a dynamic route server](/docs/transit-gateway?topic=transit-gateway-drs-connection).
+
 
 ## 20 January 2026
 {: #transit-gateway-prefix-filtering-vpn}

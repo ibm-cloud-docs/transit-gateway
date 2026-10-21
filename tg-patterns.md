@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-16"
+lastupdated: "2026-10-21"
 
 keywords: use cases, interconnectivity, patterns, VPC, classic, GRE, Direct Link, VPN
 
@@ -125,6 +125,36 @@ Because each VPC is connected to both transit gateways, traffic can be routed th
 ![Build a highly available multi-region network](/images/transit-gw-redundancy-group.svg "Build a highly available multi-region network"){: caption="Build a highly available multi-region network" caption-side="bottom"}
 
 
+
+
+
+[Beta]{: tag-cyan}
+
+## Use case 13: Single-zone dynamic route server with Transit Gateway
+{: #use-case-12-drs}
+
+In this use case, a VPC dynamic route server is connected to a transit gateway to enable automatic, BGP-based route distribution across connected networks. An Edge VPC acts as the network entry point, hosting a firewall and a dynamic route server appliance. The enterprise network connects to IBM Cloud over Direct Link, while a public address range provides internet-facing connectivity.
+
+Within the Edge VPC, the firewall establishes an eBGP session with the dynamic route server. The dynamic route server connects to the transit gateway, which establishes GRE tunnels to the dynamic route server appliances and runs eBGP sessions over those tunnels. In this single-zone deployment, three dynamic route server appliances connect to two transit gateway devices, creating six GRE tunnels in a full mesh for redundancy.
+
+The dynamic route server acts as a read-only spoke: it learns routes advertised by the transit gateway across its connections and distributes those routes to BGP peers within the VPC, including the firewall. This eliminates the need to manually maintain static routes as the network grows or changes. From the transit gateway, traffic is routed to connected environments, including classic infrastructure, Power Virtual Server workspaces, and spoke VPCs.
+
+This use case is well suited for hybrid cloud environments that require dynamic, scalable route propagation across multiple networks without the overhead of managing static routes or separate VPN tunnels for each destination.
+
+![Single-zone dynamic route server with Transit Gateway](/images/drs-vpn-export.svg "Dynamic route learning with a transit gateway"){: caption="[Single-zone dynamic route server with Transit Gateway" caption-side="bottom"}
+
+## Use case 14: Multi-zone dynamic route server with Transit Gateway
+{: #use-case-13-drs}
+
+In this use case, dynamic route server appliances are deployed across multiple VPC zones and connected to a transit gateway to provide highly available, BGP-based route distribution between IBM Cloud and enterprise networks. An Edge VPC serves as the network entry point, hosting firewall and dynamic route server appliances that connect on premises networks, internet traffic, and cloud workloads through a centralized routing architecture.
+
+The firewall establishes eBGP sessions with the dynamic route server appliances, while the transit gateway creates GRE tunnels and eBGP sessions with dynamic route server appliances in each zone. By distributing appliances across three zones and maintaining redundant connections to transit gateway devices, the design continues to exchange routing information even if a device, tunnel, or entire zone becomes unavailable.
+
+The dynamic route server appliances learn routes from the transit gateway and advertise them to BGP peers within the VPC, including the firewall. This enables automatic route propagation between the enterprise network and IBM Cloud resources, including classic infrastructure, Power Virtual Server workspaces, and spoke VPCs, without requiring manual route updates as the environment evolves.
+
+This use case is well suited for business-critical hybrid cloud deployments that require resilient, multi-zone connectivity and automated route distribution across a large and growing network footprint.
+
+![Multi-zone dynamic route server with Transit Gateway](/images/multizone-drs.svg "Dynamic route learning with a transit gateway"){: caption="Multi-zone dynamic route server with Transit Gateway" caption-side="bottom"}
 
 
 
