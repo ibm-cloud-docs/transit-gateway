@@ -32,15 +32,6 @@ toc:
           - include: ../vpc/interconnectivity.md
       - release-notes.md
   - navgroup:
-      id: tutorial
-      topics:
-      - topicgroup:
-          label: Interconnectivity
-          topics:
-          - include: ../solution-tutorials/vpc-tg-dns-iam.md
-          - include: ../solution-tutorials/vpc-transit1.md
-          - include: ../solution-tutorials/vpc-transit2.md
-  - navgroup:
       id: howto
       topics:
       - connecting-vpcs.md
@@ -52,6 +43,7 @@ toc:
           topics:
           - adding-gateway.md
           - adding-ca.md
+          - conn-drs.md
           - add-prefix-filters.md
           - changing-config.md
           - add-redundant-gre-tunnels.md
@@ -123,6 +115,8 @@ toc:
           - conn-routing-vsi.md
           - conn-gre.md
           - error-messages-vpn-gateway.md
+          - ts-drs.md
+          - ts-drs-vpc-deletion.md
           - ts-route-report-overlaps.md
       - topic: getting-help.md
         navtitle: Getting help and support

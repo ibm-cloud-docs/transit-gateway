@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-15"
+lastupdated: "2026-10-21"
 
 keywords: faq, faqs, questions
 
@@ -180,7 +180,75 @@ Yes, you can connect a VPN or {{site.data.keyword.cloud_notm}} Direct Link to ei
 
 
 
+### Can I use prefix filters on a VPN gateway connection?
+{: #faq-vpn-prefix-filters}
+{: faq}
+{: support}
 
+Yes. VPN gateway connections now support prefix filtering. You can configure prefix filters to control which routes are accepted from or advertised to the VPN peer. Prefix filters can only be configured at the top-level connection; individual tunnels under the connection do not support separate prefix filters. For more information, see [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#prefix-filtering-considerations).
+
+
+
+[Beta]{: tag-cyan}
+
+### What is a dynamic route server connection?
+{: #faq-what-is-drs}
+{: faq}
+{: support}
+
+A dynamic route server (DRS) is a VPC service that peers with routers using BGP to dynamically update VPC routing tables. When you attach a dynamic route server to a transit gateway, the transit gateway establishes redundant GRE tunnels to the dynamic route server appliances and runs eBGP sessions over those tunnels. The dynamic route server learns routes from the transit gateway but does not carry data-path traffic — it acts as a read-only spoke.
+
+For more information, see [Connecting a dynamic route server](/docs/transit-gateway?topic=transit-gateway-drs-connection).
+
+### Do I need to specify a CIDR when creating a dynamic route server connection?
+{: #faq-drs-cidr}
+{: faq}
+{: support}
+
+No. The CIDR block for GRE tunnel IP addresses is optional. If you do not provide one, a CIDR is automatically assigned from the default pool. If you want to control the IP range used for the tunnels, specify a CIDR at connection creation. The CIDR cannot be changed after the connection is created.
+
+### Do I need to specify a zone when connecting a dynamic route server?
+{: #faq-drs-zone}
+{: faq}
+{: support}
+
+No. Zone placement for GRE tunnels is derived automatically from the zones of the dynamic route server appliance virtual network interfaces (VNIs). Specifying `--zone` is not supported for dynamic route server connections and is ignored if specified.
+
+### Can I attach a dynamic route server to more than one transit gateway?
+{: #faq-drs-multiple-tgw}
+{: faq}
+{: support}
+
+No. In the current release, a dynamic route server can be attached to only one transit gateway at a time. To connect a dynamic route server to a different transit gateway, delete the existing connection first.
+
+### Can I use prefix filters on a dynamic route server connection?
+{: #faq-drs-prefix-filters}
+{: faq}
+{: support}
+
+No. Prefix filters are not supported on dynamic route server connections. Attempting to add a prefix filter to a dynamic route server connection returns the error: `Prefix filters are not supported on Dynamic Route Server connections.`
+
+### What are the prerequisites for connecting a dynamic route server to a transit gateway?
+{: #faq-drs-prerequisites}
+{: faq}
+{: support}
+
+Before connecting a dynamic route server to a transit gateway:
+
+- The dynamic route server instance must be in `Stable` lifecycle state with `Healthy` health status.
+- The VPC that hosts the dynamic route server must also be connected to the transit gateway. Without this VPC connection, the connection attempt is rejected.
+- The dynamic route server ASN must not conflict with any transit gateway reserved ASN. For the full list, see [Dynamic route server connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#drs-connection-considerations).
+
+### What is the correct order to delete a dynamic route server connection and its VPC connection?
+{: #faq-drs-deletion-order}
+{: faq}
+{: support}
+
+The dynamic route server connection must be fully deleted before you can delete the VPC/Transit Gateway connection. Attempting to delete the VPC connection while the dynamic route server connection still exists will fail.
+
+In a cross-account scenario, if the network owner deletes the dynamic route server connection from their side, the gateway owner sees it in a `Detached` state — the relationship is not fully removed. The network owner cannot delete the VPC/Transit Gateway connection until the gateway owner fully deletes the dynamic route server connection from their account.
+
+For more information, see [Dynamic route server deletion considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#drs-deletion-considerations) and [Why can't I delete my VPC connection after removing a dynamic route server connection?](/docs/transit-gateway?topic=transit-gateway-troubleshoot-drs-vpc-deletion).
 
 
 

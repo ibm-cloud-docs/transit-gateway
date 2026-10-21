@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-16"
+lastupdated: "2026-10-21"
 
 keywords: features, overview
 
@@ -107,6 +107,15 @@ With GRE enhanced route propagation enabled, all GRE tunnels connected to the sa
 {{site.data.keyword.tg_full_notm}} supports VPN gateway connections, enabling on-premises or external networks to connect with other networks in {{site.data.keyword.cloud_notm}} over secure IPsec tunnels. The VPN gateway acts as a spoke within the transit gateway architecture, using dynamic routing with eBGP over redundant GRE tunnels to provide scalable and resilient connectivity. For more information, see [VPN gateway connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpn-connection-considerations).
 
 
+
+
+
+[Beta]{: tag-cyan}
+
+### Dynamic route server connectivity
+{: #drs-connectivity}
+
+{{site.data.keyword.tg_full_notm}} supports dynamic route server connections. A dynamic route server peers with routers using BGP to dynamically update VPC routing tables. When you connect a dynamic route server to a transit gateway, the transit gateway establishes redundant GRE tunnels to the dynamic route server appliances and runs eBGP sessions over those tunnels. The dynamic route server acts as a read-only spoke, learning routes from the transit gateway without carrying data-path traffic. For more information, see [Dynamic route server connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#drs-connection-considerations).
 
 
 

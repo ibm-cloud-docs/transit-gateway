@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-10-20"
+lastupdated: "2026-10-21"
 
 keywords: command line interface, commands, CLI
 
@@ -276,7 +276,9 @@ ibmcloud tg acc-connections|ac [--network-id NETWORK_ID] [--network-type NETWORK
    {: pre}
 
 `--network-type`
-:   Optional. Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, `vpn_gateway`, and `vpc`.
+
+
+:   Optional. Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, `vpn_gateway`, `vpc`, and `dynamic_route_server` [Beta]{: tag-cyan}.
 
 
 `--all-pages`
@@ -304,7 +306,10 @@ ibmcloud tg acc-connections|ac
 List account connections filtered by network type:
 
 ```sh
-ibmcloud tg acc-connections|ac --network-type vpc|classic|directlink|vpn_gateway|power_virtual_server
+
+
+
+ibmcloud tg acc-connections|ac --network-type vpc|classic|directlink|vpn_gateway|power_virtual_server|dynamic_route_server [Beta]{: tag-cyan}
 
 ```
 {: pre}
@@ -414,24 +419,32 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID 
    {: pre}
 
 `--network-type`
-:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, `vpn_gateway`, and `vpc`.
+
+
+:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, `vpn_gateway`, `vpc`, and `dynamic_route_server` [Beta]{: tag-cyan}.
 
 
 `--network-account-id`
 :   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account.
 
 `--zone`
-:   Optional: Availability zone where a GRE tunnel or VPN connection will be deployed. Applicable to the `vpn_gateway` network type.
+
+
+:   Optional: Availability zone where a GRE tunnel or VPN connection will be deployed. Applicable to the `vpn_gateway` network type. For dynamic_route_server connections [Beta]{: tag-cyan}, the `--zone` flag is ignored.
 
 
     
 
 `--default-prefix-filter`
-:   Optional: Default prefix filter of the connection (`permit` | `deny`).
+
+
+:   Optional: Default prefix filter of the connection (`permit` | `deny`). Not supported for `dynamic_route_server` connections [Beta]{: tag-cyan}; specifying this flag for this type returns an error.
 
 
 `--cidr`
-:   Optional: CIDR block to use for the connection. Only applicable to the `vpn_gateway` network type.
+
+
+:   Optional: CIDR block to use for the connection. Only applicable to the `vpn_gateway` and `dynamic_route_server` [Beta]{: tag-cyan} network types. If not specified, the default range `198.19.174.0/23` is used for both connection types.
 
 
 `--output json`
@@ -454,6 +467,31 @@ Create a Classic connection named `classic-conn`.
 
 ```sh
 ibmcloud tg cc $gateway --name classic-conn --network-type classic
+```
+{: pre}
+
+
+
+[Beta]{: tag-cyan}
+
+Create a dynamic route server connection without specifying a CIDR (a CIDR is automatically assigned):
+
+```sh
+ibmcloud tg cc $gateway \
+  --name drs-connection \
+  --network-type dynamic_route_server \
+  --network-id $drsCRN
+```
+{: pre}
+
+Create a dynamic route server connection with an explicit CIDR:
+
+```sh
+ibmcloud tg cc $gateway \
+  --name drs-connection-with-cidr \
+  --network-type dynamic_route_server \
+  --network-id $drsCRN \
+  --cidr 198.19.176.0/23
 ```
 {: pre}
 

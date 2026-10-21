@@ -153,6 +153,44 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 
 
 
+[Beta]{: tag-cyan}
+
+## Dynamic route server connection considerations
+{: #drs-connection-considerations}
+
+You can connect a VPC dynamic route server to a transit gateway. The transit gateway establishes redundant GRE tunnels to the dynamic route server appliances and runs eBGP sessions over those tunnels. The dynamic route server acts as a read-only spoke, learning routes from the transit gateway without carrying data-path traffic.
+
+* The VPC that hosts the dynamic route server must also be connected to the same transit gateway. Without this VPC connection, the dynamic route server connection attempt is rejected.
+* The dynamic route server must be in `Stable` lifecycle state with `Healthy` health status. Connection creation fails if either condition is not met.
+* The dynamic route server ASN must not conflict with transit gateway reserved ASNs. Reserved ASNs are: `0`, `13884`, `36351`, `64512`, `64513`, `65100`, `65200–65234`, `65402–65433`, `65500`, `65516`, `65519`, `65521`, `65531`, and `4201065000–4201065999`.
+* A CIDR block for GRE tunnel IP addresses is optional. If not specified, the transit gateway allocates a sub-range from the default pool `198.19.174.0/23`, avoiding any portions already in use by other connections on the same gateway. If specified, the CIDR must be at least a `/26` subnet. Specify a CIDR if you want full control over the IP range. The CIDR cannot be changed after the connection is created.
+* Use [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} private address space for the CIDR. If a non-RFC 1918 CIDR is used, add a Delegate-VPC route in the VPC routing table in the same zone as the dynamic route server appliance VNIs.
+* The CIDR must not overlap with any subnet where dynamic route server appliance VNIs are deployed, or with any other connection CIDR on the transit gateway.
+* You cannot specify a zone when creating a dynamic route server connection. Zone placement is derived automatically from the dynamic route server appliance VNI zones. If `--zone` is specified, it is ignored.
+* Prefix filters are not supported on dynamic route server connections. Attempting to create a prefix filter on a dynamic route server connection fails with: `Prefix filters are not supported on Dynamic Route Server connections.`
+* The transit gateway creates two GRE tunnels per dynamic route server appliance on separate transit gateway routers in the same zone. Each zone supports up to 6 tunnels. Individual tunnels cannot be added or removed manually.
+* When dynamic route server appliances are added or removed, the transit gateway automatically adjusts the corresponding GRE tunnels.
+* In the current release, a dynamic route server instance can be connected to only one transit gateway at a time.
+
+### Dynamic route server deletion considerations
+{: #drs-deletion-considerations}
+
+There is a strict ordering dependency between a dynamic route server connection and its host VPC connection:
+
+* **Create order:** The VPC that hosts the dynamic route server must be attached to the transit gateway before the dynamic route server connection can be created.
+* **Delete order:** The dynamic route server connection must be fully deleted before the VPC/Transit Gateway connection can be deleted. Attempting to delete the VPC connection while the dynamic route server connection still exists will fail.
+
+In a cross-account scenario, the network owner (who owns the VPC/Transit Gateway connection) and the gateway owner (who manages the transit gateway) may be in different accounts:
+
+* If the network owner deletes the cross-account dynamic route server connection from their side, the gateway owner sees the connection in a `Detached` state—it is not fully removed from the gateway owner's account.
+* While the dynamic route server connection remains in `Detached` state, the underlying relationship still exists. The network owner is therefore unable to delete the VPC/Transit Gateway connection.
+* The network owner must coordinate with the gateway owner to fully delete the dynamic route server connection from the gateway owner's side.
+* Once the dynamic route server connection is fully deleted on both sides, the network owner can proceed with deleting the VPC/Transit Gateway connection.
+
+For more information about the `Detached` state in cross-account connections, see [Adding cross-account connections](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui). For steps to resolve a blocked deletion, see [Why can't I delete my VPC connection after removing a dynamic route server connection?](/docs/transit-gateway?topic=transit-gateway-troubleshoot-drs-vpc-deletion).
+
+
+
 ## Generic Routing Encapsulation (GRE) connection considerations
 {: #gre-considerations}
 
@@ -239,7 +277,8 @@ For more information and a use case example, see [Connect networks using a High 
 ## Prefix filtering considerations
 {: #prefix-filtering-considerations}
 
-* Prefix filters are supported for all Transit Gateway connection types except VPN gateway connections, dynamic route server connections, and legacy GRE tunnel connections. Prefix filtering is supported for redundant and unbound GRE connection types and for VPN gateways.
+
+* Prefix filters are supported for all Transit Gateway connection types except dynamic route server connections [Beta]{: tag-cyan} and legacy GRE tunnel connections. Prefix filtering is supported for redundant and unbound GRE connection types and VPN gateway connections.
 
 * For non-GRE connections, the network owner can add prefix filters. For GRE connections, only the Transit Gateway owner can add or modify prefix filters, which is an important consideration for cross-account connections.
 * For cross-account connections, only the account owner of the respective connection can modify prefix filters. Other accounts can view the connection, but can't modify the filters.

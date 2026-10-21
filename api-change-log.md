@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-15"
+lastupdated: "2026-10-21"
 
 keywords: transit gateway api change log
 
@@ -19,6 +19,14 @@ content-type: release-note
 
 Check back regularly to see what's new with {{site.data.keyword.cloud}} Transit Gateway API.
 {: shortdesc}
+
+
+
+## 23 October 2026
+{: #transit-gateway-api-drs}
+
+Dynamic route server connections [Beta]{: tag-cyan}
+:   The `POST /transit_gateways/{transit_gateway_id}/connections` operation now accepts `dynamic_route_server` as a value for `network_type`. The required parameters are `name` and `network_id` (CRN of the dynamic route server instance). The optional `cidr` parameter sets the CIDR block for GRE tunnel IP addresses; if omitted, a CIDR is automatically assigned. The `zone` and `default_prefix_filter` properties are not supported for this network type.
 
 
 

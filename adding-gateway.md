@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-10-20"
+lastupdated: "2026-10-21"
 
 keywords: features, overview
 
@@ -60,6 +60,11 @@ To add a connection to a transit gateway, follow these steps:
 
    
    
+   [Beta]{: tag-cyan}
+
+   * **Dynamic Route Server** connects a VPC dynamic route server to the transit gateway as a spoke. The transit gateway establishes redundant GRE tunnels to the dynamic route server appliances and runs eBGP sessions over those tunnels, allowing the dynamic route server to learn routes dynamically. Prefix filters are not supported on dynamic route server connections. For more information, see [Connecting a dynamic route server](/docs/transit-gateway?topic=transit-gateway-drs-connection).
+
+   
 
 1. Optionally, create prefix filters to set an ordered list of filters that determine the routes your transit gateway accepts or denies. For more information, see [Adding and deleting prefix filters](/docs/transit-gateway?topic=transit-gateway-adding-prefix-filters&interface=ui).
 
@@ -75,6 +80,8 @@ To add a connection to a transit gateway, follow these steps:
 
          
 
+      
+      * For **Dynamic Route Server** [Beta]{: tag-cyan}, select the region where the dynamic route server is deployed, then select from the Available connections list. Optionally, provide a CIDR block for the GRE tunnel IP addresses. If specified, the CIDR must be at least a `/26` subnet. If not specified, the default range `198.19.174.0/23` is used. For planning considerations, see [Dynamic route server connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#drs-connection-considerations).
       
 
    * **Request connection to a network in another account** - Enter either the IBM Cloud ID or Cloud Resource Name (CRN) of the account that manages the network where you want to connect. Then, complete any remaining information. All resources connected to that transit gateway will be accessible from the other network. For more information, including how to obtain the Cloud ID or CRN, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
@@ -138,22 +145,30 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID 
    {: pre}
 
 `--network-type`
-:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, `vpn_gateway`, and `vpc`.
+
+
+:   Network type of the connection. Values are `classic`, `directlink`, `power_virtual_server`, `vpn_gateway`, `vpc`, and `dynamic_route_server` [Beta]{: tag-cyan}.
 
 
 `--network-account-id`
 :   ID of the IBM Cloud account to use for creating a classic connection. Only used with `classic` type, when the account of the connection is different than the gateway's account.
 
 `--zone`
-:   Optional: Availability zone where a GRE tunnel or VPN connection is deployed. Only applicable to the `vpn_gateway` network type.
+
+
+:   Optional: Availability zone where a GRE tunnel or VPN connection is deployed. Only applicable to the `vpn_gateway` network type. Not supported for `dynamic_route_server` [Beta]{: tag-cyan} connections; if specified for a dynamic route server connection, `--zone` is ignored.
 
 
 `--default-prefix-filter`
-:   Optional: Default prefix filter of the connection (`permit` | `deny`).
+
+
+:   Optional: Default prefix filter of the connection (`permit` | `deny`). Not supported for `dynamic_route_server` [Beta]{: tag-cyan} connections; specifying this flag for this type returns an error.
 
 
 `--cidr`
-:   Optional: CIDR block to use for the connection. Only applicable to the `vpn_gateway` network type.
+
+
+:   Optional: CIDR block to use for the connection. Only applicable to the `vpn_gateway` and `dynamic_route_server` [Beta]{: tag-cyan} network types. If not specified, the default range `198.19.174.0/23` is used for both connection types.
 
 
 `--output json`
@@ -210,6 +225,7 @@ Review the following argument references that you can specify for your resource 
 
 
 
+
 |Argument|Details|
 |--|--|
 |**base_connection_id**  \n Optional  \n Forces new resource \n string | The ID of a `classic` `network_type` connection a tunnel is configured over. \n This field applies only to network type `gre_tunnel` connections.|
@@ -219,14 +235,13 @@ Review the following argument references that you can specify for your resource 
 |**local_tunnel_ip**  \n Optional  \n Forces new resource  \n string | The local tunnel IP address. \n This field is required for, and only applicable to, `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**name**  \n Optional  \n string | The connection name. If the name is not given, a default name is provided based on the network type, such as `vpc` for network type VPC and `classic` for network type classic.|
 |**network_account_id**  \n Optional  \n Forces new resource  \n string|The ID of the network connected account. This field is used if the network is in a different account than the gateway.|
-|**network_type**  \n Required  \n Forces new resource  \n string | The network type. Allowed values are `classic`, `directlink`, `gre_tunnel`, `unbound_gre_tunnel`, `vpn_gateway`, and `vpc`. |
+|**network_type**  \n Required  \n Forces new resource  \n string | The network type. Allowed values are `classic`, `directlink`, `gre_tunnel`, `unbound_gre_tunnel`, `vpn_gateway`, `vpc`, and `dynamic_route_server` [Beta]{: tag-cyan}. |
 |**network_id**  \n Optional  \n Forces new resource  \n string | The ID of the network that is being connected to through this connection. \n This parameter is required for network type `vpc` and `directlink`, the CRN of the VPC or direct link gateway to be connected.  \n This field is required to be unspecified for network type `classic`.  \n **Example**:`crn:v1:bluemix:public:is:us-south:a/123456::vpc:4727d842-f94f-4a2d-824a-9bc9b02c523b`|
 |**remote_bgp_asn**  \n Optional  \n Forces new resource  \n integer | The remote network BGP ASN (will be generated for the connection if not specified).  \n This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**remote_gateway_ip**  \n Optional  \n Forces new resource  \n string | The remote gateway IP address. This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**remote_tunnel_ip**  \n Optional  \n Forces new resource  \n string | The remote tunnel IP address. This field applies only to `gre_tunnel` and `unbound_gre_tunnel` type connections.|
 |**zone**  \n Optional  \n Forces new resource  \n string | The location of the connection. This field is required for `gre_tunnel` and `unbound_gre_tunnel` type connections and optional for `vpn_gateway` type connections. |
 {: caption="Terraform argument references for creating a connection" caption-side="bottom"}
-
 
 
 
@@ -245,6 +260,27 @@ resource "ibm_tg_connection" "test_ibm_tg_connection" {
 ```
 {: codeblock}
 
+
+
+[Beta]{: tag-cyan}
+
+### Dynamic route server example
+{: #tg-terraform-adding-drs-connection-example}
+
+This example illustrates creating a dynamic route server connection with an explicit CIDR:
+
+```terraform
+resource "ibm_tg_connection" "drs_connection" {
+  gateway      = ibm_tg_gateway.my_tg_gateway.id
+  network_type = "dynamic_route_server"
+  name         = "my-drs-connection"
+  network_id   = ibm_is_drs.my_drs.crn
+  cidr         = "198.19.176.0/23"
+}
+```
+{: codeblock}
+
+Omit `cidr` to use the default range `198.19.174.0/23`. For more information, see the [ibm_tg_connection](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/tg_connection){: external} Terraform reference.
 
 
 ## Next steps

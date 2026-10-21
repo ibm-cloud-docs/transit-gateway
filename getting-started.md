@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-15"
+lastupdated: "2026-10-21"
 
 keywords: transit, gateway, ordering, getting, started
 
@@ -29,7 +29,7 @@ With {{site.data.keyword.tg_full_notm}}, you can connect:
 * VPN gateways for site-to-site or client VPN connectivity
 
 * On-premises networks using Direct Link connections
-
+* [Beta]{: tag-cyan} Connectivity with Dynamic Route Server for VPC (multi-zone support)
 * External networks by using Generic Routing Encapsulation (GRE) tunnels
 * Network resources across multiple IBM Cloud accounts (with appropriate access authorization)
 
@@ -60,7 +60,7 @@ These decisions influence your routing choice and whether additional configurati
 To get started using {{site.data.keyword.tg_full_notm}}:
 
 1. Review [About {{site.data.keyword.tg_full_notm}}](/docs/transit-gateway?topic=transit-gateway-about) for an overview of features, and see [Interconnectivity patterns](/docs/transit-gateway?topic=transit-gateway-patterns) for use cases that match your topology.
-1. Plan your topology and prerequisites. Identify the networks that you want to connect (VPC, classic, Power Virtual Server, VPN, Direct Link, GRE) and ensure no overlapping CIDRs. For more information, see [Planning for {{site.data.keyword.tg_full_notm}}](/docs/transit-gateway?topic=transit-gateway-helpful-tips).
+1. Plan your topology and prerequisites. Identify the networks that you want to connect (VPC, classic, Power Virtual Server, VPN, Direct Link, GRE, or dynamic route server [Beta]{: tag-cyan}) and ensure no overlapping CIDRs. For more information, see [Planning for {{site.data.keyword.tg_full_notm}}](/docs/transit-gateway?topic=transit-gateway-helpful-tips).
 1. Configure IAM permissions to allow users or service IDs to manage Transit Gateway resources. For more information, see [Using IAM permissions with IBM Cloud Transit Gateway](/docs/transit-gateway?topic=transit-gateway-iam).
 1. Create a transit gateway in the target region. For more information, see [Ordering an {{site.data.keyword.tg_full_notm}}](/docs/transit-gateway?topic=transit-gateway-ordering-transit-gateway).
 1. Add connections and configure routing. Attach networks, enable route propagation, and verify routes using route reports. Resolve routing conflicts (for example, overlapping CIDRs) using prefix filters.
