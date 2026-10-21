@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-16"
+lastupdated: "2026-10-21"
 
 keywords: help, tips, connections, provision
 
@@ -129,8 +129,7 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 * Each VPN gateway connection automatically provisions four redundant GRE tunnels between the VPN gateway and the transit gateway. IBM manages these tunnels, with eBGP sessions running over them for dynamic routing. On-premises connectivity uses eBGP over IPsec tunnels for secure communication. While you can create, delete, and rename VPN gateway connections, you cannot modify or remove the individual GRE tunnels.
 * Pricing is based on the cost of 4 GRE tunnels per connection plus data traffic charges.
 * VPN gateway connections are limited to 4 per transit gateway and 2 per zone by default.
-* VPN gateway connections do not support prefix filtering. You are responsible for managing any route filtering on your side of the BGP session.
-
+* VPN gateway connections support prefix filtering. Prefix filters can only be configured at the top-level connection; individual tunnels under the connection do not support separate prefix filters.
 * Dynamic VPN connections require the VPN gateway to be attached to a transit gateway before traffic can flow.
 * After a VPN gateway is attached to a transit gateway, the local ASN cannot be changed.
 * To configure a VPN as a backup for a Direct Link connection, you must ensure that routes from the Direct Link are preferred. To do so, you can leverage mechanisms, such as AS Path prepending or MED (Multi-Exit Discriminator) on your on-premises device.
