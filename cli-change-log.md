@@ -95,7 +95,7 @@ GRE enhanced route propagation
 {: #cli-june1224}
 
 Redundant GRE tunnel connections support
-:    To build in redundancy and eliminate the need to schedule an outage when a Transit Gateway router must down for maintenance, there is a new redundant GRE type, which is essentially a grouping of at least two GRE tunnels that can connect to classic or VPC networks. This connection type allows GRE tunnels to be placed on different devices in the same zone and not flag overlapping routes that are in the redundant GRE's tunnels. For more information, see [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection&interface=ui).
+:    To build in redundancy and eliminate the need to schedule an outage when a Transit Gateway router must go down for maintenance, there is a new redundant GRE type, which is essentially a grouping of at least two GRE tunnels that can connect to classic or VPC networks. This connection type allows GRE tunnels to be placed on different devices in the same zone and not flag overlapping routes that are in the redundant GRE's tunnels. For more information, see [Creating a redundant GRE tunnel](/docs/transit-gateway?topic=transit-gateway-redundant-gre-connection&interface=ui).
 
    New commands:
 

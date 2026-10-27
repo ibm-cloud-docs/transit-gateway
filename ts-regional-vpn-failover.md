@@ -35,7 +35,7 @@ If traffic is not recovering, possible causes are:
 To resolve this issue:
 {: tsResolve}
 
-1. Wait a short time and recheck connectivity. BGP convergence typically completes within seconds to under a minute after a zone failure. If connectivity resumes, no further action is needed.
+1. Wait a short time and recheck connectivity. BGP convergence typically completes within seconds to under a minute after a zone failure. If connectivity resumes, no further action is required.
 
 1. Verify that the two VPN members are in different zones. On the VPN gateway details page, check the zone for each member. If both members are in the same zone, they cannot provide zone-level failover. To correct this, update one member's subnet to a subnet in a different zone.
 

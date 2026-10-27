@@ -22,7 +22,7 @@ content-type: troubleshoot
 After you create a VPN gateway connection to a transit gateway using a regional VPN gateway, the connection status remains `pending` for longer than expected or transitions to `error`.
 {: tsSymptoms}
 
-A regional VPN connection requires the transit gateway to establish redundant GRE tunnels to both VPN appliances, one per zone. The connection status becomes `attached` only after all tunnels are provisioned and eBGP sessions are established between the VPN appliances and the transit gateway.
+A regional VPN connection requires the transit gateway to establish redundant GRE tunnels to both VPN appliances, one per zone. The connection status changes to `attached` only after the transit gateway provisions all tunnels and establishes eBGP sessions with the VPN appliances.
 
 The connection may stay in `pending` or move to `error` for the following reasons:
 {: tsCauses}
@@ -44,12 +44,12 @@ To resolve this issue:
    ```
    {: pre}
 
-   If an overlap exists, delete the connection and recreate it with a non-overlapping CIDR block.
+   If an overlap exists, delete the connection and re-create it with a non-overlapping CIDR block.
 
-1. Confirm that the VPN gateway's `local_asn` is not a reserved ASN. If it is, you must update the ASN on the VPN gateway, delete the transit gateway connection, and recreate it.
+1. Confirm that the VPN gateway's `local_asn` is not a reserved ASN. If it is, you must update the ASN on the VPN gateway, delete the transit gateway connection, and re-create it.
 
 1. Check whether the VPN gateway is already connected to another transit gateway. If it is, you must delete that connection before creating a new one.
 
-1. If the connection status is `error`, delete the connection and recreate it after resolving the issue identified above.
+1. If the connection status is `error`, delete the connection and re-create it after resolving the applicable issue.
 
 For more information, see [Regional VPN gateway considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#regional-vpn-connection-considerations) and [Connecting a regional VPN gateway](/docs/transit-gateway?topic=transit-gateway-vpn-regional-connection).

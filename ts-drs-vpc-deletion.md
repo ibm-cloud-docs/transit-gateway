@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-10-27"
 
 keywords: dynamic route server, troubleshoot, delete, VPC connection, detached, cross-account
 
@@ -43,7 +43,7 @@ To resolve this issue, follow the steps for your scenario:
 If the dynamic route server connection and the VPC connection belong to the same account:
 
 1. Confirm that the dynamic route server connection is fully deleted. On the transit gateway connections page, verify that the connection no longer appears. If it is still present, delete it and wait for the deletion to complete before proceeding.
-1. Once the dynamic route server connection is fully removed, delete the VPC/Transit Gateway connection.
+1. After the dynamic route server connection is fully removed, delete the VPC/Transit Gateway connection.
 
 ## Cross-account scenario
 {: #ts-drs-vpc-deletion-fix-cross-account}

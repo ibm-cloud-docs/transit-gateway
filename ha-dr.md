@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-09-15"
+lastupdated: "2026-10-27"
 
 keywords: HA for transit gateway, DR for transit gateway, transit gateway recovery time objective, transit gateway recovery point objective
 
@@ -20,7 +20,7 @@ subcollection: transit gateway
 
 IBM Cloud Transit Gateway is a highly available service that is designed to meet the [Service Level Objectives (SLO)](/docs/resiliency?topic=resiliency-slo#slo-high-network-services). It is a regional service that is built on a resilient, distributed infrastructure and supports connectivity across multiple zones within a region. Transit Gateway enables seamless communication between IBM Cloud resources, such as Virtual Private Clouds (VPCs), and supports highly available network architectures through redundant connections and automatic route propagation.
 
-You are responsible for understanding your configuration, customization, and usage of the service. You are also responsible for being ready to recreate an instance of the service in a new region and restore your data in a new region.
+You are responsible for understanding your configuration, customization, and usage of the service. You are also responsible for being ready to re-create an instance of the service in a new region and restore your data in a new region.
 {: important}
 
 To better understand the underlying infrastructure, including definitions of data centers and zones, see [IBM Cloud region and data center locations for resource deployment](/docs/overview?topic=overview-locations), which details how zones map to physical data centers. For information about available regions and data center locations for Transit Gateway, see [Transit Gateway locations](/docs/transit-gateway?topic=transit-gateway-tg-locations).
@@ -47,7 +47,7 @@ IBM Cloud regions that support Transit Gateway are multi-zone regions except for
 ### High availability features
 {: #high-availability-features}
 
-{{site.data.keyword.dl_full_notm}} supports the following high availability features:
+{{site.data.keyword.tg_full_notm}} supports the following high availability features:
 
 | Feature| Description | Consideration |
 | -------------- | -------------- | -------------- |
@@ -111,7 +111,7 @@ There can be multiple ways to recover from certain failures, so be sure to asses
 | -------------- | -------------- |
 | Regional Transit Gateway outage | Redirect traffic through a transit gateway in another region. For automated failover patterns, use redundancy groups with consistent configurations across gateways. |
 | BGP session loss                  | Verify routing configuration and peer device status; restart the BGP session. |
-| VPC attachment failure            | Recreate the attachment or fail over to an alternate path.                    |
+| VPC attachment failure            | Re-create the attachment or fail over to an alternate path.                    |
 | Accidental configuration deletion | Restore configuration using backups or automation tools.    |
 | Logging or monitoring failure     | Reconfigure logging/monitoring endpoints; verify IAM and service status.      |
 {: caption="Disaster recovery scenarios for {{site.data.keyword.tg_full_notm}}" caption-side="bottom"}
@@ -188,7 +188,7 @@ When it comes to zone and regional failures, IBM takes the following recovery ac
 ### How IBM recovers from zone failures
 {: #ibm-zone-failure}
 
-A zone failure refers to the failure of an availability zone within a region. When a zone failure occurs, IBM Cloud identifies the issue, perform repairs, and restore the zone as quickly as possible. If a zone becomes unavailable, traffic is automatically routed to healthy zones. Customers don't need to take any action to restore their transit gateway.
+A zone failure refers to the failure of an availability zone within a region. When a zone failure occurs, IBM Cloud identifies the issue, performs repairs, and restores the zone as quickly as possible. If a zone becomes unavailable, traffic is automatically routed to healthy zones. Customers don't need to take any action to restore their transit gateway.
 
 ### How IBM recovers from regional failures
 {: #ibm-regional-failure}

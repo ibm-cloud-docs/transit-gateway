@@ -135,7 +135,7 @@ Transit Gateway extends connectivity to attached resources, including VPCs, Clas
 
 This architecture is well suited for hybrid cloud environments that require highly available, zone-resilient connectivity to IBM Cloud resources while simplifying failover management and reducing operational complexity.
 
-![Zone-resilient VPN connectivity using a regional VPN gateway](/images/regional-vpn.svg "Zone-resilient VPN connectivity using a regional VPN gateway"){: caption="[Zone-resilient VPN connectivity using a regional VPN gateway" caption-side="bottom"}
+![Zone-resilient VPN connectivity using a regional VPN gateway](/images/regional-vpn.svg "Zone-resilient VPN connectivity using a regional VPN gateway"){: caption="Zone-resilient VPN connectivity using a regional VPN gateway" caption-side="bottom"}
 
 
 
