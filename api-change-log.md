@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-10-27"
 
 keywords: transit gateway api change log
 
@@ -29,6 +29,12 @@ Dynamic route server connections [Beta]{: tag-cyan}
 :   The `POST /transit_gateways/{transit_gateway_id}/connections` operation now accepts `dynamic_route_server` as a value for `network_type`. The required parameters are `name` and `network_id` (CRN of the dynamic route server instance). The optional `cidr` parameter sets the CIDR block for GRE tunnel IP addresses; if omitted, a CIDR is automatically assigned. The `zone` and `default_prefix_filter` properties are not supported for this network type.
 
 
+
+## 8 October 2026
+{: #transit-gateway-api-regional-vpn}
+
+Regional VPN gateway connections
+:   The `POST /transit_gateways/{transit_gateway_id}/connections` operation now supports connecting regional VPN gateways. When `network_type` is `vpn_gateway` and the referenced VPN gateway has `availability_mode: regional`, the `zone` property must not be specified. Tunnel placement is derived automatically from the VPN gateway's member configuration.
 
 ## 15 September 2026
 {: #transit-gateway-sept1526}

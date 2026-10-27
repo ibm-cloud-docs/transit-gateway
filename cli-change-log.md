@@ -2,7 +2,7 @@
 
 copyright:
   years:  2020, 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-10-27"
 
 keywords: change log for transit gateway, updates to transit gateway
 
@@ -36,7 +36,16 @@ Dynamic route server connection support [Beta]{: tag-cyan}
 
 
 
+## 8 October 2026
+{: #cli-regional-vpn}
 
+Regional VPN gateway connection support
+
+:   Transit Gateway now supports connecting regional VPN gateways as spokes. When using `connection-create` with `--network-type vpn_gateway` and a regional VPN gateway, the `--zone` option must not be specified. Zone placement is derived automatically from the VPN gateway's member configuration.
+
+   Updated command option:
+
+   [**`tg connection-create`**](/docs/transit-gateway?topic=transit-gateway-transit-gateway-cli#connection-create) - The `--zone` option is not applicable when connecting a regional VPN gateway (`availability_mode: regional`). If `--zone` is specified for a regional VPN gateway, the request fails with an error.
 
 ## 15 September 2026
 {: #cli-sept1526}

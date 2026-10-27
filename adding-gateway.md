@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-10-27"
 
 keywords: features, overview
 
@@ -58,7 +58,8 @@ To add a connection to a transit gateway, follow these steps:
 
    * **VPN gateway** connections link on-premises or external networks with IBM Cloud by attaching a VPN gateway as a spoke to a transit gateway. These connections use redundant GRE tunnels and dynamic routing with eBGP to enable efficient and scalable network integration. For more information, see [Creating a VPN gateway](/docs/vpc?topic=vpc-vpn-create-gateway&interface=ui).
 
-   
+      **Regional:** Transit Gateway now supports regional VPN gateway connections. A regional VPN gateway deploys two appliances across different zones in the same region, providing automatic failover without requiring zone-specific configuration. When you connect a regional VPN gateway, you cannot specify a zone—the zone is automatically derived from the VPN gateway's member configuration. For more information, see [Connecting a regional VPN gateway](/docs/transit-gateway?topic=transit-gateway-vpn-regional-connection).
+      {: note}
    
    [Beta]{: tag-cyan}
 
@@ -78,7 +79,8 @@ To add a connection to a transit gateway, follow these steps:
 
          You must specify a custom CIDR block for the connection. The CIDR defines the IP range that is used to allocate addresses on the redundant GRE tunnels and must use [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} private address space, be at least a `/27` subnet, and must not overlap with other connection CIDRs on the transit gateway.
 
-         
+         For planning considerations about VPN gateway connections, including zone behavior and regional VPN gateways, see [VPN gateway connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpn-connection-considerations).
+         {: attention}
 
       
       * For **Dynamic Route Server** [Beta]{: tag-cyan}, select the region where the dynamic route server is deployed, then select from the Available connections list. Optionally, provide a CIDR block for the GRE tunnel IP addresses. If specified, the CIDR must be at least a `/26` subnet. If not specified, the default range `198.19.174.0/23` is used. For planning considerations, see [Dynamic route server connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#drs-connection-considerations).

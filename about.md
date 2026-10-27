@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-10-27"
 
 keywords: features, overview
 
@@ -106,7 +106,8 @@ With GRE enhanced route propagation enabled, all GRE tunnels connected to the sa
 
 {{site.data.keyword.tg_full_notm}} supports VPN gateway connections, enabling on-premises or external networks to connect with other networks in {{site.data.keyword.cloud_notm}} over secure IPsec tunnels. The VPN gateway acts as a spoke within the transit gateway architecture, using dynamic routing with eBGP over redundant GRE tunnels to provide scalable and resilient connectivity. For more information, see [VPN gateway connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpn-connection-considerations).
 
-
+{{site.data.keyword.tg_full_notm}} also supports regional VPN gateways, which deploy two VPN appliances in separate availability zones within the same VPC for automatic zone-level failover. For more information, see [Regional VPN gateway considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#regional-vpn-connection-considerations).
+{: note}
 
 
 

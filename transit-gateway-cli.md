@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-10-27"
 
 keywords: command line interface, commands, CLI
 
@@ -433,7 +433,8 @@ ibmcloud tg connection-create|cc GATEWAY_ID --name NAME --network-id NETWORK_ID 
 :   Optional: Availability zone where a GRE tunnel or VPN connection will be deployed. Applicable to the `vpn_gateway` network type. For dynamic_route_server connections [Beta]{: tag-cyan}, the `--zone` flag is ignored.
 
 
-    
+    Do not specify `--zone` when connecting a regional VPN gateway (`availability_mode: regional`). Zone placement is derived automatically from the  VPN gateway member configuration. Specifying a zone for a regional VPN gateway returns an error.
+    {: note}
 
 `--default-prefix-filter`
 

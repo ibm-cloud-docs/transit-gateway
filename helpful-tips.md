@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-10-27"
 
 keywords: help, tips, connections, provision
 
@@ -149,7 +149,20 @@ You can create VPN gateway connections to a transit gateway to enable on-premise
 
    The first option is simpler, while the second option offers more granular routing control, which might be preferred in advanced network designs or for troubleshooting.
 
+### Regional VPN gateway considerations
+{: #regional-vpn-connection-considerations}
 
+Regional VPN gateways extend zonal VPN availability to the region level by deploying two VPN appliances in separate zones within the same VPC.
+
+* When connecting a regional VPN gateway to a transit gateway, you do not specify an availability zone. The zone for each set of tunnels is automatically derived from the zone of each VPN member appliance.
+* The transit gateway creates two sets of redundant GRE tunnels, one per VPN member. Each set is placed on Transit Gateway routers in the corresponding member's zone, so each zone gets two tunnels on separate routers.
+* When a regional VPN gateway member is moved to a new subnet—changing its zone or private IP address—the VPN service automatically notifies the connected transit gateway. The transit gateway then updates its GRE tunnels to reflect the new appliance location. No manual action is required on the transit gateway side. For more information, see [Updating a regional VPN gateway member subnet](/docs/vpc?topic=vpc-vpn-regional-member-subnet-update) and [HA with a regional gateway](/docs/vpc?topic=vpc-vpn-ha#vpn-ha-regional).
+* If a zone becomes unavailable, the BGP sessions for the affected appliance are withdrawn and traffic automatically shifts to the healthy appliance within BGP convergence time. No manual intervention is required. For more information, see [HA with a regional gateway](/docs/vpc?topic=vpc-vpn-ha#vpn-ha-regional).
+* You must specify a CIDR block for GRE tunnel IP addresses, or accept the default `198.19.174.0/23`. The CIDR must be at least a `/27` subnet, use [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918){: external} private address space, and must not overlap with VPN member subnets or other connection CIDRs on the transit gateway.
+* If a VPN appliance in one zone handles traffic for a workload in another zone, traffic traverses the IBM Cloud backbone network between zones, adding minimal latency.
+* For regional VPN gateway service limits, see [Quotas and service limits](/docs/transit-gateway?topic=transit-gateway-service-limits).
+* A regional VPN gateway can be attached to only one transit gateway at a time.
+* Migration of an existing zonal VPN to regional is available for SAP enterprise accounts only.
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-10-27"
 
 keywords: updates, additions, improvements
 
@@ -19,7 +19,11 @@ content-type: release-note
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
 
+## 27 October 2026
+{: #transit-gateway-regional-vpn}
 
+Support for regional VPN gateway connections
+:   Transit Gateway now supports connecting regional VPN gateways as spokes. A regional VPN gateway deploys two appliances in separate zones within the same region, providing zone-level failover without requiring multiple VPN gateways. When you attach a regional VPN gateway, zone selection is not required—tunnel placement is derived automatically from the gateway's member configuration. This reduces cost and network complexity for multi-zone deployments. For more information, see [Connecting a regional VPN gateway](/docs/transit-gateway?topic=transit-gateway-vpn-regional-connection).
 
 
 ## 23 October 2026
