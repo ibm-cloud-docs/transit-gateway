@@ -41,11 +41,11 @@ If no CIDR is specified, the default range `198.19.174.0/23` is used.
 
 For more information about VPN gateway planning requirements in the VPC documentation, see [Regional route-based VPN gateway considerations](/docs/vpc?topic=vpc-planning-considerations-vpn#regional-route-based-vpn-considerations).
 
-## Creating a regional VPN connection in the UI
+## Creating a regional VPN connection in the console
 {: #vpn-regional-connection-ui}
 {: ui}
 
-To connect a regional VPN gateway to a transit gateway in the UI, follow these steps:
+To connect a regional VPN gateway to a transit gateway in the IBM Cloud console, follow these steps:
 
 1. From your browser, open the [{{site.data.keyword.cloud_notm}} console](/login){: external} and log in to your account.
 1. Select the Navigation Menu icon ![Navigation Menu icon](../../icons/icon_hamburger.svg) from the upper left, then click **Infrastructure** > **Network** > **Transit Gateway**.
