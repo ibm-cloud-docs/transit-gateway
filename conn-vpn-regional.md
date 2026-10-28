@@ -23,7 +23,7 @@ Unlike a zonal VPN connection, a regional VPN connection does not require an ava
 ## Before you begin
 {: #vpn-regional-connection-prereqs}
 
-Before connecting a regional VPN gateway to a transit gateway, review [Regional VPN gateway considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#regional-vpn-connection-considerations) for CIDR requirements, zone placement, tunnel limits, and other constraints that apply on the transit gateway side.
+Before connecting a regional VPN gateway to a transit gateway, review [Regional VPN gateway considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#regional-vpn-connection-considerations) for constraints that apply on the transit gateway side, and [Regional route-based VPN gateway considerations](/docs/vpc?topic=vpc-planning-considerations-vpn#regional-route-based-vpn-considerations) for VPN gateway planning requirements in VPC.
 {: important}
 
 Before you connect a regional VPN gateway to a transit gateway, make sure that:
@@ -38,8 +38,6 @@ Before you connect a regional VPN gateway to a transit gateway, make sure that:
 
 If no CIDR is specified, the default range `198.19.174.0/23` is used.
 {: note}
-
-For more information about VPN gateway planning requirements in the VPC documentation, see [Regional route-based VPN gateway considerations](/docs/vpc?topic=vpc-planning-considerations-vpn#regional-route-based-vpn-considerations).
 
 ## Creating a regional VPN connection in the console
 {: #vpn-regional-connection-ui}
@@ -139,8 +137,7 @@ Do not include a `zone` property in the request body for a regional VPN connecti
 For more information, see [Create a connection](/docs/apis/transit-gateway?code=java#create-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
-## Next steps
-{: #vpn-regional-connection-next-steps}
+## Related links
+{: #vpn-regional-connection-related-links}
 
 - [Generate a route report](/docs/transit-gateway?topic=transit-gateway-route-reports) to confirm that the expected on-premises prefixes are visible across all transit gateway connections after the regional VPN attaches.
-- To configure the VPN as a backup for a Direct Link connection, review [VPN gateway connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpn-connection-considerations) for guidance on AS path prepending and route preference.
