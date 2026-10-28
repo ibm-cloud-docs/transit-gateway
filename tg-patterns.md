@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-10-21"
+lastupdated: "2026-10-27"
 
 keywords: use cases, interconnectivity, patterns, VPC, classic, GRE, Direct Link, VPN
 
@@ -124,7 +124,18 @@ Because each VPC is connected to both transit gateways, traffic can be routed th
 
 ![Build a highly available multi-region network](/images/transit-gw-redundancy-group.svg "Build a highly available multi-region network"){: caption="Build a highly available multi-region network" caption-side="bottom"}
 
+## Use case 12: Zone-resilient VPN connectivity using a regional VPN gateway
+{: #use-case-11-regional-vpn}
 
+In this use case, a regional VPN gateway provides resilient connectivity between an on-premises network and IBM Cloud through Transit Gateway. The gateway deploys two VPN appliances across separate availability zones within a VPC, eliminating a single point of failure.
+
+The on-premises environment establishes a BGP VPN connection to the VPN gateway. Each VPN appliance establishes GRE tunnels to both Transit Gateway routers, creating multiple redundant paths between the VPN gateway and Transit Gateway. eBGP exchanges routes over these tunnels, enabling dynamic routing between the on-premises environment and IBM Cloud.
+
+Transit Gateway extends connectivity to attached resources, including VPCs, Classic Infrastructure, PowerVS workspaces, and Direct Link connections. If a VPN appliance or availability zone becomes unavailable, traffic automatically uses alternate paths through the remaining appliance and GRE tunnels, maintaining connectivity without requiring manual failover.
+
+This architecture is well suited for hybrid cloud environments that require highly available, zone-resilient connectivity to IBM Cloud resources while simplifying failover management and reducing operational complexity.
+
+![Zone-resilient VPN connectivity using a regional VPN gateway](/images/regional-vpn.svg "Zone-resilient VPN connectivity using a regional VPN gateway"){: caption="Zone-resilient VPN connectivity using a regional VPN gateway" caption-side="bottom"}
 
 
 

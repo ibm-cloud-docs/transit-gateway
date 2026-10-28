@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-10-27"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -39,7 +39,7 @@ To edit a connection to a transit gateway, follow these steps:
 {: #editing-connections-cli}
 {: cli}
 
-To edit a connection from the CLI, execute this command:
+To edit a connection from the CLI, run the following command:
 
 ```sh
 ibmcloud tg connection-update|cu GATEWAY_ID CONNECTION_ID --name NAME [--output json] [-h, --help]
@@ -140,7 +140,7 @@ The following response indicates that the connection was updated successfully:
 For more information, see [Updates specified Transit Gateway connection](/docs/apis/transit-gateway#update-transit-gateway-connection) in the Transit Gateway API reference.
 {: note}
 
-## Editing a connection using terraform
+## Editing a connection using Terraform
 {: #editing-connections-terraform}
 {: terraform}
 

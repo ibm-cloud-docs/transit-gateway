@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-24"
+lastupdated: "2026-10-27"
 
 keywords: connecting, region, order
 
@@ -29,7 +29,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 1. Review requirements and configuration considerations in [Planning for Transit Gateway](/docs/transit-gateway?topic=transit-gateway-helpful-tips).
 1. If you are already logged in to your IBM Cloud account, [open the Transit Gateway provisioning page](/interconnectivity/transit). 
 
-   Otherwise, log in to the [{{site.data.keyword.cloud_notm}} console](/login){: external}, select the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page, then click click **Infrastructure** > **Network** > **Transit Gateway**. Click **Create** to open the provisioning page. 
+   Otherwise, log in to the [{{site.data.keyword.cloud_notm}} console](/login){: external}, select the Navigation Menu icon ![Menu icon](../../icons/icon_hamburger.svg) on the upper left of the page, then click **Infrastructure** > **Network** > **Transit Gateway**. Click **Create** to open the provisioning page. 
 1. Enter a name for the transit gateway and choose a resource group. You can select a resource group from the list, or keep the **default** selection.
 1. Optional: Click the **GRE enhanced route propagation** toggle to allow GRE tunnel traffic to flow across all GRE tunnels connected to this transit gateway.
 
@@ -110,7 +110,8 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
             For planning considerations about VPN gateway connections, including zone behavior, see [VPN gateway connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpn-connection-considerations).
             {: attention}
             
-            
+            For planning considerations about VPN gateway connections, including zone behavior and regional VPN gateways, see [VPN gateway connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpn-connection-considerations).
+            {: attention}
       * **Request connection to a network in another account** - Enter either the IBM Cloud ID or Cloud Resource Name (CRN) of the account that manages the network where you want to connect. Then, complete any remaining information. All resources connected to that transit gateway will be accessible from the other network. For more information, including how to obtain the Cloud ID or CRN, see [Adding a cross-account connection](/docs/transit-gateway?topic=transit-gateway-adding-cross-account-connections&interface=ui).
 
          * IBM Cloud ID - Required by **Classic infrastructure** and **Unbound GRE tunnel**.

@@ -43,6 +43,7 @@ toc:
           topics:
           - adding-gateway.md
           - adding-ca.md
+          - conn-vpn-regional.md
           - conn-drs.md
           - add-prefix-filters.md
           - changing-config.md
@@ -118,5 +119,7 @@ toc:
           - ts-drs.md
           - ts-drs-vpc-deletion.md
           - ts-route-report-overlaps.md
+          - ts-regional-vpn-connection-pending.md
+          - ts-regional-vpn-failover.md
       - topic: getting-help.md
         navtitle: Getting help and support

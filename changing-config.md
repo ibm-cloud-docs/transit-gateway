@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-09-15"
+lastupdated: "2026-10-27"
 
 keywords: editing, managing, manage, edit, add, connection
 
@@ -156,7 +156,7 @@ You can specify the following argument references for your resource when you cha
 |--|--|
 |**name**  \n Required  \n string | The unique user-defined name for the gateway. For example, `myGateway`|
 |**global**  \n Required  \n boolean|The gateways with global routing (true) are able to connect to the networks outside their associated region.|
-| **redundancy_group**  \n Optional  \n string | Specifies the redundancy group for a global transit gateway. Only valid if the transit gateway already is in a redundancy group. If the redundancy group name is different, the redundancy group name will change.|
+| **redundancy_group**  \n Optional  \n string | Specifies the redundancy group for a global transit gateway. Only valid if the transit gateway already is in a redundancy group. If the redundancy group name is different, the redundancy group name changes.|
 |**gre_enhanced_route_propagation** \n Optional  \n boolean| Specify whether you want to enable or disable route propagation across all GREs connected to the same transit gateway. Values are one of: `true` or `false` (default) |
 {: caption="Terraform argument references for changing the configuration" caption-side="bottom"}
 
