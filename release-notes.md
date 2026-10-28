@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-10-27"
+lastupdated: "2026-10-28"
 
 keywords: updates, additions, improvements
 
@@ -19,7 +19,7 @@ content-type: release-note
 
 Find out about new and updated features in {{site.data.keyword.tg_full}}.
 
-## 27 October 2026
+## 28 October 2026
 {: #transit-gateway-regional-vpn}
 
 Support for regional VPN gateway connections
