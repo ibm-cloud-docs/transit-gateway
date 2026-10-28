@@ -33,12 +33,6 @@ Dynamic route server connections [Beta]{: tag-cyan}
 :   Accounts that have been granted special permissions to preview this feature can now attach a VPC dynamic route server to a transit gateway to enable dynamic BGP route exchange. The transit gateway establishes redundant GRE tunnels to the dynamic route server appliances and runs eBGP sessions over them. Dynamic route server connections do not support prefix filters or zone selection. For more information, see [Connecting a dynamic route server](/docs/transit-gateway?topic=transit-gateway-drs-connection).
 
 
-## 20 January 2026
-{: #transit-gateway-prefix-filtering-vpn}
-
-Prefix filtering for VPN gateway connections
-:   VPN gateway connections now support prefix filtering. You can configure prefix filters on a VPN gateway connection to control which routes are accepted from or advertised to the VPN peer. Prefix filters can only be configured at the top-level connection; individual tunnels under the connection do not support separate prefix filters. For more information, see [VPN gateway connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpn-connection-considerations) and [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#prefix-filtering-considerations).
-
 ## 15 September 2026
 {: #transit-gateway-sept1526}
 
@@ -47,6 +41,9 @@ Redundancy groups for global transit gateways
 
 ## 20 January 2026
 {: #transit-gateway-jan2026}
+
+Prefix filtering for VPN gateway connections
+:   VPN gateway connections now support prefix filtering. You can configure prefix filters on a VPN gateway connection to control which routes are accepted from or advertised to the VPN peer. Prefix filters can only be configured at the top-level connection; individual tunnels under the connection do not support separate prefix filters. For more information, see [VPN gateway connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpn-connection-considerations) and [Prefix filtering considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#prefix-filtering-considerations).
 
 Prefix filtering for GRE connections
 :   You can now set up prefix filters on GRE connections to control which routes are accepted from GRE peers. For cross-account GRE connections, the transit gateway owner manages the filters, since GRE peers already control which routes they advertise. By default, a filter that allows all routes is automatically applied to all GRE connections. Existing connections will continue accepting all routes unless you create custom prefix filters.
