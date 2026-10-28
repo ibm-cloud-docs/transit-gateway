@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-10-27"
+lastupdated: "2026-10-28"
 
 keywords: connecting, region, order
 
@@ -109,6 +109,7 @@ To get started using {{site.data.keyword.tg_full_notm}}, follow these steps:
 
             For planning considerations about VPN gateway connections, including zone behavior, see [VPN gateway connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpn-connection-considerations).
             {: attention}
+
             
             For planning considerations about VPN gateway connections, including zone behavior and regional VPN gateways, see [VPN gateway connection considerations](/docs/transit-gateway?topic=transit-gateway-helpful-tips#vpn-connection-considerations).
             {: attention}
